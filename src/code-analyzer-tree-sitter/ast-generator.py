@@ -115,6 +115,9 @@ def process_csv_files(input_dir, output_dir):
         print(f"Processing {csv_file}")
         data = pd.read_csv(csv_file)
         data['idx'] = data.index
+        
+        data = data.dropna(subset=['code']).copy() # msong 2025-5-19
+        data['code'] = data['code'].astype(str)
 
         language = language_inference_from_path(csv_file)
 
@@ -129,7 +132,8 @@ def process_csv_files(input_dir, output_dir):
         print(f"{csv_file} not parsed: {number_removed}/{original_size}")
 
         
-        output_data = data[['idx', 'code', 'new_code', 'ast', 'actual label']]
+        # output_data = data[['idx', 'code', 'new_code', 'ast', 'actual label']]  # 2026-5-19 msong
+        output_data = data[['idx', 'code', 'new_code', 'ast', 'label']]
         # output_data = data[['idx', 'code', 'ast', 'actual label']]
 
         output_path = csv_file.replace(input_dir, output_dir)

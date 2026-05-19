@@ -1,3 +1,37 @@
+cd ~/project-workspace/ai_detector/src/code-analyzer-tree-sitter
+
+# 1) Fresh conda env on Python 3.10 (avoids build issues with 3.12+)
+conda create -n ai-detector python=3.10 -y
+conda activate ai-detector
+
+# Make sure a C/C++ compiler is present for building the grammar .so
+sudo apt-get install -y build-essential
+
+# 2) Install Python deps from your uploaded requirements.txt
+pip install -r /mnt/user-data/uploads/requirements.txt
+# (or wherever you put the file — copy it into this dir first if you prefer)
+
+# 3) Clone the three grammars at tags compatible with tree-sitter 0.20.x
+git clone --depth 1 --branch v0.20.4 https://github.com/tree-sitter/tree-sitter-python.git
+git clone --depth 1 --branch v0.20.2 https://github.com/tree-sitter/tree-sitter-java.git
+git clone --depth 1 --branch v0.20.3 https://github.com/tree-sitter/tree-sitter-cpp.git
+
+# 4) Build build/my-languages.so
+python tree-sitter-test.py
+# expected: prints "Root node type: module" and the function_definition child
+
+# 5) Stage input CSVs in data_temp1/
+mkdir -p data_temp1
+cp ../astnn/classification/python/data/*.csv data_temp1/ 2>/dev/null
+cp ../astnn/classification/java/data/*.csv   data_temp1/ 2>/dev/null
+# No C++ CSVs exist in the project tree; that's fine — only present files run.
+
+# 6) Run
+python ast-generator.py
+
+
+---
+
 # An Empirical Study on Automatically Detecting AI-Generated Source Code: How Far Are We?
 
 
