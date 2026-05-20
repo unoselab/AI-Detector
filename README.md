@@ -55,16 +55,25 @@ python tree-sitter-test.py
 
 > **Expected Output:** It should print `Root node type: module` and display the `function_definition` child.
 
-#### **5. Stage Input Data**
+#### 5. Stage Input Data
 
-Create the temporary data directory and copy the available CSVs into it.
+`ast-generator.py` reads from `data_temp1/` relative to its own directory.
+The replication dataset CSVs are checked into the ASTNN classification folders;
+copy them in.
 
 ```bash
+cd src/code-analyzer-tree-sitter
 mkdir -p data_temp1
 cp ../astnn/classification/python/data/*.csv data_temp1/ 2>/dev/null
 cp ../astnn/classification/java/data/*.csv   data_temp1/ 2>/dev/null
-
+# (No C++ CSVs are checked into this repo. If you add some, they should
+#  follow the `<dataset>_<llm>_cpp_merged.csv` naming convention so the
+#  language inference in ast-generator.py picks them up.)
 ```
+
+The expected columns are `idx, code, label` where `label` is the string
+`'human'` or `'lm'` (= language model = AI-generated).
+
 
 > **Note:** There are no C++ CSVs in the project tree currently. That is expected; the script will cleanly process whatever files are present.
 
