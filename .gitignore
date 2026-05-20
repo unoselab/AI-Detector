@@ -149,3 +149,5 @@ cython_debug/
 .codex
 etc1
 src/code-analyzer-tree-sitter/tree-sitter-*/.github
+
+.pkl
