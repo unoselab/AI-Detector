@@ -1,7 +1,3 @@
-Here is a structured, clean, and highly readable version of the setup instructions for the [unoselab/AI-Detector](https://www.google.com/search?q=https://github.com/unoselab/AI-Detector) repository:
-
----
-
 ### **Environment Setup and Execution Guide**
 
 First, navigate to the target directory:
