@@ -9,7 +9,7 @@ PYTHON="${PYTHON:-python}"
 
 MODEL_DIR="output/CodeSearchNet/starcoder2-7b-3000-tp0.2"
 INPUT_FILE="${MODEL_DIR}/outputs-512token.txt"
-OUT_DIR="code-analyzer-tree-sitter/data_temp1"
+OUT_DIR="code-analyzer-tree-sitter/data_temp1_codesearchnet/validsyntax/"
 
 N_SMALL="${N_SMALL:-400}"
 N_LARGE="${N_LARGE:-2250}"
