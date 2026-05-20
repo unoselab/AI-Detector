@@ -1,0 +1,381 @@
+idx,code,ast,actual label,pred
+175,"def cycpattern_check(a , b):
+    concat = b+b
+    if concat.find(a) != -1:
+        return True
+    return False","module::left function_definition::left def cycpattern_check parameters::left ( a , b ) parameters::right : block::left expression_statement::left assignment::left concat = binary_operator::left b + b binary_operator::right assignment::right expression_statement::right if_statement::left if comparison_operator::left call::left attribute::left concat . find attribute::right argument_list::left ( a ) argument_list::right call::right != unary_operator::left - 1 unary_operator::right comparison_operator::right : block::left return_statement::left return True return_statement::right block::right if_statement::right return_statement::left return False return_statement::right block::right function_definition::right module::right",0,1
+223,"def sorted_list_sum(lst):
+    lst = [x for x in lst if len(x) % 2 == 0]
+    lst.sort(key=lambda x: (len(x), x))
+    return lst","module::left function_definition::left def sorted_list_sum parameters::left ( lst ) parameters::right : block::left expression_statement::left assignment::left lst = list_comprehension::left [ x for_in_clause::left for x in lst for_in_clause::right if_clause::left if comparison_operator::left binary_operator::left call::left len argument_list::left ( x ) argument_list::right call::right % 2 binary_operator::right == 0 comparison_operator::right if_clause::right ] list_comprehension::right assignment::right expression_statement::right expression_statement::left call::left attribute::left lst . sort attribute::right argument_list::left ( keyword_argument::left key = lambda::left lambda lambda_parameters::left x lambda_parameters::right : tuple::left ( call::left len argument_list::left ( x ) argument_list::right call::right , x ) tuple::right lambda::right keyword_argument::right ) argument_list::right call::right expression_statement::right return_statement::left return lst return_statement::right block::right function_definition::right module::right",0,1
+237,"def prime_fib(n: int):
+    import math
+
+    def is_prime(p):
+        if p < 2:
+            return False
+        for k in range(2, min(int(math.sqrt(p)) + 1, p - 1)):
+            if p % k == 0:
+                return False
+        return True
+    f = [0, 1]
+    while True:
+        f.append(f[-1] + f[-2])
+        if is_prime(f[-1]):
+            n -= 1
+        if n == 0:
+            return f[-1]
+","module::left function_definition::left def prime_fib parameters::left ( typed_parameter::left n : type::left int type::right typed_parameter::right ) parameters::right : block::left import_statement::left import dotted_name::left math dotted_name::right import_statement::right function_definition::left def is_prime parameters::left ( p ) parameters::right : block::left if_statement::left if comparison_operator::left p < 2 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right for_statement::left for k in call::left range argument_list::left ( 2 , call::left min argument_list::left ( binary_operator::left call::left int argument_list::left ( call::left attribute::left math . sqrt attribute::right argument_list::left ( p ) argument_list::right call::right ) argument_list::right call::right + 1 binary_operator::right , binary_operator::left p - 1 binary_operator::right ) argument_list::right call::right ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left binary_operator::left p % k binary_operator::right == 0 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return True return_statement::right block::right function_definition::right expression_statement::left assignment::left f = list::left [ 0 , 1 ] list::right assignment::right expression_statement::right while_statement::left while True : block::left expression_statement::left call::left attribute::left f . append attribute::right argument_list::left ( binary_operator::left subscript::left f [ unary_operator::left - 1 unary_operator::right ] subscript::right + subscript::left f [ unary_operator::left - 2 unary_operator::right ] subscript::right binary_operator::right ) argument_list::right call::right expression_statement::right if_statement::left if call::left is_prime argument_list::left ( subscript::left f [ unary_operator::left - 1 unary_operator::right ] subscript::right ) argument_list::right call::right : block::left expression_statement::left augmented_assignment::left n -= 1 augmented_assignment::right expression_statement::right block::right if_statement::right if_statement::left if comparison_operator::left n == 0 comparison_operator::right : block::left return_statement::left return subscript::left f [ unary_operator::left - 1 unary_operator::right ] subscript::right return_statement::right block::right if_statement::right block::right while_statement::right block::right function_definition::right module::right",1,1
+278,"from typing import List
+
+
+def sort_numbers(numbers: str) -> str:
+    value_map = {
+        'zero': 0,
+        'one': 1,
+        'two': 2,
+        'three': 3,
+        'four': 4,
+        'five': 5,
+        'six': 6,
+        'seven': 7,
+        'eight': 8,
+        'nine': 9
+    }
+    return ' '.join(sorted([x for x in numbers.split(' ') if x], key=lambda x: value_map[x]))
+","module::left import_from_statement::left from dotted_name::left typing dotted_name::right import dotted_name::left List dotted_name::right import_from_statement::right function_definition::left def sort_numbers parameters::left ( typed_parameter::left numbers : type::left str type::right typed_parameter::right ) parameters::right -> type::left str type::right : block::left expression_statement::left assignment::left value_map = dictionary::left { pair::left string::left ' zero ' string::right : 0 pair::right , pair::left string::left ' one ' string::right : 1 pair::right , pair::left string::left ' two ' string::right : 2 pair::right , pair::left string::left ' three ' string::right : 3 pair::right , pair::left string::left ' four ' string::right : 4 pair::right , pair::left string::left ' five ' string::right : 5 pair::right , pair::left string::left ' six ' string::right : 6 pair::right , pair::left string::left ' seven ' string::right : 7 pair::right , pair::left string::left ' eight ' string::right : 8 pair::right , pair::left string::left ' nine ' string::right : 9 pair::right } dictionary::right assignment::right expression_statement::right return_statement::left return call::left attribute::left string::left '   ' string::right . join attribute::right argument_list::left ( call::left sorted argument_list::left ( list_comprehension::left [ x for_in_clause::left for x in call::left attribute::left numbers . split attribute::right argument_list::left ( string::left '   ' string::right ) argument_list::right call::right for_in_clause::right if_clause::left if x if_clause::right ] list_comprehension::right , keyword_argument::left key = lambda::left lambda lambda_parameters::left x lambda_parameters::right : subscript::left value_map [ x ] subscript::right lambda::right keyword_argument::right ) argument_list::right call::right ) argument_list::right call::right return_statement::right block::right function_definition::right module::right",1,1
+182,"def special_factorial(n):
+    fact_i = 1
+    special_fact = 1
+    for i in range(1, n+1):
+        fact_i *= i
+        special_fact *= fact_i
+    return special_fact
+","module::left function_definition::left def special_factorial parameters::left ( n ) parameters::right : block::left expression_statement::left assignment::left fact_i = 1 assignment::right expression_statement::right expression_statement::left assignment::left special_fact = 1 assignment::right expression_statement::right for_statement::left for i in call::left range argument_list::left ( 1 , binary_operator::left n + 1 binary_operator::right ) argument_list::right call::right : block::left expression_statement::left augmented_assignment::left fact_i *= i augmented_assignment::right expression_statement::right expression_statement::left augmented_assignment::left special_fact *= fact_i augmented_assignment::right expression_statement::right block::right for_statement::right return_statement::left return special_fact return_statement::right block::right function_definition::right module::right",1,1
+99,"def solution(lst):
+    sum = 0
+
+    for i in range(0, len(lst)):
+      if i%2 == 0 and lst[i]%2 == 1:
+          sum += lst[i]
+    
+    return sum","module::left function_definition::left def solution parameters::left ( lst ) parameters::right : block::left expression_statement::left assignment::left sum = 0 assignment::right expression_statement::right for_statement::left for i in call::left range argument_list::left ( 0 , call::left len argument_list::left ( lst ) argument_list::right call::right ) argument_list::right call::right : block::left if_statement::left if boolean_operator::left comparison_operator::left binary_operator::left i % 2 binary_operator::right == 0 comparison_operator::right and comparison_operator::left binary_operator::left subscript::left lst [ i ] subscript::right % 2 binary_operator::right == 1 comparison_operator::right boolean_operator::right : block::left expression_statement::left augmented_assignment::left sum += subscript::left lst [ i ] subscript::right augmented_assignment::right expression_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return sum return_statement::right block::right function_definition::right module::right",0,0
+145,"def count_nums(arr):
+    def sum_of_digits(n):
+        sum = 0
+        if n < 0:
+            sum += abs(n % 10)
+            n = n // -10
+        while n > 0:
+            sum += n % 10
+            n = n // 10
+        return sum
+
+    count = 0
+    for num in arr:
+        if sum_of_digits(num) > 0:
+            count += 1
+    return count",module::left function_definition::left def count_nums parameters::left ( arr ) parameters::right : block::left function_definition::left def sum_of_digits parameters::left ( n ) parameters::right : block::left expression_statement::left assignment::left sum = 0 assignment::right expression_statement::right if_statement::left if comparison_operator::left n < 0 comparison_operator::right : block::left expression_statement::left augmented_assignment::left sum += call::left abs argument_list::left ( binary_operator::left n % 10 binary_operator::right ) argument_list::right call::right augmented_assignment::right expression_statement::right expression_statement::left assignment::left n = binary_operator::left n // unary_operator::left - 10 unary_operator::right binary_operator::right assignment::right expression_statement::right block::right if_statement::right while_statement::left while comparison_operator::left n > 0 comparison_operator::right : block::left expression_statement::left augmented_assignment::left sum += binary_operator::left n % 10 binary_operator::right augmented_assignment::right expression_statement::right expression_statement::left assignment::left n = binary_operator::left n // 10 binary_operator::right assignment::right expression_statement::right block::right while_statement::right return_statement::left return sum return_statement::right block::right function_definition::right expression_statement::left assignment::left count = 0 assignment::right expression_statement::right for_statement::left for num in arr : block::left if_statement::left if comparison_operator::left call::left sum_of_digits argument_list::left ( num ) argument_list::right call::right > 0 comparison_operator::right : block::left expression_statement::left augmented_assignment::left count += 1 augmented_assignment::right expression_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return count return_statement::right block::right function_definition::right module::right,0,0
+101,"def anti_shuffle(s):
+    ordered_str = """"
+    words = s.split()
+    for word in words:
+        ordered_word = ''.join(sorted(word))
+        ordered_str += ordered_word + ' '
+    ordered_str = ordered_str.rstrip()
+    return ordered_str","module::left function_definition::left def anti_shuffle parameters::left ( s ) parameters::right : block::left expression_statement::left assignment::left ordered_str = string::left "" "" string::right assignment::right expression_statement::right expression_statement::left assignment::left words = call::left attribute::left s . split attribute::right argument_list::left ( ) argument_list::right call::right assignment::right expression_statement::right for_statement::left for word in words : block::left expression_statement::left assignment::left ordered_word = call::left attribute::left string::left ' ' string::right . join attribute::right argument_list::left ( call::left sorted argument_list::left ( word ) argument_list::right call::right ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left augmented_assignment::left ordered_str += binary_operator::left ordered_word + string::left '   ' string::right binary_operator::right augmented_assignment::right expression_statement::right block::right for_statement::right expression_statement::left assignment::left ordered_str = call::left attribute::left ordered_str . rstrip attribute::right argument_list::left ( ) argument_list::right call::right assignment::right expression_statement::right return_statement::left return ordered_str return_statement::right block::right function_definition::right module::right",0,0
+241,"def skjkasdkd(lst):
+    def isPrime(n):
+        for i in range(2,int(n**0.5)+1):
+            if n%i==0:
+                return False
+
+        return True
+    maxx = 0
+    i = 0
+    while i < len(lst):
+        if(lst[i] > maxx and isPrime(lst[i])):
+            maxx = lst[i]
+        i+=1
+    result = sum(int(digit) for digit in str(maxx))
+    return result
+
+","module::left function_definition::left def skjkasdkd parameters::left ( lst ) parameters::right : block::left function_definition::left def isPrime parameters::left ( n ) parameters::right : block::left for_statement::left for i in call::left range argument_list::left ( 2 , binary_operator::left call::left int argument_list::left ( binary_operator::left n ** 0.5 binary_operator::right ) argument_list::right call::right + 1 binary_operator::right ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left binary_operator::left n % i binary_operator::right == 0 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return True return_statement::right block::right function_definition::right expression_statement::left assignment::left maxx = 0 assignment::right expression_statement::right expression_statement::left assignment::left i = 0 assignment::right expression_statement::right while_statement::left while comparison_operator::left i < call::left len argument_list::left ( lst ) argument_list::right call::right comparison_operator::right : block::left if_statement::left if parenthesized_expression::left ( boolean_operator::left comparison_operator::left subscript::left lst [ i ] subscript::right > maxx comparison_operator::right and call::left isPrime argument_list::left ( subscript::left lst [ i ] subscript::right ) argument_list::right call::right boolean_operator::right ) parenthesized_expression::right : block::left expression_statement::left assignment::left maxx = subscript::left lst [ i ] subscript::right assignment::right expression_statement::right block::right if_statement::right expression_statement::left augmented_assignment::left i += 1 augmented_assignment::right expression_statement::right block::right while_statement::right expression_statement::left assignment::left result = call::left sum generator_expression::left ( call::left int argument_list::left ( digit ) argument_list::right call::right for_in_clause::left for digit in call::left str argument_list::left ( maxx ) argument_list::right call::right for_in_clause::right ) generator_expression::right call::right assignment::right expression_statement::right return_statement::left return result return_statement::right block::right function_definition::right module::right",1,0
+248,"def fizz_buzz(n: int):
+    ns = []
+    for i in range(n):
+        if i % 11 == 0 or i % 13 == 0:
+            ns.append(i)
+    s = ''.join(list(map(str, ns)))
+    ans = 0
+    for c in s:
+        ans += (c == '7')
+    return ans
+","module::left function_definition::left def fizz_buzz parameters::left ( typed_parameter::left n : type::left int type::right typed_parameter::right ) parameters::right : block::left expression_statement::left assignment::left ns = list::left [ ] list::right assignment::right expression_statement::right for_statement::left for i in call::left range argument_list::left ( n ) argument_list::right call::right : block::left if_statement::left if boolean_operator::left comparison_operator::left binary_operator::left i % 11 binary_operator::right == 0 comparison_operator::right or comparison_operator::left binary_operator::left i % 13 binary_operator::right == 0 comparison_operator::right boolean_operator::right : block::left expression_statement::left call::left attribute::left ns . append attribute::right argument_list::left ( i ) argument_list::right call::right expression_statement::right block::right if_statement::right block::right for_statement::right expression_statement::left assignment::left s = call::left attribute::left string::left ' ' string::right . join attribute::right argument_list::left ( call::left list argument_list::left ( call::left map argument_list::left ( str , ns ) argument_list::right call::right ) argument_list::right call::right ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left ans = 0 assignment::right expression_statement::right for_statement::left for c in s : block::left expression_statement::left augmented_assignment::left ans += parenthesized_expression::left ( comparison_operator::left c == string::left ' 7 ' string::right comparison_operator::right ) parenthesized_expression::right augmented_assignment::right expression_statement::right block::right for_statement::right return_statement::left return ans return_statement::right block::right function_definition::right module::right",1,0
+146,"def greatest_common_divisor(a: int, b: int) -> int:
+    while b:
+        a, b = b, a % b
+    return a
+","module::left function_definition::left def greatest_common_divisor parameters::left ( typed_parameter::left a : type::left int type::right typed_parameter::right , typed_parameter::left b : type::left int type::right typed_parameter::right ) parameters::right -> type::left int type::right : block::left while_statement::left while b : block::left expression_statement::left assignment::left pattern_list::left a , b pattern_list::right = expression_list::left b , binary_operator::left a % b binary_operator::right expression_list::right assignment::right expression_statement::right block::right while_statement::right return_statement::left return a return_statement::right block::right function_definition::right module::right",1,1
+122,"import math
+
+
+def poly(xs: list, x: float):
+    """"""
+    Evaluates polynomial with coefficients xs at point x.
+    return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n
+    """"""
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+
+
+def find_zero(xs: list):
+    begin, end = -1., 1.
+    while poly(xs, begin) * poly(xs, end) > 0:
+        begin *= 2.0
+        end *= 2.0
+    while end - begin > 1e-10:
+        center = (begin + end) / 2.0
+        if poly(xs, center) * poly(xs, begin) > 0:
+            begin = center
+        else:
+            end = center
+    return begin
+","module::left import_statement::left import dotted_name::left math dotted_name::right import_statement::right function_definition::left def poly parameters::left ( typed_parameter::left xs : type::left list type::right typed_parameter::right , typed_parameter::left x : type::left float type::right typed_parameter::right ) parameters::right : block::left expression_statement::left string::left """""" 
+    Evaluates polynomial with coefficients xs at point x.
+    return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n
+     """""" string::right expression_statement::right return_statement::left return call::left sum argument_list::left ( list_comprehension::left [ binary_operator::left coeff * call::left attribute::left math . pow attribute::right argument_list::left ( x , i ) argument_list::right call::right binary_operator::right for_in_clause::left for pattern_list::left i , coeff pattern_list::right in call::left enumerate argument_list::left ( xs ) argument_list::right call::right for_in_clause::right ] list_comprehension::right ) argument_list::right call::right return_statement::right block::right function_definition::right function_definition::left def find_zero parameters::left ( typed_parameter::left xs : type::left list type::right typed_parameter::right ) parameters::right : block::left expression_statement::left assignment::left pattern_list::left begin , end pattern_list::right = expression_list::left unary_operator::left - 1. unary_operator::right , 1. expression_list::right assignment::right expression_statement::right while_statement::left while comparison_operator::left binary_operator::left call::left poly argument_list::left ( xs , begin ) argument_list::right call::right * call::left poly argument_list::left ( xs , end ) argument_list::right call::right binary_operator::right > 0 comparison_operator::right : block::left expression_statement::left augmented_assignment::left begin *= 2.0 augmented_assignment::right expression_statement::right expression_statement::left augmented_assignment::left end *= 2.0 augmented_assignment::right expression_statement::right block::right while_statement::right while_statement::left while comparison_operator::left binary_operator::left end - begin binary_operator::right > 1e-10 comparison_operator::right : block::left expression_statement::left assignment::left center = binary_operator::left parenthesized_expression::left ( binary_operator::left begin + end binary_operator::right ) parenthesized_expression::right / 2.0 binary_operator::right assignment::right expression_statement::right if_statement::left if comparison_operator::left binary_operator::left call::left poly argument_list::left ( xs , center ) argument_list::right call::right * call::left poly argument_list::left ( xs , begin ) argument_list::right call::right binary_operator::right > 0 comparison_operator::right : block::left expression_statement::left assignment::left begin = center assignment::right expression_statement::right block::right else_clause::left else : block::left expression_statement::left assignment::left end = center assignment::right expression_statement::right block::right else_clause::right if_statement::right block::right while_statement::right return_statement::left return begin return_statement::right block::right function_definition::right module::right",1,0
+129,"def bf(planet1, planet2):
+    planets = (""Mercury"", ""Venus"", ""Earth"", ""Mars"", ""Jupiter"", ""Saturn"", ""Uranus"", ""Neptune"")
+    if planet1 not in planets or planet2 not in planets:
+        return ()
+    start = planets.index(planet1) + 1
+    end = planets.index(planet2)
+    if start > end:
+        start, end = end, start
+    return planets[start:end]","module::left function_definition::left def bf parameters::left ( planet1 , planet2 ) parameters::right : block::left expression_statement::left assignment::left planets = tuple::left ( string::left "" Mercury "" string::right , string::left "" Venus "" string::right , string::left "" Earth "" string::right , string::left "" Mars "" string::right , string::left "" Jupiter "" string::right , string::left "" Saturn "" string::right , string::left "" Uranus "" string::right , string::left "" Neptune "" string::right ) tuple::right assignment::right expression_statement::right if_statement::left if boolean_operator::left comparison_operator::left planet1 not in planets comparison_operator::right or comparison_operator::left planet2 not in planets comparison_operator::right boolean_operator::right : block::left return_statement::left return tuple::left ( ) tuple::right return_statement::right block::right if_statement::right expression_statement::left assignment::left start = binary_operator::left call::left attribute::left planets . index attribute::right argument_list::left ( planet1 ) argument_list::right call::right + 1 binary_operator::right assignment::right expression_statement::right expression_statement::left assignment::left end = call::left attribute::left planets . index attribute::right argument_list::left ( planet2 ) argument_list::right call::right assignment::right expression_statement::right if_statement::left if comparison_operator::left start > end comparison_operator::right : block::left expression_statement::left assignment::left pattern_list::left start , end pattern_list::right = expression_list::left end , start expression_list::right assignment::right expression_statement::right block::right if_statement::right return_statement::left return subscript::left planets [ slice::left start : end slice::right ] subscript::right return_statement::right block::right function_definition::right module::right",0,1
+1,"def words_in_sentence(sentence):
+
+    def is_prime(n):
+        if n <= 1:
+            return False
+        if n <= 3:
+            return True
+        if n % 2 == 0 or n % 3 == 0:
+            return False
+        i = 5
+        while i * i <= n:
+            if n % i == 0 or n % (i + 2) == 0:
+                return False
+            i += 6
+        return True
+
+    words = sentence.split()
+    new_sentence = """"
+    for word in words:
+        if is_prime(len(word)):
+            new_sentence += word + "" ""
+
+    return new_sentence.strip()","module::left function_definition::left def words_in_sentence parameters::left ( sentence ) parameters::right : block::left function_definition::left def is_prime parameters::left ( n ) parameters::right : block::left if_statement::left if comparison_operator::left n <= 1 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right if_statement::left if comparison_operator::left n <= 3 comparison_operator::right : block::left return_statement::left return True return_statement::right block::right if_statement::right if_statement::left if boolean_operator::left comparison_operator::left binary_operator::left n % 2 binary_operator::right == 0 comparison_operator::right or comparison_operator::left binary_operator::left n % 3 binary_operator::right == 0 comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right expression_statement::left assignment::left i = 5 assignment::right expression_statement::right while_statement::left while comparison_operator::left binary_operator::left i * i binary_operator::right <= n comparison_operator::right : block::left if_statement::left if boolean_operator::left comparison_operator::left binary_operator::left n % i binary_operator::right == 0 comparison_operator::right or comparison_operator::left binary_operator::left n % parenthesized_expression::left ( binary_operator::left i + 2 binary_operator::right ) parenthesized_expression::right binary_operator::right == 0 comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right expression_statement::left augmented_assignment::left i += 6 augmented_assignment::right expression_statement::right block::right while_statement::right return_statement::left return True return_statement::right block::right function_definition::right expression_statement::left assignment::left words = call::left attribute::left sentence . split attribute::right argument_list::left ( ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left new_sentence = string::left "" "" string::right assignment::right expression_statement::right for_statement::left for word in words : block::left if_statement::left if call::left is_prime argument_list::left ( call::left len argument_list::left ( word ) argument_list::right call::right ) argument_list::right call::right : block::left expression_statement::left augmented_assignment::left new_sentence += binary_operator::left word + string::left ""   "" string::right binary_operator::right augmented_assignment::right expression_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return call::left attribute::left new_sentence . strip attribute::right argument_list::left ( ) argument_list::right call::right return_statement::right block::right function_definition::right module::right",0,0
+295,"def find_max(words):
+    return sorted(words, key = lambda x: (-len(set(x)), x))[0]
+","module::left function_definition::left def find_max parameters::left ( words ) parameters::right : block::left return_statement::left return subscript::left call::left sorted argument_list::left ( words , keyword_argument::left key = lambda::left lambda lambda_parameters::left x lambda_parameters::right : tuple::left ( unary_operator::left - call::left len argument_list::left ( call::left set argument_list::left ( x ) argument_list::right call::right ) argument_list::right call::right unary_operator::right , x ) tuple::right lambda::right keyword_argument::right ) argument_list::right call::right [ 0 ] subscript::right return_statement::right block::right function_definition::right module::right",1,0
+108,"def sum_squares(lst):
+    ""
+    result =[]
+    for i in range(len(lst)):
+        if i %3 == 0:
+            result.append(lst[i]**2)
+        elif i % 4 == 0 and i%3 != 0:
+            result.append(lst[i]**3)
+        else:
+            result.append(lst[i])
+    return sum(result)
+","module::left function_definition::left def sum_squares parameters::left ( lst ) parameters::right : ERROR::left "" ERROR::right block::left expression_statement::left assignment::left result = list::left [ ] list::right assignment::right expression_statement::right for_statement::left for i in call::left range argument_list::left ( call::left len argument_list::left ( lst ) argument_list::right call::right ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left binary_operator::left i % 3 binary_operator::right == 0 comparison_operator::right : block::left expression_statement::left call::left attribute::left result . append attribute::right argument_list::left ( binary_operator::left subscript::left lst [ i ] subscript::right ** 2 binary_operator::right ) argument_list::right call::right expression_statement::right block::right elif_clause::left elif boolean_operator::left comparison_operator::left binary_operator::left i % 4 binary_operator::right == 0 comparison_operator::right and comparison_operator::left binary_operator::left i % 3 binary_operator::right != 0 comparison_operator::right boolean_operator::right : block::left expression_statement::left call::left attribute::left result . append attribute::right argument_list::left ( binary_operator::left subscript::left lst [ i ] subscript::right ** 3 binary_operator::right ) argument_list::right call::right expression_statement::right block::right elif_clause::right else_clause::left else : block::left expression_statement::left call::left attribute::left result . append attribute::right argument_list::left ( subscript::left lst [ i ] subscript::right ) argument_list::right call::right expression_statement::right block::right else_clause::right if_statement::right block::right for_statement::right return_statement::left return call::left sum argument_list::left ( result ) argument_list::right call::right return_statement::right block::right function_definition::right module::right",1,1
+117,"def count_upper(s):
+    count = 0
+    for i in range(0,len(s),2):
+        if s[i] in ""AEIOU"":
+            count += 1
+    return count
+","module::left function_definition::left def count_upper parameters::left ( s ) parameters::right : block::left expression_statement::left assignment::left count = 0 assignment::right expression_statement::right for_statement::left for i in call::left range argument_list::left ( 0 , call::left len argument_list::left ( s ) argument_list::right call::right , 2 ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left subscript::left s [ i ] subscript::right in string::left "" AEIOU "" string::right comparison_operator::right : block::left expression_statement::left augmented_assignment::left count += 1 augmented_assignment::right expression_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return count return_statement::right block::right function_definition::right module::right",1,1
+112,"def starts_one_ends(n):
+    if n <= 0:
+        return 0
+
+    # The digit at the first position can only be 1.
+    first_digit = 1
+
+    # The remaining (n-1) digits can be any digit from 0 to 9.
+    remaining_digits = 10**(n-1)
+
+    # Multiply the number of choices for the first digit by the number of choices
+    # for the remaining digits to get the total number of n-digit numbers.
+    total_numbers = first_digit * remaining_digits
+
+    # To count the numbers that start or end with 1, we can use the same approach
+    # as above. However, we need to subtract the numbers that start and end with
+    # 1 twice (because they are counted twice in the above calculation).
+
+    # The number of numbers that start with 1 is equal to the number of
+    # (n-1)-digit numbers that end with 1.
+    start_with_one = starts_one_ends(n-1)
+
+    # The number of numbers that end with 1 is equal to the number of
+    # (n-1)-digit numbers that start with 1.
+    end_with_one = starts_one_ends(n-1)
+
+    # Subtract the numbers that start and end with 1 twice.
+    total_numbers -= 2 * start_with_one
+
+    # Return the total number of n-digit numbers that start or end with 1.
+    return total_numbers","module::left function_definition::left def starts_one_ends parameters::left ( n ) parameters::right : block::left if_statement::left if comparison_operator::left n <= 0 comparison_operator::right : block::left return_statement::left return 0 return_statement::right block::right if_statement::right # The digit at the first position can only be 1. expression_statement::left assignment::left first_digit = 1 assignment::right expression_statement::right # The remaining (n-1) digits can be any digit from 0 to 9. expression_statement::left assignment::left remaining_digits = binary_operator::left 10 ** parenthesized_expression::left ( binary_operator::left n - 1 binary_operator::right ) parenthesized_expression::right binary_operator::right assignment::right expression_statement::right # Multiply the number of choices for the first digit by the number of choices # for the remaining digits to get the total number of n-digit numbers. expression_statement::left assignment::left total_numbers = binary_operator::left first_digit * remaining_digits binary_operator::right assignment::right expression_statement::right # To count the numbers that start or end with 1, we can use the same approach # as above. However, we need to subtract the numbers that start and end with # 1 twice (because they are counted twice in the above calculation). # The number of numbers that start with 1 is equal to the number of # (n-1)-digit numbers that end with 1. expression_statement::left assignment::left start_with_one = call::left starts_one_ends argument_list::left ( binary_operator::left n - 1 binary_operator::right ) argument_list::right call::right assignment::right expression_statement::right # The number of numbers that end with 1 is equal to the number of # (n-1)-digit numbers that start with 1. expression_statement::left assignment::left end_with_one = call::left starts_one_ends argument_list::left ( binary_operator::left n - 1 binary_operator::right ) argument_list::right call::right assignment::right expression_statement::right # Subtract the numbers that start and end with 1 twice. expression_statement::left augmented_assignment::left total_numbers -= binary_operator::left 2 * start_with_one binary_operator::right augmented_assignment::right expression_statement::right # Return the total number of n-digit numbers that start or end with 1. return_statement::left return total_numbers return_statement::right block::right function_definition::right module::right",0,0
+7,"def is_bored(S):
+    import re
+    sentences = re.split(r'[.?!]\s*', S)
+    return sum(sentence[0:2] == 'I ' for sentence in sentences)
+","module::left function_definition::left def is_bored parameters::left ( S ) parameters::right : block::left import_statement::left import dotted_name::left re dotted_name::right import_statement::right expression_statement::left assignment::left sentences = call::left attribute::left re . split attribute::right argument_list::left ( string::left r' [.?!]\s* ' string::right , S ) argument_list::right call::right assignment::right expression_statement::right return_statement::left return call::left sum generator_expression::left ( comparison_operator::left subscript::left sentence [ slice::left 0 : 2 slice::right ] subscript::right == string::left ' I  ' string::right comparison_operator::right for_in_clause::left for sentence in sentences for_in_clause::right ) generator_expression::right call::right return_statement::right block::right function_definition::right module::right",1,1
+210,"def is_equal_to_sum_even(n):
+    if n % 2 != 0:
+        return False
+    if n < 16:
+        return False
+    return True",module::left function_definition::left def is_equal_to_sum_even parameters::left ( n ) parameters::right : block::left if_statement::left if comparison_operator::left binary_operator::left n % 2 binary_operator::right != 0 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right if_statement::left if comparison_operator::left n < 16 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right return_statement::left return True return_statement::right block::right function_definition::right module::right,0,1
+55,"def choose_num(x, y):
+    if x > y:
+        return -1
+    if y % 2 == 0:
+        return y
+    if x == y:
+        return -1
+    return y - 1
+","module::left function_definition::left def choose_num parameters::left ( x , y ) parameters::right : block::left if_statement::left if comparison_operator::left x > y comparison_operator::right : block::left return_statement::left return unary_operator::left - 1 unary_operator::right return_statement::right block::right if_statement::right if_statement::left if comparison_operator::left binary_operator::left y % 2 binary_operator::right == 0 comparison_operator::right : block::left return_statement::left return y return_statement::right block::right if_statement::right if_statement::left if comparison_operator::left x == y comparison_operator::right : block::left return_statement::left return unary_operator::left - 1 unary_operator::right return_statement::right block::right if_statement::right return_statement::left return binary_operator::left y - 1 binary_operator::right return_statement::right block::right function_definition::right module::right",1,1
+148,"def simplify(x, n):
+    x_num, x_den = map(int, x.split('/'))
+    n_num, n_den = map(int, n.split('/'))
+
+    reduced_num = x_num * n_den
+    reduced_den = x_den * n_num
+
+    return reduced_num % reduced_den == 0","module::left function_definition::left def simplify parameters::left ( x , n ) parameters::right : block::left expression_statement::left assignment::left pattern_list::left x_num , x_den pattern_list::right = call::left map argument_list::left ( int , call::left attribute::left x . split attribute::right argument_list::left ( string::left ' / ' string::right ) argument_list::right call::right ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left pattern_list::left n_num , n_den pattern_list::right = call::left map argument_list::left ( int , call::left attribute::left n . split attribute::right argument_list::left ( string::left ' / ' string::right ) argument_list::right call::right ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left reduced_num = binary_operator::left x_num * n_den binary_operator::right assignment::right expression_statement::right expression_statement::left assignment::left reduced_den = binary_operator::left x_den * n_num binary_operator::right assignment::right expression_statement::right return_statement::left return comparison_operator::left binary_operator::left reduced_num % reduced_den binary_operator::right == 0 comparison_operator::right return_statement::right block::right function_definition::right module::right",0,1
+256,"def can_arrange(arr):
+    last_smaller_index = -1
+    for index, value in enumerate(arr):
+        if index == 0:
+            last_smaller_index = 0
+        elif arr[index] < arr[last_smaller_index]:
+            return index
+
+    return -1","module::left function_definition::left def can_arrange parameters::left ( arr ) parameters::right : block::left expression_statement::left assignment::left last_smaller_index = unary_operator::left - 1 unary_operator::right assignment::right expression_statement::right for_statement::left for pattern_list::left index , value pattern_list::right in call::left enumerate argument_list::left ( arr ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left index == 0 comparison_operator::right : block::left expression_statement::left assignment::left last_smaller_index = 0 assignment::right expression_statement::right block::right elif_clause::left elif comparison_operator::left subscript::left arr [ index ] subscript::right < subscript::left arr [ last_smaller_index ] subscript::right comparison_operator::right : block::left return_statement::left return index return_statement::right block::right elif_clause::right if_statement::right block::right for_statement::right return_statement::left return unary_operator::left - 1 unary_operator::right return_statement::right block::right function_definition::right module::right",0,0
+43,"def add(x: int, y: int):
+    """"""Add two numbers x and y
+    >>> add(2, 3)
+    5
+    >>> add(5, 7)
+    12
+    """"""
+    return x + y","module::left function_definition::left def add parameters::left ( typed_parameter::left x : type::left int type::right typed_parameter::right , typed_parameter::left y : type::left int type::right typed_parameter::right ) parameters::right : block::left expression_statement::left string::left """""" Add two numbers x and y
+    >>> add(2, 3)
+    5
+    >>> add(5, 7)
+    12
+     """""" string::right expression_statement::right return_statement::left return binary_operator::left x + y binary_operator::right return_statement::right block::right function_definition::right module::right",0,0
+160,"from typing import List
+
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    return [x for x in strings if substring in x]
+","module::left import_from_statement::left from dotted_name::left typing dotted_name::right import dotted_name::left List dotted_name::right import_from_statement::right function_definition::left def filter_by_substring parameters::left ( typed_parameter::left strings : type::left generic_type::left List type_parameter::left [ type::left str type::right ] type_parameter::right generic_type::right type::right typed_parameter::right , typed_parameter::left substring : type::left str type::right typed_parameter::right ) parameters::right -> type::left generic_type::left List type_parameter::left [ type::left str type::right ] type_parameter::right generic_type::right type::right : block::left return_statement::left return list_comprehension::left [ x for_in_clause::left for x in strings for_in_clause::right if_clause::left if comparison_operator::left substring in x comparison_operator::right if_clause::right ] list_comprehension::right return_statement::right block::right function_definition::right module::right",1,0
+86,"def solve(N):
+    return bin(sum(int(i) for i in str(N)))[2:]
+",module::left function_definition::left def solve parameters::left ( N ) parameters::right : block::left return_statement::left return subscript::left call::left bin argument_list::left ( call::left sum generator_expression::left ( call::left int argument_list::left ( i ) argument_list::right call::right for_in_clause::left for i in call::left str argument_list::left ( N ) argument_list::right call::right for_in_clause::right ) generator_expression::right call::right ) argument_list::right call::right [ slice::left 2 : slice::right ] subscript::right return_statement::right block::right function_definition::right module::right,1,0
+303,"def hex_key(num):
+    primes = {'2','3','5','7','B','D'}
+    count = 0
+    for val in num:
+        if val in primes:
+            count += 1
+            
+    return count","module::left function_definition::left def hex_key parameters::left ( num ) parameters::right : block::left expression_statement::left assignment::left primes = set::left { string::left ' 2 ' string::right , string::left ' 3 ' string::right , string::left ' 5 ' string::right , string::left ' 7 ' string::right , string::left ' B ' string::right , string::left ' D ' string::right } set::right assignment::right expression_statement::right expression_statement::left assignment::left count = 0 assignment::right expression_statement::right for_statement::left for val in num : block::left if_statement::left if comparison_operator::left val in primes comparison_operator::right : block::left expression_statement::left augmented_assignment::left count += 1 augmented_assignment::right expression_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return count return_statement::right block::right function_definition::right module::right",0,1
+204,"def encrypt(s):
+    enc_alp = ""cdefghijklmnopqrstuvwxyzab""
+    enc_alp = enc_alp.upper()
+    encText = """"
+
+    for char in s:
+        if char.isalpha():
+            index = ord(char)
+            if char.islower():
+                encText += enc_alp[index - ord('a')]
+            else:
+                encText += enc_alp[index - ord('A')]
+        else:
+            encText += char
+
+    return encText","module::left function_definition::left def encrypt parameters::left ( s ) parameters::right : block::left expression_statement::left assignment::left enc_alp = string::left "" cdefghijklmnopqrstuvwxyzab "" string::right assignment::right expression_statement::right expression_statement::left assignment::left enc_alp = call::left attribute::left enc_alp . upper attribute::right argument_list::left ( ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left encText = string::left "" "" string::right assignment::right expression_statement::right for_statement::left for char in s : block::left if_statement::left if call::left attribute::left char . isalpha attribute::right argument_list::left ( ) argument_list::right call::right : block::left expression_statement::left assignment::left index = call::left ord argument_list::left ( char ) argument_list::right call::right assignment::right expression_statement::right if_statement::left if call::left attribute::left char . islower attribute::right argument_list::left ( ) argument_list::right call::right : block::left expression_statement::left augmented_assignment::left encText += subscript::left enc_alp [ binary_operator::left index - call::left ord argument_list::left ( string::left ' a ' string::right ) argument_list::right call::right binary_operator::right ] subscript::right augmented_assignment::right expression_statement::right block::right else_clause::left else : block::left expression_statement::left augmented_assignment::left encText += subscript::left enc_alp [ binary_operator::left index - call::left ord argument_list::left ( string::left ' A ' string::right ) argument_list::right call::right binary_operator::right ] subscript::right augmented_assignment::right expression_statement::right block::right else_clause::right if_statement::right block::right else_clause::left else : block::left expression_statement::left augmented_assignment::left encText += char augmented_assignment::right expression_statement::right block::right else_clause::right if_statement::right block::right for_statement::right return_statement::left return encText return_statement::right block::right function_definition::right module::right",0,0
+233,"def valid_date(date):
+    try:
+        date = date.strip()
+        month, day, year = date.split('-')
+        month, day, year = int(month), int(day), int(year)
+        if month < 1 or month > 12:
+            return False
+        if month in [1,3,5,7,8,10,12] and day < 1 or day > 31:
+            return False
+        if month in [4,6,9,11] and day < 1 or day > 30:
+            return False
+        if month == 2 and day < 1 or day > 29:
+            return False
+    except:
+        return False
+
+    return True
+","module::left function_definition::left def valid_date parameters::left ( date ) parameters::right : block::left try_statement::left try : block::left expression_statement::left assignment::left date = call::left attribute::left date . strip attribute::right argument_list::left ( ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left pattern_list::left month , day , year pattern_list::right = call::left attribute::left date . split attribute::right argument_list::left ( string::left ' - ' string::right ) argument_list::right call::right assignment::right expression_statement::right expression_statement::left assignment::left pattern_list::left month , day , year pattern_list::right = expression_list::left call::left int argument_list::left ( month ) argument_list::right call::right , call::left int argument_list::left ( day ) argument_list::right call::right , call::left int argument_list::left ( year ) argument_list::right call::right expression_list::right assignment::right expression_statement::right if_statement::left if boolean_operator::left comparison_operator::left month < 1 comparison_operator::right or comparison_operator::left month > 12 comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right if_statement::left if boolean_operator::left boolean_operator::left comparison_operator::left month in list::left [ 1 , 3 , 5 , 7 , 8 , 10 , 12 ] list::right comparison_operator::right and comparison_operator::left day < 1 comparison_operator::right boolean_operator::right or comparison_operator::left day > 31 comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right if_statement::left if boolean_operator::left boolean_operator::left comparison_operator::left month in list::left [ 4 , 6 , 9 , 11 ] list::right comparison_operator::right and comparison_operator::left day < 1 comparison_operator::right boolean_operator::right or comparison_operator::left day > 30 comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right if_statement::left if boolean_operator::left boolean_operator::left comparison_operator::left month == 2 comparison_operator::right and comparison_operator::left day < 1 comparison_operator::right boolean_operator::right or comparison_operator::left day > 29 comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right block::right except_clause::left except : block::left return_statement::left return False return_statement::right block::right except_clause::right try_statement::right return_statement::left return True return_statement::right block::right function_definition::right module::right",1,0
+311,"def is_happy(s):
+    if len(s) < 3:
+        return False
+    
+    for i in range(len(s) - 2):
+        if s[i] == s[i + 1] or s[i] == s[i + 2] or s[i + 1] == s[i + 2]:
+            return False
+    
+    return True",module::left function_definition::left def is_happy parameters::left ( s ) parameters::right : block::left if_statement::left if comparison_operator::left call::left len argument_list::left ( s ) argument_list::right call::right < 3 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right for_statement::left for i in call::left range argument_list::left ( binary_operator::left call::left len argument_list::left ( s ) argument_list::right call::right - 2 binary_operator::right ) argument_list::right call::right : block::left if_statement::left if boolean_operator::left boolean_operator::left comparison_operator::left subscript::left s [ i ] subscript::right == subscript::left s [ binary_operator::left i + 1 binary_operator::right ] subscript::right comparison_operator::right or comparison_operator::left subscript::left s [ i ] subscript::right == subscript::left s [ binary_operator::left i + 2 binary_operator::right ] subscript::right comparison_operator::right boolean_operator::right or comparison_operator::left subscript::left s [ binary_operator::left i + 1 binary_operator::right ] subscript::right == subscript::left s [ binary_operator::left i + 2 binary_operator::right ] subscript::right comparison_operator::right boolean_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return True return_statement::right block::right function_definition::right module::right,0,1
+320,"def is_sorted(lst):
+
+    # check if list is empty or has only 1 element
+    if len(lst) <= 1:
+        return True
+
+    # check if list has more than 1 duplicate of the same number
+    for i in range(len(lst)):
+        if lst.count(lst[i]) > 1:
+            return False
+
+    # check if list is sorted in ascending order
+    for i in range(1, len(lst)):
+        if lst[i] < lst[i-1]:
+            return False
+
+    return True","module::left function_definition::left def is_sorted parameters::left ( lst ) parameters::right : # check if list is empty or has only 1 element block::left if_statement::left if comparison_operator::left call::left len argument_list::left ( lst ) argument_list::right call::right <= 1 comparison_operator::right : block::left return_statement::left return True return_statement::right block::right if_statement::right # check if list has more than 1 duplicate of the same number for_statement::left for i in call::left range argument_list::left ( call::left len argument_list::left ( lst ) argument_list::right call::right ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left call::left attribute::left lst . count attribute::right argument_list::left ( subscript::left lst [ i ] subscript::right ) argument_list::right call::right > 1 comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right block::right for_statement::right # check if list is sorted in ascending order for_statement::left for i in call::left range argument_list::left ( 1 , call::left len argument_list::left ( lst ) argument_list::right call::right ) argument_list::right call::right : block::left if_statement::left if comparison_operator::left subscript::left lst [ i ] subscript::right < subscript::left lst [ binary_operator::left i - 1 binary_operator::right ] subscript::right comparison_operator::right : block::left return_statement::left return False return_statement::right block::right if_statement::right block::right for_statement::right return_statement::left return True return_statement::right block::right function_definition::right module::right",0,0
+186,"from typing import List
+
+
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            difference = abs(numbers[i] - numbers[j])
+            if difference < threshold:
+                return True
+    return False","module::left import_from_statement::left from dotted_name::left typing dotted_name::right import dotted_name::left List dotted_name::right import_from_statement::right function_definition::left def has_close_elements parameters::left ( typed_parameter::left numbers : type::left generic_type::left List type_parameter::left [ type::left float type::right ] type_parameter::right generic_type::right type::right typed_parameter::right , typed_parameter::left threshold : type::left float type::right typed_parameter::right ) parameters::right -> type::left bool type::right : block::left for_statement::left for i in call::left range argument_list::left ( call::left len argument_list::left ( numbers ) argument_list::right call::right ) argument_list::right call::right : block::left for_statement::left for j in call::left range argument_list::left ( binary_operator::left i + 1 binary_operator::right , call::left len argument_list::left ( numbers ) argument_list::right call::right ) argument_list::right call::right : block::left expression_statement::left assignment::left difference = call::left abs argument_list::left ( binary_operator::left subscript::left numbers [ i ] subscript::right - subscript::left numbers [ j ] subscript::right binary_operator::right ) argument_list::right call::right assignment::right expression_statement::right if_statement::left if comparison_operator::left difference < threshold comparison_operator::right : block::left return_statement::left return True return_statement::right block::right if_statement::right block::right for_statement::right block::right for_statement::right return_statement::left return False return_statement::right block::right function_definition::right module::right",0,0
+265,"def minSubArraySum(nums):
+    max_sum = 0
+    s = 0
+    for num in nums:
+        s += -num
+        if (s < 0):
+            s = 0
+        max_sum = max(s, max_sum)
+    if max_sum == 0:
+        max_sum = max(-i for i in nums)
+    min_sum = -max_sum
+    return min_sum
+","module::left function_definition::left def minSubArraySum parameters::left ( nums ) parameters::right : block::left expression_statement::left assignment::left max_sum = 0 assignment::right expression_statement::right expression_statement::left assignment::left s = 0 assignment::right expression_statement::right for_statement::left for num in nums : block::left expression_statement::left augmented_assignment::left s += unary_operator::left - num unary_operator::right augmented_assignment::right expression_statement::right if_statement::left if parenthesized_expression::left ( comparison_operator::left s < 0 comparison_operator::right ) parenthesized_expression::right : block::left expression_statement::left assignment::left s = 0 assignment::right expression_statement::right block::right if_statement::right expression_statement::left assignment::left max_sum = call::left max argument_list::left ( s , max_sum ) argument_list::right call::right assignment::right expression_statement::right block::right for_statement::right if_statement::left if comparison_operator::left max_sum == 0 comparison_operator::right : block::left expression_statement::left assignment::left max_sum = call::left max generator_expression::left ( unary_operator::left - i unary_operator::right for_in_clause::left for i in nums for_in_clause::right ) generator_expression::right call::right assignment::right expression_statement::right block::right if_statement::right expression_statement::left assignment::left min_sum = unary_operator::left - max_sum unary_operator::right assignment::right expression_statement::right return_statement::left return min_sum return_statement::right block::right function_definition::right module::right",1,0

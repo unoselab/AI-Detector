@@ -1,34 +1,90 @@
+### **Environment Setup and Execution Guide**
+
+First, navigate to the target directory:
+
+```bash
 cd ~/project-workspace/ai_detector/src/code-analyzer-tree-sitter
 
-# 1) Fresh conda env on Python 3.10 (avoids build issues with 3.12+)
+```
+
+#### **1. Prepare the Environment**
+
+Create a fresh Conda environment using Python 3.10 to avoid build issues associated with Python 3.12+.
+
+```bash
 conda create -n ai-detector python=3.10 -y
 conda activate ai-detector
 
-# Make sure a C/C++ compiler is present for building the grammar .so
+```
+
+Ensure a C/C++ compiler is present for building the grammar `.so` files:
+
+```bash
 sudo apt-get install -y build-essential
 
-# 2) Install Python deps from your uploaded requirements.txt
-pip install -r /mnt/user-data/uploads/requirements.txt
-# (or wherever you put the file — copy it into this dir first if you prefer)
+```
 
-# 3) Clone the three grammars at tags compatible with tree-sitter 0.20.x
+#### **2. Install Dependencies**
+
+Install the Python dependencies from the provided `requirements.txt`. *(Note: Adjust the path if you copy the file directly into your current directory).*
+
+```bash
+pip install -r /mnt/user-data/uploads/requirements.txt
+
+```
+
+#### **3. Clone Tree-Sitter Grammars**
+
+Clone the grammars at tags that are strictly compatible with `tree-sitter` 0.20.x:
+
+```bash
 git clone --depth 1 --branch v0.20.4 https://github.com/tree-sitter/tree-sitter-python.git
 git clone --depth 1 --branch v0.20.2 https://github.com/tree-sitter/tree-sitter-java.git
 git clone --depth 1 --branch v0.20.3 https://github.com/tree-sitter/tree-sitter-cpp.git
 
-# 4) Build build/my-languages.so
-python tree-sitter-test.py
-# expected: prints "Root node type: module" and the function_definition child
+```
 
-# 5) Stage input CSVs in data_temp1/
+#### **4. Build the Language Library**
+
+Build the `build/my-languages.so` shared object by running the test script.
+
+```bash
+python tree-sitter-test.py
+
+```
+
+> **Expected Output:** It should print `Root node type: module` and display the `function_definition` child.
+
+#### 5. Stage Input Data
+
+`ast-generator.py` reads from `data_temp1/` relative to its own directory.
+The replication dataset CSVs are checked into the ASTNN classification folders;
+copy them in.
+
+```bash
+cd src/code-analyzer-tree-sitter
 mkdir -p data_temp1
 cp ../astnn/classification/python/data/*.csv data_temp1/ 2>/dev/null
 cp ../astnn/classification/java/data/*.csv   data_temp1/ 2>/dev/null
-# No C++ CSVs exist in the project tree; that's fine — only present files run.
+# (No C++ CSVs are checked into this repo. If you add some, they should
+#  follow the `<dataset>_<llm>_cpp_merged.csv` naming convention so the
+#  language inference in ast-generator.py picks them up.)
+```
 
-# 6) Run
+The expected columns are `idx, code, label` where `label` is the string
+`'human'` or `'lm'` (= language model = AI-generated).
+
+
+> **Note:** There are no C++ CSVs in the project tree currently. That is expected; the script will cleanly process whatever files are present.
+
+#### **6. Generate AST Sequences**
+
+Finally, execute the generator script to parse the files:
+
+```bash
 python ast-generator.py
 
+```
 
 ---
 
