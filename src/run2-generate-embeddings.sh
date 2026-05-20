@@ -68,8 +68,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 
 # The AST CSVs produced by run1-ast-generator.sh live under
-# src/code-analyzer-tree-sitter/<...>. Express the absolute paths so this
-# script doesn't need to be run from a specific cwd.
 AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_main}"
 AST_ABLATION_ROOT="${AST_ABLATION_ROOT:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_ablation_study_code_embedding}"
 

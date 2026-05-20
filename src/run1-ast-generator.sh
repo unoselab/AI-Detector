@@ -88,7 +88,7 @@ INPUT_DIR="${INPUT_DIR:-data_codesearchnet/validsyntax}"     # CodeSearchNet cor
 # downstream scripts (generate_embeddings.py, code-feature-extractor.py)
 # can find the data without further configuration.
 # OUT_BASELINE="${OUT_BASELINE:-data_main}"              # Original before additional datasets.
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet}" # CodeSearchNet corpus.
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/ast}" # CodeSearchNet corpus.
 
 OUT_UNIFORM_VARS="${OUT_UNIFORM_VARS:-data_ablation_study_code_embedding/uniform_variables_name}"
 OUT_UNIFORM_METHODS="${OUT_UNIFORM_METHODS:-data_ablation_study_code_embedding/uniform_methods_name}"
