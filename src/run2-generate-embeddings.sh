@@ -81,6 +81,22 @@ BATCH_SIZE="${BATCH_SIZE:-32}"
 PYTHON="${PYTHON:-python}"
 
 # -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+TS="$(date +'%Y%m%d_%H%M%S')"
+LOG_DIR="${LOG_DIR:-${SCRIPT_DIR}/logs}"
+LOG_FILE="${LOG_FILE:-${LOG_DIR}/run2-generate-embeddings_${TS}.log}"
+
+mkdir -p "${LOG_DIR}"
+
+# Log everything to both terminal and timestamped log file.
+exec > >(tee -a "${LOG_FILE}") 2>&1
+
+echo "Log file: ${LOG_FILE}"
+echo "Started : $(date -Is)"
+echo
+
+# -----------------------------------------------------------------------------
 # Mode selection
 # -----------------------------------------------------------------------------
 ALL_MODES=(baseline uniform_variables_name uniform_methods_name no_comments)
@@ -189,3 +205,9 @@ for mode in "${MODES[@]}"; do
   printf "   %-26s -> %3d CSV(s) in %s\n" "${mode}" "${count}" "${out_dir}"
 done
 echo "============================================================"
+
+
+echo
+echo "Finished: $(date -Is)"
+echo "Log file: ${LOG_FILE}"
+
