@@ -68,11 +68,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 
 # The AST CSVs produced by run1-ast-generator.sh live under
-AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_main}"
+# AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_main}" # Original path.
+AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_codesearchnet/ast}" # CodeSearchNet corpus.
 AST_ABLATION_ROOT="${AST_ABLATION_ROOT:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_ablation_study_code_embedding}"
 
 # Embedding output locations (relative to TARGET_DIR after the cd).
-OUT_BASELINE="${OUT_BASELINE:-data_main_with_embeddings}"
+# OUT_BASELINE="${OUT_BASELINE:-data_main_with_embeddings}"   # Original path.
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings}" # CodeSearchNet corpus.
 OUT_ABLATION_ROOT="${OUT_ABLATION_ROOT:-data_ablation_with_embeddings}"
 
 BATCH_SIZE="${BATCH_SIZE:-32}"

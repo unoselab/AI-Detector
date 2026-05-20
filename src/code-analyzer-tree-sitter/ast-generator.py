@@ -87,7 +87,12 @@ def process_csv_files(input_dir, output_dir, mode):
         print(f"Processing {csv_file}  [mode={mode}]")
 
         data = pd.read_csv(csv_file)
-        data['idx']  = data.index
+        # data['idx'] = data.index
+        if 'idx' not in data.columns:
+            data['idx'] = data.index
+        else:
+            data['idx'] = data['idx'].astype(str)
+            
         data = data.dropna(subset=['code']).copy()
         data['code'] = data['code'].astype(str)
 
