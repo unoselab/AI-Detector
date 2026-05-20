@@ -1,0 +1,804 @@
+idx,code,ast,actual label,pred
+264,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int vowelsCount(String s) {
+        String vowels = ""aeiouAEIOU"";
+        int n_vowels = 0;
+        for (char c : s.toCharArray()) {
+            if (vowels.indexOf(c) != -1) {
+                n_vowels += 1;
+            }
+        }
+        if (s.charAt(s.length() - 1) == 'y' || s.charAt(s.length() - 1) == 'Y') {
+            n_vowels += 1;
+        }
+        return n_vowels;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right vowelsCount formal_parameters::left ( formal_parameter::left String s formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left String variable_declarator::left vowels = ""aeiouAEIOU"" variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left n_vowels = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left char integral_type::right c : method_invocation::left s . toCharArray argument_list::left ( ) argument_list::right method_invocation::right ) block::left { if_statement::left if condition::left ( binary_expression::left method_invocation::left vowels . indexOf argument_list::left ( c ) argument_list::right method_invocation::right != unary_expression::left - 1 unary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left n_vowels += 1 assignment_expression::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right if_statement::left if condition::left ( binary_expression::left binary_expression::left method_invocation::left s . charAt argument_list::left ( binary_expression::left method_invocation::left s . length argument_list::left ( ) argument_list::right method_invocation::right - 1 binary_expression::right ) argument_list::right method_invocation::right == 'y' binary_expression::right || binary_expression::left method_invocation::left s . charAt argument_list::left ( binary_expression::left method_invocation::left s . length argument_list::left ( ) argument_list::right method_invocation::right - 1 binary_expression::right ) argument_list::right method_invocation::right == 'Y' binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left n_vowels += 1 assignment_expression::right ; expression_statement::right } block::right if_statement::right return_statement::left return n_vowels ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+164,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<String> allPrefixes(String string) {
+        List<String> result = new ArrayList<>();
+
+        for (int i = 1; i <= string.length(); i++) {
+            result.add(string.substring(0, i));
+        }
+        return result;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right allPrefixes formal_parameters::left ( formal_parameter::left String string formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right variable_declarator::left result = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 1 variable_declarator::right ; local_variable_declaration::right binary_expression::left i <= method_invocation::left string . length argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { expression_statement::left method_invocation::left result . add argument_list::left ( method_invocation::left string . substring argument_list::left ( 0 , i ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right ; expression_statement::right } block::right for_statement::right return_statement::left return result ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+224,"import java.util.*;
+
+class Solution {
+    /**
+    For a given list of input numbers, calculate Mean Absolute Deviation
+    around the mean of this dataset.
+    Mean Absolute Deviation is the average absolute difference between each
+    element and a centerpoint (mean in this case):
+    MAD = average | x - x_mean |
+    >>> meanAbsoluteDeviation(Arrays.asList(1.0, 2.0, 3.0, 4.0))
+    1.0
+     */
+    public double meanAbsoluteDeviation(List<Double> numbers) {
+        double sum = 0;
+        for (double number : numbers) {
+            sum += number;
+        }
+        double mean = sum / numbers.size();
+
+        double deviationSum = 0;
+        for (double number : numbers) {
+            deviationSum += Math.abs(number - mean);
+        }
+        return deviationSum / numbers.size();
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    For a given list of input numbers, calculate Mean Absolute Deviation
+    around the mean of this dataset.
+    Mean Absolute Deviation is the average absolute difference between each
+    element and a centerpoint (mean in this case):
+    MAD = average | x - x_mean |
+    >>> meanAbsoluteDeviation(Arrays.asList(1.0, 2.0, 3.0, 4.0))
+    1.0
+     */ method_declaration::left modifiers::left public modifiers::right floating_point_type::left double floating_point_type::right meanAbsoluteDeviation formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < Double > type_arguments::right generic_type::right numbers formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left sum = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( floating_point_type::left double floating_point_type::right number : numbers ) block::left { expression_statement::left assignment_expression::left sum += number assignment_expression::right ; expression_statement::right } block::right enhanced_for_statement::right local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left mean = binary_expression::left sum / method_invocation::left numbers . size argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left deviationSum = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( floating_point_type::left double floating_point_type::right number : numbers ) block::left { expression_statement::left assignment_expression::left deviationSum += method_invocation::left Math . abs argument_list::left ( binary_expression::left number - mean binary_expression::right ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right enhanced_for_statement::right return_statement::left return binary_expression::left deviationSum / method_invocation::left numbers . size argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+258,"import java.util.*;
+
+class Solution {
+    /**
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    Examples
+    splitWords(""Hello world!"") == [""Hello"", ""world!""]
+    splitWords(""Hello,world!"") == [""Hello"", ""world!""]
+    splitWords(""abcdef"") == 3
+     */
+    public List<String> splitWords(String txt) {
+        List<String> words = new ArrayList<>();
+
+        if (txt.contains("" "")) {
+            words = Arrays.asList(txt.split("" ""));
+        } else if (txt.contains("","")) {
+            words = Arrays.asList(txt.split("",""));
+        } else {
+            int count = 0;
+            for (char c : txt.toCharArray()) {
+                if (Character.isLowerCase(c) && c % 2 != 0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        return words;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    Examples
+    splitWords(""Hello world!"") == [""Hello"", ""world!""]
+    splitWords(""Hello,world!"") == [""Hello"", ""world!""]
+    splitWords(""abcdef"") == 3
+     */ method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right splitWords formal_parameters::left ( formal_parameter::left String txt formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right variable_declarator::left words = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right if_statement::left if condition::left ( method_invocation::left txt . contains argument_list::left ( "" "" ) argument_list::right method_invocation::right ) condition::right block::left { expression_statement::left assignment_expression::left words = method_invocation::left Arrays . asList argument_list::left ( method_invocation::left txt . split argument_list::left ( "" "" ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right else if_statement::left if condition::left ( method_invocation::left txt . contains argument_list::left ( "","" ) argument_list::right method_invocation::right ) condition::right block::left { expression_statement::left assignment_expression::left words = method_invocation::left Arrays . asList argument_list::left ( method_invocation::left txt . split argument_list::left ( "","" ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right else block::left { local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left count = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left char integral_type::right c : method_invocation::left txt . toCharArray argument_list::left ( ) argument_list::right method_invocation::right ) block::left { if_statement::left if condition::left ( binary_expression::left method_invocation::left Character . isLowerCase argument_list::left ( c ) argument_list::right method_invocation::right && binary_expression::left binary_expression::left c % 2 binary_expression::right != 0 binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left update_expression::left count ++ update_expression::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return count ; return_statement::right } block::right if_statement::right if_statement::right return_statement::left return words ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+122,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<String> wordStrings(String s) {
+        if (s.length() == 0) {
+            return List.of();
+        }
+        StringBuilder sb = new StringBuilder();
+
+        for (char letter : s.toCharArray()) {
+            if (letter == ',') {
+                sb.append(' ');
+            } else {
+                sb.append(letter);
+            }
+        }
+
+        return new ArrayList<>(Arrays.asList(sb.toString().split(""\s+"" )));
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right wordStrings formal_parameters::left ( formal_parameter::left String s formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( binary_expression::left method_invocation::left s . length argument_list::left ( ) argument_list::right method_invocation::right == 0 binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left List . of argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right if_statement::right local_variable_declaration::left StringBuilder variable_declarator::left sb = object_creation_expression::left new StringBuilder argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left char integral_type::right letter : method_invocation::left s . toCharArray argument_list::left ( ) argument_list::right method_invocation::right ) block::left { if_statement::left if condition::left ( binary_expression::left letter == ',' binary_expression::right ) condition::right block::left { expression_statement::left method_invocation::left sb . append argument_list::left ( ' ' ) argument_list::right method_invocation::right ; expression_statement::right } block::right else block::left { expression_statement::left method_invocation::left sb . append argument_list::left ( letter ) argument_list::right method_invocation::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( method_invocation::left Arrays . asList argument_list::left ( method_invocation::left method_invocation::left sb . toString argument_list::left ( ) argument_list::right method_invocation::right . split argument_list::left ( ""\s+"" ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right ) argument_list::right object_creation_expression::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+278,"public class Solution {
+    public List<Integer> eat(int number, int need, int remaining) {
+        List<Integer> result = new ArrayList<>();
+        int totalEaten = number + need;
+        int carrotsLeft = Math.max(0, remaining - need);
+        result.add(totalEaten);
+        result.add(carrotsLeft);
+        return result;
+    }
+}","program::left class_declaration::left modifiers::left public modifiers::right class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right eat formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right number formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right need formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right remaining formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right variable_declarator::left result = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left totalEaten = binary_expression::left number + need binary_expression::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left carrotsLeft = method_invocation::left Math . max argument_list::left ( 0 , binary_expression::left remaining - need binary_expression::right ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right expression_statement::left method_invocation::left result . add argument_list::left ( totalEaten ) argument_list::right method_invocation::right ; expression_statement::right expression_statement::left method_invocation::left result . add argument_list::left ( carrotsLeft ) argument_list::right method_invocation::right ; expression_statement::right return_statement::left return result ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+309,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int largestDivisor(int n) {
+        for (int i = n - 1; i > 0; i--) {
+            if (n % i == 0) {
+                return i;
+            }
+        }
+        return 1;
+    }
+}",program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right largestDivisor formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right n formal_parameter::right ) formal_parameters::right block::left { for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = binary_expression::left n - 1 binary_expression::right variable_declarator::right ; local_variable_declaration::right binary_expression::left i > 0 binary_expression::right ; update_expression::left i -- update_expression::right ) block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left n % i binary_expression::right == 0 binary_expression::right ) condition::right block::left { return_statement::left return i ; return_statement::right } block::right if_statement::right } block::right for_statement::right return_statement::left return 1 ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right,1,1
+312,"import java.util.*;
+
+class Solution {
+    public boolean belowThreshold(List<Integer> l, int t) {
+        for (int num : l) {
+            if (num >= t) {
+                return false;
+            }
+        }
+        return true;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right boolean belowThreshold formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right l formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right t formal_parameter::right ) formal_parameters::right block::left { enhanced_for_statement::left for ( integral_type::left int integral_type::right num : l ) block::left { if_statement::left if condition::left ( binary_expression::left num >= t binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return true ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+196,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int fibfib(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 0;
+        }
+        if (n == 2) {
+            return 1;
+        }
+        return fibfib(n - 1) + fibfib(n - 2) + fibfib(n - 3);
+    }
+}",program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right fibfib formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right n formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( binary_expression::left n == 0 binary_expression::right ) condition::right block::left { return_statement::left return 0 ; return_statement::right } block::right if_statement::right if_statement::left if condition::left ( binary_expression::left n == 1 binary_expression::right ) condition::right block::left { return_statement::left return 0 ; return_statement::right } block::right if_statement::right if_statement::left if condition::left ( binary_expression::left n == 2 binary_expression::right ) condition::right block::left { return_statement::left return 1 ; return_statement::right } block::right if_statement::right return_statement::left return binary_expression::left binary_expression::left method_invocation::left fibfib argument_list::left ( binary_expression::left n - 1 binary_expression::right ) argument_list::right method_invocation::right + method_invocation::left fibfib argument_list::left ( binary_expression::left n - 2 binary_expression::right ) argument_list::right method_invocation::right binary_expression::right + method_invocation::left fibfib argument_list::left ( binary_expression::left n - 3 binary_expression::right ) argument_list::right method_invocation::right binary_expression::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right,1,1
+56,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int canArrange(List<Integer> arr) {
+        int ind = -1, i = 1;
+        while (i < arr.size()) {
+            if (arr.get(i) < arr.get(i - 1)) {
+                ind = i;
+            }
+            i += 1;
+        }
+        return ind;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right canArrange formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right arr formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left ind = unary_expression::left - 1 unary_expression::right variable_declarator::right , variable_declarator::left i = 1 variable_declarator::right ; local_variable_declaration::right while_statement::left while condition::left ( binary_expression::left i < method_invocation::left arr . size argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right ) condition::right block::left { if_statement::left if condition::left ( binary_expression::left method_invocation::left arr . get argument_list::left ( i ) argument_list::right method_invocation::right < method_invocation::left arr . get argument_list::left ( binary_expression::left i - 1 binary_expression::right ) argument_list::right method_invocation::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left ind = i assignment_expression::right ; expression_statement::right } block::right if_statement::right expression_statement::left assignment_expression::left i += 1 assignment_expression::right ; expression_statement::right } block::right while_statement::right return_statement::left return ind ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+244,"import java.util.*;
+import java.util.stream.Collectors;
+
+class Solution {
+    public List<String> filterByPrefix(List<String> strings, String prefix) {
+        // Create a new list to store the filtered strings
+        List<String> filteredList = new ArrayList<>();
+        
+        // Iterate over each string in the input list
+        for (String str : strings) {
+            // Check if the string starts with the given prefix
+            if (str.startsWith(prefix)) {
+                // Add the string to the filtered list
+                filteredList.add(str);
+            }
+        }
+        
+        // Return the filtered list
+        return filteredList;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left scoped_identifier::left scoped_identifier::left java . util scoped_identifier::right . stream scoped_identifier::right . Collectors scoped_identifier::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right filterByPrefix formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right strings formal_parameter::right , formal_parameter::left String prefix formal_parameter::right ) formal_parameters::right block::left { // Create a new list to store the filtered strings local_variable_declaration::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right variable_declarator::left filteredList = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right // Iterate over each string in the input list enhanced_for_statement::left for ( String str : strings ) block::left { // Check if the string starts with the given prefix if_statement::left if condition::left ( method_invocation::left str . startsWith argument_list::left ( prefix ) argument_list::right method_invocation::right ) condition::right block::left { // Add the string to the filtered list expression_statement::left method_invocation::left filteredList . add argument_list::left ( str ) argument_list::right method_invocation::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right // Return the filtered list return_statement::left return filteredList ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+132,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+     * A simple program which should return the value of x if n is
+     * a prime number and should return the value of y otherwise.
+     *
+     * Examples:
+     * for xOrY(7, 34, 12) == 34
+     * for xOrY(15, 8, 5) == 5
+     */
+    public int xOrY(int n, int x, int y) {
+        if (isPrime(n)) {
+            return x;
+        } else {
+            return y;
+        }
+    }
+    
+    /**
+     * Helper method to check if a number is prime.
+     */
+    public boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+     * A simple program which should return the value of x if n is
+     * a prime number and should return the value of y otherwise.
+     *
+     * Examples:
+     * for xOrY(7, 34, 12) == 34
+     * for xOrY(15, 8, 5) == 5
+     */ method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right xOrY formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right n formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right x formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right y formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( method_invocation::left isPrime argument_list::left ( n ) argument_list::right method_invocation::right ) condition::right block::left { return_statement::left return x ; return_statement::right } block::right else block::left { return_statement::left return y ; return_statement::right } block::right if_statement::right } block::right method_declaration::right /**
+     * Helper method to check if a number is prime.
+     */ method_declaration::left modifiers::left public modifiers::right boolean isPrime formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right n formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( binary_expression::left n <= 1 binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 2 variable_declarator::right ; local_variable_declaration::right binary_expression::left i <= method_invocation::left Math . sqrt argument_list::left ( n ) argument_list::right method_invocation::right binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left n % i binary_expression::right == 0 binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right } block::right for_statement::right return_statement::left return true ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+289,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public double triangleArea(double a, double b, double c) {
+        if (a + b <= c || a + c <= b || b + c <= a) {
+            return -1;
+        }
+        double s = (a + b + c) / 2;
+        double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        area = (double) Math.round(area * 100) / 100;
+        return area;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right floating_point_type::left double floating_point_type::right triangleArea formal_parameters::left ( formal_parameter::left floating_point_type::left double floating_point_type::right a formal_parameter::right , formal_parameter::left floating_point_type::left double floating_point_type::right b formal_parameter::right , formal_parameter::left floating_point_type::left double floating_point_type::right c formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left binary_expression::left binary_expression::left a + b binary_expression::right <= c binary_expression::right || binary_expression::left binary_expression::left a + c binary_expression::right <= b binary_expression::right binary_expression::right || binary_expression::left binary_expression::left b + c binary_expression::right <= a binary_expression::right binary_expression::right ) condition::right block::left { return_statement::left return unary_expression::left - 1 unary_expression::right ; return_statement::right } block::right if_statement::right local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left s = binary_expression::left parenthesized_expression::left ( binary_expression::left binary_expression::left a + b binary_expression::right + c binary_expression::right ) parenthesized_expression::right / 2 binary_expression::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left area = method_invocation::left Math . sqrt argument_list::left ( binary_expression::left binary_expression::left binary_expression::left s * parenthesized_expression::left ( binary_expression::left s - a binary_expression::right ) parenthesized_expression::right binary_expression::right * parenthesized_expression::left ( binary_expression::left s - b binary_expression::right ) parenthesized_expression::right binary_expression::right * parenthesized_expression::left ( binary_expression::left s - c binary_expression::right ) parenthesized_expression::right binary_expression::right ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right expression_statement::left assignment_expression::left area = binary_expression::left cast_expression::left ( floating_point_type::left double floating_point_type::right ) method_invocation::left Math . round argument_list::left ( binary_expression::left area * 100 binary_expression::right ) argument_list::right method_invocation::right cast_expression::right / 100 binary_expression::right assignment_expression::right ; expression_statement::right return_statement::left return area ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+279,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean isNested(String string) {
+        List<Integer> opening_bracket_index = new ArrayList<>(), closing_bracket_index = new ArrayList<>();
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == '[') {
+                opening_bracket_index.add(i);
+            } else {
+                closing_bracket_index.add(i);
+            }
+        }
+        Collections.reverse(closing_bracket_index);
+        int i = 0, l = closing_bracket_index.size();
+        for (int idx : opening_bracket_index) {
+            if (i < l && idx < closing_bracket_index.get(i)) {
+                i += 1;
+            }
+        }
+        return i >= 2;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right boolean isNested formal_parameters::left ( formal_parameter::left String string formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right variable_declarator::left opening_bracket_index = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right , variable_declarator::left closing_bracket_index = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 0 variable_declarator::right ; local_variable_declaration::right binary_expression::left i < method_invocation::left string . length argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { if_statement::left if condition::left ( binary_expression::left method_invocation::left string . charAt argument_list::left ( i ) argument_list::right method_invocation::right == '[' binary_expression::right ) condition::right block::left { expression_statement::left method_invocation::left opening_bracket_index . add argument_list::left ( i ) argument_list::right method_invocation::right ; expression_statement::right } block::right else block::left { expression_statement::left method_invocation::left closing_bracket_index . add argument_list::left ( i ) argument_list::right method_invocation::right ; expression_statement::right } block::right if_statement::right } block::right for_statement::right expression_statement::left method_invocation::left Collections . reverse argument_list::left ( closing_bracket_index ) argument_list::right method_invocation::right ; expression_statement::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 0 variable_declarator::right , variable_declarator::left l = method_invocation::left closing_bracket_index . size argument_list::left ( ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left int integral_type::right idx : opening_bracket_index ) block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left i < l binary_expression::right && binary_expression::left idx < method_invocation::left closing_bracket_index . get argument_list::left ( i ) argument_list::right method_invocation::right binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left i += 1 assignment_expression::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return binary_expression::left i >= 2 binary_expression::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+104,"import java.util.*;
+
+class Solution {
+    /**
+    Concatenate list of strings into a single string
+    >>> concatenate(List.of())
+    """"
+    >>> concatenate(Arrays.asList(""a"", ""b"", ""c""))
+    ""abc""
+     */
+    public String concatenate(List<String> strings) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : strings) {
+            sb.append(str);
+        }
+        return sb.toString();
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    Concatenate list of strings into a single string
+    >>> concatenate(List.of())
+    """"
+    >>> concatenate(Arrays.asList(""a"", ""b"", ""c""))
+    ""abc""
+     */ method_declaration::left modifiers::left public modifiers::right String concatenate formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right strings formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left StringBuilder variable_declarator::left sb = object_creation_expression::left new StringBuilder argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( String str : strings ) block::left { expression_statement::left method_invocation::left sb . append argument_list::left ( str ) argument_list::right method_invocation::right ; expression_statement::right } block::right enhanced_for_statement::right return_statement::left return method_invocation::left sb . toString argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+229,"import java.util.*;
+
+class Solution {
+    /**
+    Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    >>> rescaleToUnit(Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0))
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    */
+    public List<Double> rescaleToUnit(List<Double> numbers) {
+        List<Double> rescaledNumbers = new ArrayList<>();
+        
+        double minValue = Collections.min(numbers);
+        double maxValue = Collections.max(numbers);
+        
+        for (double number : numbers) {
+            double rescaledValue = (number - minValue) / (maxValue - minValue);
+            rescaledNumbers.add(rescaledValue);
+        }
+        
+        return rescaledNumbers;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    >>> rescaleToUnit(Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0))
+    [0.0, 0.25, 0.5, 0.75, 1.0]
+    */ method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < Double > type_arguments::right generic_type::right rescaleToUnit formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < Double > type_arguments::right generic_type::right numbers formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < Double > type_arguments::right generic_type::right variable_declarator::left rescaledNumbers = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left minValue = method_invocation::left Collections . min argument_list::left ( numbers ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left maxValue = method_invocation::left Collections . max argument_list::left ( numbers ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( floating_point_type::left double floating_point_type::right number : numbers ) block::left { local_variable_declaration::left floating_point_type::left double floating_point_type::right variable_declarator::left rescaledValue = binary_expression::left parenthesized_expression::left ( binary_expression::left number - minValue binary_expression::right ) parenthesized_expression::right / parenthesized_expression::left ( binary_expression::left maxValue - minValue binary_expression::right ) parenthesized_expression::right binary_expression::right variable_declarator::right ; local_variable_declaration::right expression_statement::left method_invocation::left rescaledNumbers . add argument_list::left ( rescaledValue ) argument_list::right method_invocation::right ; expression_statement::right } block::right enhanced_for_statement::right return_statement::left return rescaledNumbers ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+116,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public String filenameCheck(String file_name) {
+        List<String> suf = Arrays.asList(""txt"", ""exe"", ""dll"");
+        String[] lst = file_name.split(""\\."" );
+        if (lst.length != 2 || !suf.contains(lst[1]) || lst[0].isEmpty() || !Character.isLetter(lst[0].charAt(0))) {
+            return ""No"";
+        }
+        int t = (int) lst[0].chars().map(x -> (char) x).filter(Character::isDigit).count();
+        if (t > 3) {
+            return ""No"";
+        }
+        return ""Yes"";
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right String filenameCheck formal_parameters::left ( formal_parameter::left String file_name formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right variable_declarator::left suf = method_invocation::left Arrays . asList argument_list::left ( ""txt"" , ""exe"" , ""dll"" ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left array_type::left String dimensions::left [ ] dimensions::right array_type::right variable_declarator::left lst = method_invocation::left file_name . split argument_list::left ( ""\\."" ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right if_statement::left if condition::left ( binary_expression::left binary_expression::left binary_expression::left binary_expression::left field_access::left lst . length field_access::right != 2 binary_expression::right || unary_expression::left ! method_invocation::left suf . contains argument_list::left ( array_access::left lst [ 1 ] array_access::right ) argument_list::right method_invocation::right unary_expression::right binary_expression::right || method_invocation::left array_access::left lst [ 0 ] array_access::right . isEmpty argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right || unary_expression::left ! method_invocation::left Character . isLetter argument_list::left ( method_invocation::left array_access::left lst [ 0 ] array_access::right . charAt argument_list::left ( 0 ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right unary_expression::right binary_expression::right ) condition::right block::left { return_statement::left return ""No"" ; return_statement::right } block::right if_statement::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left t = cast_expression::left ( integral_type::left int integral_type::right ) method_invocation::left method_invocation::left method_invocation::left method_invocation::left array_access::left lst [ 0 ] array_access::right . chars argument_list::left ( ) argument_list::right method_invocation::right . map argument_list::left ( lambda_expression::left x -> cast_expression::left ( integral_type::left char integral_type::right ) x cast_expression::right lambda_expression::right ) argument_list::right method_invocation::right . filter argument_list::left ( method_reference::left Character :: isDigit method_reference::right ) argument_list::right method_invocation::right . count argument_list::left ( ) argument_list::right method_invocation::right cast_expression::right variable_declarator::right ; local_variable_declaration::right if_statement::left if condition::left ( binary_expression::left t > 3 binary_expression::right ) condition::right block::left { return_statement::left return ""No"" ; return_statement::right } block::right if_statement::right return_statement::left return ""Yes"" ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+106,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<Integer> countUpTo(int n) {
+        List<Integer> primes = new ArrayList<>();
+        for (int i = 2; i < n; i++) {
+            boolean is_prime = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    is_prime = false;
+                    break;
+                }
+            }
+            if (is_prime) {
+                primes.add(i);
+            }
+        }
+        return primes;
+    }
+}",program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right countUpTo formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right n formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right variable_declarator::left primes = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 2 variable_declarator::right ; local_variable_declaration::right binary_expression::left i < n binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { local_variable_declaration::left boolean variable_declarator::left is_prime = true variable_declarator::right ; local_variable_declaration::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left j = 2 variable_declarator::right ; local_variable_declaration::right binary_expression::left j < i binary_expression::right ; update_expression::left j ++ update_expression::right ) block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left i % j binary_expression::right == 0 binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left is_prime = false assignment_expression::right ; expression_statement::right break_statement::left break ; break_statement::right } block::right if_statement::right } block::right for_statement::right if_statement::left if condition::left ( is_prime ) condition::right block::left { expression_statement::left method_invocation::left primes . add argument_list::left ( i ) argument_list::right method_invocation::right ; expression_statement::right } block::right if_statement::right } block::right for_statement::right return_statement::left return primes ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right,1,1
+5,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Write a function vowelsCount which takes a string representing
+    a word as input and returns the number of vowels in the string.
+    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a
+    vowel, but only when it is at the end of the given word.
+
+    Example:
+    >>> vowelsCount(""abcde"")
+    2
+    >>> vowelsCount(""ACEDY"")
+    3
+     */
+    public int vowelsCount(String s) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (Character.toLowerCase(c) == 'a' || Character.toLowerCase(c) == 'e' ||
+                    Character.toLowerCase(c) == 'i' || Character.toLowerCase(c) == 'o' ||
+                    (Character.toLowerCase(c) == 'u' && i == s.length() - 1)) {
+                count++;
+            }
+        }
+        return count;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    Write a function vowelsCount which takes a string representing
+    a word as input and returns the number of vowels in the string.
+    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a
+    vowel, but only when it is at the end of the given word.
+
+    Example:
+    >>> vowelsCount(""abcde"")
+    2
+    >>> vowelsCount(""ACEDY"")
+    3
+     */ method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right vowelsCount formal_parameters::left ( formal_parameter::left String s formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left count = 0 variable_declarator::right ; local_variable_declaration::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 0 variable_declarator::right ; local_variable_declaration::right binary_expression::left i < method_invocation::left s . length argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { local_variable_declaration::left integral_type::left char integral_type::right variable_declarator::left c = method_invocation::left s . charAt argument_list::left ( i ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right if_statement::left if condition::left ( binary_expression::left binary_expression::left binary_expression::left binary_expression::left binary_expression::left method_invocation::left Character . toLowerCase argument_list::left ( c ) argument_list::right method_invocation::right == 'a' binary_expression::right || binary_expression::left method_invocation::left Character . toLowerCase argument_list::left ( c ) argument_list::right method_invocation::right == 'e' binary_expression::right binary_expression::right || binary_expression::left method_invocation::left Character . toLowerCase argument_list::left ( c ) argument_list::right method_invocation::right == 'i' binary_expression::right binary_expression::right || binary_expression::left method_invocation::left Character . toLowerCase argument_list::left ( c ) argument_list::right method_invocation::right == 'o' binary_expression::right binary_expression::right || parenthesized_expression::left ( binary_expression::left binary_expression::left method_invocation::left Character . toLowerCase argument_list::left ( c ) argument_list::right method_invocation::right == 'u' binary_expression::right && binary_expression::left i == binary_expression::left method_invocation::left s . length argument_list::left ( ) argument_list::right method_invocation::right - 1 binary_expression::right binary_expression::right binary_expression::right ) parenthesized_expression::right binary_expression::right ) condition::right block::left { expression_statement::left update_expression::left count ++ update_expression::right ; expression_statement::right } block::right if_statement::right } block::right for_statement::right return_statement::left return count ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+81,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    You will be given a number in decimal form and your task is to convert it to
+    binary format. The function should return a string, with each character representing a binary
+    number. Each character in the string will be '0' or '1'.
+
+    There will be an extra couple of characters 'db' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+
+    Examples:
+    decimalToBinary(15)   // returns ""db1111db""
+    decimalToBinary(32)   // returns ""db100000db""
+     */
+    public String decimalToBinary(int decimal) {
+        StringBuilder binary = new StringBuilder();
+        binary.append(""db"");
+
+        // Convert decimal to binary
+        while (decimal > 0) {
+            int remainder = decimal % 2;
+            binary.insert(2, remainder);
+            decimal /= 2;
+        }
+
+        binary.append(""db"");
+        return binary.toString();
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    You will be given a number in decimal form and your task is to convert it to
+    binary format. The function should return a string, with each character representing a binary
+    number. Each character in the string will be '0' or '1'.
+
+    There will be an extra couple of characters 'db' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+
+    Examples:
+    decimalToBinary(15)   // returns ""db1111db""
+    decimalToBinary(32)   // returns ""db100000db""
+     */ method_declaration::left modifiers::left public modifiers::right String decimalToBinary formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right decimal formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left StringBuilder variable_declarator::left binary = object_creation_expression::left new StringBuilder argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right expression_statement::left method_invocation::left binary . append argument_list::left ( ""db"" ) argument_list::right method_invocation::right ; expression_statement::right // Convert decimal to binary while_statement::left while condition::left ( binary_expression::left decimal > 0 binary_expression::right ) condition::right block::left { local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left remainder = binary_expression::left decimal % 2 binary_expression::right variable_declarator::right ; local_variable_declaration::right expression_statement::left method_invocation::left binary . insert argument_list::left ( 2 , remainder ) argument_list::right method_invocation::right ; expression_statement::right expression_statement::left assignment_expression::left decimal /= 2 assignment_expression::right ; expression_statement::right } block::right while_statement::right expression_statement::left method_invocation::left binary . append argument_list::left ( ""db"" ) argument_list::right method_invocation::right ; expression_statement::right return_statement::left return method_invocation::left binary . toString argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,1
+153,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+     * You'll be given a string of words, and your task is to count the number
+     * of boredoms. A boredom is a sentence that starts with the word ""I"".
+     * Sentences are delimited by '.', '?' or '!'.
+     *
+     * For example:
+     * >>> isBored(""Hello world"")
+     * 0
+     * >>> isBored(""The sky is blue. The sun is shining. I love this weather"")
+     * 1
+     */
+    public int isBored(String S) {
+        // Split the string into sentences using delimiters '.', '?' and '!'
+        String[] sentences = S.split(""[.?!]"");
+        
+        int boredomCount = 0;
+        
+        // Iterate through each sentence
+        for (String sentence : sentences) {
+            // Remove leading and trailing whitespace
+            sentence = sentence.trim();
+            
+            // Check if the sentence starts with 'I'
+            if (sentence.startsWith(""I "")) {
+                boredomCount++;
+            }
+        }
+        
+        return boredomCount;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+     * You'll be given a string of words, and your task is to count the number
+     * of boredoms. A boredom is a sentence that starts with the word ""I"".
+     * Sentences are delimited by '.', '?' or '!'.
+     *
+     * For example:
+     * >>> isBored(""Hello world"")
+     * 0
+     * >>> isBored(""The sky is blue. The sun is shining. I love this weather"")
+     * 1
+     */ method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right isBored formal_parameters::left ( formal_parameter::left String S formal_parameter::right ) formal_parameters::right block::left { // Split the string into sentences using delimiters '.', '?' and '!' local_variable_declaration::left array_type::left String dimensions::left [ ] dimensions::right array_type::right variable_declarator::left sentences = method_invocation::left S . split argument_list::left ( ""[.?!]"" ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left boredomCount = 0 variable_declarator::right ; local_variable_declaration::right // Iterate through each sentence enhanced_for_statement::left for ( String sentence : sentences ) block::left { // Remove leading and trailing whitespace expression_statement::left assignment_expression::left sentence = method_invocation::left sentence . trim argument_list::left ( ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right // Check if the sentence starts with 'I' if_statement::left if condition::left ( method_invocation::left sentence . startsWith argument_list::left ( ""I "" ) argument_list::right method_invocation::right ) condition::right block::left { expression_statement::left update_expression::left boredomCount ++ update_expression::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return boredomCount ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+54,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<Integer> filterIntergers(List<Object> values) {
+        List<Integer> result = new ArrayList<>();
+        for (Object x : values) {
+            if (x instanceof Integer) {
+                result.add((Integer) x);
+            }
+        }
+        return result;
+    }
+}",program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right filterIntergers formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < Object > type_arguments::right generic_type::right values formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right variable_declarator::left result = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( Object x : values ) block::left { if_statement::left if condition::left ( instanceof_expression::left x instanceof Integer instanceof_expression::right ) condition::right block::left { expression_statement::left method_invocation::left result . add argument_list::left ( cast_expression::left ( Integer ) x cast_expression::right ) argument_list::right method_invocation::right ; expression_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return result ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right,1,1
+327,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean validDate(String date) {
+        try {
+            date = date.strip();
+            String[] dates = date.split(""-"" );
+            String m = dates[0];
+            while (!m.isEmpty() && m.charAt(0) == '0') {
+                m = m.substring(1);
+            }
+            String d = dates[1];
+            while (!d.isEmpty() && d.charAt(0) == '0') {
+                d = d.substring(1);
+            }
+            String y = dates[2];
+            while (!y.isEmpty() && y.charAt(0) == '0') {
+                y = y.substring(1);
+            }
+            int month = Integer.parseInt(m), day = Integer.parseInt(d), year = Integer.parseInt(y);
+            if (month < 1 || month > 12) {
+                return false;
+            }
+            if (Arrays.asList(1, 3, 5, 7, 8, 10, 12).contains(month) && (day < 1 || day > 31)) {
+                return false;
+            }
+            if (Arrays.asList(4, 6, 9, 11).contains(month) && (day < 1 || day > 30)) {
+                return false;
+            }
+            if (month == 2 && (day < 1 || day > 29)) {
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right boolean validDate formal_parameters::left ( formal_parameter::left String date formal_parameter::right ) formal_parameters::right block::left { try_statement::left try block::left { expression_statement::left assignment_expression::left date = method_invocation::left date . strip argument_list::left ( ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right local_variable_declaration::left array_type::left String dimensions::left [ ] dimensions::right array_type::right variable_declarator::left dates = method_invocation::left date . split argument_list::left ( ""-"" ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left String variable_declarator::left m = array_access::left dates [ 0 ] array_access::right variable_declarator::right ; local_variable_declaration::right while_statement::left while condition::left ( binary_expression::left unary_expression::left ! method_invocation::left m . isEmpty argument_list::left ( ) argument_list::right method_invocation::right unary_expression::right && binary_expression::left method_invocation::left m . charAt argument_list::left ( 0 ) argument_list::right method_invocation::right == '0' binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left m = method_invocation::left m . substring argument_list::left ( 1 ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right while_statement::right local_variable_declaration::left String variable_declarator::left d = array_access::left dates [ 1 ] array_access::right variable_declarator::right ; local_variable_declaration::right while_statement::left while condition::left ( binary_expression::left unary_expression::left ! method_invocation::left d . isEmpty argument_list::left ( ) argument_list::right method_invocation::right unary_expression::right && binary_expression::left method_invocation::left d . charAt argument_list::left ( 0 ) argument_list::right method_invocation::right == '0' binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left d = method_invocation::left d . substring argument_list::left ( 1 ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right while_statement::right local_variable_declaration::left String variable_declarator::left y = array_access::left dates [ 2 ] array_access::right variable_declarator::right ; local_variable_declaration::right while_statement::left while condition::left ( binary_expression::left unary_expression::left ! method_invocation::left y . isEmpty argument_list::left ( ) argument_list::right method_invocation::right unary_expression::right && binary_expression::left method_invocation::left y . charAt argument_list::left ( 0 ) argument_list::right method_invocation::right == '0' binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left assignment_expression::left y = method_invocation::left y . substring argument_list::left ( 1 ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right while_statement::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left month = method_invocation::left Integer . parseInt argument_list::left ( m ) argument_list::right method_invocation::right variable_declarator::right , variable_declarator::left day = method_invocation::left Integer . parseInt argument_list::left ( d ) argument_list::right method_invocation::right variable_declarator::right , variable_declarator::left year = method_invocation::left Integer . parseInt argument_list::left ( y ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right if_statement::left if condition::left ( binary_expression::left binary_expression::left month < 1 binary_expression::right || binary_expression::left month > 12 binary_expression::right binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right if_statement::left if condition::left ( binary_expression::left method_invocation::left method_invocation::left Arrays . asList argument_list::left ( 1 , 3 , 5 , 7 , 8 , 10 , 12 ) argument_list::right method_invocation::right . contains argument_list::left ( month ) argument_list::right method_invocation::right && parenthesized_expression::left ( binary_expression::left binary_expression::left day < 1 binary_expression::right || binary_expression::left day > 31 binary_expression::right binary_expression::right ) parenthesized_expression::right binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right if_statement::left if condition::left ( binary_expression::left method_invocation::left method_invocation::left Arrays . asList argument_list::left ( 4 , 6 , 9 , 11 ) argument_list::right method_invocation::right . contains argument_list::left ( month ) argument_list::right method_invocation::right && parenthesized_expression::left ( binary_expression::left binary_expression::left day < 1 binary_expression::right || binary_expression::left day > 30 binary_expression::right binary_expression::right ) parenthesized_expression::right binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right if_statement::left if condition::left ( binary_expression::left binary_expression::left month == 2 binary_expression::right && parenthesized_expression::left ( binary_expression::left binary_expression::left day < 1 binary_expression::right || binary_expression::left day > 29 binary_expression::right binary_expression::right ) parenthesized_expression::right binary_expression::right ) condition::right block::left { return_statement::left return false ; return_statement::right } block::right if_statement::right return_statement::left return true ; return_statement::right } block::right catch_clause::left catch ( catch_formal_parameter::left catch_type::left Exception catch_type::right e catch_formal_parameter::right ) block::left { return_statement::left return false ; return_statement::right } block::right catch_clause::right try_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+225,"import java.util.*;
+
+class Solution {
+    /**
+    returns encoded string by shifting every character by 5 in the alphabet.
+     */
+    public String encodeShift(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (char ch : s.toCharArray()) {
+            sb.append((char) ('a' + ((ch + 5 - 'a') % 26)));
+        }
+        return sb.toString();
+    }
+
+    /**
+    takes as input string encoded with encodeShift function. Returns decoded string.
+     */
+    public String decodeShift(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (char ch : s.toCharArray()) {
+            sb.append((char) ('a' + ((ch - 5 - 'a') % 26 + 26) % 26));
+        }
+        return sb.toString();
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    returns encoded string by shifting every character by 5 in the alphabet.
+     */ method_declaration::left modifiers::left public modifiers::right String encodeShift formal_parameters::left ( formal_parameter::left String s formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left StringBuilder variable_declarator::left sb = object_creation_expression::left new StringBuilder argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left char integral_type::right ch : method_invocation::left s . toCharArray argument_list::left ( ) argument_list::right method_invocation::right ) block::left { expression_statement::left method_invocation::left sb . append argument_list::left ( cast_expression::left ( integral_type::left char integral_type::right ) parenthesized_expression::left ( binary_expression::left 'a' + parenthesized_expression::left ( binary_expression::left parenthesized_expression::left ( binary_expression::left binary_expression::left ch + 5 binary_expression::right - 'a' binary_expression::right ) parenthesized_expression::right % 26 binary_expression::right ) parenthesized_expression::right binary_expression::right ) parenthesized_expression::right cast_expression::right ) argument_list::right method_invocation::right ; expression_statement::right } block::right enhanced_for_statement::right return_statement::left return method_invocation::left sb . toString argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right method_declaration::right /**
+    takes as input string encoded with encodeShift function. Returns decoded string.
+     */ method_declaration::left modifiers::left public modifiers::right String decodeShift formal_parameters::left ( formal_parameter::left String s formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left StringBuilder variable_declarator::left sb = object_creation_expression::left new StringBuilder argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left char integral_type::right ch : method_invocation::left s . toCharArray argument_list::left ( ) argument_list::right method_invocation::right ) block::left { expression_statement::left method_invocation::left sb . append argument_list::left ( cast_expression::left ( integral_type::left char integral_type::right ) parenthesized_expression::left ( binary_expression::left 'a' + binary_expression::left parenthesized_expression::left ( binary_expression::left binary_expression::left parenthesized_expression::left ( binary_expression::left binary_expression::left ch - 5 binary_expression::right - 'a' binary_expression::right ) parenthesized_expression::right % 26 binary_expression::right + 26 binary_expression::right ) parenthesized_expression::right % 26 binary_expression::right binary_expression::right ) parenthesized_expression::right cast_expression::right ) argument_list::right method_invocation::right ; expression_statement::right } block::right enhanced_for_statement::right return_statement::left return method_invocation::left sb . toString argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+228,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Given a string text, replace all spaces in it with underscores,
+    and if a string has more than 2 consecutive spaces,
+    then replace all consecutive spaces with -
+
+    fixSpaces(""Example"") == ""Example""
+    fixSpaces(""Example 1"") == ""Example_1""
+    fixSpaces("" Example 2"") == ""_Example_2""
+    fixSpaces("" Example   3"") == ""_Example-3""
+     */
+    public String fixSpaces(String text) {
+        text = text.replace("" "", ""_"");
+        if (text.contains(""   "")) {
+            text = text.replace(""   "", ""-"");
+        }
+        return text;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    Given a string text, replace all spaces in it with underscores,
+    and if a string has more than 2 consecutive spaces,
+    then replace all consecutive spaces with -
+
+    fixSpaces(""Example"") == ""Example""
+    fixSpaces(""Example 1"") == ""Example_1""
+    fixSpaces("" Example 2"") == ""_Example_2""
+    fixSpaces("" Example   3"") == ""_Example-3""
+     */ method_declaration::left modifiers::left public modifiers::right String fixSpaces formal_parameters::left ( formal_parameter::left String text formal_parameter::right ) formal_parameters::right block::left { expression_statement::left assignment_expression::left text = method_invocation::left text . replace argument_list::left ( "" "" , ""_"" ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right if_statement::left if condition::left ( method_invocation::left text . contains argument_list::left ( ""   "" ) argument_list::right method_invocation::right ) condition::right block::left { expression_statement::left assignment_expression::left text = method_invocation::left text . replace argument_list::left ( ""   "" , ""-"" ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right if_statement::right return_statement::left return text ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+236,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean cycpatternCheck(String a, String b) {
+        int l = b.length();
+        String pat = b + b;
+        for (int i = 0; i <= a.length() - l; i++) {
+            for (int j = 0; j <= l; j++) {
+                if (a.substring(i, i + l).equals(pat.substring(j, j + l))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right boolean cycpatternCheck formal_parameters::left ( formal_parameter::left String a formal_parameter::right , formal_parameter::left String b formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left l = method_invocation::left b . length argument_list::left ( ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left String variable_declarator::left pat = binary_expression::left b + b binary_expression::right variable_declarator::right ; local_variable_declaration::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 0 variable_declarator::right ; local_variable_declaration::right binary_expression::left i <= binary_expression::left method_invocation::left a . length argument_list::left ( ) argument_list::right method_invocation::right - l binary_expression::right binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left j = 0 variable_declarator::right ; local_variable_declaration::right binary_expression::left j <= l binary_expression::right ; update_expression::left j ++ update_expression::right ) block::left { if_statement::left if condition::left ( method_invocation::left method_invocation::left a . substring argument_list::left ( i , binary_expression::left i + l binary_expression::right ) argument_list::right method_invocation::right . equals argument_list::left ( method_invocation::left pat . substring argument_list::left ( j , binary_expression::left j + l binary_expression::right ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right ) condition::right block::left { return_statement::left return true ; return_statement::right } block::right if_statement::right } block::right for_statement::right } block::right for_statement::right return_statement::left return false ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+277,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int countUpper(String s) {
+        // Count variable to keep track of the number of uppercase vowels
+        int count = 0;
+        
+        // Iterate over the string characters at even indices
+        for (int i = 0; i < s.length(); i += 2) {
+            char c = s.charAt(i);
+            
+            // Check if the character is an uppercase vowel
+            if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                count++;
+            }
+        }
+        
+        // Return the count of uppercase vowels in even indices
+        return count;
+    }
+}",program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right integral_type::left int integral_type::right countUpper formal_parameters::left ( formal_parameter::left String s formal_parameter::right ) formal_parameters::right block::left { // Count variable to keep track of the number of uppercase vowels local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left count = 0 variable_declarator::right ; local_variable_declaration::right // Iterate over the string characters at even indices for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 0 variable_declarator::right ; local_variable_declaration::right binary_expression::left i < method_invocation::left s . length argument_list::left ( ) argument_list::right method_invocation::right binary_expression::right ; assignment_expression::left i += 2 assignment_expression::right ) block::left { local_variable_declaration::left integral_type::left char integral_type::right variable_declarator::left c = method_invocation::left s . charAt argument_list::left ( i ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right // Check if the character is an uppercase vowel if_statement::left if condition::left ( binary_expression::left binary_expression::left binary_expression::left binary_expression::left binary_expression::left c == 'A' binary_expression::right || binary_expression::left c == 'E' binary_expression::right binary_expression::right || binary_expression::left c == 'I' binary_expression::right binary_expression::right || binary_expression::left c == 'O' binary_expression::right binary_expression::right || binary_expression::left c == 'U' binary_expression::right binary_expression::right ) condition::right block::left { expression_statement::left update_expression::left count ++ update_expression::right ; expression_statement::right } block::right if_statement::right } block::right for_statement::right // Return the count of uppercase vowels in even indices return_statement::left return count ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right,0,0
+245,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+     * Write a function that returns true if the given number is the multiplication of 3 prime numbers
+     * and false otherwise.
+     * Knowing that (a) is less then 100.
+     * Example:
+     * isMultiplyPrime(30) == true
+     * 30 = 2 * 3 * 5
+     */
+    public boolean isMultiplyPrime(int a) {
+        List<Integer> primes = new ArrayList<>();
+        boolean[] isPrime = new boolean[100];
+        Arrays.fill(isPrime, true);
+
+        for (int i = 2; i < 100; i++) {
+            if (isPrime[i]) {
+                primes.add(i);
+                for (int j = i * i; j < 100; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        int count = 0;
+        for (int prime : primes) {
+            if (a % prime == 0) {
+                count++;
+                if (count >= 3) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+     * Write a function that returns true if the given number is the multiplication of 3 prime numbers
+     * and false otherwise.
+     * Knowing that (a) is less then 100.
+     * Example:
+     * isMultiplyPrime(30) == true
+     * 30 = 2 * 3 * 5
+     */ method_declaration::left modifiers::left public modifiers::right boolean isMultiplyPrime formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right a formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left generic_type::left List type_arguments::left < Integer > type_arguments::right generic_type::right variable_declarator::left primes = object_creation_expression::left new generic_type::left ArrayList type_arguments::left < > type_arguments::right generic_type::right argument_list::left ( ) argument_list::right object_creation_expression::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left array_type::left boolean dimensions::left [ ] dimensions::right array_type::right variable_declarator::left isPrime = array_creation_expression::left new boolean dimensions_expr::left [ 100 ] dimensions_expr::right array_creation_expression::right variable_declarator::right ; local_variable_declaration::right expression_statement::left method_invocation::left Arrays . fill argument_list::left ( isPrime , true ) argument_list::right method_invocation::right ; expression_statement::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left i = 2 variable_declarator::right ; local_variable_declaration::right binary_expression::left i < 100 binary_expression::right ; update_expression::left i ++ update_expression::right ) block::left { if_statement::left if condition::left ( array_access::left isPrime [ i ] array_access::right ) condition::right block::left { expression_statement::left method_invocation::left primes . add argument_list::left ( i ) argument_list::right method_invocation::right ; expression_statement::right for_statement::left for ( local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left j = binary_expression::left i * i binary_expression::right variable_declarator::right ; local_variable_declaration::right binary_expression::left j < 100 binary_expression::right ; assignment_expression::left j += i assignment_expression::right ) block::left { expression_statement::left assignment_expression::left array_access::left isPrime [ j ] array_access::right = false assignment_expression::right ; expression_statement::right } block::right for_statement::right } block::right if_statement::right } block::right for_statement::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left count = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( integral_type::left int integral_type::right prime : primes ) block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left a % prime binary_expression::right == 0 binary_expression::right ) condition::right block::left { expression_statement::left update_expression::left count ++ update_expression::right ; expression_statement::right if_statement::left if condition::left ( binary_expression::left count >= 3 binary_expression::right ) condition::right block::left { return_statement::left return true ; return_statement::right } block::right if_statement::right } block::right if_statement::right } block::right enhanced_for_statement::right return_statement::left return false ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+319,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    /**
+    Create a function that takes integers, floats, or strings representing
+    real numbers, and returns the larger variable in its given variable type.
+    Return None if the values are equal.
+    Note: If a real number is represented as a string, the floating point might be . or ,
+    compareOne(1, 2.5) -> Optional.of(2.5)
+    compareOne(1, ""2,3"") -> Optional.of(""2,3"")
+    compareOne(""5,1"", ""6"") -> Optional.of(""6"")
+    compareOne(""1"", 1) -> Optional.empty()
+     */
+    public Optional<Object> compareOne(Object a, Object b) {
+        if (a instanceof Integer && b instanceof Integer) {
+            if ((Integer) a > (Integer) b) {
+                return Optional.of(a);
+            } else if ((Integer) b > (Integer) a) {
+                return Optional.of(b);
+            }
+        } else if (a instanceof Float && b instanceof Float) {
+            if ((Float) a > (Float) b) {
+                return Optional.of(a);
+            } else if ((Float) b > (Float) a) {
+                return Optional.of(b);
+            }
+        } else if (a instanceof String && b instanceof String) {
+            try {
+                Float floatA = Float.parseFloat(((String) a).replace(',', '.'));
+                Float floatB = Float.parseFloat(((String) b).replace(',', '.'));
+                if (floatA > floatB) {
+                    return Optional.of(a);
+                } else if (floatB > floatA) {
+                    return Optional.of(b);
+                }
+            } catch (NumberFormatException e) {
+                return Optional.empty();
+            }
+        }
+        return Optional.empty();
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { /**
+    Create a function that takes integers, floats, or strings representing
+    real numbers, and returns the larger variable in its given variable type.
+    Return None if the values are equal.
+    Note: If a real number is represented as a string, the floating point might be . or ,
+    compareOne(1, 2.5) -> Optional.of(2.5)
+    compareOne(1, ""2,3"") -> Optional.of(""2,3"")
+    compareOne(""5,1"", ""6"") -> Optional.of(""6"")
+    compareOne(""1"", 1) -> Optional.empty()
+     */ method_declaration::left modifiers::left public modifiers::right generic_type::left Optional type_arguments::left < Object > type_arguments::right generic_type::right compareOne formal_parameters::left ( formal_parameter::left Object a formal_parameter::right , formal_parameter::left Object b formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( binary_expression::left instanceof_expression::left a instanceof Integer instanceof_expression::right && instanceof_expression::left b instanceof Integer instanceof_expression::right binary_expression::right ) condition::right block::left { if_statement::left if condition::left ( binary_expression::left cast_expression::left ( Integer ) a cast_expression::right > cast_expression::left ( Integer ) b cast_expression::right binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left Optional . of argument_list::left ( a ) argument_list::right method_invocation::right ; return_statement::right } block::right else if_statement::left if condition::left ( binary_expression::left cast_expression::left ( Integer ) b cast_expression::right > cast_expression::left ( Integer ) a cast_expression::right binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left Optional . of argument_list::left ( b ) argument_list::right method_invocation::right ; return_statement::right } block::right if_statement::right if_statement::right } block::right else if_statement::left if condition::left ( binary_expression::left instanceof_expression::left a instanceof Float instanceof_expression::right && instanceof_expression::left b instanceof Float instanceof_expression::right binary_expression::right ) condition::right block::left { if_statement::left if condition::left ( binary_expression::left cast_expression::left ( Float ) a cast_expression::right > cast_expression::left ( Float ) b cast_expression::right binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left Optional . of argument_list::left ( a ) argument_list::right method_invocation::right ; return_statement::right } block::right else if_statement::left if condition::left ( binary_expression::left cast_expression::left ( Float ) b cast_expression::right > cast_expression::left ( Float ) a cast_expression::right binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left Optional . of argument_list::left ( b ) argument_list::right method_invocation::right ; return_statement::right } block::right if_statement::right if_statement::right } block::right else if_statement::left if condition::left ( binary_expression::left instanceof_expression::left a instanceof String instanceof_expression::right && instanceof_expression::left b instanceof String instanceof_expression::right binary_expression::right ) condition::right block::left { try_statement::left try block::left { local_variable_declaration::left Float variable_declarator::left floatA = method_invocation::left Float . parseFloat argument_list::left ( method_invocation::left parenthesized_expression::left ( cast_expression::left ( String ) a cast_expression::right ) parenthesized_expression::right . replace argument_list::left ( ',' , '.' ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right local_variable_declaration::left Float variable_declarator::left floatB = method_invocation::left Float . parseFloat argument_list::left ( method_invocation::left parenthesized_expression::left ( cast_expression::left ( String ) b cast_expression::right ) parenthesized_expression::right . replace argument_list::left ( ',' , '.' ) argument_list::right method_invocation::right ) argument_list::right method_invocation::right variable_declarator::right ; local_variable_declaration::right if_statement::left if condition::left ( binary_expression::left floatA > floatB binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left Optional . of argument_list::left ( a ) argument_list::right method_invocation::right ; return_statement::right } block::right else if_statement::left if condition::left ( binary_expression::left floatB > floatA binary_expression::right ) condition::right block::left { return_statement::left return method_invocation::left Optional . of argument_list::left ( b ) argument_list::right method_invocation::right ; return_statement::right } block::right if_statement::right if_statement::right } block::right catch_clause::left catch ( catch_formal_parameter::left catch_type::left NumberFormatException catch_type::right e catch_formal_parameter::right ) block::left { return_statement::left return method_invocation::left Optional . empty argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right catch_clause::right try_statement::right } block::right if_statement::right if_statement::right if_statement::right return_statement::left return method_invocation::left Optional . empty argument_list::left ( ) argument_list::right method_invocation::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",0,0
+204,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean rightAngleTriangle(int a, int b, int c) {
+        return a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right boolean rightAngleTriangle formal_parameters::left ( formal_parameter::left integral_type::left int integral_type::right a formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right b formal_parameter::right , formal_parameter::left integral_type::left int integral_type::right c formal_parameter::right ) formal_parameters::right block::left { return_statement::left return binary_expression::left binary_expression::left binary_expression::left binary_expression::left a * a binary_expression::right == binary_expression::left binary_expression::left b * b binary_expression::right + binary_expression::left c * c binary_expression::right binary_expression::right binary_expression::right || binary_expression::left binary_expression::left b * b binary_expression::right == binary_expression::left binary_expression::left a * a binary_expression::right + binary_expression::left c * c binary_expression::right binary_expression::right binary_expression::right binary_expression::right || binary_expression::left binary_expression::left c * c binary_expression::right == binary_expression::left binary_expression::left a * a binary_expression::right + binary_expression::left b * b binary_expression::right binary_expression::right binary_expression::right binary_expression::right ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+92,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean anyInt(Object x, Object y, Object z) {
+        if (x instanceof Integer && y instanceof Integer && z instanceof Integer) {
+            return (int) x + (int) y == (int) z || (int) x + (int) z == (int) y || (int) y + (int) z == (int) x;
+        }
+        return false;
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right boolean anyInt formal_parameters::left ( formal_parameter::left Object x formal_parameter::right , formal_parameter::left Object y formal_parameter::right , formal_parameter::left Object z formal_parameter::right ) formal_parameters::right block::left { if_statement::left if condition::left ( binary_expression::left binary_expression::left instanceof_expression::left x instanceof Integer instanceof_expression::right && instanceof_expression::left y instanceof Integer instanceof_expression::right binary_expression::right && instanceof_expression::left z instanceof Integer instanceof_expression::right binary_expression::right ) condition::right block::left { return_statement::left return binary_expression::left binary_expression::left binary_expression::left binary_expression::left cast_expression::left ( integral_type::left int integral_type::right ) x cast_expression::right + cast_expression::left ( integral_type::left int integral_type::right ) y cast_expression::right binary_expression::right == cast_expression::left ( integral_type::left int integral_type::right ) z cast_expression::right binary_expression::right || binary_expression::left binary_expression::left cast_expression::left ( integral_type::left int integral_type::right ) x cast_expression::right + cast_expression::left ( integral_type::left int integral_type::right ) z cast_expression::right binary_expression::right == cast_expression::left ( integral_type::left int integral_type::right ) y cast_expression::right binary_expression::right binary_expression::right || binary_expression::left binary_expression::left cast_expression::left ( integral_type::left int integral_type::right ) y cast_expression::right + cast_expression::left ( integral_type::left int integral_type::right ) z cast_expression::right binary_expression::right == cast_expression::left ( integral_type::left int integral_type::right ) x cast_expression::right binary_expression::right binary_expression::right ; return_statement::right } block::right if_statement::right return_statement::left return false ; return_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1
+259,"import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<String> totalMatch(List<String> lst1, List<String> lst2) {
+        int l1 = 0;
+        for (String st : lst1) {
+            l1 += st.length();
+        }
+
+        int l2 = 0;
+        for (String st : lst2) {
+            l2 += st.length();
+        }
+
+        if (l1 <= l2) {
+            return lst1;
+        } else {
+            return lst2;
+        }
+    }
+}","program::left import_declaration::left import scoped_identifier::left java . util scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right import_declaration::left import scoped_identifier::left java . lang scoped_identifier::right . asterisk::left * asterisk::right ; import_declaration::right class_declaration::left class Solution class_body::left { method_declaration::left modifiers::left public modifiers::right generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right totalMatch formal_parameters::left ( formal_parameter::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right lst1 formal_parameter::right , formal_parameter::left generic_type::left List type_arguments::left < String > type_arguments::right generic_type::right lst2 formal_parameter::right ) formal_parameters::right block::left { local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left l1 = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( String st : lst1 ) block::left { expression_statement::left assignment_expression::left l1 += method_invocation::left st . length argument_list::left ( ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right enhanced_for_statement::right local_variable_declaration::left integral_type::left int integral_type::right variable_declarator::left l2 = 0 variable_declarator::right ; local_variable_declaration::right enhanced_for_statement::left for ( String st : lst2 ) block::left { expression_statement::left assignment_expression::left l2 += method_invocation::left st . length argument_list::left ( ) argument_list::right method_invocation::right assignment_expression::right ; expression_statement::right } block::right enhanced_for_statement::right if_statement::left if condition::left ( binary_expression::left l1 <= l2 binary_expression::right ) condition::right block::left { return_statement::left return lst1 ; return_statement::right } block::right else block::left { return_statement::left return lst2 ; return_statement::right } block::right if_statement::right } block::right method_declaration::right } class_body::right class_declaration::right program::right",1,1

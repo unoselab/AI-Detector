@@ -1,162 +1,202 @@
+"""
+test_embedding.py
+=================
+
+Evaluate tuned ML classifiers on CodeT5+ embeddings (RQ2-D test phase).
+
+Loads the pickle written by `hyperparameter_tuning.py`, refits each tuned
+estimator on the corresponding training split, predicts on the held-out
+test split, and reports six metrics from Section IV.D of Suh et al.
+(ICSE 2025): ACC, TPR, TNR, Human_F1, AI_F1, Avg_F1.
+
+What changed from the upstream original
+---------------------------------------
+* Fixed the LR/GB hyperparameter bridge bug at original lines 107-110:
+  the upstream instantiated `LogisticRegression()` and tried to set
+  GradientBoosting parameters on it via `set_params`, which raises.
+  The fix is to use the already-tuned estimator directly:
+      clf = tuned_models[key][0]; clf.fit(X_train, y_train)
+* Fixed the per-LLM aggregation: the upstream `for dataset in [...]` loop
+  did not filter `folder_name` by `dataset`, so metrics for "chatgpt" also
+  included gemini/chatgpt4 folds. Now folders are explicitly bucketed by
+  LLM substring.
+* Replaced empty path strings with argparse-driven options.
+* Replaced the unused `replace_label` helper -- label conversion now
+  happens during embedding generation, so test_embedding.py reads
+  ready-made integer labels.
+
+Input
+-----
+* --splits-dir         Directory of per-dataset split folders (from
+                       split_data.py). Each folder must contain train_.csv
+                       and test_.csv with the same column schema.
+* --models-pickle      Pickle file from hyperparameter_tuning.py.
+
+Output
+------
+* Per-(dataset, embedding type) prediction CSV in --predictions-dir
+  with columns [idx, code, ast, actual label, pred].
+* Stdout summary: per-LLM averages and per-embedding-type averages.
+"""
+
+import argparse
+import os
+import pickle
+import warnings
+from collections import defaultdict
+
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.model_selection import KFold, train_test_split
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
-from sklearn.metrics import roc_auc_score, roc_curve
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.ensemble import VotingClassifier, BaggingClassifier, GradientBoostingClassifier
-from sklearn.neural_network import MLPClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, cross_validate
-from sklearn.feature_selection import VarianceThreshold
-from scipy.stats import uniform
-import matplotlib.pyplot as plt
-import pickle
-from scipy import stats
-from tqdm import tqdm
-import os
-import warnings
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
 
 
-def calculate_metrics(label, pred):
-    acc = accuracy_score(label, pred)
-    pre = precision_score(label, pred)
-    rec = recall_score(label, pred)
-    f1 = f1_score(label, pred)
-    human_f1 = f1_score(label, pred, pos_label=1)
-    ai_f1 = f1_score(label, pred, pos_label=0)
-    tn, fp, fn, tp = confusion_matrix(label, pred).ravel()
-    # print(tn, fp, fn, tp)
-    fpr = fp / (fp + tn)
-    fnr = fn / (tp + fn)
-    tpr = tp / (tp+fn)
-    tnr = tn / (tn+fp)
+# -----------------------------------------------------------------------------
+# Constants
+# -----------------------------------------------------------------------------
+EMB_TYPES = ["ast_", "combined_", "code_"]
+LABEL_COL = "actual label"
 
-    return acc, tpr, tnr, f1, human_f1, ai_f1
-
-def replace_label(labels):
-    new_labels = []
-    for label in labels:
-        if label == 'lm':
-            new_labels.append(0)
-        elif label == 'human':
-            new_labels.append(1)
-    
-    return new_labels
-
-def generate_new_idx(df):
-    idx_list = []
-
-    for i, row in df.iterrows():
-        if row['actual label'] == 1:
-            idx_list.append(str(i)+'_human')
-        elif row['actual label'] == 0:
-            idx_list.append(str(i)+'_ai')
-
-    df['idx'] = idx_list
-    return df
-
-def get_hyperparameters(estimator):
-    hyperparameters = {}
-    params = estimator.get_params(deep=False)
-    for key, value in params.items():
-        hyperparameters[key] = value
-    return hyperparameters
+# Substrings identifying each LLM in dataset folder names. Order matters --
+# "chatgpt4" must be matched before "chatgpt_" to disambiguate.
+LLM_KEYS = ["chatgpt4", "chatgpt_", "gemini"]
 
 
+# -----------------------------------------------------------------------------
+# Metrics (per paper Section IV.D)
+# -----------------------------------------------------------------------------
+def calculate_metrics(y_true, y_pred):
+    acc      = accuracy_score(y_true, y_pred)
+    human_f1 = f1_score(y_true, y_pred, pos_label=1, zero_division=0)
+    ai_f1    = f1_score(y_true, y_pred, pos_label=0, zero_division=0)
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
+    tpr = tp / max(tp + fn, 1)
+    tnr = tn / max(tn + fp, 1)
+    return {
+        "acc":      acc,
+        "tpr":      tpr,
+        "tnr":      tnr,
+        "human_f1": human_f1,
+        "ai_f1":    ai_f1,
+        "avg_f1":   (human_f1 + ai_f1) / 2,
+    }
 
-split_data_path = ''
 
-emb_types = ['ast_', 'combined_', 'code_']
-model_type = 'lr'
-with open(f'', 'rb') as f:
-    tuned_models = pickle.load(f)
+def llm_bucket(folder_name):
+    """Return the LLM substring that matches this folder, or None."""
+    for k in LLM_KEYS:
+        if k in folder_name:
+            return k
+    return None
 
-print(f'Model: {model_type}')
 
-ast_f1_list, combined_f1_list, code_f1_list = [], [], []
-for dataset in ['chatgpt_', 'gemini', 'chatgpt4']:
-    auroc_list, acc_list, tpr_list, tnr_list, human_f1_list, ai_f1_list, f1_list = [], [], [], [], [], [], []
+# -----------------------------------------------------------------------------
+# CLI
+# -----------------------------------------------------------------------------
+def parse_args():
+    ap = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    ap.add_argument("--splits-dir", default="splits",
+                    help="Root of per-dataset split folders.")
+    ap.add_argument("--models-pickle", default="tuned_models.pkl",
+                    help="Pickle of tuned estimators from hyperparameter_tuning.py.")
+    ap.add_argument("--predictions-dir", default="predictions",
+                    help="Where to dump per-(dataset, emb) prediction CSVs.")
+    return ap.parse_args()
 
-    print(dataset)
-    for folder_name in os.listdir(split_data_path):
-        file_names =  os.listdir(split_data_path+folder_name)
-        train_file_name = [x for x in file_names if 'train' in x][0]
-        test_file_name = [x for x in file_names if 'test' in x][0]
 
-        train_df = pd.read_csv(split_data_path+folder_name+'/'+train_file_name)
-        test_df = pd.read_csv(split_data_path+folder_name+'/'+test_file_name)
+def main():
+    args = parse_args()
 
-        output_df = pd.DataFrame(columns=['idx', 'code', 'ast', 'actual label', 'pred'])
+    with open(args.models_pickle, "rb") as f:
+        tuned_models = pickle.load(f)
+    print(f"Loaded {len(tuned_models)} tuned estimator(s) from {args.models_pickle}\n")
 
-        for type in emb_types:
-            X_train = train_df.loc[:, train_df.columns.str.startswith(type)]
-            X_test = test_df.loc[:, test_df.columns.str.startswith(type)]
-            y_train = train_df['actual label']
-            y_test = test_df['actual label']
+    os.makedirs(args.predictions_dir, exist_ok=True)
 
-            # print(f'Train shape: {X_train.shape}, Test shape: {X_test.shape}')
+    folders = sorted(
+        d for d in os.listdir(args.splits_dir)
+        if os.path.isdir(os.path.join(args.splits_dir, d))
+    )
 
-            tuned_clf = tuned_models[folder_name+type][0]
-            clf = LogisticRegression()
-            all_params = tuned_clf.get_params(deep=False)
+    per_llm = {k: defaultdict(list) for k in LLM_KEYS}   # bucket -> metric -> [scores]
+    per_emb = {emb: [] for emb in EMB_TYPES}             # emb -> [avg_f1 scores]
 
-            clf.set_params(**all_params)
+    for folder in folders:
+        folder_path = os.path.join(args.splits_dir, folder)
+        files = os.listdir(folder_path)
+        train_file = next(f for f in files if "train" in f)
+        test_file  = next(f for f in files if "test"  in f)
+
+        train_df = pd.read_csv(os.path.join(folder_path, train_file))
+        test_df  = pd.read_csv(os.path.join(folder_path, test_file))
+        y_train  = train_df[LABEL_COL].to_numpy()
+        y_test   = test_df[LABEL_COL].to_numpy()
+        bucket   = llm_bucket(folder)
+
+        print(f"=== {folder} (train={len(train_df)}, test={len(test_df)}) ===")
+        for emb in EMB_TYPES:
+            cols = [c for c in train_df.columns if c.startswith(emb)]
+            X_train = train_df[cols].to_numpy()
+            X_test  = test_df[cols].to_numpy()
+
+            key = folder + emb
+            if key not in tuned_models:
+                print(f"  [WARN] no tuned model for {key}; skipping")
+                continue
+
+            # Use the tuned estimator directly and refit on the full train split.
+            clf  = tuned_models[key][0]
             clf.fit(X_train, y_train)
             pred = clf.predict(X_test)
-            acc, tpr, tnr, f1, human_f1, ai_f1 = calculate_metrics(y_test, pred)
-            avg_f1 = (human_f1+ai_f1)/2
+            m    = calculate_metrics(y_test, pred)
 
-            print(f'Dataset: {folder_name}, Type: {type}')
-            print(f'--> Accuracy: {round(acc, 4)} TPR: {round(tpr, 4)} TNR: {round(tnr, 4)} Human_F1: {round(human_f1, 4)} AI_F1: {round(ai_f1, 4)} Avg_F1: {round(avg_f1, 4)}')
+            print(f"  {emb:10s}  ACC={m['acc']:.4f}  TPR={m['tpr']:.4f}  TNR={m['tnr']:.4f}  "
+                  f"HF1={m['human_f1']:.4f}  AF1={m['ai_f1']:.4f}  AvgF1={m['avg_f1']:.4f}")
 
-            acc_list.append(acc)
-            tpr_list.append(tpr)
-            tnr_list.append(tnr)
-            human_f1_list.append(human_f1)
-            ai_f1_list.append(ai_f1)
-            f1_list.append(avg_f1)
+            per_emb[emb].append(m["avg_f1"])
+            if bucket is not None:
+                for k_, v_ in m.items():
+                    per_llm[bucket][k_].append(v_)
 
-            if type == 'ast_':
-                ast_f1_list.append(avg_f1)
-            elif type == 'combined_':
-                combined_f1_list.append(avg_f1)
-            elif type == 'code_':
-                code_f1_list.append(avg_f1)
+            # Persist predictions for inspection.
+            out_df = test_df[["idx", "code", "ast", LABEL_COL]].copy()
+            out_df["pred"] = pred
+            out_path = os.path.join(
+                args.predictions_dir, f"{folder}__{emb.rstrip('_')}.csv"
+            )
+            out_df.to_csv(out_path, index=False)
+        print()
 
-            output_df['idx'] = test_df['idx']
-            output_df['code'] = test_df['code']
-            output_df['ast'] = test_df['ast']
-            output_df['actual label'] = test_df['actual label']
-            output_df['pred'] = pred
+    # -----------------------------------------------------------------------------
+    # Aggregates
+    # -----------------------------------------------------------------------------
+    print("=" * 78)
+    print("Per-LLM averages (across datasets + embedding types in that LLM bucket)")
+    print("=" * 78)
+    for llm in LLM_KEYS:
+        metrics = per_llm[llm]
+        if not metrics:
+            print(f"  {llm:10s} : (no datasets matched)")
+            continue
+        line = f"  {llm:10s}"
+        for k_ in ("acc", "tpr", "tnr", "human_f1", "ai_f1", "avg_f1"):
+            line += f"  {k_}={np.mean(metrics[k_]):.4f}"
+        line += f"  (n={len(metrics['avg_f1'])})"
+        print(line)
 
-            output_df.to_csv(f"")
-
-
-    avg_acc = round(sum(acc_list)/len(acc_list), 4)
-    avg_tpr = round(sum(tpr_list)/len(tpr_list), 4)
-    avg_tnr = round(sum(tnr_list)/len(tnr_list), 4)
-    avg_human_f1 = round(sum(human_f1_list)/len(human_f1_list), 4)
-    avg_ai_f1 = round(sum(ai_f1_list)/len(ai_f1_list), 4)
-    avg_f1 = round(sum(f1_list)/len(f1_list), 4)
-
-    
     print()
-    print(f'=== AVERAGE SCORES :{dataset}===')
-    print()
-    print(f'--> Accuracy: {avg_acc} TPR: {avg_tpr} TNR: {avg_tnr} Human_F1: {avg_human_f1} AI_F1: {avg_ai_f1} F1: {avg_f1}')
-    print()
+    print("=" * 78)
+    print("Per-embedding-type averages (across all datasets)")
+    print("=" * 78)
+    for emb in EMB_TYPES:
+        scores = per_emb[emb]
+        if scores:
+            print(f"  {emb:10s}  Avg_F1 mean = {np.mean(scores):.4f}  (n={len(scores)})")
 
-ast_avg_f1 = round(sum(ast_f1_list)/len(ast_f1_list), 4)
-combined_avg_f1 = round(sum(combined_f1_list)/len(combined_f1_list), 4)
-code_avg_f1 = round(sum(code_f1_list)/len(code_f1_list), 4)
-print(f'--> AST F1: {ast_avg_f1} Combined F1: {combined_avg_f1} Code F1: {code_avg_f1}')
-print(f'--> AST F1: {ast_avg_f1}')
 
-print()
+if __name__ == "__main__":
+    main()
