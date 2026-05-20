@@ -60,11 +60,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 
 # Embedding CSVs from run2-generate-embeddings.sh
-EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_main_with_embeddings}"
+# EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_main_with_embeddings}"   # Original path.
+EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings}" # CodeSearchNet corpus.
 EMB_ABLATION_ROOT="${EMB_ABLATION_ROOT:-data_ablation_with_embeddings}"
 
 # Split outputs
-OUT_BASELINE="${OUT_BASELINE:-splits}"
+# OUT_BASELINE="${OUT_BASELINE:-splits}"                  # Orginal path.
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits}" # CodeSearchNet corpus. 
 OUT_ABLATION_ROOT="${OUT_ABLATION_ROOT:-splits_ablation}"
 
 # Hyperparameters
@@ -74,6 +76,22 @@ DEV_FRAC="${DEV_FRAC:-0.10}"
 TEST_FRAC="${TEST_FRAC:-0.10}"
 
 PYTHON="${PYTHON:-python}"
+
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+TS="$(date +'%Y%m%d_%H%M%S')"
+LOG_DIR="${LOG_DIR:-${SCRIPT_DIR}/logs}"
+LOG_FILE="${LOG_FILE:-${LOG_DIR}/run3-split-data_${TS}.log}"
+
+mkdir -p "${LOG_DIR}"
+
+# Log everything to both terminal and timestamped log file.
+exec > >(tee -a "${LOG_FILE}") 2>&1
+
+echo "Log file: ${LOG_FILE}"
+echo "Started : $(date -Is)"
+echo
 
 # -----------------------------------------------------------------------------
 # Mode selection
@@ -175,3 +193,9 @@ for mode in "${MODES[@]}"; do
   printf "   %-26s -> %3d dataset folder(s) in %s\n" "${mode}" "${count}" "${out_dir}"
 done
 echo "============================================================"
+
+echo
+echo "Finished: $(date -Is)"
+echo "Log file: ${LOG_FILE}"
+
+
