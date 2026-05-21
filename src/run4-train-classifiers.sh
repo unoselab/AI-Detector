@@ -78,6 +78,17 @@ SEED="${SEED:-42}"
 
 PYTHON="${PYTHON:-python}"
 
+# Optional LLM aggregation buckets for test_embedding.py.
+# Space-separated. If empty, test_embedding.py infers LLM names from folder names.
+LLM_KEYS="${LLM_KEYS:-starcoder2-7b}"   # Explicit LLM keys for starcoder2-7b
+# LLM_KEYS="chatgpt4 chatgpt_ gemini starcoder2-7b" # For the larger mixed dataset
+
+LLM_KEYS_ARG=()
+if [ -n "${LLM_KEYS}" ]; then
+  read -r -a _LLM_KEYS_ARRAY <<< "${LLM_KEYS}"
+  LLM_KEYS_ARG=(--llm-keys "${_LLM_KEYS_ARRAY[@]}")
+fi
+
 # Logging
 TS="$(date +'%Y%m%d_%H%M%S')"
 RUN_TAG="${RUN_TAG:-${EXPERIMENT_TAG}_${MODEL}_${TS}}"
@@ -176,6 +187,7 @@ echo "   model      : ${MODEL}"
 echo "   n_iter     : ${N_ITER}"
 echo "   cv         : ${CV}"
 echo "   seed       : ${SEED}"
+echo "   llm keys   : ${LLM_KEYS:-auto}"
 echo "   skip_tune  : ${SKIP_TUNE:-0}"
 echo "   skip_test  : ${SKIP_TEST:-0}"
 echo "   modes      : ${MODES[*]}"
@@ -217,7 +229,8 @@ for mode in "${MODES[@]}"; do
     "${PYTHON}" test_embedding.py \
       --splits-dir       "${splits_dir}" \
       --models-pickle    "${pickle}" \
-      --predictions-dir  "${predictions}"
+      --predictions-dir  "${predictions}" \
+      "${LLM_KEYS_ARG[@]}"
   else
     echo "[stage 2/2] testing skipped (SKIP_TEST=1)"
   fi

@@ -42,6 +42,7 @@ Output
 import argparse
 import os
 import pickle
+import re
 import warnings
 from collections import defaultdict
 
@@ -58,9 +59,11 @@ warnings.filterwarnings("ignore")
 EMB_TYPES = ["ast_", "combined_", "code_"]
 LABEL_COL = "actual label"
 
-# Substrings identifying each LLM in dataset folder names. Order matters --
-# "chatgpt4" must be matched before "chatgpt_" to disambiguate.
-LLM_KEYS = ["chatgpt4", "chatgpt_", "gemini"]
+# Language tokens used to infer the LLM name from folder names such as:
+#   mbpp_chatgpt_python_merged
+#   humaneval_chatgpt4_java_merged
+#   codesearchnet_starcoder2-7b_python_merged
+LANGUAGE_TOKENS = {"python", "java", "cpp", "c++"}
 
 
 # -----------------------------------------------------------------------------
@@ -83,12 +86,36 @@ def calculate_metrics(y_true, y_pred):
     }
 
 
-def llm_bucket(folder_name):
-    """Return the LLM substring that matches this folder, or None."""
-    for k in LLM_KEYS:
-        if k in folder_name:
-            return k
-    return None
+def infer_llm_from_folder(folder_name):
+    """
+    Infer the LLM token from dataset folder names.
+
+    Expected examples:
+      mbpp_chatgpt_python_merged                  -> chatgpt
+      humaneval_chatgpt4_java_merged              -> chatgpt4
+      codesearchnet_starcoder2-7b_python_merged   -> starcoder2-7b
+    """
+    parts = str(folder_name).lower().split("_")
+    for i, part in enumerate(parts):
+        if part in LANGUAGE_TOKENS and i > 0:
+            return parts[i - 1]
+    return "unknown"
+
+
+def llm_bucket(folder_name, llm_keys=None):
+    """
+    Return the LLM bucket for this folder.
+
+    If --llm-keys is provided, use ordered substring matching.
+    If --llm-keys is not provided, infer the LLM from the folder name.
+    """
+    if llm_keys:
+        for k in llm_keys:
+            if k in folder_name:
+                return k
+        return None
+
+    return infer_llm_from_folder(folder_name)
 
 
 # -----------------------------------------------------------------------------
@@ -105,6 +132,12 @@ def parse_args():
                     help="Pickle of tuned estimators from hyperparameter_tuning.py.")
     ap.add_argument("--predictions-dir", default="predictions",
                     help="Where to dump per-(dataset, emb) prediction CSVs.")
+    ap.add_argument(
+                    "--llm-keys", nargs="*", default=None, help=(
+                        "Optional ordered LLM bucket keys for aggregation, e.g. "
+                        "--llm-keys chatgpt4 chatgpt_ gemini starcoder2-7b. "
+                        "If omitted, LLM names are inferred from folder names."
+                    ))
     return ap.parse_args()
 
 
@@ -122,7 +155,15 @@ def main():
         if os.path.isdir(os.path.join(args.splits_dir, d))
     )
 
-    per_llm = {k: defaultdict(list) for k in LLM_KEYS}   # bucket -> metric -> [scores]
+    llm_keys = args.llm_keys if args.llm_keys else None
+
+    if llm_keys:
+        print(f"LLM buckets: {llm_keys}")
+    else:
+        print("LLM buckets: inferred from dataset folder names")
+
+    per_llm = defaultdict(lambda: defaultdict(list))      # bucket -> metric -> [scores]
+    seen_llms = []                                       # preserve reporting order
     per_emb = {emb: [] for emb in EMB_TYPES}             # emb -> [avg_f1 scores]
 
     for folder in folders:
@@ -135,7 +176,9 @@ def main():
         test_df  = pd.read_csv(os.path.join(folder_path, test_file))
         y_train  = train_df[LABEL_COL].to_numpy()
         y_test   = test_df[LABEL_COL].to_numpy()
-        bucket   = llm_bucket(folder)
+        bucket   = llm_bucket(folder, llm_keys)
+        if bucket is not None and bucket not in seen_llms:
+            seen_llms.append(bucket)
 
         print(f"=== {folder} (train={len(train_df)}, test={len(test_df)}) ===")
         for emb in EMB_TYPES:
@@ -177,11 +220,14 @@ def main():
     print("=" * 78)
     print("Per-LLM averages (across datasets + embedding types in that LLM bucket)")
     print("=" * 78)
-    for llm in LLM_KEYS:
-        metrics = per_llm[llm]
-        if not metrics:
+    report_llms = llm_keys if llm_keys else seen_llms
+
+    for llm in report_llms:
+        metrics = per_llm.get(llm)
+        if not metrics or "avg_f1" not in metrics:
             print(f"  {llm:10s} : (no datasets matched)")
             continue
+
         line = f"  {llm:10s}"
         for k_ in ("acc", "tpr", "tnr", "human_f1", "ai_f1", "avg_f1"):
             line += f"  {k_}={np.mean(metrics[k_]):.4f}"
