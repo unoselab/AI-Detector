@@ -239,6 +239,9 @@ def main():
     ap.add_argument("--max_num",     type=int,   default=200)
     ap.add_argument("--temperature", type=float, default=0.2)
     ap.add_argument("--max_length",  type=int,   default=512)
+    ap.add_argument("--output-root", default="../../outputs",
+                    help="Root directory for generation outputs "
+                         "(default: ../../outputs, relative to script location).")
     args = ap.parse_args()
     logger.info(f"args: {args}")
 
@@ -253,9 +256,13 @@ def main():
         top_p=0.95, do_sample=True,
     )
 
-    model_label = args.model_name.split("/")[-1]
-    save_dir = (f"output/{args.path.rstrip('/').split('/')[-1]}/"
-                f"{model_label}-{args.max_num}-tp{args.temperature}")
+    model_label  = args.model_name.split("/")[-1]
+    dataset_name = args.path.rstrip("/").split("/")[-1]
+    save_dir = os.path.join(
+        args.output_root,
+        dataset_name,
+        f"{model_label}-{args.max_num}-tp{args.temperature}",
+    )
     os.makedirs(save_dir, exist_ok=True)
 
     out_file = f"{save_dir}/outputs-{args.max_length}token.txt"

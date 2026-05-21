@@ -8,7 +8,7 @@
 #   * Uses instruction-tuned model (15B-Instruct) instead of base (7B).
 #   * Path C prompting: feeds the docstring as a natural-language instruction
 #     ("Write a Python function that ..."), not a code prefix.
-#   * Uses generate-instruct.py (chat template + bf16 + ### terminator)
+#   * Uses generate_starcoder15b.py (chat template + bf16 + ### terminator)
 #     instead of generate.py.
 #
 # Why
@@ -39,6 +39,7 @@ export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 # =====================================================================
 
 DATA_PATH="${DATA_PATH:-../data}"
+OUTPUT_ROOT="${OUTPUT_ROOT:-${HOME}/project-workspace/ai_detector/src/output}"
 DATASET_NAME="${DATASET_NAME:-CodeSearchNet}"
 GEN_MODEL="${GEN_MODEL:-starcoder2-15b-instruct-v0.1}"
 GEN_MODEL_HF="${GEN_MODEL_HF:-bigcode/starcoder2-15b-instruct-v0.1}"
@@ -63,6 +64,7 @@ echo "  Temperature:    ${GEN_TEMPERATURE}"
 echo "  Max new tokens: ${GEN_MAX_LENGTH}"
 echo "  CUDA device:    ${CUDA_VISIBLE_DEVICES}"
 echo "  Log file:       ${LOG_FILE}"
+echo "  Output root:    ${OUTPUT_ROOT}"
 echo "===================================================="
 echo ""
 
@@ -72,16 +74,17 @@ python code-generation/generate_starcoder15b.py \
     --max_num "${GEN_MAX_NUM}" \
     --temperature "${GEN_TEMPERATURE}" \
     --max_length "${GEN_MAX_LENGTH}" \
+    --output-root "${OUTPUT_ROOT}" \
     2>&1 | tee "${LOG_FILE}"
 
 echo ""
 echo "=== Pilot inspection checklist ==="
 echo " 1. Open the human-readable companion file:"
-OUTPUT_DIR="code-generation/output/${DATASET_NAME}/${GEN_MODEL}-${GEN_MAX_NUM}-tp${GEN_TEMPERATURE}"
+OUTPUT_DIR="${OUTPUT_ROOT}/${DATASET_NAME}/${GEN_MODEL}-${GEN_MAX_NUM}-tp${GEN_TEMPERATURE}"
 echo "      ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token_v2.txt"
 echo " 2. Verify in the first 10-20 samples:"
 echo "    - Output starts with 'def ' or 'class ' (not prose)"
 echo "    - No leftover triple-backtick python fences or 'Here is a function...' preamble"
 echo "    - Code is syntactically valid Python"
 echo " 3. If issues are widespread, tighten the prompt or post-processing"
-echo "    in generate-instruct.py before scaling to 3000."
+echo "    in generate_starcoder15b.py before scaling to 3000."
