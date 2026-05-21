@@ -1,31 +1,58 @@
-mkdir -p logs
+#!/usr/bin/env bash
+set -u
+set -o pipefail
+
+# Run all available ML model families for RQ2-D CodeSearchNet embeddings.
+# This script can be launched from anywhere.
+
+REPO_ROOT="~/project-workspace/ai_detector"
+cd "$REPO_ROOT"
 
 TS="$(date +'%Y%m%d_%H%M%S')"
-LOGDIR="logs/rq2d_full_run_${TS}"
+LOGDIR="src/logs/rq2d_codesearchnet_allmodels_${TS}"
 mkdir -p "$LOGDIR"
 
-echo "Log dir: $LOGDIR"
-
-# 1. Missing data check
-{
-  echo "============================================================"
-  echo "Missing data check"
-  echo "Started: $(date -Is)"
-  echo "Command:"
-  echo "find src/astnn/classification -type f | grep -E 'starcoder|codesearchnet|cpp|c\\+\\+|humaneval' | sort"
-  echo "============================================================"
-  find src/astnn/classification -type f | grep -E 'starcoder|codesearchnet|cpp|c\+\+|humaneval' | sort
-  echo
-  echo "Finished: $(date -Is)"
-} 2>&1 | tee "$LOGDIR/missing_data_check_${TS}.log"
-
-# 2. Train all model families
 SUMMARY="$LOGDIR/model_run_summary_${TS}.tsv"
 echo -e "model\tstatus\tstart_time\tend_time\tseconds\tlog_file" > "$SUMMARY"
 
-set -o pipefail
+echo "============================================================"
+echo " run4a-train-classifiers-allmodels.sh"
+echo "   repo root : $REPO_ROOT"
+echo "   log dir   : $LOGDIR"
+echo "   summary   : $SUMMARY"
+echo "============================================================"
 
-for m in lr svm mlp rf gb xgb knn dt; do
+# Base model list. xgb is added only if xgboost is installed.
+MODELS="lr svm mlp rf gb knn dt"
+
+if python - <<'PY'
+try:
+    import xgboost
+except ImportError:
+    raise SystemExit(1)
+PY
+then
+  MODELS="$MODELS xgb"
+else
+  echo "[INFO] xgboost not installed; skipping xgb"
+fi
+
+echo "Models: $MODELS"
+echo
+
+# Optional quick data check.
+{
+  echo "============================================================"
+  echo "Data check"
+  echo "Started: $(date -Is)"
+  echo "============================================================"
+  find src/ml_embeddings/data_codesearchnet/splits -maxdepth 2 -type f | sort
+  echo
+  echo "Finished: $(date -Is)"
+} 2>&1 | tee "$LOGDIR/data_check_${TS}.log"
+
+# Train/evaluate each model family.
+for m in $MODELS; do
   MODEL_TS="$(date +'%Y%m%d_%H%M%S')"
   MODEL_LOG="$LOGDIR/run4_${m}_${MODEL_TS}.log"
   START_ISO="$(date -Is)"
@@ -37,7 +64,7 @@ for m in lr svm mlp rf gb xgb knn dt; do
   echo "Log: $MODEL_LOG"
   echo "============================================================"
 
-  if MODEL="$m" N_ITER=30 bash src/run4-train-classifiers.sh 2>&1 | tee "$MODEL_LOG"; then
+  if MODEL="$m" N_ITER=30 CV=5 bash src/run4-train-classifiers.sh 2>&1 | tee "$MODEL_LOG"; then
     STATUS="OK"
   else
     STATUS="FAIL"
