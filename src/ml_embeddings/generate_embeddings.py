@@ -54,8 +54,7 @@ from transformers import AutoModel, AutoTokenizer
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
-# MODEL_ID  = "Salesforce/codet5p-110m-embedding" # Original model
-MODEL_ID = "Salesforce/codet5p-220m-embedding"    # Updated modl msong 2026-05-20
+MODEL_ID  = "Salesforce/codet5p-110m-embedding"
 EMBED_DIM = 256
 MAX_LEN   = 512                     # CodeT5+ tokenizer truncation length
 SEP       = " </s> "                # separator for "Code + AST" representation
