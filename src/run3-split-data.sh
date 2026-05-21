@@ -67,6 +67,7 @@ EMB_ABLATION_ROOT="${EMB_ABLATION_ROOT:-data_ablation_with_embeddings}"
 # Split outputs
 # OUT_BASELINE="${OUT_BASELINE:-splits}"                  # Orginal path.
 OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits}" # CodeSearchNet corpus. 
+GROUP_BY_PAIR_ID="${GROUP_BY_PAIR_ID:-1}"
 OUT_ABLATION_ROOT="${OUT_ABLATION_ROOT:-splits_ablation}"
 
 # Hyperparameters
@@ -131,6 +132,11 @@ output_for_mode() {
   esac
 }
 
+GROUP_ARG=()
+if [ "${GROUP_BY_PAIR_ID}" = "1" ]; then
+  GROUP_ARG=(--group-by-pair-id)
+fi
+
 # -----------------------------------------------------------------------------
 # Pre-flight
 # -----------------------------------------------------------------------------
@@ -163,6 +169,7 @@ echo " run3-split-data.sh"
 echo "   target dir : ${TARGET_DIR}"
 echo "   fractions  : train=${TRAIN_FRAC}  dev=${DEV_FRAC}  test=${TEST_FRAC}"
 echo "   seed       : ${SEED}"
+echo "   grouped    : ${GROUP_BY_PAIR_ID}"
 echo "   modes      : ${MODES[*]}"
 echo "============================================================"
 
@@ -181,7 +188,8 @@ for mode in "${MODES[@]}"; do
     --train-frac "${TRAIN_FRAC}" \
     --dev-frac   "${DEV_FRAC}" \
     --test-frac  "${TEST_FRAC}" \
-    --seed       "${SEED}"
+    --seed       "${SEED}" \
+    "${GROUP_ARG[@]}"
 done
 
 echo
