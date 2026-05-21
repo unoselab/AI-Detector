@@ -150,5 +150,7 @@ cython_debug/
 etc1
 src/code-analyzer-tree-sitter/tree-sitter-*/.github
 data*/
-**/data*/
+# **/data*/
+# log*/
+**/log*/
 .pkl

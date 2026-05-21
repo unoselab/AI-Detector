@@ -397,4 +397,26 @@ CodeSearchNet Python / StarCoder2-7B / Logistic Regression / AST Only:
 Avg F1 = 0.6750
 ```
 
+## Overall model ranking
 
+Using the script’s Per-LLM average Avg F1 across both CodeSearchNet datasets and all three embedding types:
+
+| Rank | Model |     Avg F1 |
+| ---: | ----- | ---------: |
+|    1 | LR    | **0.6542** |
+|    2 | SVM   |     0.6462 |
+|    3 | MLP   |     0.6383 |
+|    4 | RF    |     0.5961 |
+|    5 | GB    |     0.5793 |
+|    6 | KNN   |     0.5587 |
+|    7 | DT    |     0.5192 |
+
+```
+Best overall model:       Logistic Regression
+Best overall embedding:   AST Only
+Best paper-like result:   LR + AST Only, Avg F1 = 0.6863
+Best large-data result:   SVM + Combined, Avg F1 = 0.6753
+Practical large-data tie: LR + AST Only, Avg F1 = 0.6750
+```
+
+Across seven ML classifiers, Logistic Regression achieved the best overall average performance on the CodeSearchNet Python / StarCoder2-7B experiment. The best paper-like 400-pair result was obtained with AST-only embeddings and Logistic Regression, with Avg F1 = 0.6863. On the larger 2250-pair dataset, SVM with Combined embeddings achieved Avg F1 = 0.6753, nearly tied with Logistic Regression using AST-only embeddings at Avg F1 = 0.6750.

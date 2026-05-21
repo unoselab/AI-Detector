@@ -2,11 +2,13 @@
 set -u
 set -o pipefail
 
-# Run all available ML model families for RQ2-D CodeSearchNet embeddings.
-# This script can be launched from anywhere.
+# Run all available ML model families for CodeSearchNet RQ2-D.
+# This script lives in src/ and can be launched from anywhere.
 
-REPO_ROOT="~/project-workspace/ai_detector"
-cd "$REPO_ROOT"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+cd "$REPO_ROOT" || exit 1
 
 TS="$(date +'%Y%m%d_%H%M%S')"
 LOGDIR="src/logs/rq2d_codesearchnet_allmodels_${TS}"
@@ -17,12 +19,12 @@ echo -e "model\tstatus\tstart_time\tend_time\tseconds\tlog_file" > "$SUMMARY"
 
 echo "============================================================"
 echo " run4a-train-classifiers-allmodels.sh"
-echo "   repo root : $REPO_ROOT"
-echo "   log dir   : $LOGDIR"
-echo "   summary   : $SUMMARY"
+echo "   script dir : $SCRIPT_DIR"
+echo "   repo root  : $REPO_ROOT"
+echo "   log dir    : $LOGDIR"
+echo "   summary    : $SUMMARY"
 echo "============================================================"
 
-# Base model list. xgb is added only if xgboost is installed.
 MODELS="lr svm mlp rf gb knn dt"
 
 if python - <<'PY'
@@ -40,18 +42,17 @@ fi
 echo "Models: $MODELS"
 echo
 
-# Optional quick data check.
 {
   echo "============================================================"
   echo "Data check"
   echo "Started: $(date -Is)"
+  echo "Repo root: $(pwd)"
   echo "============================================================"
   find src/ml_embeddings/data_codesearchnet/splits -maxdepth 2 -type f | sort
   echo
   echo "Finished: $(date -Is)"
 } 2>&1 | tee "$LOGDIR/data_check_${TS}.log"
 
-# Train/evaluate each model family.
 for m in $MODELS; do
   MODEL_TS="$(date +'%Y%m%d_%H%M%S')"
   MODEL_LOG="$LOGDIR/run4_${m}_${MODEL_TS}.log"

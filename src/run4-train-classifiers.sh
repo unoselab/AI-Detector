@@ -71,9 +71,7 @@ MODEL_DIR="${MODEL_DIR:-data_codesearchnet/models}"
 PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions}"
 
 # Hyperparameters
-MODEL="${MODEL:-lr | knn | mlp | svm | rf | dt | gb | xgb}"
-
-
+MODEL="${MODEL:-lr}"
 
 N_ITER="${N_ITER:-30}"
 CV="${CV:-5}"
