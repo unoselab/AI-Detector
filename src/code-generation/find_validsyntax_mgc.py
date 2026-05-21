@@ -24,7 +24,7 @@ Generated AI-Detector CSV format:
 Example, from detect_code_gpt repo root:
   python code-generation/find_validsyntax_mgc.py \
     --input output/CodeSearchNet/starcoder2-7b-3000-tp0.2/outputs-512token.txt \
-    --ai-detector-data-temp code-analyzer-tree-sitter/data_temp1 \
+    --data-out-dir code-analyzer-tree-sitter/data_codesearchnet/validsyntax \
     --n-small 400 \
     --n-large 2300
 """
@@ -45,11 +45,13 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 import pandas as pd
 
 
-DEFAULT_INPUT = Path("output/CodeSearchNet/starcoder2-7b-3000-tp0.2/outputs-512token.txt")
-DEFAULT_AI_DETECTOR_DATA_TEMP = Path(
-    "/home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_temp1"
+# DEFAULT_INPUT = Path("output/CodeSearchNet/starcoder2-7b-3000-tp0.2/outputs-512token.txt") # msong 2026-05-21
+DEFAULT_INPUT = Path("output/CodeSearchNet/starcoder2-15b-instruct-v0.1-3000-tp0.2/outputs-512token.txt")
+DEFAULT_DATA_OUT_DIR = Path(
+    "code-analyzer-tree-sitter/data_codesearchnet/validsyntax"
 )
-DEFAULT_PREFIX = "codesearchnet_starcoder2-7b_python"
+# DEFAULT_PREFIX = "codesearchnet_starcoder2-7b_python"
+DEFAULT_PREFIX = "codesearchnet_starcoder2-15b-instruct-v0.1_python"
 
 
 @dataclass
@@ -288,10 +290,10 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT, help="Input JSONL/TXT file.")
     parser.add_argument(
-        "--ai-detector-data-temp",
+        "--data-out-dir",
         type=Path,
-        default=Path(__import__("os").environ.get("AI_DETECTOR_DATA_TEMP", str(DEFAULT_AI_DETECTOR_DATA_TEMP))),
-        help="AI-Detector data_temp1 directory for pipeline CSV outputs.",
+        default=Path(__import__("os").environ.get("DATA_OUT_DIR", str(DEFAULT_DATA_OUT_DIR))),
+        help="Output directory for AI-Detector valid-syntax pipeline CSVs.",
     )
     parser.add_argument("--prefix", default=DEFAULT_PREFIX, help="Output filename prefix.")
     parser.add_argument("--n-small", type=int, default=400, help="Option A pair count.")
@@ -363,8 +365,8 @@ def main() -> int:
     df_large = df.sample(n=args.n_large, random_state=args.seed, replace=replace).reset_index(drop=True)
     df_small = df_large.sample(n=args.n_small, random_state=args.seed, replace=False).reset_index(drop=True)
 
-    out_small = args.ai_detector_data_temp / f"{args.prefix}_merged.csv"
-    out_large = args.ai_detector_data_temp / f"{args.prefix}_merged_{args.n_large}.csv"
+    out_small = args.data_out_dir / f"{args.prefix}_merged.csv"
+    out_large = args.data_out_dir / f"{args.prefix}_merged_{args.n_large}.csv"
 
     print("\n" + "=" * 72)
     print("Writing AI-Detector pipeline CSVs")
