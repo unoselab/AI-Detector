@@ -80,7 +80,7 @@ PYTHON="${PYTHON:-python}"
 
 # Optional LLM aggregation buckets for test_embedding.py.
 # Space-separated. If empty, test_embedding.py infers LLM names from folder names.
-LLM_KEYS="${LLM_KEYS:-starcoder2-7b}"   # Explicit LLM keys for starcoder2-7b
+LLM_KEYS="${LLM_KEYS:-}"   # Explicit LLM keys for starcoder2-7b
 # LLM_KEYS="chatgpt4 chatgpt_ gemini starcoder2-7b" # For the larger mixed dataset
 
 LLM_KEYS_ARG=()
