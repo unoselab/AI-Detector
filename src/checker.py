@@ -2,7 +2,7 @@ import pandas as pd
 from transformers import AutoTokenizer
 tok = AutoTokenizer.from_pretrained("Salesforce/codet5p-110m-embedding", trust_remote_code=True)
 
-df = pd.read_csv('src/ml_embeddings/data_codesearchnet/embeddings/codesearchnet_starcoder2-7b_python_merged_2250.csv',
+df = pd.read_csv('ml_embeddings/data_codesearchnet/embeddings/codesearchnet_starcoder2-7b_python_merged_2250.csv',
                  usecols=['code'])
 df['n_tokens'] = df['code'].astype(str).apply(lambda s: len(tok.encode(s, add_special_tokens=False)))
 print(df['n_tokens'].describe(percentiles=[0.5, 0.75, 0.9, 0.95, 0.99]))
