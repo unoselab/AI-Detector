@@ -61,16 +61,37 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 
 # Inputs (split directories) and outputs (pickle + predictions) per mode.
-SPLITS_BASELINE="${SPLITS_BASELINE:-splits}"
+# SPLITS_BASELINE="${SPLITS_BASELINE:-splits}"                  # Original path.
+SPLITS_BASELINE="${SPLITS_BASELINE:-data_codesearchnet/splits}" # CodeSearchNet grouped splits.
 SPLITS_ABLATION_ROOT="${SPLITS_ABLATION_ROOT:-splits_ablation}"
+
+# Output organization under src/ml_embeddings/
+EXPERIMENT_TAG="${EXPERIMENT_TAG:-codesearchnet}"
+MODEL_DIR="${MODEL_DIR:-data_codesearchnet/models}"
+PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions}"
 
 # Hyperparameters
 MODEL="${MODEL:-lr}"
-N_ITER="${N_ITER:-6}"
+N_ITER="${N_ITER:-30}"
 CV="${CV:-5}"
 SEED="${SEED:-42}"
 
 PYTHON="${PYTHON:-python}"
+
+# Logging
+TS="$(date +'%Y%m%d_%H%M%S')"
+RUN_TAG="${RUN_TAG:-${EXPERIMENT_TAG}_${MODEL}_${TS}}"
+LOG_DIR="${LOG_DIR:-${SCRIPT_DIR}/logs}"
+LOG_FILE="${LOG_FILE:-${LOG_DIR}/run4-train-classifiers_${RUN_TAG}.log}"
+
+mkdir -p "${LOG_DIR}"
+
+# Log everything to both terminal and timestamped log file.
+exec > >(tee -a "${LOG_FILE}") 2>&1
+
+echo "Log file: ${LOG_FILE}"
+echo "Started : $(date -Is)"
+echo
 
 # -----------------------------------------------------------------------------
 # Mode selection
