@@ -124,15 +124,15 @@ splits_for_mode() {
 
 pickle_for_mode() {
   case "$1" in
-    baseline)               echo "tuned_models_${MODEL}.pkl" ;;
-    *)                      echo "tuned_models_ablation_${1}_${MODEL}.pkl" ;;
+    baseline)               echo "${MODEL_DIR}/tuned_models_${RUN_TAG}.pkl" ;;
+    *)                      echo "${MODEL_DIR}/tuned_models_ablation_${1}_${RUN_TAG}.pkl" ;;
   esac
 }
 
 predictions_for_mode() {
   case "$1" in
-    baseline)               echo "predictions" ;;
-    *)                      echo "predictions_ablation/${1}" ;;
+    baseline)               echo "${PREDICTIONS_ROOT}/${RUN_TAG}" ;;
+    *)                      echo "${PREDICTIONS_ROOT}/ablation_${1}_${RUN_TAG}" ;;
   esac
 }
 
@@ -145,6 +145,7 @@ if [ ! -d "${TARGET_DIR}" ]; then
 fi
 
 cd "${TARGET_DIR}"
+mkdir -p "${MODEL_DIR}" "${PREDICTIONS_ROOT}"
 
 for f in hyperparameter_tuning.py test_embedding.py; do
   if [ ! -f "${f}" ]; then
@@ -168,6 +169,9 @@ done
 echo "============================================================"
 echo " run4-train-classifiers.sh"
 echo "   target dir : ${TARGET_DIR}"
+echo "   experiment : ${EXPERIMENT_TAG}"
+echo "   run tag    : ${RUN_TAG}"
+echo "   log file   : ${LOG_FILE}"
 echo "   model      : ${MODEL}"
 echo "   n_iter     : ${N_ITER}"
 echo "   cv         : ${CV}"
@@ -230,3 +234,8 @@ for mode in "${MODES[@]}"; do
          "${mode}" "${pickle}" "${pred_count}" "${predictions}"
 done
 echo "============================================================"
+echo
+echo "Finished: $(date -Is)"
+echo "Log file: ${LOG_FILE}"
+
+
