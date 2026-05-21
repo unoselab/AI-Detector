@@ -375,7 +375,8 @@ Key differences:
 | Paper Setting                       | This Experiment                        |
 | ----------------------------------- | -------------------------------------- |
 | Starcoder2-Instruct 15B             | StarCoder2-7B base                     |
-| Paper generation setup              | Local generation with `max_length=512` |
+| Paper generation setup | LLM generation from dataset specifications/comments using ChatGPT, Gemini Pro, GPT-4, and Starcoder2-Instruct at temperature 0 and default temperature; exact token limit not specified in the paper text |
+| This experiment | Local StarCoder2-7B generation using `max_length=512`, followed by conservative syntax salvage and filtering |
 | Paper curated CodeSearchNet samples | Syntax-salvaged CodeSearchNet samples  |
 | Paper exact replication setting     | Extension experiment                   |
 | Original per-dataset split design   | Grouped pair split by sample id        |
