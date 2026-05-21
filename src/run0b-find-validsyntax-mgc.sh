@@ -7,9 +7,10 @@ cd "$SCRIPT_DIR"
 
 PYTHON="${PYTHON:-python}"
 
-MODEL_DIR="output/CodeSearchNet/starcoder2-7b-3000-tp0.2"
+# MODEL_DIR="output/CodeSearchNet/starcoder2-7b-3000-tp0.2"
+MODEL_DIR="src/output/CodeSearchNet/starcoder2-15b-instruct-v0.1-3000-tp0.2"
 INPUT_FILE="${MODEL_DIR}/outputs-512token.txt"
-OUT_DIR="code-analyzer-tree-sitter/data_temp1_codesearchnet/validsyntax/"
+OUT_DIR="src/code-analyzer-tree-sitter/data_codesearchnet/validsyntax"
 
 N_SMALL="${N_SMALL:-400}"
 N_LARGE="${N_LARGE:-2250}"
