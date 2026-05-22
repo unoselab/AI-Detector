@@ -81,14 +81,15 @@ TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter}"
 
 # Input directory holding the 9 merged CSVs from the paper's datasets
 # (HumanEval / MBPP x ChatGPT / ChatGPT-4 / Gemini x Python / Java).
+MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
 # INPUT_DIR="${INPUT_DIR:-data_temp1}"                 # Original before additional datasets.
-INPUT_DIR="${INPUT_DIR:-data_codesearchnet/validsyntax}"     # CodeSearchNet corpus.
+INPUT_DIR="${INPUT_DIR:-data_codesearchnet/${MODEL_NAME}/validsyntax}"     # CodeSearchNet corpus.
 
 # Output directories per mode. Defaults match ast-generator.py's defaults so
 # downstream scripts (generate_embeddings.py, code-feature-extractor.py)
 # can find the data without further configuration.
 # OUT_BASELINE="${OUT_BASELINE:-data_main}"              # Original before additional datasets.
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/ast}" # CodeSearchNet corpus.
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/${MODEL_NAME}/ast}" # CodeSearchNet corpus.
 
 OUT_UNIFORM_VARS="${OUT_UNIFORM_VARS:-data_ablation_study_code_embedding/uniform_variables_name}"
 OUT_UNIFORM_METHODS="${OUT_UNIFORM_METHODS:-data_ablation_study_code_embedding/uniform_methods_name}"
