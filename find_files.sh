@@ -7,18 +7,18 @@ dest="data_all"
 mkdir -p "$dest"
 
 files='
-run0a-generate-starcoder15b.sh
-run0a-generate.sh
-run0b-find-validsyntax-mgc.sh
-run1-ast-generator.sh
-run2-generate-embeddings.sh
-run3-split-data.sh
-run4-train-classifiers.sh
-run4a-train-classifiers-allmodels.sh
-run5-threshold-sweep.sh
-run5a-threshold-sweep-prec.sh
-run6-plot-threshold-curve.sh
-run6a-plot-threshold-curve-prec.sh
+src/run0a-generate-starcoder15b.sh
+src/run0a-generate.sh
+src/run0b-find-validsyntax-mgc.sh
+src/run1-ast-generator.sh
+src/run2-generate-embeddings.sh
+src/run3-split-data.sh
+src/run4-train-classifiers.sh
+src/run4a-train-classifiers-allmodels.sh
+src/run5-threshold-sweep.sh
+src/run5a-threshold-sweep-prec.sh
+src/run6-plot-threshold-curve.sh
+src/run6a-plot-threshold-curve-prec.sh
 src/code-generation/find_validsyntax_mgc.py
 src/code-generation/generate.py
 src/code-generation/generate_starcoder15b.py
