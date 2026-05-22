@@ -2,8 +2,8 @@
 # =============================================================================
 # run5-threshold-sweep.sh
 # -----------------------------------------------------------------------------
-# Decision-threshold sweep across all tuned classifiers for RQ2-D, using
-# dev-set threshold selection and test-set evaluation.
+# Decision-threshold sweep across tuned classifiers for RQ2-D, using dev-set
+# threshold selection and test-set evaluation.
 #
 # What this does
 #   For each tuned-models pickle produced by run4 / run4a, runs
@@ -16,11 +16,21 @@
 #   No retraining is performed; this is a pure post-hoc analysis on the
 #   existing classifiers.
 #
+# Classifier selection
+#   By default, sweeps ALL classifiers found under PICKLES_DIR (one latest
+#   pickle per classifier short-name). To restrict, pass classifier names
+#   as positional args:
+#       bash run5-threshold-sweep.sh                # all (default)
+#       bash run5-threshold-sweep.sh all            # explicit all
+#       bash run5-threshold-sweep.sh svm            # just SVM
+#       bash run5-threshold-sweep.sh svm mlp lr     # those three
+#   Unknown names cause an early exit before any work begins.
+#
 # Multiple pickles per classifier
 #   When the tuning stage has been re-run (e.g., LR three times, MLP twice),
 #   multiple timestamped pickles exist per classifier. This script picks
-#   the LATEST pickle per classifier short-name (lr/svm/mlp/...) so each
-#   classifier appears exactly once in the combined output.
+#   the LATEST pickle per classifier short-name so each classifier appears
+#   exactly once in the combined output.
 #
 # Inputs
 #   * Splits dir : data_codesearchnet/splits/<MODEL_NAME>/
@@ -29,11 +39,14 @@
 # Outputs (under data_codesearchnet/threshold_sweep/<MODEL_NAME>/)
 #   * <classifier>_summary.csv          one row per (dataset, embedding)
 #   * <classifier>_summary_detail.csv   full sweep curve for plotting
-#   * threshold_sweep_combined.csv      union across classifiers
+#   * threshold_sweep_combined.csv      union across the swept classifiers
 #
 # Usage
-#   bash src/run5-threshold-sweep.sh                              # latest 15B run
-#   MODEL_NAME=starcoder2-7b bash src/run5-threshold-sweep.sh     # 7B run
+#   bash src/run5-threshold-sweep.sh                              # all, 15B (default)
+#   bash src/run5-threshold-sweep.sh svm                          # just SVM
+#   bash src/run5-threshold-sweep.sh svm mlp lr                   # subset
+#   MODEL_NAME=starcoder2-7b bash src/run5-threshold-sweep.sh     # 7B base, all
+#   MODEL_NAME=starcoder2-7b bash src/run5-threshold-sweep.sh svm # 7B base, just SVM
 #
 # Env vars
 #   MODEL_NAME       - which model's pickles to sweep
@@ -57,6 +70,9 @@ OUT_DIR="${OUT_DIR:-data_codesearchnet/threshold_sweep/${MODEL_NAME}}"
 
 PYTHON="${PYTHON:-python}"
 
+# Recognized classifier short-names. Used to validate positional args.
+KNOWN_CLASSIFIERS=(lr knn mlp svm rf dt gb xgb)
+
 # Logging
 TS="$(date +'%Y%m%d_%H%M%S')"
 LOG_DIR="${LOG_DIR:-${SCRIPT_DIR}/logs}"
@@ -68,6 +84,41 @@ exec > >(tee -a "${LOG_FILE}") 2>&1
 echo "Log file: ${LOG_FILE}"
 echo "Started : $(date -Is)"
 echo
+
+# -----------------------------------------------------------------------------
+# Selection: which classifiers to sweep
+# -----------------------------------------------------------------------------
+# REQUESTED_CLASSIFIERS:
+#   empty array  -> "sweep all found" (set below, after discovery)
+#   non-empty    -> sweep exactly these (validated against KNOWN_CLASSIFIERS)
+REQUESTED_CLASSIFIERS=()
+
+if [ "$#" -gt 0 ]; then
+  case "$1" in
+    all)
+      # leave REQUESTED_CLASSIFIERS empty (treated as "all found")
+      ;;
+    *)
+      REQUESTED_CLASSIFIERS=("$@")
+      ;;
+  esac
+fi
+
+# Validate any explicit names against the known list.
+if [ "${#REQUESTED_CLASSIFIERS[@]}" -gt 0 ]; then
+  for clf in "${REQUESTED_CLASSIFIERS[@]}"; do
+    found=0
+    for known in "${KNOWN_CLASSIFIERS[@]}"; do
+      if [ "${clf}" = "${known}" ]; then found=1; break; fi
+    done
+    if [ "${found}" -eq 0 ]; then
+      echo "[ERROR] unknown classifier '${clf}'." >&2
+      echo "        Known classifiers: ${KNOWN_CLASSIFIERS[*]}" >&2
+      echo "        Or pass 'all' (or no args) to sweep every classifier found." >&2
+      exit 2
+    fi
+  done
+fi
 
 # -----------------------------------------------------------------------------
 # Pre-flight
@@ -101,11 +152,6 @@ fi
 # -----------------------------------------------------------------------------
 # Filename pattern:
 #   tuned_models_codesearchnet[_<MODEL_NAME>]_<clf>_<YYYYMMDD>_<HHMMSS>.pkl
-# Classifier short-name is the token between "_<MODEL_NAME>_" (or
-# "_codesearchnet_") and "_<YYYYMMDD>".
-#
-# Strategy: list pickles sorted by name (which puts the latest timestamp
-# last), extract the <clf> token, and keep the last-seen file per <clf>.
 
 declare -A LATEST_PICKLE_FOR_CLF
 
@@ -117,15 +163,42 @@ while IFS= read -r -d '' pkl; do
   stem_no_ts="$(echo "${stem}" | sed -E 's/_[0-9]{8}_[0-9]{6}$//')"
   # Classifier short-name is the last underscore-separated token.
   clf="${stem_no_ts##*_}"
-  # Because the find output is sorted, later assignments overwrite earlier
-  # ones -- so we end up with the lexicographically last (= latest
-  # timestamp) pickle per classifier.
+  # find output is sorted; later assignments overwrite earlier -> last
+  # (latest timestamp) wins per classifier.
   LATEST_PICKLE_FOR_CLF["${clf}"]="${pkl}"
 done < <(find "${PICKLES_DIR}" -maxdepth 1 -name 'tuned_models_*.pkl' -print0 | sort -z)
 
 if [ "${#LATEST_PICKLE_FOR_CLF[@]}" -eq 0 ]; then
   echo "[ERROR] no tuned_models_*.pkl found in ${PICKLES_DIR}" >&2
   exit 1
+fi
+
+# -----------------------------------------------------------------------------
+# Resolve the final list of classifiers to sweep
+# -----------------------------------------------------------------------------
+SWEEP_CLASSIFIERS=()
+
+if [ "${#REQUESTED_CLASSIFIERS[@]}" -eq 0 ]; then
+  # No explicit selection -> all that we found.
+  while IFS= read -r clf; do
+    SWEEP_CLASSIFIERS+=("${clf}")
+  done < <(printf '%s\n' "${!LATEST_PICKLE_FOR_CLF[@]}" | sort)
+else
+  # Explicit selection -> intersect with what was found, error if missing.
+  missing=()
+  for clf in "${REQUESTED_CLASSIFIERS[@]}"; do
+    if [ -n "${LATEST_PICKLE_FOR_CLF[${clf}]+_}" ]; then
+      SWEEP_CLASSIFIERS+=("${clf}")
+    else
+      missing+=("${clf}")
+    fi
+  done
+  if [ "${#missing[@]}" -gt 0 ]; then
+    echo "[ERROR] No pickle found for these classifier(s) in ${PICKLES_DIR}:" >&2
+    printf '          %s\n' "${missing[@]}" >&2
+    echo "        Available: ${!LATEST_PICKLE_FOR_CLF[*]}" >&2
+    exit 1
+  fi
 fi
 
 mkdir -p "${OUT_DIR}"
@@ -140,13 +213,15 @@ echo "   model name       : ${MODEL_NAME}"
 echo "   splits dir       : ${SPLITS_DIR}"
 echo "   pickles dir      : ${PICKLES_DIR}"
 echo "   out dir          : ${OUT_DIR}"
-echo "   classifiers      : ${#LATEST_PICKLE_FOR_CLF[@]}  (one latest pickle each)"
+echo "   pickles found    : ${#LATEST_PICKLE_FOR_CLF[@]}"
+echo "   classifiers req. : ${REQUESTED_CLASSIFIERS[*]:-<all found>}"
+echo "   classifiers run  : ${SWEEP_CLASSIFIERS[*]}  (${#SWEEP_CLASSIFIERS[@]})"
 echo "============================================================"
 echo
 
 # Print the picked pickles for transparency.
-echo "Selected pickles (one per classifier, latest timestamp):"
-for clf in $(printf '%s\n' "${!LATEST_PICKLE_FOR_CLF[@]}" | sort); do
+echo "Selected pickles (latest per classifier):"
+for clf in "${SWEEP_CLASSIFIERS[@]}"; do
   echo "  ${clf}  ->  $(basename "${LATEST_PICKLE_FOR_CLF[${clf}]}")"
 done
 echo
@@ -154,7 +229,7 @@ echo
 # -----------------------------------------------------------------------------
 # Per-classifier sweep
 # -----------------------------------------------------------------------------
-for clf in $(printf '%s\n' "${!LATEST_PICKLE_FOR_CLF[@]}" | sort); do
+for clf in "${SWEEP_CLASSIFIERS[@]}"; do
   pkl="${LATEST_PICKLE_FOR_CLF[${clf}]}"
   out_csv="${OUT_DIR}/${clf}_summary.csv"
 
@@ -172,8 +247,15 @@ for clf in $(printf '%s\n' "${!LATEST_PICKLE_FOR_CLF[@]}" | sort); do
 done
 
 # -----------------------------------------------------------------------------
-# Aggregate
+# Aggregate (only over the classifiers we just swept)
 # -----------------------------------------------------------------------------
+# Note: aggregate_threshold_sweeps.py reads ALL <clf>_summary.csv in OUT_DIR.
+# If you swept a subset but want the combined CSV to reflect ONLY this run,
+# move the older per-classifier summaries elsewhere or use a fresh OUT_DIR.
+# If you swept a subset on top of existing files, the combined output will
+# include stale entries from previous runs -- by design, so you can build it
+# up incrementally (e.g., sweep SVM today, MLP tomorrow, then aggregate).
+
 echo
 echo "============================================================"
 echo " Combining per-classifier summaries"
