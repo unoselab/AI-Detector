@@ -57,19 +57,19 @@ set -euo pipefail
 # -----------------------------------------------------------------------------
 # Path resolution
 # -----------------------------------------------------------------------------
-MODEL_NAME=starcoder2-15b-instruct-v0.1 
+MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 
 # Inputs (split directories) and outputs (pickle + predictions) per mode.
 # SPLITS_BASELINE="${SPLITS_BASELINE:-splits}"                  # Original path.
-SPLITS_BASELINE="${SPLITS_BASELINE:-data_codesearchnet/splits}" # CodeSearchNet grouped splits.
+SPLITS_BASELINE="${SPLITS_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}}" # CodeSearchNet grouped splits.
 SPLITS_ABLATION_ROOT="${SPLITS_ABLATION_ROOT:-splits_ablation}"
 
 # Output organization under src/ml_embeddings/
-EXPERIMENT_TAG="${EXPERIMENT_TAG:-codesearchnet}"
-MODEL_DIR="${MODEL_DIR:-data_codesearchnet/models}"
-PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions}"
+EXPERIMENT_TAG="${EXPERIMENT_TAG:-codesearchnet_${MODEL_NAME}}"
+MODEL_DIR="${MODEL_DIR:-data_codesearchnet/models/${MODEL_NAME}}"
+PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions/${MODEL_NAME}}"
 
 # Hyperparameters
 MODEL="${MODEL:-lr}"
@@ -182,6 +182,7 @@ done
 echo "============================================================"
 echo " run4-train-classifiers.sh"
 echo "   target dir : ${TARGET_DIR}"
+echo "   model name : ${MODEL_NAME}"
 echo "   experiment : ${EXPERIMENT_TAG}"
 echo "   run tag    : ${RUN_TAG}"
 echo "   log file   : ${LOG_FILE}"
