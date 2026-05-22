@@ -44,12 +44,21 @@ count=0
 printf '%s\n' "$files" | sed '/^$/d' | while read -r file; do
     if [ -f "$file" ]; then
         echo "$file"
-        cp --parents "$file" "$dest/"
+        cp "$file" "$dest/"
         count=$((count + 1))
     else
         echo "MISSING: $file" >&2
     fi
 done
 
-found_count=$(find "$dest" -type f | wc -l)
-echo "Total files copied: $found_count"
+echo "Total files copied: $(find "$dest" -maxdepth 1 -type f | wc -l)"
+
+timestamp=$(date '+%Y%m%d_%H%M%S')
+
+{
+    echo "dir structure of this project ~/project-workspace/ai_detector"
+    echo
+    tree .
+} > "data_all/dir_structure_${timestamp}.txt"
+
+echo "Saved directory structure to: data_all/dir_structure_${timestamp}.txt"
