@@ -15,7 +15,8 @@ PREFIX="${PREFIX:-codesearchnet_${MODEL_NAME}_python}"
 DATA_OUT_DIR="${DATA_OUT_DIR:-code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax}"
 
 N_SMALL="${N_SMALL:-400}"
-N_LARGE="${N_LARGE:-2250}"
+# N_LARGE="${N_LARGE:-2250}"
+N_LARGE="${N_LARGE:-2700}"
 SEED="${SEED:-42}"
 
 echo "============================================================"

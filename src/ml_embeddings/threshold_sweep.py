@@ -59,7 +59,7 @@ import warnings
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import f1_score
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 warnings.filterwarnings("ignore")
 
@@ -120,11 +120,33 @@ def sweep_threshold(scores, y_true, mode="proba"):
     return results
 
 
-def f1_at_threshold(scores, y_true, t):
+def metrics_at_threshold(scores, y_true, t):
     pred = (scores >= t).astype(int)
-    h_f1 = f1_score(y_true, pred, pos_label=1, zero_division=0)
-    a_f1 = f1_score(y_true, pred, pos_label=0, zero_division=0)
-    return 0.5 * (h_f1 + a_f1), h_f1, a_f1
+
+    human_precision = precision_score(y_true, pred, pos_label=1, zero_division=0)
+    human_recall = recall_score(y_true, pred, pos_label=1, zero_division=0)
+    human_f1 = f1_score(y_true, pred, pos_label=1, zero_division=0)
+
+    ai_precision = precision_score(y_true, pred, pos_label=0, zero_division=0)
+    ai_recall = recall_score(y_true, pred, pos_label=0, zero_division=0)
+    ai_f1 = f1_score(y_true, pred, pos_label=0, zero_division=0)
+
+    avg_f1 = 0.5 * (human_f1 + ai_f1)
+
+    return {
+        "avg_f1": avg_f1,
+        "human_precision": human_precision,
+        "human_recall": human_recall,
+        "human_f1": human_f1,
+        "ai_precision": ai_precision,
+        "ai_recall": ai_recall,
+        "ai_f1": ai_f1,
+    }
+
+
+def f1_at_threshold(scores, y_true, t):
+    m = metrics_at_threshold(scores, y_true, t)
+    return m["avg_f1"], m["human_f1"], m["ai_f1"]
 
 
 def default_threshold(mode):
@@ -206,12 +228,18 @@ def main():
 
             # Default-0.5 baseline (what test_embedding.py reports).
             t0 = default_threshold(mode)
-            f1_default, h0, a0 = f1_at_threshold(test_scores, y_test, t0)
+            m_default = metrics_at_threshold(test_scores, y_test, t0)
+            f1_default = m_default["avg_f1"]
+            h0 = m_default["human_f1"]
+            a0 = m_default["ai_f1"]
 
             # Sweep on dev, pick best, evaluate on test.
             sweep = sweep_threshold(dev_scores, y_dev, mode=mode)
             best_t, best_dev_f1, _, _ = max(sweep, key=lambda r: r[1])
-            f1_tuned, h1, a1 = f1_at_threshold(test_scores, y_test, best_t)
+            m_tuned = metrics_at_threshold(test_scores, y_test, best_t)
+            f1_tuned = m_tuned["avg_f1"]
+            h1 = m_tuned["human_f1"]
+            a1 = m_tuned["ai_f1"]
 
             improvement = f1_tuned - f1_default
 
@@ -228,39 +256,58 @@ def main():
                 "emb":              emb,
                 "score_mode":       mode,
                 "default_threshold": t0,
-                "default_avgf1":    round(f1_default, 4),
+                "default_human_precision": round(m_default["human_precision"], 4),
+                "default_human_recall": round(m_default["human_recall"], 4),
                 "default_humanf1":  round(h0, 4),
+                "default_ai_precision": round(m_default["ai_precision"], 4),
+                "default_ai_recall": round(m_default["ai_recall"], 4),
                 "default_aif1":     round(a0, 4),
-                "best_threshold":   round(best_t, 4),
-                "tuned_avgf1":      round(f1_tuned, 4),
+                "default_avgf1":    round(f1_default, 4),
+                "tuned_human_precision": round(m_tuned["human_precision"], 4),
+                "tuned_human_recall": round(m_tuned["human_recall"], 4),
                 "tuned_humanf1":    round(h1, 4),
+                "tuned_ai_precision": round(m_tuned["ai_precision"], 4),
+                "tuned_ai_recall": round(m_tuned["ai_recall"], 4),
                 "tuned_aif1":       round(a1, 4),
+                "tuned_avgf1":      round(f1_tuned, 4),
+                "best_threshold":   round(best_t, 4),
                 "improvement":      round(improvement, 4),
                 "dev_avgf1_at_t":   round(best_dev_f1, 4),
             })
 
             if args.out_csv:
-                for t, avg, hf, af in sweep:
+                # Record dev sweep for plotting / inspection.
+                for t, *_ in sweep:
+                    m = metrics_at_threshold(dev_scores, y_dev, t)
                     detail_rows.append({
-                        "dataset":   folder,
-                        "emb":       emb,
-                        "split":     "dev",
+                        "dataset": folder,
+                        "emb": emb,
+                        "split": "dev",
                         "threshold": round(t, 4),
-                        "avg_f1":    round(avg, 4),
-                        "human_f1":  round(hf, 4),
-                        "ai_f1":     round(af, 4),
+                        "avg_f1": round(m["avg_f1"], 4),
+                        "human_precision": round(m["human_precision"], 4),
+                        "human_recall": round(m["human_recall"], 4),
+                        "human_f1": round(m["human_f1"], 4),
+                        "ai_precision": round(m["ai_precision"], 4),
+                        "ai_recall": round(m["ai_recall"], 4),
+                        "ai_f1": round(m["ai_f1"], 4),
                     })
-                # Also record test sweep for plotting / inspection.
-                for t in (r[0] for r in sweep):
-                    avg, hf, af = f1_at_threshold(test_scores, y_test, t)
+
+                # Record test sweep for plotting / inspection.
+                for t, *_ in sweep:
+                    m = metrics_at_threshold(test_scores, y_test, t)
                     detail_rows.append({
-                        "dataset":   folder,
-                        "emb":       emb,
-                        "split":     "test",
+                        "dataset": folder,
+                        "emb": emb,
+                        "split": "test",
                         "threshold": round(t, 4),
-                        "avg_f1":    round(avg, 4),
-                        "human_f1":  round(hf, 4),
-                        "ai_f1":     round(af, 4),
+                        "avg_f1": round(m["avg_f1"], 4),
+                        "human_precision": round(m["human_precision"], 4),
+                        "human_recall": round(m["human_recall"], 4),
+                        "human_f1": round(m["human_f1"], 4),
+                        "ai_precision": round(m["ai_precision"], 4),
+                        "ai_recall": round(m["ai_recall"], 4),
+                        "ai_f1": round(m["ai_f1"], 4),
                     })
 
         print()
