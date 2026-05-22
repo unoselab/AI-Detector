@@ -68,6 +68,9 @@ SPLITS_DIR="${SPLITS_DIR:-data_codesearchnet/splits/${MODEL_NAME}}"
 PICKLES_DIR="${PICKLES_DIR:-data_codesearchnet/models/${MODEL_NAME}}"
 OUT_DIR="${OUT_DIR:-data_codesearchnet/threshold_sweep/${MODEL_NAME}}"
 
+OBJECTIVE="${OBJECTIVE:-high-ai-precision}"
+TARGET_AI_PRECISION="${TARGET_AI_PRECISION:-0.90}"
+
 PYTHON="${PYTHON:-python}"
 
 # Recognized classifier short-names. Used to validate positional args.
@@ -243,7 +246,9 @@ for clf in "${SWEEP_CLASSIFIERS[@]}"; do
   "${PYTHON}" threshold_sweep.py \
     --splits-dir    "${SPLITS_DIR}" \
     --models-pickle "${pkl}" \
-    --out-csv       "${out_csv}"
+    --out-csv       "${out_csv}" \
+    --objective "${OBJECTIVE}" \
+    --target-ai-precision "${TARGET_AI_PRECISION}"
 done
 
 # -----------------------------------------------------------------------------

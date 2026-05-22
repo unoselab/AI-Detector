@@ -154,6 +154,41 @@ def default_threshold(mode):
     return 0.5 if mode == "proba" else 0.0
 
 
+def choose_threshold(scores, y_true, sweep, objective, target_ai_precision):
+    """
+    Select threshold on dev only.
+
+    objective='avg-f1':
+        choose threshold with highest dev AvgF1.
+
+    objective='high-ai-precision':
+        choose thresholds whose dev AI precision >= target_ai_precision,
+        then select the one with the highest dev AI recall.
+        If no threshold reaches the target, choose the threshold with the
+        highest dev AI precision, then highest dev AI recall.
+    """
+    rows = []
+    for t, *_ in sweep:
+        m = metrics_at_threshold(scores, y_true, t)
+        row = {"threshold": float(t), **m}
+        rows.append(row)
+
+    if objective == "avg-f1":
+        best = max(rows, key=lambda r: (r["avg_f1"], r["ai_f1"], r["ai_precision"]))
+        return best["threshold"], best, "max_dev_avg_f1"
+
+    candidates = [r for r in rows if r["ai_precision"] >= target_ai_precision]
+
+    if candidates:
+        # Keep AGC/AI precision above target, then recover as much recall as possible.
+        best = max(candidates, key=lambda r: (r["ai_recall"], r["ai_f1"], r["ai_precision"]))
+        return best["threshold"], best, f"ai_precision_ge_{target_ai_precision:.2f}_max_ai_recall"
+
+    # Fallback: target not reachable on dev.
+    best = max(rows, key=lambda r: (r["ai_precision"], r["ai_recall"], r["ai_f1"]))
+    return best["threshold"], best, "fallback_max_ai_precision"
+
+
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
@@ -170,6 +205,19 @@ def parse_args():
                     help="Write detailed per-(dataset, emb, threshold) results.")
     ap.add_argument("--quiet",         action="store_true",
                     help="Only print the final summary line per (dataset, emb).")
+    ap.add_argument(
+        "--objective",
+        default="avg-f1",
+        choices=["avg-f1", "high-ai-precision"],
+        help="Threshold selection objective. avg-f1 maximizes dev AvgF1. "
+             "high-ai-precision targets high AGC/AI precision on dev.",
+    )
+    ap.add_argument(
+        "--target-ai-precision",
+        type=float,
+        default=0.90,
+        help="Required dev AI precision when --objective high-ai-precision.",
+    )
     return ap.parse_args()
 
 
@@ -233,9 +281,16 @@ def main():
             h0 = m_default["human_f1"]
             a0 = m_default["ai_f1"]
 
-            # Sweep on dev, pick best, evaluate on test.
+            # Sweep on dev, pick threshold by requested objective, evaluate on test.
             sweep = sweep_threshold(dev_scores, y_dev, mode=mode)
-            best_t, best_dev_f1, _, _ = max(sweep, key=lambda r: r[1])
+            best_t, dev_choice, selected_by = choose_threshold(
+                dev_scores,
+                y_dev,
+                sweep,
+                args.objective,
+                args.target_ai_precision,
+            )
+            best_dev_f1 = dev_choice["avg_f1"]
             m_tuned = metrics_at_threshold(test_scores, y_test, best_t)
             f1_tuned = m_tuned["avg_f1"]
             h1 = m_tuned["human_f1"]
@@ -246,15 +301,20 @@ def main():
             if args.quiet:
                 pass
             else:
-                print(f"  {emb:10s}  score-mode={mode}  "
-                      f"default(t={t0:.2f}): AvgF1={f1_default:.4f}  "
-                      f"-> dev-tuned(t={best_t:.3f}): AvgF1={f1_tuned:.4f}  "
-                      f"({improvement:+.4f})")
+                print(f"  {emb:10s}  score-mode={mode}  objective={args.objective}  "
+                      f"default(t={t0:.2f}): AvgF1={f1_default:.4f}, "
+                      f"AI-P={m_default['ai_precision']:.4f}, AI-R={m_default['ai_recall']:.4f}  "
+                      f"-> dev-selected(t={best_t:.3f}): AvgF1={f1_tuned:.4f}, "
+                      f"AI-P={m_tuned['ai_precision']:.4f}, AI-R={m_tuned['ai_recall']:.4f}  "
+                      f"({improvement:+.4f}; {selected_by})")
 
             summary_rows.append({
                 "dataset":          folder,
                 "emb":              emb,
                 "score_mode":       mode,
+                "objective":        args.objective,
+                "target_ai_precision": round(args.target_ai_precision, 4),
+                "selected_by":      selected_by,
                 "default_threshold": t0,
                 "default_human_precision": round(m_default["human_precision"], 4),
                 "default_human_recall": round(m_default["human_recall"], 4),
@@ -320,8 +380,11 @@ def main():
     print("Summary")
     print("=" * 90)
     if not summary_df.empty:
-        print(summary_df[["dataset", "emb", "default_avgf1",
-                          "best_threshold", "tuned_avgf1", "improvement"]]
+        print(summary_df[["dataset", "emb", "objective", "selected_by",
+                          "default_ai_precision", "default_ai_recall", "default_aif1",
+                          "best_threshold",
+                          "tuned_ai_precision", "tuned_ai_recall", "tuned_aif1",
+                          "tuned_avgf1", "improvement"]]
               .to_string(index=False))
         print()
         print(f"Mean improvement across all (dataset, emb) pairs: "
