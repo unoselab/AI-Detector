@@ -1,4 +1,3 @@
-cat > run0a-checker-mixed-samples.sh <<'SH'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -52,6 +51,3 @@ else
 
   java -cp "${BUILD_DIR}" checker_mixed_samples "${ARGS[@]}"
 fi
-SH
-
-chmod +x run0a-checker-mixed-samples.sh

@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get_day_name	5	9	human	line2768_human
+2	is_applicable	11	14	lm	line460_lm
+3	shift_display	16	23	lm	line1138_lm
+4	_head	25	33	lm	line466_lm
+5	_translate_pattern	35	89	human	line2068_human
+6	add_area	91	100	human	line2510_human

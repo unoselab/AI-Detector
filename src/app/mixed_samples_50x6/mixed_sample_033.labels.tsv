@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	returnChartData	5	30	lm	line2367_lm
+2	box_coordinates	32	35	lm	line2596_lm
+3	_needs_git	37	53	human	line2852_human
+4	add_to_manifest	55	82	human	line1438_human
+5	to_env_var	84	99	human	line1494_human
+6	text_filter	101	107	lm	line989_lm

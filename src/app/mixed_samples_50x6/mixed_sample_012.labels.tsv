@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	create_seq	5	18	lm	line1458_lm
+2	V	20	71	lm	line2893_lm
+3	loads	73	93	human	line288_human
+4	set_local_interface	95	108	human	line1998_human
+5	_handle_chat_name	110	115	lm	line2155_lm
+6	and_next	117	129	human	line590_human

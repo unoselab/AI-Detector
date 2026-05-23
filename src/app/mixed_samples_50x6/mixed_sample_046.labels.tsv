@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	link_pyqt	5	10	lm	line2736_lm
+2	getCipherText	12	27	lm	line461_lm
+3	fpr	29	34	human	line2711_human
+4	_compute_edges	36	50	human	line2834_human
+5	link_pyqt	52	59	human	line2736_human
+6	exit	61	67	lm	line2016_lm

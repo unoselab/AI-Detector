@@ -5,12 +5,51 @@ build_mixed_samples.py
 Construct synthetic "mixed-authorship" Python files for testing the
 block-level AGC detector (app/agc_detector.py).
 
-Each sample file is a concatenation of top-level functions/classes drawn
-from a source CSV that already has per-row labels: human vs lm.
+Concept
+-------
+Each sample file is a concatenation of K top-level functions drawn from a
+single source CSV that already has per-row labels (human vs lm). The
+sample mixes some human blocks and some AI blocks, so the detector under
+test can be evaluated per block (HWC vs AGC).
 
-Important safety rule:
-By default, this script restricts the candidate pool to the TEST split only.
-This avoids using training rows in the mixed-code detector evaluation.
+Per the task setup:
+  * Block unit             : top-level function/class (one row = one block).
+  * Mixing strategy        : concatenation (not mutation).
+  * Source pool            : a single ast CSV (default 15B-Instruct).
+
+Output (per sample)
+-------------------
+For each sample, two files are produced under --out-dir:
+
+    mixed_sample<N>.py            mixed source code, one function per block,
+                                  separated by a `# === BLOCK ... ===` marker.
+    mixed_sample<N>.labels.tsv    ground truth: block_idx, function_name,
+                                  start_line, end_line, label (human|lm),
+                                  source_idx (idx in the original CSV).
+
+A combined `manifest.csv` summarises all samples in the run.
+
+Determinism
+-----------
+The whole procedure is seeded (default 42). Re-running with the same seed
+on the same input CSV reproduces identical sample files.
+
+Source split safety (important)
+-------------------------------
+By default the script restricts the candidate pool to rows in the TEST
+split of the source CSV. This is methodologically critical: the
+classifiers in `data_codesearchnet/models/` were trained on the TRAIN
+split, so if we glued training rows into a mixed sample and then ran the
+detector on it, per-block accuracy would be inflated by training-data
+memorization rather than reflecting true generalization.
+
+`build_mixed_samples.py` therefore looks up the test split via
+--splits-dir and excludes everything else.
+
+For an exploratory run on a non-standard CSV that has no matching splits
+dir, pass --no-split-filter. Caveat: the resulting per-block numbers
+mix "unseen data" with "training-data recall" and should NOT be reported
+as detection accuracy.
 """
 
 import argparse
@@ -24,7 +63,7 @@ import pandas as pd
 
 
 # -----------------------------------------------------------------------------
-# Defaults
+# Defaults (matched to the agreed task setup)
 # -----------------------------------------------------------------------------
 DEFAULT_SRC_CSV = (
     "src/code-analyzer-tree-sitter/data_codesearchnet/"
@@ -38,25 +77,23 @@ DEFAULT_SPLITS_DIR = (
 )
 DEFAULT_OUT_DIR = "src/app/mixed_samples"
 
-
-# Legacy default: 10 small samples.
+# Block-count distribution per sample. 10 samples × varying K covers
+# the "mostly human", "balanced", and "mostly AI" regions, including
+# two corner cases (all-human and all-lm).
 SAMPLE_SPECS: List[Dict] = [
-    {"name": "mixed_sample_001", "n_human": 3, "n_lm": 1},
-    {"name": "mixed_sample_002", "n_human": 1, "n_lm": 3},
-    {"name": "mixed_sample_003", "n_human": 2, "n_lm": 2},
-    {"name": "mixed_sample_004", "n_human": 4, "n_lm": 1},
-    {"name": "mixed_sample_005", "n_human": 1, "n_lm": 4},
-    {"name": "mixed_sample_006", "n_human": 3, "n_lm": 3},
-    {"name": "mixed_sample_007", "n_human": 5, "n_lm": 1},
-    {"name": "mixed_sample_008", "n_human": 1, "n_lm": 5},
-    {"name": "mixed_sample_009", "n_human": 0, "n_lm": 4},
-    {"name": "mixed_sample_010", "n_human": 4, "n_lm": 0},
+    {"name": "mixed_sample_001", "n_human": 3, "n_lm": 1},   # 4 blocks
+    {"name": "mixed_sample_002", "n_human": 1, "n_lm": 3},   # 4 blocks (inverse)
+    {"name": "mixed_sample_003", "n_human": 2, "n_lm": 2},   # 4 blocks balanced
+    {"name": "mixed_sample_004", "n_human": 4, "n_lm": 1},   # 5 blocks mostly human
+    {"name": "mixed_sample_005", "n_human": 1, "n_lm": 4},   # 5 blocks mostly lm
+    {"name": "mixed_sample_006", "n_human": 3, "n_lm": 3},   # 6 blocks balanced
+    {"name": "mixed_sample_007", "n_human": 5, "n_lm": 1},   # 6 blocks lopsided
+    {"name": "mixed_sample_008", "n_human": 1, "n_lm": 5},   # 6 blocks lopsided inverse
+    {"name": "mixed_sample_009", "n_human": 0, "n_lm": 4},   # 4 blocks all-lm (corner)
+    {"name": "mixed_sample_010", "n_human": 4, "n_lm": 0},   # 4 blocks all-human (corner)
 ]
 
 
-# -----------------------------------------------------------------------------
-# Spec builder
-# -----------------------------------------------------------------------------
 def build_sample_specs(
     num_samples: Optional[int],
     blocks_per_sample: Optional[int],
@@ -64,18 +101,17 @@ def build_sample_specs(
     include_corners: bool,
 ) -> List[Dict]:
     """
-    If num_samples and blocks_per_sample are omitted, use legacy SAMPLE_SPECS.
+    Build sample specifications.
 
-    Otherwise generate:
+    If num_samples and blocks_per_sample are omitted, use the legacy
+    SAMPLE_SPECS list.
+
+    Otherwise, generate:
       mixed_sample_001 ... mixed_sample_N
 
-    Example:
-      --num-samples 50 --blocks-per-sample 6 --lm-ratio 0.5
-      -> 50 files, each with 3 human + 3 lm blocks.
-
-    If --include-corners is set:
-      sample 001 = all human
-      sample 002 = all lm
+    Each generated sample has:
+      n_lm    = round(blocks_per_sample * lm_ratio)
+      n_human = blocks_per_sample - n_lm
     """
     if num_samples is None and blocks_per_sample is None:
         return SAMPLE_SPECS
@@ -112,7 +148,7 @@ def build_sample_specs(
 # -----------------------------------------------------------------------------
 # Helpers
 # -----------------------------------------------------------------------------
-FUNC_DEF_RE = re.compile(r"^\s*(async\s+)?def\s+(\w+)\s*\(", re.MULTILINE)
+FUNC_DEF_RE  = re.compile(r"^\s*(async\s+)?def\s+(\w+)\s*\(", re.MULTILINE)
 CLASS_DEF_RE = re.compile(r"^\s*class\s+(\w+)\s*[:(]", re.MULTILINE)
 
 
@@ -149,7 +185,7 @@ def sample_rows(
     rng: random.Random,
 ) -> Tuple[List[pd.Series], List[pd.Series]]:
     pool_human = df[(df["label"] == "human") & (~df["idx"].isin(used))]
-    pool_lm = df[(df["label"] == "lm") & (~df["idx"].isin(used))]
+    pool_lm    = df[(df["label"] == "lm")    & (~df["idx"].isin(used))]
 
     if len(pool_human) < n_human:
         raise ValueError(f"need {n_human} human rows, only {len(pool_human)} remain")
@@ -157,8 +193,7 @@ def sample_rows(
         raise ValueError(f"need {n_lm} lm rows, only {len(pool_lm)} remain")
 
     h_idx = rng.sample(pool_human.index.tolist(), n_human)
-    l_idx = rng.sample(pool_lm.index.tolist(), n_lm)
-
+    l_idx = rng.sample(pool_lm.index.tolist(),    n_lm)
     return [df.loc[i] for i in h_idx], [df.loc[i] for i in l_idx]
 
 
@@ -181,20 +216,18 @@ def render_sample(rows: List[Tuple[pd.Series, str]]) -> Tuple[str, List[Dict]]:
 
         start_line = len(lines_out) + 1
         lines_out.append(marker)
-
         for line in body.splitlines():
             lines_out.append(line)
-
         lines_out.append("")
         end_line = len(lines_out) - 1
 
         truth.append({
-            "block_idx": i,
+            "block_idx":     i,
             "function_name": fname,
-            "start_line": start_line,
-            "end_line": end_line,
-            "label": label,
-            "source_idx": str(row["idx"]),
+            "start_line":    start_line,
+            "end_line":      end_line,
+            "label":         label,
+            "source_idx":    str(row["idx"]),
         })
 
     text = "\n".join(lines_out).rstrip() + "\n"
@@ -203,22 +236,14 @@ def render_sample(rows: List[Tuple[pd.Series, str]]) -> Tuple[str, List[Dict]]:
 
 def write_sample(out_dir: str, name: str, text: str, truth: List[Dict]) -> Tuple[str, str]:
     os.makedirs(out_dir, exist_ok=True)
-
-    py_path = os.path.join(out_dir, f"{name}.py")
+    py_path  = os.path.join(out_dir, f"{name}.py")
     tsv_path = os.path.join(out_dir, f"{name}.labels.tsv")
 
     with open(py_path, "w") as f:
         f.write(text)
 
-    fieldnames = [
-        "block_idx",
-        "function_name",
-        "start_line",
-        "end_line",
-        "label",
-        "source_idx",
-    ]
-
+    fieldnames = ["block_idx", "function_name", "start_line", "end_line",
+                  "label", "source_idx"]
     with open(tsv_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         w.writeheader()
@@ -236,39 +261,21 @@ def parse_args():
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-
-    ap.add_argument("--src-csv", default=DEFAULT_SRC_CSV,
-                    help="Per-row AST CSV with columns idx, code, ast, label.")
+    ap.add_argument("--src-csv",    default=DEFAULT_SRC_CSV,
+                    help="Per-row ast CSV with columns idx, code, ast, label.")
     ap.add_argument("--splits-dir", default=DEFAULT_SPLITS_DIR,
-                    help="Per-dataset split dir; restricts source pool to test_.csv.")
-    ap.add_argument("--out-dir", default=DEFAULT_OUT_DIR,
-                    help="Where to write generated .py and .labels.tsv files.")
-    ap.add_argument("--seed", type=int, default=42)
-
-    ap.add_argument("--num-samples", type=int, default=None,
-                    help="Number of mixed .py files to generate.")
-    ap.add_argument("--blocks-per-sample", type=int, default=None,
-                    help="Number of top-level blocks per generated mixed file.")
-    ap.add_argument("--lm-ratio", type=float, default=0.5,
-                    help="Fraction of blocks sampled from lm/AGC rows.")
-    ap.add_argument("--include-corners", action="store_true",
-                    help="Make sample 001 all-human and sample 002 all-lm.")
-    ap.add_argument("--allow-reuse", action="store_true",
-                    help="Allow the same source row to appear in multiple samples.")
-
+                    help="Per-dataset splits dir; restricts the pool to test rows.")
+    ap.add_argument("--out-dir",    default=DEFAULT_OUT_DIR,
+                    help="Where to write the .py and .labels.tsv files.")
+    ap.add_argument("--seed",       type=int, default=42)
     ap.add_argument("--no-split-filter", action="store_true",
-                    help="Draw from all rows in --src-csv, not just test split. Debug only.")
-
+                    help="Draw from all rows in --src-csv, not just test split.")
     return ap.parse_args()
 
 
-# -----------------------------------------------------------------------------
-# Main
-# -----------------------------------------------------------------------------
 def main():
     args = parse_args()
     rng = random.Random(args.seed)
-
     sample_specs = build_sample_specs(
         args.num_samples,
         args.blocks_per_sample,
@@ -280,12 +287,12 @@ def main():
         raise SystemExit(f"[ERROR] source CSV not found: {args.src_csv}")
 
     df = pd.read_csv(args.src_csv)
-
     needed = {"idx", "code", "label"}
     missing = needed - set(df.columns)
     if missing:
         raise SystemExit(f"[ERROR] source CSV missing columns: {missing}")
 
+    test_idx = None
     if not args.no_split_filter:
         test_idx = load_test_idx_set(args.splits_dir)
         if test_idx is None:
@@ -294,37 +301,27 @@ def main():
                 "        Refusing to build reportable mixed samples from all rows.\n"
                 "        Use --no-split-filter only for debugging, not evaluation."
             )
-
-        before = len(df)
-        df = df[df["idx"].isin(test_idx)].copy()
-        print(f"Restricted pool to test split: {len(df)} / {before} rows.")
+        else:
+            before = len(df)
+            df = df[df["idx"].isin(test_idx)].copy()
+            print(f"Restricted pool to test split: {len(df)} / {before} rows.")
     else:
-        print("[WARN] --no-split-filter set; drawing from all rows.")
-        print("[WARN] This may include training data and should NOT be reported as evaluation accuracy.")
+        print("[WARN] --no-split-filter set; drawing from all rows (includes training data).")
+        print("[WARN] resulting per-block numbers will mix unseen data with "
+              "training-data recall and should NOT be reported as detection accuracy.")
 
     df["label"] = df["label"].astype(str).str.strip().str.lower()
     label_counts = df["label"].value_counts().to_dict()
     print(f"Pool label counts: {label_counts}")
 
-    n_human_total = sum(spec["n_human"] for spec in sample_specs)
-    n_lm_total = sum(spec["n_lm"] for spec in sample_specs)
-
-    if not args.allow_reuse:
-        if label_counts.get("human", 0) < n_human_total:
-            raise SystemExit(
-                f"[ERROR] need {n_human_total} human rows total, "
-                f"pool has only {label_counts.get('human', 0)}"
-            )
-        if label_counts.get("lm", 0) < n_lm_total:
-            raise SystemExit(
-                f"[ERROR] need {n_lm_total} lm rows total, "
-                f"pool has only {label_counts.get('lm', 0)}"
-            )
-    else:
-        if label_counts.get("human", 0) == 0 and n_human_total > 0:
-            raise SystemExit("[ERROR] no human rows available")
-        if label_counts.get("lm", 0) == 0 and n_lm_total > 0:
-            raise SystemExit("[ERROR] no lm rows available")
+    n_human_total = sum(s["n_human"] for s in sample_specs)
+    n_lm_total    = sum(s["n_lm"]    for s in sample_specs)
+    if label_counts.get("human", 0) < n_human_total:
+        raise SystemExit(f"[ERROR] need {n_human_total} human rows total, "
+                         f"pool has only {label_counts.get('human', 0)}")
+    if label_counts.get("lm", 0) < n_lm_total:
+        raise SystemExit(f"[ERROR] need {n_lm_total} lm rows total, "
+                         f"pool has only {label_counts.get('lm', 0)}")
 
     os.makedirs(args.out_dir, exist_ok=True)
 
@@ -333,15 +330,8 @@ def main():
 
     for spec in sample_specs:
         name = spec["name"]
-
         used_for_sampling = set() if args.allow_reuse else used
-        h_rows, l_rows = sample_rows(
-            df,
-            spec["n_human"],
-            spec["n_lm"],
-            used_for_sampling,
-            rng,
-        )
+        h_rows, l_rows = sample_rows(df, spec["n_human"], spec["n_lm"], used_for_sampling, rng)
 
         if not args.allow_reuse:
             used.update(r["idx"] for r in h_rows)
@@ -349,7 +339,7 @@ def main():
 
         labeled = (
             [(r, "human") for r in h_rows] +
-            [(r, "lm") for r in l_rows]
+            [(r, "lm")    for r in l_rows]
         )
         rng.shuffle(labeled)
 
@@ -358,31 +348,25 @@ def main():
 
         h_pos = [t["block_idx"] for t in truth if t["label"] == "human"]
         l_pos = [t["block_idx"] for t in truth if t["label"] == "lm"]
-
-        print(
-            f"  {name}: {len(truth)} blocks "
-            f"(human at {h_pos}, lm at {l_pos}) -> {py_path}"
-        )
+        print(f"  {name}: {len(truth)} blocks "
+              f"(human at {h_pos}, lm at {l_pos}) -> {py_path}")
 
         manifest_rows.append({
-            "name": name,
-            "n_blocks": len(truth),
-            "n_human": len(h_pos),
-            "n_lm": len(l_pos),
-            "py_path": py_path,
-            "labels_path": tsv_path,
+            "name":         name,
+            "n_blocks":     len(truth),
+            "n_human":      len(h_pos),
+            "n_lm":         len(l_pos),
+            "py_path":      py_path,
+            "labels_path":  tsv_path,
         })
 
     manifest_path = os.path.join(args.out_dir, "manifest.csv")
     pd.DataFrame(manifest_rows).to_csv(manifest_path, index=False)
-
     print(f"\nManifest -> {manifest_path}")
     print(f"Total samples: {len(manifest_rows)}")
-    print(
-        f"Total blocks : {sum(r['n_blocks'] for r in manifest_rows)}  "
-        f"(human={sum(r['n_human'] for r in manifest_rows)}, "
-        f"lm={sum(r['n_lm'] for r in manifest_rows)})"
-    )
+    print(f"Total blocks : {sum(r['n_blocks'] for r in manifest_rows)}  "
+          f"(human={sum(r['n_human'] for r in manifest_rows)}, "
+          f"lm={sum(r['n_lm'] for r in manifest_rows)})")
     print(f"Unique source idxs used: {len(used)}")
 
 

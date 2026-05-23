@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	login_user	5	41	human	line328_human
+2	connection	43	51	lm	line2662_lm
+3	openTypeHheaCaretSlopeRiseFallback	53	66	lm	line211_lm
+4	one_vertical_total_stress	68	102	human	line1057_human
+5	create	104	116	lm	line1493_lm
+6	collect_spans	118	167	human	line168_human

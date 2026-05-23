@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	is_valid	5	27	lm	line1686_lm
+2	encode_aes256	29	53	lm	line2964_lm
+3	_compute_precision	55	88	human	line293_human
+4	and_next	90	100	lm	line590_lm
+5	create_hosting_device_resources	102	130	human	line2907_human
+6	install	132	145	human	line2468_human
