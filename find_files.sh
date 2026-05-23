@@ -7,6 +7,10 @@ dest="data_all"
 mkdir -p "$dest"
 
 files='
+src/app/run0-build-mixed-samples.sh
+src/app/run1-agc-detector.sh
+src/app/agc_detector.py
+src/app/build_mixed_samples.py
 src/run0a-generate-starcoder15b.sh
 src/run0a-generate.sh
 src/run0b-find-validsyntax-mgc.sh
