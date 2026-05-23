@@ -16,7 +16,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 cd "${REPO_ROOT}"
 
 CHECKER_SRC="src/app/checker_mixed_samples.java"
-BUILD_DIR="src/app/.checker_build"
+BUILD_DIR="src/app/.build_java/checker_build"
 
 DEFAULT_TARGET="src/app/mixed_samples_50x6"
 

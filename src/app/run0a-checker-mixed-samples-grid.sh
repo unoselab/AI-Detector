@@ -69,6 +69,9 @@ MAX_ERRORS="${MAX_ERRORS:-50}"
 
 JAVAC="${JAVAC:-javac}"
 JAVA="${JAVA:-java}"
+# Compiled .class files live under SCRIPT_DIR/.build_java/<program>/ to keep
+# src/app/ free of build artifacts. To run by hand:
+#   java -cp src/app/.build_java/checker_mixed_samples_grid checker_mixed_samples_grid --help
 BUILD_JAVA=".build_java/checker_mixed_samples_grid"
 
 JAVA_SRC="${SCRIPT_DIR}/checker_mixed_samples_grid.java"
