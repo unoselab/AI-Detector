@@ -70,7 +70,8 @@ MAX_LEN            = 512
 SEP                = " </s> "
 
 BLOCK_MARKER_RE = re.compile(
-    r"^\s*#\s*===\s*BLOCK\s+\d+\s*\(.*?\)\s*===\s*$", re.MULTILINE
+    r"^[ \t]*#[ \t]*===[ \t]*BLOCK[ \t]+\d+[ \t]*\(.*?\)[ \t]*===[ \t]*(?=\n|$)",
+    re.MULTILINE,
 )
 
 LABEL_MAP    = {"human": 1, "lm": 0}
@@ -101,16 +102,29 @@ def strip_block_markers(text: str) -> str:
     return BLOCK_MARKER_RE.sub("", text)
 
 
-def _node_name(node, source: str) -> Optional[str]:
+def _node_text(node, source_bytes: bytes) -> str:
+    """
+    tree-sitter start_byte/end_byte are byte offsets, not Python string indexes.
+    Always slice the UTF-8 bytes first, then decode.
+
+    This matters when a previous block contains non-ASCII text such as Chinese
+    docstrings. Slicing the Python string directly with byte offsets corrupts
+    later block names and code snippets.
+    """
+    return source_bytes[node.start_byte:node.end_byte].decode("utf8", errors="replace")
+
+
+def _node_name(node, source_bytes: bytes) -> Optional[str]:
     name_node = node.child_by_field_name("name")
     if name_node is not None:
-        return source[name_node.start_byte:name_node.end_byte]
+        return _node_text(name_node, source_bytes)
     return None
 
 
 def extract_blocks(source: str, parser) -> List[Dict]:
     """One dict per top-level def/class with kind, name, start_line, end_line, code."""
-    tree = parser.parse(bytes(source, "utf8"))
+    source_bytes = source.encode("utf8")
+    tree = parser.parse(source_bytes)
     root = tree.root_node
 
     blocks: List[Dict] = []
@@ -130,9 +144,9 @@ def extract_blocks(source: str, parser) -> List[Dict]:
             continue
 
         kind = "class_definition" if target.type == "class_definition" else "function_definition"
-        name = _node_name(target, source) or "<anon>"
-        outer = child  # include decorators
-        code = source[outer.start_byte:outer.end_byte]
+        name = _node_name(target, source_bytes) or "<anon>"
+        outer = child  # include decorators if present
+        code = _node_text(outer, source_bytes)
         start_line = outer.start_point[0] + 1
         end_line   = outer.end_point[0]   + 1
 
@@ -272,15 +286,34 @@ def load_labels_tsv(path: str) -> List[Dict]:
 
 
 def attach_ground_truth(blocks: List[Dict], truth: List[Dict]) -> None:
-    """Match by function name + 1-block ordinal. Mutates `blocks` in place."""
+    """
+    Attach labels from <input>.labels.tsv.
+
+    For synthetic mixed samples, block order is the most reliable key:
+      block_idx=1 -> first extracted block
+      block_idx=2 -> second extracted block
+      ...
+
+    We still keep name-based fallback for non-standard sidecars.
+    """
+    truth_by_idx = {int(t["block_idx"]): t for t in truth}
+    used_truth_ids = set()
+
     by_name = {}
     for t in truth:
         by_name.setdefault(t["function_name"], []).append(t)
 
-    for b in blocks:
-        cands = by_name.get(b["name"], [])
-        if cands:
-            t = cands.pop(0)
+    for i, b in enumerate(blocks, start=1):
+        t = truth_by_idx.get(i)
+
+        if t is None:
+            cands = by_name.get(b["name"], [])
+            while cands and id(cands[0]) in used_truth_ids:
+                cands.pop(0)
+            t = cands.pop(0) if cands else None
+
+        if t is not None:
+            used_truth_ids.add(id(t))
             b["truth_label"] = t["label"]
             b["truth_block_idx"] = t["block_idx"]
         else:

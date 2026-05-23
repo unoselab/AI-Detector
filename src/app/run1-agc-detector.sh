@@ -54,22 +54,38 @@ echo "Repo root: ${REPO_ROOT}"
 echo
 
 # -----------------------------------------------------------------------------
-# Inputs: positional args, or default to all mixed_sample_*.py
+# Inputs: positional args, INPUT_FILE, or default to all mixed_sample_*.py
 # -----------------------------------------------------------------------------
 DEFAULT_INPUT_GLOB="src/app/mixed_samples/mixed_sample_*.py"
 
 INPUTS=()
-if [ "$#" -eq 0 ]; then
-  while IFS= read -r -d '' f; do INPUTS+=("$f"); done \
-    < <(find src/app/mixed_samples -maxdepth 1 -name 'mixed_sample_*.py' -print0 2>/dev/null | sort -z)
-else
-  INPUTS=("$@")
+
+# Allow single-file env-var usage:
+#   INPUT_FILE=mixed_samples/mixed_sample_002.py bash run1-agc-detector.sh
+if [ "$#" -eq 0 ] && [ -n "${INPUT_FILE:-}" ]; then
+  set -- "${INPUT_FILE}"
 fi
 
-if [ "${#INPUTS[@]}" -eq 0 ]; then
-  echo "[ERROR] No input files. Either pass paths as args or place samples at:" >&2
-  echo "        ${DEFAULT_INPUT_GLOB}" >&2
-  exit 1
+if [ "$#" -eq 0 ]; then
+  while IFS= read -r -d '' f; do
+    INPUTS+=("${f}")
+  done < <(find src/app/mixed_samples -maxdepth 1 -name 'mixed_sample_*.py' -print0 2>/dev/null | sort -z)
+else
+  for f in "$@"; do
+    if [[ "${f}" = /* ]]; then
+      # Already absolute.
+      INPUTS+=("${f}")
+    elif [ -f "${REPO_ROOT}/${f}" ]; then
+      # Relative to repo root, e.g. src/app/mixed_samples/mixed_sample_002.py
+      INPUTS+=("${REPO_ROOT}/${f}")
+    elif [ -f "${SCRIPT_DIR}/${f}" ]; then
+      # Relative to src/app, e.g. mixed_samples/mixed_sample_002.py
+      INPUTS+=("${SCRIPT_DIR}/${f}")
+    else
+      # Keep a useful path for the error message.
+      INPUTS+=("${SCRIPT_DIR}/${f}")
+    fi
+  done
 fi
 
 # -----------------------------------------------------------------------------
