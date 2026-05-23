@@ -346,15 +346,8 @@ def parse_args():
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-
-    src = ap.add_mutually_exclusive_group(required=True)
-    src.add_argument("--input",
-                     help="Path to one .py file to scan.")
-    src.add_argument("--input-dir",
-                     help="Directory containing mixed_sample_*.py files to scan.")
-
-    ap.add_argument("--pattern", default="mixed_sample_*.py",
-                    help="Filename pattern used with --input-dir.")
+    ap.add_argument("--input", required=True,
+                    help="Path to a .py file to scan.")
     ap.add_argument("--model-pickle", default=None,
                     help=f"Tuned classifier pickle (default: latest match of {DEFAULT_MODEL_GLOB}).")
     ap.add_argument("--embedding", choices=["ast", "code", "combined"], default="ast",
@@ -362,100 +355,60 @@ def parse_args():
     ap.add_argument("--threshold", type=float, default=None,
                     help="Decision threshold. Default: 0.5 for proba, 0.0 for SVM decision_function.")
     ap.add_argument("--labels-tsv", default=None,
-                    help="Optional ground-truth sidecar. Only valid with --input.")
+                    help="Optional ground-truth sidecar (default: <input>.labels.tsv if it exists).")
     ap.add_argument("--tree-sitter-lib", default=DEFAULT_TREE_SITTER_LIB)
     ap.add_argument("--ast-helper-dir",  default=DEFAULT_AST_HELPER_DIR)
     ap.add_argument("--device", default=None,
                     help="cuda | cuda:0 | cpu (auto-detect if unset).")
     ap.add_argument("--out-tsv", default=None,
-                    help="Per-block prediction TSV. Only valid with --input.")
-    ap.add_argument("--out-dir", default=None,
-                    help="Where to write per-input prediction TSVs when using --input-dir.")
+                    help="If set, write per-block predictions to this TSV.")
     return ap.parse_args()
 
 
-def resolve_input_files(args) -> List[str]:
-    if args.input:
-        if not os.path.exists(args.input):
-            raise SystemExit(f"[ERROR] input file not found: {args.input}")
-        if args.out_dir:
-            raise SystemExit("[ERROR] --out-dir is for --input-dir. Use --out-tsv with --input.")
-        return [args.input]
+def main():
+    args = parse_args()
 
-    if not os.path.isdir(args.input_dir):
-        raise SystemExit(f"[ERROR] input directory not found: {args.input_dir}")
+    if not os.path.exists(args.input):
+        raise SystemExit(f"[ERROR] input file not found: {args.input}")
 
-    files = sorted(glob.glob(os.path.join(args.input_dir, args.pattern)))
-    if not files:
-        raise SystemExit(
-            f"[ERROR] no input files found: {args.input_dir}/{args.pattern}"
-        )
-
-    return files
-
-
-def labels_for_input(input_path: str, explicit_labels_tsv: Optional[str]) -> Optional[str]:
-    if explicit_labels_tsv:
-        return explicit_labels_tsv
-
-    cand = input_path.removesuffix(".py") + ".labels.tsv"
-    return cand if os.path.exists(cand) else None
-
-
-def out_tsv_for_input(input_path: str, args) -> Optional[str]:
-    if args.input:
-        return args.out_tsv
-
-    out_dir = args.out_dir
-    if out_dir is None:
-        out_dir = os.path.join(args.input_dir, "predictions")
-
-    os.makedirs(out_dir, exist_ok=True)
-    base = os.path.basename(input_path).removesuffix(".py")
-    return os.path.join(out_dir, f"{base}.predictions.tsv")
-
-
-def scan_one_file(
-    input_path: str,
-    args,
-    parser,
-    F_fn,
-    tok,
-    embed_model,
-    device,
-    clf,
-) -> Dict:
-    labels_path = labels_for_input(input_path, args.labels_tsv if args.input else None)
+    # Locate the ground truth sidecar.
+    labels_path = args.labels_tsv
+    if labels_path is None:
+        cand = args.input.removesuffix(".py") + ".labels.tsv"
+        if os.path.exists(cand):
+            labels_path = cand
     truth = load_labels_tsv(labels_path) if labels_path else []
 
-    with open(input_path, "r") as f:
+    # 1) Read + strip block markers
+    with open(args.input, "r") as f:
         raw = f.read()
-
     source = strip_block_markers(raw)
+
+    # 2) Tree-sitter setup, extract blocks
+    parser, F_fn = load_parser_and_F(args.tree_sitter_lib, args.ast_helper_dir)
     blocks = extract_blocks(source, parser)
-
     if not blocks:
-        print(f"[WARN] no top-level def/class found in {input_path}")
-        return {
-            "input": input_path,
-            "blocks": 0,
-            "truth": 0,
-            "correct": 0,
-            "accuracy": "",
-        }
+        raise SystemExit(f"[WARN] no top-level def/class found in {args.input}")
 
+    # 3) Attach ground truth if available
     if truth:
         attach_ground_truth(blocks, truth)
 
-    out_tsv = out_tsv_for_input(input_path, args)
+    # 4) Embedder
+    device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
+    tok, embed_model = load_embedder(device)
 
+    # 5) Classifier
+    model_pickle = args.model_pickle or find_default_classifier(DEFAULT_MODEL_GLOB)
+    emb_prefix = f"{args.embedding}_"
+    clf, chosen_key = pick_classifier_from_pickle(model_pickle, emb_prefix)
+    print(f"Classifier pickle : {model_pickle}")
+    print(f"Classifier key    : {chosen_key}")
+    print(f"Embedding type    : {args.embedding}")
+    print(f"Threshold         : {args.threshold if args.threshold is not None else '(default)'}")
     print()
-    print("------------------------------------------------------------")
-    print(f" scanning : {input_path}")
-    print(f" labels   : {labels_path if labels_path else '<none>'}")
-    print(f" out tsv  : {out_tsv if out_tsv else '<none>'}")
-    print("------------------------------------------------------------")
 
+    # 6) Per-block scoring
     print(f"{'#':>3}  {'lines':<11}  {'kind':<18}  {'name':<28}  "
           f"{'pred':<5}  {'score':>7}  {'TRUTH':<6}  ok")
     print("-" * 100)
@@ -466,7 +419,8 @@ def scan_one_file(
 
     for i, b in enumerate(blocks, start=1):
         x = build_feature_vector(
-            b["code"], args.embedding, parser, F_fn, tok, embed_model, device
+            b["code"], args.embedding, parser, F_fn,
+            tok, embed_model, device,
         )
         pred_int, score, mode = predict_one(clf, x, args.threshold)
         pred_label = LABEL_REVMAP.get(pred_int, str(pred_int))
@@ -474,20 +428,19 @@ def scan_one_file(
         truth_label = b.get("truth_label")
         if truth_label is not None:
             have_truth += 1
-            ok = truth_label == pred_label
+            ok = (truth_label == pred_label)
             if ok:
                 correct += 1
             ok_str = "✓" if ok else "✗"
         else:
-            truth_label = "?"
             ok_str = "-"
+            truth_label = "?"
 
         lines_str = f"{b['start_line']}-{b['end_line']}"
         print(f"{i:>3}  {lines_str:<11}  {b['kind']:<18}  {b['name'][:28]:<28}  "
               f"{pred_label:<5}  {score:>7.3f}  {truth_label:<6}  {ok_str}")
 
         out_rows.append({
-            "file":        input_path,
             "block_idx":   i,
             "start_line":  b["start_line"],
             "end_line":    b["end_line"],
@@ -502,105 +455,18 @@ def scan_one_file(
 
     print("-" * 100)
     print(f"Blocks scored : {len(blocks)}")
-
     if have_truth:
         acc = correct / have_truth
         print(f"With ground truth : {have_truth}  | correct: {correct}  | accuracy: {acc:.4f}")
     else:
-        acc = ""
         print("(no ground truth available; supply --labels-tsv or place <input>.labels.tsv next to <input>)")
 
-    if out_tsv and out_rows:
-        with open(out_tsv, "w", newline="") as f:
+    if args.out_tsv:
+        with open(args.out_tsv, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(out_rows[0].keys()), delimiter="\t")
             w.writeheader()
             w.writerows(out_rows)
-        print(f"Predictions -> {out_tsv}")
-
-    return {
-        "input": input_path,
-        "blocks": len(blocks),
-        "truth": have_truth,
-        "correct": correct,
-        "accuracy": acc,
-    }
-
-
-def main():
-    args = parse_args()
-    input_files = resolve_input_files(args)
-
-    print("============================================================")
-    print(" agc_detector.py")
-    print(f"   input files : {len(input_files)}")
-    if args.input_dir:
-        print(f"   input dir   : {args.input_dir}")
-        print(f"   pattern     : {args.pattern}")
-    print(f"   embedding   : {args.embedding}")
-    print(f"   threshold   : {args.threshold if args.threshold is not None else '(default)'}")
-    print("============================================================")
-    print()
-
-    parser, F_fn = load_parser_and_F(args.tree_sitter_lib, args.ast_helper_dir)
-
-    device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
-    tok, embed_model = load_embedder(device)
-
-    model_pickle = args.model_pickle or find_default_classifier(DEFAULT_MODEL_GLOB)
-    emb_prefix = f"{args.embedding}_"
-    clf, chosen_key = pick_classifier_from_pickle(model_pickle, emb_prefix)
-
-    print(f"Classifier pickle : {model_pickle}")
-    print(f"Classifier key    : {chosen_key}")
-    print(f"Embedding type    : {args.embedding}")
-    print(f"Threshold         : {args.threshold if args.threshold is not None else '(default)'}")
-    print()
-
-    summaries = []
-    for input_path in input_files:
-        summaries.append(
-            scan_one_file(
-                input_path,
-                args,
-                parser,
-                F_fn,
-                tok,
-                embed_model,
-                device,
-                clf,
-            )
-        )
-
-    total_blocks = sum(int(r["blocks"]) for r in summaries)
-    total_truth = sum(int(r["truth"]) for r in summaries)
-    total_correct = sum(int(r["correct"]) for r in summaries)
-
-    print()
-    print("============================================================")
-    print("Overall summary")
-    print("============================================================")
-    print(f"files scored  : {len(summaries)}")
-    print(f"blocks scored : {total_blocks}")
-
-    if total_truth:
-        print(f"truth blocks  : {total_truth}")
-        print(f"correct       : {total_correct}")
-        print(f"accuracy      : {total_correct / total_truth:.4f}")
-    else:
-        print("truth blocks  : 0")
-
-    if args.input_dir:
-        out_dir = args.out_dir or os.path.join(args.input_dir, "predictions")
-        os.makedirs(out_dir, exist_ok=True)
-        summary_path = os.path.join(out_dir, "summary.csv")
-        with open(summary_path, "w", newline="") as f:
-            w = csv.DictWriter(
-                f,
-                fieldnames=["input", "blocks", "truth", "correct", "accuracy"],
-            )
-            w.writeheader()
-            w.writerows(summaries)
-        print(f"summary csv   : {summary_path}")
+        print(f"\nPredictions -> {args.out_tsv}")
 
 
 if __name__ == "__main__":
