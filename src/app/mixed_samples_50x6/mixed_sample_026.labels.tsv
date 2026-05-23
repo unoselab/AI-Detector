@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	load_and_set_file_content	5	10	human	line2487_human
-2	strip_quotes	12	40	human	line818_human
-3	get_withdrawals	42	45	lm	line1177_lm
-4	get_fields	47	50	lm	line869_lm
-5	_reset_internal	52	59	lm	line304_lm
-6	read_busiest_date	61	65	human	line1249_human

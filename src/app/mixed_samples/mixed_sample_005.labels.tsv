@@ -1,6 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	add_arg_param	5	8	human	line549_human
-2	diff_safe	10	20	lm	line2556_lm
-3	user_choice	22	43	lm	line2625_lm
-4	extract_to_disk	45	49	lm	line2314_lm
-5	calc_gradev_phase	51	69	lm	line2247_lm

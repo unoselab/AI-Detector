@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	get_ndmapping_label	5	14	lm	line1202_lm
-2	_iter_expand_paths	16	29	lm	line1472_lm
-3	main	31	40	human	line2872_human
-4	_compute_precision	42	69	lm	line293_lm
-5	_is_exempt	71	85	human	line1097_human
-6	_special_method_cache	87	115	human	line3000_human

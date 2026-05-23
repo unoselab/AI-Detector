@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	_validate_json_for_regular_workflow	5	21	human	line76_human
-2	invite	23	44	lm	line2015_lm
-3	main	46	97	human	line2568_human
-4	become_slave	99	120	human	line1094_human
-5	in_region	122	130	lm	line959_lm
-6	determineLength	132	145	lm	line148_lm

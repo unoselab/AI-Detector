@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	markov_blanket	5	34	lm	line2790_lm
-2	find_synonymous	36	84	human	line1420_human
-3	precip_master_station	86	128	human	line2387_human
-4	movie	130	193	human	line342_human
-5	get_api_key	195	207	lm	line2591_lm
-6	interm_fluent_ordering	209	217	lm	line386_lm

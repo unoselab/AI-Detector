@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	add_manager	5	16	human	line2266_human
-2	message_handler	18	37	lm	line2845_lm
-3	generate_csv	39	50	lm	line1577_lm
-4	get_rmetric	52	64	human	line400_human
-5	invite	66	86	human	line2015_human
-6	egcd	88	115	lm	line2138_lm

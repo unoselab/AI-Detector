@@ -1,5 +1,0 @@
-block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
-1	6	20	function_definition	is_on_curve	human	0.3257	decision	lm	0
-2	23	37	function_definition	enable_host_notifications	lm	-0.7495	decision	human	0
-3	40	48	function_definition	setFixedHeight	human	0.0005	decision	lm	0
-4	51	56	function_definition	_run	human	0.0932	decision	human	1

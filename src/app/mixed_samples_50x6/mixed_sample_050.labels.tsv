@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	_get_script	5	20	human	line2423_human
-2	V	22	59	human	line2893_human
-3	image_request_response	61	113	human	line1925_human
-4	parse_pkg_info	115	130	lm	line2880_lm
-5	add_manager	132	144	lm	line2266_lm
-6	create_pool	146	153	lm	line739_lm

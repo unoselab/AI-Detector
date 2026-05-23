@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	find_movie	5	26	human	line50_human
-2	_fix_namespace	28	37	lm	line2881_lm
-3	_parse_description	39	55	human	line754_human
-4	check_args	57	73	lm	line964_lm
-5	copy_data_ext	75	103	lm	line2583_lm
-6	trustRootValid	105	120	human	line2158_human

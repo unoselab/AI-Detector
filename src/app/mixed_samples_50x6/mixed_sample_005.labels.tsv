@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	from_bytes	5	24	human	line2410_human
-2	partial_update	26	33	lm	line368_lm
-3	create	35	65	human	line1493_human
-4	movie	67	91	lm	line342_lm
-5	filter_by_maf	93	108	human	line1154_human
-6	_get_names	110	116	lm	line2813_lm

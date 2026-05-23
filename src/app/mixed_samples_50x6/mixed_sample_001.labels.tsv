@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	_raise_bad_scheme	5	18	human	line195_human
-2	push_broks	20	31	human	line924_human
-3	eeg_to_all_evokeds	33	56	human	line1355_human
-4	copy_data_ext	58	89	human	line2583_human
-5	create_pool	91	131	human	line739_human
-6	update_value	133	150	human	line2676_human

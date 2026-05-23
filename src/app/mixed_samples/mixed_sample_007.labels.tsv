@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	remove_columns	5	63	human	line1847_human
-2	handle_absolute	65	73	human	line2028_human
-3	split_long_sentence	75	96	lm	line2320_lm
-4	create_token	98	114	human	line2374_human
-5	match	116	140	human	line2592_human
-6	write	142	149	human	line842_human

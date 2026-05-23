@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	get	5	12	lm	line1064_lm
-2	pex_hash	14	20	human	line2825_human
-3	lindblad_operator	22	37	human	line948_human
-4	get_used_key_frames	39	51	human	line1702_human
-5	msg	53	68	lm	line1044_lm
-6	load_and_set_file_content	70	76	lm	line2487_lm

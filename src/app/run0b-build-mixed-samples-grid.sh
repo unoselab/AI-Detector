@@ -1,6 +1,3 @@
-cd /home/user1-system12/project-workspace/ai_detector/src/app
-
-cat > run0b-build-mixed-samples-grid.sh <<'SH'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -80,6 +77,3 @@ echo "Done"
 echo "Output root: ${GRID_OUT_ROOT}"
 echo "Log file   : ${LOG_FILE}"
 echo "============================================================"
-SH
-
-chmod +x run0b-build-mixed-samples-grid.sh

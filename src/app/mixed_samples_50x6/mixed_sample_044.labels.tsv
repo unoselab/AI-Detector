@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	from_dict	5	11	lm	line1813_lm
-2	create	13	18	lm	line862_lm
-3	percentile	20	23	human	line2560_human
-4	load_class	25	41	human	line130_human
-5	checkargs	43	55	human	line2179_human
-6	_can_hold_element	57	60	lm	line2763_lm

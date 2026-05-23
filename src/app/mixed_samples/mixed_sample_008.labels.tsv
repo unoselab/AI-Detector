@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	upload_permanent_media	5	18	lm	line1522_lm
-2	get_queryset	20	23	lm	line1364_lm
-3	processTPED	25	70	lm	line1733_lm
-4	get_keywords_output	72	130	human	line1557_human
-5	from_string_pairs	132	138	lm	line1146_lm
-6	fo_pct	140	149	lm	line1935_lm

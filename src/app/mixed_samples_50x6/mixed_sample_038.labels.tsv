@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	rate	5	8	human	line315_human
-2	tlog	10	34	human	line1574_human
-3	get_default_sticker_id	36	49	lm	line2324_lm
-4	msg	51	68	human	line1044_human
-5	add_area	70	82	lm	line2510_lm
-6	push_broks	84	100	lm	line924_lm

@@ -1,5 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	_handle_event	5	18	human	line1449_human
-2	backend	20	28	human	line890_human
-3	receive_message	30	51	human	line667_human
-4	toNoUintArray	53	64	human	line2511_human

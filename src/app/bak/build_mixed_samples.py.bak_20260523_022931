@@ -228,46 +228,6 @@ def write_sample(out_dir: str, name: str, text: str, truth: List[Dict]) -> Tuple
     return py_path, tsv_path
 
 
-def parse_grid_configs(text: str) -> List[Tuple[int, int]]:
-    """
-    Parse grid config string.
-
-    Format:
-      "2:240,4:120,6:80,8:60,10:48"
-
-    Meaning:
-      blocks_per_sample:num_samples
-    """
-    configs: List[Tuple[int, int]] = []
-
-    for item in text.split(","):
-        item = item.strip()
-        if not item:
-            continue
-
-        if ":" not in item:
-            raise SystemExit(
-                f"[ERROR] bad --grid-configs item: {item}\n"
-                "        Expected format like 2:240,4:120,6:80"
-            )
-
-        k_s, n_s = item.split(":", 1)
-        k = int(k_s)
-        n = int(n_s)
-
-        if k <= 0:
-            raise SystemExit(f"[ERROR] blocks_per_sample must be > 0: {k}")
-        if n <= 0:
-            raise SystemExit(f"[ERROR] num_samples must be > 0: {n}")
-
-        configs.append((k, n))
-
-    if not configs:
-        raise SystemExit("[ERROR] --grid-configs produced no configs")
-
-    return configs
-
-
 # -----------------------------------------------------------------------------
 # CLI
 # -----------------------------------------------------------------------------
@@ -299,22 +259,23 @@ def parse_args():
     ap.add_argument("--no-split-filter", action="store_true",
                     help="Draw from all rows in --src-csv, not just test split. Debug only.")
 
-    ap.add_argument("--grid-out-root", default=None,
-                    help="If set, build multiple grid directories under this root.")
-    ap.add_argument("--grid-configs", default="2:240,4:120,6:80,8:60,10:48",
-                    help="Grid configs as blocks_per_sample:num_samples pairs.")
-    ap.add_argument("--validate-python", action="store_true",
-                    help="After writing samples, verify generated .py files parse.")    
-
     return ap.parse_args()
 
 
-def build_one_output_dir(
-    args,
-    out_dir: str,
-    sample_specs: List[Dict],
-    rng: random.Random,
-) -> Dict:
+# -----------------------------------------------------------------------------
+# Main
+# -----------------------------------------------------------------------------
+def main():
+    args = parse_args()
+    rng = random.Random(args.seed)
+
+    sample_specs = build_sample_specs(
+        args.num_samples,
+        args.blocks_per_sample,
+        args.lm_ratio,
+        args.include_corners,
+    )
+
     if not os.path.exists(args.src_csv):
         raise SystemExit(f"[ERROR] source CSV not found: {args.src_csv}")
 
@@ -359,8 +320,13 @@ def build_one_output_dir(
                 f"[ERROR] need {n_lm_total} lm rows total, "
                 f"pool has only {label_counts.get('lm', 0)}"
             )
+    else:
+        if label_counts.get("human", 0) == 0 and n_human_total > 0:
+            raise SystemExit("[ERROR] no human rows available")
+        if label_counts.get("lm", 0) == 0 and n_lm_total > 0:
+            raise SystemExit("[ERROR] no lm rows available")
 
-    os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(args.out_dir, exist_ok=True)
 
     manifest_rows = []
     used: set = set()
@@ -388,7 +354,7 @@ def build_one_output_dir(
         rng.shuffle(labeled)
 
         text, truth = render_sample(labeled)
-        py_path, tsv_path = write_sample(out_dir, name, text, truth)
+        py_path, tsv_path = write_sample(args.out_dir, name, text, truth)
 
         h_pos = [t["block_idx"] for t in truth if t["label"] == "human"]
         l_pos = [t["block_idx"] for t in truth if t["label"] == "lm"]
@@ -407,108 +373,17 @@ def build_one_output_dir(
             "labels_path": tsv_path,
         })
 
-    manifest_path = os.path.join(out_dir, "manifest.csv")
+    manifest_path = os.path.join(args.out_dir, "manifest.csv")
     pd.DataFrame(manifest_rows).to_csv(manifest_path, index=False)
 
-    total_samples = len(manifest_rows)
-    total_blocks = sum(r["n_blocks"] for r in manifest_rows)
-    total_human = sum(r["n_human"] for r in manifest_rows)
-    total_lm = sum(r["n_lm"] for r in manifest_rows)
-
     print(f"\nManifest -> {manifest_path}")
-    print(f"Total samples: {total_samples}")
-    print(f"Total blocks : {total_blocks}  (human={total_human}, lm={total_lm})")
-    print(f"Unique source idxs used: {len(used)}")
-
-    if args.validate_python:
-        bad = 0
-        for row in manifest_rows:
-            py_path = row["py_path"]
-            try:
-                import ast
-                with open(py_path, "r", encoding="utf8") as f:
-                    ast.parse(f.read())
-            except Exception:
-                print(f"BAD: {py_path}")
-                bad += 1
-
-        if bad:
-            raise SystemExit(f"[ERROR] {bad} generated file(s) failed Python parsing")
-        print("Parse check: OK")
-
-    return {
-        "out_dir": out_dir,
-        "total_samples": total_samples,
-        "total_blocks": total_blocks,
-        "total_human": total_human,
-        "total_lm": total_lm,
-        "unique_source_idxs": len(used),
-    }
-    
-    
-# -----------------------------------------------------------------------------
-# Main
-# -----------------------------------------------------------------------------
-def main():
-    args = parse_args()
-
-    if args.grid_out_root:
-        configs = parse_grid_configs(args.grid_configs)
-        grid_rows = []
-
-        print("============================================================")
-        print("Building mixed-sample grid")
-        print("============================================================")
-        print(f"grid out root : {args.grid_out_root}")
-        print(f"grid configs  : {args.grid_configs}")
-        print(f"src csv       : {args.src_csv}")
-        print(f"splits dir    : {args.splits_dir}")
-        print()
-
-        for blocks_per_sample, num_samples in configs:
-            out_dir = os.path.join(
-                args.grid_out_root,
-                f"blocks_{blocks_per_sample:02d}",
-            )
-
-            print()
-            print("------------------------------------------------------------")
-            print(f"Grid setting: blocks_per_sample={blocks_per_sample}, num_samples={num_samples}")
-            print(f"Output dir  : {out_dir}")
-            print("------------------------------------------------------------")
-
-            sample_specs = build_sample_specs(
-                num_samples,
-                blocks_per_sample,
-                args.lm_ratio,
-                args.include_corners,
-            )
-
-            rng = random.Random(args.seed + blocks_per_sample)
-            row = build_one_output_dir(args, out_dir, sample_specs, rng)
-            row["blocks_per_sample"] = blocks_per_sample
-            row["num_samples"] = num_samples
-            grid_rows.append(row)
-
-        summary_path = os.path.join(args.grid_out_root, "grid_manifest.csv")
-        os.makedirs(args.grid_out_root, exist_ok=True)
-        pd.DataFrame(grid_rows).to_csv(summary_path, index=False)
-
-        print()
-        print("============================================================")
-        print("Grid build complete")
-        print("============================================================")
-        print(f"Grid manifest -> {summary_path}")
-        return
-
-    rng = random.Random(args.seed)
-    sample_specs = build_sample_specs(
-        args.num_samples,
-        args.blocks_per_sample,
-        args.lm_ratio,
-        args.include_corners,
+    print(f"Total samples: {len(manifest_rows)}")
+    print(
+        f"Total blocks : {sum(r['n_blocks'] for r in manifest_rows)}  "
+        f"(human={sum(r['n_human'] for r in manifest_rows)}, "
+        f"lm={sum(r['n_lm'] for r in manifest_rows)})"
     )
-    build_one_output_dir(args, args.out_dir, sample_specs, rng)
+    print(f"Unique source idxs used: {len(used)}")
 
 
 if __name__ == "__main__":

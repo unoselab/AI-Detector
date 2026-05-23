@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	lower_ext	5	10	human	line2047_human
-2	shift_display	12	21	human	line1138_human
-3	get_splits	23	52	lm	line1948_lm
-4	_make_lib_file_symbolic_links	54	82	lm	line1236_lm
-5	_sort_dd_skips	84	116	human	line2864_human
-6	assemble_loopy	118	121	lm	line2477_lm

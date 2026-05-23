@@ -1,6 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	collect_spans	5	54	human	line168_human
-2	fo_pct	56	67	human	line1935_human
-3	find_orgs	69	87	human	line1667_human
-4	unwrap_errors	89	110	human	line181_human
-5	diff	112	130	lm	line626_lm

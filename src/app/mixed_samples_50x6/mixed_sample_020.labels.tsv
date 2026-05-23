@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	VCStoreRefs	5	10	lm	line1973_lm
-2	crossover	12	48	human	line1539_human
-3	get_glacier_poly	50	62	lm	line123_lm
-4	libvlc_media_parse_with_options	64	87	human	line2332_human
-5	parse_coach_go	89	123	human	line1104_human
-6	to_dict	125	133	lm	line1552_lm

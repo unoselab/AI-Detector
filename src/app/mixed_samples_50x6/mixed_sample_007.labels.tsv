@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	_variant_po_to_dict	5	16	lm	line1603_lm
-2	to_env_var	18	31	lm	line1494_lm
-3	get_doc	33	96	human	line900_human
-4	Tube	98	161	human	line1487_human
-5	translate_text	163	176	human	line36_human
-6	remove_fpaths	178	203	lm	line1801_lm

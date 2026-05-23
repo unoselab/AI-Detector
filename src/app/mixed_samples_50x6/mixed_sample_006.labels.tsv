@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	delist	5	14	lm	line455_lm
-2	_getPlotData	16	29	lm	line926_lm
-3	flag	31	45	human	line951_human
-4	deployment_operations_list	47	86	human	line1541_human
-5	dframe	88	96	lm	line1755_lm
-6	server_inspect_exception	98	128	human	line200_human

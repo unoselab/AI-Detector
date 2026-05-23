@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	read_busiest_date	5	22	lm	line1249_lm
-2	VCStoreRefs	24	31	human	line1973_human
-3	filter	33	43	human	line2123_human
-4	paginate	45	58	lm	line773_lm
-5	is_valid	60	134	human	line1686_human
-6	extract_to_disk	136	140	lm	line2314_lm

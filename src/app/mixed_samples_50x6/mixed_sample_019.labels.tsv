@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	determineLength	5	25	human	line148_human
-2	on_select_level_name	27	34	lm	line249_lm
-3	_list_archive_members	36	48	human	line841_human
-4	parse_coach_go	50	75	lm	line1104_lm
-5	find_synonymous	77	86	lm	line1420_lm
-6	_match_vcs_scheme	88	99	human	line1464_human

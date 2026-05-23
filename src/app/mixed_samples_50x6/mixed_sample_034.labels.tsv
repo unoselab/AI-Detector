@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	sympy_expressions_equal	5	13	lm	line1514_lm
-2	_get_names	15	24	human	line2813_human
-3	percentile	26	36	lm	line2560_lm
-4	_handle_chat_name	38	43	human	line2155_human
-5	remove_bad_sequence	45	83	human	line2803_human
-6	login_user	85	98	lm	line328_lm

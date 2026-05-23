@@ -1,5 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	bin_data_format	5	34	lm	line1832_lm
-2	is_result_edition_allowed	36	47	lm	line2769_lm
-3	folderitem	49	78	lm	line542_lm
-4	set_ys	80	93	lm	line1703_lm

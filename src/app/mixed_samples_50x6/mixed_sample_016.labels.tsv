@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	main	5	17	human	line325_human
-2	get_type_id	19	35	human	line1199_human
-3	wait	37	54	lm	line1874_lm
-4	ignore_comments	56	64	lm	line2275_lm
-5	open	66	97	human	line1658_human
-6	wait	99	130	lm	line273_lm

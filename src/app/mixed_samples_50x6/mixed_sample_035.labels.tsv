@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	get_fit_failed_candidate_model	5	29	lm	line2215_lm
-2	save	31	49	human	line188_human
-3	to_shcoeffs	51	86	lm	line1528_lm
-4	save	88	99	lm	line188_lm
-5	remove_selected_classification	101	110	human	line1863_human
-6	start_dag	112	129	human	line2718_human

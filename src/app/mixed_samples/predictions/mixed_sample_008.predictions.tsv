@@ -1,7 +1,0 @@
-block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
-1	6	18	function_definition	upload_permanent_media	human	0.3904	decision	lm	0
-2	21	23	function_definition	get_queryset	human	0.533	decision	lm	0
-3	26	70	function_definition	processTPED	lm	-0.2787	decision	lm	1
-4	73	130	function_definition	get_keywords_output	human	0.681	decision	human	1
-5	133	138	function_definition	from_string_pairs	lm	-1.4258	decision	lm	1
-6	141	149	function_definition	fo_pct	human	0.2598	decision	lm	0

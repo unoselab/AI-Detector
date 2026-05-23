@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	get_cassandra_connections	5	16	human	line1843_human
-2	in_region	18	24	human	line959_human
-3	get_details_from_inst_literal	26	71	lm	line947_lm
-4	is_applicable	73	79	human	line460_human
-5	libvlc_media_parse_with_options	81	104	lm	line2332_lm
-6	_op	106	124	lm	line833_lm

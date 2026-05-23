@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	get_public_keys	5	26	human	line120_human
-2	from_dict	28	46	human	line1813_human
-3	filter_by_maf	48	56	lm	line1154_lm
-4	get_raise_brok	58	74	human	line2719_human
-5	load_lst	76	89	lm	line1757_lm
-6	conditions	91	98	lm	line2489_lm

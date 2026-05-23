@@ -1,7 +1,0 @@
-block_idx	function_name	start_line	end_line	label	source_idx
-1	extract_field	5	27	human	line889_human
-2	log	29	34	lm	line467_lm
-3	get_grade_entries	36	48	human	line1806_human
-4	main	50	58	lm	line125_lm
-5	read_config	60	117	lm	line1215_lm
-6	download_financialzip	119	139	human	line287_human
