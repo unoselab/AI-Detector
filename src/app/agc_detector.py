@@ -36,8 +36,19 @@ input BEFORE parsing so the detector cannot peek at the truth.
 
 Usage
 -----
+    # Single file
     python src/app/agc_detector.py \\
         --input src/app/mixed_samples/mixed_sample_003.py
+
+    # One directory of mixed_sample_*.py
+    python src/app/agc_detector.py \\
+        --input-dir src/app/mixed_samples_50x6
+
+    # A grid root containing blocks_*/ subdirs (each holds mixed_sample_*.py).
+    # Predictions go to <subdir>/predictions/, plus a top-level
+    # predictions_summary.csv at the grid root.
+    python src/app/agc_detector.py \\
+        --input-grid src/app/data_mixed_samples_grid_480
 
     python src/app/agc_detector.py \\
         --input my_file.py \\
@@ -352,9 +363,14 @@ def parse_args():
                      help="Path to one .py file to scan.")
     src.add_argument("--input-dir",
                      help="Directory containing mixed_sample_*.py files to scan.")
+    src.add_argument("--input-grid",
+                     help="Root containing blocks_*/ subdirs, each with mixed_sample_*.py. "
+                          "Predictions land in each subdir's own predictions/ folder.")
 
     ap.add_argument("--pattern", default="mixed_sample_*.py",
-                    help="Filename pattern used with --input-dir.")
+                    help="Filename pattern used with --input-dir and --input-grid.")
+    ap.add_argument("--subdir-pattern", default="blocks_*",
+                    help="Subdir glob used with --input-grid (default: blocks_*).")
     ap.add_argument("--model-pickle", default=None,
                     help=f"Tuned classifier pickle (default: latest match of {DEFAULT_MODEL_GLOB}).")
     ap.add_argument("--embedding", choices=["ast", "code", "combined"], default="ast",
@@ -379,18 +395,44 @@ def resolve_input_files(args) -> List[str]:
         if not os.path.exists(args.input):
             raise SystemExit(f"[ERROR] input file not found: {args.input}")
         if args.out_dir:
-            raise SystemExit("[ERROR] --out-dir is for --input-dir. Use --out-tsv with --input.")
+            raise SystemExit("[ERROR] --out-dir is only for --input-dir. Use --out-tsv with --input.")
         return [args.input]
 
-    if not os.path.isdir(args.input_dir):
-        raise SystemExit(f"[ERROR] input directory not found: {args.input_dir}")
+    if args.input_dir:
+        if not os.path.isdir(args.input_dir):
+            raise SystemExit(f"[ERROR] input directory not found: {args.input_dir}")
+        files = sorted(glob.glob(os.path.join(args.input_dir, args.pattern)))
+        if not files:
+            raise SystemExit(
+                f"[ERROR] no input files found: {args.input_dir}/{args.pattern}"
+            )
+        return files
 
-    files = sorted(glob.glob(os.path.join(args.input_dir, args.pattern)))
-    if not files:
+    # args.input_grid
+    if not os.path.isdir(args.input_grid):
+        raise SystemExit(f"[ERROR] grid root not found: {args.input_grid}")
+    if args.out_dir:
         raise SystemExit(
-            f"[ERROR] no input files found: {args.input_dir}/{args.pattern}"
+            "[ERROR] --out-dir is incompatible with --input-grid; "
+            "predictions are routed to each subdir's own predictions/ folder."
         )
 
+    subdirs = sorted(
+        d for d in glob.glob(os.path.join(args.input_grid, args.subdir_pattern))
+        if os.path.isdir(d)
+    )
+    if not subdirs:
+        raise SystemExit(
+            f"[ERROR] no subdirs matched: {args.input_grid}/{args.subdir_pattern}"
+        )
+
+    files: List[str] = []
+    for d in subdirs:
+        files.extend(sorted(glob.glob(os.path.join(d, args.pattern))))
+    if not files:
+        raise SystemExit(
+            f"[ERROR] no input files found under {args.input_grid}/{args.subdir_pattern}/{args.pattern}"
+        )
     return files
 
 
@@ -406,9 +448,14 @@ def out_tsv_for_input(input_path: str, args) -> Optional[str]:
     if args.input:
         return args.out_tsv
 
-    out_dir = args.out_dir
-    if out_dir is None:
-        out_dir = os.path.join(args.input_dir, "predictions")
+    if args.input_grid:
+        # Each file's predictions live alongside the file, under <subdir>/predictions/.
+        out_dir = os.path.join(os.path.dirname(input_path), "predictions")
+    else:
+        # --input-dir mode
+        out_dir = args.out_dir
+        if out_dir is None:
+            out_dir = os.path.join(args.input_dir, "predictions")
 
     os.makedirs(out_dir, exist_ok=True)
     base = os.path.basename(input_path).removesuffix(".py")
@@ -536,6 +583,10 @@ def main():
     if args.input_dir:
         print(f"   input dir   : {args.input_dir}")
         print(f"   pattern     : {args.pattern}")
+    if args.input_grid:
+        print(f"   input grid  : {args.input_grid}")
+        print(f"   subdir glob : {args.subdir_pattern}")
+        print(f"   pattern     : {args.pattern}")
     print(f"   embedding   : {args.embedding}")
     print(f"   threshold   : {args.threshold if args.threshold is not None else '(default)'}")
     print("============================================================")
@@ -575,6 +626,28 @@ def main():
     total_truth = sum(int(r["truth"]) for r in summaries)
     total_correct = sum(int(r["correct"]) for r in summaries)
 
+    # Per-subdir breakdown in grid mode (printed before the overall summary).
+    if args.input_grid:
+        by_subdir: Dict[str, List[Dict]] = {}
+        for s in summaries:
+            sub = os.path.dirname(s["input"])
+            by_subdir.setdefault(sub, []).append(s)
+
+        print()
+        print("============================================================")
+        print("Per-subdir summary")
+        print("============================================================")
+        for sub in sorted(by_subdir.keys()):
+            slist = by_subdir[sub]
+            n_files   = len(slist)
+            n_blocks  = sum(int(r["blocks"]) for r in slist)
+            n_truth   = sum(int(r["truth"]) for r in slist)
+            n_correct = sum(int(r["correct"]) for r in slist)
+            acc_str = f"{n_correct / n_truth:.4f}" if n_truth else "(no truth)"
+            print(f"  {os.path.basename(sub):<12} : files={n_files:>4}  "
+                  f"blocks={n_blocks:>5}  truth={n_truth:>5}  "
+                  f"correct={n_correct:>5}  accuracy={acc_str}")
+
     print()
     print("============================================================")
     print("Overall summary")
@@ -589,18 +662,32 @@ def main():
     else:
         print("truth blocks  : 0")
 
+    # Write per-subdir summary.csv + grid-level summary in grid mode;
+    # write a single summary.csv next to predictions in --input-dir mode.
     if args.input_dir:
         out_dir = args.out_dir or os.path.join(args.input_dir, "predictions")
-        os.makedirs(out_dir, exist_ok=True)
-        summary_path = os.path.join(out_dir, "summary.csv")
-        with open(summary_path, "w", newline="") as f:
-            w = csv.DictWriter(
-                f,
-                fieldnames=["input", "blocks", "truth", "correct", "accuracy"],
-            )
-            w.writeheader()
-            w.writerows(summaries)
-        print(f"summary csv   : {summary_path}")
+        path = _write_summary_csv(out_dir, summaries, "summary.csv")
+        print(f"summary csv   : {path}")
+    elif args.input_grid:
+        for sub, slist in by_subdir.items():
+            sub_out = os.path.join(sub, "predictions")
+            _write_summary_csv(sub_out, slist, "summary.csv")
+        grid_path = _write_summary_csv(args.input_grid, summaries, "predictions_summary.csv")
+        print(f"per-subdir summaries: <subdir>/predictions/summary.csv")
+        print(f"grid summary csv    : {grid_path}")
+
+
+def _write_summary_csv(out_dir: str, summaries: List[Dict], filename: str) -> str:
+    os.makedirs(out_dir, exist_ok=True)
+    summary_path = os.path.join(out_dir, filename)
+    with open(summary_path, "w", newline="") as f:
+        w = csv.DictWriter(
+            f,
+            fieldnames=["input", "blocks", "truth", "correct", "accuracy"],
+        )
+        w.writeheader()
+        w.writerows(summaries)
+    return summary_path
 
 
 if __name__ == "__main__":
