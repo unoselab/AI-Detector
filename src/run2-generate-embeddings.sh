@@ -53,6 +53,7 @@
 #   OUT_BASELINE       - where baseline-mode embeddings go
 #   OUT_ABLATION_ROOT  - where ablation-mode embedding subfolders go
 #   BATCH_SIZE         - tokenizer/model batch size (default 32)
+#   MAX_LEN            - tokenizer max_length for CodeT5+ inputs (default 512)
 #   DEVICE             - cuda | cuda:0 | cpu (default: auto-detect)
 #   OVERWRITE=1        - re-embed even if output CSV exists
 # =============================================================================
@@ -79,6 +80,7 @@ OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings/${MODEL_NAME}}" # Co
 OUT_ABLATION_ROOT="${OUT_ABLATION_ROOT:-data_ablation_with_embeddings}"
 
 BATCH_SIZE="${BATCH_SIZE:-32}"
+MAX_LEN="${MAX_LEN:-512}"
 PYTHON="${PYTHON:-python}"
 
 # -----------------------------------------------------------------------------
@@ -178,6 +180,7 @@ echo "   target dir : ${TARGET_DIR}"
 echo "   model name : ${MODEL_NAME}"
 echo "   batch size : ${BATCH_SIZE}"
 echo "   device     : ${DEVICE:-auto}"
+echo "   max len    : ${MAX_LEN}"
 echo "   modes      : ${MODES[*]}"
 echo "============================================================"
 
@@ -194,6 +197,7 @@ for mode in "${MODES[@]}"; do
     --input-dir  "${in_dir}" \
     --output-dir "${out_dir}" \
     --batch-size "${BATCH_SIZE}" \
+    --max-len    "${MAX_LEN}" \
     "${DEVICE_ARG[@]}" \
     "${OVERWRITE_ARG[@]}"
 done

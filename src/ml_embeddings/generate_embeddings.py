@@ -56,7 +56,7 @@ from transformers import AutoModel, AutoTokenizer
 # -----------------------------------------------------------------------------
 MODEL_ID  = "Salesforce/codet5p-110m-embedding"
 EMBED_DIM = 256
-MAX_LEN   = 512                     # CodeT5+ tokenizer truncation length
+DEFAULT_MAX_LEN = 512               # CodeT5+ tokenizer truncation length
 SEP       = " </s> "                # separator for "Code + AST" representation
 LABEL_MAP = {"human": 1, "lm": 0}   # paper convention: human=positive, AI=negative
 
@@ -72,7 +72,7 @@ def load_model(device):
 
 
 @torch.no_grad()
-def embed_batch(texts, tok, model, device, batch_size=32, desc="encoding"):
+def embed_batch(texts, tok, model, device, batch_size=32, max_len=DEFAULT_MAX_LEN, desc="encoding"):    
     """Return an (N, EMBED_DIM) numpy array of embeddings for `texts`."""
     if len(texts) == 0:
         return np.zeros((0, EMBED_DIM), dtype=np.float32)
@@ -85,7 +85,7 @@ def embed_batch(texts, tok, model, device, batch_size=32, desc="encoding"):
             return_tensors="pt",
             padding=True,
             truncation=True,
-            max_length=MAX_LEN,
+            max_length=max_len,
         ).to(device)
 
         out = model(**enc)
@@ -113,7 +113,7 @@ def embed_batch(texts, tok, model, device, batch_size=32, desc="encoding"):
 # -----------------------------------------------------------------------------
 # CSV processing
 # -----------------------------------------------------------------------------
-def process_csv(csv_in, csv_out, tok, model, device, batch_size):
+def process_csv(csv_in, csv_out, tok, model, device, batch_size, max_len):
     df = pd.read_csv(csv_in)
 
     # Drop rows with missing code or ast (rare; safety net).
@@ -139,9 +139,9 @@ def process_csv(csv_in, csv_out, tok, model, device, batch_size):
     combined_texts = (df["code"] + SEP + df["ast"]).tolist()
 
     # Three forward passes per CSV.
-    code_emb     = embed_batch(df["code"].tolist(), tok, model, device, batch_size, desc="code")
-    ast_emb      = embed_batch(df["ast"].tolist(),  tok, model, device, batch_size, desc="ast")
-    combined_emb = embed_batch(combined_texts,       tok, model, device, batch_size, desc="combined")
+    code_emb     = embed_batch(df["code"].tolist(), tok, model, device, batch_size, max_len=max_len, desc="code")
+    ast_emb      = embed_batch(df["ast"].tolist(),  tok, model, device, batch_size, max_len=max_len, desc="ast")
+    combined_emb = embed_batch(combined_texts,       tok, model, device, batch_size, max_len=max_len, desc="combined")
 
     # Assemble the output frame.
     out_cols = {
@@ -185,6 +185,11 @@ def parse_args():
     )
     ap.add_argument("--batch-size", type=int, default=32)
     ap.add_argument(
+        "--max-len", type=int, default=DEFAULT_MAX_LEN,
+        help="Tokenizer max_length for CodeT5+ embedding inputs. "
+             "Increase this to reduce truncation of long AST sequences.",
+    )
+    ap.add_argument(
         "--device", default=None,
         help="cuda | cuda:0 | cpu (auto-detect if unset).",
     )
@@ -211,6 +216,7 @@ def main():
     print(f"\nFound {len(csv_files)} CSV(s) to process.")
     print(f"Input  : {args.input_dir}")
     print(f"Output : {args.output_dir}\n")
+    print(f"Max len: {args.max_len}\n")
 
     for csv_in in csv_files:
         rel     = os.path.relpath(csv_in, args.input_dir)
@@ -219,7 +225,7 @@ def main():
         if os.path.exists(csv_out) and not args.overwrite:
             print(f"  skip (exists): {csv_out}")
             continue
-        process_csv(csv_in, csv_out, tok, model, device, args.batch_size)
+        process_csv(csv_in, csv_out, tok, model, device, args.batch_size, args.max_len)
 
     print("\nDone.")
 

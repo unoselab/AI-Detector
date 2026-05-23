@@ -1,0 +1,8 @@
+model_name	model	status	start_time	end_time	seconds	log_file
+starcoder2-15b-instruct-v0.1	lr	OK	2026-05-23T15:46:28-05:00	2026-05-23T15:46:36-05:00	8	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_lr_20260523_154628.log
+starcoder2-15b-instruct-v0.1	svm	OK	2026-05-23T15:46:36-05:00	2026-05-23T15:46:53-05:00	17	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_svm_20260523_154636.log
+starcoder2-15b-instruct-v0.1	mlp	OK	2026-05-23T15:46:53-05:00	2026-05-23T15:48:35-05:00	102	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_mlp_20260523_154653.log
+starcoder2-15b-instruct-v0.1	rf	OK	2026-05-23T15:48:35-05:00	2026-05-23T15:48:51-05:00	16	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_rf_20260523_154835.log
+starcoder2-15b-instruct-v0.1	gb	OK	2026-05-23T15:48:51-05:00	2026-05-23T15:55:38-05:00	407	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_gb_20260523_154851.log
+starcoder2-15b-instruct-v0.1	knn	OK	2026-05-23T15:55:38-05:00	2026-05-23T15:55:43-05:00	5	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_knn_20260523_155538.log
+starcoder2-15b-instruct-v0.1	dt	OK	2026-05-23T15:55:43-05:00	2026-05-23T15:55:55-05:00	12	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_allmodels_20260523_154628/run4_starcoder2-15b-instruct-v0.1_dt_20260523_155543.log
