@@ -28,7 +28,7 @@ INPUT_FILE="${INPUT_FILE:-}"
 # Set INPUT_GRID to a root that contains blocks_*/ subdirs to run the full grid
 # in one Python process. Predictions land in each subdir's own predictions/
 # folder, plus a grid-level predictions_summary.csv at the root.
-INPUT_GRID="${INPUT_GRID:-}"
+INPUT_GRID="${INPUT_GRID:-src/app/data_mixed_samples_grid_480}"
 SUBDIR_PATTERN="${SUBDIR_PATTERN:-blocks_*}"
 
 EMBEDDING="${EMBEDDING:-ast}"
