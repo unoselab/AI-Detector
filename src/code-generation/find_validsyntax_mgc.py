@@ -244,10 +244,11 @@ def clean_output(prompt: str, output: str) -> str:
             cut = min(cut, m.start())
 
     s = s[:cut].rstrip() + "\n"
+    s = strip_repeated_outer_signature(prompt, s)
     s = _strip_repeated_signature_tail(s)
     s = _normalize_continuation_indent(prompt, s)
-
     return s
+
 
 def compose_code(prompt: str, continuation: str) -> str:
     """Combine prompt and continuation, then dedent for module-level parsing."""
@@ -288,6 +289,11 @@ def process_obj(obj: Dict[str, Any], line_no: int) -> ProcessedSample:
     raw_res = syntax_check(raw_mgc_code)
     clean_res = syntax_check(clean_mgc_code)
     hwc_res = syntax_check(hwc_code)
+
+    if clean_res.ok and not has_exactly_one_top_level_block(clean_mgc_code):
+        clean_res = SyntaxResult(False, "wrong top-level block count")
+    if raw_res.ok and not has_exactly_one_top_level_block(raw_mgc_code):
+        raw_res = SyntaxResult(False, "wrong top-level block count")
 
     if raw_res.ok:
         status = "raw_valid"
@@ -367,6 +373,63 @@ def write_pipeline_csv(df: pd.DataFrame, out_path: Path) -> pd.DataFrame:
     print(f"  shape: {out_df.shape}")
     print(f"  labels: {out_df['label'].value_counts().to_dict()}")
     return out_df
+
+
+def prompt_function_name(prompt: str) -> Optional[str]:
+    code = textwrap.dedent(normalize_newlines(prompt))
+    m = re.search(r"^\s*(?:async\s+)?def\s+([A-Za-z_]\w*)\s*\(", code, re.MULTILINE)
+    if m:
+        return m.group(1)
+    m = re.search(r"^\s*class\s+([A-Za-z_]\w*)\s*[:(]", code, re.MULTILINE)
+    if m:
+        return m.group(1)
+    return None
+
+
+def strip_repeated_outer_signature(prompt: str, output: str) -> str:
+    """
+    If the model starts the supposed body by re-emitting the same outer
+    function/class signature from the prompt, drop that signature line.
+
+    Nested helper functions are allowed later after indentation normalization.
+    """
+    expected_name = prompt_function_name(prompt)
+    if not expected_name:
+        return output
+
+    lines = normalize_newlines(output).splitlines()
+    first = next((i for i, line in enumerate(lines) if line.strip()), None)
+    if first is None:
+        return "\n"
+
+    first_text = lines[first].strip()
+
+    repeated_def = re.match(
+        rf"^(?:async\s+)?def\s+{re.escape(expected_name)}\s*\(.*\)\s*(?:->\s*[^:]+)?\s*:\s*$",
+        first_text,
+    )
+    repeated_class = re.match(
+        rf"^class\s+{re.escape(expected_name)}\s*[:(]",
+        first_text,
+    )
+
+    if repeated_def or repeated_class:
+        rest = "\n".join(lines[first + 1:]).lstrip("\n")
+        return "\n" + rest if rest.strip() else "\n"
+
+    return output
+
+
+def top_level_block_names(code: str) -> List[str]:
+    tree = ast.parse(code)
+    return [
+        n.name for n in tree.body
+        if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
+    ]
+
+
+def has_exactly_one_top_level_block(code: str) -> bool:
+    return len(top_level_block_names(code)) == 1
 
 
 def summarize(samples: List[ProcessedSample], json_errors: List[Tuple[int, str]]) -> None:
