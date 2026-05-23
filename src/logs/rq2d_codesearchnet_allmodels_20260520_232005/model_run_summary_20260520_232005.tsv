@@ -1,0 +1,8 @@
+model	status	start_time	end_time	seconds	log_file
+lr	OK	2026-05-20T23:20:05-05:00	2026-05-20T23:20:12-05:00	7	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_lr_20260520_232005.log
+svm	OK	2026-05-20T23:20:12-05:00	2026-05-20T23:20:24-05:00	12	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_svm_20260520_232012.log
+mlp	OK	2026-05-20T23:20:24-05:00	2026-05-20T23:21:50-05:00	86	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_mlp_20260520_232024.log
+rf	OK	2026-05-20T23:21:50-05:00	2026-05-20T23:22:05-05:00	15	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_rf_20260520_232150.log
+gb	OK	2026-05-20T23:22:05-05:00	2026-05-20T23:29:41-05:00	456	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_gb_20260520_232205.log
+knn	OK	2026-05-20T23:29:41-05:00	2026-05-20T23:29:46-05:00	5	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_knn_20260520_232941.log
+dt	OK	2026-05-20T23:29:46-05:00	2026-05-20T23:29:57-05:00	11	src/logs/rq2d_codesearchnet_allmodels_20260520_232005/run4_dt_20260520_232946.log

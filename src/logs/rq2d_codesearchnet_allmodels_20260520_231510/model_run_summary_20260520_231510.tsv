@@ -1,0 +1,8 @@
+model	status	start_time	end_time	seconds	log_file
+lr	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_lr_20260520_231510.log
+svm	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_svm_20260520_231510.log
+mlp	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_mlp_20260520_231510.log
+rf	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_rf_20260520_231510.log
+gb	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_gb_20260520_231510.log
+knn	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_knn_20260520_231510.log
+dt	FAIL	2026-05-20T23:15:10-05:00	2026-05-20T23:15:10-05:00	0	src/logs/rq2d_codesearchnet_allmodels_20260520_231510/run4_dt_20260520_231510.log
