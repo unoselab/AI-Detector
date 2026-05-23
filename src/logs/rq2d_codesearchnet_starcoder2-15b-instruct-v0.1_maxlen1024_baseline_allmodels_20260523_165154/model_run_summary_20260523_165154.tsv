@@ -1,0 +1,2 @@
+model_name	model	status	start_time	end_time	seconds	log_file
+starcoder2-15b-instruct-v0.1_maxlen1024_baseline	lr	OK	2026-05-23T16:51:54-05:00	2026-05-23T16:52:02-05:00	8	src/logs/rq2d_codesearchnet_starcoder2-15b-instruct-v0.1_maxlen1024_baseline_allmodels_20260523_165154/run4_starcoder2-15b-instruct-v0.1_maxlen1024_baseline_lr_20260523_165154.log
