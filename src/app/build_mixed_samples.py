@@ -14,7 +14,7 @@ test can be evaluated per block (HWC vs AGC).
 
 Per the task setup:
   * Block unit             : top-level function/class (one row = one block).
-  * Mixing strategy        : concatenation (not mutation).
+  * Mixing strategy        : concatenation.
   * Source pool            : a single ast CSV (default 15B-Instruct).
 
 Output (per sample)
