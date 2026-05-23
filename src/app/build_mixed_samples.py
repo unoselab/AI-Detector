@@ -239,9 +239,11 @@ def main():
     if not args.no_split_filter:
         test_idx = load_test_idx_set(args.splits_dir)
         if test_idx is None:
-            print(f"[WARN] no test_.csv in {args.splits_dir}; using all rows.")
-            print("[WARN] resulting per-block numbers will mix unseen data with "
-                  "training-data recall and should NOT be reported as detection accuracy.")
+            raise SystemExit(
+                f"[ERROR] no test_.csv found in {args.splits_dir}\n"
+                "        Refusing to build reportable mixed samples from all rows.\n"
+                "        Use --no-split-filter only for debugging, not evaluation."
+            )
         else:
             before = len(df)
             df = df[df["idx"].isin(test_idx)].copy()
