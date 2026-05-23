@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	exec_container_commands	5	25	lm	line174_lm
+2	complete_experiment	27	39	lm	line901_lm
+3	sync_user	41	66	human	line1593_human
+4	_add_left	68	90	human	line606_human
+5	urlnext	92	123	human	line2957_human
+6	load_actions	125	142	lm	line2528_lm

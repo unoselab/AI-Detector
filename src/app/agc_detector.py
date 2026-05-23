@@ -266,7 +266,7 @@ def load_labels_tsv(path: str) -> List[Dict]:
                 "start_line":    int(row["start_line"]),
                 "end_line":      int(row["end_line"]),
                 "label":         row["label"].strip().lower(),
-                "source_idx":    int(row.get("source_idx", -1)),
+                "source_idx":    row.get("source_idx", ""),
             })
     return rows
 

@@ -1,0 +1,5 @@
+block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+1	5	17	function_definition	_handle_event	human	0.459	decision	human	1
+2	19	26	function_definition	backend	lm	-0.7601	decision	human	0
+3	28	48	function_definition	receive_message	human	0.9492	decision	human	1
+4	50	60	function_definition	toNoUintArray	human	1.1151	decision	human	1

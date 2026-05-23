@@ -14,7 +14,7 @@ test can be evaluated per block (HWC vs AGC).
 
 Per the task setup:
   * Block unit             : top-level function/class (one row = one block).
-  * Mixing strategy        : concatenation.
+  * Mixing strategy        : concatenation (not mutation).
   * Source pool            : a single ast CSV (default 15B-Instruct).
 
 Output (per sample)
@@ -34,13 +34,22 @@ Determinism
 The whole procedure is seeded (default 42). Re-running with the same seed
 on the same input CSV reproduces identical sample files.
 
-Source split safety
--------------------
-By default the script only samples from CSV rows that are in the existing
-TEST split for this dataset (so that re-running the detector on these
-samples does not leak training data into the test). The split dir is
-auto-located via --splits-dir; pass --no-split-filter to disable this and
-draw from all rows.
+Source split safety (important)
+-------------------------------
+By default the script restricts the candidate pool to rows in the TEST
+split of the source CSV. This is methodologically critical: the
+classifiers in `data_codesearchnet/models/` were trained on the TRAIN
+split, so if we glued training rows into a mixed sample and then ran the
+detector on it, per-block accuracy would be inflated by training-data
+memorization rather than reflecting true generalization.
+
+`build_mixed_samples.py` therefore looks up the test split via
+--splits-dir and excludes everything else.
+
+For an exploratory run on a non-standard CSV that has no matching splits
+dir, pass --no-split-filter. Caveat: the resulting per-block numbers
+mix "unseen data" with "training-data recall" and should NOT be reported
+as detection accuracy.
 """
 
 import argparse
@@ -167,7 +176,7 @@ def render_sample(rows: List[Tuple[pd.Series, str]]) -> Tuple[str, List[Dict]]:
             "start_line":    start_line,
             "end_line":      end_line,
             "label":         label,
-            "source_idx":    int(row["idx"]),
+            "source_idx":    str(row["idx"]),
         })
 
     text = "\n".join(lines_out).rstrip() + "\n"
@@ -231,10 +240,16 @@ def main():
         test_idx = load_test_idx_set(args.splits_dir)
         if test_idx is None:
             print(f"[WARN] no test_.csv in {args.splits_dir}; using all rows.")
+            print("[WARN] resulting per-block numbers will mix unseen data with "
+                  "training-data recall and should NOT be reported as detection accuracy.")
         else:
             before = len(df)
             df = df[df["idx"].isin(test_idx)].copy()
             print(f"Restricted pool to test split: {len(df)} / {before} rows.")
+    else:
+        print("[WARN] --no-split-filter set; drawing from all rows (includes training data).")
+        print("[WARN] resulting per-block numbers will mix unseen data with "
+              "training-data recall and should NOT be reported as detection accuracy.")
 
     df["label"] = df["label"].astype(str).str.strip().str.lower()
     label_counts = df["label"].value_counts().to_dict()

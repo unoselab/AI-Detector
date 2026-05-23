@@ -1,0 +1,9 @@
+block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+1	5	24	function_definition	exec_container_commands	human	0.0578	decision	lm	0
+2	26	37	function_definition	complete_experiment	human	0.2721	decision	lm	0
+3	39	63	function_definition	sync_user	lm	-2.0912	decision	human	0
+4	65	86	function_definition	":
+       "	human	1.3493	decision	?	
+5	88	118	function_definition	")"" % bi"	human	3.075	decision	?	
+6	120	136	function_definition	"  Example:
+ "	lm	-0.4748	decision	?	

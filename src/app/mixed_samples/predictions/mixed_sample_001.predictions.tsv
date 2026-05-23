@@ -1,0 +1,5 @@
+block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+1	5	25	function_definition	find_movie	human	1.6474	decision	human	1
+2	27	56	function_definition	collect_spans	human	0.4242	decision	lm	0
+3	58	65	function_definition	_maybe_append_chunk	lm	-1.9672	decision	human	0
+4	67	76	function_definition	get_listener_instance	lm	-0.585	decision	human	0
