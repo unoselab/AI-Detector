@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-select_quality400_pairs.py
+select_quality_pairs.py
 ==========================
 
-Build a quality-controlled 400-pair CodeSearchNet dataset from a larger
+Build a quality-controlled N-pair CodeSearchNet dataset from a larger
 cleaned AST CSV, without using classifier predictions or model performance.
 
 Purpose
@@ -15,7 +15,7 @@ This script selects pairs by structural/data-quality criteria only:
   * AST token lengths fit within a chosen embedding max length;
   * rows are not extremely tiny or extremely long;
   * human/LM pair lengths are not wildly imbalanced;
-  * final sampling is length-stratified so the 400-pair subset is not only
+  * final sampling is length-stratified so the N-pair subset is not only
     short/easy examples.
 
 Input
@@ -30,19 +30,19 @@ Required columns:
 Output
 ------
 1. AST CSV with selected rows, preserving original columns:
-   <out-ast-dir>/<prefix>_merged_quality400.csv
+   <out-ast-dir>/<prefix>_merged_<dataset_tag>.csv
 
 2. Validsyntax-style CSV with only idx,code,label:
-   <out-validsyntax-dir>/<prefix>_merged_quality400.csv
+   <out-validsyntax-dir>/<prefix>_merged_<dataset_tag>.csv
 
 3. Manifest with selection metadata per pair:
-   <out-ast-dir>/<prefix>_merged_quality400_manifest.csv
+   <out-ast-dir>/<prefix>_merged_<dataset_tag>_manifest.csv
 
 Example
 -------
 From repo src/:
 
-  python ml_embeddings/select_quality400_pairs.py \
+  python ml_embeddings/select_quality_pairs.py \
     --input-csv code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/ast/codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_2700.csv \
     --out-ast-dir code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/ast_quality400 \
     --out-validsyntax-dir code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax_quality400 \
@@ -52,13 +52,133 @@ From repo src/:
     --seed 42
 """
 
+"""
+select_quality_pairs.py
+=======================
+
+Select a quality-controlled N-pair subset from a cleaned CodeSearchNet AST CSV.
+
+This script is intended to run after:
+
+    run1-ast-generator.sh
+
+It takes an AST CSV such as:
+
+    code-analyzer-tree-sitter/data_codesearchnet/<MODEL>/ast/
+        codesearchnet_<MODEL>_python_merged_2700.csv
+
+and selects a balanced subset of human/LM pairs using data-quality criteria only.
+It does not use classifier predictions, test results, or model performance.
+
+Selection criteria
+------------------
+A pair is eligible only when:
+  * it contains exactly one human row and one LM row;
+  * both rows parse as Python;
+  * both rows contain exactly one top-level function/class;
+  * AST token lengths are within the configured min/max range;
+  * code length is not too large;
+  * human/LM AST lengths are not heavily imbalanced.
+
+The final sample is length-stratified so the selected subset is not composed
+only of very short/easy examples.
+
+Required input columns
+----------------------
+The input CSV must contain:
+
+    idx, code, ast, label
+
+Main outputs
+------------
+This script writes three main output artifacts.
+
+1. AST dataset CSV
+
+   Path:
+       <out-ast-dir>/<prefix>_merged_<dataset_tag>.csv
+
+   Example:
+       ast_quality400/
+           codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_quality400.csv
+
+   Purpose:
+       This is the selected dataset used by run2-generate-embeddings.sh.
+       It preserves the original AST-stage columns, including:
+
+           idx, code, ast, label
+
+       plus any other non-internal columns present in the source CSV.
+
+2. Validsyntax-style dataset CSV
+
+   Path:
+       <out-validsyntax-dir>/<prefix>_merged_<dataset_tag>.csv
+
+   Example:
+       validsyntax_quality400/
+           codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_quality400.csv
+
+   Purpose:
+       This is a lightweight provenance/debugging file with only:
+
+           idx, code, label
+
+       It mirrors the format produced by the valid-syntax filtering stage, but
+       contains only the selected quality-controlled subset.
+
+3. Selection manifest CSV
+
+   Path:
+       <out-ast-dir>/<prefix>_merged_<dataset_tag>_manifest.csv
+
+   Example:
+       ast_quality400/
+           codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_quality400_manifest.csv
+
+   Purpose:
+       This records metadata for the selected pairs, including pair IDs,
+       human/LM row IDs, AST token lengths, code-line counts, top-level names,
+       length bins, and quality scores.
+
+Optional output
+---------------
+If --write-candidate-report is enabled, the script also writes:
+
+    <out-ast-dir>/<prefix>_merged_<dataset_tag>_candidate_report.csv
+
+This report includes both eligible and rejected pairs from the full source pool,
+with rejection reasons such as:
+
+    too_long_ast
+    too_short_ast
+    pair_ast_imbalance
+    top_level_count
+    parse_fail
+
+Example
+-------
+From repo src/:
+
+    python code-analyzer-tree-sitter/select_quality_pairs.py \
+      --input-csv code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/ast/codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_2700.csv \
+      --out-ast-dir code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/ast_quality400 \
+      --out-validsyntax-dir code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax_quality400 \
+      --prefix codesearchnet_starcoder2-15b-instruct-v0.1_python \
+      --n-pairs 400 \
+      --dataset-tag quality400 \
+      --max-ast-tokens 2048 \
+      --seed 42 \
+      --write-candidate-report
+"""
+
 from __future__ import annotations
 
 import argparse
 import ast as py_ast
 import re
 from pathlib import Path
-from typing import Iterable, List, Optional
+from typing import List
 
 import numpy as np
 import pandas as pd
@@ -340,7 +460,7 @@ def write_outputs(
 # -----------------------------------------------------------------------------
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Select a quality-controlled 400-pair dataset from cleaned AST CSV.",
+        description="Select a quality-controlled N-pair dataset from cleaned AST CSV.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("--input-csv", required=True, type=Path)
