@@ -83,16 +83,30 @@ def process_csv_files(input_dir, output_dir, mode):
     os.makedirs(output_dir, exist_ok=True)
     transform = MODE_TRANSFORM[mode]
 
-    for csv_file in glob(input_dir + '/**/*.csv', recursive=True):
+    csv_files = sorted(glob(input_dir + '/**/*.csv', recursive=True))
+    csv_files = [
+        p for p in csv_files
+        if not os.path.basename(p).endswith("_manifest.csv")
+        and not os.path.basename(p).endswith("_candidate_report.csv")
+    ]
+
+    for csv_file in csv_files:
         print(f"Processing {csv_file}  [mode={mode}]")
 
         data = pd.read_csv(csv_file)
+
+        required = {"code", "label"}
+        missing = required - set(data.columns)
+        if missing:
+            print(f"Skipping {csv_file}: missing required columns {sorted(missing)}")
+            continue
+
         # data['idx'] = data.index
         if 'idx' not in data.columns:
             data['idx'] = data.index
         else:
             data['idx'] = data['idx'].astype(str)
-            
+
         data = data.dropna(subset=['code']).copy()
         data['code'] = data['code'].astype(str)
 
