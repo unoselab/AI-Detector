@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ADDITIONAL_COMMENT="$1"
+git status
 git add .
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M')
 if [ -n "$ADDITIONAL_COMMENT" ]; then
