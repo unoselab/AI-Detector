@@ -57,7 +57,8 @@ set -euo pipefail
 # -----------------------------------------------------------------------------
 # Path resolution
 # -----------------------------------------------------------------------------
-MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
+# MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
+MODEL_NAME="starcoder2-15b-instruct-v0.1_size_sweep_maxlen2048" # msong 2026-05-24 test 500, .., 2500
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 
