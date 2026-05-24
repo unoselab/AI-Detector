@@ -11,7 +11,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 cd "$REPO_ROOT" || exit 1
 
 # MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
-MODEL_NAME="starcoder2-15b-instruct-v0.1_maxlen1024_baseline"
+MODEL_NAME="starcoder2-15b-instruct-v0.1_maxlen2048_baseline"
 N_ITER="${N_ITER:-30}"
 CV="${CV:-5}"
 SEED="${SEED:-42}"

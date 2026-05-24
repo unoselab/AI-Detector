@@ -76,11 +76,11 @@ AST_ABLATION_ROOT="${AST_ABLATION_ROOT:-${SCRIPT_DIR}/code-analyzer-tree-sitter/
 
 # Embedding output locations (relative to TARGET_DIR after the cd).
 # OUT_BASELINE="${OUT_BASELINE:-data_main_with_embeddings}"   # Original path.
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings/${MODEL_NAME}_maxlen1024_baseline}" # CodeSearchNet corpus, max-len experiment.
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings/${MODEL_NAME}_maxlen2048_baseline}" # CodeSearchNet corpus, max-len experiment.
 OUT_ABLATION_ROOT="${OUT_ABLATION_ROOT:-data_ablation_with_embeddings}"
 
 BATCH_SIZE="${BATCH_SIZE:-32}"
-MAX_LEN="${MAX_LEN:-1024}"
+MAX_LEN="${MAX_LEN:-2048}"
 OVERWRITE="${OVERWRITE:-1}"
 PYTHON="${PYTHON:-python}"
 
