@@ -45,7 +45,8 @@ GEN_MODEL="${GEN_MODEL:-starcoder2-15b-instruct-v0.1}"
 GEN_MODEL_HF="${GEN_MODEL_HF:-bigcode/starcoder2-15b-instruct-v0.1}"
 
 # Pilot defaults to 200; override to 3000 for full run.
-GEN_MAX_NUM="${GEN_MAX_NUM:-3000}"
+#GEN_MAX_NUM="${GEN_MAX_NUM:-3000}"
+GEN_MAX_NUM="${GEN_MAX_NUM:-5000}"  # msong 2026-05-24 more data for 500, 1000, 1500, 2000, 2500, 3000
 GEN_TEMPERATURE="${GEN_TEMPERATURE:-0.2}"
 GEN_MAX_LENGTH="${GEN_MAX_LENGTH:-512}"
 
