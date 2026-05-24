@@ -24,7 +24,7 @@ SEED="${SEED:-42}"
 DATASET_TAG="${DATASET_TAG:-quality${N_PAIRS}}"
 PREFIX="codesearchnet_${MODEL_NAME}_python"
 
-SELECTOR="ml_embeddings/select_quality_pairs.py"
+SELECTOR="code-analyzer-tree-sitter/select_quality_pairs.py"
 
 INPUT_CSV="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast/${PREFIX}_merged_2700.csv"
 OUT_AST_DIR="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_${DATASET_TAG}"
