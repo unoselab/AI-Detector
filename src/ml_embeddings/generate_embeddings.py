@@ -116,6 +116,12 @@ def embed_batch(texts, tok, model, device, batch_size=32, max_len=DEFAULT_MAX_LE
 def process_csv(csv_in, csv_out, tok, model, device, batch_size, max_len):
     df = pd.read_csv(csv_in)
 
+    required = {"idx", "code", "ast", "label"}
+    missing = required - set(df.columns)
+    if missing:
+        print(f"  [SKIP] missing required columns {sorted(missing)} in {csv_in}")
+        return
+
     # Drop rows with missing code or ast (rare; safety net).
     df = df.dropna(subset=["code", "ast"]).copy()
     df["code"] = df["code"].astype(str)
@@ -209,6 +215,11 @@ def main():
     csv_files = sorted(
         glob(os.path.join(args.input_dir, "**", "*.csv"), recursive=True)
     )
+    csv_files = [
+        p for p in csv_files
+        if not os.path.basename(p).endswith("_manifest.csv")
+        and not os.path.basename(p).endswith("_candidate_report.csv")
+    ]
     if not csv_files:
         print(f"[ERROR] no CSVs found under {args.input_dir}")
         return
