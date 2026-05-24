@@ -62,12 +62,12 @@ TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/ml_embeddings}"
 MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
 # Embedding CSVs from run2-generate-embeddings.sh
 # EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_main_with_embeddings}"   # Original path.
-EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings/${MODEL_NAME}_maxlen2048_quality400}" # CodeSearchNet corpus.
+# EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings/${MODEL_NAME}_maxlen2048_quality400}" # CodeSearchNet corpus.
 EMB_ABLATION_ROOT="${EMB_ABLATION_ROOT:-data_ablation_with_embeddings}"
 
 # Split outputs
 # OUT_BASELINE="${OUT_BASELINE:-splits}"                  # Orginal path.
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}_maxlen2048_quality400}" # CodeSearchNet corpus.
+# OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}_maxlen2048_quality400}" # CodeSearchNet corpus.
 GROUP_BY_PAIR_ID="${GROUP_BY_PAIR_ID:-1}"
 OUT_ABLATION_ROOT="${OUT_ABLATION_ROOT:-splits_ablation}"
 
@@ -76,6 +76,10 @@ SEED="${SEED:-42}"
 TRAIN_FRAC="${TRAIN_FRAC:-0.80}"
 DEV_FRAC="${DEV_FRAC:-0.10}"
 TEST_FRAC="${TEST_FRAC:-0.10}"
+
+# msong 2026-05-24 test 500, ..., 2500
+EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings/${MODEL_NAME}_size_sweep_maxlen2048}"
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}_size_sweep_maxlen2048}"
 
 PYTHON="${PYTHON:-python}"
 
