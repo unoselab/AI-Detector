@@ -72,6 +72,7 @@ python "${SELECTOR}" \
   --out-validsyntax-dir "${OUT_VALIDSYNTAX_DIR}" \
   --prefix "${PREFIX}" \
   --n-pairs "${N_PAIRS}" \
+  --dataset-tag "${DATASET_TAG}" \
   --max-ast-tokens "${MAX_AST_TOKENS}" \
   --min-ast-tokens "${MIN_AST_TOKENS}" \
   --max-code-lines "${MAX_CODE_LINES}" \
