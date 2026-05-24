@@ -50,9 +50,8 @@ From repo src/:
     --n-pairs 400 \
     --max-ast-tokens 2048 \
     --seed 42
-"""
+=======================
 
-"""
 select_quality_pairs.py
 =======================
 
