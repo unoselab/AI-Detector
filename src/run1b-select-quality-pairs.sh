@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Select a quality-controlled N-pair dataset from the cleaned 2700-pair AST CSV.
+# Select a quality-controlled N-pair dataset after run1-ast-generator.sh.
 #
 # Usage:
-#   ./run0c-select-quality-pairs.sh
-#   N_PAIRS=600 ./run0c-select-quality-pairs.sh
-#   MAX_AST_TOKENS=1024 ./run0c-select-quality-pairs.sh
+#   ./run1b-select-quality-pairs.sh
+#   N_PAIRS=600 ./run1b-select-quality-pairs.sh
+#   MAX_AST_TOKENS=1024 ./run1b-select-quality-pairs.sh
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
@@ -32,7 +32,7 @@ OUT_VALIDSYNTAX_DIR="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/
 
 TS="$(date +'%Y%m%d_%H%M%S')"
 LOG_DIR="${LOG_DIR:-logs}"
-LOG_FILE="${LOG_DIR}/run0c-select-quality-pairs_${DATASET_TAG}_${TS}.log"
+LOG_FILE="${LOG_DIR}/run1b-select-quality-pairs_${DATASET_TAG}_${TS}.log"
 mkdir -p "${LOG_DIR}"
 
 if [ ! -f "${SELECTOR}" ]; then
@@ -48,7 +48,7 @@ fi
 exec > >(tee -a "${LOG_FILE}") 2>&1
 
 echo "============================================================"
-echo " run0c-select-quality-pairs.sh"
+echo " run1b-select-quality-pairs.sh"
 echo "   repo root             : ${REPO_ROOT}"
 echo "   model name            : ${MODEL_NAME}"
 echo "   input csv             : ${INPUT_CSV}"
