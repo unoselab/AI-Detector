@@ -12,7 +12,7 @@ cd "$REPO_ROOT" || exit 1
 
 # MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
 # MODEL_NAME="starcoder2-15b-instruct-v0.1_maxlen2048_baseline"
-MODEL_NAME="starcoder2-15b-instruct-v0.1_maxlen2048_quality400"
+MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1_size_sweep_maxlen2048}"
 N_ITER="${N_ITER:-30}"
 CV="${CV:-5}"
 SEED="${SEED:-42}"
