@@ -24,7 +24,8 @@ SEED="${SEED:-42}"
 
 # msong 2026-05-24
 # MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1_size_sweep_maxlen2048}"
-MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1_complexity_sweep_maxlen2048}"
+# MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1_complexity_sweep_maxlen2048}"
+MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1_complexity_fixedtest_maxlen2048}"
 
 PYTHON="${PYTHON:-python}"
 
