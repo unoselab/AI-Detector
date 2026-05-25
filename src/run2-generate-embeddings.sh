@@ -83,8 +83,10 @@ BATCH_SIZE="${BATCH_SIZE:-32}"
 MAX_LEN="${MAX_LEN:-2048}"
 OVERWRITE="${OVERWRITE:-1}"
 
-AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_size_sweep}"
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings/${MODEL_NAME}_size_sweep_maxlen2048}"
+# AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_size_sweep}"
+# OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings/${MODEL_NAME}_size_sweep_maxlen2048}"
+AST_BASELINE_DIR="${AST_BASELINE_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_complexity_sweep}"
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/embeddings/${MODEL_NAME}_complexity_sweep_maxlen2048}"
 
 PYTHON="${PYTHON:-python}"
 

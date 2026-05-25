@@ -84,18 +84,24 @@ TARGET_DIR="${TARGET_DIR:-${SCRIPT_DIR}/code-analyzer-tree-sitter}"
 MODEL_NAME="${MODEL_NAME:-starcoder2-15b-instruct-v0.1}"
 # INPUT_DIR="${INPUT_DIR:-data_temp1}"                 # Original before additional datasets.
 # INPUT_DIR="${INPUT_DIR:-data_codesearchnet/${MODEL_NAME}/validsyntax}"     # CodeSearchNet corpus.
-INPUT_DIR="${INPUT_DIR:-data_codesearchnet/${MODEL_NAME}/validsyntax_size_sweep}"     # CodeSearchNet corpus.
+# INPUT_DIR="${INPUT_DIR:-data_codesearchnet/${MODEL_NAME}/validsyntax_size_sweep}"     # CodeSearchNet corpus.
 
 # Output directories per mode. Defaults match ast-generator.py's defaults so
 # downstream scripts (generate_embeddings.py, code-feature-extractor.py)
 # can find the data without further configuration.
 # OUT_BASELINE="${OUT_BASELINE:-data_main}"              # Original before additional datasets.
 # OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/${MODEL_NAME}/ast}" # CodeSearchNet corpus.
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/${MODEL_NAME}/ast_size_sweep}" # CodeSearchNet corpus.
+# OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/${MODEL_NAME}/ast_size_sweep}" # CodeSearchNet corpus.
 
 OUT_UNIFORM_VARS="${OUT_UNIFORM_VARS:-data_ablation_study_code_embedding/uniform_variables_name}"
 OUT_UNIFORM_METHODS="${OUT_UNIFORM_METHODS:-data_ablation_study_code_embedding/uniform_methods_name}"
 OUT_NO_COMMENTS="${OUT_NO_COMMENTS:-data_ablation_study_code_embedding/no_comments}"
+
+# complexity sweep
+INPUT_DIR="${INPUT_DIR:-data_codesearchnet/${MODEL_NAME}/validsyntax_complexity_sweep}"     
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/${MODEL_NAME}/ast_complexity_sweep}" 
+# INPUT_DIR="data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax_complexity_sweep" \
+# OUT_BASELINE="data_codesearchnet/starcoder2-15b-instruct-v0.1/ast_complexity_sweep" \
 
 # Python interpreter. Use whatever's on PATH; users wanting a specific env
 # should activate it before invoking this script.
