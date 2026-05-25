@@ -78,8 +78,10 @@ DEV_FRAC="${DEV_FRAC:-0.10}"
 TEST_FRAC="${TEST_FRAC:-0.10}"
 
 # msong 2026-05-24 test 500, ..., 2500
-EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings/${MODEL_NAME}_size_sweep_maxlen2048}"
-OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}_size_sweep_maxlen2048}"
+# EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings/${MODEL_NAME}_size_sweep_maxlen2048}"
+# OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}_size_sweep_maxlen2048}"
+EMB_BASELINE_DIR="${EMB_BASELINE_DIR:-data_codesearchnet/embeddings/${MODEL_NAME}_complexity_sweep_maxlen2048}"
+OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/splits/${MODEL_NAME}_complexity_sweep_maxlen2048}"
 
 PYTHON="${PYTHON:-python}"
 
