@@ -33,11 +33,36 @@
 
 # Step 3
 # ---
+# cd ~/project-workspace/ai_detector/src
+
+# MODEL_NAME="starcoder2-15b-instruct-v0.1"
+
+# AST_BASELINE_DIR="${PWD}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_4500_complexity" \
+# OUT_BASELINE="data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048" \
+# ./run2-generate-embeddings.sh baseline
+
+# Step 4
+# ---
+# cd ~/project-workspace/ai_detector/src
+
+# MODEL_NAME="starcoder2-15b-instruct-v0.1"
+# PREFIX="codesearchnet_${MODEL_NAME}_python"
+# EXP_NAME="${MODEL_NAME}_4500_complexity_stratified_maxlen2048"
+
+# python ml_embeddings/split_complexity_stratified.py \
+#   --input-csv "ml_embeddings/data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048/${PREFIX}_merged_4500.csv" \
+#   --complexity-report "code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity/${PREFIX}_complexity_sweep_candidate_report.csv" \
+#   --output-dir "ml_embeddings/data_codesearchnet/splits/${EXP_NAME}" \
+#   --dataset-name "${PREFIX}_merged_4500" \
+#   --seed 42 \
+#   --block-size 10 \
+#   --train-per-block 8 \
+#   --dev-per-block 1
+
+# Step 5
+# ---
 cd ~/project-workspace/ai_detector/src
 
-MODEL_NAME="starcoder2-15b-instruct-v0.1"
-
-AST_BASELINE_DIR="${PWD}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_4500_complexity" \
-OUT_BASELINE="data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048" \
-./run2-generate-embeddings.sh baseline
+MODEL_NAME="starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048" \
+./run4a-train-classifiers-allmodels.sh
 
