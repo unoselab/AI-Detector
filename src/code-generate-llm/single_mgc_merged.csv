@@ -1,0 +1,8 @@
+idx,code,label
+isinstance_demo_lm,"def is_instance_of_class(obj, cls):
+    """"""How do I check if a Python object is an instance of a class?""""""
+    try:
+        return isinstance(obj, cls)
+    except Exception:
+        raise TypeError(""cls must be a class or a tuple of classes"")
+",lm
