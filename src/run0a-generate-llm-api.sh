@@ -66,7 +66,8 @@ GEN_SEED="${GEN_SEED:-42}"
 # Keep logs filesystem-safe when model names contain slashes/colons.
 GEN_MODEL_LABEL="${GEN_MODEL//\//_}"
 GEN_MODEL_LABEL="${GEN_MODEL_LABEL//:/-}"
-LOG_FILE="logs/generate_${GEN_MODEL_LABEL}_api_csn_t${GEN_TEMPERATURE}_n${GEN_MAX_NUM}.log"
+TS="$(date +'%Y%m%d_%H%M%S')"
+LOG_FILE="${LOG_FILE:-logs/generate_${GEN_MODEL_LABEL}_api_csn_t${GEN_TEMPERATURE}_n${GEN_MAX_NUM}_${TS}.log}"
 
 if [ -z "${!API_KEY_ENV:-}" ]; then
   echo "[ERROR] Missing API key environment variable: ${API_KEY_ENV}" >&2
@@ -128,6 +129,8 @@ echo "=== Pilot inspection checklist ===" | tee -a "${LOG_FILE}"
 # that doesn't actually exist on disk.
 _GEN_MODEL_TAIL="${GEN_MODEL##*/}"
 _GEN_MODEL_FS="${_GEN_MODEL_TAIL//:/-}"
+DATA_OUT_DIR="${DATA_OUT_DIR:-code-analyzer-tree-sitter/data_codesearchnet/${_GEN_MODEL_FS}/validsyntax}"
+
 OUTPUT_DIR="${OUTPUT_ROOT}/${DATASET_NAME}/${_GEN_MODEL_FS}-${GEN_MAX_NUM}-tp${GEN_TEMPERATURE}"
 echo " 1. Open the human-readable companion file:" | tee -a "${LOG_FILE}"
 echo "      ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token_v2.txt" | tee -a "${LOG_FILE}"
@@ -139,6 +142,6 @@ echo " 3. If issues are widespread, tighten build_messages() or extract_body()" 
 echo "    in code-generate-llm/generate.py before scaling." | tee -a "${LOG_FILE}"
 echo " 4. Once outputs look good, run downstream syntax validation:" | tee -a "${LOG_FILE}"
 echo "      python code-generation/find_validsyntax_mgc.py \\" | tee -a "${LOG_FILE}"
-echo "        --input  ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token.txt \\" | tee -a "${LOG_FILE}"
+echo "        --input ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token.txt \\" | tee -a "${LOG_FILE}"
+echo "        --data-out-dir ${DATA_OUT_DIR} \\" | tee -a "${LOG_FILE}"
 echo "        --prefix codesearchnet_${_GEN_MODEL_FS}_python" | tee -a "${LOG_FILE}"
-echo "    (its built-in defaults point at the StarCoder run — override both)." | tee -a "${LOG_FILE}"
