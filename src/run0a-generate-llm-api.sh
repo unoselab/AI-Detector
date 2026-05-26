@@ -66,7 +66,10 @@ GEN_SEED="${GEN_SEED:-42}"
 # Keep logs filesystem-safe when model names contain slashes/colons.
 GEN_MODEL_LABEL="${GEN_MODEL//\//_}"
 GEN_MODEL_LABEL="${GEN_MODEL_LABEL//:/-}"
-LOG_FILE="logs/generate_${GEN_MODEL_LABEL}_api_csn_t${GEN_TEMPERATURE}_n${GEN_MAX_NUM}.log"
+GEN_OUTPUT_MODEL_LABEL="${GEN_MODEL##*/}"
+GEN_OUTPUT_MODEL_LABEL="${GEN_OUTPUT_MODEL_LABEL//:/-}"
+TS="$(date +'%Y%m%d_%H%M%S')"
+LOG_FILE="logs/generate_${GEN_MODEL_LABEL}_api_csn_t${GEN_TEMPERATURE}_n${GEN_MAX_NUM}_${TS}.log"
 
 if [ -z "${!API_KEY_ENV:-}" ]; then
   echo "[ERROR] Missing API key environment variable: ${API_KEY_ENV}" >&2
@@ -86,6 +89,7 @@ fi
 
 {
   echo "=== Generation configuration (OpenAI-compatible API) ==="
+  echo "  Started:        $(date -Is)"
   echo "  Dataset:        ${DATASET_NAME}"
   echo "  Language:       ${GEN_LANGUAGE}"
   echo "  API URL:        ${API_URL}"
@@ -123,7 +127,7 @@ python code-generate-llm/generate.py \
 echo "" | tee -a "${LOG_FILE}"
 echo "=== Pilot inspection checklist ===" | tee -a "${LOG_FILE}"
 echo " 1. Open the human-readable companion file:" | tee -a "${LOG_FILE}"
-OUTPUT_DIR="${OUTPUT_ROOT}/${DATASET_NAME}/${GEN_MODEL##*/}-${GEN_MAX_NUM}-tp${GEN_TEMPERATURE}"
+OUTPUT_DIR="${OUTPUT_ROOT}/${DATASET_NAME}/${GEN_OUTPUT_MODEL_LABEL}-${GEN_MAX_NUM}-tp${GEN_TEMPERATURE}"
 echo "      ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token_v2.txt" | tee -a "${LOG_FILE}"
 echo " 2. Verify in the first 10-20 samples:" | tee -a "${LOG_FILE}"
 echo "    - Output is only the function body continuation, not prose" | tee -a "${LOG_FILE}"
@@ -131,3 +135,5 @@ echo "    - No leftover triple-backtick python fences or repeated def/class sign
 echo "    - prompt + output is syntactically valid Python" | tee -a "${LOG_FILE}"
 echo " 3. If issues are widespread, tighten build_messages() or extract_body()" | tee -a "${LOG_FILE}"
 echo "    in code-generate-llm/generate.py before scaling." | tee -a "${LOG_FILE}"
+
+echo "Finished : $(date -Is)" | tee -a "${LOG_FILE}"

@@ -77,7 +77,7 @@ def load_data(path: str = "data/CodeSearchNet", language: str = "python", max_nu
                 all_prompts.append(data["prompt"])
                 all_solutions.append(data["canonical_solution"])
 
-    elif "codesearchnet" in path:
+    elif "codesearchnet" in path.lower():
         path_to_data = f"{path}/{language}/train.jsonl"
         logger.info(f"Loading data from {path_to_data}")
 
@@ -107,7 +107,7 @@ def load_data(path: str = "data/CodeSearchNet", language: str = "python", max_nu
 
         logger.info(f"Failed: {failed}, Success: {success}")
 
-    elif "TheVault" in path:
+    elif "thevault" in path.lower():
         path_to_data = f"{path}/{language}/small_train.jsonl"
         logger.info(f"Loading data from {path_to_data}")
         failed = 0
