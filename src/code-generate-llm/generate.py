@@ -5,7 +5,12 @@ generate.py
 
 OpenAI-compatible GPT/MGC generation for the AI-Detector CodeSearchNet path.
 
-This is a drop-in-style replacement for the HF-local `generate.py` workflow:
+This version is safe for long API runs:
+  * writes each completed sample immediately to JSONL;
+  * resumes from an existing JSONL if a run is interrupted;
+  * can retry transient network/API failures indefinitely with backoff;
+  * rebuilds the human-readable inspection file from the checkpoint JSONL.
+
   1. load CodeSearchNet Python prompt/solution pairs;
   2. call an OpenAI-compatible /v1/chat/completions endpoint;
   3. write JSONL records with fields: prompt, output, solution;
@@ -29,12 +34,10 @@ import argparse
 import gzip
 import json
 import os
-import random
 import re
-import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 import requests
@@ -44,7 +47,6 @@ from tqdm import tqdm
 DEFAULT_API_URL = "https://ellm.nrp-nautilus.io/v1/chat/completions"
 DEFAULT_MODEL = "gpt-oss"
 DEFAULT_API_KEY_ENV = "OPENAI_API_KEY"
-
 CODE_FENCE_RE = re.compile(r"```(?:python|py)?\s*\n?(.*?)```", re.DOTALL | re.IGNORECASE)
 
 
@@ -60,15 +62,11 @@ def split_prompt_body(original_string: str) -> Tuple[Optional[str], Optional[str
 
 
 def load_data(path: str = "data/CodeSearchNet", language: str = "python", max_num: int = 10000, seed: int = 42) -> Tuple[List[str], List[str]]:
-    """
-    Load benchmark prompt/solution pairs using the same shape as the original
-    project generate.py: `prompt` is the function signature + docstring, and
-    `solution` is the human-written implementation body.
-    """
     all_prompts: List[str] = []
     all_solutions: List[str] = []
 
-    if "humaneval" in path.lower():
+    path_lower = path.lower()
+    if "humaneval" in path_lower:
         path_to_data = f"{path}/{language}/data/humaneval_{language}.jsonl.gz"
         logger.info(f"Loading data from {path_to_data}")
         with gzip.open(path_to_data, "rb") as f:
@@ -77,7 +75,7 @@ def load_data(path: str = "data/CodeSearchNet", language: str = "python", max_nu
                 all_prompts.append(data["prompt"])
                 all_solutions.append(data["canonical_solution"])
 
-    elif "codesearchnet" in path.lower():
+    elif "codesearchnet" in path_lower:
         path_to_data = f"{path}/{language}/train.jsonl"
         logger.info(f"Loading data from {path_to_data}")
 
@@ -107,7 +105,7 @@ def load_data(path: str = "data/CodeSearchNet", language: str = "python", max_nu
 
         logger.info(f"Failed: {failed}, Success: {success}")
 
-    elif "thevault" in path.lower():
+    elif "thevault" in path_lower:
         path_to_data = f"{path}/{language}/small_train.jsonl"
         logger.info(f"Loading data from {path_to_data}")
         failed = 0
@@ -157,20 +155,16 @@ def strip_code_fences(text: str) -> str:
 
 
 def extract_body(response: str, prompt: str) -> str:
-    """
-    Convert a chat-model response into the continuation body expected downstream.
-
-    Downstream `find_validsyntax_mgc.py` builds MGC as prompt + output, so this
-    function tries to remove re-emitted signatures/docstrings and keep only the
-    implementation body.
-    """
+    """Convert a chat-model response into the continuation body expected downstream."""
     text = strip_code_fences(response)
     text = text.split("###", 1)[0]
     text = text.split("<file_sep>", 1)[0]
     text = text.strip("\n")
 
-    # Remove common prose before code.
-    first_code = re.search(r"(?m)^(?:from\s+\S+\s+import\s+|import\s+|async\s+def\s+|def\s+|class\s+|\s{4,}\S)", text)
+    first_code = re.search(
+        r"(?m)^(?:from\s+\S+\s+import\s+|import\s+|async\s+def\s+|def\s+|class\s+|\s{4,}\S)",
+        text,
+    )
     if first_code:
         text = text[first_code.start():]
 
@@ -201,6 +195,7 @@ def extract_body(response: str, prompt: str) -> str:
         if m:
             cut = min(cut, m.start())
     text = text[:cut].rstrip()
+
     if not text:
         return "\n"
     if not text.startswith("\n"):
@@ -213,13 +208,14 @@ def build_messages(prompt: str) -> List[Dict[str, str]]:
         "Implement the following Python function. Match the signature and "
         "docstring exactly. Return only the function body that should appear "
         "after the docstring. Do not include Markdown fences, explanations, "
-        "tests, examples, or a repeated function signature.\n\n"
+        "tests, examples, or a repeated function signature. Make sure the "
+        "returned body is syntactically complete Python.\n\n"
         f"{prompt.rstrip()}"
     )
     return [
         {
             "role": "system",
-            "content": "You generate compact, correct Python source code only. Never include prose.",
+            "content": "You generate compact, complete, correct Python source code only. Never include prose.",
         },
         {"role": "user", "content": instruction},
     ]
@@ -236,6 +232,8 @@ def request_chat_completion(
     timeout: int,
     retries: int,
     retry_sleep: float,
+    retry_sleep_max: float,
+    retry_forever: bool,
 ) -> Dict[str, Any]:
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -251,18 +249,25 @@ def request_chat_completion(
     if top_p is not None:
         payload["top_p"] = top_p
 
+    attempt = 0
     last_error: Optional[BaseException] = None
-    for attempt in range(1, retries + 2):
+    while True:
+        attempt += 1
         try:
             response = requests.post(api_url, json=payload, headers=headers, timeout=timeout)
             response.raise_for_status()
             return response.json()
-        except Exception as exc:  # network/API failure; retry a few times for long batch jobs
+        except Exception as exc:
             last_error = exc
-            if attempt > retries:
+            if not retry_forever and attempt > retries:
                 break
-            logger.warning(f"request failed on attempt {attempt}/{retries + 1}: {exc}; retrying")
-            time.sleep(retry_sleep * attempt)
+            if retry_forever:
+                attempt_label = f"attempt {attempt}; retrying indefinitely"
+            else:
+                attempt_label = f"attempt {attempt}/{retries + 1}"
+            sleep_s = min(retry_sleep * max(attempt, 1), retry_sleep_max)
+            logger.warning(f"request failed on {attempt_label}: {exc}; sleeping {sleep_s:.1f}s")
+            time.sleep(sleep_s)
 
     raise RuntimeError(f"chat completion failed after {retries + 1} attempts: {last_error}")
 
@@ -274,27 +279,104 @@ def extract_content(response_json: Dict[str, Any]) -> str:
         raise RuntimeError(f"unexpected response shape: {exc}; response={json.dumps(response_json)[:1000]}")
 
 
-def generate_openai_compat(
+def safe_model_label(model_name: str) -> str:
+    return model_name.rstrip("/").split("/")[-1].replace(":", "-")
+
+
+def output_paths(path: str, model_name: str, max_num: int, temperature: float, max_length: int, output_root: str) -> Tuple[Path, Path, Path]:
+    dataset_name = Path(path).name
+    model_label = safe_model_label(model_name)
+    output_dir = Path(output_root) / dataset_name / f"{model_label}-{max_num}-tp{temperature}"
+    jsonl_path = output_dir / f"outputs-{max_length}token.txt"
+    readable_path = output_dir / f"outputs-{max_length}token_v2.txt"
+    return output_dir, jsonl_path, readable_path
+
+
+def load_existing_records(jsonl_path: Path) -> List[Dict[str, Any]]:
+    """Load valid checkpoint records. If the final line is corrupt, truncate to valid prefix."""
+    if not jsonl_path.exists():
+        return []
+
+    records: List[Dict[str, Any]] = []
+    bad_line = None
+    with jsonl_path.open("r", encoding="utf-8") as f:
+        for line_no, line in enumerate(f, start=1):
+            if not line.strip():
+                continue
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError:
+                bad_line = line_no
+                logger.warning(f"Ignoring corrupt checkpoint line {line_no} in {jsonl_path}")
+                break
+
+    if bad_line is not None:
+        backup = jsonl_path.with_suffix(jsonl_path.suffix + ".corrupt_backup")
+        jsonl_path.replace(backup)
+        with jsonl_path.open("w", encoding="utf-8") as f:
+            for rec in records:
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        logger.warning(f"Truncated checkpoint to {len(records)} valid records; backup: {backup}")
+
+    return records
+
+
+def append_record(jsonl_path: Path, record: Dict[str, Any], do_fsync: bool = True) -> None:
+    with jsonl_path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        f.flush()
+        if do_fsync:
+            os.fsync(f.fileno())
+
+
+def write_readable_from_jsonl(jsonl_path: Path, readable_path: Path) -> None:
+    records = load_existing_records(jsonl_path)
+    with readable_path.open("w", encoding="utf-8") as f:
+        for i, rec in enumerate(records):
+            print("-" * 20 + f" Sample {i} " + "-" * 20, file=f)
+            print(f"Prompt:\n{rec.get('prompt', '')}", file=f)
+            print("-" * 10, file=f)
+            print(f"Output:\n{rec.get('output', '')}", file=f)
+            print("-" * 10, file=f)
+            print(f"Raw response:\n{rec.get('raw_output', '')}", file=f)
+            print("-" * 10, file=f)
+            print(f"Solution:\n{rec.get('solution', '')}", file=f)
+
+
+def generate_openai_compat_streaming(
     model_name: str,
     prompts: List[str],
     solutions: List[str],
     api_url: str,
     api_key_env: str,
-    temperature: float = 0.0,
-    max_tokens: int = 512,
-    top_p: Optional[float] = None,
-    timeout: int = 120,
-    retries: int = 2,
-    retry_sleep: float = 2.0,
-) -> Tuple[List[str], List[str], List[str], List[str]]:
+    temperature: float,
+    max_tokens: int,
+    top_p: Optional[float],
+    timeout: int,
+    retries: int,
+    retry_sleep: float,
+    retry_sleep_max: float,
+    retry_forever: bool,
+    jsonl_path: Path,
+    resume: bool,
+    checkpoint_every: int,
+) -> int:
     api_key = os.environ.get(api_key_env)
     if not api_key:
         raise SystemExit(f"[ERROR] missing API key env var: {api_key_env}")
 
-    outputs: List[str] = []
-    raw_outputs: List[str] = []
+    existing = load_existing_records(jsonl_path) if resume else []
+    start_idx = len(existing)
+    if start_idx > len(prompts):
+        raise SystemExit(f"[ERROR] checkpoint has {start_idx} records but run only has {len(prompts)} prompts")
+    if start_idx:
+        logger.info(f"Resuming from checkpoint: {jsonl_path} ({start_idx}/{len(prompts)} records already complete)")
 
-    for prompt in tqdm(prompts, desc=f"generating {model_name}"):
+    generated_now = 0
+    pbar = tqdm(range(start_idx, len(prompts)), desc=f"generating {model_name}", initial=start_idx, total=len(prompts))
+    for i in pbar:
+        prompt = prompts[i]
+        solution = solutions[i]
         response_json = request_chat_completion(
             api_url=api_url,
             api_key=api_key,
@@ -306,88 +388,41 @@ def generate_openai_compat(
             timeout=timeout,
             retries=retries,
             retry_sleep=retry_sleep,
+            retry_sleep_max=retry_sleep_max,
+            retry_forever=retry_forever,
         )
         raw = extract_content(response_json)
-        raw_outputs.append(raw)
-        outputs.append(extract_body(raw, prompt))
+        output = extract_body(raw, prompt)
+        record = {
+            "prompt": prompt,
+            "output": output,
+            "solution": solution,
+            "raw_output": raw,
+            "model": model_name,
+            "temperature": temperature,
+            "sample_index": i,
+        }
+        generated_now += 1
+        append_record(jsonl_path, record, do_fsync=(checkpoint_every <= 1 or generated_now % checkpoint_every == 0))
 
-    logger.info(f"Generated {len(outputs)} samples")
-    logger.info("Showing first 3 samples")
-    for i in range(min(3, len(outputs))):
+    total_records = len(load_existing_records(jsonl_path))
+    logger.info(f"Generated {generated_now} new samples; checkpoint now has {total_records} records")
+
+    records = load_existing_records(jsonl_path)
+    logger.info("Showing first 3 samples from checkpoint")
+    for i, rec in enumerate(records[:3]):
         logger.info(f"Example {i}:")
-        logger.info(f"Prompt:\n{prompts[i]}")
-        logger.info(f"Output:\n{outputs[i]}")
-        logger.info(f"Solution:\n{solutions[i]}")
-
-    return prompts, outputs, solutions, raw_outputs
-
-
-def safe_model_label(model_name: str) -> str:
-    return model_name.rstrip("/").split("/")[-1].replace(":", "-")
-
-
-def write_outputs(
-    path: str,
-    model_name: str,
-    max_num: int,
-    temperature: float,
-    max_length: int,
-    prompts: List[str],
-    outputs: List[str],
-    solutions: List[str],
-    raw_outputs: List[str],
-    output_root: str,
-) -> Path:
-    dataset_name = Path(path).name
-    model_label = safe_model_label(model_name)
-    output_dir = Path(output_root) / dataset_name / f"{model_label}-{max_num}-tp{temperature}"
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    jsonl_path = output_dir / f"outputs-{max_length}token.txt"
-    readable_path = output_dir / f"outputs-{max_length}token_v2.txt"
-
-    with jsonl_path.open("w", encoding="utf-8") as f:
-        for prompt, output, solution, raw in zip(prompts, outputs, solutions, raw_outputs):
-            record = {
-                "prompt": prompt,
-                "output": output,
-                "solution": solution,
-                "raw_output": raw,
-                "model": model_name,
-                "temperature": temperature,
-            }
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
-
-    with readable_path.open("w", encoding="utf-8") as f:
-        for i, (prompt, output, solution, raw) in enumerate(zip(prompts, outputs, solutions, raw_outputs)):
-            print("-" * 20 + f" Sample {i} " + "-" * 20, file=f)
-            print(f"Prompt:\n{prompt}", file=f)
-            print("-" * 10, file=f)
-            print(f"Output:\n{output}", file=f)
-            print("-" * 10, file=f)
-            print(f"Raw response:\n{raw}", file=f)
-            print("-" * 10, file=f)
-            print(f"Solution:\n{solution}", file=f)
-
-    logger.info(f"Finished writing JSONL to {jsonl_path}")
-    logger.info(f"Finished writing readable output to {readable_path}")
-    return output_dir
+        logger.info(f"Prompt:\n{rec.get('prompt', '')}")
+        logger.info(f"Output:\n{rec.get('output', '')}")
+        logger.info(f"Solution:\n{rec.get('solution', '')}")
+    return total_records
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--path", type=str, default="data/CodeSearchNet")
     parser.add_argument("--language", type=str, default="python")
-    parser.add_argument(
-        "--max_num",
-        type=int,
-        default=1000,
-        help=(
-            "Max samples to generate. Default is intentionally small "
-            "because each sample is a paid API call; the run0a-*.sh shell "
-            "always sets this explicitly."
-        ),
-    )
+    parser.add_argument("--max_num", type=int, default=1000, help="Max samples to generate. Shell wrapper should set this explicitly.")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--model_name", type=str, default=DEFAULT_MODEL)
     parser.add_argument("--api-url", type=str, default=DEFAULT_API_URL)
@@ -395,8 +430,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max_length", type=int, default=512, help="Max completion tokens.")
     parser.add_argument("--top_p", type=float, default=None)
     parser.add_argument("--timeout", type=int, default=120)
-    parser.add_argument("--retries", type=int, default=2)
-    parser.add_argument("--retry-sleep", type=float, default=2.0)
+    parser.add_argument("--retries", type=int, default=20, help="Finite retry count when --retry-forever is not set.")
+    parser.add_argument("--retry-sleep", type=float, default=5.0)
+    parser.add_argument("--retry-sleep-max", type=float, default=120.0)
+    parser.add_argument("--retry-forever", action="store_true", help="Keep waiting/retrying through transient network/API outages.")
+    resume_group = parser.add_mutually_exclusive_group()
+    resume_group.add_argument("--resume", dest="resume", action="store_true", default=True, help="Resume from existing JSONL checkpoint. Default: true.")
+    resume_group.add_argument("--no-resume", dest="resume", action="store_false", help="Do not resume; append from the beginning only if output file is absent.")
+    parser.add_argument("--checkpoint-every", type=int, default=1, help="fsync every N samples. Default 1 is safest for long jobs.")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output-root", type=str, default="output")
     return parser.parse_args()
@@ -406,6 +447,20 @@ def main() -> None:
     args = parse_args()
     logger.info(f"args: {args}")
 
+    output_dir, jsonl_path, readable_path = output_paths(
+        path=args.path,
+        model_name=args.model_name,
+        max_num=args.max_num,
+        temperature=args.temperature,
+        max_length=args.max_length,
+        output_root=args.output_root,
+    )
+    output_dir.mkdir(parents=True, exist_ok=True)
+    logger.info(f"Checkpoint JSONL: {jsonl_path}")
+
+    if jsonl_path.exists() and not args.resume:
+        raise SystemExit(f"[ERROR] output exists and --no-resume was used: {jsonl_path}")
+
     prompts, solutions = load_data(
         path=args.path,
         language=args.language,
@@ -413,7 +468,7 @@ def main() -> None:
         seed=args.seed,
     )
 
-    prompts, outputs, solutions, raw_outputs = generate_openai_compat(
+    total_records = generate_openai_compat_streaming(
         model_name=args.model_name,
         prompts=prompts,
         solutions=solutions,
@@ -425,21 +480,18 @@ def main() -> None:
         timeout=args.timeout,
         retries=args.retries,
         retry_sleep=args.retry_sleep,
+        retry_sleep_max=args.retry_sleep_max,
+        retry_forever=args.retry_forever,
+        jsonl_path=jsonl_path,
+        resume=args.resume,
+        checkpoint_every=args.checkpoint_every,
     )
 
-    out_dir = write_outputs(
-        path=args.path,
-        model_name=args.model_name,
-        max_num=args.max_num,
-        temperature=args.temperature,
-        max_length=args.max_length,
-        prompts=prompts,
-        outputs=outputs,
-        solutions=solutions,
-        raw_outputs=raw_outputs,
-        output_root=args.output_root,
-    )
-    print(f"Output directory: {out_dir}")
+    write_readable_from_jsonl(jsonl_path, readable_path)
+    logger.info(f"Finished writing JSONL to {jsonl_path}")
+    logger.info(f"Finished writing readable output to {readable_path}")
+    print(f"Output directory: {output_dir}")
+    print(f"Records complete: {total_records}/{len(prompts)}")
 
 
 if __name__ == "__main__":

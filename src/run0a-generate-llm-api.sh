@@ -4,34 +4,21 @@
 # -----------------------------------------------------------------------------
 # Generation stage for OpenAI-compatible chat LLMs on CodeSearchNet (Path C).
 #
-# How this differs from run0a-generate_starcoder15b.sh
-#   * Uses a remote OpenAI-compatible /v1/chat/completions endpoint instead of
-#     loading a local Hugging Face model.
-#   * Keeps Path C prompting: feeds the function signature + docstring as a
-#     natural-language instruction and asks the chat model to write only the
-#     function body.
-#   * Uses code-generate-llm/generate.py and writes prompt/output/solution JSONL
-#     in the same downstream shape expected by find_validsyntax_mgc.py.
+# This script lives at:
+#   src/run0a-generate-llm-api.sh
+# and calls:
+#   src/code-generate-llm/generate.py
 #
-# Why
-#   The ICSE 2025 paper's RQ2 ChatGPT/Gemini results are based on chat models
-#   doing instruction-following code generation. This script provides the same
-#   style for API-served GPT-like models before syntax filtering and embedding.
-#
-# Defaults
-#   Pilot mode: 10 samples. Inspect outputs before scaling.
-#   For larger runs, set GEN_MAX_NUM=3000 or GEN_MAX_NUM=5000.
-#
-# Usage
-#   OPENAI_API_KEY=... bash src/code-generate-llm/run0a-generate-llm-api.sh
-#   OPENAI_API_KEY=... GEN_MAX_NUM=3000 bash src/code-generate-llm/run0a-generate-llm-api.sh
-#   OPENAI_API_KEY=... GEN_MODEL=gpt-oss GEN_TEMPERATURE=0.0 bash src/code-generate-llm/run0a-generate-llm-api.sh
+# Long-run safety:
+#   * generate.py checkpoints every completed sample to outputs-<N>token.txt;
+#   * rerunning the same command resumes from that JSONL checkpoint;
+#   * GEN_RETRY_FOREVER=1 keeps the job alive through transient network outages.
 # =============================================================================
 
 set -euo pipefail
 
 # Resolve repository paths robustly whether this script is run from repo root,
-# src/, or another working directory. This script lives at:
+# src/, or another working directory. This script is intended to live at:
 #   src/run0a-generate-llm-api.sh
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC_DIR="${SCRIPT_DIR}"
@@ -60,7 +47,14 @@ GEN_MAX_LENGTH="${GEN_MAX_LENGTH:-512}"
 GEN_LANGUAGE="${GEN_LANGUAGE:-python}"
 GEN_TOP_P="${GEN_TOP_P:-}"
 GEN_TIMEOUT="${GEN_TIMEOUT:-120}"
-GEN_RETRIES="${GEN_RETRIES:-2}"
+
+# Long API runs should not die on one temporary network outage.
+GEN_RETRIES="${GEN_RETRIES:-20}"
+GEN_RETRY_SLEEP="${GEN_RETRY_SLEEP:-5}"
+GEN_RETRY_SLEEP_MAX="${GEN_RETRY_SLEEP_MAX:-120}"
+GEN_RETRY_FOREVER="${GEN_RETRY_FOREVER:-1}"
+GEN_CHECKPOINT_EVERY="${GEN_CHECKPOINT_EVERY:-1}"
+GEN_RESUME="${GEN_RESUME:-1}"
 GEN_SEED="${GEN_SEED:-42}"
 
 # Keep logs filesystem-safe when model names contain slashes/colons.
@@ -71,7 +65,7 @@ LOG_FILE="${LOG_FILE:-logs/generate_${GEN_MODEL_LABEL}_api_csn_t${GEN_TEMPERATUR
 
 if [ -z "${!API_KEY_ENV:-}" ]; then
   echo "[ERROR] Missing API key environment variable: ${API_KEY_ENV}" >&2
-  echo "        Example: OPENAI_API_KEY=... bash src/code-generate-llm/run0a-generate-llm-api.sh" >&2
+  echo "        Example: OPENAI_API_KEY=... bash src/run0a-generate-llm-api.sh" >&2
   exit 1
 fi
 
@@ -80,6 +74,14 @@ EXTRA_ARGS=()
 if [ -n "${GEN_TOP_P}" ]; then
   EXTRA_ARGS+=(--top_p "${GEN_TOP_P}")
 fi
+if [ "${GEN_RETRY_FOREVER}" = "1" ]; then
+  EXTRA_ARGS+=(--retry-forever)
+fi
+if [ "${GEN_RESUME}" = "1" ]; then
+  EXTRA_ARGS+=(--resume)
+else
+  EXTRA_ARGS+=(--no-resume)
+fi
 
 # =====================================================================
 # Run
@@ -87,21 +89,27 @@ fi
 
 {
   echo "=== Generation configuration (OpenAI-compatible API) ==="
-  echo "  Started:        $(date -Is)"
-  echo "  Dataset:        ${DATASET_NAME}"
-  echo "  Language:       ${GEN_LANGUAGE}"
-  echo "  API URL:        ${API_URL}"
-  echo "  API key env:    ${API_KEY_ENV}"
-  echo "  Model label:    ${GEN_MODEL}"
-  echo "  Max samples:    ${GEN_MAX_NUM}   (set GEN_MAX_NUM=3000 for full run)"
-  echo "  Temperature:    ${GEN_TEMPERATURE}"
-  echo "  Max new tokens: ${GEN_MAX_LENGTH}"
-  echo "  Top-p:          ${GEN_TOP_P:-<model default>}"
-  echo "  Timeout:        ${GEN_TIMEOUT}"
-  echo "  Retries:        ${GEN_RETRIES}"
-  echo "  Seed:           ${GEN_SEED}"
-  echo "  Log file:       ${LOG_FILE}"
-  echo "  Output root:    ${OUTPUT_ROOT}"
+  echo "  Started:           $(date -Is)"
+  echo "  Repo root:         ${REPO_ROOT}"
+  echo "  Source dir:        ${SRC_DIR}"
+  echo "  Dataset:           ${DATASET_NAME}"
+  echo "  Language:          ${GEN_LANGUAGE}"
+  echo "  API URL:           ${API_URL}"
+  echo "  API key env:       ${API_KEY_ENV}"
+  echo "  Model label:       ${GEN_MODEL}"
+  echo "  Max samples:       ${GEN_MAX_NUM}   (set GEN_MAX_NUM=3000/5000 for full run)"
+  echo "  Temperature:       ${GEN_TEMPERATURE}"
+  echo "  Max new tokens:    ${GEN_MAX_LENGTH}"
+  echo "  Top-p:             ${GEN_TOP_P:-<model default>}"
+  echo "  Timeout:           ${GEN_TIMEOUT}"
+  echo "  Retries:           ${GEN_RETRIES}"
+  echo "  Retry forever:     ${GEN_RETRY_FOREVER}"
+  echo "  Retry sleep:       ${GEN_RETRY_SLEEP}s (max ${GEN_RETRY_SLEEP_MAX}s)"
+  echo "  Resume checkpoint: ${GEN_RESUME}"
+  echo "  Checkpoint every:  ${GEN_CHECKPOINT_EVERY} sample(s)"
+  echo "  Seed:              ${GEN_SEED}"
+  echo "  Log file:          ${LOG_FILE}"
+  echo "  Output root:       ${OUTPUT_ROOT}"
   echo "========================================================"
   echo ""
 } | tee "${LOG_FILE}"
@@ -117,6 +125,9 @@ python code-generate-llm/generate.py \
     --max_length "${GEN_MAX_LENGTH}" \
     --timeout "${GEN_TIMEOUT}" \
     --retries "${GEN_RETRIES}" \
+    --retry-sleep "${GEN_RETRY_SLEEP}" \
+    --retry-sleep-max "${GEN_RETRY_SLEEP_MAX}" \
+    --checkpoint-every "${GEN_CHECKPOINT_EVERY}" \
     --seed "${GEN_SEED}" \
     --output-root "${OUTPUT_ROOT}" \
     "${EXTRA_ARGS[@]}" \
@@ -125,12 +136,9 @@ python code-generate-llm/generate.py \
 echo "" | tee -a "${LOG_FILE}"
 echo "=== Pilot inspection checklist ===" | tee -a "${LOG_FILE}"
 # Mirror Python's safe_model_label: strip path prefix, then replace ':' with '-'.
-# Without the colon swap, tagged models like 'gpt-oss:7b' would print a path
-# that doesn't actually exist on disk.
 _GEN_MODEL_TAIL="${GEN_MODEL##*/}"
 _GEN_MODEL_FS="${_GEN_MODEL_TAIL//:/-}"
 DATA_OUT_DIR="${DATA_OUT_DIR:-code-analyzer-tree-sitter/data_codesearchnet/${_GEN_MODEL_FS}/validsyntax}"
-
 OUTPUT_DIR="${OUTPUT_ROOT}/${DATASET_NAME}/${_GEN_MODEL_FS}-${GEN_MAX_NUM}-tp${GEN_TEMPERATURE}"
 echo " 1. Open the human-readable companion file:" | tee -a "${LOG_FILE}"
 echo "      ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token_v2.txt" | tee -a "${LOG_FILE}"
@@ -138,10 +146,11 @@ echo " 2. Verify in the first 10-20 samples:" | tee -a "${LOG_FILE}"
 echo "    - Output is only the function body continuation, not prose" | tee -a "${LOG_FILE}"
 echo "    - No leftover triple-backtick python fences or repeated def/class signature" | tee -a "${LOG_FILE}"
 echo "    - prompt + output is syntactically valid Python" | tee -a "${LOG_FILE}"
-echo " 3. If issues are widespread, tighten build_messages() or extract_body()" | tee -a "${LOG_FILE}"
-echo "    in code-generate-llm/generate.py before scaling." | tee -a "${LOG_FILE}"
+echo " 3. If generation was interrupted, rerun the same command; generate.py will resume" | tee -a "${LOG_FILE}"
+echo "    from ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token.txt" | tee -a "${LOG_FILE}"
 echo " 4. Once outputs look good, run downstream syntax validation:" | tee -a "${LOG_FILE}"
 echo "      python code-generation/find_validsyntax_mgc.py \\" | tee -a "${LOG_FILE}"
 echo "        --input ${OUTPUT_DIR}/outputs-${GEN_MAX_LENGTH}token.txt \\" | tee -a "${LOG_FILE}"
 echo "        --data-out-dir ${DATA_OUT_DIR} \\" | tee -a "${LOG_FILE}"
-echo "        --prefix codesearchnet_${_GEN_MODEL_FS}_python" | tee -a "${LOG_FILE}"
+echo "        --prefix codesearchnet_${_GEN_MODEL_FS}_python \\" | tee -a "${LOG_FILE}"
+echo "        --n-small 400 --n-large 2700" | tee -a "${LOG_FILE}"
