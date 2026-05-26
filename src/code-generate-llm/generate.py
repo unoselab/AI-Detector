@@ -187,13 +187,20 @@ def extract_body(response: str, prompt: str) -> str:
                     text = "\n".join(lines[i:])
                     break
 
-    # Cut off extra top-level defs/classes if the model keeps generating.
-    m = re.search(r"(?m)^\s{0,3}(?:async\s+def\s+|def\s+|class\s+)", text)
-    if m and m.start() > 0:
-        text = text[:m.start()]
-
-    # Ensure body is a continuation after the prompt.
-    text = text.rstrip()
+    # Cut at the next top-level def/class. Mirrors the validated logic in
+    # generate_starcoder15b.py: require a blank line before the cut and a
+    # real identifier after the keyword, so we don't over-cut nested
+    # helpers indented 1-3 spaces.
+    cut = len(text)
+    for pat in (
+        r"\n\n(?=def\s+\w+\s*\()",
+        r"\n\n(?=async\s+def\s+\w+\s*\()",
+        r"\n\n(?=class\s+\w+)",
+    ):
+        m = re.search(pat, text)
+        if m:
+            cut = min(cut, m.start())
+    text = text[:cut].rstrip()
     if not text:
         return "\n"
     if not text.startswith("\n"):
@@ -352,8 +359,8 @@ def write_outputs(
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
     with readable_path.open("w", encoding="utf-8") as f:
-        for prompt, output, solution, raw in zip(prompts, outputs, solutions, raw_outputs):
-            print("-" * 20, file=f)
+        for i, (prompt, output, solution, raw) in enumerate(zip(prompts, outputs, solutions, raw_outputs)):
+            print("-" * 20 + f" Sample {i} " + "-" * 20, file=f)
             print(f"Prompt:\n{prompt}", file=f)
             print("-" * 10, file=f)
             print(f"Output:\n{output}", file=f)
@@ -371,7 +378,16 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--path", type=str, default="data/CodeSearchNet")
     parser.add_argument("--language", type=str, default="python")
-    parser.add_argument("--max_num", type=int, default=100000)
+    parser.add_argument(
+        "--max_num",
+        type=int,
+        default=1000,
+        help=(
+            "Max samples to generate. Default is intentionally small "
+            "because each sample is a paid API call; the run0a-*.sh shell "
+            "always sets this explicitly."
+        ),
+    )
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--model_name", type=str, default=DEFAULT_MODEL)
     parser.add_argument("--api-url", type=str, default=DEFAULT_API_URL)
