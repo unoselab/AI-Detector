@@ -34,7 +34,8 @@ MODEL_DIR="${MODEL_DIR:-data_codesearchnet/models/${MODEL_NAME}}"
 PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions/${MODEL_NAME}}"
 EXPERIMENT_TAG="${EXPERIMENT_TAG:-codesearchnet_${MODEL_NAME}}"
 
-MODELS="${MODELS:-lr svm mlp rf gb knn dt}"
+# MODELS="${MODELS:-lr svm mlp rf gb knn dt}"
+MODELS="${MODELS:-lr svm mlp rf gb knn dt et ada hgb xgb}" # msong 2026-05-26 Added
 
 TS="$(date +'%Y%m%d_%H%M%S')"
 LOGDIR="src/logs/rq2d_codesearchnet_${MODEL_NAME}_allmodels_${TS}"

@@ -62,8 +62,15 @@ from collections import defaultdict
 from typing import Tuple
 
 import pandas as pd
+# from sklearn.ensemble import (
+#     GradientBoostingClassifier,
+#     RandomForestClassifier,
+# )
 from sklearn.ensemble import (
+    AdaBoostClassifier,
+    ExtraTreesClassifier,
     GradientBoostingClassifier,
+    HistGradientBoostingClassifier,
     RandomForestClassifier,
 )
 from sklearn.linear_model import LogisticRegression
@@ -104,6 +111,21 @@ MODEL_REGISTRY = {
             {"n_estimators":  [100, 200],
              "learning_rate": [0.05, 0.1],
              "max_depth":     [3, 5]}),
+# msong 2026-05-26 Added
+    "et":  (ExtraTreesClassifier(n_jobs=-1, random_state=42),
+            {"n_estimators": [100, 300, 500],
+             "max_depth":    [None, 10, 30],
+             "max_features": ["sqrt", "log2", None]}),
+
+    "ada": (AdaBoostClassifier(random_state=42),
+            {"n_estimators":  [50, 100, 200],
+             "learning_rate": [0.05, 0.1, 0.5, 1.0]}),
+
+    "hgb": (HistGradientBoostingClassifier(random_state=42),
+            {"learning_rate":     [0.03, 0.05, 0.1],
+             "max_iter":          [100, 200],
+             "max_leaf_nodes":    [15, 31, 63],
+             "l2_regularization": [0.0, 0.01, 0.1]}),
 }
 
 # Optional: XGBoost if available.
