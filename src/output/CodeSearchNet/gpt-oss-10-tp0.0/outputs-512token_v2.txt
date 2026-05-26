@@ -1,0 +1,534 @@
+-------------------- Sample 0 --------------------
+Prompt:
+def load(self):
+        """Load our config, log and raise on error."""
+----------
+Output:
+
+    try:
+        path = getattr(self, "config_path")
+        with open(path, "r", encoding="utf-8") as f:
+            if str(path).lower().endswith((".yaml", ".yml")):
+                import yaml
+                self.config = yaml.safe_load(f)
+            else:
+                import json
+                self.config = json.load(f)
+        self.logger.info("Config loaded from %s", path)
+    except Exception as exc:
+        self.logger.error("Failed to load config from %s: %s", getattr(self, "config_path", "<unknown>"), exc)
+        raise
+
+----------
+Raw response:
+    try:
+        path = getattr(self, "config_path")
+        with open(path, "r", encoding="utf-8") as f:
+            if str(path).lower().endswith((".yaml", ".yml")):
+                import yaml
+                self.config = yaml.safe_load(f)
+            else:
+                import json
+                self.config = json.load(f)
+        self.logger.info("Config loaded from %s", path)
+    except Exception as exc:
+        self.logger.error("Failed to load config from %s: %s", getattr(self, "config_path", "<unknown>"), exc)
+        raise
+----------
+Solution:
+
+        try:
+            merged_configfile = self.get_merged_config()
+            self.yamldocs = yaml.load(merged_configfile, Loader=Loader)
+
+            # Strip out the top level 'None's we get from concatenation.
+            # Functionally not required, but makes dumps cleaner.
+            self.yamldocs = [x for x in self.yamldocs if x]
+            self.logdebug('parsed_rules:\n%s\n' % pretty(self.yamldocs))
+
+        except (yaml.scanner.ScannerError, yaml.parser.ParserError):
+            self.raise_and_log_error(ConfigError, 'error parsing config.')
+-------------------- Sample 1 --------------------
+Prompt:
+def ball_pick(n, d, rng=None):
+    """Return cartesian vectors uniformly picked on the unit ball in an
+    arbitrary number of dimensions.
+
+    The unit ball is the space enclosed by the unit sphere.
+
+    The picking is done by rejection sampling in the unit cube.
+
+    In 3-dimensional space, the fraction `\pi / 6 \sim 0.52` points are valid.
+
+    Parameters
+    ----------
+    n: integer
+        Number of points to return.
+    d: integer
+        Number of dimensions of the space in which the ball lives
+
+    Returns
+    -------
+    r: array, shape (n, d)
+        Sample cartesian vectors.
+    """
+----------
+Output:
+
+    import numpy as np
+
+    if rng is None:
+        rng = np.random.default_rng()
+    if n == 0:
+        return np.empty((0, d), dtype=float)
+
+    result = np.empty((0, d), dtype=float)
+    needed = n
+    while needed > 0:
+        # generate a batch, oversample to reduce loops
+        batch = max(needed * 2, 1024)
+        pts = rng.uniform(-1, 1, size=(batch, d))
+        mask = np.linalg.norm(pts, axis=1) <= 1
+        accepted = pts[mask]
+        if accepted.shape[0] > 0:
+            if accepted.shape[0] >= needed:
+                result = np.vstack([result, accepted[:needed]])
+                needed = 0
+            else:
+                result = np.vstack([result, accepted])
+                needed -= accepted.shape[0]
+    return result[:n]
+
+----------
+Raw response:
+    import numpy as np
+
+    if rng is None:
+        rng = np.random.default_rng()
+    if n == 0:
+        return np.empty((0, d), dtype=float)
+
+    result = np.empty((0, d), dtype=float)
+    needed = n
+    while needed > 0:
+        # generate a batch, oversample to reduce loops
+        batch = max(needed * 2, 1024)
+        pts = rng.uniform(-1, 1, size=(batch, d))
+        mask = np.linalg.norm(pts, axis=1) <= 1
+        accepted = pts[mask]
+        if accepted.shape[0] > 0:
+            if accepted.shape[0] >= needed:
+                result = np.vstack([result, accepted[:needed]])
+                needed = 0
+            else:
+                result = np.vstack([result, accepted])
+                needed -= accepted.shape[0]
+    return result[:n]
+----------
+Solution:
+
+    def valid(r):
+        return vector_mag_sq(r) < 1.0
+    return rejection_pick(L=2.0, n=n, d=d, valid=valid, rng=rng)
+-------------------- Sample 2 --------------------
+Prompt:
+def calcTransitDuration(self, circular=False):
+        """ Estimation of the primary transit time assuming a circular orbit (see :py:func:`equations.transitDuration`)
+        """
+----------
+Output:
+
+    from . import equations
+    # Required orbital and physical parameters
+    try:
+        P = self.period
+        a = self.semiMajorAxis
+        R_star
+
+----------
+Raw response:
+    from . import equations
+    # Required orbital and physical parameters
+    try:
+        P = self.period
+        a = self.semiMajorAxis
+        R_star
+----------
+Solution:
+
+
+        try:
+            if circular:
+                return eq.transitDurationCircular(self.P, self.star.R, self.R, self.a, self.i)
+            else:
+                return eq.TransitDuration(self.P, self.a, self.R, self.star.R, self.i, self.e, self.periastron).Td
+        except (ValueError,
+                AttributeError,  # caused by trying to rescale nan i.e. missing i value
+                HierarchyError):  # i.e. planets that dont orbit stars
+            return np.nan
+-------------------- Sample 3 --------------------
+Prompt:
+def vlan_classifier_group_groupid(self, **kwargs):
+        """Auto Generated Code
+        """
+----------
+Output:
+
+    groupid = kwargs.pop('groupid', None)
+    if groupid is None:
+        raise ValueError("Missing required parameter: groupid")
+    path = f"/vlan/classifier/group/{groupid}"
+    return self._request("GET", path, params=kwargs)
+
+----------
+Raw response:
+    groupid = kwargs.pop('groupid', None)
+    if groupid is None:
+        raise ValueError("Missing required parameter: groupid")
+    path = f"/vlan/classifier/group/{groupid}"
+    return self._request("GET", path, params=kwargs)
+----------
+Solution:
+
+        config = ET.Element("config")
+        vlan = ET.SubElement(config, "vlan", xmlns="urn:brocade.com:mgmt:brocade-vlan")
+        classifier = ET.SubElement(vlan, "classifier")
+        group = ET.SubElement(classifier, "group")
+        oper_key = ET.SubElement(group, "oper")
+        oper_key.text = kwargs.pop('oper')
+        rule_name_key = ET.SubElement(group, "rule-name")
+        rule_name_key.text = kwargs.pop('rule_name')
+        ruleid_key = ET.SubElement(group, "ruleid")
+        ruleid_key.text = kwargs.pop('ruleid')
+        groupid = ET.SubElement(group, "groupid")
+        groupid.text = kwargs.pop('groupid')
+
+        callback = kwargs.pop('callback', self._callback)
+        return callback(config)
+-------------------- Sample 4 --------------------
+Prompt:
+def set_mypy_path(mypy_path):
+    """Prepend to MYPYPATH."""
+----------
+Output:
+
+    import os
+    if not mypy_path:
+        return os.getenv("MYPYPATH", "")
+    existing = os.getenv("MYPYPATH")
+    if existing:
+        new_path = mypy_path + os.pathsep + existing
+    else:
+        new_path = mypy_path
+    os.environ["MYPYPATH"] = new_path
+    return new_path
+
+----------
+Raw response:
+    import os
+    if not mypy_path:
+        return os.getenv("MYPYPATH", "")
+    existing = os.getenv("MYPYPATH")
+    if existing:
+        new_path = mypy_path + os.pathsep + existing
+    else:
+        new_path = mypy_path
+    os.environ["MYPYPATH"] = new_path
+    return new_path
+----------
+Solution:
+
+    original = os.environ.get(mypy_path_env_var)
+    if original is None:
+        new_mypy_path = mypy_path
+    elif not original.startswith(mypy_path):
+        new_mypy_path = mypy_path + os.pathsep + original
+    else:
+        new_mypy_path = None
+    if new_mypy_path is not None:
+        logger.log(mypy_path_env_var + ":", new_mypy_path)
+        os.environ[mypy_path_env_var] = new_mypy_path
+-------------------- Sample 5 --------------------
+Prompt:
+def _create_opt_rule(self, rulename):
+        """ Given a rule name, creates an optional ply.yacc rule
+            for it. The name of the optional rule is
+            <rulename>_opt
+        """
+----------
+Output:
+
+        opt_name = f"{rulename}_opt"
+
+        def _opt(p):
+            """{opt_name} : {rulename}
+                          | """
+            # If the rule matched, p will have length 2 (p[0] and p[1])
+            # Otherwise it's the empty production.
+            p[0] = p[1] if len(p) == 2 else None
+
+        # Attach the rule to the instance so P
+
+----------
+Raw response:
+        opt_name = f"{rulename}_opt"
+
+        def _opt(p):
+            """{opt_name} : {rulename}
+                          | """
+            # If the rule matched, p will have length 2 (p[0] and p[1])
+            # Otherwise it's the empty production.
+            p[0] = p[1] if len(p) == 2 else None
+
+        # Attach the rule to the instance so P
+----------
+Solution:
+
+        optname = rulename + '_opt'
+
+        def optrule(self, p):
+            p[0] = p[1]
+
+        optrule.__doc__ = '%s : empty\n| %s' % (optname, rulename)
+        optrule.__name__ = 'p_%s' % optname
+        setattr(self.__class__, optrule.__name__, optrule)
+-------------------- Sample 6 --------------------
+Prompt:
+def is_opened(cls, dc_code, type_):
+        """List opened datacenters for given type."""
+----------
+Output:
+
+
+----------
+Raw response:
+None
+----------
+Solution:
+
+        options = {'dc_code': dc_code, '%s_opened' % type_: True}
+        datacenters = cls.safe_call('hosting.datacenter.list', options)
+        if not datacenters:
+            # try with ISO code
+            options = {'iso': dc_code, '%s_opened' % type_: True}
+            datacenters = cls.safe_call('hosting.datacenter.list', options)
+            if not datacenters:
+                raise DatacenterClosed(r'/!\ Datacenter %s is closed, please '
+                                       'choose another datacenter.' % dc_code)
+
+        datacenter = datacenters[0]
+        if datacenter.get('%s_closed_for' % type_) == 'NEW':
+            dc_close_date = datacenter.get('deactivate_at', '')
+            if dc_close_date:
+                dc_close_date = dc_close_date.strftime('%d/%m/%Y')
+            raise DatacenterLimited(dc_close_date)
+-------------------- Sample 7 --------------------
+Prompt:
+def tab(tab_name, element_list=None, section_list=None):
+    """
+    Returns a dictionary representing a new tab to display elements.
+    This can be thought of as a simple container for displaying multiple
+    types of information.
+
+    Args:
+        tab_name: The title to display
+        element_list: The list of elements to display. If a single element is
+                      given it will be wrapped in a list.
+        section_list: A list of sections to display.
+
+    Returns:
+        A dictionary with metadata specifying that it is to be rendered
+        as a page containing multiple elements and/or tab.
+    """
+----------
+Output:
+
+    if element_list is None:
+        elements = []
+    elif isinstance(element_list, (list, tuple)):
+        elements = list(element_list)
+    else:
+        elements = [element_list]
+
+    if section_list is None:
+        sections = []
+    elif isinstance(section_list, (list, tuple)):
+        sections = list(section_list)
+    else:
+        sections = [section_list]
+
+    return {
+        "type": "tab",
+        "title": tab_name,
+        "elements": elements,
+        "sections": sections,
+    }
+
+----------
+Raw response:
+    if element_list is None:
+        elements = []
+    elif isinstance(element_list, (list, tuple)):
+        elements = list(element_list)
+    else:
+        elements = [element_list]
+
+    if section_list is None:
+        sections = []
+    elif isinstance(section_list, (list, tuple)):
+        sections = list(section_list)
+    else:
+        sections = [section_list]
+
+    return {
+        "type": "tab",
+        "title": tab_name,
+        "elements": elements,
+        "sections": sections,
+    }
+----------
+Solution:
+
+    _tab = {
+            'Type': 'Tab',
+            'Title': tab_name,
+            }
+
+    if element_list is not None:
+        if isinstance(element_list, list):
+            _tab['Elements'] = element_list
+        else:
+            _tab['Elements'] = [element_list]
+    if section_list is not None:
+        if isinstance(section_list, list):
+            _tab['Sections'] = section_list
+        else:
+            if 'Elements' not in section_list:
+                _tab['Elements'] = element_list
+            else:
+                _tab['Elements'].append(element_list)
+    return _tab
+-------------------- Sample 8 --------------------
+Prompt:
+def dump_all_thread_tracebacks(exclude_thread_ids=None, file=None):
+    """
+    Prints the traceback of all threads.
+
+    :param set[int]|list[int]|None exclude_thread_ids: threads to exclude
+    :param io.TextIOBase|io.StringIO file: output stream
+    """
+----------
+Output:
+
+    import sys, threading, traceback
+    if file is None:
+        file = sys.stderr
+    exclude = set(exclude_thread_ids or [])
+    current_frames = sys._current_frames()
+    thread_map = {t.ident: t.name for t in threading.enumerate()}
+    for tid, frame in current_frames.items():
+        if tid in exclude:
+            continue
+        name = thread_map.get(tid, "Unknown")
+        print(f"Thread {name} (id={tid}):", file=file)
+        traceback.print_stack(frame, file=file)
+
+----------
+Raw response:
+    import sys, threading, traceback
+    if file is None:
+        file = sys.stderr
+    exclude = set(exclude_thread_ids or [])
+    current_frames = sys._current_frames()
+    thread_map = {t.ident: t.name for t in threading.enumerate()}
+    for tid, frame in current_frames.items():
+        if tid in exclude:
+            continue
+        name = thread_map.get(tid, "Unknown")
+        print(f"Thread {name} (id={tid}):", file=file)
+        traceback.print_stack(frame, file=file)
+----------
+Solution:
+
+    if exclude_thread_ids is None:
+        exclude_thread_ids = []
+    if not file:
+        file = sys.stdout
+    import threading
+
+    if hasattr(sys, "_current_frames"):
+        print("", file=file)
+        threads = {t.ident: t for t in threading.enumerate()}
+        # noinspection PyProtectedMember
+        for tid, stack in sys._current_frames().items():
+            if tid in exclude_thread_ids:
+                continue
+            # This is a bug in earlier Python versions.
+            # http://bugs.python.org/issue17094
+            # Note that this leaves out all threads not created via the threading module.
+            if tid not in threads:
+                continue
+            tags = []
+            thread = threads.get(tid)
+            if thread:
+                assert isinstance(thread, threading.Thread)
+                if thread is threading.currentThread():
+                    tags += ["current"]
+                # noinspection PyProtectedMember,PyUnresolvedReferences
+                if isinstance(thread, threading._MainThread):
+                    tags += ["main"]
+                tags += [str(thread)]
+            else:
+                tags += ["unknown with id %i" % tid]
+            print("Thread %s:" % ", ".join(tags), file=file)
+            print_tb(stack, file=file)
+            print("", file=file)
+        print("That were all threads.", file=file)
+    else:
+        print("Does not have sys._current_frames, cannot get thread tracebacks.", file=file)
+-------------------- Sample 9 --------------------
+Prompt:
+def minion_publish(self, clear_load):
+        """
+        Publish a command initiated from a minion, this method executes minion
+        restrictions so that the minion publication will only work if it is
+        enabled in the config.
+
+        The configuration on the master allows minions to be matched to
+        salt functions, so the minions can only publish allowed salt functions
+
+        The config will look like this:
+
+        .. code-block:: bash
+
+            peer:
+                .*:
+                    - .*
+
+        This configuration will enable all minions to execute all commands.
+        peer:
+
+        .. code-block:: bash
+
+            foo.example.com:
+                - test.*
+
+        The above configuration will only allow the minion foo.example.com to
+        execute commands from the test module.
+
+        :param dict clear_load: The minion payload
+        """
+----------
+Output:
+
+
+----------
+Raw response:
+None
+----------
+Solution:
+
+        if not self.__verify_minion_publish(clear_load):
+            return {}
+        else:
+            return self.masterapi.minion_publish(clear_load)

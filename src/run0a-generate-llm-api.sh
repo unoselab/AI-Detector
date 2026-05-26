@@ -31,10 +31,10 @@
 set -euo pipefail
 
 # Resolve repository paths robustly whether this script is run from repo root,
-# src/, or another working directory. This script is intended to live at:
-#   src/code-generate-llm/run0a-generate-llm-api.sh
+# src/, or another working directory. This script lives at:
+#   src/run0a-generate-llm-api.sh
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+SRC_DIR="${SCRIPT_DIR}"
 REPO_ROOT="$(cd "${SRC_DIR}/.." && pwd)"
 
 cd "${SRC_DIR}"
@@ -54,7 +54,7 @@ API_URL="${API_URL:-https://ellm.nrp-nautilus.io/v1/chat/completions}"
 GEN_MODEL="${GEN_MODEL:-gpt-oss}"
 
 # Pilot defaults to 10; override to 3000/5000 for full runs.
-GEN_MAX_NUM="${GEN_MAX_NUM:-10}"
+GEN_MAX_NUM="${GEN_MAX_NUM:-5000}"
 GEN_TEMPERATURE="${GEN_TEMPERATURE:-0.0}"
 GEN_MAX_LENGTH="${GEN_MAX_LENGTH:-512}"
 GEN_LANGUAGE="${GEN_LANGUAGE:-python}"
