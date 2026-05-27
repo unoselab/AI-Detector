@@ -59,10 +59,17 @@
 #   --train-per-block 8 \
 #   --dev-per-block 1
 
-# Step 5
+# Step 5 (b)
+# ---
+# cd ~/project-workspace/ai_detector/src
+
+# MODEL_NAME="starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048" \
+# ./run4a-train-classifiers-allmodels.sh
+
+# Step 5 (a)
 # ---
 cd ~/project-workspace/ai_detector/src
 
-MODEL_NAME="starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048" \
+MODEL_NAME="starcoder2-15b-instruct-v0.1_complexity_fixedtest_maxlen2048" \
+MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
 ./run4a-train-classifiers-allmodels.sh
-
