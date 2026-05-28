@@ -15,23 +15,27 @@ export CUDA_VISIBLE_DEVICES=0
 # =====================================================================
 # Configuration
 # =====================================================================
+DATA_PATH="${DATA_PATH:-../data}"
+DATASET_NAME="${DATASET_NAME:-CodeSearchNet}"
+GEN_MODEL="${GEN_MODEL:-starcoder2-7b}"
+GEN_MODEL_HF="${GEN_MODEL_HF:-bigcode/starcoder2-7b}"
+GEN_MAX_NUM="${GEN_MAX_NUM:-7000}"
+GEN_TEMPERATURE="${GEN_TEMPERATURE:-0.2}"
+GEN_MAX_LENGTH="${GEN_MAX_LENGTH:-512}"
+GEN_BATCH_SIZE="${GEN_BATCH_SIZE:-1}"
+CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
+export CUDA_VISIBLE_DEVICES
 
-DATA_PATH="../data"
-DATASET_NAME="CodeSearchNet"
-GEN_MODEL="starcoder2-7b"
-GEN_MODEL_HF="bigcode/starcoder2-7b"
 # The FIRST EVALUATION
 # GEN_MODEL_HF="codellama/CodeLlama-7b-hf"
-
 # GEN_MAX_NUM=2000      # ColdLlama used 2000
                         # StarCoder needed 3000
-GEN_MAX_NUM=3000
-GEN_TEMPERATURE=0.2
 # GEN_MAX_LENGTH=128    # Original value
-GEN_MAX_LENGTH=512      # 512 used to generate more valid MGC for ai-detector (icse '25)
-GEN_BATCH_SIZE=1
+# 512 used to generate more valid MGC for ai-detector (icse '25)
 
-LOG_FILE="logs/generate_${GEN_MODEL}_csn_t02_n${GEN_MAX_NUM}.log"
+RUN_TS="$(date +%Y%m%d_%H%M%S)"
+TEMP_TAG="${GEN_TEMPERATURE/./}"
+LOG_FILE="logs/generate_${GEN_MODEL}_csn_t${TEMP_TAG}_n${GEN_MAX_NUM}_${RUN_TS}.log"
 
 # =====================================================================
 # Run
