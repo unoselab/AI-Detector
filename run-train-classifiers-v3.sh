@@ -23,66 +23,57 @@
 # N_LARGE=4500 \
 # SEED=42 \
 # bash run0b-find-validsyntax-mgc.sh
-
-rm /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/validsyntax/codesearchnet_starcoder2-7b_python_merged.csv
-
+# 
+# rm /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/validsyntax/codesearchnet_starcoder2-7b_python_merged.csv
+# 
 # ==============================================
 # Step 2
 # ---
-cd ~/project-workspace/ai_detector
-MODEL_NAME="starcoder2-7b" \
-INPUT_DIR="data_codesearchnet/starcoder2-7b/validsyntax" \
-OUT_BASELINE="data_codesearchnet/starcoder2-7b/ast" \
-bash src/run1-ast-generator.sh baseline
-# cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1"
-# PREFIX="codesearchnet_${MODEL_NAME}_python"
-# INPUT_CSV="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_5000/${PREFIX}_merged_4500.csv" \
-# OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity" \
-# SIZES="4500" \
-# ./run0d-build-complexity-sweep-pairs.sh
-# ==============================================
-# Step 2
-# ---
-# cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1"
-# INPUT_DIR="data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity" \
-# OUT_BASELINE="data_codesearchnet/${MODEL_NAME}/ast_4500_complexity" \
-# ./run1-ast-generator.sh baseline
+# cd ~/project-workspace/ai_detector
+# MODEL_NAME="starcoder2-7b" \
+# INPUT_DIR="data_codesearchnet/starcoder2-7b/validsyntax" \
+# OUT_BASELINE="data_codesearchnet/starcoder2-7b/ast" \
+# bash src/run1-ast-generator.sh baseline
 # ==============================================
 # Step 3
 # ---
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="starcoder2-7b"
+# PREFIX="codesearchnet_${MODEL_NAME}_python"
+# MODEL_NAME="${MODEL_NAME}" \
+# PREFIX="${PREFIX}" \
+# INPUT_CSV="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax/${PREFIX}_merged_4500.csv" \
+# OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity" \
+# SIZES="4500" \
+# ./run0d-build-complexity-sweep-pairs.sh
+## will create `code-analyzer-tree-sitter/data_../.._complexity_sweep_candidate_report.csv`
+# ==============================================
+# Step 4
+# ---
+# cd ~/project-workspace/ai_detector
+# MODEL_NAME="starcoder2-7b" \
+# AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/ast" \
+# OUT_BASELINE="data_codesearchnet/embeddings/starcoder2-7b_maxlen2048_baseline" \
+# MAX_LEN=2048 \
+# BATCH_SIZE=32 \
+# OVERWRITE=1 \
+# bash src/run2-generate-embeddings.sh baseline
 # cd ~/project-workspace/ai_detector/src
 # MODEL_NAME="starcoder2-15b-instruct-v0.1"
 # AST_BASELINE_DIR="${PWD}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_4500_complexity" \
 # OUT_BASELINE="data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048" \
 # ./run2-generate-embeddings.sh baseline
 # ==============================================
-# Step 4
+# Step 5
 # ---
 # cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1"
-# PREFIX="codesearchnet_${MODEL_NAME}_python"
-# EXP_NAME="${MODEL_NAME}_4500_complexity_stratified_maxlen2048"
-# python ml_embeddings/split_complexity_stratified.py \
-#   --input-csv "ml_embeddings/data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048/${PREFIX}_merged_4500.csv" \
-#   --complexity-report "code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity/${PREFIX}_complexity_sweep_candidate_report.csv" \
-#   --output-dir "ml_embeddings/data_codesearchnet/splits/${EXP_NAME}" \
-#   --dataset-name "${PREFIX}_merged_4500" \
-#   --seed 42 \
-#   --block-size 10 \
-#   --train-per-block 8 \
-#   --dev-per-block 1
+# MODEL_NAME="starcoder2-7b" \
+# ./run3c-split-complexity-stratified.sh
 # ==============================================
-# Step 5 (b)
+# Step 6
 # ---
-# cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048" \
-# ./run4a-train-classifiers-allmodels.sh
-# ==============================================
-# Step 5 (a)
-# ---
-# cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1_complexity_fixedtest_maxlen2048" \
-# MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
-# ./run4a-train-classifiers-allmodels.sh
+cd ~/project-workspace/ai_detector/src 
+MODEL_NAME="starcoder2-7b_4500_complexity_stratified_maxlen2048" \
+MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
+./run4a-train-classifiers-allmodels.sh
+#
