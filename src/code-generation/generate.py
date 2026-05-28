@@ -172,14 +172,18 @@ def truncate(completion):
 
 
 def generate_hf(model_name, prompts, solutions, batch_size=16, max_length_sample=128, max_length=128, do_sample=True, top_p=0.95, temperature=0.2):
-
+    # 2025-05-27 msong
     tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.padding_side = "left"
 
     if 'codegen-' in model_name.lower():
         tokenizer.pad_token_id = 50256
         tokenizer.padding_side = 'left'
     elif 'santa' in model_name.lower():
-        tokenizer.pad_token_id = 49156  # https://huggingface.co/bigcode/santacoder/blob/main/special_tokens_map.json
+        tokenizer.pad_token_id = 49156
         logger.info(f'pad_token: {tokenizer.pad_token}')
         tokenizer.padding_side = 'left'
     elif 'parrot' in model_name.lower():
@@ -195,21 +199,32 @@ def generate_hf(model_name, prompts, solutions, batch_size=16, max_length_sample
         tokenizer.padding_side = 'left'
 
     if 't5p' in model_name.lower():
-        model = AutoModelForSeq2SeqLM.from_pretrained(model_name,
-                                                      torch_dtype=torch.float16,
-                                                      trust_remote_code=True)
-    elif "starcoder" in model_name.lower() or "llama" in model_name.lower() or "wizard" in model_name.lower():
+        model = AutoModelForSeq2SeqLM.from_pretrained(
+            model_name,
+            torch_dtype=torch.float16,
+            trust_remote_code=True,
+        )
+    elif (
+        "starcoder" in model_name.lower()
+        or "llama" in model_name.lower()
+        or "wizard" in model_name.lower()
+    ):
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             trust_remote_code=True,
             torch_dtype=torch.float16,
         )
-    elif "llama" in model_name.lower() or "wizard" in model_name.lower():
-        model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, torch_dtype=torch.float16)
     elif "codegen2" in model_name.lower():
-        model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, revision="main")
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+            revision="main",
+        )
     else:
-        model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+        )
 
     all_outputs = []
     model = model.to(device)
