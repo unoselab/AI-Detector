@@ -1,0 +1,3 @@
+model_name	model	status	start_time	end_time	seconds	log_file
+gpt-oss_4500_complexity_stratified_maxlen2048	xgb	OK	2026-05-27T20:55:03-05:00	2026-05-27T20:59:47-05:00	284	/home/user1-system11/project-workspace/ai_detector/src/logs/rq2d_codesearchnet_gpt-oss_4500_complexity_stratified_maxlen2048_allmodels_20260527_205502/run4_gpt-oss_4500_complexity_stratified_maxlen2048_xgb_20260527_205503.log
+gpt-oss_4500_complexity_stratified_maxlen2048	xgb	OK	2026-05-27T20:59:47-05:00	2026-05-27T21:04:29-05:00	282	/home/user1-system11/project-workspace/ai_detector/src/logs/rq2d_codesearchnet_gpt-oss_4500_complexity_stratified_maxlen2048_allmodels_20260527_205502/run4_gpt-oss_4500_complexity_stratified_maxlen2048_xgb_20260527_205947.log
