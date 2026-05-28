@@ -10,8 +10,6 @@ cd ~/project-workspace/ai_detector/src
 
 mkdir -p logs
 
-export CUDA_VISIBLE_DEVICES=0
-
 # =====================================================================
 # Configuration
 # =====================================================================

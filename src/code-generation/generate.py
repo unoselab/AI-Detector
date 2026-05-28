@@ -198,7 +198,12 @@ def generate_hf(model_name, prompts, solutions, batch_size=16, max_length_sample
         model = AutoModelForSeq2SeqLM.from_pretrained(model_name,
                                                       torch_dtype=torch.float16,
                                                       trust_remote_code=True)
-
+    elif "starcoder" in model_name.lower() or "llama" in model_name.lower() or "wizard" in model_name.lower():
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+            torch_dtype=torch.float16,
+        )
     elif "llama" in model_name.lower() or "wizard" in model_name.lower():
         model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, torch_dtype=torch.float16)
     elif "codegen2" in model_name.lower():
@@ -210,8 +215,19 @@ def generate_hf(model_name, prompts, solutions, batch_size=16, max_length_sample
     model = model.to(device)
 
     if 'starcoder' in model_name.lower() or "llama" in model_name.lower() or "wizard" in model_name.lower() or "codegen2" in model_name.lower():
-        input_ids = [tokenizer(prompt, return_tensors="pt", truncation=True, max_length=max_length).input_ids for prompt in prompts]
-
+        # input_ids = [tokenizer(prompt, return_tensors="pt", truncation=True, max_length=max_length).input_ids for prompt in prompts]
+        
+        encoded_inputs = [
+            tokenizer(
+                prompt,
+                return_tensors="pt",
+                truncation=True,
+                max_length=max_length,
+                return_attention_mask=True,
+            )
+            for prompt in prompts
+        ]
+        
         def_id = tokenizer('def', add_special_tokens=False).input_ids[0]
         try:
             def_with_space_id = tokenizer('def', add_prefix_space=True, add_special_tokens=False).input_ids[0]
@@ -221,15 +237,40 @@ def generate_hf(model_name, prompts, solutions, batch_size=16, max_length_sample
         eos_id_list = [tokenizer.eos_token_id, def_id, def_with_space_id]
         logger.info(f'eos_id_list: {eos_id_list}')
 
-        for input_ids in tqdm(input_ids, ncols=50):
-            input_ids = input_ids.to(device)
-            input_ids_len = input_ids.shape[1]
+        # for input_ids in tqdm(input_ids, ncols=50):
+        #     input_ids = input_ids.to(device)
+        #     input_ids_len = input_ids.shape[1]
+        for enc in tqdm(encoded_inputs, ncols=50):
+            input_ids = enc.input_ids.to(device)
+            attention_mask = enc.attention_mask.to(device)
+            input_ids_len = input_ids.shape[1]    
             logger.info(f'input_ids_len: {input_ids_len}')
 
             if max_length_sample >= 256:
-                outputs = model.generate(input_ids, do_sample=do_sample, max_length=max_length_sample+input_ids_len, top_p=top_p, temperature=temperature, pad_token_id=tokenizer.pad_token_id, use_cache=True, eos_token_id=eos_id_list)
+                # outputs = model.generate(input_ids, do_sample=do_sample, max_length=max_length_sample+input_ids_len, top_p=top_p, temperature=temperature, pad_token_id=tokenizer.pad_token_id, use_cache=True, eos_token_id=eos_id_list)
+                outputs = model.generate(
+                    input_ids,
+                    attention_mask=attention_mask,
+                    do_sample=do_sample,
+                    max_length=max_length_sample + input_ids_len,
+                    top_p=top_p,
+                    temperature=temperature,
+                    pad_token_id=tokenizer.eos_token_id,
+                    use_cache=True,
+                    eos_token_id=eos_id_list,
+                )
             else:
-                outputs = model.generate(input_ids, do_sample=do_sample, max_length=max_length_sample+input_ids_len, top_p=top_p, temperature=temperature, pad_token_id=tokenizer.pad_token_id, use_cache=True)
+                # outputs = model.generate(input_ids, do_sample=do_sample, max_length=max_length_sample+input_ids_len, top_p=top_p, temperature=temperature, pad_token_id=tokenizer.pad_token_id, use_cache=True)
+                outputs = model.generate(
+                    input_ids,
+                    attention_mask=attention_mask,
+                    do_sample=do_sample,
+                    max_length=max_length_sample + input_ids_len,
+                    top_p=top_p,
+                    temperature=temperature,
+                    pad_token_id=tokenizer.eos_token_id,
+                    use_cache=True,
+                )
 
             decoded_output = tokenizer.decode(outputs[0, input_ids_len:])
             # logger.info(f'decoded_output: {decoded_output}')

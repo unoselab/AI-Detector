@@ -1,11 +1,13 @@
 # Step 0
 # ---
 cd ~/project-workspace/ai_detector/src
-GEN_MODEL="starcoder2-7b"
-GEN_MODEL_HF="bigcode/starcoder2-7b"
-GEN_TEMPERATURE=0.2
-GEN_MAX_LENGTH=512
-GEN_MAX_NUM=7000
+
+GEN_MODEL="starcoder2-7b" \
+GEN_MODEL_HF="bigcode/starcoder2-7b" \
+GEN_TEMPERATURE=0.2 \
+GEN_MAX_LENGTH=512 \
+GEN_MAX_NUM=7000 \
+GEN_BATCH_SIZE=1 \
 bash run0a-generate.sh
 
 # cd ~/project-workspace/ai_detector/src
