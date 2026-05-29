@@ -9,6 +9,15 @@
 # GEN_MAX_NUM=7000 \
 # GEN_BATCH_SIZE=1 \
 # bash run0a-generate.sh
+## conda activate aidetector-gen
+# cd ~/project-workspace/ai_detector/src
+# GEN_MODEL="codellama-7b" \
+# GEN_MODEL_HF="codellama/CodeLlama-7b-hf" \
+# GEN_TEMPERATURE=0.2 \
+# GEN_MAX_LENGTH=512 \
+# GEN_MAX_NUM=7000 \
+# GEN_BATCH_SIZE=1 \
+# bash run0a-generate.sh
 # ==========================================
 # Step 1
 # ---
