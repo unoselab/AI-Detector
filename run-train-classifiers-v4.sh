@@ -1,18 +1,32 @@
 # Step 0
 # ---
-# conda activate aidetector-gen
-cd ~/project-workspace/ai_detector/src
-GEN_MODEL="codellama-7b" \
-GEN_MODEL_HF="codellama/CodeLlama-7b-hf" \
-GEN_TEMPERATURE=0.2 \
-GEN_MAX_LENGTH=512 \
-GEN_MAX_NUM=7000 \
-GEN_BATCH_SIZE=1 \
-bash run0a-generate.sh
+## conda activate aidetector-gen
+# cd ~/project-workspace/ai_detector/src
+# GEN_MODEL="codellama-7b" \
+# GEN_MODEL_HF="codellama/CodeLlama-7b-hf" \
+# GEN_TEMPERATURE=0.2 \
+# GEN_MAX_LENGTH=512 \
+# GEN_MAX_NUM=7000 \
+# GEN_BATCH_SIZE=1 \
+# bash run0a-generate.sh
 # ==========================================
 # Step 1
 # ---
-# conda activate aidetector
+## conda activate aidetector
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="codellama-7b" \
+# INPUT_FILE="output/CodeSearchNet/CodeLlama-7b-hf-7000-tp0.2/outputs.txt" \
+# DATA_OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax" \
+# PREFIX="codesearchnet_codellama-7b_python" \
+# N_SMALL=400 \
+# N_LARGE=4500 \
+# bash run0b-find-validsyntax-mgc.sh
+# ==========================================
+# Step 1a
+# ---
+cd ~/project-workspace/ai_detector/src
+bash run0a-generate-more.sh
+# ==========================================
 # cd ~/project-workspace/ai_detector/src
 # MODEL_NAME="starcoder2-7b" \
 # MODEL_DIR="output/CodeSearchNet/starcoder2-7b-7000-tp0.2" \

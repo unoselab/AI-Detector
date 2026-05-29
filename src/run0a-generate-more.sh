@@ -56,7 +56,7 @@ if [[ ! -f "${EXISTING_FILE}" ]]; then
   exit 1
 fi
 
-python code-generation/generate.py \
+python code-generation/generate-more.py \
     --path "${DATA_PATH}/${DATASET_NAME}" \
     --model_name "${GEN_MODEL_HF}" \
     --max_num "${ADD_NUM}" \
