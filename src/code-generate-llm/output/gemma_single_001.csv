@@ -1,0 +1,5 @@
+idx,code,label
+gemma_single_001_lm,"def is_instance_of_class(obj, cls):
+    """"""Return True if the given object is an instance of the given class; otherwise return False.""""""
+    return isinstance(obj, cls)
+",lm

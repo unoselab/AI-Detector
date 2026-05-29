@@ -18,6 +18,26 @@ Example:
     --signature "def is_instance_of_class(obj, cls):" \
     --sample-id isinstance_demo \
     --temperature 0
+
+(aidetector_apillm) user1-system12@OISSE-IST173C01:~/project-workspace/ai_detector/src/code-generate-llm$ OPENAI_API_KEY="$NRP_API_KEY" python generate_single_gemma.py \
+  --model gemma \
+  --temperature 1.0 \
+  --top-p 0.95 \
+  --max-tokens 512 \
+  --spec "Return True if the given object is an instance of the given class; otherwise return False." \
+  --signature "def is_instance_of_class(obj, cls):" \
+  --sample-id gemma_single_001 \
+  --out-jsonl output/gemma_single_001.jsonl \
+  --out-csv output/gemma_single_001.csv
+Sending one MGC request to https://ellm.nrp-nautilus.io/v1/chat/completions with model=gemma ...
+Wrote JSONL: output/gemma_single_001.jsonl
+Wrote CSV:   output/gemma_single_001.csv
+
+Generated MGC:
+
+def is_instance_of_class(obj, cls):
+    \"\"\"Return True if the given object is an instance of the given class; otherwise return False.\"\"\"
+    return isinstance(obj, cls)
 """
 
 from __future__ import annotations
@@ -35,7 +55,7 @@ from typing import Any, Dict, Optional
 import requests
 
 DEFAULT_API_URL = "https://ellm.nrp-nautilus.io/v1/chat/completions"
-DEFAULT_MODEL = "gpt-oss"
+DEFAULT_MODEL = "gemma"
 
 CODE_FENCE_RE = re.compile(r"```(?:python|py)?\s*\n?(.*?)```", re.DOTALL | re.IGNORECASE)
 
@@ -172,10 +192,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--api-url", default=DEFAULT_API_URL)
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--temperature", type=float, default=0.0,
+    parser.add_argument("--temperature", type=float, default=1.0,
                         help="Use 0.0 for deterministic ICSE-style temperature=0 generation; also run default-temperature variants separately if needed.")
-    parser.add_argument("--top-p", type=float, default=None)
-    parser.add_argument("--max-tokens", type=int, default=256)
+    parser.add_argument("--top-p", type=float, default=0.95)
+    parser.add_argument("--max-tokens", type=int, default=512)
     parser.add_argument("--timeout", type=int, default=120)
     parser.add_argument("--out-jsonl", default="single_mgc_outputs.jsonl")
     parser.add_argument("--out-csv", default="single_mgc_merged.csv")
