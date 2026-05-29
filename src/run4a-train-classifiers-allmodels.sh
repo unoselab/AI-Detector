@@ -34,8 +34,7 @@ MODEL_DIR="${MODEL_DIR:-data_codesearchnet/models/${MODEL_NAME}}"
 PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions/${MODEL_NAME}}"
 EXPERIMENT_TAG="${EXPERIMENT_TAG:-codesearchnet_${MODEL_NAME}}"
 
-# MODELS="${MODELS:-lr svm mlp rf gb knn dt}"
-MODELS="${MODELS:-lr svm mlp rf gb knn dt et ada hgb xgb}" # msong 2026-05-26 Added
+MODELS="${MODELS:-lr svm mlp rf gb knn dt et ada hgb}"
 
 TS="$(date +'%Y%m%d_%H%M%S')"
 LOGDIR="src/logs/rq2d_codesearchnet_${MODEL_NAME}_allmodels_${TS}"
@@ -79,18 +78,42 @@ if [ ! -d "${SPLITS_DIR}" ]; then
   exit 1
 fi
 
-# Optional xgboost.
-if python - <<'PY'
+# Optional xgboost. Use the same Python interpreter as the training run.
+# Avoid appending xgb twice when MODELS already contains it, and remove xgb
+# from an explicit MODELS override if xgboost is unavailable.
+if "${PYTHON}" - <<'PY'
 try:
     import xgboost
 except ImportError:
     raise SystemExit(1)
 PY
 then
-  MODELS="$MODELS xgb"
+  if [[ " ${MODELS} " != *" xgb "* ]]; then
+    MODELS="${MODELS} xgb"
+  fi
 else
-  echo "[INFO] xgboost not installed; skipping xgb"
+  if [[ " ${MODELS} " == *" xgb "* ]]; then
+    echo "[INFO] xgboost not installed; removing xgb from MODELS"
+    _MODELS_NO_XGB=""
+    for _m in ${MODELS}; do
+      if [ "${_m}" != "xgb" ]; then
+        _MODELS_NO_XGB="${_MODELS_NO_XGB}${_MODELS_NO_XGB:+ }${_m}"
+      fi
+    done
+    MODELS="${_MODELS_NO_XGB}"
+  else
+    echo "[INFO] xgboost not installed; skipping xgb"
+  fi
 fi
+
+# Deduplicate model names while preserving order.
+_DEDUPED_MODELS=""
+for _m in ${MODELS}; do
+  if [[ " ${_DEDUPED_MODELS} " != *" ${_m} "* ]]; then
+    _DEDUPED_MODELS="${_DEDUPED_MODELS}${_DEDUPED_MODELS:+ }${_m}"
+  fi
+done
+MODELS="${_DEDUPED_MODELS}"
 
 echo
 echo "Models: $MODELS"
