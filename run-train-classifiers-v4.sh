@@ -1,24 +1,24 @@
 # Step 0
 # ---
-# conda activate aidetector-gen
-cd ~/project-workspace/ai_detector/src
-GEN_MODEL="codellama-7b" \
-GEN_MODEL_HF="codellama/CodeLlama-7b-hf" \
-GEN_TEMPERATURE=0.2 \
-GEN_MAX_LENGTH=512 \
-GEN_MAX_NUM=7000 \
-GEN_BATCH_SIZE=1 \
-bash run0a-generate.sh
+## conda activate aidetector-gen
+# cd ~/project-workspace/ai_detector/src
+# GEN_MODEL="codellama-7b" \
+# GEN_MODEL_HF="codellama/CodeLlama-7b-hf" \
+# GEN_TEMPERATURE=0.2 \
+# GEN_MAX_LENGTH=512 \
+# GEN_MAX_NUM=7000 \
+# GEN_BATCH_SIZE=1 \
+# bash run0a-generate.sh
 # ==========================================
 # Step 1
 # ---
-# conda activate aidetector
+## conda activate aidetector
 # cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-7b" \
-# MODEL_DIR="output/CodeSearchNet/starcoder2-7b-7000-tp0.2" \
-# INPUT_FILE="output/CodeSearchNet/starcoder2-7b-7000-tp0.2/outputs.txt" \
-# PREFIX="codesearchnet_starcoder2-7b_python" \
-# DATA_OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/validsyntax" \
+# MODEL_NAME="gemma" \
+# MODEL_DIR="output/CodeSearchNet/gemma-9000-tp0.0" \
+# INPUT_FILE="output/CodeSearchNet/gemma-9000-tp0.0/outputs-512token.txt" \
+# PREFIX="codesearchnet_gemma_python" \
+# DATA_OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/gemma/validsyntax" \
 # N_SMALL=400 \
 # N_LARGE=4500 \
 # SEED=42 \
@@ -29,16 +29,15 @@ bash run0a-generate.sh
 # ==============================================
 # Step 2
 # ---
-# cd ~/project-workspace/ai_detector
-# MODEL_NAME="starcoder2-7b" \
-# INPUT_DIR="data_codesearchnet/starcoder2-7b/validsyntax" \
-# OUT_BASELINE="data_codesearchnet/starcoder2-7b/ast" \
-# bash src/run1-ast-generator.sh baseline
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="gemma" \
+# INPUT_DIR="data_codesearchnet/gemma/validsyntax" \
+# OUT_BASELINE="data_codesearchnet/gemma/ast" \
+# bash run1-ast-generator.sh baseline
 # ==============================================
 # Step 3
-# ---
 # cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-7b"
+# MODEL_NAME="gemma"
 # PREFIX="codesearchnet_${MODEL_NAME}_python"
 # MODEL_NAME="${MODEL_NAME}" \
 # PREFIX="${PREFIX}" \
@@ -46,10 +45,19 @@ bash run0a-generate.sh
 # OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity" \
 # SIZES="4500" \
 # ./run0d-build-complexity-sweep-pairs.sh
+# ---
 ## will create `code-analyzer-tree-sitter/data_../.._complexity_sweep_candidate_report.csv`
 # ==============================================
 # Step 4
 # ---
+cd ~/project-workspace/ai_detector
+MODEL_NAME="gemma" \
+AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/gemma/ast" \
+OUT_BASELINE="data_codesearchnet/embeddings/gemma_maxlen2048_baseline" \
+MAX_LEN=2048 \
+BATCH_SIZE=32 \
+OVERWRITE=1 \
+bash src/run2-generate-embeddings.sh baseline
 # cd ~/project-workspace/ai_detector
 # MODEL_NAME="starcoder2-7b" \
 # AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/ast" \
