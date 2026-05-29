@@ -1,0 +1,627 @@
+sample_id,jsonl_line,source_line_no,filter_index,status,raw_mgc_ok,clean_mgc_ok,hwc_ok,raw_mgc_error,clean_mgc_error,hwc_error,raw_output_len,clean_output_len,prompt_len,solution_len,hwc_npr,mgc_npr,winner,prompt,solution,raw_output,clean_output,hwc_code,mgc_code
+line3,3,,,raw_valid,True,True,True,,,,1456,1456,178,480,,,,"def calcTransitDuration(self, circular=False):
+        """""" Estimation of the primary transit time assuming a circular orbit (see :py:func:`equations.transitDuration`)
+        """"""","
+
+        try:
+            if circular:
+                return eq.transitDurationCircular(self.P, self.star.R, self.R, self.a, self.i)
+            else:
+                return eq.TransitDuration(self.P, self.a, self.R, self.star.R, self.i, self.e, self.periastron).Td
+        except (ValueError,
+                AttributeError,  # caused by trying to rescale nan i.e. missing i value
+                HierarchyError):  # i.e. planets that dont orbit stars
+            return np.nan","
+        import numpy as np
+        from astropy import constants as const
+
+        # Assuming self contains necessary orbital parameters:
+        # self.period (s), self.a (m), self.inc (rad), self.r_star (m), self.r_planet (m)
+
+        p = self.period
+        a = self.a
+        inc = self.inc
+        r_s = self.r_star
+        r_p = self.r_planet
+
+        if circular:
+            # Standard circular transit duration formula
+            # T = (p / pi) * asin( (r_s + r_p) / a * sqrt((1 + r_p/r_s)^2 - (a/r_s * cos(inc))^2) )
+            # Simplified for small angles:
+            term = (r_s + r_p) / a
+            impact = (a / r_s) * np.cos(inc)
+
+            if impact**2 > (1 + r_p/r_s)**2:
+                return 0.0
+
+            duration = (p / np.pi) * np.arcsin(term * np.sqrt((1 + r_p/r_s)**2 - impact**2))
+        else:
+            # Eccentric orbit duration
+            # T = T_circ * (1 + e * sin(omega)) / sqrt(1 - e^2)
+            # Assuming self.ecc and self.omega are available
+            e = getattr(self, 'ecc', 0.0)
+            omega = getattr(self, 'omega', 0.0)
+
+            # Calculate circular duration first
+            term = (r_s + r_p) / a
+            impact = (a / r_s) * np.cos(inc)
+            if impact**2 > (1 + r_p/r_s)**2:
+                return 0.0
+            t_circ = (p / np.pi) * np.arcsin(term * np.sqrt((1 + r_p/r_s)**2 - impact**2))
+
+            duration = t_circ * (1 + e * np.sin(omega)) / np.sqrt(1 - e**2)
+","
+        import numpy as np
+        from astropy import constants as const
+
+        # Assuming self contains necessary orbital parameters:
+        # self.period (s), self.a (m), self.inc (rad), self.r_star (m), self.r_planet (m)
+
+        p = self.period
+        a = self.a
+        inc = self.inc
+        r_s = self.r_star
+        r_p = self.r_planet
+
+        if circular:
+            # Standard circular transit duration formula
+            # T = (p / pi) * asin( (r_s + r_p) / a * sqrt((1 + r_p/r_s)^2 - (a/r_s * cos(inc))^2) )
+            # Simplified for small angles:
+            term = (r_s + r_p) / a
+            impact = (a / r_s) * np.cos(inc)
+
+            if impact**2 > (1 + r_p/r_s)**2:
+                return 0.0
+
+            duration = (p / np.pi) * np.arcsin(term * np.sqrt((1 + r_p/r_s)**2 - impact**2))
+        else:
+            # Eccentric orbit duration
+            # T = T_circ * (1 + e * sin(omega)) / sqrt(1 - e^2)
+            # Assuming self.ecc and self.omega are available
+            e = getattr(self, 'ecc', 0.0)
+            omega = getattr(self, 'omega', 0.0)
+
+            # Calculate circular duration first
+            term = (r_s + r_p) / a
+            impact = (a / r_s) * np.cos(inc)
+            if impact**2 > (1 + r_p/r_s)**2:
+                return 0.0
+            t_circ = (p / np.pi) * np.arcsin(term * np.sqrt((1 + r_p/r_s)**2 - impact**2))
+
+            duration = t_circ * (1 + e * np.sin(omega)) / np.sqrt(1 - e**2)
+","def calcTransitDuration(self, circular=False):
+        """""" Estimation of the primary transit time assuming a circular orbit (see :py:func:`equations.transitDuration`)
+        """"""
+
+        try:
+            if circular:
+                return eq.transitDurationCircular(self.P, self.star.R, self.R, self.a, self.i)
+            else:
+                return eq.TransitDuration(self.P, self.a, self.R, self.star.R, self.i, self.e, self.periastron).Td
+        except (ValueError,
+                AttributeError,  # caused by trying to rescale nan i.e. missing i value
+                HierarchyError):  # i.e. planets that dont orbit stars
+            return np.nan
+","def calcTransitDuration(self, circular=False):
+        """""" Estimation of the primary transit time assuming a circular orbit (see :py:func:`equations.transitDuration`)
+        """"""
+        import numpy as np
+        from astropy import constants as const
+
+        # Assuming self contains necessary orbital parameters:
+        # self.period (s), self.a (m), self.inc (rad), self.r_star (m), self.r_planet (m)
+
+        p = self.period
+        a = self.a
+        inc = self.inc
+        r_s = self.r_star
+        r_p = self.r_planet
+
+        if circular:
+            # Standard circular transit duration formula
+            # T = (p / pi) * asin( (r_s + r_p) / a * sqrt((1 + r_p/r_s)^2 - (a/r_s * cos(inc))^2) )
+            # Simplified for small angles:
+            term = (r_s + r_p) / a
+            impact = (a / r_s) * np.cos(inc)
+
+            if impact**2 > (1 + r_p/r_s)**2:
+                return 0.0
+
+            duration = (p / np.pi) * np.arcsin(term * np.sqrt((1 + r_p/r_s)**2 - impact**2))
+        else:
+            # Eccentric orbit duration
+            # T = T_circ * (1 + e * sin(omega)) / sqrt(1 - e^2)
+            # Assuming self.ecc and self.omega are available
+            e = getattr(self, 'ecc', 0.0)
+            omega = getattr(self, 'omega', 0.0)
+
+            # Calculate circular duration first
+            term = (r_s + r_p) / a
+            impact = (a / r_s) * np.cos(inc)
+            if impact**2 > (1 + r_p/r_s)**2:
+                return 0.0
+            t_circ = (p / np.pi) * np.arcsin(term * np.sqrt((1 + r_p/r_s)**2 - impact**2))
+
+            duration = t_circ * (1 + e * np.sin(omega)) / np.sqrt(1 - e**2)
+"
+line4,4,,,raw_valid,True,True,True,,,,38,38,93,719,,,,"def vlan_classifier_group_groupid(self, **kwargs):
+        """"""Auto Generated Code
+        """"""","
+        config = ET.Element(""config"")
+        vlan = ET.SubElement(config, ""vlan"", xmlns=""urn:brocade.com:mgmt:brocade-vlan"")
+        classifier = ET.SubElement(vlan, ""classifier"")
+        group = ET.SubElement(classifier, ""group"")
+        oper_key = ET.SubElement(group, ""oper"")
+        oper_key.text = kwargs.pop('oper')
+        rule_name_key = ET.SubElement(group, ""rule-name"")
+        rule_name_key.text = kwargs.pop('rule_name')
+        ruleid_key = ET.SubElement(group, ""ruleid"")
+        ruleid_key.text = kwargs.pop('ruleid')
+        groupid = ET.SubElement(group, ""groupid"")
+        groupid.text = kwargs.pop('groupid')
+
+        callback = kwargs.pop('callback', self._callback)
+        return callback(config)","
+        return kwargs.get('groupid')
+","
+        return kwargs.get('groupid')
+","def vlan_classifier_group_groupid(self, **kwargs):
+        """"""Auto Generated Code
+        """"""
+        config = ET.Element(""config"")
+        vlan = ET.SubElement(config, ""vlan"", xmlns=""urn:brocade.com:mgmt:brocade-vlan"")
+        classifier = ET.SubElement(vlan, ""classifier"")
+        group = ET.SubElement(classifier, ""group"")
+        oper_key = ET.SubElement(group, ""oper"")
+        oper_key.text = kwargs.pop('oper')
+        rule_name_key = ET.SubElement(group, ""rule-name"")
+        rule_name_key.text = kwargs.pop('rule_name')
+        ruleid_key = ET.SubElement(group, ""ruleid"")
+        ruleid_key.text = kwargs.pop('ruleid')
+        groupid = ET.SubElement(group, ""groupid"")
+        groupid.text = kwargs.pop('groupid')
+
+        callback = kwargs.pop('callback', self._callback)
+        return callback(config)
+","def vlan_classifier_group_groupid(self, **kwargs):
+        """"""Auto Generated Code
+        """"""
+        return kwargs.get('groupid')
+"
+line5,5,,,raw_valid,True,True,True,,,,213,213,60,397,,,,"def set_mypy_path(mypy_path):
+    """"""Prepend to MYPYPATH.""""""","
+    original = os.environ.get(mypy_path_env_var)
+    if original is None:
+        new_mypy_path = mypy_path
+    elif not original.startswith(mypy_path):
+        new_mypy_path = mypy_path + os.pathsep + original
+    else:
+        new_mypy_path = None
+    if new_mypy_path is not None:
+        logger.log(mypy_path_env_var + "":"", new_mypy_path)
+        os.environ[mypy_path_env_var] = new_mypy_path","
+    import os
+    current_path = os.environ.get(""MYPYPATH"", """")
+    if current_path:
+        os.environ[""MYPYPATH""] = f""{mypy_path}{os.pathsep}{current_path}""
+    else:
+        os.environ[""MYPYPATH""] = mypy_path
+","
+    import os
+    current_path = os.environ.get(""MYPYPATH"", """")
+    if current_path:
+        os.environ[""MYPYPATH""] = f""{mypy_path}{os.pathsep}{current_path}""
+    else:
+        os.environ[""MYPYPATH""] = mypy_path
+","def set_mypy_path(mypy_path):
+    """"""Prepend to MYPYPATH.""""""
+    original = os.environ.get(mypy_path_env_var)
+    if original is None:
+        new_mypy_path = mypy_path
+    elif not original.startswith(mypy_path):
+        new_mypy_path = mypy_path + os.pathsep + original
+    else:
+        new_mypy_path = None
+    if new_mypy_path is not None:
+        logger.log(mypy_path_env_var + "":"", new_mypy_path)
+        os.environ[mypy_path_env_var] = new_mypy_path
+","def set_mypy_path(mypy_path):
+    """"""Prepend to MYPYPATH.""""""
+    import os
+    current_path = os.environ.get(""MYPYPATH"", """")
+    if current_path:
+        os.environ[""MYPYPATH""] = f""{mypy_path}{os.pathsep}{current_path}""
+    else:
+        os.environ[""MYPYPATH""] = mypy_path
+"
+line7,7,,,raw_valid,True,True,True,,,,94,94,89,840,,,,"def is_opened(cls, dc_code, type_):
+        """"""List opened datacenters for given type.""""""","
+        options = {'dc_code': dc_code, '%s_opened' % type_: True}
+        datacenters = cls.safe_call('hosting.datacenter.list', options)
+        if not datacenters:
+            # try with ISO code
+            options = {'iso': dc_code, '%s_opened' % type_: True}
+            datacenters = cls.safe_call('hosting.datacenter.list', options)
+            if not datacenters:
+                raise DatacenterClosed(r'/!\ Datacenter %s is closed, please '
+                                       'choose another datacenter.' % dc_code)
+
+        datacenter = datacenters[0]
+        if datacenter.get('%s_closed_for' % type_) == 'NEW':
+            dc_close_date = datacenter.get('deactivate_at', '')
+            if dc_close_date:
+                dc_close_date = dc_close_date.strftime('%d/%m/%Y')
+            raise DatacenterLimited(dc_close_date)","
+        opened_dcs = cls.get_datacenters_by_type(type_)
+        return dc_code in opened_dcs
+","
+        opened_dcs = cls.get_datacenters_by_type(type_)
+        return dc_code in opened_dcs
+","def is_opened(cls, dc_code, type_):
+        """"""List opened datacenters for given type.""""""
+        options = {'dc_code': dc_code, '%s_opened' % type_: True}
+        datacenters = cls.safe_call('hosting.datacenter.list', options)
+        if not datacenters:
+            # try with ISO code
+            options = {'iso': dc_code, '%s_opened' % type_: True}
+            datacenters = cls.safe_call('hosting.datacenter.list', options)
+            if not datacenters:
+                raise DatacenterClosed(r'/!\ Datacenter %s is closed, please '
+                                       'choose another datacenter.' % dc_code)
+
+        datacenter = datacenters[0]
+        if datacenter.get('%s_closed_for' % type_) == 'NEW':
+            dc_close_date = datacenter.get('deactivate_at', '')
+            if dc_close_date:
+                dc_close_date = dc_close_date.strftime('%d/%m/%Y')
+            raise DatacenterLimited(dc_close_date)
+","def is_opened(cls, dc_code, type_):
+        """"""List opened datacenters for given type.""""""
+        opened_dcs = cls.get_datacenters_by_type(type_)
+        return dc_code in opened_dcs
+"
+line9,9,,,raw_valid,True,True,True,,,,685,685,256,1488,,,,"def dump_all_thread_tracebacks(exclude_thread_ids=None, file=None):
+    """"""
+    Prints the traceback of all threads.
+
+    :param set[int]|list[int]|None exclude_thread_ids: threads to exclude
+    :param io.TextIOBase|io.StringIO file: output stream
+    """"""","
+    if exclude_thread_ids is None:
+        exclude_thread_ids = []
+    if not file:
+        file = sys.stdout
+    import threading
+
+    if hasattr(sys, ""_current_frames""):
+        print("""", file=file)
+        threads = {t.ident: t for t in threading.enumerate()}
+        # noinspection PyProtectedMember
+        for tid, stack in sys._current_frames().items():
+            if tid in exclude_thread_ids:
+                continue
+            # This is a bug in earlier Python versions.
+            # http://bugs.python.org/issue17094
+            # Note that this leaves out all threads not created via the threading module.
+            if tid not in threads:
+                continue
+            tags = []
+            thread = threads.get(tid)
+            if thread:
+                assert isinstance(thread, threading.Thread)
+                if thread is threading.currentThread():
+                    tags += [""current""]
+                # noinspection PyProtectedMember,PyUnresolvedReferences
+                if isinstance(thread, threading._MainThread):
+                    tags += [""main""]
+                tags += [str(thread)]
+            else:
+                tags += [""unknown with id %i"" % tid]
+            print(""Thread %s:"" % "", "".join(tags), file=file)
+            print_tb(stack, file=file)
+            print("""", file=file)
+        print(""That were all threads."", file=file)
+    else:
+        print(""Does not have sys._current_frames, cannot get thread tracebacks."", file=file)","
+    import sys
+    import traceback
+    import threading
+
+    if exclude_thread_ids is None:
+        exclude_thread_ids = set()
+    else:
+        exclude_thread_ids = set(exclude_thread_ids)
+
+    if file is None:
+        file = sys.stdout
+
+    for thread_id, stack in sys._current_frames().items():
+        if thread_id in exclude_thread_ids:
+            continue
+        
+        thread_name = ""Unknown""
+        for t in threading.enumerate():
+            if t.ident == thread_id:
+                thread_name = t.name
+                break
+        
+        file.write(f""Thread {thread_id} ({thread_name}):\n"")
+        traceback.print_stack(stack, file=file)
+        file.write(""\n"")
+","
+    import sys
+    import traceback
+    import threading
+
+    if exclude_thread_ids is None:
+        exclude_thread_ids = set()
+    else:
+        exclude_thread_ids = set(exclude_thread_ids)
+
+    if file is None:
+        file = sys.stdout
+
+    for thread_id, stack in sys._current_frames().items():
+        if thread_id in exclude_thread_ids:
+            continue
+        
+        thread_name = ""Unknown""
+        for t in threading.enumerate():
+            if t.ident == thread_id:
+                thread_name = t.name
+                break
+        
+        file.write(f""Thread {thread_id} ({thread_name}):\n"")
+        traceback.print_stack(stack, file=file)
+        file.write(""\n"")
+","def dump_all_thread_tracebacks(exclude_thread_ids=None, file=None):
+    """"""
+    Prints the traceback of all threads.
+
+    :param set[int]|list[int]|None exclude_thread_ids: threads to exclude
+    :param io.TextIOBase|io.StringIO file: output stream
+    """"""
+    if exclude_thread_ids is None:
+        exclude_thread_ids = []
+    if not file:
+        file = sys.stdout
+    import threading
+
+    if hasattr(sys, ""_current_frames""):
+        print("""", file=file)
+        threads = {t.ident: t for t in threading.enumerate()}
+        # noinspection PyProtectedMember
+        for tid, stack in sys._current_frames().items():
+            if tid in exclude_thread_ids:
+                continue
+            # This is a bug in earlier Python versions.
+            # http://bugs.python.org/issue17094
+            # Note that this leaves out all threads not created via the threading module.
+            if tid not in threads:
+                continue
+            tags = []
+            thread = threads.get(tid)
+            if thread:
+                assert isinstance(thread, threading.Thread)
+                if thread is threading.currentThread():
+                    tags += [""current""]
+                # noinspection PyProtectedMember,PyUnresolvedReferences
+                if isinstance(thread, threading._MainThread):
+                    tags += [""main""]
+                tags += [str(thread)]
+            else:
+                tags += [""unknown with id %i"" % tid]
+            print(""Thread %s:"" % "", "".join(tags), file=file)
+            print_tb(stack, file=file)
+            print("""", file=file)
+        print(""That were all threads."", file=file)
+    else:
+        print(""Does not have sys._current_frames, cannot get thread tracebacks."", file=file)
+","def dump_all_thread_tracebacks(exclude_thread_ids=None, file=None):
+    """"""
+    Prints the traceback of all threads.
+
+    :param set[int]|list[int]|None exclude_thread_ids: threads to exclude
+    :param io.TextIOBase|io.StringIO file: output stream
+    """"""
+    import sys
+    import traceback
+    import threading
+
+    if exclude_thread_ids is None:
+        exclude_thread_ids = set()
+    else:
+        exclude_thread_ids = set(exclude_thread_ids)
+
+    if file is None:
+        file = sys.stdout
+
+    for thread_id, stack in sys._current_frames().items():
+        if thread_id in exclude_thread_ids:
+            continue
+
+        thread_name = ""Unknown""
+        for t in threading.enumerate():
+            if t.ident == thread_id:
+                thread_name = t.name
+                break
+
+        file.write(f""Thread {thread_id} ({thread_name}):\n"")
+        traceback.print_stack(stack, file=file)
+        file.write(""\n"")
+"
+line10,10,,,raw_valid,True,True,True,,,,664,664,888,154,,,,"def minion_publish(self, clear_load):
+        """"""
+        Publish a command initiated from a minion, this method executes minion
+        restrictions so that the minion publication will only work if it is
+        enabled in the config.
+
+        The configuration on the master allows minions to be matched to
+        salt functions, so the minions can only publish allowed salt functions
+
+        The config will look like this:
+
+        .. code-block:: bash
+
+            peer:
+                .*:
+                    - .*
+
+        This configuration will enable all minions to execute all commands.
+        peer:
+
+        .. code-block:: bash
+
+            foo.example.com:
+                - test.*
+
+        The above configuration will only allow the minion foo.example.com to
+        execute commands from the test module.
+
+        :param dict clear_load: The minion payload
+        """"""","
+        if not self.__verify_minion_publish(clear_load):
+            return {}
+        else:
+            return self.masterapi.minion_publish(clear_load)","
+        import re
+
+        minion_id = clear_load.get('minion_id')
+        func = clear_load.get('fun')
+
+        if not minion_id or not func:
+            return False
+
+        peer_config = self.config.get('peer', {})
+
+        allowed = False
+        for pattern, functions in peer_config.items():
+            if re.match(pattern, minion_id):
+                for func_pattern in functions:
+                    if re.match(func_pattern, func):
+                        allowed = True
+                        break
+            if allowed:
+                break
+
+        if allowed:
+            self.publish(clear_load)
+            return True
+
+        return False
+","
+        import re
+
+        minion_id = clear_load.get('minion_id')
+        func = clear_load.get('fun')
+
+        if not minion_id or not func:
+            return False
+
+        peer_config = self.config.get('peer', {})
+
+        allowed = False
+        for pattern, functions in peer_config.items():
+            if re.match(pattern, minion_id):
+                for func_pattern in functions:
+                    if re.match(func_pattern, func):
+                        allowed = True
+                        break
+            if allowed:
+                break
+
+        if allowed:
+            self.publish(clear_load)
+            return True
+
+        return False
+","def minion_publish(self, clear_load):
+        """"""
+        Publish a command initiated from a minion, this method executes minion
+        restrictions so that the minion publication will only work if it is
+        enabled in the config.
+
+        The configuration on the master allows minions to be matched to
+        salt functions, so the minions can only publish allowed salt functions
+
+        The config will look like this:
+
+        .. code-block:: bash
+
+            peer:
+                .*:
+                    - .*
+
+        This configuration will enable all minions to execute all commands.
+        peer:
+
+        .. code-block:: bash
+
+            foo.example.com:
+                - test.*
+
+        The above configuration will only allow the minion foo.example.com to
+        execute commands from the test module.
+
+        :param dict clear_load: The minion payload
+        """"""
+        if not self.__verify_minion_publish(clear_load):
+            return {}
+        else:
+            return self.masterapi.minion_publish(clear_load)
+","def minion_publish(self, clear_load):
+        """"""
+        Publish a command initiated from a minion, this method executes minion
+        restrictions so that the minion publication will only work if it is
+        enabled in the config.
+
+        The configuration on the master allows minions to be matched to
+        salt functions, so the minions can only publish allowed salt functions
+
+        The config will look like this:
+
+        .. code-block:: bash
+
+            peer:
+                .*:
+                    - .*
+
+        This configuration will enable all minions to execute all commands.
+        peer:
+
+        .. code-block:: bash
+
+            foo.example.com:
+                - test.*
+
+        The above configuration will only allow the minion foo.example.com to
+        execute commands from the test module.
+
+        :param dict clear_load: The minion payload
+        """"""
+        import re
+
+        minion_id = clear_load.get('minion_id')
+        func = clear_load.get('fun')
+
+        if not minion_id or not func:
+            return False
+
+        peer_config = self.config.get('peer', {})
+
+        allowed = False
+        for pattern, functions in peer_config.items():
+            if re.match(pattern, minion_id):
+                for func_pattern in functions:
+                    if re.match(func_pattern, func):
+                        allowed = True
+                        break
+            if allowed:
+                break
+
+        if allowed:
+            self.publish(clear_load)
+            return True
+
+        return False
+"

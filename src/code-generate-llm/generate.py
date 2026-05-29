@@ -31,10 +31,12 @@ Example:
 from __future__ import annotations
 
 import argparse
+import ast
 import gzip
 import json
 import os
 import re
+import textwrap
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -154,6 +156,113 @@ def strip_code_fences(text: str) -> str:
     return m.group(1) if m else (text or "")
 
 
+
+def body_indent_from_prompt(prompt: str) -> str:
+    """Infer the indentation level for code that follows the prompt docstring."""
+    triple_double = chr(34) * 3
+    triple_single = chr(39) * 3
+    lines = [ln for ln in prompt.splitlines() if ln.strip()]
+    for ln in reversed(lines):
+        if triple_double in ln or triple_single in ln:
+            indent = re.match(r"^(\s*)", ln).group(1)
+            return indent if indent else "    "
+    return "    "
+
+
+def as_current_continuation(text: str) -> str:
+    text = text.rstrip()
+    if not text:
+        return "\n"
+    if not text.startswith("\n"):
+        text = "\n" + text
+    return text + "\n"
+
+
+def shift_spurious_mixed_indent(text: str) -> str:
+    """
+    Gemma sometimes emits:
+        import numpy as np
+
+            if ...
+    where the import is column-0 but the body is already indented.
+    Shift one indentation level left before reindenting the whole body.
+    """
+    lines = text.strip("\n").splitlines()
+    indents = []
+    for ln in lines:
+        if not ln.strip():
+            continue
+        stripped = ln.lstrip(" \t")
+        indents.append(len(ln) - len(stripped))
+
+    if 0 in indents and any(i >= 4 for i in indents):
+        fixed = []
+        for ln in lines:
+            if ln.startswith("    "):
+                fixed.append(ln[4:])
+            elif ln.startswith("\t"):
+                fixed.append(ln[1:])
+            else:
+                fixed.append(ln)
+        return "\n".join(fixed)
+
+    return text
+
+
+def reindent_as_function_body(text: str, prompt: str) -> str:
+    """Dedent model output and reindent every non-empty line as function body code."""
+    indent = body_indent_from_prompt(prompt)
+    logical = textwrap.dedent(text.strip("\n"))
+    lines = logical.splitlines()
+
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+
+    if not lines:
+        return "\n"
+
+    out = []
+    for ln in lines:
+        out.append(indent + ln.rstrip() if ln.strip() else "")
+    return "\n" + "\n".join(out).rstrip() + "\n"
+
+
+def combined_is_valid(prompt: str, body: str) -> bool:
+    try:
+        ast.parse(prompt.rstrip() + body)
+        return True
+    except SyntaxError:
+        return False
+
+
+def choose_best_body(text: str, prompt: str) -> str:
+    bases = [
+        text,
+        textwrap.dedent(text),
+        shift_spurious_mixed_indent(text),
+        textwrap.dedent(shift_spurious_mixed_indent(text)),
+    ]
+
+    candidates = [as_current_continuation(text)]
+    for base in bases:
+        candidates.append(reindent_as_function_body(base, prompt))
+
+    seen = set()
+    unique = []
+    for cand in candidates:
+        if cand not in seen:
+            unique.append(cand)
+            seen.add(cand)
+
+    for cand in unique:
+        if combined_is_valid(prompt, cand):
+            return cand
+
+    return unique[-1] if unique else "\n"
+
+
 def extract_body(response: str, prompt: str) -> str:
     """Convert a chat-model response into the continuation body expected downstream."""
     text = strip_code_fences(response)
@@ -170,10 +279,10 @@ def extract_body(response: str, prompt: str) -> str:
 
     # If the model re-emits the full function, drop the def/docstring prefix.
     if re.match(r"(?s)^\s*(?:async\s+def|def)\s+", text):
-        normalized = text.replace("'''", '"""')
-        parts = normalized.split('"""')
+        normalized = text.replace(chr(39) * 3, chr(34) * 3)
+        parts = normalized.split(chr(34) * 3)
         if len(parts) >= 3:
-            text = '"""'.join(parts[2:])
+            text = (chr(34) * 3).join(parts[2:])
         else:
             lines = normalized.splitlines()
             for i, line in enumerate(lines):
@@ -181,10 +290,6 @@ def extract_body(response: str, prompt: str) -> str:
                     text = "\n".join(lines[i:])
                     break
 
-    # Cut at the next top-level def/class. Mirrors the validated logic in
-    # generate_starcoder15b.py: require a blank line before the cut and a
-    # real identifier after the keyword, so we don't over-cut nested
-    # helpers indented 1-3 spaces.
     cut = len(text)
     for pat in (
         r"\n\n(?=def\s+\w+\s*\()",
@@ -194,13 +299,9 @@ def extract_body(response: str, prompt: str) -> str:
         m = re.search(pat, text)
         if m:
             cut = min(cut, m.start())
-    text = text[:cut].rstrip()
 
-    if not text:
-        return "\n"
-    if not text.startswith("\n"):
-        text = "\n" + text
-    return text + "\n"
+    text = text[:cut].rstrip()
+    return choose_best_body(text, prompt)
 
 
 def build_messages(prompt: str) -> List[Dict[str, str]]:
@@ -209,7 +310,9 @@ def build_messages(prompt: str) -> List[Dict[str, str]]:
         "docstring exactly. Return only the function body that should appear "
         "after the docstring. Do not include Markdown fences, explanations, "
         "tests, examples, or a repeated function signature. Make sure the "
-        "returned body is syntactically complete Python.\n\n"
+        "returned body is syntactically complete Python. Every non-empty line "
+        "in your answer must be valid Python code inside the function body; "
+        "do not put imports or statements at column 0.\n\n"
         f"{prompt.rstrip()}"
     )
     return [
@@ -219,7 +322,6 @@ def build_messages(prompt: str) -> List[Dict[str, str]]:
         },
         {"role": "user", "content": instruction},
     ]
-
 
 def request_chat_completion(
     api_url: str,

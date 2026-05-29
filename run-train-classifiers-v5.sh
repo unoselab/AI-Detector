@@ -1,8 +1,14 @@
 # Step 0
 # ---
 cd ~/project-workspace/ai_detector/src
+# OPENAI_API_KEY="$NRP_API_KEY" \
+# GEN_MAX_NUM=10 \
+# GEN_TEMPERATURE=0.0 \
+# GEN_MODEL="gemma" \
+# ./run0a-generate-llm-api.sh
+rm -rf output/CodeSearchNet/gemma-10-tp0.0
 OPENAI_API_KEY="$NRP_API_KEY" \
-GEN_MAX_NUM=7000 \
+GEN_MAX_NUM=10 \
 GEN_TEMPERATURE=0.0 \
 GEN_MODEL="gemma" \
 ./run0a-generate-llm-api.sh
