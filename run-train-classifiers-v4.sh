@@ -59,36 +59,27 @@
 # ==============================================
 # Step 4
 # ---
-cd ~/project-workspace/ai_detector
-MODEL_NAME="gemma" \
-AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/gemma/ast" \
-OUT_BASELINE="data_codesearchnet/embeddings/gemma_maxlen2048_baseline" \
-MAX_LEN=2048 \
-BATCH_SIZE=32 \
-OVERWRITE=1 \
-bash src/run2-generate-embeddings.sh baseline
 # cd ~/project-workspace/ai_detector
-# MODEL_NAME="starcoder2-7b" \
-# AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/ast" \
-# OUT_BASELINE="data_codesearchnet/embeddings/starcoder2-7b_maxlen2048_baseline" \
+# MODEL_NAME="gemma" \
+# AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/gemma/ast" \
+# OUT_BASELINE="data_codesearchnet/embeddings/gemma_maxlen2048_baseline" \
 # MAX_LEN=2048 \
 # BATCH_SIZE=32 \
 # OVERWRITE=1 \
 # bash src/run2-generate-embeddings.sh baseline
-# cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1"
-# AST_BASELINE_DIR="${PWD}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_4500_complexity" \
-# OUT_BASELINE="data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048" \
-# ./run2-generate-embeddings.sh baseline
 # ==============================================
 # Step 5
 # ---
 # cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-7b" \
+# MODEL_NAME="gemma" \
 # ./run3c-split-complexity-stratified.sh
 # ==============================================
 # Step 6
 # ---
+cd ~/project-workspace/ai_detector/src
+MODEL_NAME="gemma_4500_complexity_stratified_maxlen2048" \
+MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
+./run4a-train-classifiers-allmodels.sh
 # cd ~/project-workspace/ai_detector/src 
 # MODEL_NAME="starcoder2-7b_4500_complexity_stratified_maxlen2048" \
 # MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
