@@ -1,4 +1,3 @@
-cat > src/code-generation/convert_readable_outputs.py <<'PY'
 #!/usr/bin/env python3
 """
 convert_readable_outputs.py
@@ -90,6 +89,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-PY
-
-chmod +x src/code-generation/convert_readable_outputs.py
