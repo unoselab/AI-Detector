@@ -99,6 +99,7 @@ OUT_NO_COMMENTS="${OUT_NO_COMMENTS:-data_ablation_study_code_embedding/no_commen
 
 # complexity sweep
 INPUT_DIR="${INPUT_DIR:-data_codesearchnet/${MODEL_NAME}/validsyntax_complexity_sweep}"     
+INPUT_FILE="${INPUT_FILE:-}"
 OUT_BASELINE="${OUT_BASELINE:-data_codesearchnet/${MODEL_NAME}/ast_complexity_sweep}" 
 # INPUT_DIR="data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax_complexity_sweep" \
 # OUT_BASELINE="data_codesearchnet/starcoder2-15b-instruct-v0.1/ast_complexity_sweep" \
@@ -157,10 +158,17 @@ if [ ! -f "build/my-languages.so" ]; then
   exit 1
 fi
 
-if [ ! -d "${INPUT_DIR}" ] || [ -z "$(ls -A "${INPUT_DIR}" 2>/dev/null)" ]; then
-  echo "[ERROR] INPUT_DIR is missing or empty: ${TARGET_DIR}/${INPUT_DIR}" >&2
-  echo "        Stage the merged CSVs there (see header for the file-naming convention)." >&2
-  exit 1
+if [ -n "${INPUT_FILE}" ]; then
+  if [ ! -f "${INPUT_FILE}" ]; then
+    echo "[ERROR] INPUT_FILE not found: ${TARGET_DIR}/${INPUT_FILE}" >&2
+    exit 1
+  fi
+else
+  if [ ! -d "${INPUT_DIR}" ] || [ -z "$(ls -A "${INPUT_DIR}" 2>/dev/null)" ]; then
+    echo "[ERROR] INPUT_DIR is missing or empty: ${TARGET_DIR}/${INPUT_DIR}" >&2
+    echo "        Stage the merged CSVs there, or set INPUT_FILE to one CSV." >&2
+    exit 1
+  fi
 fi
 
 # -----------------------------------------------------------------------------
@@ -170,6 +178,7 @@ echo "============================================================"
 echo " run1-ast-generator.sh"
 echo "   target dir : ${TARGET_DIR}"
 echo "   input dir  : ${INPUT_DIR}"
+echo "   input file : ${INPUT_FILE:-<none>}"
 echo "   modes      : ${MODES[*]}"
 echo "============================================================"
 
@@ -180,10 +189,18 @@ for mode in "${MODES[@]}"; do
   echo " mode       : ${mode}"
   echo " output dir : ${out_dir}"
   echo "------------------------------------------------------------"
-  "${PYTHON}" ast-generator.py \
-    --mode "${mode}" \
-    --input-dir "${INPUT_DIR}" \
+  ARGS=(
+    --mode "${mode}"
     --output-dir "${out_dir}"
+  )
+
+  if [ -n "${INPUT_FILE}" ]; then
+    ARGS+=(--input-file "${INPUT_FILE}")
+  else
+    ARGS+=(--input-dir "${INPUT_DIR}")
+  fi
+
+  "${PYTHON}" ast-generator.py "${ARGS[@]}"
 done
 
 echo

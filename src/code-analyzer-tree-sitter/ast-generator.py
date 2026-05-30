@@ -79,16 +79,21 @@ def language_inference_from_path(file_path):
     return parts[2].lower()
 
 
-def process_csv_files(input_dir, output_dir, mode):
+def process_csv_files(input_dir, output_dir, mode, input_file=None):
     os.makedirs(output_dir, exist_ok=True)
     transform = MODE_TRANSFORM[mode]
 
-    csv_files = sorted(glob(input_dir + '/**/*.csv', recursive=True))
-    csv_files = [
-        p for p in csv_files
-        if not os.path.basename(p).endswith("_manifest.csv")
-        and not os.path.basename(p).endswith("_candidate_report.csv")
-    ]
+    if input_file:
+        if not os.path.isfile(input_file):
+            raise SystemExit(f"[ERROR] input file not found: {input_file}")
+        csv_files = [input_file]
+    else:
+        csv_files = sorted(glob(input_dir + '/**/*.csv', recursive=True))
+        csv_files = [
+            p for p in csv_files
+            if not os.path.basename(p).endswith("_manifest.csv")
+            and not os.path.basename(p).endswith("_candidate_report.csv")
+        ]
 
     for csv_file in csv_files:
         print(f"Processing {csv_file}  [mode={mode}]")
@@ -101,7 +106,6 @@ def process_csv_files(input_dir, output_dir, mode):
             print(f"Skipping {csv_file}: missing required columns {sorted(missing)}")
             continue
 
-        # data['idx'] = data.index
         if 'idx' not in data.columns:
             data['idx'] = data.index
         else:
@@ -114,11 +118,9 @@ def process_csv_files(input_dir, output_dir, mode):
         original_size = len(data)
 
         if transform is None:
-            # baseline: AST straight from the original code
             data['ast'] = data['code'].apply(lambda c: generate_ast_sequence(c, language))
             keep_cols   = ['idx', 'code', 'ast', 'label']
         else:
-            # ablation: transform the code, then AST the transformed code
             data['new_code'] = data['code'].apply(lambda c: transform(c, language))
             data['ast']      = data['new_code'].apply(lambda c: generate_ast_sequence(c, language))
             keep_cols        = ['idx', 'code', 'new_code', 'ast', 'label']
@@ -126,7 +128,11 @@ def process_csv_files(input_dir, output_dir, mode):
         data.dropna(subset=['ast'], inplace=True)
         print(f"{csv_file} not parsed: {original_size - len(data)}/{original_size}")
 
-        output_path = csv_file.replace(input_dir, output_dir)
+        if input_file:
+            output_path = os.path.join(output_dir, os.path.basename(csv_file))
+        else:
+            output_path = csv_file.replace(input_dir, output_dir)
+
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         data[keep_cols].to_csv(output_path, index=False)
 
@@ -141,6 +147,8 @@ def parse_args():
                    help="Transformation to apply before AST generation (default: baseline).")
     p.add_argument("--input-dir", default="data_temp1",
                    help="Directory containing input CSVs (default: data_temp1).")
+    p.add_argument("--input-file", default=None,
+                   help="Single input CSV to process. Overrides --input-dir.")
     p.add_argument("--output-dir", default=None,
                    help="Directory for output CSVs. Defaults per mode "
                         "(baseline -> data_main, ablations -> data_ablation_study_code_embedding/<mode>).")
@@ -152,4 +160,5 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    process_csv_files(args.input_dir, args.output_dir, args.mode)
+    process_csv_files(args.input_dir, args.output_dir, args.mode, input_file=args.input_file)        
+        
