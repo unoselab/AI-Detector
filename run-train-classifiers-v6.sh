@@ -29,29 +29,23 @@
 # ==========================================
 # Step 2
 # ---
-cd ~/project-workspace/ai_detector/src
-MODEL_NAME=CodeLlama-7b-hf \
-MODEL_DIR=output/CodeSearchNet/CodeLlama-7b-hf-9000-tp0.2 \
-INPUT_FILE=output/CodeSearchNet/CodeLlama-7b-hf-9000-tp0.2/outputs.txt \
-PREFIX=codesearchnet_codellama-7b_python \
-N_SMALL=400 N_LARGE=4500 SEED=42 \
-bash run0b-find-validsyntax-mgc.sh
-# ==============================================
-# MODEL_NAME="starcoder2-7b" \
-# MODEL_DIR="output/CodeSearchNet/starcoder2-7b-7000-tp0.2" \
-# INPUT_FILE="output/CodeSearchNet/starcoder2-7b-7000-tp0.2/outputs.txt" \
-# PREFIX="codesearchnet_starcoder2-7b_python" \
-# DATA_OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/validsyntax" \
-# N_SMALL=400 \
-# N_LARGE=4500 \
-# SEED=42 \
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME=CodeLlama-7b-hf \
+# MODEL_DIR=output/CodeSearchNet/CodeLlama-7b-hf-9000-tp0.2 \
+# INPUT_FILE=output/CodeSearchNet/CodeLlama-7b-hf-9000-tp0.2/outputs.txt \
+# PREFIX=codesearchnet_codellama-7b_python \
+# N_SMALL=400 N_LARGE=4500 SEED=42 \
 # bash run0b-find-validsyntax-mgc.sh
-# 
-# rm /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/validsyntax/codesearchnet_starcoder2-7b_python_merged.csv
-# 
 # ==============================================
 # Step 2
 # ---
+conda activate aidetector
+cd ~/project-workspace/ai_detector/src
+MODEL_NAME="codellama-7b" \
+INPUT_DIR="data_codesearchnet/codellama-7b/validsyntax" \
+OUT_BASELINE="data_codesearchnet/codellama-7b/ast" \
+bash run1-ast-generator.sh baseline
+
 # cd ~/project-workspace/ai_detector
 # MODEL_NAME="starcoder2-7b" \
 # INPUT_DIR="data_codesearchnet/starcoder2-7b/validsyntax" \
