@@ -39,47 +39,42 @@
 # ==============================================
 # Step 2
 # ---
-conda activate aidetector
-cd ~/project-workspace/ai_detector/src
-MODEL_NAME="codellama-7b" \
-INPUT_DIR="data_codesearchnet/codellama-7b/validsyntax" \
-OUT_BASELINE="data_codesearchnet/codellama-7b/ast" \
-bash run1-ast-generator.sh baseline
-
-# cd ~/project-workspace/ai_detector
-# MODEL_NAME="starcoder2-7b" \
-# INPUT_DIR="data_codesearchnet/starcoder2-7b/validsyntax" \
-# OUT_BASELINE="data_codesearchnet/starcoder2-7b/ast" \
-# bash src/run1-ast-generator.sh baseline
+## conda activate aidetector
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="codellama-7b" \
+# INPUT_FILE="data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv" \
+# OUT_BASELINE="data_codesearchnet/codellama-7b/ast_4500" \
+# bash run1-ast-generator.sh baseline
 # ==============================================
 # Step 3
 # ---
+# cd ~/project-workspace/ai_detector/
+# MODEL_NAME="codellama-7b" \
+# AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/ast_4500" \
+# OUT_BASELINE="data_codesearchnet/embeddings/codellama-7b_4500_maxlen2048" \
+# MAX_LEN=2048 \
+# BATCH_SIZE=32 \
+# OVERWRITE=1 \
+# bash src/run2-generate-embeddings.sh baseline
+# ==============================================
+# Step 4
+# ---
 # cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-7b"
+# MODEL_NAME="codellama-7b"
 # PREFIX="codesearchnet_${MODEL_NAME}_python"
 # MODEL_NAME="${MODEL_NAME}" \
 # PREFIX="${PREFIX}" \
 # INPUT_CSV="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax/${PREFIX}_merged_4500.csv" \
 # OUT_DIR="code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/validsyntax_4500_complexity" \
 # SIZES="4500" \
-# ./run0d-build-complexity-sweep-pairs.sh
-## will create `code-analyzer-tree-sitter/data_../.._complexity_sweep_candidate_report.csv`
+# bash run0d-build-complexity-sweep-pairs.sh
 # ==============================================
 # Step 4
 # ---
-# cd ~/project-workspace/ai_detector
-# MODEL_NAME="starcoder2-7b" \
-# AST_BASELINE_DIR="${PWD}/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-7b/ast" \
-# OUT_BASELINE="data_codesearchnet/embeddings/starcoder2-7b_maxlen2048_baseline" \
-# MAX_LEN=2048 \
-# BATCH_SIZE=32 \
-# OVERWRITE=1 \
-# bash src/run2-generate-embeddings.sh baseline
-# cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-15b-instruct-v0.1"
-# AST_BASELINE_DIR="${PWD}/code-analyzer-tree-sitter/data_codesearchnet/${MODEL_NAME}/ast_4500_complexity" \
-# OUT_BASELINE="data_codesearchnet/embeddings/${MODEL_NAME}_4500_complexity_maxlen2048" \
-# ./run2-generate-embeddings.sh baseline
+cd ~/project-workspace/ai_detector/src
+MODEL_NAME="codellama-7b" \
+INPUT_CSV="ml_embeddings/data_codesearchnet/embeddings/codellama-7b_4500_maxlen2048/codesearchnet_codellama-7b_python_merged_4500.csv" \
+./run3c-split-complexity-stratified.sh
 # ==============================================
 # Step 5
 # ---
