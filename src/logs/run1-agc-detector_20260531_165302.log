@@ -1,0 +1,949 @@
+Log file : /home/user1-system12/project-workspace/ai_detector/src/logs/run1-agc-detector_20260531_165302.log
+Started  : 2026-05-31T16:53:02-05:00
+Repo root: /home/user1-system12/project-workspace/ai_detector
+
+============================================================
+ run1-agc-detector.sh
+   experiment   : starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048
+   input file   : <none>
+   input grid   : <none>
+   input dir    : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6
+   subdir glob  : blocks_*  (used only with INPUT_GRID)
+   model pickle : src/ml_embeddings/data_codesearchnet/models/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/tuned_models_codesearchnet_starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048_svm_20260526_033005.pkl
+   embedding    : ast
+   max len      : 2048
+   threshold    : <default: 0.5/0.0>
+   high-conf    : 0
+   device       : <auto>
+   out dir      : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions  (single-dir mode only)
+============================================================
+
+============================================================
+ agc_detector.py
+   input files : 50
+   input dir   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6
+   pattern     : mixed_sample_*.py
+   embedding   : ast
+   max len     : 2048
+   threshold   : (default)
+============================================================
+
+Loading Salesforce/codet5p-110m-embedding on cuda ...
+Classifier pickle : src/ml_embeddings/data_codesearchnet/models/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/tuned_models_codesearchnet_starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048_svm_20260526_033005.pkl
+Classifier key    : codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_4500ast_
+Embedding type    : ast
+Threshold         : (default)
+
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_001.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-16         function_definition  load                          human    0.228  human   ✓
+  2  19-36        function_definition  shutdown_kernel               human    0.568  human   ✓
+  3  39-55        function_definition  update_configs                human    1.748  human   ✓
+  4  58-64        function_definition  _extract_proxies              human    0.137  human   ✓
+  5  67-92        function_definition  no_positional                 human    1.856  human   ✓
+  6  95-123       function_definition  rasterize                     lm      -0.886  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_001.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_002.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-16         function_definition  isidentifier                  human    2.187  lm      ✗
+  2  19-37        function_definition  extract_from_text             lm      -0.228  lm      ✓
+  3  40-46        function_definition  redo_expansion_state          human    0.778  lm      ✗
+  4  49-57        function_definition  trim_trailing_silence         lm      -2.498  lm      ✓
+  5  60-69        function_definition  mcmc_CH                       lm      -0.361  lm      ✓
+  6  72-80        function_definition  pypi_release                  human    0.330  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_002.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_003.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-27         function_definition  add                           human    0.940  human   ✓
+  2  30-33        function_definition  ip_to_array                   lm      -1.798  lm      ✓
+  3  36-52        function_definition  readBoolean                   lm      -0.780  human   ✗
+  4  55-78        function_definition  handle_input                  human    1.575  human   ✓
+  5  81-99        function_definition  create                        lm      -0.183  lm      ✓
+  6  102-114      function_definition  print_status                  human    0.473  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_003.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_004.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-10         function_definition  print_meter_record            lm      -3.289  lm      ✓
+  2  13-39        function_definition  dinf_downslope_direction      lm      -0.462  lm      ✓
+  3  42-57        function_definition  displayable                   human    1.437  human   ✓
+  4  60-70        function_definition  _add_observation              lm      -0.154  lm      ✓
+  5  73-84        function_definition  pre_social_login              lm      -1.063  human   ✗
+  6  87-117       function_definition  create_default_config         lm      -0.047  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_004.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_005.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-29         function_definition  time_cache                    lm      -0.286  human   ✗
+  2  32-40        function_definition  handle_label                  human    0.340  lm      ✗
+  3  43-56        function_definition  _rc_context                   human    0.735  human   ✓
+  4  59-72        function_definition  _python3_record_factory       human    0.340  lm      ✗
+  5  75-90        function_definition  fgrad_y                       lm      -0.022  lm      ✓
+  6  93-104       function_definition  next                          human    1.483  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_005.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_006.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-10         function_definition  expand_paths                  lm      -2.824  lm      ✓
+  2  13-32        function_definition  add_controls                  human    0.212  human   ✓
+  3  35-45        function_definition  getEditPerson                 lm      -1.266  lm      ✓
+  4  48-72        function_definition  _create_bv_circuit            human    1.859  human   ✓
+  5  75-79        function_definition  __update_service_status       human    0.945  human   ✓
+  6  82-98        function_definition  find_module_defining_flag     lm      -1.939  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_006.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_007.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-22         function_definition  set_cognitive_process         human    1.398  lm      ✗
+  2  25-39        function_definition  step                          lm      -1.935  human   ✗
+  3  42-74        function_definition  add_service                   human    1.458  human   ✓
+  4  77-85        function_definition  read_meta                     lm      -1.316  lm      ✓
+  5  88-100       function_definition  delete_tag                    human    0.321  lm      ✗
+  6  103-117      function_definition  repl                          human    1.178  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_007.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_008.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-13         function_definition  find_child_element            lm      -1.314  lm      ✓
+  2  16-18        function_definition  shutdown_kernel               lm      -2.047  lm      ✓
+  3  21-36        function_definition  layer_norm_compute            human    1.248  human   ✓
+  4  39-46        function_definition  get_queryset                  lm      -1.851  human   ✗
+  5  49-63        function_definition  creation_time                 lm      -0.532  human   ✗
+  6  66-72        function_definition  find_base_images              lm      -2.967  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_008.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_009.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-16         function_definition  get_region_size               human    0.574  lm      ✗
+  2  19-30        function_definition  help                          lm      -1.898  lm      ✓
+  3  33-59        function_definition  get                           human    1.867  human   ✓
+  4  62-86        function_definition  describe                      human    1.521  human   ✓
+  5  89-114       function_definition  compute_texptime              human    1.527  human   ✓
+  6  117-150      function_definition  find_message                  lm      -2.055  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_009.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_010.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-14         function_definition  get_meta                      lm      -1.930  lm      ✓
+  2  17-24        function_definition  get_resource_type_from_inclu  lm      -1.888  lm      ✓
+  3  27-31        function_definition  run_gevent                    lm      -0.487  lm      ✓
+  4  34-55        function_definition  get_collection                human    0.025  human   ✓
+  5  58-82        function_definition  inbound_presence_filter       human    1.059  human   ✓
+  6  85-97        function_definition  lastPrePrepareSeqNo           human    1.163  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_010.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_011.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-9          function_definition  is_punctuation                human    0.715  human   ✓
+  2  12-24        function_definition  run                           lm      -1.486  lm      ✓
+  3  27-38        function_definition  make_stone_friendly           human    1.218  lm      ✗
+  4  41-45        function_definition  _update_request_context_with  lm      -2.473  human   ✗
+  5  48-74        function_definition  monitor                       human    0.886  lm      ✗
+  6  77-118       function_definition  getreferingobjs               human    0.928  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_011.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_012.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-25         function_definition  iter_child_nodes              lm      -1.020  human   ✗
+  2  28-36        function_definition  build_groups                  lm      -0.324  human   ✗
+  3  39-51        function_definition  optimise_levenberg_marquardt  human    0.814  lm      ✗
+  4  54-71        function_definition  perform                       lm      -0.200  lm      ✓
+  5  74-83        function_definition  wait_until                    lm      -2.087  human   ✗
+  6  86-90        function_definition  acos                          lm      -0.455  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 2  | accuracy: 0.3333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_012.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_013.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-15         function_definition  validate_set_ops              lm      -0.772  lm      ✓
+  2  18-33        function_definition  thread_debug                  human    1.692  human   ✓
+  3  36-47        function_definition  get_single_outfile            human    2.894  human   ✓
+  4  50-58        function_definition  create                        lm      -1.230  lm      ✓
+  5  61-73        function_definition  filter_by_col                 lm      -0.853  lm      ✓
+  6  76-125       function_definition  print_func_call               human    2.674  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_013.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_014.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-49         function_definition  install                       human    2.585  lm      ✗
+  2  52-80        function_definition  get_form                      human    1.956  human   ✓
+  3  83-91        function_definition  _apply_key_type               human    0.620  lm      ✗
+  4  94-119       function_definition  save_gui_settings             human    1.821  human   ✓
+  5  122-125      function_definition  dependents_of_addresses       lm      -0.175  lm      ✓
+  6  128-153      function_definition  index_normalize               human    0.217  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_014.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_015.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-18         function_definition  get_ast                       lm      -1.204  lm      ✓
+  2  21-30        function_definition  call                          human    0.060  human   ✓
+  3  33-71        function_definition  emulate                       lm      -0.769  lm      ✓
+  4  74-86        function_definition  error_and_result              human    0.655  human   ✓
+  5  89-115       function_definition  _write_standard               human    2.058  human   ✓
+  6  118-150      function_definition  _get_user_info                lm      -0.054  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_015.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_016.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-12         function_definition  sendTemplate                  lm      -0.409  lm      ✓
+  2  15-23        function_definition  _mutate_probability_vec       human    1.811  human   ✓
+  3  26-40        function_definition  getreferingobjs               lm      -0.975  lm      ✓
+  4  43-56        function_definition  deserialize                   human    0.843  lm      ✗
+  5  59-76        function_definition  format_tsv_line               lm      -1.253  human   ✗
+  6  79-84        function_definition  _get_columns                  human    0.590  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_016.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_017.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-16         function_definition  group_attrib                  human    0.411  lm      ✗
+  2  19-45        function_definition  atlas_make_zonefile_inventor  human    0.568  lm      ✗
+  3  48-61        function_definition  stddev_samples                lm      -1.559  lm      ✓
+  4  64-115       function_definition  _serialization_helper         human    1.654  human   ✓
+  5  118-130      function_definition  _select_theory                lm      -1.020  human   ✗
+  6  133-166      function_definition  _tidy_stacktrace              human    2.931  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_017.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_018.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-26         function_definition  generate_veq                  lm      -0.967  lm      ✓
+  2  29-58        function_definition  generate                      human    0.304  human   ✓
+  3  61-96        function_definition  action_webimport              human    1.045  human   ✓
+  4  99-104       function_definition  add_scm_info                  lm      -1.021  lm      ✓
+  5  107-116      function_definition  ask_user                      lm      -0.282  lm      ✓
+  6  119-128      function_definition  last_ehlo_response            human    0.217  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_018.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_019.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-35         function_definition  dinf_downslope_direction      lm      -0.630  human   ✗
+  2  38-53        function_definition  switchCurrentView             lm      -0.978  lm      ✓
+  3  56-82        function_definition  list_ebs                      human    0.560  lm      ✗
+  4  85-110       function_definition  array                         human    1.300  human   ✓
+  5  113-182      function_definition  _interpolate_scipy_wrapper    lm      -0.927  human   ✗
+  6  185-191      function_definition  on_api_error_14               lm      -0.411  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_019.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_020.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-17         function_definition  message                       lm      -0.531  human   ✗
+  2  20-26        function_definition  _format_envvars               human    0.027  lm      ✗
+  3  29-35        function_definition  get_power_state               human    0.238  lm      ✗
+  4  38-43        function_definition  get_form                      lm      -2.562  lm      ✓
+  5  46-57        function_definition  _initialize                   human    0.572  human   ✓
+  6  60-67        function_definition  get_file_port                 lm      -1.248  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 2  | accuracy: 0.3333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_020.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_021.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-27         function_definition  keep_color                    human    0.994  human   ✓
+  2  30-42        function_definition  last_ehlo_response            human    0.388  lm      ✗
+  3  45-61        function_definition  _should_get_another_batch     lm      -1.189  lm      ✓
+  4  64-69        function_definition  data                          lm      -0.979  lm      ✓
+  5  72-88        function_definition  register_view                 human    2.407  human   ✓
+  6  91-95        function_definition  getedges                      human    1.000  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_021.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_022.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-9          function_definition  _margtime_loglr               lm      -1.534  human   ✗
+  2  12-15        function_definition  filtered_archs                lm      -0.499  lm      ✓
+  3  18-23        function_definition  is_ome                        human    0.694  human   ✓
+  4  26-49        function_definition  ffd                           human    0.578  lm      ✗
+  5  52-57        function_definition  find_segment                  lm      -0.958  lm      ✓
+  6  60-65        function_definition  trim_trailing_silence         lm      -3.086  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_022.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_023.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-10         function_definition  on_new_line                   lm      -0.985  human   ✗
+  2  13-40        function_definition  rasterize                     lm      -1.528  lm      ✓
+  3  43-73        function_definition  execute_code                  human    2.642  human   ✓
+  4  76-99        function_definition  _surface                      lm      -0.733  human   ✗
+  5  102-118      function_definition  make_cos_vects                human    0.232  lm      ✗
+  6  121-126      function_definition  plugin_get_rfu                lm      -1.431  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_023.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_024.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-19         function_definition  removeIndexOnAttribute        lm      -0.226  lm      ✓
+  2  22-49        function_definition  generate_veq                  lm      -0.017  human   ✗
+  3  52-59        function_definition  adev                          human    2.929  human   ✓
+  4  62-71        function_definition  get_output                    lm      -0.878  lm      ✓
+  5  74-82        function_definition  split_denovos                 lm      -1.271  lm      ✓
+  6  85-89        function_definition  get_title                     lm      -0.169  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_024.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_025.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-15         function_definition  _handle_terminate             human    0.355  human   ✓
+  2  18-35        function_definition  mongodb_ensure_index          human    1.241  human   ✓
+  3  38-58        function_definition  _extract_proxies              human    1.489  lm      ✗
+  4  61-90        function_definition  Glyph                         human    1.473  lm      ✗
+  5  93-125       function_definition  debug_layer                   human    0.407  lm      ✗
+  6  128-147      function_definition  monitor                       human    1.450  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_025.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_026.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-23         function_definition  sampled_logs                  human    0.488  human   ✓
+  2  26-40        function_definition  to_dataframe                  human    0.830  human   ✓
+  3  43-45        function_definition  _encode_request               lm      -0.961  lm      ✓
+  4  48-56        function_definition  run_gevent                    human    1.118  human   ✓
+  5  59-68        function_definition  call                          lm      -0.307  lm      ✓
+  6  71-80        function_definition  adev                          human    1.576  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_026.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_027.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-19         function_definition  from_envvar                   lm      -1.022  human   ✗
+  2  22-26        function_definition  on_new_line                   lm      -2.557  lm      ✓
+  3  29-34        function_definition  from_localhost                lm      -1.842  lm      ✓
+  4  37-83        function_definition  expand                        lm      -2.423  lm      ✓
+  5  86-150       function_definition  timeseries                    human    2.486  human   ✓
+  6  153-164      function_definition  read_checksum_digest          lm      -0.546  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_027.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_028.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-31         function_definition  needs_quotes                  human    1.803  human   ✓
+  2  34-41        function_definition  receive_message               lm      -3.466  lm      ✓
+  3  44-56        function_definition  get_details                   human    0.881  human   ✓
+  4  59-76        function_definition  optimise_levenberg_marquardt  human    1.255  human   ✓
+  5  79-94        function_definition  centroid_refine_triangulatio  human    0.035  lm      ✗
+  6  97-112       function_definition  reboot                        lm      -0.472  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_028.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_029.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-19         function_definition  gc                            human    1.355  human   ✓
+  2  22-35        function_definition  length                        lm      -1.391  lm      ✓
+  3  38-49        function_definition  options                       lm      -1.550  human   ✗
+  4  52-69        function_definition  pixy_init                     lm      -2.310  lm      ✓
+  5  72-86        function_definition  main                          lm      -0.730  lm      ✓
+  6  89-98        function_definition  ignore_broken_pipe            lm      -0.818  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_029.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_030.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-15         function_definition  sampled_logs                  lm      -1.032  lm      ✓
+  2  18-42        function_definition  check_columns_fit             human    0.316  human   ✓
+  3  45-54        function_definition  add_agent                     lm      -0.356  lm      ✓
+  4  57-62        function_definition  _create_app                   lm      -0.876  lm      ✓
+  5  65-71        function_definition  reset_poller                  human    1.106  human   ✓
+  6  74-110       function_definition  select_command                human    1.049  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_030.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_031.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-11         function_definition  fulltext_add                  lm      -0.512  lm      ✓
+  2  14-34        function_definition  data                          human    1.193  human   ✓
+  3  37-43        function_definition  dependents_of_addresses       human    1.514  human   ✓
+  4  46-73        function_definition  _init_client                  human    2.749  human   ✓
+  5  76-81        function_definition  get_learned_skills            human    0.536  lm      ✗
+  6  84-92        function_definition  time2dir                      human    0.219  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_031.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_032.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-11         function_definition  make_label                    lm      -3.618  lm      ✓
+  2  14-27        function_definition  enable                        human    0.298  human   ✓
+  3  30-35        function_definition  _se_all                       human    0.142  human   ✓
+  4  38-42        function_definition  set_constraint_bound          lm      -2.608  lm      ✓
+  5  45-54        function_definition  get_power_state               human    1.615  human   ✓
+  6  57-64        function_definition  find_overlapping_slots        lm      -2.323  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_032.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_033.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-15         function_definition  _other_to_dict                human    0.276  lm      ✗
+  2  18-39        function_definition  join_header_words             human    0.349  lm      ✗
+  3  42-62        function_definition  _apply_key_type               human    2.476  human   ✓
+  4  65-74        function_definition  commit_comment                human    0.753  human   ✓
+  5  77-101       function_definition  render_to_response            lm      -1.047  human   ✗
+  6  104-112      function_definition  timespan_type                 human    0.648  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 2  | accuracy: 0.3333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_033.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_034.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-15         function_definition  paste                         lm      -1.368  lm      ✓
+  2  18-55        function_definition  __args_check                  human    1.538  human   ✓
+  3  58-65        function_definition  timer                         lm      -3.546  lm      ✓
+  4  68-140       function_definition  mcmc_CH                       human    2.450  human   ✓
+  5  143-172      function_definition  undeclared_query_parameters   human    0.040  human   ✓
+  6  175-178      function_definition  resource_path                 lm      -0.004  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_034.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_035.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-21         function_definition  set_default_unit_all          human    2.158  human   ✓
+  2  24-36        function_definition  _get_whole_subtrees           human    1.701  human   ✓
+  3  39-54        function_definition  delete_property               lm      -0.328  lm      ✓
+  4  57-70        function_definition  _format_envvars               human    1.010  human   ✓
+  5  73-79        function_definition  _param_to_matrix              lm      -2.948  lm      ✓
+  6  82-102       function_definition  mr_dim_ind                    lm      -0.403  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_035.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_036.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-17         function_definition  system_monitor_MM_threshold_  lm      -0.073  human   ✗
+  2  20-38        function_definition  load                          lm      -0.644  lm      ✓
+  3  41-57        function_definition  _parse_openssl_req            human    0.980  human   ✓
+  4  60-77        function_definition  _log                          human    1.480  human   ✓
+  5  80-92        function_definition  get_pks_for_filter            lm      -0.933  lm      ✓
+  6  95-106       function_definition  add_breakpoint                lm      -0.914  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_036.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_037.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-16         function_definition  zoom_in                       human    1.807  human   ✓
+  2  19-50        function_definition  load_data_file                human    1.244  lm      ✗
+  3  53-65        function_definition  all_documents                 lm      -0.516  lm      ✓
+  4  68-93        function_definition  _build_file                   human    0.313  lm      ✗
+  5  96-111       function_definition  load                          human    2.262  human   ✓
+  6  114-133      function_definition  process_non_api_filters       lm      -1.042  human   ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_037.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_038.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-18         function_definition  iob2json                      lm      -1.338  human   ✗
+  2  21-25        function_definition  all                           lm      -1.950  lm      ✓
+  3  28-33        function_definition  thread_debug                  lm      -0.463  lm      ✓
+  4  36-82        function_definition  get_notes                     human    1.494  human   ✓
+  5  85-97        function_definition  timer                         human    1.156  human   ✓
+  6  100-107      function_definition  _astype                       lm      -2.090  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_038.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_039.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-27         function_definition  walk_dir_with_filter          lm      -0.368  lm      ✓
+  2  30-61        function_definition  _F                            human    1.058  human   ✓
+  3  64-82        function_definition  _extend_blocks                lm      -0.758  lm      ✓
+  4  85-90        function_definition  _build_request_url            lm      -2.940  lm      ✓
+  5  93-100       function_definition  _param_to_matrix              lm      -1.514  human   ✗
+  6  103-123      function_definition  compatible_firmware_version   human    1.331  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_039.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_040.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-19         function_definition  moothedata                    lm      -4.095  lm      ✓
+  2  22-47        function_definition  create_pull_request_iteratio  human    1.184  human   ✓
+  3  50-70        function_definition  create                        human    0.276  human   ✓
+  4  73-83        function_definition  absent                        human    1.124  lm      ✗
+  5  86-108       function_definition  create_default_config         lm      -0.480  lm      ✓
+  6  111-127      function_definition  listSerialPorts               human    1.210  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_040.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_041.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-9          function_definition  print_status                  human    0.192  human   ✓
+  2  12-28        function_definition  _get_chromecast_from_host     human    1.050  human   ✓
+  3  31-46        function_definition  no_positional                 lm      -2.259  lm      ✓
+  4  49-63        function_definition  _get_whole_subtrees           human    1.111  lm      ✗
+  5  66-114       function_definition  get_resource_data             human    1.643  human   ✓
+  6  117-123      function_definition  initialize                    lm      -1.144  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_041.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_042.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-38         function_definition  get_absolute                  human    1.259  human   ✓
+  2  41-76        function_definition  atlas_make_zonefile_inventor  human    1.151  human   ✓
+  3  79-83        function_definition  get_blueprint_params          lm      -1.648  lm      ✓
+  4  86-101       function_definition  get_mapping                   lm      -0.612  lm      ✓
+  5  104-114      function_definition  list_scripts                  lm      -0.084  human   ✗
+  6  117-129      function_definition  decimal                       lm      -0.746  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_042.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_043.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-12         function_definition  index_by                      lm      -2.514  lm      ✓
+  2  15-24        function_definition  resolve_freezer               lm      -1.660  lm      ✓
+  3  27-65        function_definition  expand_paths                  human    1.057  human   ✓
+  4  68-70        function_definition  flip_iterable_dict            lm      -1.483  lm      ✓
+  5  73-106       function_definition  new_stats_exporter            human    2.624  human   ✓
+  6  109-120      function_definition  initLogger                    human    0.663  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_043.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_044.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-16         function_definition  db_exec_with_cursor           human    0.361  human   ✓
+  2  19-28        function_definition  _remove_compression_suffix_i  lm      -0.821  human   ✗
+  3  31-41        function_definition  _multiplexed_buffer_helper    lm      -0.777  lm      ✓
+  4  44-55        function_definition  as_span                       lm      -0.670  lm      ✓
+  5  58-76        function_definition  connectCached                 human    1.157  lm      ✗
+  6  79-85        function_definition  _gatk4_cmd                    human    2.854  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_044.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_045.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-12         function_definition  get_factory                   lm      -0.541  lm      ✓
+  2  15-24        function_definition  merge_leaderboards            lm      -1.393  human   ✗
+  3  27-32        function_definition  _se_all                       lm      -0.471  lm      ✓
+  4  35-61        function_definition  update_firmware               human    0.542  human   ✓
+  5  64-67        function_definition  gc                            lm      -2.838  lm      ✓
+  6  70-162       function_definition  Glyph                         human    2.861  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_045.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_046.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-18         function_definition  get_learned_skills            human    1.190  human   ✓
+  2  21-30        function_definition  read_kw_file                  lm      -1.443  lm      ✓
+  3  33-43        function_definition  libvlc_vlm_set_output         human    0.862  human   ✓
+  4  46-61        function_definition  cortex_rgba_plot_2D           human    0.736  lm      ✗
+  5  64-68        function_definition  parse_command_line_arguments  lm      -2.047  lm      ✓
+  6  71-114       function_definition  walk_dir_with_filter          human    0.364  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 5  | accuracy: 0.8333
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_046.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_047.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-19         function_definition  __generate                    human    1.061  lm      ✗
+  2  22-50        function_definition  batchccn                      human    2.983  human   ✓
+  3  53-72        function_definition  as_span                       human    0.568  human   ✓
+  4  75-98        function_definition  validate_types                human    1.494  human   ✓
+  5  101-108      function_definition  _validate_group               lm      -0.728  lm      ✓
+  6  111-121      function_definition  get_protocol_version          human    0.737  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 4  | accuracy: 0.6667
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_047.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_048.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-33         function_definition  _format_background            lm      -0.651  human   ✗
+  2  36-55        function_definition  get_resource_type_from_inclu  human    0.191  human   ✓
+  3  58-82        function_definition  help                          human    2.144  human   ✓
+  4  85-93        function_definition  set_default_unit_all          human    0.522  lm      ✗
+  5  96-105       function_definition  compute_texptime              lm      -1.256  lm      ✓
+  6  108-114      function_definition  start                         human    0.188  lm      ✗
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_048.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_049.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-9          function_definition  tax_for_order                 lm      -1.560  human   ✗
+  2  12-38        function_definition  _prepare_init_params_from_jo  lm      -0.073  lm      ✓
+  3  41-51        function_definition  index_by                      lm      -0.797  human   ✗
+  4  54-61        function_definition  ip_to_array                   lm      -1.547  human   ✗
+  5  64-76        function_definition  get_resource_data             lm      -1.317  lm      ✓
+  6  79-85        function_definition  _get_id2obj_high              lm      -1.026  lm      ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 3  | accuracy: 0.5000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_049.predictions.tsv
+
+------------------------------------------------------------
+ scanning : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py
+ labels   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.labels.tsv
+ out tsv  : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_050.predictions.tsv
+------------------------------------------------------------
+  #  lines        kind                name                          pred     score  TRUTH   ok
+----------------------------------------------------------------------------------------------------
+  1  6-21         function_definition  summarize_failing_examples    lm      -0.972  lm      ✓
+  2  24-31        function_definition  handle_label                  human    0.696  human   ✓
+  3  34-44        function_definition  _breakup_gfe                  lm      -0.370  lm      ✓
+  4  47-92        function_definition  _build_file                   human    1.197  human   ✓
+  5  95-116       function_definition  merge_leaderboards            lm      -0.663  lm      ✓
+  6  119-132      function_definition  restore_default               human    0.214  human   ✓
+----------------------------------------------------------------------------------------------------
+Blocks scored : 6
+With ground truth : 6  | correct: 6  | accuracy: 1.0000
+Predictions -> src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/mixed_sample_050.predictions.tsv
+
+============================================================
+Overall summary
+============================================================
+files scored  : 50
+blocks scored : 300
+truth blocks  : 300
+correct       : 217
+accuracy      : 0.7233
+summary csv   : src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/predictions/summary.csv
+
+Finished : 2026-05-31T16:53:07-05:00
+Log file : /home/user1-system12/project-workspace/ai_detector/src/logs/run1-agc-detector_20260531_165302.log
