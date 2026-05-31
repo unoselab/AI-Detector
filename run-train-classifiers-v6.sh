@@ -27,7 +27,7 @@
 # cd ~/project-workspace/ai_detector/src
 # bash run0a-generate-more.sh
 # ==========================================
-# Step 2
+# Step 2: checking validity
 # ---
 # cd ~/project-workspace/ai_detector/src
 # MODEL_NAME=CodeLlama-7b-hf \
@@ -37,7 +37,7 @@
 # N_SMALL=400 N_LARGE=4500 SEED=42 \
 # bash run0b-find-validsyntax-mgc.sh
 # ==============================================
-# Step 2
+# Step 3: : generating ASTs.
 # ---
 ## conda activate aidetector
 # cd ~/project-workspace/ai_detector/src
@@ -46,7 +46,7 @@
 # OUT_BASELINE="data_codesearchnet/codellama-7b/ast_4500" \
 # bash run1-ast-generator.sh baseline
 # ==============================================
-# Step 3
+# Step 4: generating embeddings
 # ---
 # cd ~/project-workspace/ai_detector/
 # MODEL_NAME="codellama-7b" \
@@ -57,7 +57,7 @@
 # OVERWRITE=1 \
 # bash src/run2-generate-embeddings.sh baseline
 # ==============================================
-# Step 4
+# Step 5: calculating complexity
 # ---
 # cd ~/project-workspace/ai_detector/src
 # MODEL_NAME="codellama-7b"
@@ -69,23 +69,15 @@
 # SIZES="4500" \
 # bash run0d-build-complexity-sweep-pairs.sh
 # ==============================================
-# Step 4
-# ---
-cd ~/project-workspace/ai_detector/src
-MODEL_NAME="codellama-7b" \
-INPUT_CSV="ml_embeddings/data_codesearchnet/embeddings/codellama-7b_4500_maxlen2048/codesearchnet_codellama-7b_python_merged_4500.csv" \
-./run3c-split-complexity-stratified.sh
-# ==============================================
-# Step 5
+# Step 6: spliting
 # ---
 # cd ~/project-workspace/ai_detector/src
-# MODEL_NAME="starcoder2-7b" \
+# MODEL_NAME="codellama-7b" \
+# INPUT_CSV="ml_embeddings/data_codesearchnet/embeddings/codellama-7b_4500_maxlen2048/codesearchnet_codellama-7b_python_merged_4500.csv" \
 # ./run3c-split-complexity-stratified.sh
 # ==============================================
-# Step 6
+# Step 7: training
 # ---
-# cd ~/project-workspace/ai_detector/src 
-# MODEL_NAME="starcoder2-7b_4500_complexity_stratified_maxlen2048" \
-# MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
-# ./run4a-train-classifiers-allmodels.sh
-#
+cd ~/project-workspace/ai_detector/src
+MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
+bash run4a-train-classifiers-allmodels.sh
