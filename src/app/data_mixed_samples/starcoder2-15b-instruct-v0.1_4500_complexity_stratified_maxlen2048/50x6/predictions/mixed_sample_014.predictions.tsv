@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	1	6	49	function_definition	install	human	2.5846	decision	lm	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	2	52	80	function_definition	get_form	human	1.9556	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	3	83	91	function_definition	_apply_key_type	human	0.6203	decision	lm	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	4	94	119	function_definition	save_gui_settings	human	1.8206	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	5	122	125	function_definition	dependents_of_addresses	lm	-0.1751	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	6	128	153	function_definition	index_normalize	human	0.2166	decision	human	1
