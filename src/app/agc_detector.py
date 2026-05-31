@@ -77,7 +77,10 @@ DEFAULT_MODEL_GLOB      = (
     "starcoder2-15b-instruct-v0.1/tuned_models_*_svm_*.pkl"
 )
 EMBEDDING_MODEL_ID = "Salesforce/codet5p-110m-embedding"
-MAX_LEN            = 512
+DEFAULT_MAX_LEN   = 512   # tokenizer truncation; override with --max-len to
+                          # match the classifier's training (e.g. 2048 for the
+                          # *_maxlen2048 experiments).
+MAX_LEN           = DEFAULT_MAX_LEN
 SEP                = " </s> "
 
 BLOCK_MARKER_RE = re.compile(
@@ -375,6 +378,10 @@ def parse_args():
                     help=f"Tuned classifier pickle (default: latest match of {DEFAULT_MODEL_GLOB}).")
     ap.add_argument("--embedding", choices=["ast", "code", "combined"], default="ast",
                     help="Which representation to embed and score (default: ast).")
+    ap.add_argument("--max-len", type=int, default=DEFAULT_MAX_LEN,
+                    help="Tokenizer truncation length. MUST match what the "
+                         "classifier trained on (e.g. 2048 for the *_maxlen2048 "
+                         f"experiments). Default: {DEFAULT_MAX_LEN}.")
     ap.add_argument("--threshold", type=float, default=None,
                     help="Decision threshold. Default: 0.5 for proba, 0.0 for SVM decision_function.")
     ap.add_argument("--labels-tsv", default=None,
@@ -575,6 +582,12 @@ def scan_one_file(
 
 def main():
     args = parse_args()
+
+    # Set the tokenizer truncation length used by embed_text() before any
+    # embedding happens. This must match the classifier's training length.
+    global MAX_LEN
+    MAX_LEN = args.max_len
+
     input_files = resolve_input_files(args)
 
     print("============================================================")
@@ -588,6 +601,7 @@ def main():
         print(f"   subdir glob : {args.subdir_pattern}")
         print(f"   pattern     : {args.pattern}")
     print(f"   embedding   : {args.embedding}")
+    print(f"   max len     : {MAX_LEN}")
     print(f"   threshold   : {args.threshold if args.threshold is not None else '(default)'}")
     print("============================================================")
     print()
