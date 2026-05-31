@@ -6,11 +6,15 @@ Construct synthetic "mixed-authorship" Python files for testing the
 block-level AGC detector (app/agc_detector.py).
 
 Each sample file is a concatenation of top-level functions/classes drawn
-from a source CSV that already has per-row labels: human vs lm.
+from a SINGLE source CSV. The author of each row (human vs lm) is taken
+from the row's `idx` suffix (`..._human` / `..._lm`); a string `label`
+column or an integer `actual label` column are also accepted as fallbacks.
 
-Important safety rule:
-By default, this script restricts the candidate pool to the TEST split only.
-This avoids using training rows in the mixed-code detector evaluation.
+Single-input model:
+Point --input-csv at the split's `test_.csv`. Because every row in that file
+is already test data, no separate split-filter step is needed - test-only
+sampling is guaranteed structurally by which CSV you pass in. Only the `idx`
+and `code` columns are loaded, so heavy embedding columns are skipped.
 """
 
 import argparse
@@ -26,15 +30,12 @@ import pandas as pd
 # -----------------------------------------------------------------------------
 # Defaults
 # -----------------------------------------------------------------------------
-DEFAULT_SRC_CSV = (
-    "src/code-analyzer-tree-sitter/data_codesearchnet/"
-    "starcoder2-15b-instruct-v0.1/ast/"
-    "codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_2250.csv"
-)
-DEFAULT_SPLITS_DIR = (
+# Single input: the split's test_.csv. Every row here is test data, so the
+# old src-csv + splits-dir pair collapses to this one file.
+DEFAULT_INPUT_CSV = (
     "src/ml_embeddings/data_codesearchnet/splits/"
     "starcoder2-15b-instruct-v0.1/"
-    "codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_2250"
+    "codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_2700/test_.csv"
 )
 DEFAULT_OUT_DIR = "src/app/mixed_samples"
 
@@ -133,12 +134,59 @@ def normalize_block(code: str) -> str:
     return code
 
 
-def load_test_idx_set(splits_dir: str) -> Optional[set]:
-    test_path = os.path.join(splits_dir, "test_.csv")
-    if not os.path.exists(test_path):
-        return None
-    df = pd.read_csv(test_path, usecols=["idx"])
-    return set(df["idx"].tolist())
+# Columns we actually need from the input CSV. Everything else (e.g. the
+# 256-dim code/ast/combined embedding columns in an embedding CSV) is skipped
+# at read time so loading test_.csv stays cheap.
+WANTED_INPUT_COLS = {"idx", "code", "label", "actual label"}
+
+LABEL_SUFFIX_RE = re.compile(r"_(human|lm)$", re.IGNORECASE)
+
+# Fallback only: integer label convention from the embedding pipeline
+# (human=1, lm=0). Used solely when neither a `label` column nor an idx
+# suffix is available.
+INT_LABEL_MAP = {1: "human", 0: "lm"}
+
+
+def label_from_idx(idx: object) -> Optional[str]:
+    m = LABEL_SUFFIX_RE.search(str(idx))
+    return m.group(1).lower() if m else None
+
+
+def resolve_labels(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Attach a normalized string `label` column (values: human / lm).
+
+    Resolution order:
+      1. explicit `label` column (legacy AST CSV),
+      2. `idx` suffix `_human` / `_lm` (the test_.csv case),
+      3. integer `actual label` column (last-resort fallback).
+    """
+    df = df.copy()
+
+    if "label" in df.columns:
+        df["label"] = df["label"].astype(str).str.strip().str.lower()
+        return df
+
+    suffix = df["idx"].map(label_from_idx)
+    if suffix.notna().all():
+        df["label"] = suffix.str.lower()
+        return df
+
+    if "actual label" in df.columns:
+        print("[WARN] no `label` column or idx suffix found; deriving label from")
+        print("       integer `actual label` (human=1, lm=0). Verify this matches")
+        print("       your pipeline before reporting results.")
+        df["label"] = df["actual label"].astype(int).map(INT_LABEL_MAP)
+        if df["label"].isna().any():
+            raise SystemExit("[ERROR] could not map `actual label` to human/lm")
+        return df
+
+    raise SystemExit(
+        "[ERROR] cannot determine author labels. The input CSV needs one of:\n"
+        "        - a string `label` column (human/lm), or\n"
+        "        - an idx suffix like `..._human` / `..._lm`, or\n"
+        "        - an integer `actual label` column."
+    )
 
 
 def sample_rows(
@@ -277,10 +325,12 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
-    ap.add_argument("--src-csv", default=DEFAULT_SRC_CSV,
-                    help="Per-row AST CSV with columns idx, code, ast, label.")
-    ap.add_argument("--splits-dir", default=DEFAULT_SPLITS_DIR,
-                    help="Per-dataset split dir; restricts source pool to test_.csv.")
+    ap.add_argument("--input-csv", "--src-csv", dest="input_csv",
+                    default=DEFAULT_INPUT_CSV,
+                    help="Single input CSV (e.g. the split's test_.csv). "
+                         "Only `idx` and `code` are loaded; the author label is "
+                         "taken from the idx suffix `_human`/`_lm`. "
+                         "(`--src-csv` is a deprecated alias.)")
     ap.add_argument("--out-dir", default=DEFAULT_OUT_DIR,
                     help="Where to write generated .py and .labels.tsv files.")
     ap.add_argument("--seed", type=int, default=42)
@@ -296,8 +346,13 @@ def parse_args():
     ap.add_argument("--allow-reuse", action="store_true",
                     help="Allow the same source row to appear in multiple samples.")
 
+    # Deprecated: kept so older driver scripts (e.g. the grid runner) that still
+    # pass these flags do not crash. They are ignored; the input CSV is used
+    # directly, so point --input-csv at test_.csv for test-only sampling.
+    ap.add_argument("--splits-dir", default=None,
+                    help="[DEPRECATED] ignored; the input CSV is used directly.")
     ap.add_argument("--no-split-filter", action="store_true",
-                    help="Draw from all rows in --src-csv, not just test split. Debug only.")
+                    help="[DEPRECATED] ignored; the input CSV is used directly.")
 
     ap.add_argument("--grid-out-root", default=None,
                     help="If set, build multiple grid directories under this root.")
@@ -315,34 +370,28 @@ def build_one_output_dir(
     sample_specs: List[Dict],
     rng: random.Random,
 ) -> Dict:
-    if not os.path.exists(args.src_csv):
-        raise SystemExit(f"[ERROR] source CSV not found: {args.src_csv}")
+    if not os.path.exists(args.input_csv):
+        raise SystemExit(f"[ERROR] input CSV not found: {args.input_csv}")
 
-    df = pd.read_csv(args.src_csv)
+    # Load only the columns we use; this skips the heavy embedding columns
+    # (code_0.., ast_0.., combined_0..) present in an embedding/test CSV.
+    df = pd.read_csv(args.input_csv, usecols=lambda c: c in WANTED_INPUT_COLS)
 
-    needed = {"idx", "code", "label"}
+    needed = {"idx", "code"}
     missing = needed - set(df.columns)
     if missing:
-        raise SystemExit(f"[ERROR] source CSV missing columns: {missing}")
+        raise SystemExit(f"[ERROR] input CSV missing columns: {missing}")
 
-    if not args.no_split_filter:
-        test_idx = load_test_idx_set(args.splits_dir)
-        if test_idx is None:
-            raise SystemExit(
-                f"[ERROR] no test_.csv found in {args.splits_dir}\n"
-                "        Refusing to build reportable mixed samples from all rows.\n"
-                "        Use --no-split-filter only for debugging, not evaluation."
-            )
+    df["idx"] = df["idx"].astype(str)
 
-        before = len(df)
-        df = df[df["idx"].isin(test_idx)].copy()
-        print(f"Restricted pool to test split: {len(df)} / {before} rows.")
-    else:
-        print("[WARN] --no-split-filter set; drawing from all rows.")
-        print("[WARN] This may include training data and should NOT be reported as evaluation accuracy.")
+    if args.splits_dir or args.no_split_filter:
+        print("[WARN] --splits-dir / --no-split-filter are deprecated and ignored.")
+        print("       The input CSV is now used directly. To keep test-only")
+        print("       sampling, point --input-csv at the split's test_.csv.")
 
-    df["label"] = df["label"].astype(str).str.strip().str.lower()
+    df = resolve_labels(df)
     label_counts = df["label"].value_counts().to_dict()
+    print(f"Input rows: {len(df)} from {args.input_csv}")
     print(f"Pool label counts: {label_counts}")
 
     n_human_total = sum(spec["n_human"] for spec in sample_specs)
@@ -461,8 +510,7 @@ def main():
         print("============================================================")
         print(f"grid out root : {args.grid_out_root}")
         print(f"grid configs  : {args.grid_configs}")
-        print(f"src csv       : {args.src_csv}")
-        print(f"splits dir    : {args.splits_dir}")
+        print(f"input csv     : {args.input_csv}")
         print()
 
         for blocks_per_sample, num_samples in configs:
