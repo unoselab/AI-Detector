@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get_absolute	5	38	human	line4311_human
+2	atlas_make_zonefile_inventory	40	76	human	line3202_human
+3	get_blueprint_params	78	83	lm	line2797_lm
+4	get_mapping	85	101	lm	line2845_lm
+5	list_scripts	103	114	human	line3510_human
+6	decimal	116	129	lm	line1268_lm

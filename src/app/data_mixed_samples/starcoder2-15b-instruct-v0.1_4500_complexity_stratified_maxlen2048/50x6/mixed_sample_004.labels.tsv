@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	print_meter_record	5	10	lm	line2171_lm
+2	dinf_downslope_direction	12	39	lm	line2501_lm
+3	displayable	41	57	human	line3284_human
+4	_add_observation	59	70	lm	line1878_lm
+5	pre_social_login	72	84	human	line4734_human
+6	create_default_config	86	117	human	line2884_human

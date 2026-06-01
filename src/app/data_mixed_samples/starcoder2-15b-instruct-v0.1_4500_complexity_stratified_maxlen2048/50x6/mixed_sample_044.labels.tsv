@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	db_exec_with_cursor	5	16	human	line297_human
+2	_remove_compression_suffix_if_present	18	28	human	line690_human
+3	_multiplexed_buffer_helper	30	41	lm	line84_lm
+4	as_span	43	55	lm	line1946_lm
+5	connectCached	57	76	lm	line4283_lm
+6	_gatk4_cmd	78	85	human	line1360_human

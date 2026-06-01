@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	tax_for_order	5	9	human	line4681_human
+2	_prepare_init_params_from_job_description	11	38	lm	line1784_lm
+3	index_by	40	51	human	line4990_human
+4	ip_to_array	53	61	human	line2184_human
+5	get_resource_data	63	76	lm	line3343_lm
+6	_get_id2obj_high	78	85	lm	line526_lm

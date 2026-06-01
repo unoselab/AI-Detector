@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	on_new_line	5	10	human	line2428_human
+2	rasterize	12	40	lm	line1678_lm
+3	execute_code	42	73	human	line3871_human
+4	_surface	75	99	human	line3459_human
+5	make_cos_vects	101	118	lm	line2194_lm
+6	plugin_get_rfu	120	126	lm	line168_lm

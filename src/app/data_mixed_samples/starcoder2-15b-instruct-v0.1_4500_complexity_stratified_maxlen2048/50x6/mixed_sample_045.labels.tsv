@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get_factory	5	12	lm	line4296_lm
+2	merge_leaderboards	14	24	human	line2290_human
+3	_se_all	26	32	lm	line3152_lm
+4	update_firmware	34	61	human	line694_human
+5	gc	63	67	lm	line1421_lm
+6	Glyph	69	162	human	line3835_human

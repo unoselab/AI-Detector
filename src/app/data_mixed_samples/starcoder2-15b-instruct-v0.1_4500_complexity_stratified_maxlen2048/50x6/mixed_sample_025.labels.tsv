@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_handle_terminate	5	15	human	line1749_human
+2	mongodb_ensure_index	17	35	human	line2128_human
+3	_extract_proxies	37	58	lm	line4349_lm
+4	Glyph	60	90	lm	line3835_lm
+5	debug_layer	92	125	lm	line2216_lm
+6	monitor	127	147	human	line2493_human

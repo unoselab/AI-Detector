@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	install	5	49	lm	line624_lm
+2	get_form	51	80	human	line2399_human
+3	_apply_key_type	82	91	lm	line1061_lm
+4	save_gui_settings	93	119	human	line4125_human
+5	dependents_of_addresses	121	125	lm	line4974_lm
+6	index_normalize	127	153	human	line4009_human
