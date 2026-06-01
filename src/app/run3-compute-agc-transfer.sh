@@ -118,12 +118,19 @@ EXTRA+=(--max-len "${MAX_LEN}")
 [ -n "${THRESHOLD}" ] && EXTRA+=(--threshold "${THRESHOLD}")
 [ -n "${DEVICE:-}" ] && EXTRA+=(--device "${DEVICE}")
 
+# INCLUDE_OWN=1 also scores the classifier's own generator (the matched
+# diagonal), using the SAME pinned pickle so the whole row is comparable.
+INCLUDE_OWN="${INCLUDE_OWN:-1}"
+
 n_done=0
 for target in "${TARGETS_ARR[@]}"; do
-  if [ "${target}" = "${CLF_EXP}" ]; then
+  if [ "${target}" = "${CLF_EXP}" ] && [ "${INCLUDE_OWN}" != "1" ]; then
     echo ">>> SKIP ${target} (classifier's own generator = matched diagonal)"
     echo
     continue
+  fi
+  if [ "${target}" = "${CLF_EXP}" ]; then
+    echo ">>> DIAGONAL  clf=${CLF_GEN}  ->  own generator (matched, same pickle)"
   fi
 
   in_dir="${DATA_ROOT}/${target}/${GEOMETRY}"
