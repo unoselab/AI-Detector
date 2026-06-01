@@ -161,3 +161,11 @@ echo "Transfer runs completed: ${n_done}"
 echo "Finished : $(date -Is)"
 echo "Log file : ${LOG_FILE}"
 echo "============================================================"
+
+SUMMARY_DIR="${SCRIPT_DIR}/compute-agc-transfer-summary"
+
+if [ ! -f "${SUMMARY_DIR}/LogSummarizer.class" ]; then
+  javac -encoding UTF-8 -d "${SUMMARY_DIR}" "${SUMMARY_DIR}/LogSummarizer.java"
+fi
+
+java -cp "${SUMMARY_DIR}" LogSummarizer "${LOG_FILE}"
