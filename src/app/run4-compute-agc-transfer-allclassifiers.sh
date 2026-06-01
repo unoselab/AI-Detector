@@ -6,6 +6,9 @@ set -euo pipefail
 # -----------------------------------------------------------------------------
 # Wrapper script to sequentially evaluate all 5 distinct generators' classifiers
 # across cross-domain datasets by overriding run3-compute-agc-transfer.sh variables.
+#
+# Crucially preserves INCLUDE_OWN=1 to compute the full 5x5 evaluation matrix
+# including the matched diagonal (self-dataset performance profiles).
 # =============================================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE}")" && pwd)"
@@ -17,6 +20,7 @@ mkdir -p src/logs
 
 echo "========================================================================="
 echo " Starting Global Cross-Generator Transfer Evaluation Framework"
+echo " Configuration: INCLUDE_OWN=1 (Full 5x5 Matrix Mode)"
 echo "========================================================================="
 
 # Define the evaluation matrices for the 5 target classifiers
@@ -46,7 +50,7 @@ for entry in "${CLASSIFIERS[@]}"; do
     export CLF_EXP
     export ALGO
     export MODEL_PICKLE
-    export INCLUDE_OWN=1 # Ensure full cross-validation grid is captured
+    export INCLUDE_OWN=1 # Explicitly enforce calculation of the matched diagonal
     
     # Execute the downstream runner script and redirect output to the designated log
     bash src/app/run3-compute-agc-transfer.sh > "${LOG_FILE}" 2>&1
