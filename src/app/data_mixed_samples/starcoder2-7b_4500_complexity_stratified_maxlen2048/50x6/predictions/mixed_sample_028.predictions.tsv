@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	1	6	12	function_definition	_set_or_sum_metric	lm	-2.608	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	2	15	28	function_definition	update	lm	-0.1087	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	3	31	56	function_definition	encrypt	human	2.6807	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	4	59	93	function_definition	acquire_metadata	human	1.9986	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	5	96	104	function_definition	load_clients	human	1.2148	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	6	107	111	function_definition	_iterate_records	lm	-3.206	decision	lm	1

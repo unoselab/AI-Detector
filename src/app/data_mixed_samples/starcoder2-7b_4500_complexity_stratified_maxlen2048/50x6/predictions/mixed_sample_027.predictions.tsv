@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	1	6	80	function_definition	run	human	2.0415	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	2	83	88	function_definition	build_conda_packages	human	0.4473	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	3	91	108	function_definition	pull_request	human	0.6122	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	4	111	124	function_definition	get_auth	lm	-1.1424	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	5	127	153	function_definition	_on_namreply	human	1.062	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	6	156	159	function_definition	notification_message	human	0.9035	decision	human	1

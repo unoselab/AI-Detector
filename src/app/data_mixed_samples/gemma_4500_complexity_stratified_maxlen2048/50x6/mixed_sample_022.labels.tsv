@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_inject_language	5	19	human	line1782_human
+2	insights	21	29	lm	line4110_lm
+3	respond	31	42	human	line3445_human
+4	get_bool_attr	44	48	lm	line6135_lm
+5	remove	50	70	lm	line8051_lm
+6	open_recruitment	72	81	human	line6348_human

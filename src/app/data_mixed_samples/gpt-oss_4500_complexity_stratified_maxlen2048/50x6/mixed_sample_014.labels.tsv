@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	config_name_from_full_name	5	26	lm	line6718_lm
+2	nuc_v	28	54	human	line3016_human
+3	client_updates_config	56	66	lm	line1093_lm
+4	connect	68	95	human	line5263_human
+5	handler	97	110	lm	line6367_lm
+6	bgrewriteaof	112	124	human	line5131_human

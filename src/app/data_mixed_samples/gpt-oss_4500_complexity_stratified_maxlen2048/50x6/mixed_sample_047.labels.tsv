@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	map_to_precursors	5	7	lm	line5421_lm
+2	fuzzy_match_tipnames	9	83	human	line6761_human
+3	update_connector_resource	85	93	human	line2386_human
+4	_get_object_as_soft	95	100	human	line2905_human
+5	_build_data	102	122	lm	line312_lm
+6	avail_images	124	141	lm	line508_lm

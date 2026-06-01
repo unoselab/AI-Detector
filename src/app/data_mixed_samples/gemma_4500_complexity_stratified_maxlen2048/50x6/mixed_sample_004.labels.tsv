@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get_cache_context	5	16	lm	line3156_lm
+2	get_provider	18	30	lm	line3735_lm
+3	_parseAtImports	32	67	human	line5124_human
+4	collage	69	111	lm	line2593_lm
+5	htmlNewDoc	113	118	human	line7499_human
+6	render	120	147	human	line4215_human

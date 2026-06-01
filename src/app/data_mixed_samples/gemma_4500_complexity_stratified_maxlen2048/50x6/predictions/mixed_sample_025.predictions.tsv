@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	1	6	14	function_definition	suppressionlist	lm	-0.3057	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	2	17	45	function_definition	numeric_function_clean_dataframe	human	1.6149	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	3	48	69	function_definition	FoldByteStream	lm	-0.3232	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	4	72	85	function_definition	_get_dcd	lm	-0.0082	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	5	88	110	function_definition	add_sort	lm	-1.2276	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	6	113	152	function_definition	HandleWellKnownFlows	human	0.6507	decision	human	1

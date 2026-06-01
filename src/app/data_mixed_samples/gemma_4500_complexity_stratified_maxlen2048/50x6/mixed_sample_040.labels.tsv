@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	__get_file	5	21	lm	line3213_lm
+2	_new_empty_handle	23	36	human	line5907_human
+3	reload_dependencies	38	52	human	line5426_human
+4	_operator_handling	54	61	lm	line8724_lm
+5	render	63	85	lm	line4215_lm
+6	add_file_ident_desc	87	125	human	line7846_human

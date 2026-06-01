@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_set_or_sum_metric	5	12	human	line3533_human
+2	update	14	28	lm	line787_lm
+3	encrypt	30	56	human	line3392_human
+4	acquire_metadata	58	93	human	line5071_human
+5	load_clients	95	104	lm	line4868_lm
+6	_iterate_records	106	111	lm	line5989_lm

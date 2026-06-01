@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get_valid_task_types	5	21	lm	line5174_lm
+2	remove_video_for_course	23	34	human	line6168_human
+3	query	36	73	lm	line1581_lm
+4	spawn	75	103	lm	line5769_lm
+5	get	105	122	human	line2645_human
+6	set_connection_type	124	135	human	line1495_human

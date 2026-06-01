@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	1	6	12	function_definition	create_webhook_app	human	0.5431	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	2	15	21	function_definition	iter_records_for	lm	-1.2843	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	3	24	32	function_definition	get_waiting_list	lm	-1.3619	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	4	35	53	function_definition	_insert_url	human	0.5172	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	5	56	114	function_definition	create_node	human	1.6463	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	6	117	123	function_definition	get_fptr	lm	-0.0195	decision	human	0

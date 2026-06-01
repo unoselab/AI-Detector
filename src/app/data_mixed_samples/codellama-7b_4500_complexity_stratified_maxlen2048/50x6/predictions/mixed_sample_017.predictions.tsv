@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	1	6	15	function_definition	_on_work_finished	lm	-1.1975	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	2	18	35	function_definition	body_block_supplementary_material_render	human	1.1681	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	3	38	43	function_definition	all_fields	lm	-1.1742	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	4	46	57	function_definition	my_on_connect	lm	-0.3415	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	5	60	75	function_definition	_merge_fix	lm	-0.7532	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	6	78	90	function_definition	add_method_drop_down	lm	-0.7612	decision	human	0

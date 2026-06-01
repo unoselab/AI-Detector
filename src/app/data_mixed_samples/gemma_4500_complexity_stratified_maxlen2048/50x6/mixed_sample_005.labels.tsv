@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	getPerfInfo	5	69	human	line4293_human
+2	solve_limited	71	80	lm	line3594_lm
+3	_update_mappings	82	90	human	line8924_human
+4	export_ruptures_csv	92	105	lm	line86_lm
+5	get_overlays	107	116	lm	line6720_lm
+6	contents	118	134	human	line4395_human

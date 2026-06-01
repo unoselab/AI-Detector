@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	createDAM	5	30	human	line3986_human
+2	_get_stack_frame	32	49	human	line4184_human
+3	new_connection	51	65	human	line3211_human
+4	clear_extensions	67	72	lm	line782_lm
+5	_fix_quantities	74	86	lm	line4565_lm
+6	_extract_spi_args	88	112	lm	line56_lm

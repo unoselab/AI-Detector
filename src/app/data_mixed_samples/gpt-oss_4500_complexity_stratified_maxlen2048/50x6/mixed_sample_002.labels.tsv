@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	censor	5	13	lm	line2624_lm
+2	transformToNative	15	20	lm	line1282_lm
+3	safe_record	22	25	lm	line1291_lm
+4	get_signalcheck	27	62	lm	line5205_lm
+5	set_attachments_order	64	71	lm	line1742_lm
+6	load_alias_hash	73	99	lm	line4184_lm

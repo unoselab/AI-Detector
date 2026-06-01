@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	1	6	14	function_definition	clear_extensions	lm	-2.3397	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	2	17	25	function_definition	write_pid_file	human	1.3044	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	3	28	44	function_definition	_run_spellcheck_linter	human	0.7732	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	4	47	106	function_definition	_convert_point	human	0.2303	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	5	109	122	function_definition	parse_datetime	human	1.9755	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	6	125	145	function_definition	write_paula	lm	-0.6652	decision	lm	1

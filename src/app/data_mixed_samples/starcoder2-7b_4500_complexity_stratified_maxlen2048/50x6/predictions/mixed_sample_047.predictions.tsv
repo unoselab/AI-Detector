@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	1	6	8	function_definition	has_map	lm	-1.3628	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	2	11	50	function_definition	rss_create	human	2.2241	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	3	53	58	function_definition	name	human	0.7823	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	4	61	82	function_definition	authorized	human	1.3619	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	5	85	92	function_definition	post	lm	-3.0999	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	6	95	105	function_definition	view_task_durations	lm	-1.5214	decision	lm	1

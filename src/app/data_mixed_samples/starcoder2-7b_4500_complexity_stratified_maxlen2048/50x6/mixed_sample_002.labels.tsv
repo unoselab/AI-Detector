@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	refresh_fqdn_cache	5	25	lm	line2665_lm
+2	_get_column	27	39	lm	line1212_lm
+3	list_nodes_min	41	52	lm	line1215_lm
+4	profile_tilt	54	69	lm	line529_lm
+5	clean_dataframe	71	77	lm	line1674_lm
+6	_acquire_request_connection	79	85	lm	line4125_lm

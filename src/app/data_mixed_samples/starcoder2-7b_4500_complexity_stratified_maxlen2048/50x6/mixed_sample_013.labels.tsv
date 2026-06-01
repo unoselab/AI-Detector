@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	toggle_rich_text	5	9	lm	line5732_lm
+2	process_result_value	11	16	human	line2384_human
+3	_StartWorkerProcess	18	79	human	line810_human
+4	moduleInfo	81	190	lm	line4440_lm
+5	detectRamPorts	192	214	lm	line6480_lm
+6	from_dict	216	221	human	line5952_human

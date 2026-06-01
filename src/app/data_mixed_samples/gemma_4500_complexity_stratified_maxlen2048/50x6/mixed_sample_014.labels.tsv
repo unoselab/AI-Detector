@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	start	5	40	lm	line8201_lm
+2	wrap_get_user	42	55	human	line3493_human
+3	scale_image	57	65	lm	line1150_lm
+4	error	67	80	human	line6462_human
+5	enter_bootloader	82	100	lm	line7738_lm
+6	notice	102	106	human	line6136_human

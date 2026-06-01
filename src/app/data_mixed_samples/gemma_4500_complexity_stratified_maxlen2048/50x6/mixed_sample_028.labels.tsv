@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	orders_from_events	5	26	human	line4121_human
+2	set_widgets	28	38	lm	line8747_lm
+3	from_maildir	40	59	human	line3970_human
+4	on_service_modify	61	105	human	line6038_human
+5	find_by_id	107	122	lm	line5847_lm
+6	__get_new	124	134	lm	line7275_lm

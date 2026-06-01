@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	1	6	15	function_definition	register_models	lm	-0.9908	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	2	18	43	function_definition	orthogonal_initialization	human	0.6863	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	3	46	60	function_definition	draw_on	lm	-1.7617	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	4	63	69	function_definition	namespace_uri	lm	-1.7959	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	5	72	101	function_definition	_replace_pg_hba	human	1.9027	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	6	104	127	function_definition	restore	human	0.4175	decision	human	1

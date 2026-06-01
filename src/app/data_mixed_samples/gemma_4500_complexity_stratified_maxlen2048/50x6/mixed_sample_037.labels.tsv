@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	wait_until_page_ready	5	20	human	line8572_human
+2	calculate_marginal_likelihoods	22	70	lm	line1517_lm
+3	importSignedCertificate	72	80	lm	line1016_lm
+4	console_check_for_keypress	82	89	lm	line532_lm
+5	_role_present	91	130	human	line4369_human
+6	is_marginable	132	135	human	line6051_human

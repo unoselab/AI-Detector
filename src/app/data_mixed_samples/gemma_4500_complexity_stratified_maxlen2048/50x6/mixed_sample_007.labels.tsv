@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_WriteRow	5	17	lm	line2047_lm
+2	print_new_versions	19	39	human	line3829_human
+3	ensure_image_is_hex	41	92	human	line8252_human
+4	upload	94	105	lm	line4797_lm
+5	bloquear_sat	107	114	lm	line3305_lm
+6	read_long_description	116	131	human	line1828_human

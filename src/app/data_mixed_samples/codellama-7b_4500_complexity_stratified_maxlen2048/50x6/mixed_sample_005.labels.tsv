@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	resolve_service_spec	5	23	human	line4237_human
+2	clean_text	25	36	lm	line3644_lm
+3	reply_inform	38	62	human	line969_human
+4	cache_key_exist	64	67	lm	line8714_lm
+5	clock_resized_cb	69	75	lm	line6753_lm
+6	_getphoto_originalsize	77	101	human	line4305_human

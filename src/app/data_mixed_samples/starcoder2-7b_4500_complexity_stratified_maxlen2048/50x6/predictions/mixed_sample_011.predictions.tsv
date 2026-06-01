@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	1	6	12	function_definition	remove_all_nexusnve_bindings	lm	-0.2013	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	2	15	61	function_definition	highlight	human	0.5694	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	3	64	70	function_definition	get_ordering	human	0.2007	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	4	73	140	function_definition	write_summary	human	1.4734	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	5	143	154	function_definition	find_version	lm	-0.6691	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	6	157	168	function_definition	draw_on	lm	-1.5154	decision	human	0

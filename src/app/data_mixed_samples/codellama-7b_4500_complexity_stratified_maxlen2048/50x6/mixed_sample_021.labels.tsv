@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get	5	16	human	line1052_human
+2	_read_line	18	29	lm	line8645_lm
+3	handle	31	94	lm	line1737_lm
+4	register_tc_plugins	96	116	lm	line774_lm
+5	update_auto_scroll_mode	118	127	human	line324_human
+6	commit	129	133	human	line7215_human

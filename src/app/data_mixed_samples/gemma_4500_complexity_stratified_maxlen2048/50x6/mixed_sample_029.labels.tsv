@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	get_desktop_for_window	5	19	human	line163_human
+2	pad_to_same_length	21	46	lm	line1706_lm
+3	_invoke_callbacks	48	61	human	line7546_human
+4	open	63	97	lm	line7171_lm
+5	delete_role	99	107	lm	line4671_lm
+6	is_uri_to_be_filtered	109	117	human	line3366_human

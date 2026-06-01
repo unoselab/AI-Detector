@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	register_models	5	15	lm	line5165_lm
+2	orthogonal_initialization	17	43	human	line6017_human
+3	draw_on	45	60	lm	line5981_lm
+4	namespace_uri	62	69	lm	line2706_lm
+5	_replace_pg_hba	71	101	human	line6107_human
+6	restore	103	127	human	line3440_human

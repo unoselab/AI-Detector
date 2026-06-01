@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	1	6	23	function_definition	file_data_to_str	human	1.4001	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	2	26	32	function_definition	load_entry_point_group	human	1.5525	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	3	35	41	function_definition	is_full_overlap	human	1.9019	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	4	44	71	function_definition	set_children	lm	-0.8889	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	5	74	99	function_definition	update	human	2.6679	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	6	102	114	function_definition	show_network_ip_availability	lm	-1.1835	decision	lm	1

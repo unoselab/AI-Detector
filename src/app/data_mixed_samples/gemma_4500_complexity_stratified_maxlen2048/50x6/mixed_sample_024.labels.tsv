@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_find_new_additions	5	14	lm	line7995_lm
+2	arcball_map_to_sphere	16	27	human	line8789_human
+3	extend_schema_spec	29	41	human	line1605_human
+4	seek	43	50	lm	line8250_lm
+5	smart	52	78	lm	line7917_lm
+6	fill_clipboard	80	94	human	line5942_human

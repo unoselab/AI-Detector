@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	save_config	5	15	human	line8896_human
+2	build_url_field	17	25	human	line2580_human
+3	iter_range	27	40	lm	line428_lm
+4	find_parameter	42	52	human	line2240_human
+5	poi_coords	54	68	lm	line2444_lm
+6	post	70	84	lm	line2325_lm

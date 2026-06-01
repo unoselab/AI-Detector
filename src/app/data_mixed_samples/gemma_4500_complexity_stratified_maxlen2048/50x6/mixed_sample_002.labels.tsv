@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	increment_lessons	5	37	lm	line313_lm
+2	resolve	39	47	lm	line1280_lm
+3	__preprocess_arguments	49	63	lm	line1290_lm
+4	open_recruitment	65	69	lm	line6348_lm
+5	mount	71	89	lm	line1926_lm
+6	read_octet	91	94	lm	line5077_lm

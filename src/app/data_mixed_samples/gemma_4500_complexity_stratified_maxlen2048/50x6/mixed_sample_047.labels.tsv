@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	map_over_glob	5	19	lm	line6639_lm
+2	encode_osgi_props	21	55	human	line8204_human
+3	on_send	57	69	human	line2826_human
+4	_zforce	71	93	human	line3400_human
+5	default	95	108	lm	line3673_lm
+6	labels	110	115	lm	line6093_lm

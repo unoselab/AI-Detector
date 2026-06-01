@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	1	6	45	function_definition	create_attachment	human	2.4455	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	2	48	65	function_definition	_walk_through	lm	-3.2883	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	3	68	86	function_definition	engineer_info	lm	-0.877	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	4	89	97	function_definition	unset_required_for	lm	-0.2937	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	5	100	120	function_definition	get_nested_group_users	lm	-0.6366	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	6	123	132	function_definition	_to_numeric	lm	-0.7	decision	lm	1

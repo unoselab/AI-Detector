@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_dict_raise_on_duplicates	5	16	human	line3565_human
+2	_mkpart	18	53	human	line7676_human
+3	run_strelka_with_merge	55	70	human	line1264_human
+4	FoldByteStream	72	102	human	line685_human
+5	parse	104	122	human	line33_human
+6	insertFromMimeData	124	139	human	line2086_human

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	1	6	26	function_definition	orders_from_events	lm	-1.1073	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	2	29	38	function_definition	set_widgets	lm	-0.2061	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	3	41	59	function_definition	from_maildir	lm	-0.573	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	4	62	105	function_definition	on_service_modify	human	1.1204	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	5	108	122	function_definition	find_by_id	lm	-1.1733	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	6	125	134	function_definition	__get_new	lm	-0.361	decision	lm	1

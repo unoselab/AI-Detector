@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	start_editing	5	23	human	line3632_human
+2	DFS	25	44	lm	line3097_lm
+3	removeUrl	46	64	human	line924_human
+4	resolve	66	83	lm	line6963_lm
+5	_tls_auth_decrypt	85	93	lm	line5473_lm
+6	calc_deviation	95	110	human	line3788_human

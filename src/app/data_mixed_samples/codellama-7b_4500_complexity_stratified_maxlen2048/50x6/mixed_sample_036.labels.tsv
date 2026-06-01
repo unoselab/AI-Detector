@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	to_data	5	19	human	line35_human
+2	from_dict	21	24	lm	line430_lm
+3	strip_linebreaks	26	29	human	line815_human
+4	resize	31	50	human	line504_human
+5	get_absolute_name	52	55	lm	line3757_lm
+6	get_input	57	88	lm	line8791_lm

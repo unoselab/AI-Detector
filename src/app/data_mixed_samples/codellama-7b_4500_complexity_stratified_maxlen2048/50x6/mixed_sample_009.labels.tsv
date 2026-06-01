@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_format_lines	5	14	lm	line7720_lm
+2	Compile	16	25	lm	line3753_lm
+3	get_field_analysis	27	38	human	line2565_human
+4	get_visible_items	40	54	human	line4590_human
+5	description	56	72	human	line5555_human
+6	enable_logging	74	83	lm	line7279_lm

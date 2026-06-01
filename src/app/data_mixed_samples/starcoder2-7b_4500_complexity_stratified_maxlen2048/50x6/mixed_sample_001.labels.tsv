@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	print_scan_summary	5	61	human	line3119_human
+2	valueAt	63	87	human	line6358_human
+3	chunks	89	112	human	line1193_human
+4	get_months_of_year	114	130	human	line5574_human
+5	make_folder_for_today	132	145	human	line2868_human
+6	_get_countdown_for_next_slice	147	164	human	line1886_human

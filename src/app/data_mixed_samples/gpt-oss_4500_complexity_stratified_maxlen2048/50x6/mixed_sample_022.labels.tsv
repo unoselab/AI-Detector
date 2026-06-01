@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	add_parameter	5	20	human	line1599_human
+2	_gatherLookupIndexes	22	32	lm	line3492_lm
+3	_draw_error_underline	34	73	human	line2921_human
+4	_make_line	75	88	lm	line5108_lm
+5	get_channel	90	104	lm	line6652_lm
+6	get_signalcheck	106	129	human	line5205_human

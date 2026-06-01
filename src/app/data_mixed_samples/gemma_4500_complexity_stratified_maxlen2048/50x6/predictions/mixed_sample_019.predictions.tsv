@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py	1	6	22	function_definition	get_provider	lm	-0.1646	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py	2	25	39	function_definition	unshare_database	human	0.4926	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py	3	42	47	function_definition	get_midi_data	lm	-0.1851	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py	4	50	73	function_definition	_to_dict	human	2.3293	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py	5	76	128	function_definition	resolve	human	3.3253	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_019.py	6	131	144	function_definition	get_season_player_stats	human	1.3316	decision	lm	0

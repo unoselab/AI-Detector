@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	has_child_objective_banks	5	31	lm	line1686_lm
+2	log_stop	33	42	human	line18_human
+3	list_returners	44	65	lm	line6225_lm
+4	_axis_properties	67	70	lm	line2820_lm
+5	postage_update	72	81	human	line5497_human
+6	_get_str	83	89	human	line1502_human

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	1	6	21	function_definition	prepare	lm	-0.0005	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	2	24	31	function_definition	find_parameter	lm	-3.5913	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	3	34	44	function_definition	convert_machine_list_value	lm	-1.7428	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	4	47	48	function_definition	_matmul_with_relative_keys_2d	lm	-1.9079	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	5	51	58	function_definition	_set_vibration_win	human	0.5997	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	6	61	67	function_definition	container_remove_objects	human	0.3557	decision	human	1

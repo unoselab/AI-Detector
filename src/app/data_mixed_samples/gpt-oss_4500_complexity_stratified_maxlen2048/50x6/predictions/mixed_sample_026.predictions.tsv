@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	1	6	24	function_definition	has_child_objective_banks	human	2.0255	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	2	27	72	function_definition	run	human	3.6984	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	3	75	86	function_definition	get_chat_member	human	0.3385	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	4	89	104	function_definition	DP_calc	human	1.9061	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	5	107	112	function_definition	findspan	lm	-2.7772	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	6	115	137	function_definition	__getRefererUrl	lm	-0.76	decision	lm	1

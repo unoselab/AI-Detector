@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	run	5	9	lm	line6676_lm
+2	build_image_from_inherited_image	11	36	human	line8318_human
+3	expand_region	38	42	human	line2656_human
+4	_md5_compare	44	57	human	line3444_human
+5	is_valid_preview	59	61	lm	line3702_lm
+6	_validated	63	73	lm	line6196_lm

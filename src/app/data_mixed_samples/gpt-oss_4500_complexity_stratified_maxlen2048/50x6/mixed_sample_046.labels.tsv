@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	push_irq_registers	5	18	human	line1835_human
+2	can_add_lv_load_area	20	45	lm	line447_lm
+3	add_item	47	74	human	line4470_human
+4	get_vlan	76	94	lm	line6165_lm
+5	load_swagger_spec	96	135	lm	line2510_lm
+6	get_version_from_dirname	137	146	human	line430_human

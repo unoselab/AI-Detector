@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	1	6	9	function_definition	run	lm	-1.3381	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	2	12	36	function_definition	build_image_from_inherited_image	human	0.096	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	3	39	42	function_definition	expand_region	lm	-1.2024	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	4	45	57	function_definition	_md5_compare	human	1.8942	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	5	60	61	function_definition	is_valid_preview	lm	-3.7458	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	6	64	73	function_definition	_validated	human	1.247	decision	lm	0

@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	setFontItalic	5	12	lm	line4115_lm
+2	files_delete	14	21	lm	line5156_lm
+3	sort_dicoms	23	30	lm	line3742_lm
+4	main	32	106	human	line8761_human
+5	get_subsites	108	125	human	line1296_human
+6	_close	127	141	human	line916_human

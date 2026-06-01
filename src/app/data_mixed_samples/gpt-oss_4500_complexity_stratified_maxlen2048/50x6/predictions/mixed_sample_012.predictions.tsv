@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	1	6	18	function_definition	_read_models	human	1.7739	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	2	21	109	function_definition	_set_defaults	human	1.3712	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	3	112	143	function_definition	Process	human	0.1015	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	4	146	157	function_definition	set_child_value	lm	-2.4273	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	5	160	227	function_definition	vec_angle	human	0.1498	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	6	230	251	function_definition	find_dimension_by_name	lm	-3.3895	decision	lm	1

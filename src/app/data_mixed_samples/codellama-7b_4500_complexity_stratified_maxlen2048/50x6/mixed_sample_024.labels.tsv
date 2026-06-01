@@ -1,0 +1,7 @@
+block_idx	function_name	start_line	end_line	label	source_idx
+1	_generate_examples	5	12	lm	line8062_lm
+2	appendChild	14	23	human	line8990_human
+3	_config_section	25	30	human	line1550_human
+4	find_by	32	55	lm	line8350_lm
+5	recurse	57	67	lm	line7985_lm
+6	consent	69	79	human	line6035_human

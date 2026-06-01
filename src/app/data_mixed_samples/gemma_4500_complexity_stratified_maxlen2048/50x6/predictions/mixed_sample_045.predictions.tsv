@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	1	6	14	function_definition	SerializeExclusiveData	lm	-1.5188	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	2	17	31	function_definition	export	human	0.1238	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	3	34	80	function_definition	delete_action	human	0.09	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	4	83	103	function_definition	authenticate_redirect	lm	-0.7937	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	5	106	122	function_definition	get_desktop_for_window	human	0.1424	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	6	125	144	function_definition	_get_dcd	lm	-0.2478	decision	human	0
