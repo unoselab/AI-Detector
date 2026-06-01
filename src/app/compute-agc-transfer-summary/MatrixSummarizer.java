@@ -1,3 +1,9 @@
+/*
+Usage:
+user1-system12@OISSE-IST173C01:
+    cd ~/project-workspace/ai_detector/src/app/compute-agc-transfer-summary
+    java MatrixSummarizer ../../../src/logs/
+*/
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -30,7 +36,7 @@ public class MatrixSummarizer {
         // Target log directory relative to execution context
         File logDir = new File("../../logs");
         if (args.length > 0) {
-            logDir = new File(args);
+            logDir = new File(args[0]); // Extracted the first element securely
         }
 
         if (!logDir.exists() || !logDir.isDirectory()) {
@@ -96,7 +102,9 @@ public class MatrixSummarizer {
             }
         }
 
-        // Render publication-quality 5x5 Cross-Domain Robustness Matrix Table
+        // =====================================================================
+        // OUTPUT 1: Markdown Table Format
+        // =====================================================================
         System.out.println("\n### Table 4: Cross-Generator Robustness Matrix (Block-Level Accuracy)");
         System.out.print("| Trained Classifier | ");
         for (String col : MODELS) {
@@ -109,10 +117,8 @@ public class MatrixSummarizer {
             Map<String, String> rowMap = performanceMatrix.getOrDefault(row, new HashMap<>());
             for (String col : MODELS) {
                 String cellValue = rowMap.getOrDefault(col, "N/A");
-                
-                // Format the matched diagonal elegantly with a star wrapper if necessary
                 if (row.equals(col) && !cellValue.equals("N/A")) {
-                    System.out.printf("**%-6s** | ", cellValue); // Highlight self-domain
+                    System.out.printf("**%-6s** | ", cellValue); 
                 } else {
                     System.out.printf("%-8s | ", cellValue);
                 }
@@ -120,5 +126,44 @@ public class MatrixSummarizer {
             System.out.println();
         }
         System.out.println();
+
+        // =====================================================================
+        // OUTPUT 2: LaTeX Table Format
+        // =====================================================================
+        System.out.println("=========================================================================");
+        System.out.println(" Generated LaTeX Code Blocks for Academic Paper Drafts");
+        System.out.println("=========================================================================");
+        System.out.println("\\begin{table}[htbp]");
+        System.out.println("\\scriptsize\\centering");
+        System.out.println("\\caption{Cross-Generator Domain Transfer Generalization Performance (Block-Level Accuracy)}");
+        System.out.println("\\label{tab:cross_generator_matrix}");
+        System.out.println("\\begin{tabular}{l|ccccc}");
+        System.out.println("\\hline");
+        
+        // Print LaTeX Header row
+        System.out.print("\\textbf{Trained Classifier}");
+        for (String col : MODELS) {
+            System.out.print(" & \\textbf{" + col + " (Test)}");
+        }
+        System.out.println(" \\\\ \\hline");
+
+        // Print LaTeX Data rows
+        for (String row : MODELS) {
+            System.out.printf("%-20s", row);
+            Map<String, String> rowMap = performanceMatrix.getOrDefault(row, new HashMap<>());
+            for (String col : MODELS) {
+                String cellValue = rowMap.getOrDefault(col, "N/A");
+                if (row.equals(col) && !cellValue.equals("N/A")) {
+                    System.out.print(" & \\textbf{" + cellValue + "}"); // Emphasize diagonal via \textbf{}
+                } else {
+                    System.out.print(" & " + cellValue);
+                }
+            }
+            System.out.println(" \\\\");
+        }
+        
+        System.out.println("\\hline");
+        System.out.println("\\end{tabular}");
+        System.out.println("\\end{table}\n");
     }
 }
