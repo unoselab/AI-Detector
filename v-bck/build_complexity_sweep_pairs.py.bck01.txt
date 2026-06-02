@@ -58,48 +58,22 @@ DECISION_NODE_TYPES = {
 }
 
 
-# -----------------------------------------------------------------------------
-# Derive the shared pair identifier from a row-level idx.
-# Rows are expected to end with an authorship suffix such as
-# `_human`, `_lm`, or `_ai`; removing that suffix lets the script
-# group the HWC and AGC rows belonging to the same original example.
-# -----------------------------------------------------------------------------
 def pair_id_from_idx(idx: object) -> str:
     return re.sub(r"_(human|lm|ai)$", "", str(idx))
 
 
-# -----------------------------------------------------------------------------
-# Count physical source-code lines for one code snippet.
-# The value is used as one component of the pair-level complexity
-# score after taking the maximum over the HWC/AGC pair.
-# -----------------------------------------------------------------------------
 def count_code_lines(code: str) -> int:
     return len(str(code).splitlines())
 
 
-# -----------------------------------------------------------------------------
-# Parse the comma-separated target pair counts supplied by --sizes.
-# For example, `500,1000,1500` becomes [500, 1000, 1500].
-# -----------------------------------------------------------------------------
 def parse_sizes(text: str) -> list[int]:
     return [int(x.strip()) for x in text.split(",") if x.strip()]
 
 
-# -----------------------------------------------------------------------------
-# Convert a numeric series to percentile ranks in [0, 1].
-# These normalized ranks allow AST-token count, line count, and
-# cyclomatic complexity to contribute comparably to the final score.
-# -----------------------------------------------------------------------------
 def percentile_rank(s: pd.Series) -> pd.Series:
     return s.rank(method="average", pct=True)
 
 
-# -----------------------------------------------------------------------------
-# Load the Python tree-sitter parser and AST traversal helper.
-# The compiled multi-language tree-sitter library provides parsing,
-# while tree_sitter_ast_python.F converts parse trees to AST-token
-# sequences used by the complexity score.
-# -----------------------------------------------------------------------------
 def load_parser_and_ast_fn(tree_sitter_lib: Path, ast_helper_dir: Path):
     if not tree_sitter_lib.exists():
         raise SystemExit(
@@ -120,22 +94,12 @@ def load_parser_and_ast_fn(tree_sitter_lib: Path, ast_helper_dir: Path):
     return parser, F
 
 
-# -----------------------------------------------------------------------------
-# Compute the Tree-sitter AST-token sequence length for one snippet.
-# This structural size metric is one component of pair complexity.
-# -----------------------------------------------------------------------------
 def tree_sitter_ast_token_count(code: str, parser: Parser, ast_fn) -> int:
     code_bytes = bytes(str(code), "utf8")
     tree = parser.parse(code_bytes)
     return len(ast_fn(tree.root_node, code_bytes))
 
 
-# -----------------------------------------------------------------------------
-# Estimate McCabe-style cyclomatic complexity from the parse tree.
-# The counter starts at one and increments for selected decision nodes
-# such as branches, loops, exception handlers, boolean operators, and
-# match/case constructs.
-# -----------------------------------------------------------------------------
 def tree_sitter_cyclomatic_complexity(code: str, parser: Parser) -> int:
     tree = parser.parse(bytes(str(code), "utf8"))
     root = tree.root_node
@@ -154,13 +118,6 @@ def tree_sitter_cyclomatic_complexity(code: str, parser: Parser) -> int:
     return complexity
 
 
-# -----------------------------------------------------------------------------
-# Validate row-level input, compute row complexity metrics, and
-# aggregate them into pair-level complexity records.
-# Each eligible pair must contain exactly one HWC row and one AGC row;
-# pair complexity is the average percentile rank of max AST tokens,
-# max code lines, and max cyclomatic complexity across the pair.
-# -----------------------------------------------------------------------------
 def build_pair_table(df: pd.DataFrame, parser: Parser, ast_fn) -> tuple[pd.DataFrame, pd.DataFrame]:
     required = {"idx", "code", "label"}
     missing = required - set(df.columns)
@@ -282,12 +239,6 @@ def build_pair_table(df: pd.DataFrame, parser: Parser, ast_fn) -> tuple[pd.DataF
     return df, pairs
 
 
-# -----------------------------------------------------------------------------
-# Write cumulative complexity-ordered datasets and summary reports.
-# For each requested size n, the script selects the n lowest-complexity
-# eligible pairs, writes the corresponding 2n rows, and records both
-# a sweep manifest and a full candidate report.
-# -----------------------------------------------------------------------------
 def write_outputs(
     annotated_df: pd.DataFrame,
     pairs: pd.DataFrame,
@@ -358,11 +309,6 @@ def write_outputs(
     print(f"candidate report:{report_path}")
 
 
-# -----------------------------------------------------------------------------
-# Parse CLI arguments, run the complexity-ranking pipeline, and
-# write all requested cumulative datasets.
-# Returns a process exit code so the __main__ block can forward it.
-# -----------------------------------------------------------------------------
 def main() -> int:
     ap = argparse.ArgumentParser(
         description="Build cumulative complexity-ordered validsyntax pair datasets.",
