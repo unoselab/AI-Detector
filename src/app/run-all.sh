@@ -86,6 +86,15 @@
 #   --pred-dir src/app/data_mixed_samples/${EXP_NAME}/50x6/predictions \
 #   --out-csv  src/app/data_mixed_samples/${EXP_NAME}/50x6/predictions/block_metrics.csv
 # ========================================
+# Case 5-b
+cd src/app/
+TAG="starcoder2-7b_4500_complexity_stratified_maxlen2048"
+python ./compute_metrics_mixedcode.py \
+  --pred-dir ./data_mixed_samples/${TAG}/50x6/predictions \
+  --out-csv  ./data_mixed_samples/${TAG}/50x6/predictions/block_metrics.csv \
+  --roc-csv  ./data_mixed_samples/${TAG}/50x6/predictions/roc_curve.csv
+
+# ========================================
 # 1. /home/user1-system12/project-workspace/ai_detector/src/ml_embeddings/data_codesearchnet/models/codellama-7b_4500_complexity_stratified_maxlen2048/tuned_models_codesearchnet_codellama-7b_4500_complexity_stratified_maxlen2048_svm_20260530_202138.pkl
 # 2. /home/user1-system12/project-workspace/ai_detector/src/ml_embeddings/data_codesearchnet/models/gemma_4500_complexity_stratified_maxlen2048/tuned_models_codesearchnet_gemma_4500_complexity_stratified_maxlen2048_svm_20260529_163611.pkl
 # 3. /home/user1-system12/project-workspace/ai_detector/src/ml_embeddings/data_codesearchnet/models/gpt-oss_4500_complexity_stratified_maxlen2048/tuned_models_codesearchnet_gpt-oss_4500_complexity_stratified_maxlen2048_svm_20260527_191841.pkl
@@ -101,5 +110,5 @@
 
 # ========================================
 # Step 7 - Cross-generator domain transfer generalization performance (block-level accuracy)
-cd ~/project-workspace/ai_detector/src/app/compute-agc-transfer-summary
-java MatrixSummarizer ../../../src/logs/
+# cd ~/project-workspace/ai_detector/src/app/compute-agc-transfer-summary
+# java MatrixSummarizer ../../../src/logs/
