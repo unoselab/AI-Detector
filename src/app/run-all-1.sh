@@ -109,14 +109,9 @@
 # bash src/app/run4-compute-agc-transfer-allclassifiers.sh
 
 # ========================================
-# Step 7 - Cross-generator domain transfer generalization performance (block-level accuracy)
-# cd ~/project-workspace/ai_detector/src/app/compute-agc-transfer-summary
-# java MatrixSummarizer ../../../src/logs/
-
-# ========================================
-# Step 7b
+# Step 7 - Cross-Generator Transfer Experiment
+#          Step 7 must run after Step 6 fully finishes.
 cd ~/project-workspace/ai_detector
-
 # Compute P/R/F1 across 5 classifiers.
 for CLF in codellama-7b gemma gpt-oss starcoder2-15b-instruct-v0.1 starcoder2-7b; do
   python src/app/compute_agc_transfer.py \
@@ -125,3 +120,5 @@ for CLF in codellama-7b gemma gpt-oss starcoder2-15b-instruct-v0.1 starcoder2-7b
     --geometry 50x6 \
     --out-csv src/app/data_mixed_samples_transfer/clf-${CLF}/agc_transfer.csv
 done
+
+
