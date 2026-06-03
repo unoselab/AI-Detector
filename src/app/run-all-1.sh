@@ -87,12 +87,12 @@
 #   --out-csv  src/app/data_mixed_samples/${EXP_NAME}/50x6/predictions/block_metrics.csv
 # ========================================
 # Case 5-b
-cd src/app/
-TAG="starcoder2-7b_4500_complexity_stratified_maxlen2048"
-python ./compute_metrics_mixedcode.py \
-  --pred-dir ./data_mixed_samples/${TAG}/50x6/predictions \
-  --out-csv  ./data_mixed_samples/${TAG}/50x6/predictions/block_metrics.csv \
-  --roc-csv  ./data_mixed_samples/${TAG}/50x6/predictions/roc_curve.csv
+# cd src/app/
+# TAG="starcoder2-7b_4500_complexity_stratified_maxlen2048"
+# python ./compute_metrics_mixedcode.py \
+#   --pred-dir ./data_mixed_samples/${TAG}/50x6/predictions \
+#   --out-csv  ./data_mixed_samples/${TAG}/50x6/predictions/block_metrics.csv \
+#   --roc-csv  ./data_mixed_samples/${TAG}/50x6/predictions/roc_curve.csv
 
 # ========================================
 # 1. /home/user1-system12/project-workspace/ai_detector/src/ml_embeddings/data_codesearchnet/models/codellama-7b_4500_complexity_stratified_maxlen2048/tuned_models_codesearchnet_codellama-7b_4500_complexity_stratified_maxlen2048_svm_20260530_202138.pkl
@@ -112,3 +112,16 @@ python ./compute_metrics_mixedcode.py \
 # Step 7 - Cross-generator domain transfer generalization performance (block-level accuracy)
 # cd ~/project-workspace/ai_detector/src/app/compute-agc-transfer-summary
 # java MatrixSummarizer ../../../src/logs/
+
+# ========================================
+# Step 7b
+cd ~/project-workspace/ai_detector
+
+# Compute P/R/F1 across 5 classifiers.
+for CLF in codellama-7b gemma gpt-oss starcoder2-15b-instruct-v0.1 starcoder2-7b; do
+  python src/app/compute_agc_transfer.py \
+    --transfer-root src/app/data_mixed_samples_transfer/clf-${CLF} \
+    --clf-gen ${CLF} \
+    --geometry 50x6 \
+    --out-csv src/app/data_mixed_samples_transfer/clf-${CLF}/agc_transfer.csv
+done
