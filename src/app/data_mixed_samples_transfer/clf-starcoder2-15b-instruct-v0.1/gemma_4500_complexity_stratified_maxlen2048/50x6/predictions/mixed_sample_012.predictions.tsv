@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	1	6	25	function_definition	make_tstore_conn	human	1.0784	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	2	28	43	function_definition	port_profile_qos_profile_qos_flowcontrol_pfc_pfc_cos	human	1.8331	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	3	46	58	function_definition	on_service_modify	lm	-0.6254	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	4	61	76	function_definition	absent	human	1.4545	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	5	79	84	function_definition	_handle_sigusr2	lm	-0.7113	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	6	87	121	function_definition	find_conflicts_between_sub_selection_sets	human	0.073	decision	lm	0

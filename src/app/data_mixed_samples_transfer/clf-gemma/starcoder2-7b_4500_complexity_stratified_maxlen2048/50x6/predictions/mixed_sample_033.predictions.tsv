@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	1	6	28	function_definition	get_object_id_from_graph	human	0.5159	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	2	31	39	function_definition	warn_about_unmanaged_parameters	human	0.3034	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	3	42	71	function_definition	_discretize_check	human	0.3605	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	4	74	84	function_definition	hosts	lm	-0.4909	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	5	87	129	function_definition	save_file_list	human	1.1207	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	6	132	137	function_definition	_should_split_cell	lm	-0.4985	decision	lm	1

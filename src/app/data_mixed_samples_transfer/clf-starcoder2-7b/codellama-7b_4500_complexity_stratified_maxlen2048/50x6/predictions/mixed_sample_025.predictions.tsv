@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	1	6	21	function_definition	__store_config	human	0.9986	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	2	24	40	function_definition	write	lm	0.4859	proba	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	3	43	52	function_definition	get_instance	lm	0.1838	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	4	55	74	function_definition	isiterable	human	0.7841	proba	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	5	77	80	function_definition	_generate_relative_positions_embeddings	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_025.py	6	83	137	function_definition	tarfile_extract	human	0.9968	proba	human	1

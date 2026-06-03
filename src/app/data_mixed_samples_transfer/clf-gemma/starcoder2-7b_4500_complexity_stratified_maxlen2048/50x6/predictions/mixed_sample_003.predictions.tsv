@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	1	6	13	function_definition	_set_vibration_win	lm	-0.3287	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	2	16	39	function_definition	tomof	human	0.9249	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	3	42	57	function_definition	save_state_regularly	lm	-2.3421	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	4	60	86	function_definition	setPollFDNotifiers	human	1.3723	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	5	89	98	function_definition	iter_singleton_referents_tuples	human	1.2026	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	6	101	108	function_definition	route_not_found	lm	-1.2575	decision	lm	1

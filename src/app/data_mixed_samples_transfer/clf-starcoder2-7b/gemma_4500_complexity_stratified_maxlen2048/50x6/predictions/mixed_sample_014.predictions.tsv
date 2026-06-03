@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	1	6	40	function_definition	start	human	0.9037	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	2	43	55	function_definition	wrap_get_user	human	0.9946	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	3	58	65	function_definition	scale_image	lm	0.0788	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	4	68	80	function_definition	error	human	0.9568	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	5	83	100	function_definition	enter_bootloader	lm	0.0012	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	6	103	106	function_definition	notice	lm	0.0025	proba	human	0

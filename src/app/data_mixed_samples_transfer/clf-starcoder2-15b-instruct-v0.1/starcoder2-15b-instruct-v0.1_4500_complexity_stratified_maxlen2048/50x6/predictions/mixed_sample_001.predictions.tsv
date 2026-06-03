@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	1	6	16	function_definition	load	human	0.2284	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	2	19	36	function_definition	shutdown_kernel	human	0.5678	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	3	39	55	function_definition	update_configs	human	1.7483	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	4	58	64	function_definition	_extract_proxies	human	0.1372	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	5	67	92	function_definition	no_positional	human	1.8559	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	6	95	123	function_definition	rasterize	lm	-0.8864	decision	human	0

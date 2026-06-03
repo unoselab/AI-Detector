@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	1	6	10	function_definition	contains	lm	0.2904	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	2	13	50	function_definition	load	human	0.976	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	3	53	100	function_definition	export	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	4	103	105	function_definition	_get_str_range	lm	0.0568	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	5	108	116	function_definition	pulse	lm	0.0004	proba	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	6	119	125	function_definition	find_port	human	0.9778	proba	human	1

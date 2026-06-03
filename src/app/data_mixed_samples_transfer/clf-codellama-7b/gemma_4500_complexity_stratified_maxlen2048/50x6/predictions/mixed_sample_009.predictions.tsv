@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	1	6	10	function_definition	_process_credentials	lm	-0.7474	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	2	13	31	function_definition	where	human	0.5636	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	3	34	63	function_definition	refine_water_bridges	human	0.004	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	4	66	78	function_definition	send	lm	-0.5296	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	5	81	149	function_definition	tag	human	0.1753	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	6	152	163	function_definition	set_application_name	lm	-1.0132	decision	lm	1

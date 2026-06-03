@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	1	6	39	function_definition	_disconnect	lm	-0.5275	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	2	42	61	function_definition	get_rate_from_db	lm	-1.3675	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	3	64	111	function_definition	decode_network	human	0.4134	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	4	114	125	function_definition	checksum	human	1.0723	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	5	128	146	function_definition	bisect_left	lm	-0.3289	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	6	149	166	function_definition	bearing_to	lm	-0.6299	decision	human	0

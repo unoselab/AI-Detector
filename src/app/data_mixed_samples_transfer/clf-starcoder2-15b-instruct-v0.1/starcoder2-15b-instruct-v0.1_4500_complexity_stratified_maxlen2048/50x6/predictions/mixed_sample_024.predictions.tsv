@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	1	6	19	function_definition	removeIndexOnAttribute	lm	-0.2263	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	2	22	49	function_definition	generate_veq	lm	-0.0171	decision	human	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	3	52	59	function_definition	adev	human	2.9292	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	4	62	71	function_definition	get_output	lm	-0.8777	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	5	74	82	function_definition	split_denovos	lm	-1.2713	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	6	85	89	function_definition	get_title	lm	-0.1686	decision	human	0

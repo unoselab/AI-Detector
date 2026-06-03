@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	1	6	11	function_definition	make_label	lm	-2.5737	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	2	14	27	function_definition	enable	lm	-0.5209	decision	human	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	3	30	35	function_definition	_se_all	human	1.1003	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	4	38	42	function_definition	set_constraint_bound	lm	-1.5019	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	5	45	54	function_definition	get_power_state	human	1.705	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	6	57	64	function_definition	find_overlapping_slots	lm	-1.2936	decision	lm	1

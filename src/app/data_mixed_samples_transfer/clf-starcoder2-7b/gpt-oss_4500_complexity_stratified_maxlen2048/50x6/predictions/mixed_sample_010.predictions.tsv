@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	1	6	12	function_definition	queries	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	2	15	16	function_definition	login	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	3	19	37	function_definition	DP_calc	human	0.9876	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	4	40	48	function_definition	use_plenary_family_view	human	0.9997	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	5	51	80	function_definition	get_legacy_build_wheel_path	human	0.9999	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	6	83	95	function_definition	_clone_node	human	0.9779	proba	human	1

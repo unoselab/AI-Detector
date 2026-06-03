@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py	1	6	10	function_definition	get_ngrams	lm	-0.6691	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py	2	13	22	function_definition	dockerCall	lm	-1.1835	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py	3	25	34	function_definition	gen_unique_id	lm	-0.0105	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py	4	37	54	function_definition	show	human	0.5157	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py	5	57	69	function_definition	build	human	0.1098	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_046.py	6	72	97	function_definition	get_valid_task_types	lm	-0.2937	decision	human	0

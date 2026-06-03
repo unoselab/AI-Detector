@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	1	6	26	function_definition	url_unquote	human	0.1626	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	2	29	59	function_definition	create_search_url	human	1.6676	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	3	62	99	function_definition	delete_action	human	0.5802	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	4	102	114	function_definition	cast_to_str	lm	-0.9438	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	5	117	142	function_definition	_iterbfs	human	0.4955	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	6	145	161	function_definition	copy	human	0.1958	decision	lm	0

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	1	6	15	function_definition	paste	lm	-0.686	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	2	18	55	function_definition	__args_check	human	0.9509	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	3	58	65	function_definition	timer	lm	-1.4602	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	4	68	140	function_definition	mcmc_CH	human	2.7838	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	5	143	172	function_definition	undeclared_query_parameters	lm	-1.3077	decision	human	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	6	175	178	function_definition	resource_path	human	2.3108	decision	lm	0

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	1	6	16	function_definition	getDataset	human	2.2997	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	2	19	24	function_definition	get_stats_code_frequency	human	1.5738	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	3	27	52	function_definition	_build_discrete_cmap	lm	-0.5416	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	4	55	65	function_definition	disable_host_flap_detection	lm	-1.7367	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	5	68	74	function_definition	delete_many	lm	-0.9715	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	6	77	108	function_definition	generate_config_parser	human	1.4778	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	1	6	23	function_definition	emitGeometryChanged	lm	-0.4311	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	2	26	57	function_definition	send	human	1.4286	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	3	60	76	function_definition	point_to_index	lm	-0.0583	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	4	79	83	function_definition	loading	human	0.0936	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	5	86	96	function_definition	setRect	lm	-0.6783	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	6	99	121	function_definition	_calc_avg_and_last_val	human	0.4423	decision	human	1

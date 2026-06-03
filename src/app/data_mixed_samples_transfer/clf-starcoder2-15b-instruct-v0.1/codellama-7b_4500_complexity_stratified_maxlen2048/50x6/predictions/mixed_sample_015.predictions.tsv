@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py	1	6	28	function_definition	process_signal	human	0.8768	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py	2	31	47	function_definition	create_files	lm	-0.6452	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py	3	50	60	function_definition	find_videos_by_playlist	human	1.1158	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py	4	63	67	function_definition	elXpath	lm	-1.3781	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py	5	70	77	function_definition	pop	human	1.628	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_015.py	6	80	86	function_definition	abort	lm	-0.4391	decision	lm	1

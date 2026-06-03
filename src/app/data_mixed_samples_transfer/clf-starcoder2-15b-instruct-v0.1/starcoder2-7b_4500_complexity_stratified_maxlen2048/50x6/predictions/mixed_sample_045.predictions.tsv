@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	1	6	31	function_definition	_tupleCompare	lm	-0.1301	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	2	34	54	function_definition	centroid_refine_triangulation_by_triangles	human	1.6987	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	3	57	94	function_definition	delete_interface_from_router	human	2.5133	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	4	97	115	function_definition	default	human	1.5286	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	5	118	127	function_definition	_get_file_name	human	1.3465	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	6	130	142	function_definition	scalarmult_B	human	2.6263	decision	human	1

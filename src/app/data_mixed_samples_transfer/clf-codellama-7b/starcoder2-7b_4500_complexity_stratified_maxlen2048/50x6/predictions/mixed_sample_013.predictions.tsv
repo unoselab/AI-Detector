@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	1	6	9	function_definition	toggle_rich_text	lm	-0.3567	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	2	12	16	function_definition	process_result_value	human	0.4636	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	3	19	79	function_definition	_StartWorkerProcess	human	1.4687	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	4	82	190	function_definition	moduleInfo	lm	-2.6342	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	5	193	214	function_definition	detectRamPorts	human	0.1526	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	6	217	221	function_definition	from_dict	human	1.2516	decision	human	1

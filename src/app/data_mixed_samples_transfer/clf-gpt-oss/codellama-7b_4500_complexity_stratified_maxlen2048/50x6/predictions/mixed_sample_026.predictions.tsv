@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	1	6	30	function_definition	Filter	human	0.0155	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	2	33	54	function_definition	check_for_errors	human	1.6517	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	3	57	61	function_definition	RootNode	human	0.6991	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	4	64	76	function_definition	_insert_or_replace_entity	human	0.0795	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	5	79	86	function_definition	create_files	lm	-2.4766	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	6	89	92	function_definition	_config_section	lm	-0.5562	decision	lm	1

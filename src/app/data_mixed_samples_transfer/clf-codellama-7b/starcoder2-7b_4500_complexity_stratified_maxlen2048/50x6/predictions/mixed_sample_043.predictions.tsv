@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	1	6	13	function_definition	options	lm	-0.2749	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	2	16	19	function_definition	_xml_pretty_print	lm	-0.9021	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	3	22	26	function_definition	get_field_type	human	0.7073	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	4	29	36	function_definition	get_descriptions	lm	-1.3857	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	5	39	95	function_definition	add_forward_workflow	human	1.5054	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	6	98	107	function_definition	now	lm	-0.3505	decision	human	0

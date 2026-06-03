@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	1	6	37	function_definition	increment_lessons	human	1.4505	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	2	40	47	function_definition	resolve	human	0.5453	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	3	50	63	function_definition	__preprocess_arguments	lm	-1.0065	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	4	66	69	function_definition	open_recruitment	lm	-2.2582	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	5	72	89	function_definition	mount	lm	-1.8989	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	6	92	94	function_definition	read_octet	lm	-1.9175	decision	lm	1

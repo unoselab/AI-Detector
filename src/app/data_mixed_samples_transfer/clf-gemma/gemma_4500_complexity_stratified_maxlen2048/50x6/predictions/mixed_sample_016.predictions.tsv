@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	1	6	17	function_definition	get_changeform_initial_data	lm	-1.653	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	2	20	27	function_definition	get_least_relevant_words_for_topic	lm	-0.6161	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	3	30	71	function_definition	sample_bad_readout	human	0.8896	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	4	74	80	function_definition	setup	lm	-2.7961	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	5	83	114	function_definition	_create_join_index	human	0.4926	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	6	117	121	function_definition	unpack_fixed16	human	1.8448	decision	human	1

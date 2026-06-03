@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	1	6	21	function_definition	get_valid_task_types	lm	-0.3974	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	2	24	34	function_definition	remove_video_for_course	lm	-0.289	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	3	37	73	function_definition	query	human	1.2684	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	4	76	103	function_definition	spawn	lm	-0.1647	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	5	106	122	function_definition	get	human	0.486	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	6	125	135	function_definition	set_connection_type	human	2.037	decision	human	1

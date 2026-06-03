@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	1	6	8	function_definition	SerializeFaultDetail	human	0.2329	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	2	11	19	function_definition	valueAt	lm	-0.3046	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	3	22	45	function_definition	_tscube_app	human	2.477	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	4	48	65	function_definition	create_date	human	0.7249	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	5	68	80	function_definition	del_view_menu	human	0.243	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	6	83	87	function_definition	to_utc_datetime	human	0.0279	decision	lm	0

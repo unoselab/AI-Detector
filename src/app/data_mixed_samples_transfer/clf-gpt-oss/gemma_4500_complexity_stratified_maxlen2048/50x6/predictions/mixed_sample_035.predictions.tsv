@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	1	6	13	function_definition	get_sidecar_nodes	human	1.0143	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	2	16	26	function_definition	missing_optional_tagfiles	human	2.3678	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	3	29	33	function_definition	peek	human	0.8072	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	4	36	50	function_definition	set_encode_key_value	human	0.4085	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	5	53	79	function_definition	get	lm	-2.31	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	6	82	106	function_definition	_process_get_cal_resp	human	0.4986	decision	lm	0

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	1	6	43	function_definition	container_stop	lm	-0.2831	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	2	46	52	function_definition	strtime	lm	-1.4065	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	3	55	61	function_definition	lexical_parent	human	0.6593	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	4	64	73	function_definition	choices	human	0.088	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	5	76	89	function_definition	expand_array	lm	-0.9211	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	6	92	117	function_definition	create_filter	lm	-0.4068	decision	human	0

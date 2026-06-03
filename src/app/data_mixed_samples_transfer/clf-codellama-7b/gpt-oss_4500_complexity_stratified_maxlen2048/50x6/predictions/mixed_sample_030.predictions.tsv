@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	1	6	31	function_definition	has_child_objective_banks	human	3.6936	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	2	34	42	function_definition	log_stop	human	0.1545	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	3	45	65	function_definition	list_returners	lm	-4.3201	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	4	68	70	function_definition	_axis_properties	lm	-2.1008	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	5	73	81	function_definition	postage_update	lm	-0.538	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	6	84	89	function_definition	_get_str	human	0.6981	decision	human	1

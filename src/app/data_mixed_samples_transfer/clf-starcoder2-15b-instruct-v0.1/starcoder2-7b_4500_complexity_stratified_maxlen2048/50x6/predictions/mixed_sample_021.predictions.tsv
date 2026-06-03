@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	1	6	19	function_definition	get_visual_content	lm	-0.0518	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	2	22	31	function_definition	get_advances_declines	lm	-0.2298	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	3	34	39	function_definition	load_user	human	0.2477	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	4	42	48	function_definition	_append_seed	lm	-1.8614	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	5	51	69	function_definition	log_debug	lm	-1.4556	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	6	72	83	function_definition	play_NoteContainer	lm	-0.44	decision	human	0

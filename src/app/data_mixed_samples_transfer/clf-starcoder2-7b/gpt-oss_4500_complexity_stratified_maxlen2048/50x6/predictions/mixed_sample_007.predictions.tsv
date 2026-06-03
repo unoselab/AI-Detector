@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	1	6	26	function_definition	deep_compare	lm	0.3754	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	2	29	34	function_definition	stop	lm	0.0003	proba	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	3	37	45	function_definition	install	lm	0.3258	proba	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	4	48	78	function_definition	_get_previous_mz	human	0.9996	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	5	81	94	function_definition	_send	human	0.8832	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	6	97	107	function_definition	create_tcp_socket	human	0.8781	proba	human	1

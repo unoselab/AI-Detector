@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	1	6	30	function_definition	chuid	human	0.9996	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	2	33	60	function_definition	chord_counts	human	0.8945	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	3	63	65	function_definition	get_resource	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	4	68	83	function_definition	load_addresses	human	0.9995	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	5	86	94	function_definition	get_work_artifact_link_types	human	0.6889	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_027.py	6	97	107	function_definition	fetch	lm	0.018	proba	human	0

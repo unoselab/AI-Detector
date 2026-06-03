@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	1	6	10	function_definition	get_version_from_dirname	lm	-1.0286	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	2	13	17	function_definition	__access	lm	-1.1037	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	3	20	51	function_definition	ts_to_str	human	1.1743	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	4	54	74	function_definition	dump	human	0.5568	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	5	77	101	function_definition	reduce_activities	lm	-0.9008	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	6	104	120	function_definition	read_raw_pressure	human	1.4736	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	1	6	14	function_definition	receive	lm	-0.4543	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	2	17	28	function_definition	subontology	lm	-2.9793	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	3	31	42	function_definition	add_md	lm	-1.1022	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	4	45	54	function_definition	nuc_v	lm	-2.9912	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	5	57	73	function_definition	css	lm	-0.1493	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	6	76	97	function_definition	search_registered_query_deleted_for_facet	human	1.1654	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	1	6	16	function_definition	register	lm	-0.7866	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	2	19	53	function_definition	fit	human	2.0883	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	3	56	61	function_definition	change_hosts	lm	-3.2414	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	4	64	71	function_definition	is_named_tuple	lm	-1.9688	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	5	74	143	function_definition	_upsert_run	human	5.0568	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_016.py	6	146	156	function_definition	resolve_meta_key	human	1.884	decision	human	1

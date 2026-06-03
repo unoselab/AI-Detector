@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	1	6	34	function_definition	extract_docstring	lm	-0.1326	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	2	37	42	function_definition	start	lm	-0.6584	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	3	45	51	function_definition	update	lm	-0.3557	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	4	54	75	function_definition	_get_fwl_billing_item	human	0.5171	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	5	78	90	function_definition	is_pre_prepare_time_acceptable	human	0.2324	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	6	93	102	function_definition	exposure_preparation	lm	-0.2832	decision	lm	1

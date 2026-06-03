@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	1	6	12	function_definition	timemeter	lm	-2.4865	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	2	15	26	function_definition	clean_upload	human	0.4525	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	3	29	39	function_definition	parse_schema_definition	human	0.6775	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	4	42	51	function_definition	split_every	lm	-0.9354	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	5	54	65	function_definition	convert_machine_list_value	lm	-1.4075	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	6	68	78	function_definition	gather	lm	-2.244	decision	lm	1

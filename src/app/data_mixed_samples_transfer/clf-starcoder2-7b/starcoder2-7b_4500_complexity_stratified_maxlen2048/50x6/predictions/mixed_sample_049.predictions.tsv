@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	1	6	17	function_definition	set_requested_intervals	lm	0.0015	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	2	20	26	function_definition	_get_dataobject	human	0.9994	proba	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	3	29	38	function_definition	options	human	0.8926	proba	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	4	41	82	function_definition	tomof	human	0.9938	proba	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	5	85	94	function_definition	compose	human	0.5415	proba	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	6	97	101	function_definition	_parse_mode	lm	0.0	proba	lm	1

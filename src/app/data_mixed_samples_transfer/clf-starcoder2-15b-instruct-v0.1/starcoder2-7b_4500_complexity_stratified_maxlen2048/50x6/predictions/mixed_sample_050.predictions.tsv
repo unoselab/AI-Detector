@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	1	6	15	function_definition	write_channel	lm	-0.9884	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	2	18	33	function_definition	get_stats_code_frequency	human	2.8407	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	3	36	38	function_definition	tally	lm	-1.8259	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	4	41	55	function_definition	license_install	human	1.7116	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	5	58	101	function_definition	centroid_refine_triangulation_by_triangles	lm	-1.7073	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	6	104	125	function_definition	_compose	human	1.6265	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	1	6	39	function_definition	update	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	2	42	66	function_definition	load_entry_point_group	human	0.9963	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	3	69	78	function_definition	print_change	lm	0.3026	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	4	81	93	function_definition	get_hdrgos_g_usrgos	human	0.7535	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	5	96	99	function_definition	generate_data	lm	0.0002	proba	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	6	102	110	function_definition	get_next_non_summer_term	lm	0.0945	proba	human	0

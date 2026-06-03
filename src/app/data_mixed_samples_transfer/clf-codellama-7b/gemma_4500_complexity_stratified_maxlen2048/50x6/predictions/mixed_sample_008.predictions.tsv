@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	1	6	41	function_definition	_kendall_tau_diff	human	1.7593	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	2	44	73	function_definition	_mkpart	human	1.7462	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	3	76	83	function_definition	update	human	0.6067	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	4	86	90	function_definition	set_values	human	1.1795	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	5	93	111	function_definition	format_ring_double_bond	human	1.5532	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	6	114	124	function_definition	_taskdict	human	0.9649	decision	lm	0

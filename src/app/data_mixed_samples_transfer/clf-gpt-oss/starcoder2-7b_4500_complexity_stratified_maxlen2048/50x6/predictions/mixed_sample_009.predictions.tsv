@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	1	6	13	function_definition	create	human	0.5931	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	2	16	26	function_definition	new_connection	lm	-0.3565	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	3	29	41	function_definition	get_records_with_attachments	human	0.8377	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	4	44	47	function_definition	sendall	lm	-0.8333	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	5	50	66	function_definition	_fix_quantities	lm	-0.4099	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_009.py	6	69	84	function_definition	query_orders	lm	-0.9861	decision	lm	1

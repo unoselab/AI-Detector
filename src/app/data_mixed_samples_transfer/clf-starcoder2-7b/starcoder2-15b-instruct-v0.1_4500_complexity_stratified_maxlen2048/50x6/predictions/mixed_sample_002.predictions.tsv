@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	1	6	16	function_definition	isidentifier	human	0.8527	proba	lm	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	2	19	37	function_definition	extract_from_text	human	0.7801	proba	lm	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	3	40	46	function_definition	redo_expansion_state	human	0.9751	proba	lm	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	4	49	57	function_definition	trim_trailing_silence	lm	0.4184	proba	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	5	60	69	function_definition	mcmc_CH	lm	0.0002	proba	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	6	72	80	function_definition	pypi_release	human	0.9719	proba	lm	0

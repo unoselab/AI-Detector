@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	1	6	61	function_definition	print_scan_summary	human	1.0	proba	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	2	64	87	function_definition	valueAt	human	0.9999	proba	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	3	90	112	function_definition	chunks	lm	0.2505	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	4	115	130	function_definition	get_months_of_year	lm	0.0132	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	5	133	145	function_definition	make_folder_for_today	lm	0.0049	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	6	148	164	function_definition	_get_countdown_for_next_slice	human	0.9999	proba	human	1

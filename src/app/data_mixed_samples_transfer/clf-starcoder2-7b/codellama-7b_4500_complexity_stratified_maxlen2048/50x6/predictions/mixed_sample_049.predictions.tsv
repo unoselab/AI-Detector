@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	1	6	17	function_definition	_labels_from_pyclusters	lm	0.0001	proba	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	2	20	33	function_definition	add_or_update	human	0.761	proba	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	3	36	85	function_definition	setposition	human	1.0	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	4	88	107	function_definition	walk	human	0.9676	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	5	110	118	function_definition	extract	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	6	121	123	function_definition	GetPattern	lm	0.0	proba	lm	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	1	6	31	function_definition	decode_network	lm	-2.8031	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	2	34	74	function_definition	AddExtensionDescriptor	human	1.412	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	3	77	80	function_definition	sheets	lm	-1.9941	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	4	83	104	function_definition	replace_cancel_operation_by_id	human	1.0792	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	5	107	136	function_definition	add_nio	human	2.5021	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	6	139	152	function_definition	_post_master_init	lm	-2.6753	decision	lm	1

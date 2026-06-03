@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	1	6	16	function_definition	db_exec_with_cursor	human	1.626	decision	human	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	2	19	28	function_definition	_remove_compression_suffix_if_present	lm	-0.3622	decision	human	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	3	31	41	function_definition	_multiplexed_buffer_helper	lm	-0.6972	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	4	44	55	function_definition	as_span	lm	-1.676	decision	lm	1
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	5	58	76	function_definition	connectCached	human	0.5848	decision	lm	0
+src/app/data_mixed_samples/starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	6	79	85	function_definition	_gatk4_cmd	human	4.7119	decision	human	1

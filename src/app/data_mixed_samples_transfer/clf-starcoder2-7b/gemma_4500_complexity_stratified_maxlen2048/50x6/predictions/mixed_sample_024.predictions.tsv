@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	1	6	14	function_definition	_find_new_additions	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	2	17	27	function_definition	arcball_map_to_sphere	lm	0.1634	proba	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	3	30	41	function_definition	extend_schema_spec	human	0.7818	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	4	44	50	function_definition	seek	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	5	53	77	function_definition	smart	human	0.9616	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	6	81	94	function_definition	fill_clipboard	human	0.8405	proba	human	1

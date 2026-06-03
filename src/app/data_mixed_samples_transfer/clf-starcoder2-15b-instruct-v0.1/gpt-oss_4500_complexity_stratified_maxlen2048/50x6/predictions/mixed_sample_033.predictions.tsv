@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	1	6	49	function_definition	tree	human	2.2953	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	2	52	59	function_definition	track_purchase	lm	-1.0192	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	3	62	71	function_definition	client_updates_config	human	0.5121	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	4	74	80	function_definition	_before_flush_handler	human	0.4096	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	5	83	94	function_definition	_set_repository_view	human	0.2414	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	6	97	112	function_definition	get_chunk	lm	-0.0387	decision	lm	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	1	6	20	function_definition	wait_until_page_ready	lm	-0.3587	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	2	23	70	function_definition	calculate_marginal_likelihoods	human	1.3845	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	3	73	80	function_definition	importSignedCertificate	human	0.5195	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	4	83	89	function_definition	console_check_for_keypress	lm	-0.8772	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	5	92	130	function_definition	_role_present	human	1.8414	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	6	133	135	function_definition	is_marginable	human	0.5346	decision	human	1

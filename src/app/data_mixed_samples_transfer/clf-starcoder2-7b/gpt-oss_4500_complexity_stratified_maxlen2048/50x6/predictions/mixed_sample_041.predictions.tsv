@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py	1	6	38	function_definition	_post_data	human	0.9699	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py	2	41	96	function_definition	commentdoc	human	0.9996	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py	3	99	131	function_definition	reset_default	lm	0.4249	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py	4	134	144	function_definition	link	human	0.9991	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py	5	147	172	function_definition	cumsum	lm	0.2808	proba	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_041.py	6	175	181	function_definition	create_scaling_policy	lm	0.0002	proba	lm	1

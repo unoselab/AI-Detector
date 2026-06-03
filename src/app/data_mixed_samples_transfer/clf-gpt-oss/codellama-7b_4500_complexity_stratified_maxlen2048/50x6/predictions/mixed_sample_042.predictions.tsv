@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	1	6	12	function_definition	recent_update_frequencies	human	1.8688	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	2	15	24	function_definition	body_block_supplementary_material_render	human	0.1929	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	3	27	33	function_definition	get_hdrgos_g_usrgos	lm	-0.8212	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	4	36	47	function_definition	correct	lm	-2.1694	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	5	50	70	function_definition	get	human	1.0057	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	6	73	80	function_definition	generate_checker	lm	-1.2616	decision	lm	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	1	6	25	function_definition	refresh_fqdn_cache	lm	-1.2602	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	2	28	39	function_definition	_get_column	human	2.2433	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	3	42	52	function_definition	list_nodes_min	lm	-0.9129	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	4	55	69	function_definition	profile_tilt	human	1.3758	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	5	72	77	function_definition	clean_dataframe	human	0.3472	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_002.py	6	80	85	function_definition	_acquire_request_connection	human	0.3137	decision	lm	0

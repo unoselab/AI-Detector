@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Cross-Generator AUROC Transfer Matrix (diagonal = in-distribution; Transfer = off-diagonal mean)}
+\label{tab:cross_generator_auroc}
+\begin{tabular}{l|ccccc|c}
+\hline
+\textbf{Trained Classifier} & \textbf{StarCoder2-15B} & \textbf{StarCoder2-7B} & \textbf{CodeLlama-7B} & \textbf{Gemma} & \textbf{GPT-OSS} & \textbf{Transfer} \\ \hline
+StarCoder2-15B   & \textbf{0.7748} & 0.7356 & 0.7199 & 0.7054 & 0.7684 & 0.7323 \\
+StarCoder2-7B    & 0.7226 & \textbf{0.7666} & 0.8444 & 0.6659 & 0.7191 & 0.7380 \\
+CodeLlama-7B     & 0.7291 & 0.8472 & \textbf{0.7648} & 0.6413 & 0.7194 & 0.7343 \\
+Gemma            & 0.7289 & 0.6629 & 0.7042 & \textbf{0.7460} & 0.8027 & 0.7247 \\
+GPT-OSS          & 0.6326 & 0.5772 & 0.6164 & 0.6965 & \textbf{0.8818} & 0.6307 \\
+\hline
+\end{tabular}
+\end{table}

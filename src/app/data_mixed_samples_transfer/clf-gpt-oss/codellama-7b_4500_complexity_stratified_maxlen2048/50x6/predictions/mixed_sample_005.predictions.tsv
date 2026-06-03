@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	1	6	23	function_definition	resolve_service_spec	human	4.0596	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	2	26	36	function_definition	clean_text	lm	-0.8961	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	3	39	62	function_definition	reply_inform	human	0.348	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	4	65	67	function_definition	cache_key_exist	human	1.6514	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	5	70	75	function_definition	clock_resized_cb	lm	-1.2548	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	6	78	101	function_definition	_getphoto_originalsize	human	2.2966	decision	human	1

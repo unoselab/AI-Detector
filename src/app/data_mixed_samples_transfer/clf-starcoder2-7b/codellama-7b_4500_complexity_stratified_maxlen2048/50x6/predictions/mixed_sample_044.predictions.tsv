@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	1	6	19	function_definition	insert	human	0.9481	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	2	22	46	function_definition	from_dict	human	0.9997	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	3	49	53	function_definition	put_task	lm	0.372	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	4	56	60	function_definition	expand_region	human	0.5326	proba	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	5	63	71	function_definition	iter_intersecting	lm	0.0035	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	6	74	87	function_definition	move_to_element	human	0.96	proba	human	1

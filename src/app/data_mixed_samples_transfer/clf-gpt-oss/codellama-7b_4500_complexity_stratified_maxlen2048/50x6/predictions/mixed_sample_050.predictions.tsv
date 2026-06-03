@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	1	6	11	function_definition	service_name_from_scope_name	human	1.8151	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	2	14	28	function_definition	clean_text	lm	-0.719	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	3	31	40	function_definition	serialize	human	0.5049	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	4	43	57	function_definition	parse_block	human	1.4071	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	5	60	66	function_definition	unhook	lm	-0.1089	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	6	69	79	function_definition	geojson	lm	-0.3063	decision	human	0

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	1	6	69	function_definition	getPerfInfo	human	2.1301	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	2	72	80	function_definition	solve_limited	lm	-1.5947	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	3	83	90	function_definition	_update_mappings	lm	-1.3629	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	4	93	105	function_definition	export_ruptures_csv	lm	-1.0306	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	5	108	116	function_definition	get_overlays	lm	-1.0929	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	6	119	134	function_definition	contents	human	1.2215	decision	human	1

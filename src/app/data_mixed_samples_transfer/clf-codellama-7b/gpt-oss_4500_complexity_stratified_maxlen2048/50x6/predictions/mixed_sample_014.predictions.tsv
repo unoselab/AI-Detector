@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	1	6	26	function_definition	config_name_from_full_name	human	1.1284	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	2	29	54	function_definition	nuc_v	human	1.8339	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	3	57	66	function_definition	client_updates_config	lm	-1.4157	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	4	69	95	function_definition	connect	lm	-0.1884	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	5	98	110	function_definition	handler	lm	-2.8169	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_014.py	6	113	124	function_definition	bgrewriteaof	lm	-0.2633	decision	human	0

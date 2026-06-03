@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	1	6	19	function_definition	request_session	lm	0.3219	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	2	22	67	function_definition	_build_state	human	0.9993	proba	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	3	70	75	function_definition	process_result_value	human	0.9722	proba	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	4	78	137	function_definition	coreSSH	human	0.9999	proba	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	5	140	153	function_definition	connect_ws	lm	0.108	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	6	156	158	function_definition	change_approver_email_address	human	0.8002	proba	lm	0

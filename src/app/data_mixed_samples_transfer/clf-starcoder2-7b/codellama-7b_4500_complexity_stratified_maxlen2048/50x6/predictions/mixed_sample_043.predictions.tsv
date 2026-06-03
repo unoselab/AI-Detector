@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	1	6	20	function_definition	setposition	lm	0.1929	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	2	23	41	function_definition	expected_number_of_purchases_up_to_time	lm	0.0044	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	3	44	49	function_definition	pubsub_channels	human	0.5977	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	4	52	61	function_definition	_identify_heterogeneity_blocks_seg	lm	0.3154	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	5	64	76	function_definition	_not_in	lm	0.0938	proba	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_043.py	6	79	101	function_definition	add_variable	human	0.6254	proba	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	1	6	17	function_definition	sense	lm	0.0197	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	2	20	36	function_definition	next_trials	lm	0.0	proba	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	3	39	44	function_definition	_connect	lm	0.0001	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	4	47	53	function_definition	save	lm	0.1637	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	5	56	106	function_definition	add_platform	human	0.5035	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_030.py	6	109	144	function_definition	_setuint	human	0.9999	proba	human	1

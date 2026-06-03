@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	1	6	14	function_definition	when_closed	human	0.9163	proba	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	2	17	38	function_definition	_normalize_sort_SQL	human	0.9994	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	3	41	48	function_definition	stash	lm	0.0003	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	4	51	55	function_definition	save	lm	0.0168	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	5	58	90	function_definition	poi_coords	human	0.9999	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_039.py	6	93	106	function_definition	create_contentkey_authorization_policy	human	0.7591	proba	human	1

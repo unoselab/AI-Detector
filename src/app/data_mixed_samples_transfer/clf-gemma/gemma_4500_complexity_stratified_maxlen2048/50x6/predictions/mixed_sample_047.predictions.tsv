@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	1	6	19	function_definition	map_over_glob	lm	-1.468	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	2	22	55	function_definition	encode_osgi_props	human	3.3422	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	3	58	69	function_definition	on_send	human	0.2409	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	4	72	93	function_definition	_zforce	human	1.1195	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	5	96	108	function_definition	default	human	0.4326	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	6	111	115	function_definition	labels	lm	-2.0895	decision	lm	1

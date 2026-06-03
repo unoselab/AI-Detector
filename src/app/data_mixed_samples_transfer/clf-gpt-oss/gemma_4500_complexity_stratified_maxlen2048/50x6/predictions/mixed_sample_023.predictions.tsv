@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	1	6	31	function_definition	chord_counts	human	0.2561	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	2	34	46	function_definition	insertFromMimeData	lm	-0.3769	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	3	49	59	function_definition	set_sessid	human	0.7007	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	4	62	77	function_definition	get_tmpdir	human	1.3315	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	5	80	121	function_definition	rcs	human	1.1298	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	6	124	146	function_definition	_nearest	lm	-1.0393	decision	lm	1

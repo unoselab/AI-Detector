@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	1	6	14	function_definition	tseitin	human	1.0169	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	2	17	52	function_definition	do_notification_update	human	0.0642	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	3	55	57	function_definition	monitored_resource_descriptor_path	lm	-1.4848	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	4	60	106	function_definition	find_feasible_flow	human	0.5008	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	5	109	128	function_definition	assertFileSizeNotEqual	lm	-0.0245	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	6	131	134	function_definition	attr_set	lm	-0.7125	decision	lm	1

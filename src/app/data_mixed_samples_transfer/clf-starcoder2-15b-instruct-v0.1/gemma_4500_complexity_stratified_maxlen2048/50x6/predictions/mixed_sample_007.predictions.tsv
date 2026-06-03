@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	1	6	17	function_definition	_WriteRow	lm	-1.7067	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	2	20	39	function_definition	print_new_versions	lm	-0.2496	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	3	42	92	function_definition	ensure_image_is_hex	human	1.7748	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	4	95	105	function_definition	upload	lm	-0.3529	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	5	108	114	function_definition	bloquear_sat	lm	-0.9472	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_007.py	6	117	131	function_definition	read_long_description	human	2.1947	decision	human	1

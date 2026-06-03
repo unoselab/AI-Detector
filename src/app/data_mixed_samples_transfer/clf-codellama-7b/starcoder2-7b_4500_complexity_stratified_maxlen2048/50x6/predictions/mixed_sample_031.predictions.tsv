@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	1	6	29	function_definition	clock_resized_cb	human	0.7898	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	2	32	41	function_definition	_append_seed	lm	-0.1893	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	3	44	62	function_definition	d_from_format	human	0.9999	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	4	65	88	function_definition	revert	human	0.7019	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	5	91	93	function_definition	K	lm	-1.6483	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	6	96	102	function_definition	handle_aliases_in_init_files	lm	-3.3282	decision	lm	1

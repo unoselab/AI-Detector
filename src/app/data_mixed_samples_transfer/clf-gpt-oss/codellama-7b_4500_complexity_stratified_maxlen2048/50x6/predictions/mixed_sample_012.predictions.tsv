@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	1	6	21	function_definition	_process_get_status	human	4.5182	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	2	24	57	function_definition	merge	human	0.8938	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	3	60	98	function_definition	_resize_blob	lm	-1.1532	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	4	101	105	function_definition	_inherited_dashboard	lm	-0.8974	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	5	108	131	function_definition	md5	human	0.937	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_012.py	6	134	137	function_definition	_lt_from_gt	human	2.0722	decision	lm	0

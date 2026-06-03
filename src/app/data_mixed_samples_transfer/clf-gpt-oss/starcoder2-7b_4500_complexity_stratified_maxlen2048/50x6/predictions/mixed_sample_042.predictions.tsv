@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	1	6	50	function_definition	_ReadSpecificationFile	human	0.6147	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	2	53	72	function_definition	iter_records_for	human	1.2116	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	3	75	81	function_definition	index	lm	-0.0288	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	4	84	95	function_definition	BooleanField	lm	-1.0798	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	5	98	108	function_definition	new	human	2.847	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_042.py	6	111	124	function_definition	get_subscriber_queue	human	1.0304	decision	lm	0

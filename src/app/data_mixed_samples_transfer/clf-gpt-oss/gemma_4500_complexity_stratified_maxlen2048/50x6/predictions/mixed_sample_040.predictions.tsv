@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	1	6	21	function_definition	__get_file	human	0.2511	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	2	24	36	function_definition	_new_empty_handle	lm	-0.4948	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	3	39	52	function_definition	reload_dependencies	human	0.0439	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	4	55	61	function_definition	_operator_handling	human	2.1827	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	5	64	85	function_definition	render	human	0.4684	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	6	88	125	function_definition	add_file_ident_desc	human	1.6942	decision	human	1

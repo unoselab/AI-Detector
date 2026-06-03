@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	1	6	22	function_definition	destroy_domain_record	lm	-0.8346	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	2	25	43	function_definition	add_argument	lm	-2.1204	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	3	46	64	function_definition	_disconnect	human	0.7577	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	4	67	77	function_definition	geometry	human	0.9622	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	5	80	95	function_definition	cumsum	lm	-2.301	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_049.py	6	98	112	function_definition	retry	human	0.0121	decision	lm	0

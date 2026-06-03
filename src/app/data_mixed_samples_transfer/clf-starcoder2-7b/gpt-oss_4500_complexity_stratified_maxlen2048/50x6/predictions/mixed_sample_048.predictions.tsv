@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py	1	6	18	function_definition	Process	human	0.9629	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py	2	21	50	function_definition	login	human	0.9979	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py	3	53	105	function_definition	from_json	human	0.9998	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py	4	108	119	function_definition	_create_body	lm	0.1132	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py	5	122	128	function_definition	search_indices	human	0.5471	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_048.py	6	131	135	function_definition	_index	lm	0.0	proba	lm	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	1	6	19	function_definition	find_topics	human	1.8374	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	2	22	30	function_definition	get_categories	human	1.2996	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	3	33	40	function_definition	get_basis_family	lm	-0.6162	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	4	43	45	function_definition	name	lm	-1.1578	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	5	48	71	function_definition	setattr_context	human	0.1125	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	6	74	96	function_definition	runSavedQueryByUrl	lm	-0.0468	decision	human	0

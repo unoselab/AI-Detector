@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	1	6	24	function_definition	arcball_map_to_sphere	human	1.3416	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	2	27	37	function_definition	upper_band	lm	-1.0864	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	3	40	52	function_definition	closeEvent	human	1.5329	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	4	55	84	function_definition	idctii	lm	-0.9021	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	5	87	111	function_definition	update	human	2.9386	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	6	114	140	function_definition	set_select	human	2.3737	decision	human	1

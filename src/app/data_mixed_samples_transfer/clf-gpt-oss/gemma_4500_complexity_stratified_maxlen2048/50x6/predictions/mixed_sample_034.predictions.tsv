@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	1	6	42	function_definition	score	lm	-0.3158	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	2	45	68	function_definition	title_has_tag	human	0.7009	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	3	71	107	function_definition	get_nested_group_users	human	1.6397	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	4	110	122	function_definition	mount	human	1.3393	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	5	125	163	function_definition	disconnect_all_containers_from_network	lm	-2.5198	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	6	166	199	function_definition	remove_categories	human	0.2196	decision	lm	0

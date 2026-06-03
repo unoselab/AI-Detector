@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	1	6	14	function_definition	get_ordered_options	lm	0.2545	proba	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	2	17	26	function_definition	to_rectangular	lm	0.0826	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	3	29	57	function_definition	_reflect_all	lm	0.0194	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	4	60	75	function_definition	get_unpatched_class	human	0.9666	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	5	78	93	function_definition	save_state_regularly	lm	0.0791	proba	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_038.py	6	96	103	function_definition	forget	human	0.9637	proba	lm	0

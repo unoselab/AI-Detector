@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	1	6	7	function_definition	static	lm	-2.9145	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	2	10	16	function_definition	monitored_resource_descriptor_path	human	2.0236	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	3	19	28	function_definition	res_to_url	lm	-0.357	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	4	31	35	function_definition	is_all_field_none	human	0.9701	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	5	38	45	function_definition	_lookup_unconflicted_symbol	lm	-4.4343	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	6	48	79	function_definition	chain_callback	human	0.9917	decision	human	1

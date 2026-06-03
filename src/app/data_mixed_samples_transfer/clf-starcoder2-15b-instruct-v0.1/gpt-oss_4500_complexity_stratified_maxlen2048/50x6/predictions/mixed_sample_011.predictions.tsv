@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	1	6	20	function_definition	expireat	human	1.0969	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	2	23	37	function_definition	_check_backend	lm	-0.3084	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	3	40	57	function_definition	vsetup	human	0.4772	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	4	60	71	function_definition	get_all_as_list	lm	-0.327	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	5	74	83	function_definition	_merge_args	lm	-4.4911	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	6	86	96	function_definition	change_hosts	lm	-1.3862	decision	human	0

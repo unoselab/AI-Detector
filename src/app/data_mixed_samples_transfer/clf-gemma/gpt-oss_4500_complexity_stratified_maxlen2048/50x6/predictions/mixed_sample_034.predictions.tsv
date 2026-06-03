@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	1	6	16	function_definition	face_index	human	0.5222	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	2	19	28	function_definition	add_route	lm	-2.5235	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	3	31	48	function_definition	assertFileSizeNotEqual	lm	-0.458	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	4	51	59	function_definition	set_attachments_order	human	0.3186	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	5	62	73	function_definition	parse_geo_box	lm	-0.6906	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	6	76	91	function_definition	add_listener	lm	-2.6005	decision	lm	1

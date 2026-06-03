@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	1	6	33	function_definition	format_survival_rate	human	0.9976	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	2	36	55	function_definition	engineer_info	lm	0.3353	proba	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	3	58	81	function_definition	get	human	0.9914	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	4	84	98	function_definition	reload_dependencies	human	0.9524	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	5	101	110	function_definition	add_wikipage	human	0.9965	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	6	113	124	function_definition	commit	human	0.9976	proba	human	1

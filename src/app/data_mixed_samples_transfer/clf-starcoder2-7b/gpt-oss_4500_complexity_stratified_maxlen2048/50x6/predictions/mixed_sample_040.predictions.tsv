@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	1	6	24	function_definition	require_flush	human	0.9998	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	2	27	41	function_definition	stop_request	lm	0.1771	proba	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	3	44	76	function_definition	is_all_field_none	human	0.6987	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	4	79	93	function_definition	__remote_path_rewrite	human	0.9697	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	5	96	106	function_definition	EncryptPrivateKey	lm	0.1042	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_040.py	6	109	137	function_definition	_send_request	human	0.7866	proba	human	1

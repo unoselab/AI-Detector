@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	1	6	20	function_definition	update_project	human	0.7193	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	2	23	47	function_definition	register_tc_plugins	human	2.8575	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	3	50	62	function_definition	_validate_schema	human	1.2664	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	4	65	89	function_definition	data_find_all	human	0.2891	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	5	92	130	function_definition	get_cases	lm	-0.4616	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_031.py	6	133	136	function_definition	from_string	lm	-1.6404	decision	lm	1

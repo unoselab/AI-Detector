@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py	1	6	21	function_definition	_get_file_name	human	1.0002	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py	2	24	35	function_definition	snmp_server_engineID_drop_engineID_local	human	1.7307	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py	3	38	43	function_definition	subscribe	human	0.7369	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py	4	46	56	function_definition	is_reachable_host	human	0.2048	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py	5	59	79	function_definition	register	human	0.3973	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_029.py	6	82	105	function_definition	dropfile	human	2.5887	decision	human	1

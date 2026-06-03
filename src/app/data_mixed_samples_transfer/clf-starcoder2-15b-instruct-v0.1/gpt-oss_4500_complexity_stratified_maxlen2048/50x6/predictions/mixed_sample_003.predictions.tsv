@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	1	6	21	function_definition	powerupIndirector	lm	-0.5916	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	2	24	29	function_definition	geometry	human	0.0124	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	3	32	38	function_definition	tasks	human	1.1662	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	4	41	47	function_definition	parse_reading	lm	-1.3611	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	5	50	64	function_definition	setCurrentDate	human	1.0269	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_003.py	6	67	96	function_definition	_post_data	human	0.2317	decision	lm	0

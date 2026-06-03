@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	1	6	15	function_definition	create_exchange	human	0.052	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	2	18	49	function_definition	random_word	human	0.7286	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	3	52	61	function_definition	scale_image	human	1.1492	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	4	64	103	function_definition	copy_data	human	2.5678	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	5	106	122	function_definition	enable_global_typechecked_decorator	lm	-0.5416	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	6	125	127	function_definition	Compile	lm	-0.77	decision	lm	1

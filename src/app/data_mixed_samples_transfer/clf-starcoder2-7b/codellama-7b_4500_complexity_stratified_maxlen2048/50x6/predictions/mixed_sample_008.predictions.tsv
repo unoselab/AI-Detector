@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	1	6	11	function_definition	catch_raise_api_exception	lm	0.0032	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	2	14	35	function_definition	get_num_sequenced	lm	0.0018	proba	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	3	38	46	function_definition	name	human	1.0	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	4	49	59	function_definition	is_a_module	human	0.8442	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	5	62	76	function_definition	translate_to	human	0.9719	proba	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	6	79	89	function_definition	add_member	human	0.9801	proba	lm	0

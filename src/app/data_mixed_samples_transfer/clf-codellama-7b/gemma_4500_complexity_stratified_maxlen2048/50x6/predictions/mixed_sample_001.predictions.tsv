@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	1	6	16	function_definition	_dict_raise_on_duplicates	lm	-0.7843	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	2	19	53	function_definition	_mkpart	human	1.9328	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	3	56	70	function_definition	run_strelka_with_merge	human	0.0026	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	4	73	102	function_definition	FoldByteStream	human	1.1516	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	5	105	122	function_definition	parse	human	1.5664	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_001.py	6	125	139	function_definition	insertFromMimeData	human	0.4159	decision	human	1

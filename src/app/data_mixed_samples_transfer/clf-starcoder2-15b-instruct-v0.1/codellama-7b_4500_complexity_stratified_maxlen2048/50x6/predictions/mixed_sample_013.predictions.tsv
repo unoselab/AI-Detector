@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	1	6	8	function_definition	values_for_enum	lm	-1.1344	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	2	11	24	function_definition	_reflect_all	human	0.9156	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	3	27	43	function_definition	split_func_name_args_params_handle	human	0.1596	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	4	46	58	function_definition	create_ui	human	0.8948	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	5	61	79	function_definition	cleanup_images	human	1.8582	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_013.py	6	82	99	function_definition	hideEvent	human	1.4423	decision	human	1

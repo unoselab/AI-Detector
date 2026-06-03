@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	1	6	18	function_definition	on_lstUnits_itemSelectionChanged	lm	0.3008	proba	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	2	21	39	function_definition	set_ventilation	human	0.9726	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	3	42	120	function_definition	__create_csv_eps	human	0.8294	proba	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	4	123	132	function_definition	localDirPath	human	0.9998	proba	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	5	135	148	function_definition	add_md	lm	0.0063	proba	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	6	151	164	function_definition	derivesha512address	human	0.9936	proba	lm	0

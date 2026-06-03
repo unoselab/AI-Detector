@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	1	6	8	function_definition	get_service_id_list	lm	-2.1163	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	2	11	83	function_definition	expand_expression	human	2.2017	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	3	86	101	function_definition	__getRefererUrl	lm	-0.0548	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	4	104	119	function_definition	publish	human	2.003	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	5	122	138	function_definition	_read_opt_ra	lm	-1.7978	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	6	141	146	function_definition	get_setting	lm	-1.8582	decision	human	0

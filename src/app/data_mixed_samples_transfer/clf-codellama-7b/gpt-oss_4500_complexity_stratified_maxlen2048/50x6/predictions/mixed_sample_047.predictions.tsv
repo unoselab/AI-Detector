@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	1	6	7	function_definition	map_to_precursors	lm	-4.3066	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	2	10	83	function_definition	fuzzy_match_tipnames	human	0.5028	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	3	86	93	function_definition	update_connector_resource	lm	-2.1424	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	4	96	100	function_definition	_get_object_as_soft	human	2.3142	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	5	103	122	function_definition	_build_data	human	0.8754	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_047.py	6	125	141	function_definition	avail_images	human	0.1817	decision	lm	0

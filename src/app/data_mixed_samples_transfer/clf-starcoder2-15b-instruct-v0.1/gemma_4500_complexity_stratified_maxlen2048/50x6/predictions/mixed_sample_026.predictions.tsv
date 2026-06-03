@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	1	6	14	function_definition	sense	lm	-0.3043	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	2	17	45	function_definition	revisions	human	1.0561	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	3	48	57	function_definition	intersection	human	0.2316	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	4	60	81	function_definition	sort_dicoms	human	0.6121	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	5	84	88	function_definition	_result	lm	-2.1477	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_026.py	6	91	95	function_definition	extend_schema_spec	human	0.3333	decision	lm	0

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	1	6	19	function_definition	otu_iter_nexson_proxy	human	2.277	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	2	22	26	function_definition	OnSelectReader	lm	-0.4626	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	3	29	41	function_definition	connect_ws	human	0.3757	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	4	44	48	function_definition	clean_dataframe	lm	-0.7083	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	5	51	59	function_definition	init	human	1.1692	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_034.py	6	62	71	function_definition	modify_column_if_table_exists	lm	-0.0383	decision	lm	1

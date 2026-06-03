@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	1	6	21	function_definition	expand_expression	lm	-2.5351	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	2	24	55	function_definition	launch_server	human	2.2611	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	3	58	110	function_definition	find_unconserved_metabolites	human	1.7322	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	4	113	133	function_definition	_load_models	human	2.3682	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	5	136	148	function_definition	namedb_genesis_block_history_hash	human	2.0894	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	6	151	160	function_definition	_add_offsets_to_token_nodes	lm	-0.2373	decision	human	0

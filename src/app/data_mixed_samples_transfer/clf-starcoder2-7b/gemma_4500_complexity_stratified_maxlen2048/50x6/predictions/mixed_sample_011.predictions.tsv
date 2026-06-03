@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	1	6	24	function_definition	not_user_filter	human	0.9072	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	2	27	32	function_definition	max_bit_rate	lm	0.0002	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	3	35	47	function_definition	create_groups	lm	0.0012	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	4	50	73	function_definition	pair_list	lm	0.1548	proba	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	5	76	81	function_definition	HandleWellKnownFlows	human	0.9704	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_011.py	6	84	98	function_definition	sample_bad_readout	human	0.8253	proba	human	1

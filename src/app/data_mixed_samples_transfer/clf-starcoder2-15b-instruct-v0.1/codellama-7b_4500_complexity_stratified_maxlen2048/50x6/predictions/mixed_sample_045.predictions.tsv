@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	1	6	15	function_definition	disconnect	lm	-0.9493	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	2	18	28	function_definition	unhook	human	0.9029	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	3	31	48	function_definition	parse_schema_definition	human	1.4084	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	4	51	66	function_definition	stringpatterncounter	lm	-1.4807	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	5	69	72	function_definition	add_host	lm	-1.1274	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_045.py	6	75	95	function_definition	isiterable	human	0.66	decision	human	1

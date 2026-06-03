@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	1	6	44	function_definition	build_conda_packages	human	1.0	proba	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	2	47	61	function_definition	_get_countdown_for_next_slice	human	0.6682	proba	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	3	64	74	function_definition	add_include	lm	0.0338	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	4	77	88	function_definition	stepback	lm	0.0	proba	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	5	91	146	function_definition	_parse_udf_vol_descs	lm	0.0009	proba	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	6	149	155	function_definition	isfile_notempty	human	0.7892	proba	lm	0

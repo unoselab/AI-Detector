@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	1	6	15	function_definition	save_config	human	0.7332	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	2	18	25	function_definition	build_url_field	lm	-0.1026	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	3	28	40	function_definition	iter_range	lm	-0.7691	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	4	43	52	function_definition	find_parameter	lm	-1.4006	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	5	55	68	function_definition	poi_coords	human	0.6999	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_035.py	6	71	84	function_definition	post	lm	-0.1813	decision	lm	1

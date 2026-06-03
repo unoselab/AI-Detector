@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	1	6	12	function_definition	_generate_examples	lm	-1.9004	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	2	15	23	function_definition	appendChild	lm	-0.7553	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	3	26	30	function_definition	_config_section	lm	-0.6874	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	4	33	55	function_definition	find_by	human	0.2807	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	5	58	67	function_definition	recurse	lm	-2.5598	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_024.py	6	70	79	function_definition	consent	lm	-0.9346	decision	human	0

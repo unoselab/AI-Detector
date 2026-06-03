@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py	1	6	12	function_definition	config_profile_list	lm	-0.7088	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py	2	15	23	function_definition	_role_present	human	0.7922	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py	3	26	36	function_definition	_parametersAsIndex	human	0.113	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py	4	39	46	function_definition	l2norm_squared	lm	-0.1779	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py	5	49	74	function_definition	rotMatrix2AxisAndAngle	human	1.8551	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_036.py	6	77	93	function_definition	wallinterzone	lm	-0.3809	decision	lm	1

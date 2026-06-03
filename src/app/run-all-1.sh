@@ -111,14 +111,16 @@
 # ========================================
 # Step 7 - Cross-Generator Transfer Experiment
 #          Step 7 must run after Step 6 fully finishes.
+#          Compute P/R/F1 across 5 classifiers.
+# cd ~/project-workspace/ai_detector
+# for CLF in codellama-7b gemma gpt-oss starcoder2-15b-instruct-v0.1 starcoder2-7b; do
+#   python src/app/compute_agc_transfer.py \
+#     --transfer-root src/app/data_mixed_samples_transfer/clf-${CLF} \
+#     --clf-gen ${CLF} \
+#     --geometry 50x6 \
+#     --out-csv src/app/data_mixed_samples_transfer/clf-${CLF}/agc_transfer.csv
+# done
+# ========================================
+# Step 8 - 
 cd ~/project-workspace/ai_detector
-# Compute P/R/F1 across 5 classifiers.
-for CLF in codellama-7b gemma gpt-oss starcoder2-15b-instruct-v0.1 starcoder2-7b; do
-  python src/app/compute_agc_transfer.py \
-    --transfer-root src/app/data_mixed_samples_transfer/clf-${CLF} \
-    --clf-gen ${CLF} \
-    --geometry 50x6 \
-    --out-csv src/app/data_mixed_samples_transfer/clf-${CLF}/agc_transfer.csv
-done
-
-
+python src/app/plot_transfer_results_v2.py

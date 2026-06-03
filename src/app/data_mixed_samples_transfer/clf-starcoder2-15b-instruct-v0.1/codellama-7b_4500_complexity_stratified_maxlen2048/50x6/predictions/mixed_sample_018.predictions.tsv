@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	1	6	15	function_definition	appendChild	lm	-0.7179	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	2	18	23	function_definition	_get_contents	human	1.2182	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	3	26	33	function_definition	tarbell_list_templates	lm	-1.4998	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	4	36	67	function_definition	to_creator	lm	-0.725	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	5	70	75	function_definition	parse	lm	-1.4495	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_018.py	6	78	85	function_definition	_read_line	lm	-1.028	decision	human	0

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Cross-Generator Avg-F1 Transfer Matrix (diagonal = in-distribution; Transfer = off-diagonal mean)}
+\label{tab:cross_generator_avg_f1}
+\begin{tabular}{l|ccccc|c}
+\hline
+\textbf{Trained Classifier} & \textbf{StarCoder2-15B} & \textbf{StarCoder2-7B} & \textbf{CodeLlama-7B} & \textbf{Gemma} & \textbf{GPT-OSS} & \textbf{Transfer} \\ \hline
+StarCoder2-15B   & \textbf{0.7233} & 0.6850 & 0.6431 & 0.6095 & 0.6766 & 0.6535 \\
+StarCoder2-7B    & 0.6515 & \textbf{0.6665} & 0.7730 & 0.6310 & 0.6433 & 0.6747 \\
+CodeLlama-7B     & 0.6587 & 0.7654 & \textbf{0.6863} & 0.5874 & 0.6722 & 0.6709 \\
+Gemma            & 0.6687 & 0.5996 & 0.6463 & \textbf{0.6733} & 0.7164 & 0.6577 \\
+GPT-OSS          & 0.5556 & 0.4642 & 0.5586 & 0.5920 & \textbf{0.8033} & 0.5426 \\
+\hline
+\end{tabular}
+\end{table}

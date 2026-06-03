@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	1	6	18	function_definition	_sorted_nicely	human	0.2847	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	2	21	43	function_definition	solve_limited	human	1.6952	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	3	46	62	function_definition	parse_case_snake_to_camel	human	0.003	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	4	65	72	function_definition	console_check_for_keypress	human	1.0054	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	5	75	88	function_definition	export	lm	-1.6241	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_050.py	6	91	127	function_definition	_find_append_zero_crossings	human	1.1039	decision	human	1

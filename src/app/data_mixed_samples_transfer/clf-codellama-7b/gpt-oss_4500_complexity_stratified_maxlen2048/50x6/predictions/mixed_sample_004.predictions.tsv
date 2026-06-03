@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py	1	6	7	function_definition	assignees	lm	-4.152	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py	2	10	11	function_definition	logical_lines	lm	-4.0295	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py	3	14	66	function_definition	geodetic2ecef	lm	-1.2786	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py	4	69	80	function_definition	datetime2unix	human	1.01	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py	5	83	112	function_definition	unflatten2	human	0.9142	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_004.py	6	115	126	function_definition	EncryptPrivateKey	human	1.8322	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	1	6	9	function_definition	__erase_primes	lm	-1.1402	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	2	12	30	function_definition	load_containers	human	0.3437	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	3	33	44	function_definition	_process_response	human	0.9836	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	4	47	59	function_definition	interstore	human	0.0686	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	5	62	79	function_definition	init_vq_bottleneck	human	0.7327	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_017.py	6	82	96	function_definition	delete_trigger	human	1.6621	decision	human	1

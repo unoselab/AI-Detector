@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	1	6	14	function_definition	tempo_account_get_customer_by_id	human	1.3144	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	2	17	37	function_definition	validate_busy	human	1.6188	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	3	40	48	function_definition	_insert_or_replace_entity	lm	-2.1672	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	4	51	106	function_definition	BuildNanny	human	2.5276	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	5	109	113	function_definition	replace_command	human	1.0805	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	6	116	132	function_definition	parse_bookmark_data	human	0.1061	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	1	6	11	function_definition	add_function	lm	-0.8703	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	2	14	16	function_definition	release	lm	-0.9936	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	3	19	22	function_definition	wxRect_to_Rect	lm	-0.3905	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	4	25	44	function_definition	assign_variable_names	human	1.409	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	5	47	53	function_definition	changeTarget	human	0.1068	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_033.py	6	56	57	function_definition	imagetransformer_base_10l_16h_big_dr01_moe_imgnet	lm	-3.3751	decision	lm	1

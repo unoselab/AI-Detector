@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	1	6	55	function_definition	expected_information_gain	human	2.5657	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	2	58	68	function_definition	SequenceField	lm	-2.2575	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	3	71	81	function_definition	count_mismatches	human	0.7982	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	4	84	110	function_definition	Process	human	0.1413	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	5	113	136	function_definition	_read_dataset_metadata	human	0.6659	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	6	139	150	function_definition	parse	lm	-3.7129	decision	lm	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	1	6	18	function_definition	fetch_room_ids	lm	-0.1376	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	2	21	43	function_definition	phi	human	2.5411	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	3	46	59	function_definition	AvgPooling	human	1.0484	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	4	62	67	function_definition	render	human	0.6209	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	5	70	94	function_definition	upload_output_to_s3	human	1.5145	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_008.py	6	97	108	function_definition	interpolate_xml_array	lm	-1.1092	decision	lm	1

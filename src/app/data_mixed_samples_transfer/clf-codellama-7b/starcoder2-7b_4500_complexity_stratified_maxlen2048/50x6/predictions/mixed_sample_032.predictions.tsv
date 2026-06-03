@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	1	6	12	function_definition	generate	lm	-1.4921	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	2	15	40	function_definition	posterior_predictive_to_xarray	human	0.3393	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	3	43	57	function_definition	delete_interface_from_router	human	0.9998	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	4	60	62	function_definition	leading_whitespace_in_current_line	lm	-2.0588	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	5	65	76	function_definition	set_editor_cursor	human	1.0	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_032.py	6	79	95	function_definition	_returnPD	human	0.1654	decision	lm	0

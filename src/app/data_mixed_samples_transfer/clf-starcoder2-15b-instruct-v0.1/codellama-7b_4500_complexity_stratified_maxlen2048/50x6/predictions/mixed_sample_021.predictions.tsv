@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	1	6	16	function_definition	get	human	1.4346	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	2	19	29	function_definition	_read_line	lm	-0.9169	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	3	32	94	function_definition	handle	human	1.8136	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	4	97	116	function_definition	register_tc_plugins	human	1.6232	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	5	119	127	function_definition	update_auto_scroll_mode	lm	-0.5794	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_021.py	6	130	133	function_definition	commit	human	0.6137	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py	1	6	19	function_definition	_inject_language	human	0.8168	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py	2	22	29	function_definition	insights	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py	3	32	42	function_definition	respond	human	0.9997	proba	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py	4	45	48	function_definition	get_bool_attr	lm	0.0	proba	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py	5	51	70	function_definition	remove	human	0.9267	proba	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_022.py	6	73	81	function_definition	open_recruitment	lm	0.0013	proba	human	0

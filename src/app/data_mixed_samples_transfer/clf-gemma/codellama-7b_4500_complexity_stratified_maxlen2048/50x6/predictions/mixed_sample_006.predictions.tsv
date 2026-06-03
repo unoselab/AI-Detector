@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	1	6	10	function_definition	pubsub_channels	human	0.3514	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	2	13	54	function_definition	_apply_concretization_strategies	human	1.7255	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	3	57	76	function_definition	components	human	1.9916	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	4	79	92	function_definition	health_check	human	0.4378	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	5	95	111	function_definition	GET_namespace_num_names	human	0.6406	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_006.py	6	114	125	function_definition	delete_user	lm	-0.6783	decision	lm	1

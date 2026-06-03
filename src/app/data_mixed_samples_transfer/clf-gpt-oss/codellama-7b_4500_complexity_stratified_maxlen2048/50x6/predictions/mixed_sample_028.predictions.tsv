@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	1	6	16	function_definition	from_shapefile	human	1.7953	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	2	19	80	function_definition	accounts	lm	-1.4652	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	3	83	88	function_definition	newCharRef	human	2.5069	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	4	91	101	function_definition	_resize_blob	human	0.8101	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	5	104	111	function_definition	set_custom_value	lm	-1.1352	decision	lm	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_028.py	6	114	162	function_definition	predict_y	lm	-0.4182	decision	lm	1

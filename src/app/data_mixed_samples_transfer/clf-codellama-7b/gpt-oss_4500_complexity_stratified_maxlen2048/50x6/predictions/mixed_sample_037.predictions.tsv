@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	1	6	18	function_definition	get	human	2.1011	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	2	21	24	function_definition	create_ssh_config	lm	-1.9232	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	3	27	35	function_definition	probe_services	lm	-2.2914	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	4	38	49	function_definition	count	lm	-3.3547	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	5	52	85	function_definition	compare_bpdu_info	human	1.3016	decision	human	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_037.py	6	88	131	function_definition	_parse_hunk_line	human	0.2708	decision	human	1

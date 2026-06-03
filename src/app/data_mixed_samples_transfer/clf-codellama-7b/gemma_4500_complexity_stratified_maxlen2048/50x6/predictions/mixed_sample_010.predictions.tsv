@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	1	6	12	function_definition	setFontItalic	lm	-0.5311	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	2	15	21	function_definition	files_delete	lm	-0.4997	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	3	24	30	function_definition	sort_dicoms	human	0.6222	decision	lm	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	4	33	106	function_definition	main	human	2.227	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	5	109	125	function_definition	get_subsites	human	2.3939	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_010.py	6	128	141	function_definition	_close	human	0.3808	decision	human	1

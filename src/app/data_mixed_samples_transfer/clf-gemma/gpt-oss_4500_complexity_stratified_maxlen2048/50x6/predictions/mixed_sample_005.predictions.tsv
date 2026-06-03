@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	1	6	23	function_definition	start_editing	lm	-0.6164	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	2	26	44	function_definition	DFS	lm	-1.8304	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	3	47	64	function_definition	removeUrl	lm	-0.5887	decision	human	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	4	67	83	function_definition	resolve	human	1.2588	decision	lm	0
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	5	86	93	function_definition	_tls_auth_decrypt	lm	-2.4012	decision	lm	1
+src/app/data_mixed_samples/gpt-oss_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_005.py	6	96	110	function_definition	calc_deviation	human	1.2997	decision	human	1

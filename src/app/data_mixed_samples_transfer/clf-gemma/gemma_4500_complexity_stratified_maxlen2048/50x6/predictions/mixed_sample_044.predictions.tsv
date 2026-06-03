@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	1	6	12	function_definition	submit_form_action	human	1.1686	decision	human	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	2	15	22	function_definition	x509_rsa_load	lm	-2.2438	decision	human	0
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	3	25	35	function_definition	_build_projection_expression	lm	-0.9236	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	4	38	46	function_definition	on_send	lm	-1.4881	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	5	49	62	function_definition	stream_upload	lm	-1.1686	decision	lm	1
+src/app/data_mixed_samples/gemma_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_044.py	6	65	97	function_definition	write_out_page	human	1.9045	decision	human	1

@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	1	6	15	function_definition	add	lm	-0.4844	decision	human	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	2	18	34	function_definition	_convert_point	human	0.7819	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	3	37	40	function_definition	set_editor_cursor	human	0.2761	decision	lm	0
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	4	43	48	function_definition	discover_slave	lm	-0.3518	decision	lm	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	5	51	66	function_definition	pkcs_i2osp	human	2.4002	decision	human	1
+src/app/data_mixed_samples/starcoder2-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_020.py	6	69	102	function_definition	BuscarCertConSaldoDisponible	lm	-0.1598	decision	human	0

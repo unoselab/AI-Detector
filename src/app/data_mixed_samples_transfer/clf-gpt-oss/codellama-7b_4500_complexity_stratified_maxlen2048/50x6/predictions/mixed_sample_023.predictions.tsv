@@ -1,0 +1,7 @@
+file	block_idx	start_line	end_line	kind	name	pred_label	score	score_mode	truth_label	correct
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	1	6	35	function_definition	pdf_mmd	human	1.4185	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	2	38	52	function_definition	updateLodState	human	1.8643	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	3	55	66	function_definition	get_eol	lm	-0.2782	decision	human	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	4	69	78	function_definition	setModelData	human	0.9554	decision	human	1
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	5	81	104	function_definition	read_sj_out_tab	human	1.0919	decision	lm	0
+src/app/data_mixed_samples/codellama-7b_4500_complexity_stratified_maxlen2048/50x6/mixed_sample_023.py	6	107	109	function_definition	_RegisterFlowProcessingHandler	lm	-0.2431	decision	lm	1
