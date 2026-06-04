@@ -6,6 +6,16 @@
 # GEN_MODEL="gpt-oss" \
 # ./run0a-generate-llm-api.sh
 # ==============================================
+# Step 0a
+cd ~/project-workspace/ai_detector
+python src/code-generate-llm/generate-more.py \
+  src/code-analyzer-tree-sitter/data_codesearchnet/gpt-oss/validsyntax/codesearchnet_gpt-oss_python_merged_4500.csv \
+  4500 \
+  --codesearchnet-root data/CodeSearchNet \
+  --model-name gpt-oss \
+  --retry-forever
+
+# ==============================================
 # Step 1 
 # ---
 # cd ~/project-workspace/ai_detector/src
@@ -68,7 +78,7 @@
 # ==============================================
 # Step 6
 # ---
-cd ~/project-workspace/ai_detector/src
-MODEL_NAME="gpt-oss_4500_complexity_stratified_maxlen2048" \
-MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
-./run4a-train-classifiers-allmodels.sh
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="gpt-oss_4500_complexity_stratified_maxlen2048" \
+# MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
+# ./run4a-train-classifiers-allmodels.sh

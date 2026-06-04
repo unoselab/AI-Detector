@@ -290,10 +290,21 @@ def process_obj(obj: Dict[str, Any], line_no: int) -> ProcessedSample:
     clean_res = syntax_check(clean_mgc_code)
     hwc_res = syntax_check(hwc_code)
 
+
+    if hwc_res.ok and not has_non_empty_body_after_docstring(hwc_code):
+        hwc_res = SyntaxResult(False, "empty or docstring-only body")
+
+
     if clean_res.ok and not has_exactly_one_top_level_block(clean_mgc_code):
         clean_res = SyntaxResult(False, "wrong top-level block count")
+    elif clean_res.ok and not has_non_empty_body_after_docstring(clean_mgc_code):
+        clean_res = SyntaxResult(False, "empty or docstring-only body")
+
     if raw_res.ok and not has_exactly_one_top_level_block(raw_mgc_code):
         raw_res = SyntaxResult(False, "wrong top-level block count")
+    elif raw_res.ok and not has_non_empty_body_after_docstring(raw_mgc_code):
+        raw_res = SyntaxResult(False, "empty or docstring-only body")
+
 
     if raw_res.ok:
         status = "raw_valid"
@@ -430,6 +441,65 @@ def top_level_block_names(code: str) -> List[str]:
 
 def has_exactly_one_top_level_block(code: str) -> bool:
     return len(top_level_block_names(code)) == 1
+
+
+DEF_NODES = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+
+
+def is_docstring_stmt(stmt: ast.stmt) -> bool:
+    return (
+        isinstance(stmt, ast.Expr)
+        and isinstance(stmt.value, ast.Constant)
+        and isinstance(stmt.value.value, str)
+    )
+
+
+def has_non_empty_body_after_docstring(code: str, allow_pass: bool = False) -> bool:
+    """
+    Return True only if the single top-level function/class has real body
+    statements after removing the leading docstring.
+
+    If allow_pass=False, a body containing only `pass` is treated as empty.
+    """
+    tree = ast.parse(code)
+
+    blocks = [
+        node for node in tree.body
+        if isinstance(node, DEF_NODES)
+    ]
+
+    if len(blocks) != 1:
+        return False
+
+    body = list(blocks[0].body)
+
+    # Remove leading docstring.
+    if body and is_docstring_stmt(body[0]):
+        body = body[1:]
+
+    if not allow_pass:
+        body = [
+            stmt for stmt in body
+            if not isinstance(stmt, ast.Pass)
+        ]
+
+    return len(body) > 0
+
+
+
+def code_has_required_structure(code: str) -> Tuple[bool, str]:
+    """
+    Shared structural validation for AI-Detector paired code.
+
+    This assumes syntax_check(code) has already succeeded.
+    """
+    if not has_exactly_one_top_level_block(code):
+        return False, "wrong top-level block count"
+
+    if not has_non_empty_body_after_docstring(code):
+        return False, "empty or docstring-only body"
+
+    return True, ""
 
 
 def summarize(samples: List[ProcessedSample], json_errors: List[Tuple[int, str]]) -> None:
