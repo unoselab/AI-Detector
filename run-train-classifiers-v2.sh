@@ -7,13 +7,14 @@
 # ./run0a-generate-llm-api.sh
 # ==============================================
 # Step 0a
+# cd ~/project-workspace/ai_detector
+# MAX_API_CALLS=5 \
+# bash src/run0a-generate-llm-api-more.sh
+
+# ==============================================
+# Step 0c
 cd ~/project-workspace/ai_detector
-python src/code-generate-llm/generate-more.py \
-  src/code-analyzer-tree-sitter/data_codesearchnet/gpt-oss/validsyntax/codesearchnet_gpt-oss_python_merged_4500.csv \
-  4500 \
-  --codesearchnet-root data/CodeSearchNet \
-  --model-name gpt-oss \
-  --retry-forever
+bash src/run0a-generate-llm-api-more.sh
 
 # ==============================================
 # Step 1 
