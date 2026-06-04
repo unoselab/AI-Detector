@@ -69,9 +69,6 @@ MODEL_LABEL="${MODEL_LABEL//:/-}"
 TS="$(date +'%Y%m%d_%H%M%S')"
 
 LOG_FILE="${LOG_FILE:-logs/generate-more_${MODEL_LABEL}_target${TARGET_PAIRS}_${TS}.log}"
-log_ts() {
-  awk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0; fflush(); }' | tee -a "${LOG_FILE}"
-}
 
 # ---------------------------------------------------------------------
 # Checks
@@ -130,17 +127,17 @@ fi
   echo "  Log file:            ${LOG_FILE}"
   echo "======================================="
   echo ""
-} | log_ts
+} | tee "${LOG_FILE}"
 
-PYTHONUNBUFFERED=1 python -u src/code-generate-llm/generate-more.py \
+env PYTHONUNBUFFERED=1 python -u src/code-generate-llm/generate-more.py \
   "${EXISTING_CSV}" \
   "${TARGET_PAIRS}" \
   --codesearchnet-root "${CODESEARCHNET_ROOT}" \
   --model-name "${MODEL_NAME}" \
   "${EXTRA_ARGS[@]}" \
-  2>&1 | log_ts
+  2>&1 | tee -a "${LOG_FILE}"
 
 {
   echo "=== Finished generate-more.py ==="
   echo "Log file: ${LOG_FILE}"
-} | log_ts
+} | tee -a "${LOG_FILE}"

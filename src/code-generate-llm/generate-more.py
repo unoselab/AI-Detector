@@ -32,6 +32,7 @@ Example:
 from __future__ import annotations
 
 import argparse
+import builtins
 import hashlib
 import json
 import os
@@ -44,6 +45,14 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import pandas as pd
+
+
+def print(*args, **kwargs):
+    """Timestamped, always-flushed print for long-running tmux/log jobs."""
+    timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+    kwargs.setdefault("flush", True)
+    builtins.print(timestamp, *args, **kwargs)
+
 
 
 # ---------------------------------------------------------------------------
