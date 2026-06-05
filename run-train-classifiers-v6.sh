@@ -28,29 +28,30 @@
 # Step 1a
 # ---
 
-echo "=== codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv"
-python etc1/count_csv_lines.py \
-    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv
+# echo "=== codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv"
+# python etc1/count_csv_lines.py \
+#     src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv
 
-echo ""
+# echo ""
 
-echo "=== codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv"
-python etc1/count_csv_lines.py \
-    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
+# echo "=== codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv"
+# python etc1/count_csv_lines.py \
+#     src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
 
-echo ""
+# echo ""
 
-echo "=== COMPARE ======================="
-python etc1/compare_cvs_files.py \
-    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv \
-    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
+# echo "=== COMPARE ======================="
+# python etc1/compare_cvs_files.py \
+#     src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv \
+#     src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
 
-echo ""
+# echo ""
+cd ~/project-workspace/ai_detector/src
+# DRY_RUN=1 \
 
-
-# cd ~/project-workspace/ai_detector/src
-# bash run0a-generate-more.sh
-
+GEN_MODEL=codellama-7b \
+GEN_MODEL_HF=codellama/CodeLlama-7b-hf \
+bash run0a-generate-more.sh
 
 
 # ==========================================
