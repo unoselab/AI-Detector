@@ -371,7 +371,7 @@ def main() -> int:
         return 2
 
     print("=" * 72)
-    print("generate-more-local.py")
+    print("generate-more.py")
     print("=" * 72)
     print(f"existing_csv : {existing_csv}")
     print(f"train_jsonl  : {train_jsonl}")

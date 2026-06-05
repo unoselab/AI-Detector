@@ -71,7 +71,7 @@ if [[ "${DRY_RUN}" == "1" ]]; then
   DRY_RUN_FLAG="--dry-run"
 fi
 
-python src/code-generate-llm/generate_more.py \
+python src/code_generation/generate_more.py \
     "${CSV_PATH}" \
     "${TARGET_PAIRS}" \
     --codesearchnet-root "${CSN_ROOT}" \
