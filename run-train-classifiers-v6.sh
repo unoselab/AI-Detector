@@ -1,3 +1,6 @@
+# ==========================================
+# CODELLAMA-7B
+# ==========================================
 # Step 0
 # ---
 ## conda activate aidetector-gen
@@ -24,8 +27,32 @@
 # ==========================================
 # Step 1a
 # ---
+
+echo "=== codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv"
+python etc1/count_csv_lines.py \
+    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv
+
+echo ""
+
+echo "=== codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv"
+python etc1/count_csv_lines.py \
+    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
+
+echo ""
+
+echo "=== COMPARE ======================="
+python etc1/compare_cvs_files.py \
+    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv \
+    src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
+
+echo ""
+
+
 # cd ~/project-workspace/ai_detector/src
 # bash run0a-generate-more.sh
+
+
+
 # ==========================================
 # Step 2: checking validity
 # ---
@@ -78,6 +105,6 @@
 # ==============================================
 # Step 7: training
 # ---
-cd ~/project-workspace/ai_detector/src
-MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
-bash run4a-train-classifiers-allmodels.sh
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
+# bash run4a-train-classifiers-allmodels.sh
