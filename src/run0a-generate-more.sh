@@ -35,8 +35,8 @@ CSN_ROOT="${CSN_ROOT:-data/CodeSearchNet}"
 LANGUAGE="${LANGUAGE:-python}"
 
 # Existing paired CSV to revalidate + extend (empty-body pairs get replaced).
-# CSV_ROOT="src/code-analyzer-tree-sitter/data_codesearchnet/${GEN_MODEL}/validsyntax_4500_complexity"
-CSV_ROOT="src/code-analyzer-tree-sitter/data_codesearchnet/${GEN_MODEL}/validsyntax"
+CSV_ROOT="src/code-analyzer-tree-sitter/data_codesearchnet/${GEN_MODEL}/validsyntax_4500_complexity"
+# CSV_ROOT="src/code-analyzer-tree-sitter/data_codesearchnet/${GEN_MODEL}/validsyntax"
 CSV_PATH="${CSV_PATH:-${CSV_ROOT}/codesearchnet_${GEN_MODEL}_python_merged_4500.csv}"
 
 # Pass DRY_RUN=1 to plan only (no model load / no write).
@@ -55,6 +55,7 @@ echo "  Temperature:       ${GEN_TEMPERATURE}   top_p: ${GEN_TOP_P}"
 echo "  Max length:        ${GEN_MAX_LENGTH}   max_length_sample: ${GEN_MAX_LENGTH_SAMPLE}"
 echo "  Dry run:           ${DRY_RUN}"
 echo "  Log file:          ${LOG_FILE}"
+echo "  CUDA devices:      cuda:${CUDA_VISIBLE_DEVICES}"
 echo "==============================================="
 echo ""
 

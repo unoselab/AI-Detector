@@ -11,14 +11,26 @@
 # ==========================================
 # Step 0 - extra generation
 # ---
+# python etc1/count_csv_lines.py \
+# /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax/codesearchnet_starcoder2-15b-instruct-v0.1_python_merged.csv
+
+# python etc1/count_csv_lines.py \
+# /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax_4500_complexity/codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_4500.csv
+
+# python etc1/compare_cvs_files.py \
+# /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax/codesearchnet_starcoder2-15b-instruct-v0.1_python_merged.csv \
+# /home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/starcoder2-15b-instruct-v0.1/validsyntax_4500_complexity/codesearchnet_starcoder2-15b-instruct-v0.1_python_merged_4500.csv
+
+cd ~/project-workspace/ai_detector/src
+
 DRY_RUN=1 \
 CUDA_VISIBLE_DEVICES="1" \
-GEN_MODEL="starcoder2-15b" \
-GEN_MODEL_HF="bigcode/starcoder2-15b" \
+GEN_MODEL="starcoder2-15b-instruct-v0.1" \
+GEN_MODEL_HF="bigcode/starcoder2-15b-instruct-v0.1" \
 bash run0a-generate-more.sh
 # cd ~/project-workspace/ai_detector/src
 # bash run0a-generate-more.sh
-
+# ==========================================
 
 # Step 1
 # ---
