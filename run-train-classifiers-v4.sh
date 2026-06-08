@@ -19,6 +19,11 @@
 # GEN_BATCH_SIZE=1 \
 # bash run0a-generate.sh
 # ==========================================
+# Step 0a
+cd ~/project-workspace/ai_detector
+DRY_RUN=1 bash src/run0a-generate-llm-api-more-gemma.sh
+
+# ==========================================
 # Step 1
 # ---
 ## conda activate aidetector
@@ -76,10 +81,10 @@
 # ==============================================
 # Step 6
 # ---
-cd ~/project-workspace/ai_detector/src
-MODEL_NAME="gemma_4500_complexity_stratified_maxlen2048" \
-MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
-./run4a-train-classifiers-allmodels.sh
+# cd ~/project-workspace/ai_detector/src
+# MODEL_NAME="gemma_4500_complexity_stratified_maxlen2048" \
+# MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
+# ./run4a-train-classifiers-allmodels.sh
 # cd ~/project-workspace/ai_detector/src 
 # MODEL_NAME="starcoder2-7b_4500_complexity_stratified_maxlen2048" \
 # MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
