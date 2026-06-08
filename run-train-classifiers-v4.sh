@@ -24,7 +24,8 @@
 # DRY_RUN=1 bash src/run0a-generate-llm-api-more-gemma.sh
 
 cd ~/project-workspace/ai_detector
-DRY_RUN=0 MAX_API_CALLS=5 bash src/run0a-generate-llm-api-more-gemma.sh
+unset MAX_API_CALLS
+DRY_RUN=0 bash src/run0a-generate-llm-api-more-gemma.sh
 
 # ==========================================
 # Step 1

@@ -63,7 +63,8 @@ DATA_ROOT="${DATA_ROOT:-src/code-analyzer-tree-sitter/data_codesearchnet}"
 DATA_MODEL_DIR="${DATA_MODEL_DIR:-gemma}"
 CSV_MODEL_PREFIX="${CSV_MODEL_PREFIX:-gemma}"
 DATA_DIR="${DATA_DIR:-${DATA_ROOT}/${DATA_MODEL_DIR}}"
-OUT_DIR="${OUT_DIR:-${DATA_DIR}/validsyntax}"
+COMPLEXITY_DIR_NAME="${COMPLEXITY_DIR_NAME:-validsyntax_4500_complexity}"
+OUT_DIR="${OUT_DIR:-${DATA_DIR}/${COMPLEXITY_DIR_NAME}}"
 
 # Default input is the existing Gemma 4500-pair CSV. Override EXISTING_CSV
 # if you want to seed from another baseline, for example:
