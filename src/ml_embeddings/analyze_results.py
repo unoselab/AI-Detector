@@ -78,7 +78,7 @@ DISPLAY_METRIC = {
 }
 
 # Number of decimals used in the LaTeX cells.
-LATEX_DECIMALS = 3
+LATEX_DECIMALS = 5
 
 
 def parse_family(run_tag):
