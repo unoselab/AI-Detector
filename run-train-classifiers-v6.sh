@@ -111,13 +111,11 @@
 # ==============================================
 # Step 8: re-testing
 # ---
-cd ~/project-workspace/ai_detector/src 
-MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
-bash run5b-test-classifiers-allmodels.sh
-
-
+# cd ~/project-workspace/ai_detector/src 
+# MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
+# bash run5b-test-classifiers-allmodels.sh
 # ==============================================
-# Step 8: re-testing
+# Step 9: analyze results
 # ---
 cd ~/project-workspace/ai_detector/src 
 MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
