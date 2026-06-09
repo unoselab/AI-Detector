@@ -7,7 +7,8 @@ set -o pipefail
 # =============================================================================
 # Aggregate the per-sample prediction CSVs that run5b produced into ONE tidy
 # metrics CSV across all classifier families, recomputing ACC/TPR/TNR/F1s/
-# Avg_F1/AUROC straight from the stored columns (no model is re-run).
+# Avg_F1/AUROC straight from the stored columns (no model is re-run), and
+# ALSO emit a paper-ready LaTeX table.
 #
 # It clones run4a/run5b's directory layout (SCRIPT_DIR / REPO_ROOT /
 # TARGET_DIR=ml_embeddings, relative data paths, logs under REPO_ROOT/src/logs)
@@ -17,7 +18,8 @@ set -o pipefail
 #   ./run6-analyze-results-testedclassifiers.sh
 #   MODEL_NAME=codellama-7b_4500_complexity_stratified_maxlen2048 \
 #       ./run6-analyze-results-testedclassifiers.sh
-#   PREDICTIONS_ROOT=... OUT_CSV=... ./run6-analyze-results-testedclassifiers.sh
+#   LATEX_METRICS="avg_f1,auroc" ./run6-analyze-results-testedclassifiers.sh
+#   NO_LATEX=1 ./run6-analyze-results-testedclassifiers.sh    # CSV only
 # =============================================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -36,8 +38,18 @@ PREDICTIONS_ROOT="${PREDICTIONS_ROOT:-data_codesearchnet/predictions/${MODEL_NAM
 ANALYSIS_DIR="${ANALYSIS_DIR:-data_codesearchnet/analysis/${MODEL_NAME}}"
 
 TS="$(date +'%Y%m%d_%H%M%S')"
-# Final tidy metrics table. Override OUT_CSV to place it elsewhere.
+# Final tidy metrics table + LaTeX table. Override either to relocate.
 OUT_CSV="${OUT_CSV:-${ANALYSIS_DIR}/metrics_allmodels_${MODEL_NAME}_${TS}.csv}"
+LATEX_OUT="${LATEX_OUT:-${ANALYSIS_DIR}/metrics_table_${MODEL_NAME}_${TS}.tex}"
+
+# LaTeX controls.
+#   LATEX_METRICS : comma-separated metrics per embedding column group
+#   LATEX_CAPTION : caption text (model name is folded in by default)
+#   LATEX_LABEL   : \label for the table
+#   NO_LATEX=1     : skip the LaTeX table (CSV only)
+LATEX_METRICS="${LATEX_METRICS:-avg_f1,auroc}"
+LATEX_CAPTION="${LATEX_CAPTION:-Detection metrics by classifier and embedding type for ${MODEL_NAME}.}"
+LATEX_LABEL="${LATEX_LABEL:-tab:rq2d_${MODEL_NAME}}"
 
 LOGDIR="src/logs/rq2d_analyze_codesearchnet_${MODEL_NAME}_${TS}"
 LOG="${LOGDIR}/analyze_${TS}.log"
@@ -53,6 +65,9 @@ echo "   model name      : ${MODEL_NAME}"
 echo "   predictions root: ${PREDICTIONS_ROOT}"
 echo "   analysis dir    : ${ANALYSIS_DIR}"
 echo "   out csv         : ${OUT_CSV}"
+echo "   latex out       : ${LATEX_OUT}"
+echo "   latex metrics   : ${LATEX_METRICS}"
+echo "   no latex        : ${NO_LATEX:-0}"
 echo "   log             : ${LOG}"
 echo "============================================================"
 
@@ -71,19 +86,30 @@ fi
 
 mkdir -p "${ANALYSIS_DIR}"
 
+# Assemble the optional LaTeX arguments unless NO_LATEX is set.
+LATEX_ARGS=()
+if [ "${NO_LATEX:-0}" != "1" ]; then
+  LATEX_ARGS=(--latex-out "${LATEX_OUT}"
+              --latex-metrics "${LATEX_METRICS}"
+              --latex-caption "${LATEX_CAPTION}"
+              --latex-label   "${LATEX_LABEL}")
+fi
+
 # Run the aggregator; tee its full output (table + ranking) to the log.
 {
   echo "============================================================"
   echo " run6 analyze"
   echo "   predictions root: ${PREDICTIONS_ROOT}"
   echo "   out csv         : ${OUT_CSV}"
+  echo "   latex out       : ${LATEX_OUT}"
   echo "   started         : $(date -Is)"
   echo "============================================================"
   echo
 
   "${PYTHON}" analyze_results.py \
     --predictions-root "${PREDICTIONS_ROOT}" \
-    --out-csv          "${OUT_CSV}"
+    --out-csv          "${OUT_CSV}" \
+    "${LATEX_ARGS[@]}"
 
   echo
   echo "   finished        : $(date -Is)"
@@ -101,5 +127,8 @@ cd "${REPO_ROOT}" || exit 1
 echo "============================================================"
 echo "All done"
 echo "Metrics CSV: ${TARGET_DIR}/${OUT_CSV}"
+if [ "${NO_LATEX:-0}" != "1" ]; then
+  echo "LaTeX table: ${TARGET_DIR}/${LATEX_OUT}"
+fi
 echo "Log        : ${LOG}"
 echo "============================================================"

@@ -3,7 +3,8 @@ analyze_results.py
 ==================
 
 Aggregate the per-sample prediction CSVs written by test_embedding.py (via
-run5b) into ONE tidy metrics table across all classifier families.
+run5b) into ONE tidy metrics table across all classifier families, and
+optionally emit a paper-ready LaTeX table.
 
 It does NOT re-run any model. It reads each prediction CSV and RECOMPUTES the
 seven metrics directly from the stored columns, so the result is fully
@@ -21,10 +22,13 @@ Each CSV has columns:
 
 Output
 ------
-* --out-csv : tidy long table, one row per (family, dataset, emb):
+* --out-csv    : tidy long table, one row per (family, dataset, emb):
       run_tag, family, dataset, emb, n_test,
       acc, tpr, tnr, human_f1, ai_f1, avg_f1, auroc, score_mode
-* Stdout    : the table sorted by AUROC, plus a per-family mean-AUROC ranking.
+* --latex-out  : (optional) a booktabs LaTeX table, families x embedding-type,
+      with the chosen metrics per embedding and the best value per column
+      bolded. Rows are ordered by mean AUROC (best first).
+* Stdout       : the table sorted by AUROC, plus a per-family mean-AUROC rank.
 
 Convention: label 1 == human (positive class), label 0 == AI -- identical to
 test_embedding.py, so these numbers match the logged ones.
@@ -33,7 +37,9 @@ Usage
 -----
   python analyze_results.py \
       --predictions-root data_codesearchnet/predictions/<MODEL_NAME> \
-      --out-csv          data_codesearchnet/analysis/<MODEL_NAME>/metrics.csv
+      --out-csv          data_codesearchnet/analysis/<MODEL_NAME>/metrics.csv \
+      --latex-out        data_codesearchnet/analysis/<MODEL_NAME>/metrics.tex \
+      --latex-metrics    avg_f1,auroc
 """
 
 import argparse
@@ -52,8 +58,27 @@ NEEDED_COLS = ["actual label", "pred", "score", "score_mode"]
 # A RUN_TAG ends with <family>_<YYYYMMDD>_<HHMMSS>; this captures the family.
 FAMILY_RE = re.compile(r"_([A-Za-z0-9]+)_\d{8}_\d{6}$")
 
-# Canonical emb display order for the printed summary.
+# Canonical emb display order for the printed/LaTeX summaries.
 EMB_ORDER = ["ast", "combined", "code"]
+
+# Metrics that may legally be requested in the LaTeX table.
+ALLOWED_METRICS = ["acc", "tpr", "tnr", "human_f1", "ai_f1", "avg_f1", "auroc"]
+
+# Display labels for the LaTeX table (underscores already TeX-escaped).
+DISPLAY_FAMILY = {
+    "lr": "LR", "svm": "SVM", "mlp": "MLP", "rf": "RF", "gb": "GB",
+    "knn": "KNN", "dt": "DT", "et": "ET", "ada": "AdaBoost",
+    "hgb": "HGB", "xgb": "XGBoost",
+}
+DISPLAY_EMB = {"ast": "AST", "combined": "Combined", "code": "Code"}
+DISPLAY_METRIC = {
+    "acc": "ACC", "tpr": "TPR", "tnr": "TNR",
+    "human_f1": "Human\\_F1", "ai_f1": "AI\\_F1",
+    "avg_f1": "Avg\\_F1", "auroc": "AUROC",
+}
+
+# Number of decimals used in the LaTeX cells.
+LATEX_DECIMALS = 3
 
 
 def parse_family(run_tag):
@@ -96,8 +121,8 @@ def metrics_from_frame(df):
       * only one class present in the truth       -> ROC undefined.
 
     Returns a dict of {n_test, acc, tpr, tnr, human_f1, ai_f1, avg_f1, auroc,
-    score_mode}. score_mode is taken from the first row (it is constant within
-    a file) for transparency about how AUROC was scored.
+    score_mode}. score_mode is taken from the first row (constant within a
+    file) for transparency about how AUROC was scored.
     """
     y_true = df["actual label"].to_numpy()
     y_pred = df["pred"].to_numpy()
@@ -177,8 +202,127 @@ def collect_rows(predictions_root):
     return rows
 
 
+def _tex_escape_caption(text):
+    """
+    Minimal TeX-escaping for caption text.
+
+    The model name carries underscores that would otherwise be interpreted as
+    subscripts in LaTeX; escape them. (Labels keep underscores, which are legal
+    inside \\label, so they are handled separately by the caller.)
+    """
+    return text.replace("\\", r"\textbackslash{}").replace("_", r"\_")
+
+
+def _fmt_tex(v):
+    """Format a metric value for a LaTeX cell; NaN -> en-dash placeholder."""
+    if v is None or (isinstance(v, float) and np.isnan(v)):
+        return "--"
+    return f"{v:.{LATEX_DECIMALS}f}"
+
+
+def build_latex_table(df, metrics, caption, label):
+    """
+    Build a booktabs LaTeX table: rows = classifier family, columns grouped by
+    embedding type, with the requested `metrics` under each group.
+
+    Aggregation: values are the MEAN of each metric over all (dataset, run_tag)
+    rows for a given (family, emb). With a single dataset and one run per
+    family this mean is just the value itself; with several it collapses them
+    sensibly so the table stays families x embeddings.
+
+    Layout details:
+      * Families are ordered by mean AUROC (best first), matching the stdout
+        ranking.
+      * The best value in each (embedding, metric) column is bolded.
+      * NaN cells render as "--".
+    Requires booktabs (\\toprule/\\midrule/\\bottomrule/\\cmidrule) in the
+    document preamble. Returns the full table as a string.
+    """
+    # Work on a copy with emb as plain strings (avoids categorical surprises).
+    d = df.copy()
+    d["emb"] = d["emb"].astype(str)
+
+    # Embedding columns actually present, in canonical order.
+    present = set(d["emb"])
+    embs = [e for e in EMB_ORDER if e in present]
+
+    # Row order: families by mean AUROC, descending.
+    order = (d.groupby("family")["auroc"].mean()
+               .sort_values(ascending=False).index.tolist())
+
+    # One families x embeddings pivot per requested metric (mean-aggregated).
+    pivots = {}
+    for mt in metrics:
+        p = d.groupby(["family", "emb"])[mt].mean().unstack("emb")
+        pivots[mt] = p.reindex(index=order, columns=embs)
+
+    # Per-column maxima for bolding (NaN-safe).
+    col_max = {}
+    for e in embs:
+        for mt in metrics:
+            col = pivots[mt][e]
+            col_max[(e, mt)] = (np.nanmax(col.to_numpy())
+                                if col.notna().any() else float("nan"))
+
+    nmet = len(metrics)
+
+    # tabular column spec: a left-aligned label column, then nmet centered
+    # columns per embedding group.
+    spec = "l" + "".join(" " + "c" * nmet for _ in embs)
+
+    lines = []
+    lines.append(r"\begin{table}[t]")
+    lines.append(r"\centering")
+    lines.append(r"\caption{" + _tex_escape_caption(caption) + "}")
+    lines.append(r"\label{" + label + "}")
+    lines.append(r"\begin{tabular}{" + spec + "}")
+    lines.append(r"\toprule")
+
+    # Top header: one multicolumn per embedding group.
+    top = [""]
+    for e in embs:
+        top.append(r"\multicolumn{%d}{c}{%s}" % (nmet, DISPLAY_EMB.get(e, e.title())))
+    lines.append(" & ".join(top) + r" \\")
+
+    # cmidrules underlining each embedding group.
+    cmid, start = [], 2
+    for _ in embs:
+        end = start + nmet - 1
+        cmid.append(r"\cmidrule(lr){%d-%d}" % (start, end))
+        start = end + 1
+    lines.append("".join(cmid))
+
+    # Sub header: the metric names repeated under each group.
+    sub = ["Classifier"]
+    for _ in embs:
+        for mt in metrics:
+            sub.append(DISPLAY_METRIC.get(mt, mt))
+    lines.append(" & ".join(sub) + r" \\")
+    lines.append(r"\midrule")
+
+    # Body rows.
+    for fam in order:
+        cells = [DISPLAY_FAMILY.get(fam, fam.upper())]
+        for e in embs:
+            for mt in metrics:
+                v = pivots[mt].loc[fam, e]
+                s = _fmt_tex(v)
+                mx = col_max[(e, mt)]
+                # Bold the column-best value (NaN-safe, float-tolerant).
+                if (not (isinstance(v, float) and np.isnan(v))
+                        and not np.isnan(mx) and np.isclose(v, mx)):
+                    s = r"\textbf{" + s + "}"
+                cells.append(s)
+        lines.append(" & ".join(cells) + r" \\")
+
+    lines.append(r"\bottomrule")
+    lines.append(r"\end{tabular}")
+    lines.append(r"\end{table}")
+    return "\n".join(lines) + "\n"
+
+
 def parse_args():
-    """Parse CLI arguments (predictions root + output CSV path)."""
+    """Parse CLI arguments (inputs, CSV output, and optional LaTeX output)."""
     ap = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -187,13 +331,22 @@ def parse_args():
                     help="Root dir holding per-RUN_TAG prediction subdirs.")
     ap.add_argument("--out-csv", required=True,
                     help="Where to write the tidy metrics table.")
+    ap.add_argument("--latex-out", default=None,
+                    help="Optional path to also write a LaTeX table.")
+    ap.add_argument("--latex-metrics", default="avg_f1,auroc",
+                    help="Comma-separated metrics per embedding in the LaTeX "
+                         "table (subset of: " + ",".join(ALLOWED_METRICS) + ").")
+    ap.add_argument("--latex-caption", default="Detection metrics by classifier and embedding type.",
+                    help="Caption text for the LaTeX table.")
+    ap.add_argument("--latex-label", default="tab:rq2d_metrics",
+                    help="\\label for the LaTeX table.")
     return ap.parse_args()
 
 
 def main():
     """
-    Build the tidy metrics table, write it to --out-csv, and print two views:
-    the full table sorted by AUROC, and a per-family mean-AUROC ranking.
+    Build the tidy metrics table, write it to --out-csv, optionally write a
+    LaTeX table, and print the AUROC-sorted table plus a per-family ranking.
     """
     args = parse_args()
 
@@ -215,11 +368,24 @@ def main():
     df.to_csv(args.out_csv, index=False)
     print(f"Wrote {len(df)} rows -> {args.out_csv}\n")
 
+    # --- Optional LaTeX table ----------------------------------------------
+    if args.latex_out:
+        # Validate and order the requested metrics against the allow-list.
+        requested = [m.strip() for m in args.latex_metrics.split(",") if m.strip()]
+        bad = [m for m in requested if m not in ALLOWED_METRICS]
+        if bad:
+            raise SystemExit(f"[ERROR] unknown --latex-metrics: {bad}; "
+                             f"choose from {ALLOWED_METRICS}")
+        tex = build_latex_table(df, requested, args.latex_caption, args.latex_label)
+        os.makedirs(os.path.dirname(args.latex_out) or ".", exist_ok=True)
+        with open(args.latex_out, "w") as f:
+            f.write(tex)
+        print(f"Wrote LaTeX table ({','.join(requested)}) -> {args.latex_out}\n")
+
     # --- View 1: full table, sorted by emb then AUROC (best first) ----------
     print("=" * 78)
     print("Per (family, emb) metrics  [sorted by emb, then AUROC desc]")
     print("=" * 78)
-    # Categorical emb order so ast/combined/code print in a sensible order.
     df["emb"] = pd.Categorical(df["emb"], categories=EMB_ORDER, ordered=True)
     view = df.sort_values(["emb", "auroc"], ascending=[True, False])
     for _, r in view.iterrows():
@@ -232,8 +398,7 @@ def main():
     print("=" * 78)
     print("Per-family mean AUROC (averaged over embedding types)  [best first]")
     print("=" * 78)
-    # nanmean so a family with one undefined fold is not dropped entirely.
-    by_family = (df.groupby("family")["auroc"]
+    by_family = (df.groupby("family", observed=True)["auroc"]
                    .agg(lambda s: np.nanmean(s.to_numpy()))
                    .sort_values(ascending=False))
     for fam, val in by_family.items():
