@@ -93,4 +93,15 @@ DRY_RUN=0 bash src/run0a-generate-llm-api-more-gemma.sh
 # MODEL_NAME="starcoder2-7b_4500_complexity_stratified_maxlen2048" \
 # MODELS="lr svm mlp rf gb knn dt et ada hgb xgb" \
 # ./run4a-train-classifiers-allmodels.sh
-#
+# ==============================================
+# Step 7: re-testing
+# ---
+cd ~/project-workspace/ai_detector/src 
+MODEL_NAME="gemma_4500_complexity_stratified_maxlen2048" \
+bash run5b-test-classifiers-allmodels.sh
+# ==============================================
+# Step 8: analyze results
+# ---
+cd ~/project-workspace/ai_detector/src 
+MODEL_NAME="gemma_4500_complexity_stratified_maxlen2048" \
+bash run6-analyze-results-testedclassifiers.sh
