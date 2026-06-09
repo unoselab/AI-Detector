@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Detection metrics by classifier and embedding type for gpt-oss\_4500\_complexity\_stratified\_maxlen2048.}
+\label{tab:rq2d_gpt-oss_4500_complexity_stratified_maxlen2048}
+\begin{tabular}{l cc cc cc}
+\toprule
+ & \multicolumn{2}{c}{AST} & \multicolumn{2}{c}{Combined} & \multicolumn{2}{c}{Code} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Classifier & Avg\_F1 & AUROC & Avg\_F1 & AUROC & Avg\_F1 & AUROC \\
+\midrule
+MLP & 0.80887 & \textbf{0.88370} & 0.76554 & \textbf{0.85519} & 0.76216 & \textbf{0.83918} \\
+SVM & \textbf{0.80996} & 0.88339 & \textbf{0.77221} & 0.85047 & \textbf{0.76666} & 0.83743 \\
+LR & 0.77217 & 0.85882 & 0.74771 & 0.83116 & 0.75548 & 0.83255 \\
+HGB & 0.73221 & 0.82314 & 0.70994 & 0.78405 & 0.70442 & 0.76156 \\
+XGBoost & 0.71889 & 0.81843 & 0.71544 & 0.79062 & 0.69104 & 0.75383 \\
+GB & 0.73333 & 0.81642 & 0.70100 & 0.77646 & 0.67435 & 0.74968 \\
+AdaBoost & 0.70655 & 0.80009 & 0.67997 & 0.74641 & 0.68108 & 0.73345 \\
+ET & 0.70842 & 0.79060 & 0.67762 & 0.74720 & 0.66111 & 0.72835 \\
+RF & 0.70642 & 0.79211 & 0.67095 & 0.74980 & 0.65392 & 0.71345 \\
+KNN & 0.69231 & 0.76410 & 0.63740 & 0.73059 & 0.58794 & 0.67987 \\
+DT & 0.60737 & 0.59618 & 0.55369 & 0.55040 & 0.56441 & 0.57108 \\
+\bottomrule
+\end{tabular}
+\end{table}

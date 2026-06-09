@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Detection metrics by classifier and embedding type for codellama-7b\_4500\_complexity\_stratified\_maxlen2048.}
+\label{tab:rq2d_codellama-7b_4500_complexity_stratified_maxlen2048}
+\begin{tabular}{l cc cc cc}
+\toprule
+ & \multicolumn{2}{c}{AST} & \multicolumn{2}{c}{Combined} & \multicolumn{2}{c}{Code} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Classifier & Avg\_F1 & AUROC & Avg\_F1 & AUROC & Avg\_F1 & AUROC \\
+\midrule
+SVM & \textbf{0.71771} & \textbf{0.79503} & \textbf{0.70221} & 0.76909 & 0.68426 & 0.75027 \\
+LR & 0.69444 & 0.78166 & 0.69667 & \textbf{0.76915} & \textbf{0.69211} & \textbf{0.76294} \\
+MLP & 0.69753 & 0.77743 & 0.67000 & 0.74926 & 0.68322 & 0.74269 \\
+XGBoost & 0.67555 & 0.74001 & 0.64655 & 0.71254 & 0.64211 & 0.69116 \\
+HGB & 0.66332 & 0.73002 & 0.63883 & 0.71090 & 0.63108 & 0.67874 \\
+AdaBoost & 0.67098 & 0.72361 & 0.64556 & 0.70163 & 0.62323 & 0.68290 \\
+GB & 0.66552 & 0.72783 & 0.64218 & 0.69697 & 0.63093 & 0.67666 \\
+ET & 0.66328 & 0.72828 & 0.63771 & 0.69312 & 0.60742 & 0.66893 \\
+RF & 0.65203 & 0.71987 & 0.63444 & 0.69151 & 0.60322 & 0.65616 \\
+KNN & 0.60889 & 0.66505 & 0.55060 & 0.65111 & 0.55237 & 0.61811 \\
+DT & 0.54737 & 0.54640 & 0.55307 & 0.56797 & 0.53428 & 0.53444 \\
+\bottomrule
+\end{tabular}
+\end{table}

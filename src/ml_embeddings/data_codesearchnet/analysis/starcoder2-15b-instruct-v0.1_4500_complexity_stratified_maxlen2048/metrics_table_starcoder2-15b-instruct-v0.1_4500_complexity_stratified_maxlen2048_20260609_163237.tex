@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Detection metrics by classifier and embedding type for starcoder2-15b-instruct-v0.1\_4500\_complexity\_stratified\_maxlen2048.}
+\label{tab:rq2d_starcoder2-15b-instruct-v0.1_4500_complexity_stratified_maxlen2048}
+\begin{tabular}{l cc cc cc}
+\toprule
+ & \multicolumn{2}{c}{AST} & \multicolumn{2}{c}{Combined} & \multicolumn{2}{c}{Code} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Classifier & Avg\_F1 & AUROC & Avg\_F1 & AUROC & Avg\_F1 & AUROC \\
+\midrule
+SVM & \textbf{0.70208} & \textbf{0.76656} & \textbf{0.69996} & \textbf{0.75912} & \textbf{0.68854} & 0.74417 \\
+LR & 0.69099 & 0.76318 & 0.67984 & 0.74663 & 0.66060 & \textbf{0.74951} \\
+MLP & 0.67739 & 0.74950 & 0.67255 & 0.73168 & 0.67348 & 0.72509 \\
+HGB & 0.64984 & 0.70878 & 0.61650 & 0.68728 & 0.63212 & 0.68095 \\
+XGBoost & 0.64770 & 0.70984 & 0.62094 & 0.68064 & 0.62889 & 0.67356 \\
+AdaBoost & 0.63869 & 0.70692 & 0.63220 & 0.68296 & 0.62222 & 0.67019 \\
+GB & 0.64807 & 0.70330 & 0.62449 & 0.68352 & 0.61111 & 0.66442 \\
+ET & 0.64524 & 0.69930 & 0.63303 & 0.68022 & 0.61220 & 0.65721 \\
+RF & 0.63504 & 0.70239 & 0.61727 & 0.66776 & 0.60810 & 0.66303 \\
+KNN & 0.59111 & 0.63986 & 0.56048 & 0.61083 & 0.54731 & 0.60033 \\
+DT & 0.57279 & 0.58912 & 0.56173 & 0.55253 & 0.53753 & 0.54367 \\
+\bottomrule
+\end{tabular}
+\end{table}
