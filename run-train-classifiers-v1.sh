@@ -23,7 +23,7 @@
 
 cd ~/project-workspace/ai_detector/src
 
-DRY_RUN=1 \
+# DRY_RUN=1 \
 CUDA_VISIBLE_DEVICES="1" \
 GEN_MODEL="starcoder2-15b-instruct-v0.1" \
 GEN_MODEL_HF="bigcode/starcoder2-15b-instruct-v0.1" \

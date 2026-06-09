@@ -252,6 +252,27 @@ def load_local_model(model_name: str):
 
     device = gen.device  # reuse the same device object generate.py uses
 
+    
+    print(f"[CUDA] CUDA_VISIBLE_DEVICES={os.environ.get('CUDA_VISIBLE_DEVICES')}")
+    print(f"[CUDA] gen.device={device}")
+
+    if torch.cuda.is_available():
+        print(f"[CUDA] torch.cuda.device_count()={torch.cuda.device_count()}")
+        current_idx = torch.cuda.current_device()
+        print(f"[CUDA] torch.cuda.current_device()={current_idx}")
+        for i in range(torch.cuda.device_count()):
+            props = torch.cuda.get_device_properties(i)
+            allocated = torch.cuda.memory_allocated(i) / 1024**3
+            reserved = torch.cuda.memory_reserved(i) / 1024**3
+            print(
+                f"[CUDA] logical cuda:{i} -> {props.name}, "
+                f"total={props.total_memory / 1024**3:.1f} GiB, "
+                f"allocated={allocated:.2f} GiB, reserved={reserved:.2f} GiB"
+            )
+    else:
+        print("[CUDA] torch.cuda.is_available()=False")
+
+
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -261,6 +282,10 @@ def load_local_model(model_name: str):
     model = AutoModelForCausalLM.from_pretrained(
         model_name, trust_remote_code=True, torch_dtype=torch.float16,
     ).to(device)
+
+
+    print(f"[CUDA] model first parameter device={next(model.parameters()).device}")
+
 
     def_id = tokenizer("def", add_special_tokens=False).input_ids[0]
     try:
