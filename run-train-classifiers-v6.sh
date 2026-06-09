@@ -46,13 +46,12 @@
 #     src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv
 
 # echo ""
-cd ~/project-workspace/ai_detector/src
+# cd ~/project-workspace/ai_detector/src
 # DRY_RUN=1 \
 
-GEN_MODEL=codellama-7b \
-GEN_MODEL_HF=codellama/CodeLlama-7b-hf \
-bash run0a-generate-more.sh
-
+# GEN_MODEL=codellama-7b \
+# GEN_MODEL_HF=codellama/CodeLlama-7b-hf \
+# bash run0a-generate-more.sh
 
 # ==========================================
 # Step 2: checking validity
@@ -109,3 +108,18 @@ bash run0a-generate-more.sh
 # cd ~/project-workspace/ai_detector/src
 # MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
 # bash run4a-train-classifiers-allmodels.sh
+# ==============================================
+# Step 8: re-testing
+# ---
+cd ~/project-workspace/ai_detector/src 
+MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
+bash run5b-test-classifiers-allmodels.sh
+
+
+# ==============================================
+# Step 8: re-testing
+# ---
+cd ~/project-workspace/ai_detector/src 
+MODEL_NAME="codellama-7b_4500_complexity_stratified_maxlen2048" \
+bash run6-analyze-results-testedclassifiers.sh
+
