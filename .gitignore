@@ -158,3 +158,4 @@ data*/
 .pkl
 .vscode
 *.class
+.xrun.sh
