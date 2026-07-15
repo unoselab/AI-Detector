@@ -1,11 +1,11 @@
-python - <<'PY'
-import pandas as pd
+echo
+echo "============== [ Current working directory ] =============="
+pwd
 
-path = "src/code-analyzer-tree-sitter/data_codesearchnet/gemma/validsyntax_4500_complexity/codesearchnet_gemma_python_merged_4500.csv"
-df = pd.read_csv(path)
+echo
+echo "============== [ Files in current directory ] =============="
+ls -1 .
 
-print("rows:", len(df))
-print("pairs:", len(df) // 2)
-print(df["label"].value_counts())
-print("odd rows?", len(df) % 2)
-PY
+echo
+echo "============== [ src directory structure, excluding logs ] =============="
+tree --noreport -I 'logs' src
