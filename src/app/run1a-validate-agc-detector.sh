@@ -14,7 +14,7 @@ set -euo pipefail
 # 
 # Usage:
 # cd ~/project-workspace/ai_detector
-# bash src/app/run1a-validate-agc-detector.sh > ./logs/run1a-validate-agc-detector-<TIME>.log
+# bash src/app/run1a-validate-agc-detector.sh 
 # =============================================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
