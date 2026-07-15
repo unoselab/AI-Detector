@@ -332,7 +332,8 @@ def parse_args() -> argparse.Namespace:
         "--max-commits",
         type=int,
         default=None,
-        help="Optional pilot limit after deterministic commit sorting.",
+        help="Optional pilot limit after deterministic commit sorting; use 0 or -1 for all commits.",
+
     )
     parser.add_argument(
         "--max-files-per-commit",
@@ -465,8 +466,12 @@ def validate_args(args: argparse.Namespace) -> None:
         if not args.skip_repo_month_panel:
             require_path(args.repo_month_manifest, "file")
 
-    if args.max_commits is not None and args.max_commits <= 0:
-        raise SystemExit("[ERROR] --max-commits must be positive")
+    if args.max_commits in {0, -1}:
+        args.max_commits = None
+    elif args.max_commits is not None and args.max_commits < -1:
+        raise SystemExit(
+            "[ERROR] --max-commits must be positive, 0, or -1"
+        )
     if args.max_files_per_commit is not None and args.max_files_per_commit <= 0:
         raise SystemExit("[ERROR] --max-files-per-commit must be positive")
 
