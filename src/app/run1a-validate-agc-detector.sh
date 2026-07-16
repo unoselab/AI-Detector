@@ -22,7 +22,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 cd "${REPO_ROOT}"
 
 PYTHON_BIN="${PYTHON_BIN:-python}"
-PY_SCRIPT="src/app/analyze_did_python_snapshots.py"
+PY_SCRIPT="src/app/py/analyze_did_python_snapshots.py"
 PROFILE="${1:-${VALIDATION_PROFILE:-svm_ast}}"
 
 case "${PROFILE}" in

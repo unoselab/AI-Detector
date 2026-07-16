@@ -35,7 +35,7 @@ provided.
 
 Validation
 ----------
-python src/app/analyze_did_python_snapshots-v2.py \
+python src/app/py/analyze_did_python_snapshots-v2.py \
   --experiment gpt-oss_4500_complexity_stratified_maxlen2048 \
   --classifier mlp \
   --representation ast \
@@ -74,8 +74,18 @@ from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
-# The script lives beside agc_detector.py, so this import works when the file is
-# executed as `python src/app/analyze_did_python_snapshots.py`.
+# This script lives in src/app/py, while agc_detector.py remains in src/app.
+# Add src/app explicitly so the validated detector module can be imported
+# without moving it or changing its existing dependencies.
+SCRIPT_PATH = Path(__file__).resolve()
+SCRIPT_DIR = SCRIPT_PATH.parent
+APP_DIR = SCRIPT_PATH.parents[1]
+REPO_ROOT = SCRIPT_PATH.parents[3]
+WORKSPACE_ROOT = REPO_ROOT.parent
+
+if str(APP_DIR) not in sys.path:
+    sys.path.insert(0, str(APP_DIR))
+
 import agc_detector as agc_detector_module  # type: ignore
 
 from agc_detector import (  # type: ignore
@@ -88,11 +98,10 @@ from agc_detector import (  # type: ignore
     predict_one,
 )
 
-
-SCRIPT_PATH = Path(__file__).resolve()
-SCRIPT_DIR = SCRIPT_PATH.parent
-REPO_ROOT = SCRIPT_DIR.parent.parent
-WORKSPACE_ROOT = REPO_ROOT.parent
+# SCRIPT_PATH = Path(__file__).resolve()
+# SCRIPT_DIR = SCRIPT_PATH.parent
+# REPO_ROOT = SCRIPT_DIR.parent.parent
+# WORKSPACE_ROOT = REPO_ROOT.parent
 
 DEFAULT_EXPERIMENT = "codellama-7b_4500_complexity_stratified_maxlen2048"
 DEFAULT_CLASSIFIER = "svm"
