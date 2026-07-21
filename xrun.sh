@@ -1,35 +1,61 @@
-CSV_FILE="/home/user1-system12/project-workspace/ai_code_complexity_study_python/python_snapshots_detect/codellama-7b_4500_complexity_stratified_maxlen2048_svm_ast/strict/block_predictions_treatment.csv"
+python - <<'PY'
+import pandas as pd
 
-python - "$CSV_FILE" <<'PY'
-import csv
-import sys
-from collections import Counter
+base = pd.read_csv(
+    "../ai_code_complexity_study_python/ai-code-complexity-study/"
+    "repo_python/run-py-5a-py312/strict/repo_month_function_event_counts.csv"
+)
+detector = pd.read_csv(
+    "../ai_code_complexity_study_python/python_commit_function_detect/"
+    "codellama-7b_4500_complexity_stratified_maxlen2048_svm_ast/strict/"
+    "py312-full-450548-fresh/repo_month_function_event_summary_all.csv"
+)
 
-csv_file = sys.argv[1]
-counts = Counter()
-total = 0
+panel = base[["dataset_source", "repo_name", "time"]].merge(
+    detector[[
+        "dataset_source", "repo_name", "time",
+        "function_change_events_scored",
+        "function_change_events_failed",
+        "agc_function_change_events",
+        "hwc_function_change_events",
+        "added_agc_function_events",
+        "added_hwc_function_events",
+        "modified_agc_function_events",
+        "modified_hwc_function_events",
+    ]],
+    on=["dataset_source", "repo_name", "time"],
+    how="left",
+)
 
-with open(csv_file, "r", encoding="utf-8", newline="") as handle:
-    reader = csv.DictReader(handle)
+count_cols = [
+    "function_change_events_scored",
+    "function_change_events_failed",
+    "agc_function_change_events",
+    "hwc_function_change_events",
+    "added_agc_function_events",
+    "added_hwc_function_events",
+    "modified_agc_function_events",
+    "modified_hwc_function_events",
+]
+panel[count_cols] = panel[count_cols].fillna(0).astype(int)
 
-    if "block_kind" not in (reader.fieldnames or []):
-        raise SystemExit("ERROR: column 'block_kind' was not found.")
+# Zero-event repository-months get an explicitly missing (NA) ratio, not 0/0,
+# consistent with how agc_top_level_block_ratio was handled in run-py-3b.
+panel["agc_function_change_event_ratio"] = (
+    panel["agc_function_change_events"] / panel["function_change_events_scored"]
+).where(panel["function_change_events_scored"] > 0)
 
-    for row in reader:
-        value = (row.get("block_kind") or "").strip()
-        counts[value if value else "(missing)"] += 1
-        total += 1
+assert len(panel) == 1633, f"expected 1633 rows, got {len(panel)}"
+assert panel[["dataset_source", "repo_name", "time"]].duplicated().sum() == 0
+assert (panel["function_change_events_scored"] == 0).sum() == 344
+assert panel["agc_function_change_event_ratio"].isna().sum() == 344
 
-print(f"Total data rows: {total:,}")
-print()
-print(f"{'block_kind':35s} {'count':>12s} {'percent':>10s}")
-print("-" * 61)
-
-for value, count in counts.most_common():
-    percent = count / total * 100 if total else 0
-    print(f"{value:35s} {count:12,d} {percent:9.2f}%")
-
-print("-" * 61)
-print(f"{'TOTAL':35s} {total:12,d} {100.00:9.2f}%")
+panel.to_csv("repo_month_function_event_panel_full_py312.csv", index=False)
+print("OK:", len(panel), "rows,", panel["agc_function_change_event_ratio"].notna().sum(), "with non-missing ratio")
 PY
 
+
+(aidetector) OISSE-IST173C01:ai_detector$ 
+(aidetector) OISSE-IST173C01:ai_detector$ ./xrun.sh 
+OK: 1633 rows, 1289 with non-missing ratio
+(aidetector) OISSE-IST173C01:ai_detector$ 
