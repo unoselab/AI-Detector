@@ -159,3 +159,5 @@ data*/
 .vscode
 *.class
 .xrun.sh
+*.gz
+xrun.sh
