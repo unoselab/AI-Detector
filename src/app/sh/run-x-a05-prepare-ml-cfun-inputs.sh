@@ -1,85 +1,73 @@
 #!/usr/bin/env bash
-# Prepare frozen historical C_FUN occurrences for the existing ML AGC detector.
+# Residual diagnostics and safe repair for run-x-a05 C_FUN ML input preparation.
 #
 # Workspace:
 #   /home/user1-system12/project-workspace/ai_detector
 #
 # Delivery source names:
-#   src/app/sh/run-x-a05-prepare-ml-cfun-inputs-v2.sh
-#   src/app/py/prepare_ml_cfun_inputs-v1.py
+#   src/app/sh/run-x-a05-prepare-ml-cfun-inputs-v3.sh
+#   src/app/py/prepare_ml_cfun_inputs-v3.py
 #
-# Canonical production deployment names:
+# Canonical deployment names:
 #   src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
 #   src/app/py/prepare_ml_cfun_inputs.py
 #
+# This wrapper is standalone. It reuses the validated run-x-a05-v2 logic by
+# source adaptation, but it does not call any older shell wrapper or Python
+# program.
+#
 # Frozen upstream inputs:
-#   1. A01 ML detector freeze:
+#   1. Failed v2 A05 output with exactly 946 residual mapping failures:
+#        src/app/data_did_agc_analysis/run-x-a05
+#   2. A01 frozen ML detector provenance:
 #        src/app/data_did_agc_analysis/run-x-a01
-#   2. detect_code_gpt NPR A05 historical Python preparation:
+#   3. detect_code_gpt NPR A05 historical source manifest/status:
 #        ../detect_code_gpt/output/snapshot_npr/run-x-a05
-#   3. detect_code_gpt NPR A13 C_FUN membership audit:
+#   4. detect_code_gpt NPR A13 C_FUN membership audit:
 #        ../detect_code_gpt/output/snapshot_npr/run-x-a13/summary.json
 #
-# Scientific purpose:
-#   - Reuse the exact A05 historical repository/snapshot/Python-file universe.
-#   - Select only A05 primary method_body occurrences (C_FUN).
-#   - Reverify the historical file SHA-256, method-body SHA-256, and frozen
-#     literal-space-token count before constructing an ML detector input.
-#   - Reconstruct a detector-native standalone method source from the matching
-#     direct class method, including decorators when present.
-#   - Validate that the existing frozen Tree-sitter/AST detector pipeline sees
-#     exactly one full-source function_definition with the expected method name.
-#   - Deduplicate standalone method sources by ml_source_sha256 for A06 scoring.
+# Frozen residual-failure provenance from run-x-a05-v2:
+#   total residual failures:                 946
+#   ml_source_indentation:                   862
+#   tree_sitter_occurrence_map:               84
 #
-# Frozen full-corpus gates:
-#   C_FUN occurrences:             1,677,916
-#   Unique C_FUN body SHA values:    195,193
-#   Snapshot/files with C_FUN:        196,190
-#   NPR A05 code manifest SHA256:
-#     1acb3726f5c62e6154672f1aff592973c65a13e58dbfd37f8058560d1a474e6c
+# v3 recovery policy:
+#   - For the 862 indentation failures, remove the exact enclosing-class
+#     indentation prefix only from structural source lines. Multiline-string
+#     continuation rows keep their literal leading whitespace.
+#   - For the 84 full-file Tree-sitter mapping failures, use the independently
+#     verified A05 method body as the anchor, search a bounded local region for
+#     the nearest same-name def/async def header, and accept recovery only when
+#     the reconstructed standalone source is exactly one detector-visible
+#     function block with the expected name and a non-empty AST sequence.
 #
 # Modes:
-#   MODE=smoke
-#     Scan the complete frozen C_FUN universe and map SMOKE_MAX_OCCURRENCES
-#     deterministic positions spread across that order into run-x-a05-smoke.
-#     Use this first to validate method-source reconstruction across the corpus.
+#   MODE=diagnose
+#     Reprocess only the 946 v2 residual failures. Write recovered rows and
+#     diagnostics to run-x-a05-v3-diagnose. Do not modify the failed v2 output.
 #
-#   MODE=full
-#     Prepare all 1,677,916 C_FUN occurrences into canonical run-x-a05.
-#     Full mode enables strict frozen-count gates.
+#   MODE=repair
+#     Requires diagnose PASS with 946/946 recovered. Merge the v2 successful
+#     1,676,970 rows plus 946 v3 recovered rows in the frozen NPR A05 order.
+#     Build a self-contained repaired artifact root using hardlinks by default.
+#     Output goes to run-x-a05-v3-repaired; the failed v2 root is not modified.
 #
 #   MODE=verify
-#     Read-only verification of the completed canonical run-x-a05 output.
-#
-# Outputs for MODE=full:
-#   src/app/data_did_agc_analysis/run-x-a05/
-#     python_ml_cfun_occurrence_manifest.csv
-#     python_ml_cfun_unique_source_manifest.csv
-#     python_ml_cfun_mapping_failures.csv
-#     ml_cfun_sources/<sha-prefix>/<sha256>.py
-#     checks.csv
-#     summary.json
-#     metadata.json
+#     Read-only verification of run-x-a05-v3-repaired.
 #
 # This experiment does NOT:
-#   - retrain or tune the frozen SVM,
-#   - load CodeT5+ or run classifier inference,
-#   - change the A01 decision boundary,
-#   - change the A05 method-body identity or size weights,
-#   - access SonarQube quality outcomes,
-#   - estimate a DiD model.
+#   - rerun the 1.68M full mapping in diagnose mode,
+#   - retrain or tune the ML detector,
+#   - load CodeT5+ or run SVM inference,
+#   - change C_FUN membership, method-body SHA, or size weights,
+#   - access SonarQube outcomes,
+#   - estimate DiD models.
 #
-# Typical first run:
-#   MODE=smoke OVERWRITE=1 \
-#     bash src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
-#
-# Full production after smoke review:
-#   MODE=full OVERWRITE=1 \
-#     bash src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
-#
-# Read-only verification:
-#   MODE=verify \
-#     bash src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
+# Typical sequence:
+#   MODE=diagnose OVERWRITE=1 bash src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
+#   # Review diagnosis first.
+#   MODE=repair OVERWRITE=1 bash src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
+#   MODE=verify bash src/app/sh/run-x-a05-prepare-ml-cfun-inputs.sh
 
 set -euo pipefail
 
@@ -87,49 +75,49 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
 cd "${REPO_ROOT}"
 
-RUN_ID="run-x-a05-v2"
-MODE="${MODE:-smoke}"
+RUN_ID="run-x-a05-v3"
+MODE="${MODE:-diagnose}"
 PYTHON_BIN="${PYTHON_BIN:-python}"
 PY_SCRIPT="${PY_SCRIPT:-src/app/py/prepare_ml_cfun_inputs.py}"
 A01_ROOT="${A01_ROOT:-src/app/data_did_agc_analysis/run-x-a01}"
+V2_ROOT="${V2_ROOT:-src/app/data_did_agc_analysis/run-x-a05}"
+DIAGNOSE_ROOT="${DIAGNOSE_ROOT:-src/app/data_did_agc_analysis/run-x-a05-v3-diagnose}"
+REPAIR_ROOT="${REPAIR_ROOT:-src/app/data_did_agc_analysis/run-x-a05-v3-repaired}"
 TREE_SITTER_LIB="${TREE_SITTER_LIB:-src/code-analyzer-tree-sitter/build/my-languages.so}"
 AST_HELPER_DIR="${AST_HELPER_DIR:-src/code-analyzer-tree-sitter}"
-
 EXPECTED_CFUN_OCCURRENCES="${EXPECTED_CFUN_OCCURRENCES:-1677916}"
 EXPECTED_UNIQUE_CFUN_BODY_SHA="${EXPECTED_UNIQUE_CFUN_BODY_SHA:-195193}"
 EXPECTED_FILES_WITH_CFUN="${EXPECTED_FILES_WITH_CFUN:-196190}"
 EXPECTED_A05_MANIFEST_SHA256="${EXPECTED_A05_MANIFEST_SHA256:-1acb3726f5c62e6154672f1aff592973c65a13e58dbfd37f8058560d1a474e6c}"
-SMOKE_MAX_OCCURRENCES="${SMOKE_MAX_OCCURRENCES:-1000}"
+EXPECTED_V2_FAILURES="${EXPECTED_V2_FAILURES:-946}"
+EXPECTED_V2_INDENTATION_FAILURES="${EXPECTED_V2_INDENTATION_FAILURES:-862}"
+EXPECTED_V2_OCCURRENCE_FAILURES="${EXPECTED_V2_OCCURRENCE_FAILURES:-84}"
 MAX_OPEN_GIT_PROCESSES="${MAX_OPEN_GIT_PROCESSES:-4}"
-PROGRESS_EVERY="${PROGRESS_EVERY:-10000}"
 OVERWRITE="${OVERWRITE:-0}"
+ALLOW_COPY_FALLBACK="${ALLOW_COPY_FALLBACK:-0}"
 CLONE_PATH_PREFIX_FROM="${CLONE_PATH_PREFIX_FROM:-}"
 CLONE_PATH_PREFIX_TO="${CLONE_PATH_PREFIX_TO:-}"
 
 case "${MODE}" in
-  smoke)
-    OUTPUT_ROOT="${OUTPUT_ROOT:-src/app/data_did_agc_analysis/run-x-a05-smoke}"
-    MAX_OCCURRENCES="${SMOKE_MAX_OCCURRENCES}"
-    STRICT_EXPECTED_COUNTS=0
+  diagnose)
+    OUTPUT_ROOT="${OUTPUT_ROOT:-${DIAGNOSE_ROOT}}"
+    PROGRESS_EVERY="${PROGRESS_EVERY:-100}"
     ;;
-  full)
-    OUTPUT_ROOT="${OUTPUT_ROOT:-src/app/data_did_agc_analysis/run-x-a05}"
-    MAX_OCCURRENCES=0
-    STRICT_EXPECTED_COUNTS=1
+  repair)
+    OUTPUT_ROOT="${OUTPUT_ROOT:-${REPAIR_ROOT}}"
+    PROGRESS_EVERY="${PROGRESS_EVERY:-10000}"
     ;;
   verify)
-    OUTPUT_ROOT="${OUTPUT_ROOT:-src/app/data_did_agc_analysis/run-x-a05}"
-    MAX_OCCURRENCES=0
-    STRICT_EXPECTED_COUNTS=1
+    OUTPUT_ROOT="${OUTPUT_ROOT:-${REPAIR_ROOT}}"
+    PROGRESS_EVERY="${PROGRESS_EVERY:-10000}"
     ;;
   *)
-    echo "[ERROR] unsupported MODE=${MODE}; expected smoke, full, or verify" >&2
+    echo "[ERROR] unsupported MODE=${MODE}; expected diagnose, repair, or verify" >&2
     exit 2
     ;;
 esac
 
-# Locate the frozen detect_code_gpt NPR A05 and A13 artifacts without depending
-# on another wrapper script. Explicit environment variables always win.
+# Locate frozen detect_code_gpt inputs without calling any legacy wrapper.
 NPR_A05_ROOT="${NPR_A05_ROOT:-}"
 if [[ -z "${NPR_A05_ROOT}" ]]; then
   A05_CANDIDATES=(
@@ -160,16 +148,8 @@ if [[ -z "${NPR_A13_ROOT}" ]]; then
   done
 fi
 
-if [[ -z "${NPR_A05_ROOT}" ]]; then
-  echo "[ERROR] could not locate detect_code_gpt NPR run-x-a05." >&2
-  echo "        Set NPR_A05_ROOT to the directory containing:" >&2
-  echo "          snapshot_status.csv" >&2
-  echo "          python_code_unit_manifest.csv" >&2
-  exit 2
-fi
-if [[ -z "${NPR_A13_ROOT}" ]]; then
-  echo "[ERROR] could not locate detect_code_gpt NPR run-x-a13." >&2
-  echo "        Set NPR_A13_ROOT to the directory containing summary.json." >&2
+if [[ -z "${NPR_A05_ROOT}" || -z "${NPR_A13_ROOT}" ]]; then
+  echo "[ERROR] could not locate frozen detect_code_gpt A05/A13 inputs." >&2
   exit 2
 fi
 A13_SUMMARY_FILE="${A13_SUMMARY_FILE:-${NPR_A13_ROOT}/summary.json}"
@@ -196,25 +176,25 @@ sha256_of() {
   sha256sum "$1" | awk '{print $1}'
 }
 
-csv_records() {
-  "${PYTHON_BIN}" - "$1" <<'PY'
-import csv
-import sys
-with open(sys.argv[1], "r", encoding="utf-8", newline="") as handle:
-    print(sum(1 for _ in csv.DictReader(handle)))
-PY
-}
-
-require_file "${PY_SCRIPT}" "run-x-a05 Python program"
+require_file "${PY_SCRIPT}" "run-x-a05-v3 Python program"
 require_file "${A01_ROOT}/detector_freeze_summary.json" "A01 freeze summary"
 require_file "${A01_ROOT}/detector_freeze_metadata.json" "A01 freeze metadata"
 require_file "${NPR_A05_ROOT}/snapshot_status.csv" "NPR A05 snapshot status"
 require_file "${NPR_A05_ROOT}/python_code_unit_manifest.csv" "NPR A05 code-unit manifest"
-require_file "${A13_SUMMARY_FILE}" "NPR A13 C_FUN summary"
+require_file "${A13_SUMMARY_FILE}" "NPR A13 summary"
+require_dir "${V2_ROOT}" "failed run-x-a05-v2 root"
+require_file "${V2_ROOT}/summary.json" "failed v2 summary"
+require_file "${V2_ROOT}/python_ml_cfun_mapping_failures.csv" "failed v2 residual mapping CSV"
 
-if [[ "${MODE}" != "verify" ]]; then
+if [[ "${MODE}" == "diagnose" ]]; then
   require_file "${TREE_SITTER_LIB}" "Tree-sitter language library"
   require_dir "${AST_HELPER_DIR}" "Tree-sitter AST helper directory"
+elif [[ "${MODE}" == "repair" ]]; then
+  require_file "${DIAGNOSE_ROOT}/summary.json" "v3 diagnose summary"
+  require_file "${DIAGNOSE_ROOT}/python_ml_cfun_recovered_occurrences.csv" "v3 recovered occurrence rows"
+  require_file "${DIAGNOSE_ROOT}/python_ml_cfun_recovery_failures.csv" "v3 remaining recovery failures"
+  require_file "${V2_ROOT}/python_ml_cfun_occurrence_manifest.csv" "v2 successful occurrence manifest"
+  require_file "${V2_ROOT}/python_ml_cfun_unique_source_manifest.csv" "v2 unique-source manifest"
 fi
 
 if [[ -n "${CLONE_PATH_PREFIX_FROM}" || -n "${CLONE_PATH_PREFIX_TO}" ]]; then
@@ -224,15 +204,9 @@ if [[ -n "${CLONE_PATH_PREFIX_FROM}" || -n "${CLONE_PATH_PREFIX_TO}" ]]; then
   fi
 fi
 
-if [[ "${MODE}" != "verify" && -e "${OUTPUT_ROOT}" && "${OVERWRITE}" != "1" ]]; then
-  echo "[ERROR] output already exists: ${OUTPUT_ROOT}" >&2
-  echo "        Use OVERWRITE=1 for an intentional clean rerun." >&2
-  exit 2
-fi
-
 RUN_TS="${RUN_TS:-$(date +'%Y%m%d-%H%M%S')}"
 LOG_DIR="${LOG_DIR:-src/logs/run-x-a05}"
-LOG_FILE="${LOG_FILE:-${LOG_DIR}/run-x-a05-v2-${MODE}-prepare-ml-cfun-inputs-${RUN_TS}.log}"
+LOG_FILE="${LOG_FILE:-${LOG_DIR}/run-x-a05-v3-${MODE}-${RUN_TS}.log}"
 mkdir -p "${LOG_DIR}"
 exec > >(tee -a "${LOG_FILE}") 2>&1
 
@@ -250,56 +224,52 @@ STARTED_AT="$(date)"
 
 cat <<INFO
 ============================================================================
-${RUN_ID}: prepare frozen C_FUN sources for ML detector inference
+${RUN_ID}: residual diagnostics/repair for C_FUN ML source preparation
 Mode:                            ${MODE}
 Started:                         ${STARTED_AT}
 Project root:                    ${REPO_ROOT}
 Python:                          $(${PYTHON_BIN} -c 'import sys; print(sys.executable + " (" + sys.version.split()[0] + ")")')
 Python script:                   ${PY_SCRIPT}
 Python script SHA256:            $(sha256_of "${PY_SCRIPT}")
-A01 freeze root:                 ${A01_ROOT}
-A01 summary SHA256:              $(sha256_of "${A01_ROOT}/detector_freeze_summary.json")
+Failed v2 root:                 ${V2_ROOT}
+Diagnose root:                   ${DIAGNOSE_ROOT}
+Repair root:                     ${REPAIR_ROOT}
 NPR A05 root:                    ${NPR_A05_ROOT}
-A05 manifest SHA256:             $(sha256_of "${NPR_A05_ROOT}/python_code_unit_manifest.csv")
-Expected A05 manifest SHA256:    ${EXPECTED_A05_MANIFEST_SHA256}
-NPR A13 root:                    ${NPR_A13_ROOT}
-A13 summary SHA256:              $(sha256_of "${A13_SUMMARY_FILE}")
-C_FUN filter:                    aggregation_role=primary; code_unit_type=method_body
-Expected C_FUN occurrences:      ${EXPECTED_CFUN_OCCURRENCES}
+NPR A13 summary:                 ${A13_SUMMARY_FILE}
+Expected residual failures:      ${EXPECTED_V2_FAILURES}
+  ml_source_indentation:         ${EXPECTED_V2_INDENTATION_FAILURES}
+  tree_sitter_occurrence_map:    ${EXPECTED_V2_OCCURRENCE_FAILURES}
+Expected full C_FUN occurrences: ${EXPECTED_CFUN_OCCURRENCES}
 Expected unique C_FUN body SHA:  ${EXPECTED_UNIQUE_CFUN_BODY_SHA}
 Expected files with C_FUN:       ${EXPECTED_FILES_WITH_CFUN}
-Current max occurrences:         ${MAX_OCCURRENCES}
-Smoke selection:                 deterministic spread over full C_FUN order
-Standalone normalization:        physical-line start -> dedent; decorator/def column-0 gate
-Tree-sitter library:             ${TREE_SITTER_LIB}
-Max open Git batch processes:    ${MAX_OPEN_GIT_PROCESSES}
-Clone path prefix from:          ${CLONE_PATH_PREFIX_FROM:-<none>}
-Clone path prefix to:            ${CLONE_PATH_PREFIX_TO:-<none>}
-Progress every:                  ${PROGRESS_EVERY}
 Output root:                     ${OUTPUT_ROOT}
-Standalone source root:          ${OUTPUT_ROOT}/ml_cfun_sources
 CodeT5+ embedding:               disabled; deferred to A06
 SVM inference:                   disabled; deferred to A06
-File aggregation:                disabled; deferred to A07
 SonarQube/DiD outcome access:    disabled
 Log file:                        ${LOG_FILE}
 ============================================================================
 INFO
 
 echo
-echo "** Step 1: Run A05 structural self-test"
+echo "** Step 1: Run A05-v3 structural self-test"
 echo "----------------------------------------------------------------------------"
-"${PYTHON_BIN}" "${PY_SCRIPT}" --self-test
+"${PYTHON_BIN}" "${PY_SCRIPT}" --self-test --output-root "${OUTPUT_ROOT}" --npr-a05-root "${NPR_A05_ROOT}" --a13-summary-file "${A13_SUMMARY_FILE}"
 
 echo
-echo "** Step 2: Compile A05 Python program"
+echo "** Step 2: Compile A05-v3 Python program"
 echo "----------------------------------------------------------------------------"
 "${PYTHON_BIN}" -m py_compile "${PY_SCRIPT}"
 
-COMMON_ARGS=(
+echo
+echo "** Step 3: ${MODE} residual C_FUN ML source mappings"
+echo "----------------------------------------------------------------------------"
+
+ARGS=(
   --mode "${MODE}"
   --repo-root "${REPO_ROOT}"
   --a01-root "${A01_ROOT}"
+  --v2-root "${V2_ROOT}"
+  --diagnose-root "${DIAGNOSE_ROOT}"
   --npr-a05-root "${NPR_A05_ROOT}"
   --a13-summary-file "${A13_SUMMARY_FILE}"
   --output-root "${OUTPUT_ROOT}"
@@ -309,79 +279,27 @@ COMMON_ARGS=(
   --expected-unique-body-sha "${EXPECTED_UNIQUE_CFUN_BODY_SHA}"
   --expected-files-with-cfun "${EXPECTED_FILES_WITH_CFUN}"
   --expected-a05-manifest-sha256 "${EXPECTED_A05_MANIFEST_SHA256}"
-  --max-occurrences "${MAX_OCCURRENCES}"
+  --expected-v2-failures "${EXPECTED_V2_FAILURES}"
+  --expected-v2-indentation-failures "${EXPECTED_V2_INDENTATION_FAILURES}"
+  --expected-v2-occurrence-failures "${EXPECTED_V2_OCCURRENCE_FAILURES}"
   --max-open-git-processes "${MAX_OPEN_GIT_PROCESSES}"
   --progress-every "${PROGRESS_EVERY}"
+  --clone-path-prefix-from "${CLONE_PATH_PREFIX_FROM}"
+  --clone-path-prefix-to "${CLONE_PATH_PREFIX_TO}"
 )
 
-if [[ "${STRICT_EXPECTED_COUNTS}" == "1" ]]; then
-  COMMON_ARGS+=(--strict-expected-counts)
+if [[ "${OVERWRITE}" == "1" ]]; then
+  ARGS+=(--overwrite)
 fi
-if [[ "${OVERWRITE}" == "1" && "${MODE}" != "verify" ]]; then
-  COMMON_ARGS+=(--overwrite)
-fi
-if [[ -n "${CLONE_PATH_PREFIX_FROM}" ]]; then
-  COMMON_ARGS+=(
-    --clone-path-prefix-from "${CLONE_PATH_PREFIX_FROM}"
-    --clone-path-prefix-to "${CLONE_PATH_PREFIX_TO}"
-  )
+if [[ "${ALLOW_COPY_FALLBACK}" == "1" ]]; then
+  ARGS+=(--allow-copy-fallback)
 fi
 
-if [[ "${MODE}" == "verify" ]]; then
-  echo
-  echo "** Step 3: Read-only verification of canonical A05 outputs"
-  echo "----------------------------------------------------------------------------"
-  "${PYTHON_BIN}" "${PY_SCRIPT}" "${COMMON_ARGS[@]}"
-else
-  echo
-  echo "** Step 3: Prepare exact historical C_FUN standalone ML sources"
-  echo "----------------------------------------------------------------------------"
-  "${PYTHON_BIN}" "${PY_SCRIPT}" "${COMMON_ARGS[@]}"
-
-  echo
-  echo "** Step 4: Verify generated A05 artifacts"
-  echo "----------------------------------------------------------------------------"
-  require_file "${OUTPUT_ROOT}/summary.json" "A05 summary"
-  require_file "${OUTPUT_ROOT}/metadata.json" "A05 metadata"
-  require_file "${OUTPUT_ROOT}/checks.csv" "A05 checks"
-  require_file "${OUTPUT_ROOT}/python_ml_cfun_occurrence_manifest.csv" "A05 C_FUN occurrence manifest"
-  require_file "${OUTPUT_ROOT}/python_ml_cfun_unique_source_manifest.csv" "A05 C_FUN unique source manifest"
-  require_file "${OUTPUT_ROOT}/python_ml_cfun_mapping_failures.csv" "A05 mapping failure manifest"
-
-  OCCURRENCE_ROWS="$(csv_records "${OUTPUT_ROOT}/python_ml_cfun_occurrence_manifest.csv")"
-  UNIQUE_SOURCE_ROWS="$(csv_records "${OUTPUT_ROOT}/python_ml_cfun_unique_source_manifest.csv")"
-  FAILURE_ROWS="$(csv_records "${OUTPUT_ROOT}/python_ml_cfun_mapping_failures.csv")"
-  echo "Occurrence manifest records:    ${OCCURRENCE_ROWS}"
-  echo "Unique-source manifest records: ${UNIQUE_SOURCE_ROWS}"
-  echo "Mapping failure records:        ${FAILURE_ROWS}"
-
-  "${PYTHON_BIN}" - "${OUTPUT_ROOT}/summary.json" <<'PY'
-import json
-import sys
-with open(sys.argv[1], "r", encoding="utf-8") as handle:
-    s = json.load(handle)
-print("A05 summary status:             " + str(s.get("status")))
-print("Selected C_FUN occurrences:     " + str(s.get("selected_occurrences")))
-print("Mapped C_FUN occurrences:       " + str(s.get("mapped_occurrences")))
-print("Unique C_FUN body SHA:          " + str(s.get("unique_npr_body_sha")))
-print("Unique standalone ML sources:   " + str(s.get("unique_ml_source_sha")))
-print("Files with C_FUN:               " + str(s.get("files_with_cfun")))
-print("Mapping warnings:               " + str(s.get("warning_occurrences")))
-print("Mapping failures:               " + str(s.get("mapping_failures")))
-print("A05-end override occurrences:   " + str(s.get("a05_end_override_occurrences")))
-print("Decorated method occurrences:   " + str(s.get("decorated_method_occurrences")))
-print("Decorator alignment failures:   " + str(s.get("decorator_alignment_failures")))
-print("Definition alignment failures:  " + str(s.get("definition_alignment_failures")))
-print("Sample dataset-source counts:   " + str(s.get("sample_dataset_source_counts")))
-print("Sample repositories:            " + str(s.get("sample_repositories")))
-print("Full C_FUN universe scanned:    " + str(s.get("universe_cfun_occurrences_scanned")))
-print("Hard QC failures:               " + str(s.get("failed_hard_checks")))
-PY
-fi
+"${PYTHON_BIN}" "${PY_SCRIPT}" "${ARGS[@]}"
 
 END_EPOCH="$(date +%s)"
 ELAPSED="$((END_EPOCH - START_EPOCH))"
-printf -v ELAPSED_TEXT '%02d:%02d:%02d' "$((ELAPSED / 3600))" "$(((ELAPSED % 3600) / 60))" "$((ELAPSED % 60))"
+printf -v ELAPSED_FMT '%02d:%02d:%02d' "$((ELAPSED / 3600))" "$(((ELAPSED % 3600) / 60))" "$((ELAPSED % 60))"
 
 echo
 cat <<INFO
@@ -390,10 +308,16 @@ ${RUN_ID} execution summary
 Mode:             ${MODE}
 Started:          ${STARTED_AT}
 Completed:        $(date)
-Elapsed:          ${ELAPSED_TEXT}
+Elapsed:          ${ELAPSED_FMT}
 Exit code:        0
 Output root:      ${OUTPUT_ROOT}
 Log file:         ${LOG_FILE}
-Next after PASS:  run-x-a06 score frozen ML detector on unique C_FUN sources
-============================================================================
 INFO
+if [[ "${MODE}" == "diagnose" ]]; then
+  echo "Next after PASS:  review 946/946 recovery diagnostics, then run MODE=repair"
+elif [[ "${MODE}" == "repair" ]]; then
+  echo "Next after PASS:  run MODE=verify, then review before promoting repaired root to canonical run-x-a05"
+else
+  echo "Next after PASS:  repaired A05-v3 is ready for promotion/A06 input review"
+fi
+echo "============================================================================"

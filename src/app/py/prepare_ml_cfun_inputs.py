@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-prepare_ml_cfun_inputs-v2.py
+prepare_ml_cfun_inputs-v3.py
 ============================
 
 Prepare the exact historical C_FUN population for frozen ML AGC inference.
@@ -43,35 +43,38 @@ Expected frozen full-corpus gates
 
 Modes
 -----
-smoke
-    Deterministically sample N C_FUN occurrences spread across the complete
-    frozen C_FUN occurrence order. The smoke scan also reconciles the complete
-    frozen C_FUN occurrence/body/file universe before mapping the sampled rows.
-    This mode is for representation/mapping validation only and never modifies
-    the full output root.
-full
-    Prepare all frozen A05 primary method_body occurrences.
+diagnose
+    Reprocess only the 946 residual failures from the failed run-x-a05-v2
+    production output. The failed v2 output is read-only in this mode.
+repair
+    After diagnose recovers 946/946, merge the audited v2 successes plus v3
+    recoveries in the frozen NPR A05 order into a complete repaired output.
 verify
-    Read-only verification of the completed full output.
+    Read-only verification of the repaired v3 output.
 
-Primary outputs
----------------
+Primary diagnose outputs
+------------------------
+python_ml_cfun_recovered_occurrences.csv
+python_ml_cfun_recovery_failures.csv
+python_ml_cfun_recovery_diagnostics.csv
+python_ml_cfun_recovered_unique_source_manifest.csv
+ml_cfun_sources/<sha-prefix>/<sha256>.py
+
+Primary repair outputs
+----------------------
 python_ml_cfun_occurrence_manifest.csv
-    One row per successfully mapped A05 C_FUN occurrence.
 python_ml_cfun_unique_source_manifest.csv
-    One row per unique detector-native standalone method source SHA-256.
 python_ml_cfun_mapping_failures.csv
-    Explicit mapping failures. Full production is PASS only when this is empty.
 checks.csv
 summary.json
 metadata.json
 ml_cfun_sources/<sha-prefix>/<sha256>.py
-    Deduplicated standalone method-source artifacts for downstream A06 scoring.
 """
 
 from __future__ import annotations
 
 import argparse
+import bisect
 import csv
 import hashlib
 import io
@@ -92,7 +95,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Iterator, Sequence
 
 
-SCRIPT_VERSION = "run-x-a05-v2"
+SCRIPT_VERSION = "run-x-a05-v3"
 RUN_NAME = "run-x-a05"
 PRIMARY_UNIT_TYPE = "method_body"
 PRIMARY_AGGREGATION_ROLE = "primary"
@@ -1163,457 +1166,9 @@ def update_unique_source_summary(summaries: dict[str, dict[str, Any]], mapped: d
         item["any_tree_sitter_standalone_warning"] = 1
 
 
-def prepare(args: argparse.Namespace) -> int:
-    started = time.time()
-    repo_root = args.repo_root.resolve()
-    a01_root = args.a01_root.resolve()
-    a05_root = args.npr_a05_root.resolve()
-    a13_summary_path = args.a13_summary_file.resolve()
-    output_root = args.output_root.resolve()
-
-    validate_a01_freeze(a01_root)
-    validate_a13_summary(a13_summary_path, args.expected_unique_body_sha)
-
-    snapshot_status_path = a05_root / "snapshot_status.csv"
-    code_manifest_path = a05_root / "python_code_unit_manifest.csv"
-    for path in [snapshot_status_path, code_manifest_path]:
-        if not path.is_file():
-            raise SystemExit(f"[ERROR] required NPR A05 input not found: {path}")
-
-    observed_a05_sha = sha256_file(code_manifest_path)
-    if args.expected_a05_manifest_sha256 and observed_a05_sha != args.expected_a05_manifest_sha256:
-        raise SystemExit(
-            "[ERROR] frozen A05 code manifest SHA256 mismatch: "
-            f"observed={observed_a05_sha} expected={args.expected_a05_manifest_sha256}"
-        )
-
-    statuses = load_snapshot_status(
-        snapshot_status_path,
-        args.clone_path_prefix_from,
-        args.clone_path_prefix_to,
-    )
-    detector = load_detector_parser(repo_root, args.tree_sitter_lib.resolve(), args.ast_helper_dir.resolve())
-
-    if output_root.exists():
-        if not args.overwrite:
-            raise SystemExit(f"[ERROR] output root already exists: {output_root}; use --overwrite for a clean rerun")
-        shutil.rmtree(output_root)
-    output_root.mkdir(parents=True, exist_ok=True)
-    (output_root / "ml_cfun_sources").mkdir(parents=True, exist_ok=True)
-
-    occurrence_path = output_root / "python_ml_cfun_occurrence_manifest.csv"
-    failure_path = output_root / "python_ml_cfun_mapping_failures.csv"
-    unique_source_path = output_root / "python_ml_cfun_unique_source_manifest.csv"
-
-    selected_occurrences = 0
-    mapped_occurrences = 0
-    warning_occurrences = 0
-    unique_body_sha: set[str] = set()
-    unique_file_keys: set[tuple[str, str, str]] = set()
-    unique_source_summaries: dict[str, dict[str, Any]] = {}
-    function_kind_counts: Counter[str] = Counter()
-    mapping_strategy_counts: Counter[str] = Counter()
-    warning_counts: Counter[str] = Counter()
-    failure_stage_counts: Counter[str] = Counter()
-    full_file_parse_error_occurrences = 0
-    standalone_parse_warning_occurrences = 0
-    end_override_occurrences = 0
-    decorated_method_occurrences = 0
-    decorator_alignment_failures = 0
-    definition_alignment_failures = 0
-    sample_dataset_source_counts: Counter[str] = Counter()
-    sample_repo_names: set[str] = set()
-    universe_occurrences = 0
-    universe_body_sha: set[str] = set()
-    universe_file_keys: set[tuple[str, str, str]] = set()
-    files_loaded = 0
-    cache_hits = 0
-
-    git_batches = GitBatchLRU(args.max_open_git_processes)
-    current_context: HistoricalFileContext | None = None
-
-    occurrence_temp = occurrence_path.with_name(occurrence_path.name + f".tmp.{os.getpid()}")
-    failure_temp = failure_path.with_name(failure_path.name + f".tmp.{os.getpid()}")
-
-    try:
-        with code_manifest_path.open("r", encoding="utf-8-sig", newline="") as manifest_handle, \
-                occurrence_temp.open("w", encoding="utf-8", newline="") as occurrence_handle, \
-                failure_temp.open("w", encoding="utf-8", newline="") as failure_handle:
-            reader = csv.DictReader(manifest_handle)
-            fields = set(reader.fieldnames or [])
-            missing = A05_REQUIRED_COLUMNS - fields
-            if missing:
-                raise SystemExit(f"[ERROR] A05 code-unit manifest missing columns: {sorted(missing)}")
-
-            occurrence_writer = csv.DictWriter(occurrence_handle, fieldnames=OCCURRENCE_COLUMNS, extrasaction="ignore")
-            failure_writer = csv.DictWriter(failure_handle, fieldnames=FAILURE_COLUMNS, extrasaction="ignore")
-            occurrence_writer.writeheader()
-            failure_writer.writeheader()
-
-            smoke_positions = (
-                deterministic_smoke_positions(args.expected_occurrences, args.max_occurrences)
-                if args.mode == "smoke" and args.max_occurrences > 0
-                else set()
-            )
-
-            for row in reader:
-                if clean(row.get("aggregation_role")) != PRIMARY_AGGREGATION_ROLE:
-                    continue
-                if clean(row.get("code_unit_type")) != PRIMARY_UNIT_TYPE:
-                    continue
-
-                universe_occurrences += 1
-                universe_body_sha.add(clean(row.get("code_unit_sha256")).lower())
-                universe_file_key = (
-                    clean(row.get("snapshot_id")),
-                    clean(row.get("relative_path")),
-                    clean(row.get("file_sha256")).lower(),
-                )
-                universe_file_keys.add(universe_file_key)
-
-                if args.mode == "smoke" and smoke_positions and universe_occurrences not in smoke_positions:
-                    continue
-
-                selected_occurrences += 1
-                body_sha = clean(row.get("code_unit_sha256")).lower()
-                unique_body_sha.add(body_sha)
-                file_key = universe_file_key
-                unique_file_keys.add(file_key)
-                function_kind_counts[clean(row.get("function_kind"))] += 1
-                sample_dataset_source_counts[clean(row.get("dataset_source"))] += 1
-                sample_repo_names.add(clean(row.get("repo_name")))
-
-                try:
-                    if current_context is None or current_context.key != file_key:
-                        current_context = load_file_context(row, statuses, git_batches, detector)
-                        files_loaded += 1
-                    else:
-                        cache_hits += 1
-                    mapped = map_occurrence(row, current_context, detector, output_root)
-                    occurrence_writer.writerow({column: mapped.get(column, "") for column in OCCURRENCE_COLUMNS})
-                    mapped_occurrences += 1
-                    update_unique_source_summary(unique_source_summaries, mapped)
-                    mapping_strategy_counts[clean(mapped.get("tree_sitter_occurrence_mapping"))] += 1
-                    warning_text = clean(mapped.get("mapping_warning"))
-                    if warning_text:
-                        warning_occurrences += 1
-                        for warning in warning_text.split(";"):
-                            if warning:
-                                warning_counts[warning] += 1
-                    if int(mapped.get("tree_sitter_full_file_has_error", 0)):
-                        full_file_parse_error_occurrences += 1
-                    if int(mapped.get("tree_sitter_standalone_has_error", 0)) or int(mapped.get("tree_sitter_standalone_error_nodes", 0)) or int(mapped.get("tree_sitter_standalone_missing_nodes", 0)):
-                        standalone_parse_warning_occurrences += 1
-                    if clean(mapped.get("ml_source_end_strategy")) == "a05_verified_method_body_end":
-                        end_override_occurrences += 1
-                    if int(mapped.get("ml_source_includes_decorators", 0)):
-                        decorated_method_occurrences += 1
-                    if int(mapped.get("ml_source_decorator_headers_column_zero", 0)) != 1:
-                        decorator_alignment_failures += 1
-                    if int(mapped.get("ml_source_definition_header_column_zero", 0)) != 1:
-                        definition_alignment_failures += 1
-                except Exception as exc:
-                    stage = exc.stage if isinstance(exc, MappingError) else "unexpected_exception"
-                    failure_stage_counts[stage] += 1
-                    failure_writer.writerow(failure_row(row, stage, exc))
-                    # File-context failures may poison repeated rows from the same
-                    # file. Drop the cache so the next occurrence revalidates it.
-                    if stage in {"clone_path", "git_batch", "git_blob_read", "file_identity", "source_decode", "snapshot_status", "snapshot_identity"}:
-                        current_context = None
-
-                if args.progress_every > 0 and selected_occurrences % args.progress_every == 0:
-                    elapsed = time.time() - started
-                    print(
-                        f"[prepare] selected={selected_occurrences} mapped={mapped_occurrences} "
-                        f"failures={sum(failure_stage_counts.values())} unique_body_sha={len(unique_body_sha)} "
-                        f"unique_ml_source_sha={len(unique_source_summaries)} files_loaded={files_loaded} "
-                        f"elapsed_s={elapsed:.1f}",
-                        flush=True,
-                    )
-    finally:
-        git_batches.close()
-
-    os.replace(occurrence_temp, occurrence_path)
-    os.replace(failure_temp, failure_path)
-
-    unique_source_rows = [unique_source_summaries[key] for key in sorted(unique_source_summaries)]
-    atomic_write_csv(unique_source_path, unique_source_rows, UNIQUE_SOURCE_COLUMNS)
-
-    failures = sum(failure_stage_counts.values())
-    unique_ml_source_sha = len(unique_source_summaries)
-    full_mode = args.mode == "full"
-
-    checks: list[dict[str, Any]] = []
-    add_check(checks, "a05_manifest_sha256", "hard", observed_a05_sha == args.expected_a05_manifest_sha256, observed_a05_sha, args.expected_a05_manifest_sha256)
-    add_check(checks, "a13_unique_cfun_memberships", "hard", args.expected_unique_body_sha == int(load_json(a13_summary_path).get("cfun_unique_unit_memberships", -1)), int(load_json(a13_summary_path).get("cfun_unique_unit_memberships", -1)), args.expected_unique_body_sha)
-    add_check(checks, "mapped_plus_failures_equals_selected", "hard", mapped_occurrences + failures == selected_occurrences, mapped_occurrences + failures, selected_occurrences)
-    add_check(checks, "mapping_failures_zero", "hard", failures == 0, failures, 0)
-    add_check(checks, "unique_ml_sources_positive", "hard", unique_ml_source_sha > 0, unique_ml_source_sha, ">0")
-    add_check(checks, "decorator_alignment_failures_zero", "hard", decorator_alignment_failures == 0, decorator_alignment_failures, 0)
-    add_check(checks, "definition_alignment_failures_zero", "hard", definition_alignment_failures == 0, definition_alignment_failures, 0)
-    add_check(checks, "ml_source_indentation_failures_zero", "hard", failure_stage_counts.get("ml_source_indentation", 0) == 0, failure_stage_counts.get("ml_source_indentation", 0), 0)
-
-    if full_mode and args.strict_expected_counts:
-        add_check(checks, "full_cfun_occurrences", "hard", selected_occurrences == args.expected_occurrences, selected_occurrences, args.expected_occurrences)
-        add_check(checks, "full_unique_cfun_body_sha", "hard", len(unique_body_sha) == args.expected_unique_body_sha, len(unique_body_sha), args.expected_unique_body_sha)
-        add_check(checks, "full_files_with_cfun", "hard", len(unique_file_keys) == args.expected_files_with_cfun, len(unique_file_keys), args.expected_files_with_cfun)
-    else:
-        add_check(checks, "smoke_or_non_strict_selected_positive", "hard", selected_occurrences > 0, selected_occurrences, ">0")
-        if args.mode == "smoke":
-            expected_sample = min(args.max_occurrences, args.expected_occurrences)
-            add_check(checks, "smoke_sample_size", "hard", selected_occurrences == expected_sample, selected_occurrences, expected_sample)
-            add_check(checks, "smoke_full_universe_occurrences", "hard", universe_occurrences == args.expected_occurrences, universe_occurrences, args.expected_occurrences)
-            add_check(checks, "smoke_full_universe_unique_body_sha", "hard", len(universe_body_sha) == args.expected_unique_body_sha, len(universe_body_sha), args.expected_unique_body_sha)
-            add_check(checks, "smoke_full_universe_files_with_cfun", "hard", len(universe_file_keys) == args.expected_files_with_cfun, len(universe_file_keys), args.expected_files_with_cfun)
-            add_check(checks, "smoke_control_and_treatment_present", "hard", sample_dataset_source_counts.get("control", 0) > 0 and sample_dataset_source_counts.get("treatment", 0) > 0, dict(sorted(sample_dataset_source_counts.items())), "control>0 and treatment>0")
-
-    hard_failures = [row for row in checks if row["severity"] == "hard" and int(row["passed"]) != 1]
-    status = "PASS_WITH_WARNINGS" if not hard_failures and warning_occurrences else ("PASS" if not hard_failures else "FAIL")
-
-    atomic_write_csv(output_root / "checks.csv", checks, CHECK_COLUMNS)
-    summary = {
-        "run": SCRIPT_VERSION,
-        "status": status,
-        "mode": args.mode,
-        "category": "C_FUN",
-        "code_unit_type": PRIMARY_UNIT_TYPE,
-        "aggregation_role": PRIMARY_AGGREGATION_ROLE,
-        "selected_occurrences": selected_occurrences,
-        "mapped_occurrences": mapped_occurrences,
-        "mapping_failures": failures,
-        "warning_occurrences": warning_occurrences,
-        "unique_npr_body_sha": len(unique_body_sha),
-        "unique_ml_source_sha": unique_ml_source_sha,
-        "files_with_cfun": len(unique_file_keys),
-        "function_kind_counts": dict(sorted(function_kind_counts.items())),
-        "mapping_strategy_counts": dict(sorted(mapping_strategy_counts.items())),
-        "mapping_warning_counts": dict(sorted(warning_counts.items())),
-        "failure_stage_counts": dict(sorted(failure_stage_counts.items())),
-        "full_file_tree_error_occurrences": full_file_parse_error_occurrences,
-        "standalone_tree_warning_occurrences": standalone_parse_warning_occurrences,
-        "a05_end_override_occurrences": end_override_occurrences,
-        "decorated_method_occurrences": decorated_method_occurrences,
-        "decorator_alignment_failures": decorator_alignment_failures,
-        "definition_alignment_failures": definition_alignment_failures,
-        "sample_dataset_source_counts": dict(sorted(sample_dataset_source_counts.items())),
-        "sample_repositories": len(sample_repo_names),
-        "universe_cfun_occurrences_scanned": universe_occurrences,
-        "universe_unique_npr_body_sha": len(universe_body_sha),
-        "universe_files_with_cfun": len(universe_file_keys),
-        "historical_files_loaded": files_loaded,
-        "consecutive_file_cache_hits": cache_hits,
-        "failed_hard_checks": len(hard_failures),
-        "completed_utc": utc_now(),
-        "elapsed_seconds": time.time() - started,
-    }
-    atomic_write_json(output_root / "summary.json", summary)
-
-    metadata = {
-        "run": SCRIPT_VERSION,
-        "created_utc": utc_now(),
-        "scientific_scope": "frozen ML detector input preparation for A05 primary C_FUN/method_body historical occurrences",
-        "identity_contract": "same repository -> same historical commit -> same Python file -> same A05 primary method_body occurrence",
-        "representation_contract": "detector-native standalone method source reconstructed around the independently verified A05 method body",
-        "primary_cfun_filter": {"aggregation_role": PRIMARY_AGGREGATION_ROLE, "code_unit_type": PRIMARY_UNIT_TYPE},
-        "method_locator": "same-name direct-class-method Tree-sitter node containing verified A05 body-start anchor",
-        "strict_end_policy": "Tree-sitter method end must not exceed A05 body end",
-        "recovery_end_policy": "for a unique direct-class-method anchor, reuse Tree-sitter start and authoritative A05 method end",
-        "ml_source_start_policy": "move Tree-sitter decorated/function start to the beginning of its physical source line before dedent",
-        "ml_source_normalization": "physical_line_start_then_strip_block_markers_then_textwrap_dedent_strip_plus_lf",
-        "standalone_header_alignment_policy": "top-level decorators and def/async def header must begin in column zero after normalization",
-        "smoke_selection_policy": "deterministic evenly spaced positions over the complete frozen C_FUN occurrence order",
-        "quality_outcomes_consumed": False,
-        "model_loaded": False,
-        "embedding_generated": False,
-        "classifier_inference": False,
-        "threshold_calibrated": False,
-        "a01_root": str(a01_root),
-        "npr_a05_root": str(a05_root),
-        "a13_summary_file": str(a13_summary_path),
-        "a05_code_manifest_sha256": observed_a05_sha,
-        "a05_snapshot_status_sha256": sha256_file(snapshot_status_path),
-        "a13_summary_sha256": sha256_file(a13_summary_path),
-        "python_executable": sys.executable,
-        "python_version": sys.version.split()[0],
-        "tree_sitter_lib": str(args.tree_sitter_lib.resolve()),
-        "tree_sitter_lib_sha256": sha256_file(args.tree_sitter_lib.resolve()),
-        "ast_helper_dir": str(args.ast_helper_dir.resolve()),
-        "expected_full_counts": {
-            "cfun_occurrences": args.expected_occurrences,
-            "unique_cfun_body_sha": args.expected_unique_body_sha,
-            "files_with_cfun": args.expected_files_with_cfun,
-        },
-        "outputs": {
-            "occurrence_manifest": str(occurrence_path),
-            "unique_source_manifest": str(unique_source_path),
-            "mapping_failures": str(failure_path),
-            "source_artifact_root": str(output_root / "ml_cfun_sources"),
-            "checks": str(output_root / "checks.csv"),
-            "summary": str(output_root / "summary.json"),
-        },
-    }
-    atomic_write_json(output_root / "metadata.json", metadata)
-
-    print("=" * 80)
-    print("run-x-a05 C_FUN ML input preparation")
-    print(f"Status:                         {status}")
-    print(f"Mode:                           {args.mode}")
-    print(f"Selected C_FUN occurrences:     {selected_occurrences}")
-    print(f"Mapped occurrences:             {mapped_occurrences}")
-    print(f"Mapping failures:               {failures}")
-    print(f"Warning occurrences:            {warning_occurrences}")
-    print(f"Unique C_FUN body SHA:           {len(unique_body_sha)}")
-    print(f"Unique standalone ML sources:   {unique_ml_source_sha}")
-    print(f"Files with C_FUN:                {len(unique_file_keys)}")
-    print(f"A05-end override occurrences:   {end_override_occurrences}")
-    print(f"Decorated method occurrences:   {decorated_method_occurrences}")
-    print(f"Decorator alignment failures:   {decorator_alignment_failures}")
-    print(f"Definition alignment failures:  {definition_alignment_failures}")
-    if args.mode == "smoke":
-        print(f"Smoke dataset-source counts:    {dict(sorted(sample_dataset_source_counts.items()))}")
-        print(f"Smoke repositories represented: {len(sample_repo_names)}")
-        print(f"Full C_FUN universe scanned:     {universe_occurrences}")
-    print(f"Hard QC failures:               {len(hard_failures)}")
-    print(f"Occurrence manifest:            {occurrence_path}")
-    print(f"Unique source manifest:         {unique_source_path}")
-    print(f"Mapping failures:               {failure_path}")
-    print("=" * 80)
-    return 0 if not hard_failures else 5
 
 
-def verify_output(args: argparse.Namespace) -> int:
-    output_root = args.output_root.resolve()
-    required = [
-        output_root / "summary.json",
-        output_root / "metadata.json",
-        output_root / "checks.csv",
-        output_root / "python_ml_cfun_occurrence_manifest.csv",
-        output_root / "python_ml_cfun_unique_source_manifest.csv",
-        output_root / "python_ml_cfun_mapping_failures.csv",
-    ]
-    missing = [str(path) for path in required if not path.is_file()]
-    if missing:
-        print(f"A05 output verification: FAIL; missing={missing}", file=sys.stderr)
-        return 1
-
-    summary = load_json(output_root / "summary.json")
-    failures: list[str] = []
-    if summary.get("run") != SCRIPT_VERSION:
-        failures.append(f"run={summary.get('run')!r}")
-    if summary.get("status") not in {"PASS", "PASS_WITH_WARNINGS"}:
-        failures.append(f"status={summary.get('status')!r}")
-    if int(summary.get("failed_hard_checks", -1)) != 0:
-        failures.append("failed_hard_checks != 0")
-    if int(summary.get("selected_occurrences", -1)) != args.expected_occurrences:
-        failures.append("selected_occurrences mismatch")
-    if int(summary.get("mapped_occurrences", -1)) != args.expected_occurrences:
-        failures.append("mapped_occurrences mismatch")
-    if int(summary.get("mapping_failures", -1)) != 0:
-        failures.append("mapping_failures != 0")
-    if int(summary.get("unique_npr_body_sha", -1)) != args.expected_unique_body_sha:
-        failures.append("unique_npr_body_sha mismatch")
-    if int(summary.get("files_with_cfun", -1)) != args.expected_files_with_cfun:
-        failures.append("files_with_cfun mismatch")
-
-    occurrence_path = output_root / "python_ml_cfun_occurrence_manifest.csv"
-    row_count = 0
-    code_unit_ids: set[str] = set()
-    body_sha: set[str] = set()
-    file_keys: set[tuple[str, str, str]] = set()
-    source_sha: set[str] = set()
-    with occurrence_path.open("r", encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
-        fields = set(reader.fieldnames or [])
-        missing_columns = set(OCCURRENCE_COLUMNS) - fields
-        if missing_columns:
-            failures.append(f"occurrence manifest missing columns={sorted(missing_columns)}")
-        for row in reader:
-            row_count += 1
-            code_unit_id = clean(row.get("code_unit_id"))
-            if code_unit_id in code_unit_ids:
-                failures.append(f"duplicate code_unit_id={code_unit_id}")
-                break
-            code_unit_ids.add(code_unit_id)
-            body_sha.add(clean(row.get("npr_body_sha256")))
-            file_keys.add((clean(row.get("snapshot_id")), clean(row.get("relative_path")), clean(row.get("file_sha256"))))
-            source_sha.add(clean(row.get("ml_source_sha256")))
-            if clean(row.get("code_unit_type")) != PRIMARY_UNIT_TYPE or clean(row.get("aggregation_role")) != PRIMARY_AGGREGATION_ROLE:
-                failures.append("non-C_FUN row found in occurrence manifest")
-                break
-            if int(clean(row.get("ml_source_decorator_headers_column_zero")) or "0") != 1:
-                failures.append("decorator header alignment failure in occurrence manifest")
-                break
-            if int(clean(row.get("ml_source_definition_header_column_zero")) or "0") != 1:
-                failures.append("definition header alignment failure in occurrence manifest")
-                break
-
-    if row_count != args.expected_occurrences:
-        failures.append(f"row_count={row_count}")
-    if len(body_sha) != args.expected_unique_body_sha:
-        failures.append(f"body_sha_count={len(body_sha)}")
-    if len(file_keys) != args.expected_files_with_cfun:
-        failures.append(f"file_key_count={len(file_keys)}")
-
-    failure_path = output_root / "python_ml_cfun_mapping_failures.csv"
-    with failure_path.open("r", encoding="utf-8", newline="") as handle:
-        failure_count = sum(1 for _ in csv.DictReader(handle))
-    if failure_count:
-        failures.append(f"mapping_failure_rows={failure_count}")
-
-    unique_source_path = output_root / "python_ml_cfun_unique_source_manifest.csv"
-    unique_rows = 0
-    unique_manifest_sha: set[str] = set()
-    artifact_failures = 0
-    with unique_source_path.open("r", encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
-        for row in reader:
-            unique_rows += 1
-            digest = clean(row.get("ml_source_sha256"))
-            if digest in unique_manifest_sha:
-                failures.append(f"duplicate unique-source SHA={digest}")
-                break
-            unique_manifest_sha.add(digest)
-            relative = clean(row.get("ml_source_relative_path"))
-            artifact = output_root / relative
-            if not artifact.is_file() or sha256_file(artifact) != digest:
-                artifact_failures += 1
-            else:
-                try:
-                    artifact_text = artifact.read_text(encoding="utf-8")
-                    # Whether a source is decorated can be inferred safely from
-                    # its first non-empty top-level line for read-only verify.
-                    first_nonempty = next((line.lstrip(" \t") for line in artifact_text.splitlines() if line.strip()), "")
-                    validate_standalone_header_alignment(artifact_text, first_nonempty.startswith("@"))
-                except Exception:
-                    artifact_failures += 1
-    if unique_manifest_sha != source_sha:
-        failures.append(
-            f"unique-source set mismatch occurrence={len(source_sha)} unique_manifest={len(unique_manifest_sha)}"
-        )
-    if unique_rows != int(summary.get("unique_ml_source_sha", -1)):
-        failures.append("unique source row count mismatch with summary")
-    if artifact_failures:
-        failures.append(f"artifact_integrity_failures={artifact_failures}")
-
-    if failures:
-        print("A05 output verification: FAIL", file=sys.stderr)
-        for item in failures[:20]:
-            print(f"[ERROR] {item}", file=sys.stderr)
-        if len(failures) > 20:
-            print(f"[ERROR] ... {len(failures) - 20} additional verification errors", file=sys.stderr)
-        return 1
-
-    print("A05 output verification: PASS")
-    print(f"Status:                       {summary['status']}")
-    print(f"Mapped C_FUN occurrences:     {row_count}")
-    print(f"Unique C_FUN body SHA:         {len(body_sha)}")
-    print(f"Unique standalone ML sources: {len(source_sha)}")
-    print(f"Files with C_FUN:              {len(file_keys)}")
-    print("Mapping failures:             0")
-    return 0
-
-
-def run_self_test() -> int:
+def run_self_test_v2_core() -> int:
     class FakeNameNode:
         def __init__(self, name: str, start: int) -> None:
             self.start_byte = start
@@ -1800,7 +1355,1066 @@ def run_self_test() -> int:
     else:
         raise SystemExit("[ERROR] self-test ambiguous method mapping was not rejected")
 
-    print("prepare_ml_cfun_inputs-v2 self-test: PASS")
+    print("prepare_ml_cfun_inputs-v3 base self-test: PASS")
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# run-x-a05-v3 residual diagnostics and repair
+# ---------------------------------------------------------------------------
+
+EXPECTED_V2_FAILURES = 946
+EXPECTED_V2_INDENTATION_FAILURES = 862
+EXPECTED_V2_OCCURRENCE_MAP_FAILURES = 84
+
+RECOVERY_DIAGNOSTIC_COLUMNS = [
+    "snapshot_id",
+    "dataset_source",
+    "repo_name",
+    "snapshot_commit",
+    "relative_path",
+    "code_unit_id",
+    "qualified_name",
+    "npr_body_sha256",
+    "v2_stage",
+    "v2_error_message",
+    "recovery_status",
+    "v3_mapping_strategy",
+    "v3_source_normalization",
+    "v3_mapping_warning",
+    "v3_ml_source_sha256",
+    "v3_error_stage",
+    "v3_error_message",
+]
+
+
+def occurrence_identity(row: dict[str, Any]) -> tuple[str, str, str]:
+    return (
+        clean(row.get("snapshot_id")),
+        clean(row.get("relative_path")),
+        clean(row.get("code_unit_id")),
+    )
+
+
+def multiline_string_continuation_rows(text: str) -> set[int]:
+    """Return 1-based physical rows that must retain literal leading spaces.
+
+    Only rows after the first physical row of a multiline STRING token are
+    protected. The first row still contains structural Python indentation
+    before the string token and may safely lose the surrounding class prefix.
+    Interior and closing-delimiter rows can contain literal string whitespace,
+    so they are never structurally dedented.
+    """
+
+    protected: set[int] = set()
+    try:
+        tokens = tokenize.generate_tokens(io.StringIO(text).readline)
+        for token in tokens:
+            if token.type != tokenize.STRING:
+                continue
+            start_row, _ = token.start
+            end_row, _ = token.end
+            if end_row > start_row:
+                protected.update(range(start_row + 1, end_row + 1))
+    except (tokenize.TokenError, IndentationError, SyntaxError) as exc:
+        raise MappingError("ml_source_normalize_tokenize", f"{type(exc).__name__}: {exc}") from exc
+    return protected
+
+
+def normalize_method_source_v3(
+    raw_source: str,
+    structural_prefix: str,
+    strip_block_markers: Any,
+) -> str:
+    """Remove only the enclosing class indentation from detector source.
+
+    ``textwrap.dedent`` is intentionally not used here. Historical methods can
+    contain multiline string literals whose continuation lines begin in column
+    zero. A whole-text minimum-indent calculation therefore leaves the method
+    header indented. More importantly, blindly removing indentation from every
+    line can alter literal string content. This routine removes the exact
+    Tree-sitter/lexical method indentation prefix only on physical lines that
+    are outside multiline-string continuation rows.
+    """
+
+    text = strip_block_markers(raw_source)
+    protected = multiline_string_continuation_rows(text)
+    lines = text.splitlines(keepends=True)
+    normalized_lines: list[str] = []
+    for row_number, line in enumerate(lines, start=1):
+        if row_number not in protected and structural_prefix and line.startswith(structural_prefix):
+            line = line[len(structural_prefix):]
+        normalized_lines.append(line)
+    normalized = "".join(normalized_lines).strip()
+    if not normalized:
+        raise MappingError("ml_source_normalize", "standalone method source is empty")
+    return normalized + "\n"
+
+
+def validate_detector_standalone(
+    normalized_source: str,
+    includes_decorators: bool,
+    expected_name: str,
+    detector: DetectorParser,
+) -> dict[str, Any]:
+    alignment = validate_standalone_header_alignment(normalized_source, includes_decorators)
+    normalized_bytes = normalized_source.encode("utf-8")
+    standalone_tree = detector.parser.parse(normalized_bytes)
+    error_nodes, missing_nodes = count_tree_recovery_nodes(standalone_tree.root_node)
+    blocks = detector.extract_blocks(normalized_source, detector.parser)
+    if len(blocks) != 1:
+        raise MappingError(
+            "ml_input_compatibility",
+            f"standalone source must contain exactly one detector block; found {len(blocks)}",
+        )
+    block = blocks[0]
+    block_kind = clean(block.get("kind"))
+    block_name = clean(block.get("name"))
+    block_code = str(block.get("code", ""))
+    if block_kind != "function_definition":
+        raise MappingError("ml_input_compatibility", f"standalone source resolved to block kind {block_kind!r}")
+    if block_name != expected_name:
+        raise MappingError(
+            "ml_input_compatibility",
+            f"standalone block name {block_name!r} != expected {expected_name!r}",
+        )
+    covers = int(block_code.strip() == normalized_source.strip())
+    if not covers:
+        raise MappingError("ml_input_compatibility", "Tree-sitter block does not cover complete normalized standalone source")
+    ast_sequence = detector.generate_ast_sequence(block_code, detector.parser, detector.ast_function)
+    if not ast_sequence.strip():
+        raise MappingError("ml_input_compatibility", "AST sequence is empty")
+    return {
+        "alignment": alignment,
+        "normalized_bytes": normalized_bytes,
+        "standalone_tree": standalone_tree,
+        "error_nodes": error_nodes,
+        "missing_nodes": missing_nodes,
+        "blocks": blocks,
+        "block_kind": block_kind,
+        "block_name": block_name,
+        "block_code": block_code,
+        "covers": covers,
+        "ast_sequence": ast_sequence,
+    }
+
+
+def source_line_char_offsets(source: str) -> tuple[list[str], list[int]]:
+    lines = source.splitlines(keepends=True)
+    offsets: list[int] = []
+    position = 0
+    for line in lines:
+        offsets.append(position)
+        position += len(line)
+    if not lines:
+        return [""], [0]
+    return lines, offsets
+
+
+def local_method_source_recovery(
+    decoded_source: str,
+    body_start_char: int,
+    body_end_char: int,
+    expected_name: str,
+    detector: DetectorParser,
+    max_back_lines: int = 500,
+    max_decorator_back_lines: int = 80,
+) -> dict[str, Any]:
+    """Recover a standalone method around an authoritative A05 body anchor.
+
+    This fallback is used only when the full-file Tree-sitter hierarchy cannot
+    safely locate the A05 C_FUN occurrence. A05 has already independently
+    verified the exact historical file/body identity. We search a bounded local
+    region for the nearest same-name ``def``/``async def`` header preceding the
+    body anchor, then require the reconstructed standalone source to pass the
+    frozen detector parser as exactly one full-source function block with the
+    expected name and a non-empty AST sequence.
+    """
+
+    lines, offsets = source_line_char_offsets(decoded_source)
+    body_line_index = max(0, bisect.bisect_right(offsets, body_start_char) - 1)
+    first_line = max(0, body_line_index - max_back_lines)
+    pattern = re.compile(
+        r"^(?P<indent>[ \t]*)(?:async[ \t]+)?def[ \t]+" + re.escape(expected_name) + r"\b"
+    )
+    header_candidates: list[tuple[int, str]] = []
+    for index in range(body_line_index, first_line - 1, -1):
+        line = lines[index].rstrip("\r\n")
+        match = pattern.match(line)
+        if match:
+            header_candidates.append((index, match.group("indent")))
+
+    if not header_candidates:
+        raise MappingError(
+            "local_header_recovery",
+            f"no bounded same-name def/async def header found within {max_back_lines} lines for {expected_name}",
+        )
+
+    rejection_messages: list[str] = []
+    for def_index, structural_prefix in header_candidates:
+        candidate_start_indices = [def_index]
+        decorator_first = max(0, def_index - max_decorator_back_lines)
+        for index in range(def_index - 1, decorator_first - 1, -1):
+            line = lines[index].rstrip("\r\n")
+            if line.startswith(structural_prefix + "@"):
+                candidate_start_indices.append(index)
+        # Prefer the earliest valid decorator-bearing source; fall back to def.
+        candidate_start_indices = sorted(set(candidate_start_indices))
+        valid: list[dict[str, Any]] = []
+        for start_index in candidate_start_indices:
+            start_char = offsets[start_index]
+            if not (0 <= start_char < body_start_char < body_end_char <= len(decoded_source)):
+                continue
+            raw_source = decoded_source[start_char:body_end_char]
+            includes_decorators = start_index != def_index and lines[start_index].lstrip(" \t").startswith("@")
+            try:
+                normalized = normalize_method_source_v3(raw_source, structural_prefix, detector.strip_block_markers)
+                validation = validate_detector_standalone(
+                    normalized,
+                    includes_decorators,
+                    expected_name,
+                    detector,
+                )
+            except MappingError as exc:
+                rejection_messages.append(
+                    f"start_line={start_index + 1}:{exc.stage}:{str(exc)[:160]}"
+                )
+                continue
+            valid.append(
+                {
+                    "start_index": start_index,
+                    "def_index": def_index,
+                    "start_char": start_char,
+                    "structural_prefix": structural_prefix,
+                    "includes_decorators": includes_decorators,
+                    "normalized_source": normalized,
+                    "validation": validation,
+                }
+            )
+        if valid:
+            # Earliest valid start preserves all detector-visible decorators.
+            return sorted(valid, key=lambda item: item["start_index"])[0]
+
+    detail = "; ".join(rejection_messages[:8])
+    raise MappingError(
+        "local_header_recovery",
+        f"same-name headers found but no safe standalone reconstruction for {expected_name}; {detail}",
+    )
+
+
+def map_occurrence_v3(
+    row: dict[str, str],
+    context: HistoricalFileContext,
+    detector: DetectorParser,
+    artifact_root: Path,
+) -> dict[str, Any]:
+    """Map one residual v2 failure using v3 structural/local recovery."""
+
+    relative_path = validate_relative_python_path(clean(row.get("relative_path")))
+    expected_file_sha = clean(row.get("file_sha256")).lower()
+    if context.key != (clean(row.get("snapshot_id")), relative_path, expected_file_sha):
+        raise MappingError("file_cache", "historical file context key mismatch")
+
+    decoded_source = context.decoded_source
+    utf8_source = context.utf8_source
+    body_start = as_int(row.get("start_char_offset"), "start_char_offset")
+    body_end = as_int(row.get("end_char_offset"), "end_char_offset")
+    if not (0 <= body_start < body_end <= len(decoded_source)):
+        raise MappingError("body_boundary", f"invalid A05 body range [{body_start}, {body_end})")
+
+    body_text = decoded_source[body_start:body_end]
+    expected_body_sha = clean(row.get("code_unit_sha256")).lower()
+    if not FULL_SHA256_RE.fullmatch(expected_body_sha):
+        raise MappingError("manifest_schema", f"invalid code_unit_sha256: {expected_body_sha!r}")
+    actual_body_sha = sha256_text(body_text)
+    if actual_body_sha != expected_body_sha:
+        raise MappingError("body_identity", f"A05 body SHA mismatch: A05={expected_body_sha} actual={actual_body_sha}")
+    expected_tokens = as_int(row.get("space_by_token_count"), "space_by_token_count")
+    actual_tokens = len(body_text.split(" "))
+    if actual_tokens != expected_tokens:
+        raise MappingError("body_identity", f"literal-space-token mismatch: A05={expected_tokens} actual={actual_tokens}")
+
+    body_start_byte = char_offset_to_utf8_byte(decoded_source, body_start)
+    body_end_byte = char_offset_to_utf8_byte(decoded_source, body_end)
+    expected_name = leaf_function_name(clean(row.get("qualified_name")))
+    if not expected_name:
+        raise MappingError("manifest_schema", "cannot derive method name from qualified_name")
+
+    warning_parts: list[str] = []
+    full_file_has_error = int(tree_has_error(context.full_tree.root_node))
+    if full_file_has_error:
+        warning_parts.append("full_file_tree_sitter_recovery")
+
+    analysis = analyze_candidates(
+        context.full_tree.root_node,
+        utf8_source,
+        body_start_byte,
+        body_end_byte,
+        expected_name,
+    )
+
+    local_recovery = False
+    try:
+        resolved = resolve_method_node(
+            context.full_tree.root_node,
+            utf8_source,
+            body_start_byte,
+            body_end_byte,
+            expected_name,
+        )
+        method_node = resolved.node
+        if not is_primary_class_method(method_node):
+            raise MappingError("tree_sitter_occurrence_map", "resolved node is not a direct class method")
+        full_node, includes_decorators = full_definition_node(method_node)
+        tree_sitter_source_start = int(full_node.start_byte)
+        source_start = physical_line_start_byte(utf8_source, tree_sitter_source_start)
+        source_end = int(resolved.source_end_byte)
+        if not (0 <= source_start < source_end <= len(utf8_source)):
+            raise MappingError(
+                "ml_source_boundary",
+                f"invalid reconstructed method bytes [{source_start}, {source_end}) for source length {len(utf8_source)}",
+            )
+        prefix_bytes = utf8_source[source_start:tree_sitter_source_start]
+        try:
+            structural_prefix = prefix_bytes.decode("utf-8", errors="strict")
+        except UnicodeDecodeError as exc:
+            raise MappingError("ml_source_indentation", f"invalid structural indentation prefix: {exc}") from exc
+        if structural_prefix.strip(" \t"):
+            raise MappingError(
+                "ml_source_indentation",
+                f"method structural prefix contains non-whitespace: {structural_prefix!r}",
+            )
+        raw_full_source = utf8_source[source_start:source_end].decode("utf-8", errors="strict")
+        normalized_source = normalize_method_source_v3(
+            raw_full_source,
+            structural_prefix,
+            detector.strip_block_markers,
+        )
+        validation = validate_detector_standalone(
+            normalized_source,
+            includes_decorators,
+            expected_name,
+            detector,
+        )
+        mapping_strategy = resolved.strategy + "+v3_structural_indent_prefix"
+        source_end_strategy = resolved.source_end_strategy
+        if source_end_strategy == "a05_verified_method_body_end":
+            warning_parts.append("tree_sitter_full_file_end_overridden_by_a05")
+        candidate_start = int(method_node.start_byte)
+        candidate_end = int(method_node.end_byte)
+        direct_class_method = 1
+    except MappingError as exc:
+        if exc.stage != "tree_sitter_occurrence_map":
+            raise
+        local_recovery = True
+        local = local_method_source_recovery(
+            decoded_source,
+            body_start,
+            body_end,
+            expected_name,
+            detector,
+        )
+        normalized_source = local["normalized_source"]
+        validation = local["validation"]
+        includes_decorators = bool(local["includes_decorators"])
+        source_start_char = int(local["start_char"])
+        source_start = char_offset_to_utf8_byte(decoded_source, source_start_char)
+        source_end = body_end_byte
+        def_line_start_char = source_line_char_offsets(decoded_source)[1][int(local["def_index"])]
+        tree_sitter_source_start = char_offset_to_utf8_byte(
+            decoded_source,
+            def_line_start_char + len(str(local["structural_prefix"])),
+        )
+        mapping_strategy = "v3_local_same_name_header_a05_body_anchor"
+        source_end_strategy = "a05_verified_method_body_end"
+        candidate_start = tree_sitter_source_start
+        candidate_end = body_end_byte
+        direct_class_method = 1  # A05 primary method_body membership is authoritative here.
+        warning_parts.append("full_file_tree_sitter_local_header_recovery")
+
+    standalone_tree = validation["standalone_tree"]
+    error_nodes = int(validation["error_nodes"])
+    missing_nodes = int(validation["missing_nodes"])
+    blocks = validation["blocks"]
+    block_kind = str(validation["block_kind"])
+    block_name = str(validation["block_name"])
+    covers = int(validation["covers"])
+    ast_sequence = str(validation["ast_sequence"])
+    alignment = validation["alignment"]
+    normalized_bytes = validation["normalized_bytes"]
+    if tree_has_error(standalone_tree.root_node) or error_nodes or missing_nodes:
+        warning_parts.append("standalone_tree_sitter_recovery")
+
+    source_sha, source_relative, _ = write_artifact(artifact_root, normalized_source)
+
+    return {
+        "snapshot_order": clean(row.get("snapshot_order")),
+        "snapshot_id": clean(row.get("snapshot_id")),
+        "dataset_source": clean(row.get("dataset_source")),
+        "repo_name": clean(row.get("repo_name")),
+        "repo_key": clean(row.get("repo_key")),
+        "snapshot_time": clean(row.get("snapshot_time")),
+        "snapshot_commit": clean(row.get("snapshot_commit")),
+        "relative_path": relative_path,
+        "file_sha256": expected_file_sha,
+        "git_blob_oid": context.git_blob_oid,
+        "code_unit_id": clean(row.get("code_unit_id")),
+        "code_unit_type": clean(row.get("code_unit_type")),
+        "aggregation_role": clean(row.get("aggregation_role")),
+        "qualified_name": clean(row.get("qualified_name")),
+        "function_name": expected_name,
+        "function_kind": clean(row.get("function_kind")),
+        "occurrence_index": clean(row.get("occurrence_index")),
+        "npr_body_sha256": expected_body_sha,
+        "npr_body_relative_path": clean(row.get("code_unit_relative_path")),
+        "npr_body_start_line": clean(row.get("start_line")),
+        "npr_body_end_line": clean(row.get("end_line")),
+        "npr_body_start_char_offset": body_start,
+        "npr_body_end_char_offset": body_end,
+        "npr_body_character_count": clean(row.get("character_count")),
+        "npr_body_utf8_byte_count": clean(row.get("utf8_byte_count")),
+        "npr_body_physical_line_count": clean(row.get("physical_line_count")),
+        "npr_body_space_by_token_count": expected_tokens,
+        "file_sha256_verified": 1,
+        "npr_body_sha256_verified": 1,
+        "npr_body_space_by_token_count_verified": 1,
+        "tree_sitter_function_name": expected_name,
+        "tree_sitter_function_name_matches": 1,
+        "tree_sitter_direct_class_method": direct_class_method,
+        "tree_sitter_full_file_has_error": full_file_has_error,
+        "tree_sitter_standalone_has_error": int(tree_has_error(standalone_tree.root_node)),
+        "tree_sitter_standalone_error_nodes": error_nodes,
+        "tree_sitter_standalone_missing_nodes": missing_nodes,
+        "tree_sitter_blocks_found": len(blocks),
+        "tree_sitter_block_kind": block_kind,
+        "tree_sitter_block_name": block_name,
+        "tree_sitter_block_covers_full_source": covers,
+        "ml_ast_sequence_character_count": len(ast_sequence),
+        "ml_ast_sequence_token_count": len(ast_sequence.split()),
+        "ml_source_sha256": source_sha,
+        "ml_source_relative_path": source_relative,
+        "ml_source_character_count": len(normalized_source),
+        "ml_source_utf8_byte_count": len(normalized_bytes),
+        "ml_source_physical_line_count": count_physical_lines(normalized_source),
+        "ml_source_start_byte_utf8": source_start,
+        "ml_source_end_byte_utf8": source_end,
+        "ml_source_includes_decorators": int(includes_decorators),
+        "ml_source_tree_sitter_start_byte_utf8": tree_sitter_source_start,
+        "ml_source_start_strategy": (
+            "v3_local_same_name_header_or_decorator_line_start"
+            if local_recovery
+            else "physical_line_start_before_decorator_or_definition"
+        ),
+        "ml_source_top_level_decorator_count": alignment["top_level_decorator_count"],
+        "ml_source_decorator_headers_column_zero": alignment["decorator_headers_column_zero"],
+        "ml_source_definition_header_column_zero": alignment["definition_header_column_zero"],
+        "ml_source_normalization": "v3_exact_structural_prefix_dedent_preserve_multiline_string_rows_plus_lf",
+        "tree_sitter_occurrence_mapping": mapping_strategy,
+        "ml_source_end_strategy": source_end_strategy,
+        "tree_sitter_same_name_candidate_count": len(analysis.same_name),
+        "tree_sitter_anchor_candidate_count": len(analysis.anchor_functions),
+        "tree_sitter_primary_anchor_candidate_count": len(analysis.primary_same_name_anchor),
+        "tree_sitter_strict_candidate_count": len(analysis.strict_same_name_anchor),
+        "tree_sitter_candidate_start_byte_utf8": candidate_start,
+        "tree_sitter_candidate_end_byte_utf8": candidate_end,
+        "tree_sitter_candidate_end_minus_a05_body_end_bytes": candidate_end - body_end_byte,
+        "mapping_status": "PASS",
+        "mapping_warning": ";".join(dict.fromkeys(warning_parts)),
+    }
+
+
+def load_v2_failures(path: Path) -> tuple[list[dict[str, str]], dict[tuple[str, str, str], dict[str, str]]]:
+    rows: list[dict[str, str]] = []
+    by_key: dict[tuple[str, str, str], dict[str, str]] = {}
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        missing = set(FAILURE_COLUMNS) - set(reader.fieldnames or [])
+        if missing:
+            raise SystemExit(f"[ERROR] v2 failure CSV missing columns: {sorted(missing)}")
+        for row in reader:
+            key = occurrence_identity(row)
+            if key in by_key:
+                raise SystemExit(f"[ERROR] duplicate v2 failure identity: {key}")
+            rows.append(dict(row))
+            by_key[key] = dict(row)
+    return rows, by_key
+
+
+def collect_target_a05_rows(
+    code_manifest_path: Path,
+    target_keys: set[tuple[str, str, str]],
+) -> tuple[list[dict[str, str]], int]:
+    found: list[dict[str, str]] = []
+    selected = 0
+    with code_manifest_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        fields = set(reader.fieldnames or [])
+        missing = A05_REQUIRED_COLUMNS - fields
+        if missing:
+            raise SystemExit(f"[ERROR] A05 code manifest missing columns: {sorted(missing)}")
+        for row in reader:
+            if clean(row.get("aggregation_role")) != PRIMARY_AGGREGATION_ROLE:
+                continue
+            if clean(row.get("code_unit_type")) != PRIMARY_UNIT_TYPE:
+                continue
+            selected += 1
+            if occurrence_identity(row) in target_keys:
+                found.append(dict(row))
+    return found, selected
+
+
+def diagnose_residuals(args: argparse.Namespace) -> int:
+    started = time.time()
+    repo_root = args.repo_root.resolve()
+    v2_root = args.v2_root.resolve()
+    output_root = args.output_root.resolve()
+    a01_root = args.a01_root.resolve()
+    a05_root = args.npr_a05_root.resolve()
+    a13_summary = args.a13_summary_file.resolve()
+
+    validate_a01_freeze(a01_root)
+    validate_a13_summary(a13_summary, args.expected_unique_body_sha)
+    code_manifest_path = a05_root / "python_code_unit_manifest.csv"
+    snapshot_status_path = a05_root / "snapshot_status.csv"
+    if sha256_file(code_manifest_path) != args.expected_a05_manifest_sha256:
+        raise SystemExit("[ERROR] frozen NPR A05 manifest SHA256 mismatch")
+
+    v2_summary = load_json(v2_root / "summary.json")
+    if clean(v2_summary.get("run")) != "run-x-a05-v2" or clean(v2_summary.get("status")) != "FAIL":
+        raise SystemExit("[ERROR] diagnose requires the failed run-x-a05-v2 canonical output")
+    v2_failure_path = v2_root / "python_ml_cfun_mapping_failures.csv"
+    failure_rows, failures_by_key = load_v2_failures(v2_failure_path)
+    failure_stage_counts = Counter(clean(row.get("stage")) for row in failure_rows)
+
+    target_rows, universe_occurrences = collect_target_a05_rows(code_manifest_path, set(failures_by_key))
+    target_by_key = {occurrence_identity(row): row for row in target_rows}
+
+    if output_root.exists():
+        if not args.overwrite:
+            raise SystemExit(f"[ERROR] diagnose output already exists: {output_root}; use --overwrite")
+        shutil.rmtree(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+
+    detector = load_detector_parser(repo_root, args.tree_sitter_lib.resolve(), args.ast_helper_dir.resolve())
+    statuses = load_snapshot_status(snapshot_status_path, args.clone_path_prefix_from, args.clone_path_prefix_to)
+    git_batches = GitBatchLRU(args.max_open_git_processes)
+    recovered: list[dict[str, Any]] = []
+    remaining: list[dict[str, Any]] = []
+    diagnostics: list[dict[str, Any]] = []
+    source_summaries: dict[str, dict[str, Any]] = {}
+    warning_counts: Counter[str] = Counter()
+    recovery_strategy_counts: Counter[str] = Counter()
+    cache_context: HistoricalFileContext | None = None
+    cache_key: tuple[str, str, str] | None = None
+
+    try:
+        for index, failure in enumerate(failure_rows, start=1):
+            key = occurrence_identity(failure)
+            row = target_by_key.get(key)
+            if row is None:
+                exc = MappingError("a05_residual_lookup", "v2 failure identity not found in frozen A05 manifest")
+                remaining.append(failure_row(failure, exc.stage, exc))
+                diagnostics.append({
+                    **{column: failure.get(column, "") for column in FAILURE_COLUMNS[:8]},
+                    "v2_stage": clean(failure.get("stage")),
+                    "v2_error_message": clean(failure.get("error_message")),
+                    "recovery_status": "FAIL",
+                    "v3_error_stage": exc.stage,
+                    "v3_error_message": str(exc),
+                })
+                continue
+            try:
+                relative = validate_relative_python_path(clean(row.get("relative_path")))
+                file_key = (clean(row.get("snapshot_id")), relative, clean(row.get("file_sha256")).lower())
+                if cache_key != file_key:
+                    cache_context = load_file_context(row, statuses, git_batches, detector)
+                    cache_key = file_key
+                assert cache_context is not None
+                mapped = map_occurrence_v3(row, cache_context, detector, output_root)
+                recovered.append(mapped)
+                update_unique_source_summary(source_summaries, mapped)
+                recovery_strategy_counts[clean(mapped.get("tree_sitter_occurrence_mapping"))] += 1
+                for warning in clean(mapped.get("mapping_warning")).split(";"):
+                    if warning:
+                        warning_counts[warning] += 1
+                diagnostics.append({
+                    "snapshot_id": clean(failure.get("snapshot_id")),
+                    "dataset_source": clean(failure.get("dataset_source")),
+                    "repo_name": clean(failure.get("repo_name")),
+                    "snapshot_commit": clean(failure.get("snapshot_commit")),
+                    "relative_path": clean(failure.get("relative_path")),
+                    "code_unit_id": clean(failure.get("code_unit_id")),
+                    "qualified_name": clean(failure.get("qualified_name")),
+                    "npr_body_sha256": clean(failure.get("npr_body_sha256")),
+                    "v2_stage": clean(failure.get("stage")),
+                    "v2_error_message": clean(failure.get("error_message")),
+                    "recovery_status": "PASS",
+                    "v3_mapping_strategy": clean(mapped.get("tree_sitter_occurrence_mapping")),
+                    "v3_source_normalization": clean(mapped.get("ml_source_normalization")),
+                    "v3_mapping_warning": clean(mapped.get("mapping_warning")),
+                    "v3_ml_source_sha256": clean(mapped.get("ml_source_sha256")),
+                    "v3_error_stage": "",
+                    "v3_error_message": "",
+                })
+            except Exception as exc:
+                stage = exc.stage if isinstance(exc, MappingError) else "unexpected_exception"
+                remaining.append(failure_row(row, stage, exc))
+                diagnostics.append({
+                    "snapshot_id": clean(failure.get("snapshot_id")),
+                    "dataset_source": clean(failure.get("dataset_source")),
+                    "repo_name": clean(failure.get("repo_name")),
+                    "snapshot_commit": clean(failure.get("snapshot_commit")),
+                    "relative_path": clean(failure.get("relative_path")),
+                    "code_unit_id": clean(failure.get("code_unit_id")),
+                    "qualified_name": clean(failure.get("qualified_name")),
+                    "npr_body_sha256": clean(failure.get("npr_body_sha256")),
+                    "v2_stage": clean(failure.get("stage")),
+                    "v2_error_message": clean(failure.get("error_message")),
+                    "recovery_status": "FAIL",
+                    "v3_mapping_strategy": "",
+                    "v3_source_normalization": "",
+                    "v3_mapping_warning": "",
+                    "v3_ml_source_sha256": "",
+                    "v3_error_stage": stage,
+                    "v3_error_message": str(exc),
+                })
+            if args.progress_every and index % args.progress_every == 0:
+                print(
+                    f"[diagnose] processed={index}/{len(failure_rows)} recovered={len(recovered)} "
+                    f"remaining={len(remaining)} elapsed_s={time.time() - started:.1f}"
+                )
+    finally:
+        git_batches.close()
+
+    recovered_path = output_root / "python_ml_cfun_recovered_occurrences.csv"
+    remaining_path = output_root / "python_ml_cfun_recovery_failures.csv"
+    diagnostics_path = output_root / "python_ml_cfun_recovery_diagnostics.csv"
+    unique_path = output_root / "python_ml_cfun_recovered_unique_source_manifest.csv"
+    atomic_write_csv(recovered_path, recovered, OCCURRENCE_COLUMNS)
+    atomic_write_csv(remaining_path, remaining, FAILURE_COLUMNS)
+    atomic_write_csv(diagnostics_path, diagnostics, RECOVERY_DIAGNOSTIC_COLUMNS)
+    atomic_write_csv(
+        unique_path,
+        [source_summaries[key] for key in sorted(source_summaries)],
+        UNIQUE_SOURCE_COLUMNS,
+    )
+
+    checks: list[dict[str, Any]] = []
+    add_check(checks, "v2_failure_rows", "hard", len(failure_rows) == args.expected_v2_failures, len(failure_rows), args.expected_v2_failures)
+    add_check(
+        checks,
+        "v2_indentation_failure_rows",
+        "hard",
+        failure_stage_counts.get("ml_source_indentation", 0) == args.expected_v2_indentation_failures,
+        failure_stage_counts.get("ml_source_indentation", 0),
+        args.expected_v2_indentation_failures,
+    )
+    add_check(
+        checks,
+        "v2_occurrence_map_failure_rows",
+        "hard",
+        failure_stage_counts.get("tree_sitter_occurrence_map", 0) == args.expected_v2_occurrence_failures,
+        failure_stage_counts.get("tree_sitter_occurrence_map", 0),
+        args.expected_v2_occurrence_failures,
+    )
+    add_check(checks, "target_a05_rows_found", "hard", len(target_rows) == len(failure_rows), len(target_rows), len(failure_rows))
+    add_check(checks, "full_cfun_occurrences_scanned", "hard", universe_occurrences == args.expected_occurrences, universe_occurrences, args.expected_occurrences)
+    add_check(checks, "recovered_plus_remaining", "hard", len(recovered) + len(remaining) == len(failure_rows), len(recovered) + len(remaining), len(failure_rows))
+    add_check(checks, "all_v2_failures_recovered", "hard", len(recovered) == len(failure_rows), len(recovered), len(failure_rows))
+    add_check(checks, "remaining_recovery_failures_zero", "hard", len(remaining) == 0, len(remaining), 0)
+    hard_failures = [row for row in checks if row["severity"] == "hard" and int(row["passed"]) != 1]
+    status = "PASS_WITH_WARNINGS" if not hard_failures and warning_counts else ("PASS" if not hard_failures else "FAIL")
+    atomic_write_csv(output_root / "checks.csv", checks, CHECK_COLUMNS)
+    summary = {
+        "run": SCRIPT_VERSION,
+        "mode": "diagnose",
+        "status": status,
+        "v2_input_failure_rows": len(failure_rows),
+        "v2_failure_stage_counts": dict(sorted(failure_stage_counts.items())),
+        "target_a05_rows_found": len(target_rows),
+        "recovered_occurrences": len(recovered),
+        "remaining_failures": len(remaining),
+        "unique_recovered_ml_sources": len(source_summaries),
+        "recovery_strategy_counts": dict(sorted(recovery_strategy_counts.items())),
+        "mapping_warning_counts": dict(sorted(warning_counts.items())),
+        "full_cfun_occurrences_scanned": universe_occurrences,
+        "failed_hard_checks": len(hard_failures),
+        "elapsed_seconds": time.time() - started,
+        "completed_utc": utc_now(),
+    }
+    atomic_write_json(output_root / "summary.json", summary)
+    atomic_write_json(
+        output_root / "metadata.json",
+        {
+            "run": SCRIPT_VERSION,
+            "mode": "diagnose",
+            "created_utc": utc_now(),
+            "scientific_scope": "targeted residual recovery of failed run-x-a05-v2 C_FUN ML source mappings only",
+            "v2_root": str(v2_root),
+            "v2_failure_file_sha256": sha256_file(v2_failure_path),
+            "npr_a05_root": str(a05_root),
+            "a05_code_manifest_sha256": sha256_file(code_manifest_path),
+            "a13_summary_sha256": sha256_file(a13_summary),
+            "normalization_policy": "remove exact structural class prefix outside multiline-string continuation rows; preserve literal string whitespace",
+            "local_mapping_policy": "bounded nearest same-name def/async def header around authoritative A05 body anchor; accept only detector-valid exactly-one-block reconstruction",
+            "quality_outcomes_consumed": False,
+            "model_loaded": False,
+            "embedding_generated": False,
+            "classifier_inference": False,
+            "outputs": {
+                "recovered_occurrences": str(recovered_path),
+                "remaining_failures": str(remaining_path),
+                "diagnostics": str(diagnostics_path),
+                "recovered_unique_sources": str(unique_path),
+                "source_artifact_root": str(output_root / "ml_cfun_sources"),
+            },
+        },
+    )
+
+    print("=" * 80)
+    print("run-x-a05-v3 residual C_FUN ML mapping diagnosis")
+    print(f"Status:                         {status}")
+    print(f"V2 residual failures:           {len(failure_rows)}")
+    print(f"Recovered occurrences:          {len(recovered)}")
+    print(f"Remaining failures:             {len(remaining)}")
+    print(f"Unique recovered ML sources:    {len(source_summaries)}")
+    print(f"Recovery strategies:            {dict(sorted(recovery_strategy_counts.items()))}")
+    print(f"Hard QC failures:               {len(hard_failures)}")
+    print(f"Diagnostics:                    {diagnostics_path}")
+    print("=" * 80)
+    return 0 if not hard_failures else 5
+
+
+def link_artifact(source: Path, destination: Path, allow_copy_fallback: bool) -> str:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists():
+        if sha256_file(destination) != destination.stem:
+            raise SystemExit(f"[ERROR] existing repair artifact hash mismatch: {destination}")
+        return "reused"
+    try:
+        os.link(source, destination)
+        return "hardlink"
+    except OSError as exc:
+        if not allow_copy_fallback:
+            raise SystemExit(
+                f"[ERROR] hardlink failed for {source} -> {destination}: {exc}; "
+                "rerun with --allow-copy-fallback only if intentional"
+            ) from exc
+        shutil.copy2(source, destination)
+        return "copy"
+
+
+def repair_from_diagnose(args: argparse.Namespace) -> int:
+    started = time.time()
+    v2_root = args.v2_root.resolve()
+    diagnose_root = args.diagnose_root.resolve()
+    output_root = args.output_root.resolve()
+    a05_root = args.npr_a05_root.resolve()
+    code_manifest_path = a05_root / "python_code_unit_manifest.csv"
+
+    v2_summary = load_json(v2_root / "summary.json")
+    diagnose_summary = load_json(diagnose_root / "summary.json")
+    if clean(v2_summary.get("run")) != "run-x-a05-v2" or int(v2_summary.get("mapping_failures", -1)) != args.expected_v2_failures:
+        raise SystemExit("[ERROR] repair input is not the expected failed run-x-a05-v2 output")
+    if clean(diagnose_summary.get("run")) != SCRIPT_VERSION or clean(diagnose_summary.get("mode")) != "diagnose":
+        raise SystemExit("[ERROR] diagnose root does not come from run-x-a05-v3 diagnose mode")
+    if clean(diagnose_summary.get("status")) not in {"PASS", "PASS_WITH_WARNINGS"}:
+        raise SystemExit("[ERROR] diagnose output is not PASS")
+    if int(diagnose_summary.get("remaining_failures", -1)) != 0:
+        raise SystemExit("[ERROR] diagnose output still contains recovery failures")
+
+    if output_root.exists():
+        if not args.overwrite:
+            raise SystemExit(f"[ERROR] repair output already exists: {output_root}; use --overwrite")
+        shutil.rmtree(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+
+    recovered_path = diagnose_root / "python_ml_cfun_recovered_occurrences.csv"
+    recovered_by_key: dict[tuple[str, str, str], dict[str, str]] = {}
+    with recovered_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            key = occurrence_identity(row)
+            if key in recovered_by_key:
+                raise SystemExit(f"[ERROR] duplicate recovered occurrence identity: {key}")
+            recovered_by_key[key] = dict(row)
+    if len(recovered_by_key) != args.expected_v2_failures:
+        raise SystemExit(
+            f"[ERROR] recovered occurrence count mismatch: {len(recovered_by_key)} != {args.expected_v2_failures}"
+        )
+
+    v2_occurrence_path = v2_root / "python_ml_cfun_occurrence_manifest.csv"
+    v2_unique_path = v2_root / "python_ml_cfun_unique_source_manifest.csv"
+    v2_failure_path = v2_root / "python_ml_cfun_mapping_failures.csv"
+    _, v2_failure_by_key = load_v2_failures(v2_failure_path)
+    if set(v2_failure_by_key) != set(recovered_by_key):
+        raise SystemExit("[ERROR] diagnose recovered identities do not exactly equal v2 failure identities")
+
+    final_occurrence_path = output_root / "python_ml_cfun_occurrence_manifest.csv"
+    body_sha: set[str] = set()
+    file_keys: set[tuple[str, str, str]] = set()
+    mapping_strategy_counts: Counter[str] = Counter()
+    warning_counts: Counter[str] = Counter()
+    function_kind_counts: Counter[str] = Counter()
+    dataset_source_counts: Counter[str] = Counter()
+    selected = 0
+    warning_occurrences = 0
+    recovered_written = 0
+    success_written = 0
+    identity_mismatches = 0
+
+    with v2_occurrence_path.open("r", encoding="utf-8-sig", newline="") as success_handle, \
+         code_manifest_path.open("r", encoding="utf-8-sig", newline="") as a05_handle, \
+         final_occurrence_path.open("w", encoding="utf-8", newline="") as output_handle:
+        success_reader = csv.DictReader(success_handle)
+        a05_reader = csv.DictReader(a05_handle)
+        writer = csv.DictWriter(output_handle, fieldnames=OCCURRENCE_COLUMNS, extrasaction="ignore")
+        writer.writeheader()
+        success_iter = iter(success_reader)
+        next_success = next(success_iter, None)
+        for a05_row in a05_reader:
+            if clean(a05_row.get("aggregation_role")) != PRIMARY_AGGREGATION_ROLE or clean(a05_row.get("code_unit_type")) != PRIMARY_UNIT_TYPE:
+                continue
+            selected += 1
+            key = occurrence_identity(a05_row)
+            if key in recovered_by_key:
+                mapped = recovered_by_key[key]
+                recovered_written += 1
+            else:
+                if next_success is None:
+                    raise SystemExit(f"[ERROR] v2 success manifest exhausted at selected occurrence {selected}")
+                mapped = next_success
+                if occurrence_identity(mapped) != key:
+                    identity_mismatches += 1
+                    raise SystemExit(
+                        "[ERROR] v2 success manifest order/identity mismatch: "
+                        f"expected={key} observed={occurrence_identity(mapped)}"
+                    )
+                success_written += 1
+                next_success = next(success_iter, None)
+            if clean(mapped.get("npr_body_sha256")) != clean(a05_row.get("code_unit_sha256")):
+                raise SystemExit(f"[ERROR] merged body SHA mismatch for {key}")
+            writer.writerow({column: mapped.get(column, "") for column in OCCURRENCE_COLUMNS})
+            body_sha.add(clean(mapped.get("npr_body_sha256")))
+            file_keys.add((clean(mapped.get("snapshot_id")), clean(mapped.get("relative_path")), clean(mapped.get("file_sha256"))))
+            mapping_strategy_counts[clean(mapped.get("tree_sitter_occurrence_mapping"))] += 1
+            function_kind_counts[clean(mapped.get("function_kind"))] += 1
+            dataset_source_counts[clean(mapped.get("dataset_source"))] += 1
+            row_warning = clean(mapped.get("mapping_warning"))
+            if row_warning:
+                warning_occurrences += 1
+            for warning in row_warning.split(";"):
+                if warning:
+                    warning_counts[warning] += 1
+        if next_success is not None:
+            raise SystemExit("[ERROR] v2 success manifest has rows remaining after frozen A05 merge")
+
+    # Reuse the already audited v2 unique-source summary and update it with the
+    # 946 recovered occurrences. This avoids rescanning 1.68M rows solely to
+    # rebuild per-source occurrence counts.
+    source_summaries: dict[str, dict[str, Any]] = {}
+    v2_occurrence_sum = 0
+    with v2_unique_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            sha = clean(row.get("ml_source_sha256"))
+            if sha in source_summaries:
+                raise SystemExit(f"[ERROR] duplicate v2 unique source SHA: {sha}")
+            item = dict(row)
+            item["occurrence_count"] = int(clean(row.get("occurrence_count")))
+            item["any_tree_sitter_standalone_warning"] = int(clean(row.get("any_tree_sitter_standalone_warning")) or "0")
+            source_summaries[sha] = item
+            v2_occurrence_sum += int(item["occurrence_count"])
+    for mapped in recovered_by_key.values():
+        update_unique_source_summary(source_summaries, mapped)
+    final_unique_occurrence_sum = sum(int(item["occurrence_count"]) for item in source_summaries.values())
+    final_unique_path = output_root / "python_ml_cfun_unique_source_manifest.csv"
+    atomic_write_csv(final_unique_path, [source_summaries[key] for key in sorted(source_summaries)], UNIQUE_SOURCE_COLUMNS)
+    atomic_write_csv(output_root / "python_ml_cfun_mapping_failures.csv", [], FAILURE_COLUMNS)
+
+    # Build a self-contained artifact root using hardlinks. Existing successful
+    # artifacts come from v2; newly recovered artifacts come from diagnose.
+    link_counts: Counter[str] = Counter()
+    missing_artifacts = 0
+    for index, (sha, item) in enumerate(sorted(source_summaries.items()), start=1):
+        rel = Path(clean(item.get("ml_source_relative_path")))
+        if rel != artifact_relative_path(sha):
+            raise SystemExit(f"[ERROR] unique-source relative path mismatch for {sha}: {rel}")
+        source = v2_root / rel
+        if not source.is_file():
+            source = diagnose_root / rel
+        if not source.is_file():
+            missing_artifacts += 1
+            continue
+        mode = link_artifact(source, output_root / rel, args.allow_copy_fallback)
+        link_counts[mode] += 1
+        if args.progress_every and index % args.progress_every == 0:
+            print(
+                f"[repair-artifacts] linked={index}/{len(source_summaries)} "
+                f"hardlink={link_counts['hardlink']} copy={link_counts['copy']}"
+            )
+
+    checks: list[dict[str, Any]] = []
+    add_check(checks, "selected_occurrences", "hard", selected == args.expected_occurrences, selected, args.expected_occurrences)
+    add_check(checks, "v2_success_rows_written", "hard", success_written == args.expected_occurrences - args.expected_v2_failures, success_written, args.expected_occurrences - args.expected_v2_failures)
+    add_check(checks, "recovered_rows_written", "hard", recovered_written == args.expected_v2_failures, recovered_written, args.expected_v2_failures)
+    add_check(checks, "merged_identity_mismatches", "hard", identity_mismatches == 0, identity_mismatches, 0)
+    add_check(checks, "unique_cfun_body_sha", "hard", len(body_sha) == args.expected_unique_body_sha, len(body_sha), args.expected_unique_body_sha)
+    add_check(checks, "files_with_cfun", "hard", len(file_keys) == args.expected_files_with_cfun, len(file_keys), args.expected_files_with_cfun)
+    add_check(checks, "v2_unique_occurrence_sum", "hard", v2_occurrence_sum == args.expected_occurrences - args.expected_v2_failures, v2_occurrence_sum, args.expected_occurrences - args.expected_v2_failures)
+    add_check(checks, "final_unique_occurrence_sum", "hard", final_unique_occurrence_sum == args.expected_occurrences, final_unique_occurrence_sum, args.expected_occurrences)
+    add_check(checks, "missing_source_artifacts", "hard", missing_artifacts == 0, missing_artifacts, 0)
+    add_check(checks, "final_mapping_failures", "hard", True, 0, 0)
+    hard_failures = [row for row in checks if row["severity"] == "hard" and int(row["passed"]) != 1]
+    status = "PASS_WITH_WARNINGS" if not hard_failures and warning_counts else ("PASS" if not hard_failures else "FAIL")
+    atomic_write_csv(output_root / "checks.csv", checks, CHECK_COLUMNS)
+    summary = {
+        "run": SCRIPT_VERSION,
+        "mode": "repair",
+        "status": status,
+        "selected_occurrences": selected,
+        "mapped_occurrences": selected,
+        "mapping_failures": 0,
+        "warning_occurrences": warning_occurrences,
+        "unique_npr_body_sha": len(body_sha),
+        "unique_ml_source_sha": len(source_summaries),
+        "files_with_cfun": len(file_keys),
+        "function_kind_counts": dict(sorted(function_kind_counts.items())),
+        "mapping_strategy_counts": dict(sorted(mapping_strategy_counts.items())),
+        "mapping_warning_counts": dict(sorted(warning_counts.items())),
+        "dataset_source_counts": dict(sorted(dataset_source_counts.items())),
+        "v2_success_occurrences_reused": success_written,
+        "v3_recovered_occurrences": recovered_written,
+        "artifact_link_counts": dict(sorted(link_counts.items())),
+        "failed_hard_checks": len(hard_failures),
+        "completed_utc": utc_now(),
+        "elapsed_seconds": time.time() - started,
+    }
+    summary["warning_occurrence_count_semantics"] = "warning_occurrences counts merged rows with any warning; mapping_warning_counts can overlap by category"
+    atomic_write_json(output_root / "summary.json", summary)
+    atomic_write_json(
+        output_root / "metadata.json",
+        {
+            "run": SCRIPT_VERSION,
+            "mode": "repair",
+            "created_utc": utc_now(),
+            "scientific_scope": "complete A05 C_FUN ML source manifest rebuilt from audited v2 successes plus v3 residual recoveries",
+            "v2_root": str(v2_root),
+            "diagnose_root": str(diagnose_root),
+            "npr_a05_root": str(a05_root),
+            "a05_code_manifest_sha256": sha256_file(code_manifest_path),
+            "merge_order_policy": "stream frozen NPR A05 primary method_body order; substitute v3 recovered row exactly at each v2 failure identity",
+            "artifact_policy": "self-contained hardlinked source store; copy fallback disabled unless explicitly requested",
+            "mapping_failures": 0,
+            "quality_outcomes_consumed": False,
+            "model_loaded": False,
+            "embedding_generated": False,
+            "classifier_inference": False,
+            "outputs": {
+                "occurrence_manifest": str(final_occurrence_path),
+                "unique_source_manifest": str(final_unique_path),
+                "mapping_failures": str(output_root / "python_ml_cfun_mapping_failures.csv"),
+                "source_artifact_root": str(output_root / "ml_cfun_sources"),
+                "checks": str(output_root / "checks.csv"),
+                "summary": str(output_root / "summary.json"),
+            },
+        },
+    )
+
+    print("=" * 80)
+    print("run-x-a05-v3 repaired complete C_FUN ML input preparation")
+    print(f"Status:                         {status}")
+    print(f"Merged C_FUN occurrences:       {selected}")
+    print(f"Reused v2 successes:            {success_written}")
+    print(f"Recovered v3 residuals:         {recovered_written}")
+    print(f"Mapping failures:               0")
+    print(f"Unique C_FUN body SHA:           {len(body_sha)}")
+    print(f"Unique standalone ML sources:   {len(source_summaries)}")
+    print(f"Files with C_FUN:                {len(file_keys)}")
+    print(f"Missing source artifacts:       {missing_artifacts}")
+    print(f"Hard QC failures:               {len(hard_failures)}")
+    print(f"Output root:                    {output_root}")
+    print("=" * 80)
+    return 0 if not hard_failures else 5
+
+
+def verify_repaired(args: argparse.Namespace) -> int:
+    output_root = args.output_root.resolve()
+    summary = load_json(output_root / "summary.json")
+    checks_path = output_root / "checks.csv"
+    occurrence_path = output_root / "python_ml_cfun_occurrence_manifest.csv"
+    unique_path = output_root / "python_ml_cfun_unique_source_manifest.csv"
+    failure_path = output_root / "python_ml_cfun_mapping_failures.csv"
+    required = [checks_path, occurrence_path, unique_path, failure_path, output_root / "metadata.json"]
+    missing = [str(path) for path in required if not path.is_file()]
+    if missing:
+        raise SystemExit(f"[ERROR] repaired output missing required files: {missing}")
+    if clean(summary.get("run")) != SCRIPT_VERSION or clean(summary.get("mode")) != "repair":
+        raise SystemExit("[ERROR] repaired summary run/mode mismatch")
+    if clean(summary.get("status")) not in {"PASS", "PASS_WITH_WARNINGS"}:
+        raise SystemExit(f"[ERROR] repaired summary is not PASS: {summary.get('status')}")
+    with checks_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        failed = [row for row in csv.DictReader(handle) if clean(row.get("severity")) == "hard" and clean(row.get("passed")) != "1"]
+    if failed:
+        raise SystemExit(f"[ERROR] repaired hard QC failures: {[row['check_name'] for row in failed]}")
+    with failure_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        failure_count = sum(1 for _ in csv.DictReader(handle))
+    if failure_count != 0:
+        raise SystemExit(f"[ERROR] repaired mapping failure CSV has {failure_count} rows")
+    if int(summary.get("selected_occurrences", -1)) != args.expected_occurrences:
+        raise SystemExit("[ERROR] repaired selected occurrence count mismatch")
+    if int(summary.get("mapping_failures", -1)) != 0:
+        raise SystemExit("[ERROR] repaired mapping_failures != 0")
+    if int(summary.get("unique_npr_body_sha", -1)) != args.expected_unique_body_sha:
+        raise SystemExit("[ERROR] repaired unique body SHA count mismatch")
+    if int(summary.get("files_with_cfun", -1)) != args.expected_files_with_cfun:
+        raise SystemExit("[ERROR] repaired files-with-C_FUN count mismatch")
+    print("prepare_ml_cfun_inputs-v3 repaired output verification: PASS")
+    return 0
+
+
+def run_self_test() -> int:
+    # Retain all v2 mapping/reconstruction tests first.
+    run_self_test_v2_core()
+
+    # v3 must structurally dedent code while preserving a column-zero multiline
+    # string continuation that defeated textwrap.dedent in full production.
+    raw = (
+        "    def f(self):\n"
+        "        query = \"\"\"\n"
+        "SELECT * FROM table\n"
+        "WHERE id = 1\n"
+        "\"\"\"\n"
+        "        return query\n"
+    )
+    normalized = normalize_method_source_v3(raw, "    ", lambda text: text)
+    expected = (
+        "def f(self):\n"
+        "    query = \"\"\"\n"
+        "SELECT * FROM table\n"
+        "WHERE id = 1\n"
+        "\"\"\"\n"
+        "    return query\n"
+    )
+    if normalized != expected:
+        raise SystemExit(f"[ERROR] v3 multiline-string structural dedent failed:\n{normalized!r}")
+    alignment = validate_standalone_header_alignment(normalized, False)
+    if alignment["definition_header_column_zero"] != 1:
+        raise SystemExit("[ERROR] v3 multiline-string def alignment self-test failed")
+
+    decorated = (
+        "\t@classmethod\n"
+        "\tdef g(cls):\n"
+        "\t\ttext = \"\"\"\n"
+        "literal\n"
+        "\"\"\"\n"
+        "\t\treturn text\n"
+    )
+    decorated_normalized = normalize_method_source_v3(decorated, "\t", lambda text: text)
+    if not decorated_normalized.startswith("@classmethod\ndef g(cls):\n"):
+        raise SystemExit("[ERROR] v3 tab/decorator structural dedent self-test failed")
+    validate_standalone_header_alignment(decorated_normalized, True)
+    print("prepare_ml_cfun_inputs-v3 self-test: PASS")
     return 0
 
 
@@ -1808,24 +2422,28 @@ def build_parser() -> argparse.ArgumentParser:
     script_path = Path(__file__).resolve()
     repo_root = script_path.parents[3]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=["smoke", "full", "verify"], default="smoke")
+    parser.add_argument("--mode", choices=["diagnose", "repair", "verify"], default="diagnose")
     parser.add_argument("--repo-root", type=Path, default=repo_root)
     parser.add_argument("--a01-root", type=Path, default=repo_root / "src/app/data_did_agc_analysis/run-x-a01")
+    parser.add_argument("--v2-root", type=Path, default=repo_root / "src/app/data_did_agc_analysis/run-x-a05")
+    parser.add_argument("--diagnose-root", type=Path, default=repo_root / "src/app/data_did_agc_analysis/run-x-a05-v3-diagnose")
     parser.add_argument("--npr-a05-root", type=Path, required=False)
     parser.add_argument("--a13-summary-file", type=Path, required=False)
-    parser.add_argument("--output-root", type=Path, default=repo_root / "src/app/data_did_agc_analysis/run-x-a05-smoke")
+    parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--tree-sitter-lib", type=Path, default=repo_root / "src/code-analyzer-tree-sitter/build/my-languages.so")
     parser.add_argument("--ast-helper-dir", type=Path, default=repo_root / "src/code-analyzer-tree-sitter")
     parser.add_argument("--expected-occurrences", type=int, default=EXPECTED_CFUN_OCCURRENCES)
     parser.add_argument("--expected-unique-body-sha", type=int, default=EXPECTED_UNIQUE_CFUN_BODY_SHA)
     parser.add_argument("--expected-files-with-cfun", type=int, default=EXPECTED_FILES_WITH_CFUN)
     parser.add_argument("--expected-a05-manifest-sha256", default=EXPECTED_A05_MANIFEST_SHA256)
-    parser.add_argument("--max-occurrences", type=int, default=1000)
+    parser.add_argument("--expected-v2-failures", type=int, default=EXPECTED_V2_FAILURES)
+    parser.add_argument("--expected-v2-indentation-failures", type=int, default=EXPECTED_V2_INDENTATION_FAILURES)
+    parser.add_argument("--expected-v2-occurrence-failures", type=int, default=EXPECTED_V2_OCCURRENCE_MAP_FAILURES)
     parser.add_argument("--max-open-git-processes", type=int, default=4)
-    parser.add_argument("--progress-every", type=int, default=10_000)
+    parser.add_argument("--progress-every", type=int, default=100)
     parser.add_argument("--clone-path-prefix-from", default="")
     parser.add_argument("--clone-path-prefix-to", default="")
-    parser.add_argument("--strict-expected-counts", action="store_true")
+    parser.add_argument("--allow-copy-fallback", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--self-test", action="store_true")
     return parser
@@ -1840,20 +2458,18 @@ def main() -> int:
         parser.error("--max-open-git-processes must be >= 1")
     if args.progress_every < 0:
         parser.error("--progress-every cannot be negative")
-    if args.max_occurrences < 0:
-        parser.error("--max-occurrences cannot be negative")
     if args.npr_a05_root is None:
         parser.error("--npr-a05-root is required")
     if args.a13_summary_file is None:
         parser.error("--a13-summary-file is required")
-    if args.mode == "full" and args.max_occurrences != 0:
-        parser.error("--mode full requires --max-occurrences 0")
-    if args.mode == "verify":
-        return verify_output(args)
-    for path, label in [(args.tree_sitter_lib, "tree-sitter library"), (args.ast_helper_dir, "AST helper directory")]:
-        if not path.exists():
-            parser.error(f"{label} not found: {path}")
-    return prepare(args)
+    if args.mode == "diagnose":
+        for path, label in [(args.tree_sitter_lib, "tree-sitter library"), (args.ast_helper_dir, "AST helper directory")]:
+            if not path.exists():
+                parser.error(f"{label} not found: {path}")
+        return diagnose_residuals(args)
+    if args.mode == "repair":
+        return repair_from_diagnose(args)
+    return verify_repaired(args)
 
 
 if __name__ == "__main__":
