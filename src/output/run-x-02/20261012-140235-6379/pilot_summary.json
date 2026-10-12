@@ -1,0 +1,33 @@
+{
+  "experiment": "run-x-02",
+  "status": "PASS",
+  "timestamp_utc": "2026-10-12T19:09:02.890860+00:00",
+  "model": "codellama/CodeLlama-7b-hf",
+  "decoding": "greedy",
+  "temperature": 0.0,
+  "do_sample": false,
+  "top_p_passed": false,
+  "original_pairs": 4500,
+  "pilot_selected": 100,
+  "generated": 100,
+  "valid": 84,
+  "invalid": 16,
+  "valid_rate": 0.84,
+  "min_valid_rate_for_pass": 0.7,
+  "split_selected": {
+    "dev": 10,
+    "test": 10,
+    "train": 80
+  },
+  "split_valid": {
+    "dev": 9,
+    "test": 9,
+    "train": 66
+  },
+  "mean_seconds_per_generation": 3.689422,
+  "elapsed_generation_seconds": 368.9422,
+  "new_pairs_not_backfilled": true,
+  "original_data_modified": false,
+  "config_sha256": "22f4bae6797b2cba99b86e7a27dd475c8e4786b91c9c0756d8a99b8be379e412",
+  "output_dir": "/home/user1-system12/project-workspace/ai_detector/src/output/run-x-02/20261012-140235-6379"
+}

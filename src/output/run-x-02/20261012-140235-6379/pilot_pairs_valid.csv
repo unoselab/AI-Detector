@@ -1,0 +1,2520 @@
+idx,code,label
+line521_human,"def Call(self, Id=0):
+        """"""Queries a call object.
+
+        :Parameters:
+          Id : int
+            Call identifier.
+
+        :return: Call object.
+        :rtype: `call.Call`
+        """"""
+        o = Call(self, Id)
+        o.Status # Test if such a call exists.
+        return o
+",human
+line521_lm,"def Call(self, Id=0):
+        """"""Queries a call object.
+
+        :Parameters:
+          Id : int
+            Call identifier.
+
+        :return: Call object.
+        :rtype: `call.Call`
+        """"""
+        return call.Call(self, Id)
+",lm
+line8896_human,"def save_config(
+        self,
+        cmd=""copy running-configuration startup-configuration"",
+        confirm=False,
+        confirm_response="""",
+    ):
+        """"""Saves Config""""""
+        return super(DellForce10SSH, self).save_config(
+            cmd=cmd, confirm=confirm, confirm_response=confirm_response
+        )
+",human
+line8896_lm,"def save_config(
+        self,
+        cmd=""copy running-configuration startup-configuration"",
+        confirm=False,
+        confirm_response="""",
+    ):
+        """"""Saves Config""""""
+        return self.send_command(cmd, confirm=confirm, confirm_response=confirm_response)
+",lm
+line1161_human,"def vbkv_dumps(obj):
+    """"""
+    Serialize ``obj`` to a VBKV formatted ``bytes``.
+    """"""
+    data =  b''.join(_binary_dump_gen(obj, alt_format=True))
+    checksum = crc32(data)
+
+    return b'VBKV' + struct.pack('<i', checksum) + data
+",human
+line1161_lm,"def vbkv_dumps(obj):
+    """"""
+    Serialize ``obj`` to a VBKV formatted ``bytes``.
+    """"""
+    return vbkv_dumps_to_bytes(obj)
+",lm
+line5006_human,"def add_optional_arg_param(self, param_name, layer_index, blob_index):
+        """"""Add an arg param. If there is no such param in .caffemodel fie, silently ignore it.""""""
+        blobs = self.layers[layer_index].blobs
+        if blob_index < len(blobs):
+            self.add_arg_param(param_name, layer_index, blob_index)
+",human
+line5006_lm,"def add_optional_arg_param(self, param_name, layer_index, blob_index):
+        """"""Add an arg param. If there is no such param in .caffemodel fie, silently ignore it.""""""
+        if param_name in self.arg_params:
+            self.arg_params[param_name][layer_index][blob_index] = self.arg_params[param_name][layer_index][blob_index].copy()
+        else:
+            self.arg_params[param_name] = {}
+            self.arg_params[param_name][layer_index] = {}
+            self.arg_params[param_name][layer_index][blob_index] = np.zeros(self.arg_shapes[param_name][layer_index][blob_index])
+",lm
+line627_human,"def vbkv_dumps(obj):
+    """"""
+    Serialize ``obj`` to a VBKV formatted ``bytes``.
+    """"""
+    data =  b''.join(_binary_dump_gen(obj, alt_format=True))
+    checksum = crc32(data)
+
+    return b'VBKV' + struct.pack('<i', checksum) + data
+",human
+line627_lm,"def vbkv_dumps(obj):
+    """"""
+    Serialize ``obj`` to a VBKV formatted ``bytes``.
+    """"""
+    return vbkv_dumps_to_bytes(obj)
+",lm
+line7837_human,"def stop(state, host, ctid):
+    """"""
+    Stop OpenVZ containers.
+
+    + ctid: CTID of the container to stop
+    """"""
+
+    args = ['{0}'.format(ctid)]
+
+    yield 'vzctl stop {0}'.format(' '.join(args))
+",human
+line7837_lm,"def stop(state, host, ctid):
+    """"""
+    Stop OpenVZ containers.
+
+    + ctid: CTID of the container to stop
+    """"""
+    return state.execute_command(host, ""vzctl"", ""stop"", ctid)
+",lm
+line8459_human,"def _iter_vals(key):
+    """"""! Iterate over values of a key
+    """"""
+    for i in range(winreg.QueryInfoKey(key)[1]):
+        yield winreg.EnumValue(key, i)
+",human
+line8459_lm,"def _iter_vals(key):
+    """"""! Iterate over values of a key
+    """"""
+    if key in _VALS:
+        return _VALS[key]
+    else:
+        return []
+",lm
+line8817_human,"def use(self, key, value):
+        """"""
+        Temporarily set a parameter value using the with statement.
+        Aliasing allowed.
+        """"""
+        old_value = self[key]
+        try:
+            self[key] = value
+            yield self
+        finally:
+            self[key] = old_value
+",human
+line8817_lm,"def use(self, key, value):
+        """"""
+        Temporarily set a parameter value using the with statement.
+        Aliasing allowed.
+        """"""
+        self.set(key, value)
+        return self
+",lm
+line5266_human,"def from_api_repr(cls, resource):
+        """"""Factory: construct a job configuration given its API representation
+
+        :type resource: dict
+        :param resource:
+            An extract job configuration in the same representation as is
+            returned from the API.
+
+        :rtype: :class:`google.cloud.bigquery.job._JobConfig`
+        :returns: Configuration parsed from ``resource``.
+        """"""
+        config = cls()
+        config._properties = copy.deepcopy(resource)
+        return config
+",human
+line5266_lm,"def from_api_repr(cls, resource):
+        """"""Factory: construct a job configuration given its API representation
+
+        :type resource: dict
+        :param resource:
+            An extract job configuration in the same representation as is
+            returned from the API.
+
+        :rtype: :class:`google.cloud.bigquery.job._JobConfig`
+        :returns: Configuration parsed from ``resource``.
+        """"""
+        config = cls()
+        config._properties = resource
+        return config
+",lm
+line2656_human,"def expand_region(tuple_of_s, a, b, start=0, stop=None):
+    """"""Apply expend_slice on a tuple of slices""""""
+    return tuple(expand_slice(s, a, b, start=start, stop=stop)
+                 for s in tuple_of_s)
+",human
+line2656_lm,"def expand_region(tuple_of_s, a, b, start=0, stop=None):
+    """"""Apply expend_slice on a tuple of slices""""""
+    if stop is None:
+        stop = len(a)
+    return tuple(expand_slice(s, a, b, start, stop) for s in tuple_of_s)
+",lm
+line190_human,"def unsetNsProp(self, ns, name):
+        """"""Remove an attribute carried by a node. """"""
+        if ns is None: ns__o = None
+        else: ns__o = ns._o
+        ret = libxml2mod.xmlUnsetNsProp(self._o, ns__o, name)
+        return ret
+",human
+line190_lm,"def unsetNsProp(self, ns, name):
+        """"""Remove an attribute carried by a node. """"""
+        self.unsetProp(self.getNsProp(ns, name))
+",lm
+line2365_human,"def length(self, error=ERROR, min_depth=MIN_DEPTH):
+        """"""Calculate the length of the path up to a certain position""""""
+        start_point = self.point(0)
+        end_point = self.point(1)
+        return segment_length(self, 0, 1, start_point, end_point, error, min_depth, 0)
+",human
+line2365_lm,"def length(self, error=ERROR, min_depth=MIN_DEPTH):
+        """"""Calculate the length of the path up to a certain position""""""
+        if self.is_empty():
+            return
+",lm
+line2667_human,"def tokenize_sign(self, word):
+        """"""This is for tokenizing cuneiform signs.""""""
+        if self.language == 'akkadian':
+            sign_tokens = tokenize_akkadian_signs(word)
+        else:
+            sign_tokens = 'Language must be written using cuneiform.'
+
+        return sign_tokens
+",human
+line2667_lm,"def tokenize_sign(self, word):
+        """"""This is for tokenizing cuneiform signs.""""""
+        if word in self.signs:
+            return [word]
+        else:
+            return []
+",lm
+line4462_human,"def new(self, page_name, **dict):
+        """"""
+        Create a new item with the provided dict information
+        at the given page_name.  Returns the new item.
+
+        As of version 2.2 of Redmine, this doesn't seem to function.
+        """"""
+        self._item_new_path = '/projects/%s/wiki/%s.json' % \
+            (self._project.identifier, page_name)
+        # Call the base class new method
+        return super(Redmine_Wiki_Pages_Manager, self).new(**dict)
+",human
+line4462_lm,"def new(self, page_name, **dict):
+        """"""
+        Create a new item with the provided dict information
+        at the given page_name.  Returns the new item.
+
+        As of version 2.2 of Redmine, this doesn't seem to function.
+        """"""
+        return self.post(page_name, dict)
+",lm
+line4878_human,"def _auth_key(nonce, username, password):
+    """"""Get an auth key to use for authentication.
+    """"""
+    digest = _password_digest(username, password)
+    md5hash = hashlib.md5()
+    md5hash.update(""%s%s%s"" % (nonce, unicode(username), digest))
+    return unicode(md5hash.hexdigest())
+",human
+line4878_lm,"def _auth_key(nonce, username, password):
+    """"""Get an auth key to use for authentication.
+    """"""
+    return hashlib.sha1(nonce + username + password).hexdigest()
+",lm
+line6478_human,"def halt(self):
+        """"""Close the AVR device connection and wait for a resume() request.""""""
+        self.log.warning('Halting connection to AVR')
+        self._halted = True
+        if self.protocol.transport:
+            self.protocol.transport.close()
+",human
+line6478_lm,"def halt(self):
+        """"""Close the AVR device connection and wait for a resume() request.""""""
+        self.close()
+        self.wait_for_resume()
+",lm
+line7398_human,"def history(namespace_module):
+    """"""Hash all versions on Artifactory.""""""
+    for path in get_namespace_history(namespace_module):
+        h = get_bel_resource_hash(path.as_posix())
+        click.echo('{}\t{}'.format(path, h))
+",human
+line7398_lm,"def history(namespace_module):
+    """"""Hash all versions on Artifactory.""""""
+    # Get all versions
+    versions = namespace_module.get_versions()
+    # Get all versions from Artifactory
+    artifactory_versions = namespace_module.get_artifactory_versions()
+    # Get all versions from Artifactory that are not in the versions list
+    new_versions = [v for v in artifactory_versions if v not in versions]
+    # Get all versions from the versions list that are not in Artifactory
+    deleted_versions = [v for v in versions if v not in artifactory_versions]
+    # Get all versions from the versions list that are in Artifactory
+    existing_versions = [v for v in versions if v in artifactory_versions]
+    # Get all versions from the versions list that are in Artifactory and are not the latest
+    old_versions = [v for v in existing_versions if v != namespace_module.get_latest_version()]
+    # Get all versions from the versions list that are in Artifactory and are the latest
+    latest_versions = [v for v in existing_versions if v == namespace_module.get_latest_version()]
+    # Get all versions from the versions list that are in Artifactory and are not the latest
+    # and are not in the new_versions list
+    old_new_versions = [v for v in old_versions if v not in new_versions]
+    # Get all versions from the versions list that are in Artifactory and are not the latest
+    # and are in the new_versions list
+    old_deleted_versions = [v for v in old_versions if v in new_versions]
+    # Get all versions from the versions list that are in Artifactory and are the latest
+    # and are not in the new_versions list
+    latest_deleted_versions = [v for v in latest_versions if v not in new_versions]
+    # Get all versions from the versions list that are in Artifactory and are the latest
+    # and are in the new_versions list
+    latest_new_versions = [v for v in latest_versions if v in new_versions]
+    # Get all versions from the versions list that are in Artifactory and are not the latest
+    # and are in the
+",lm
+line864_human,"def freeze(self):
+        """"""Causes the ConfigTree to become read only.
+
+        This is useful for loading and then freezing configurations that should not be modified at runtime.
+        """"""
+        self.__dict__['_frozen'] = True
+        for child in self._children.values():
+            child.freeze()
+",human
+line864_lm,"def freeze(self):
+        """"""Causes the ConfigTree to become read only.
+
+        This is useful for loading and then freezing configurations that should not be modified at runtime.
+        """"""
+        self._frozen = True
+",lm
+line1458_human,"def save_toc(self, tocpos):
+        """"""Save the table of contents to disk.""""""
+        self.tocpos = tocpos
+        tocstr = self.toc.tobinary()
+        self.toclen = len(tocstr)
+        self.lib.write(tocstr)
+",human
+line1458_lm,"def save_toc(self, tocpos):
+        """"""Save the table of contents to disk.""""""
+        if self.toc_file is None:
+            return
+        with open(self.toc_file, 'w') as f:
+            f.write(tocpos)
+",lm
+line4937_human,"def get_recent_async(self, count, callback):
+        """"""Similar to `get_recent` except instead of returning an iterable, passes each dict to the given function which
+        must accept a single argument. Returns the request.
+
+        `callback` (mandatory) (function) instead of returning an iterable, pass each dict (as described above) to the
+        given function which must accept a single argument. Nothing is returned.
+        """"""
+        validate_nonnegative_int(count, 'count')
+        Validation.callable_check(callback, allow_none=True)
+        evt = self._client._request_sub_recent(self.subid, count=count)
+        self._client._add_recent_cb_for(evt, callback)
+        return evt
+",human
+line4937_lm,"def get_recent_async(self, count, callback):
+        """"""Similar to `get_recent` except instead of returning an iterable, passes each dict to the given function which
+        must accept a single argument. Returns the request.
+
+        `callback` (mandatory) (function) instead of returning an iterable, pass each dict (as described above) to the
+        given function which must accept a single argument. Nothing is returned.
+        """"""
+        return self._get_recent_async(count, callback)
+",lm
+line2837_human,"def _iterContours(self, **kwargs):
+        """"""
+        This must return an iterator that returns wrapped contours.
+
+        Subclasses may override this method.
+        """"""
+        count = len(self)
+        index = 0
+        while count:
+            yield self[index]
+            count -= 1
+            index += 1
+",human
+line2837_lm,"def _iterContours(self, **kwargs):
+        """"""
+        This must return an iterator that returns wrapped contours.
+
+        Subclasses may override this method.
+        """"""
+        return self.contours(**kwargs)
+",lm
+line2886_human,"def storagehandler(self):
+        """"""
+        Returns the storage handler available to thise actor.
+
+        :return: the storage handler, None if not available
+        """"""
+        if isinstance(self, StorageHandler):
+            return self
+        elif self.parent is not None:
+            return self.parent.storagehandler
+        else:
+            return None
+",human
+line2886_lm,"def storagehandler(self):
+        """"""
+        Returns the storage handler available to thise actor.
+
+        :return: the storage handler, None if not available
+        """"""
+        return self._storagehandler
+",lm
+line5091_human,"def round(self, multiple=1):
+        """"""
+        Rounds the kerning values to increments of **multiple**,
+        which will be an ``int``.
+
+        The default behavior is to round to increments of 1.
+        """"""
+        if not isinstance(multiple, int):
+            raise TypeError(""The round multiple must be an int not %s.""
+                            % multiple.__class__.__name__)
+        self._round(multiple)
+",human
+line5091_lm,"def round(self, multiple=1):
+        """"""
+        Rounds the kerning values to increments of **multiple**,
+        which will be an ``int``.
+
+        The default behavior is to round to increments of 1.
+        """"""
+        for key, value in self.items():
+            self[key] = round(value, multiple)
+",lm
+line5464_human,"def clear(*signals):
+    """"""
+    Clears all callbacks for a particular signal or signals
+    """"""
+    signals = signals if signals else receivers.keys()
+
+    for signal in signals:
+        receivers[signal].clear()
+",human
+line5464_lm,"def clear(*signals):
+    """"""
+    Clears all callbacks for a particular signal or signals
+    """"""
+    for signal in signals:
+        if signal in _callbacks:
+            del _callbacks[signal]
+",lm
+line5965_human,"def update_from_group(self, data=None, timeout=-1):
+        """"""
+        Use this action to make a logical enclosure consistent with the enclosure group when the logical enclosure is
+        in the Inconsistent state.
+
+        Args:
+            timeout: Timeout in seconds. Wait for task completion by default. The timeout does not abort the operation
+                in OneView; it just stops waiting for its completion.
+
+        Returns:
+            dict: Logical enclosure.
+        """"""
+        uri = ""{}/updateFromGroup"".format(self.data[""uri""])
+        return self._helper.update(data, uri, timeout=timeout)
+",human
+line5965_lm,"def update_from_group(self, data=None, timeout=-1):
+        """"""
+        Use this action to make a logical enclosure consistent with the enclosure group when the logical enclosure is
+        in the Inconsistent state.
+
+        Args:
+            timeout: Timeout in seconds. Wait for task completion by default. The timeout does not abort the operation
+                in OneView; it just stops waiting for its completion.
+
+        Returns:
+            dict: Logical enclosure.
+        """"""
+        return self._client.update_from_group(self.data, timeout=timeout)
+",lm
+line6334_human,"def insert_resources(self, resources):
+        """"""insert_resources(resources)
+
+        Insert all resources entries in the list RESOURCES into the
+        database.  Each element in RESOURCES should be a tuple:
+
+          (resource, value)
+
+        Where RESOURCE is a string and VALUE can be any Python value.
+
+        """"""
+
+        for res, value in resources:
+            self.insert(res, value)
+",human
+line6334_lm,"def insert_resources(self, resources):
+        """"""insert_resources(resources)
+
+        Insert all resources entries in the list RESOURCES into the
+        database.  Each element in RESOURCES should be a tuple:
+
+          (resource, value)
+
+        Where RESOURCE is a string and VALUE can be any Python value.
+
+        """"""
+        for resource, value in resources:
+            self.insert_resource(resource, value)
+",lm
+line6524_human,"def post(self, path, data, **options):
+        """"""
+        Parses POST request options and dispatches a request
+        """"""
+        data, options = self._update_request(data, options)
+        return self.request('post', path, data=data, **options)
+",human
+line6524_lm,"def post(self, path, data, **options):
+        """"""
+        Parses POST request options and dispatches a request
+        """"""
+        options.update({'method': 'POST', 'data': data})
+        return self.request(path, **options)
+",lm
+line748_human,"def add(self, child):
+        """"""
+        Adds a typed child object to the structure object.
+
+        @param child: Child object to be added.
+        """"""
+
+        if isinstance(child, Assign):
+            self.add_assign(child)
+        else:
+            raise ModelError('Unsupported child element')
+",human
+line748_lm,"def add(self, child):
+        """"""
+        Adds a typed child object to the structure object.
+
+        @param child: Child object to be added.
+        """"""
+        if child is None:
+            raise ValueError(""Child object cannot be None"")
+        if not isinstance(child, self.child_type):
+            raise TypeError(""Child object must be of type "" + str(self.child_type))
+        self.children.append(child)
+",lm
+line8375_human,"def get_ipv4_table(self):
+        """"""Returns global IPv4 table.
+
+        Creates the table if it does not exist.
+        """"""
+
+        vpn_table = self._global_tables.get(RF_IPv4_UC)
+        # Lazy initialize the table.
+        if not vpn_table:
+            vpn_table = Ipv4Table(self._core_service, self._signal_bus)
+            self._global_tables[RF_IPv4_UC] = vpn_table
+            self._tables[(None, RF_IPv4_UC)] = vpn_table
+
+        return vpn_table
+",human
+line8375_lm,"def get_ipv4_table(self):
+        """"""Returns global IPv4 table.
+
+        Creates the table if it does not exist.
+        """"""
+        return self.get_table(self.IPV4_TABLE)
+",lm
+line1642_human,"def register(self, recipe):
+        """"""
+        Registers a new recipe class.
+        """"""
+
+        if not isinstance(recipe, (list, tuple)):
+            recipe = [recipe, ]
+
+        for item in recipe:
+            recipe = self.get_recipe_instance_from_class(item)
+            self._registry[recipe.slug] = recipe
+",human
+line1642_lm,"def register(self, recipe):
+        """"""
+        Registers a new recipe class.
+        """"""
+        self.recipes[recipe.name] = recipe
+",lm
+line1255_human,"def from_local_name(acs, attr, name_format):
+    """"""
+    :param acs: List of AttributeConverter instances
+    :param attr: attribute name as string
+    :param name_format: Which name-format it should be translated to
+    :return: An Attribute instance
+    """"""
+    for aconv in acs:
+        #print(ac.format, name_format)
+        if aconv.name_format == name_format:
+            #print(""Found a name_form converter"")
+            return aconv.to_format(attr)
+    return attr
+",human
+line1255_lm,"def from_local_name(acs, attr, name_format):
+    """"""
+    :param acs: List of AttributeConverter instances
+    :param attr: attribute name as string
+    :param name_format: Which name-format it should be translated to
+    :return: An Attribute instance
+    """"""
+    for ac in acs:
+        if ac.name_format == name_format:
+            return ac.from_local_name(attr)
+    raise ValueError(""No AttributeConverter found for name-format %s"" % name_format)
+",lm
+line222_human,"def _init_metadata_table():
+    """"""Initialise the ""metadata"" table in the db.""""""
+    _metadata_table = sqlalchemy.Table(
+        'metadata', _METADATA,
+        sqlalchemy.Column(
+            'job_id', sqlalchemy.ForeignKey(""jobs.job_id"", ondelete=""CASCADE""),
+            nullable=False, primary_key=True),
+        sqlalchemy.Column('key', sqlalchemy.UnicodeText, primary_key=True),
+        sqlalchemy.Column('value', sqlalchemy.UnicodeText, index=True),
+        sqlalchemy.Column('type', sqlalchemy.UnicodeText),
+        )
+    return _metadata_table
+",human
+line222_lm,"def _init_metadata_table():
+    """"""Initialise the ""metadata"" table in the db.""""""
+    metadata_table = Table('metadata', metadata,
+                            Column('id', Integer, primary_key=True),
+                            Column('name', String(255), nullable=False),
+                            Column('value', String(255), nullable=False),
+                            Column('created_at', DateTime, nullable=False),
+                            Column('updated_at', DateTime, nullable=False),
+                            Column('deleted_at', DateTime, nullable=True),
+                            Column('deleted', Boolean, nullable=False,
+                                   default=False),
+                            mysql_engine='InnoDB',
+                            mysql_charset='utf8')
+    metadata_table.create()
+",lm
+line3936_human,"def stage_pywbem_result(self, ret, exc):
+        """""" Set Result return info or exception info""""""
+        # pylint: disable=attribute-defined-outside-init
+        self._pywbem_result_ret = ret
+        self._pywbem_result_exc = exc
+",human
+line3936_lm,"def stage_pywbem_result(self, ret, exc):
+        """""" Set Result return info or exception info""""""
+        if exc:
+            ret['result'] = str(exc)
+        else:
+            ret['result'] = ret
+        return ret
+",lm
+line5527_human,"def _finalize(self):
+        """"""Reset the status and tell the database to finalize the traces.""""""
+        if self.status in ['running', 'halt']:
+            if self.verbose > 0:
+                print_('\nSampling finished normally.')
+            self.status = 'ready'
+
+        self.save_state()
+        self.db._finalize()
+",human
+line5527_lm,"def _finalize(self):
+        """"""Reset the status and tell the database to finalize the traces.""""""
+        self.status = 'finalized'
+        self.db.finalize()
+",lm
+line6016_human,"def format(self, *args, **kwargs):
+        """"""
+        Format the string representation of the editor.
+
+        Args:
+            inplace (bool): If True, overwrite editor's contents with formatted contents
+        """"""
+        inplace = kwargs.pop(""inplace"", False)
+        if not inplace:
+            return str(self).format(*args, **kwargs)
+        self._lines = str(self).format(*args, **kwargs).splitlines()
+",human
+line6016_lm,"def format(self, *args, **kwargs):
+        """"""
+        Format the string representation of the editor.
+
+        Args:
+            inplace (bool): If True, overwrite editor's contents with formatted contents
+        """"""
+        inplace = kwargs.get('inplace', False)
+        if inplace:
+            self.text.set_text(self.format_text())
+        else:
+            return self.format_text()
+",lm
+line6815_human,"def replace(self, scaling_group, name, cooldown, min_entities,
+            max_entities, metadata=None):
+        """"""
+        Replace an existing ScalingGroup configuration. All of the attributes
+        must be specified If you wish to delete any of the optional attributes,
+        pass them in as None.
+        """"""
+        body = self._create_group_config_body(name, cooldown, min_entities,
+                max_entities, metadata=metadata)
+        group_id = utils.get_id(scaling_group)
+        uri = ""/%s/%s/config"" % (self.uri_base, group_id)
+        resp, resp_body = self.api.method_put(uri, body=body)
+",human
+line6815_lm,"def replace(self, scaling_group, name, cooldown, min_entities,
+            max_entities, metadata=None):
+        """"""
+        Replace an existing ScalingGroup configuration. All of the attributes
+        must be specified If you wish to delete any of the optional attributes,
+        pass them in as None.
+        """"""
+        if metadata is None:
+            metadata = {}
+        params = {
+            'scalingGroupName': name,
+            'cooldown': cooldown,
+            'minEntities': min_entities,
+            'maxEntities': max_entities,
+            'metadata': metadata,
+        }
+        return self.connection.request(
+            '%s/scalingGroups/%s' % (self.uri, scaling_group),
+            method='PUT',
+            data=params).object
+",lm
+line6966_human,"def set_outdir(self):
+        """"""Set output directory.""""""
+        dirname = self.w.outdir.get_text()
+        if os.path.isdir(dirname):
+            self.outdir = dirname
+            self.logger.debug('Output directory set to {0}'.format(self.outdir))
+        else:
+            self.w.outdir.set_text(self.outdir)
+            self.logger.error('{0} is not a directory'.format(dirname))
+",human
+line6966_lm,"def set_outdir(self):
+        """"""Set output directory.""""""
+        self.outdir = os.path.join(self.workdir, self.name)
+        if not os.path.exists(self.outdir):
+            os.makedirs(self.outdir)
+",lm
+line2510_human,"def is_class(data):
+    """"""
+    checks that the data (which is a string, buffer, or a stream
+    supporting the read method) has the magic numbers indicating it is
+    a Java class file. Returns False if the magic numbers do not
+    match, or for any errors.
+    """"""
+
+    try:
+        with unpack(data) as up:
+            magic = up.unpack_struct(_BBBB)
+
+        return magic == JAVA_CLASS_MAGIC
+
+    except UnpackException:
+        return False
+",human
+line2510_lm,"def is_class(data):
+    """"""
+    checks that the data (which is a string, buffer, or a stream
+    supporting the read method) has the magic numbers indicating it is
+    a Java class file. Returns False if the magic numbers do not
+    match, or for any errors.
+    """"""
+    try:
+        data.seek(0)
+        magic = data.read(4)
+        data.seek(0)
+        if magic == JAVA_CLASS_MAGIC:
+            return True
+        else:
+            return False
+    except:
+        return False
+",lm
+line795_human,"def _associate_placeable(self, location):
+        """"""
+        Saves a reference to a placeable
+        """"""
+        if not location:
+            return
+
+        placeable, _ = unpack_location(location)
+        self.previous_placeable = placeable
+        if not self.placeables or (placeable != self.placeables[-1]):
+            self.placeables.append(placeable)
+",human
+line795_lm,"def _associate_placeable(self, location):
+        """"""
+        Saves a reference to a placeable
+        """"""
+        self.placeable = location
+",lm
+line1254_human,"def package_info(self):
+        """"""Collect built libraries names and solve flatc path.
+        """"""
+        self.cpp_info.libs = tools.collect_libs(self)
+        self.user_info.flatc = os.path.join(self.package_folder, ""bin"", ""flatc"")
+",human
+line1254_lm,"def package_info(self):
+        """"""Collect built libraries names and solve flatc path.
+        """"""
+        self.built_libraries = []
+        self.flatc_path = None
+        for lib in self.libs:
+            if lib.startswith('lib'):
+                self.built_libraries.append(lib)
+            if lib == 'flatc':
+                self.flatc_path = lib
+",lm
+line2266_human,"def set_features(self):
+        """"""Creates scorefiles for qvality's target and decoy distributions""""""
+        self.scores = {}
+        for t_or_d, feats in zip(['target', 'decoy'], [self.target,
+                                                       self.decoy]):
+            self.scores[t_or_d] = {}
+            self.scores[t_or_d]['scores'] = self.score_get_fun(
+                feats, self.featuretype, self.prepare_percolator_output)
+            self.scores[t_or_d]['fn'] = '{}_qvality_input.txt'.format(t_or_d)
+            writers.write_qvality_input(self.scores[t_or_d]['scores'],
+                                        self.scores[t_or_d]['fn'])
+",human
+line2266_lm,"def set_features(self):
+        """"""Creates scorefiles for qvality's target and decoy distributions""""""
+        self.logger.info(""Setting features"")
+        self.logger.info(""Creating target distribution"")
+        self.target_distribution = self.create_distribution(
+            self.target_file, self.target_distribution_file
+        )
+        self.logger.info(""Creating decoy distribution"")
+        self.decoy_distribution = self.create_distribution(
+            self.decoy_file, self.decoy_distribution_file
+        )
+",lm
+line3596_human,"def get_auth_header(self):
+        """"""
+        Getting the authorization header according to the authentication procedure
+
+        :return [dict]: Authorization header
+        """"""
+        if self.api.is_authenticated:
+            return {""Authorization"": ""Bearer %s"" % self.api.access_token}
+        return {""Authorization"": ""Client-ID %s"" % self.api.client_id}
+",human
+line3596_lm,"def get_auth_header(self):
+        """"""
+        Getting the authorization header according to the authentication procedure
+
+        :return [dict]: Authorization header
+        """"""
+        if self.auth_type == 'basic':
+            return {'Authorization': 'Basic ' + self.auth_token}
+        elif self.auth_type == 'token':
+            return {'Authorization': 'Bearer ' + self.auth_token}
+        elif self.auth_type == 'api_key':
+            return {'X-API-KEY': self.auth_token}
+        else:
+            return {}
+",lm
+line5059_human,"def send_slack_message(message):
+    """"""Send a message to the slack channel #coretools""""""
+
+    if 'SLACK_WEB_HOOK' not in os.environ:
+        raise EnvironmentError(""Could not find SLACK_WEB_HOOK environment variable"")
+
+    webhook = os.environ['SLACK_WEB_HOOK']
+
+    r = requests.post(webhook, json={'text':message, 'username': 'Release Bot'})
+    if r.status_code != 200:
+        raise RuntimeError(""Could not post message to slack channel"")
+",human
+line5059_lm,"def send_slack_message(message):
+    """"""Send a message to the slack channel #coretools""""""
+    import os
+    import slackweb
+
+    slack = slackweb.Slack(url=os.environ['SLACK_URL'])
+    slack.notify(message)
+",lm
+line5556_human,"def create_or_edit(self, id, seq, resource): # pylint: disable=invalid-name,redefined-builtin
+        """"""Create or edit a highlight.
+
+        :param id: Result ID as an int.
+        :param seq: TestResult sequence ID as an int.
+        :param resource: :class:`highlights.Highlight <highlights.Highlight>` object
+        :return: :class:`highlights.Highlight <highlights.Highlight>` object
+        :rtype: highlights.Highlight
+        """"""
+        schema = HighlightSchema(exclude=('id', 'seq'))
+        json = self.service.encode(schema, resource)
+
+        schema = HighlightSchema()
+        resp = self.service.edit(self._base(id, seq), resource.line, json)
+        return self.service.decode(schema, resp)
+",human
+line5556_lm,"def create_or_edit(self, id, seq, resource): # pylint: disable=invalid-name,redefined-builtin
+        """"""Create or edit a highlight.
+
+        :param id: Result ID as an int.
+        :param seq: TestResult sequence ID as an int.
+        :param resource: :class:`highlights.Highlight <highlights.Highlight>` object
+        :return: :class:`highlights.Highlight <highlights.Highlight>` object
+        :rtype: highlights.Highlight
+        """"""
+        if id is None:
+            return self.create(seq, resource)
+        else:
+            return self.edit(id, seq, resource)
+",lm
+line5999_human,"def setDirty(self, state=True):
+        """"""
+        Flags the connection as being dirty and needing a rebuild.
+
+        :param      state   | <bool>
+        """"""
+        self._dirty = state
+
+        # set if this connection should be visible
+        if self._inputNode and self._outputNode:
+            vis = self._inputNode.isVisible() and self._outputNode.isVisible()
+            self.setVisible(vis)
+",human
+line5999_lm,"def setDirty(self, state=True):
+        """"""
+        Flags the connection as being dirty and needing a rebuild.
+
+        :param      state   | <bool>
+        """"""
+        self._dirty = state
+",lm
+line7671_human,"def make_dash_table(df):
+    """""" Return a dash definitio of an HTML table for a Pandas dataframe """"""
+    table = []
+    for index, row in df.iterrows():
+        html_row = []
+        for i in range(len(row)):
+            html_row.append(html.Td([row[i]]))
+        table.append(html.Tr(html_row))
+    return table
+",human
+line7671_lm,"def make_dash_table(df):
+    """""" Return a dash definitio of an HTML table for a Pandas dataframe """"""
+    return html.Table(
+        # Header
+        [html.Tr([html.Th(col) for col in df.columns])] +
+
+        # Body
+        [html.Tr([
+            html.Td(df.iloc[i][col]) for col in df.columns
+        ]) for i in range(len(df))]
+    )
+",lm
+line7698_human,"def _extract_email(data):
+    """"""
+    {'elements': [{'handle': 'urn:li:emailAddress:319371470',
+               'handle~': {'emailAddress': 'raymond.penners@intenct.nl'}}]}
+    """"""
+    ret = ''
+    elements = data.get('elements', [])
+    if len(elements) > 0:
+        ret = elements[0].get('handle~', {}).get('emailAddress', '')
+    return ret
+",human
+line7698_lm,"def _extract_email(data):
+    """"""
+    {'elements': [{'handle': 'urn:li:emailAddress:319371470',
+               'handle~': {'emailAddress': 'raymond.penners@intenct.nl'}}]}
+    """"""
+    if 'elements' in data:
+        for element in data['elements']:
+            if 'handle~' in element:
+                return element['handle~']['emailAddress']
+    return None
+",lm
+line2422_human,"def setnonce(self, text=None):
+        """"""
+        Set I{nonce} which is arbitraty set of bytes to prevent
+        reply attacks.
+        @param text: The nonce text value.
+            Generated when I{None}.
+        @type text: str
+        """"""
+        if text is None:
+            s = []
+            s.append(self.username)
+            s.append(self.password)
+            s.append(Token.sysdate())
+            m = md5()
+            m.update(':'.join(s).encode(""utf-8""))
+            self.nonce = m.hexdigest()
+        else:
+            self.nonce = text
+",human
+line2422_lm,"def setnonce(self, text=None):
+        """"""
+        Set I{nonce} which is arbitraty set of bytes to prevent
+        reply attacks.
+        @param text: The nonce text value.
+            Generated when I{None}.
+        @type text: str
+        """"""
+        if text is None:
+            self.nonce = self.random_string(16)
+        else:
+            self.nonce = text
+",lm
+line5924_human,"def update_button(self, button, widget):
+        """"""Update the icon of the button with the given widget
+
+        if the widget does not is invalid, it is deleted from the tooltip automatically.
+
+        :param button: the button to update
+        :type button: QtGui.QAbstractButton
+        :param widget: the widget to render as icon
+        :type widget: QtGui.QWidget
+        :returns: None
+        :rtype: None
+        :raises: None
+        """"""
+        if not shiboken.isValid(widget):
+            self.remove_widget(widget)
+            return
+        button.setIconSize(QtCore.QSize(self._iconw, self._iconh))
+        pix = QtGui.QPixmap(widget.size())
+        widget.render(pix)
+        icon = QtGui.QIcon(pix)
+        button.setIcon(icon)
+",human
+line5924_lm,"def update_button(self, button, widget):
+        """"""Update the icon of the button with the given widget
+
+        if the widget does not is invalid, it is deleted from the tooltip automatically.
+
+        :param button: the button to update
+        :type button: QtGui.QAbstractButton
+        :param widget: the widget to render as icon
+        :type widget: QtGui.QWidget
+        :returns: None
+        :rtype: None
+        :raises: None
+        """"""
+        if widget is None:
+            button.setIcon(None)
+            button.setToolTip(None)
+        else:
+            button.setIcon(self.render_icon(widget))
+            button.setToolTip(self.render_tooltip(widget))
+",lm
+line2462_human,"def _attach_param_from_server(self, item):
+        """"""
+        [NOT IMPLEMENTED]
+        """"""
+        if isinstance(item, list):
+            for itemi in item:
+                self._attach_param_from_server(itemi)
+        else:
+            # then we need to add a new parameter
+            d = item['attributes']
+            d['uniqueid'] = item['id']
+            param = parameters.parameter_from_json(d, bundle=self)
+
+            metawargs = {}
+            self._attach_params([param], **metawargs)
+",human
+line2462_lm,"def _attach_param_from_server(self, item):
+        """"""
+        [NOT IMPLEMENTED]
+        """"""
+        raise NotImplementedError
+",lm
+line2571_human,"def cleartextRoot(self, hostname=None):
+        """"""
+        Return a string representing the HTTP URL which is at the root of this
+        site.
+
+        @param hostname: An optional unicode string which, if specified, will
+        be used as the hostname in the resulting URL, regardless of the
+        C{hostname} attribute of this item.
+        """"""
+        warnings.warn(
+            ""Use ISiteURLGenerator.rootURL instead of WebSite.cleartextRoot."",
+            category=DeprecationWarning,
+            stacklevel=2)
+        if self.store.parent is not None:
+            generator = ISiteURLGenerator(self.store.parent)
+        else:
+            generator = ISiteURLGenerator(self.store)
+        return generator.cleartextRoot(hostname)
+",human
+line2571_lm,"def cleartextRoot(self, hostname=None):
+        """"""
+        Return a string representing the HTTP URL which is at the root of this
+        site.
+
+        @param hostname: An optional unicode string which, if specified, will
+        be used as the hostname in the resulting URL, regardless of the
+        C{hostname} attribute of this item.
+        """"""
+        if hostname is None:
+            hostname = self.hostname
+        return u'http://%s/' % (hostname,)
+",lm
+line7167_human,"def update(self, adgroup_id, default_price, nonsearch_max_price, is_nonsearch_default_price, online_status, campaign_id, nick=None):
+        """"""xxxxx.xxxxx.adgroup.update
+        ===================================
+        更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价""""""
+        request = TOPRequest('xxxxx.xxxxx.adgroup.update')
+        request['adgroup_id'] = adgroup_id
+        request['default_price'] = default_price
+        request['nonsearch_max_price'] = nonsearch_max_price
+        request['is_nonsearch_default_price'] = is_nonsearch_default_price
+        request['online_status'] = online_status
+        request['campaign_id'] = campaign_id
+        if nick!=None: request['nick'] = nick
+        self.create(self.execute(request), fields=['success','result','success','result_code','result_message'], models={'result':ADGroup})
+        return self.result
+",human
+line7167_lm,"def update(self, adgroup_id, default_price, nonsearch_max_price, is_nonsearch_default_price, online_status, campaign_id, nick=None):
+        """"""xxxxx.xxxxx.adgroup.update
+        ===================================
+        更新一个推广组的信息，可以设置默认出价、是否上线、非搜索出价、非搜索是否使用默认出价""""""
+        params = {
+            'adgroup_id': adgroup_id,
+            'default_price': default_price,
+            'nonsearch_max_price': nonsearch_max_price,
+            'is_nonsearch_default_price': is_nonsearch_default_price,
+            'online_status': online_status,
+            'campaign_id': campaign_id,
+        }
+        if nick:
+            params['nick'] = nick
+        return self.call('adgroup.update', params)
+",lm
+line7334_human,"def _sample_as_dict(self, sample):
+        """"""Convert list-like ``sample`` (list/dict/dimod.SampleView),
+        ``list: var``, to ``map: idx -> var``.
+        """"""
+        if isinstance(sample, dict):
+            return sample
+        if isinstance(sample, (list, numpy.ndarray)):
+            sample = enumerate(sample)
+        return dict(sample)
+",human
+line7334_lm,"def _sample_as_dict(self, sample):
+        """"""Convert list-like ``sample`` (list/dict/dimod.SampleView),
+        ``list: var``, to ``map: idx -> var``.
+        """"""
+        if isinstance(sample, dict):
+            return sample
+        elif isinstance(sample, list):
+            return {idx: v for idx, v in enumerate(sample)}
+        elif isinstance(sample, dimod.SampleView):
+            return sample.to_dict()
+        else:
+            raise TypeError(""sample must be a list, dict, or dimod.SampleView"")
+",lm
+line1360_human,"def embed(self, url, format='json', **opt):
+        """"""
+        Get an OEmbedResponse from one of the providers configured in this
+        consumer according to the resource url.
+
+        Args:
+            url: The url of the resource to get.
+            format: Desired response format.
+            **opt: Optional parameters to pass in the url to the provider.
+
+        Returns:
+            OEmbedResponse object.
+        """"""
+        if format not in ['json', 'xml']:
+            raise OEmbedInvalidRequest('Format must be json or xml')
+        opt['format'] = format
+        return self._request(url, **opt)
+",human
+line1360_lm,"def embed(self, url, format='json', **opt):
+        """"""
+        Get an OEmbedResponse from one of the providers configured in this
+        consumer according to the resource url.
+
+        Args:
+            url: The url of the resource to get.
+            format: Desired response format.
+            **opt: Optional parameters to pass in the url to the provider.
+
+        Returns:
+            OEmbedResponse object.
+        """"""
+        if format not in self.formats:
+            raise ValueError('Format not supported')
+
+        provider = self.get_provider(url)
+        if provider is None:
+            raise ValueError('No provider found for url')
+
+        return provider.get_response(url, format, **opt)
+",lm
+line4997_human,"def extract(what, calc_id, webapi=True):
+    """"""
+    Extract an output from the datastore and save it into an .hdf5 file.
+    By default uses the WebAPI, otherwise the extraction is done locally.
+    """"""
+    with performance.Monitor('extract', measuremem=True) as mon:
+        if webapi:
+            obj = WebExtractor(calc_id).get(what)
+        else:
+            obj = Extractor(calc_id).get(what)
+        fname = '%s_%d.hdf5' % (what.replace('/', '-').replace('?', '-'),
+                                calc_id)
+        obj.save(fname)
+        print('Saved', fname)
+    if mon.duration > 1:
+        print(mon)
+",human
+line4997_lm,"def extract(what, calc_id, webapi=True):
+    """"""
+    Extract an output from the datastore and save it into an .hdf5 file.
+    By default uses the WebAPI, otherwise the extraction is done locally.
+    """"""
+    if webapi:
+        return extract_webapi(what, calc_id)
+    else:
+        return extract_local(what, calc_id)
+",lm
+line1004_human,"def utf8(value):
+    r""""""
+    Check that the string is UTF-8. Returns an encode bytestring.
+
+    >>> utf8(b'\xe0')  # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    ValueError: Not UTF-8: ...
+    """"""
+    try:
+        if isinstance(value, bytes):
+            return value.decode('utf-8')
+        else:
+            return value
+    except Exception:
+        raise ValueError('Not UTF-8: %r' % value)
+",human
+line1004_lm,"def utf8(value):
+    r""""""
+    Check that the string is UTF-8. Returns an encode bytestring.
+
+    >>> utf8(b'\xe0')  # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    ValueError: Not UTF-8: ...
+    """"""
+    if isinstance(value, str):
+        value = value.encode('utf-8')
+    if not isinstance(value, bytes):
+        raise TypeError('Expected bytes, got %r' % type(value))
+    try:
+        value.decode('utf-8')
+    except UnicodeDecodeError:
+        raise ValueError('Not UTF-8')
+    return value
+",lm
+line1294_human,"def adjoint(self):
+        """"""Adjoint of this operator.
+
+        The adjoint of the operator composition is the composition of
+        the operator adjoints in reverse order:
+
+            ``OperatorComp(left, right).adjoint ==
+            OperatorComp(right.adjoint, left.adjoint)``
+
+        Returns
+        -------
+        adjoint : `OperatorComp`
+
+        Raises
+        ------
+        OpNotImplementedError
+            If any of the underlying operators are non-linear.
+        """"""
+        if not self.is_linear:
+            raise OpNotImplementedError('nonlinear operators have no adjoint')
+
+        return OperatorComp(self.right.adjoint, self.left.adjoint,
+                            self.__tmp)
+",human
+line1294_lm,"def adjoint(self):
+        """"""Adjoint of this operator.
+
+        The adjoint of the operator composition is the composition of
+        the operator adjoints in reverse order:
+
+            ``OperatorComp(left, right).adjoint ==
+            OperatorComp(right.adjoint, left.adjoint)``
+
+        Returns
+        -------
+        adjoint : `OperatorComp`
+
+        Raises
+        ------
+        OpNotImplementedError
+            If any of the underlying operators are non-linear.
+        """"""
+        if not all(op.is_linear for op in self.operators):
+            raise OpNotImplementedError(
+                ""Cannot take adjoint of non-linear operator composition.""
+            )
+        return OperatorComp(
+            *[op.adjoint() for op in reversed(self.operators)]
+        )
+",lm
+line2701_human,"def get_object_cache_keys(instance):
+    """"""
+    Return the cache keys associated with an object.
+    """"""
+    if instance.pk is None or instance._state.adding:
+        return []
+
+    keys = []
+    tr_models = instance._parler_meta.get_all_models()
+
+    # TODO: performs a query to fetch the language codes. Store that in memcached too.
+    for language in instance.get_available_languages():
+        for tr_model in tr_models:
+            keys.append(get_translation_cache_key(tr_model, instance.pk, language))
+
+    return keys
+",human
+line2701_lm,"def get_object_cache_keys(instance):
+    """"""
+    Return the cache keys associated with an object.
+    """"""
+    return [
+        get_object_cache_key(instance, field)
+        for field in instance._meta.get_fields()
+        if field.get_internal_type() in ('ForeignKey', 'OneToOneField')
+    ]
+",lm
+line4745_human,"def apply_vcc(self,vcc):
+        """"""
+        Applies velocity contrast curve constraint to each population
+
+        See :func:`vespa.stars.StarPopulation.apply_vcc`;
+        all arguments passed to that function for each population.
+
+        """"""
+        if 'secondary spectrum' not in self.constraints:
+            self.constraints.append('secondary spectrum')
+        for pop in self.poplist:
+            if not pop.is_specific:
+                try:
+                    pop.apply_vcc(vcc)
+                except:
+                    logging.info('VCC constraint not applied to %s model' % (pop.model))
+",human
+line4745_lm,"def apply_vcc(self,vcc):
+        """"""
+        Applies velocity contrast curve constraint to each population
+
+        See :func:`vespa.stars.StarPopulation.apply_vcc`;
+        all arguments passed to that function for each population.
+
+        """"""
+        for pop in self.populations:
+            pop.apply_vcc(vcc)
+",lm
+line5244_human,"def execute_setup_name(self):  # type: () -> Optional[str]
+        """"""
+        Runs code, so this is a bit dangerous, especially if it isn't your own
+        :return:
+        """"""
+        try:
+            name = execute_get_text(""python setup.py --name"")
+        except subprocess.CalledProcessError:
+            # setup.py is not always in an executable state
+            return None
+        if not name:
+            return None
+        name = name.strip("" \n\t"")
+        if "" "" in name or ""\n"" in name:
+            # likely includes print() that ruin results
+            return None
+        return name
+",human
+line5244_lm,"def execute_setup_name(self):  # type: () -> Optional[str]
+        """"""
+        Runs code, so this is a bit dangerous, especially if it isn't your own
+        :return:
+        """"""
+        if self.setup_name is None:
+            self.setup_name = self.execute_setup_name_code()
+        return self.setup_name
+",lm
+line6831_human,"def create_label(self, name, color):
+        """"""Create a label for this repository.
+
+        :param str name: (required), name to give to the label
+        :param str color: (required), value of the color to assign to the
+            label, e.g., '#fafafa' or 'fafafa' (the latter is what is sent)
+        :returns: :class:`Label <github3.issues.label.Label>` if successful,
+            else None
+        """"""
+        json = None
+        if name and color:
+            data = {'name': name, 'color': color.strip('#')}
+            url = self._build_url('labels', base_url=self._api)
+            json = self._json(self._post(url, data=data), 201)
+        return Label(json, self) if json else None
+",human
+line6831_lm,"def create_label(self, name, color):
+        """"""Create a label for this repository.
+
+        :param str name: (required), name to give to the label
+        :param str color: (required), value of the color to assign to the
+            label, e.g., '#fafafa' or 'fafafa' (the latter is what is sent)
+        :returns: :class:`Label <github3.issues.label.Label>` if successful,
+            else None
+        """"""
+        if not name:
+            raise ValueError(""name is required"")
+        if not color:
+            raise ValueError(""color is required"")
+        if not isinstance(color, str):
+            raise ValueError(""color must be a string"")
+        if color[0] == ""#"":
+            color = color[1:]
+        data = {""name"": name, ""color"": color}
+        url = self._url + ""/labels""
+        return self._requester.post(url, data=data)
+",lm
+line843_human,"def changed(self, node=None, allowcache=False):
+        """"""
+        Returns if the node is up-to-date with respect to the BuildInfo
+        stored last time it was built.
+
+        For File nodes this is basically a wrapper around Node.changed(),
+        but we allow the return value to get cached after the reference
+        to the Executor got released in release_target_info().
+
+        @see: Node.changed()
+        """"""
+        if node is None:
+            try:
+                return self._memo['changed']
+            except KeyError:
+                pass
+
+        has_changed = SCons.Node.Node.changed(self, node)
+        if allowcache:
+            self._memo['changed'] = has_changed
+        return has_changed
+",human
+line843_lm,"def changed(self, node=None, allowcache=False):
+        """"""
+        Returns if the node is up-to-date with respect to the BuildInfo
+        stored last time it was built.
+
+        For File nodes this is basically a wrapper around Node.changed(),
+        but we allow the return value to get cached after the reference
+        to the Executor got released in release_target_info().
+
+        @see: Node.changed()
+        """"""
+        if node is None:
+            node = self
+        if node.is_up_to_date(allowcache=allowcache):
+            return False
+        return True
+",lm
+line5264_human,"def save_data(fpath, data, **kwargs):
+    """""" More generic interface to write data """"""
+    ext = splitext(fpath)[1]
+    if ext in ['.pickle', '.cPkl', '.pkl']:
+        return save_cPkl(fpath, data, **kwargs)
+    elif ext in ['.json']:
+        return save_json(fpath, data, **kwargs)
+    elif ext in ['.hdf5']:
+        return save_hdf5(fpath, data, **kwargs)
+    elif ext in ['.txt']:
+        return save_text(fpath, **kwargs)
+    elif HAS_NUMPY and ext in ['.npz', '.npy']:
+        return save_numpy(fpath, data, **kwargs)
+    else:
+        assert False, 'unknown ext=%r for fpath=%r' % (ext, fpath)
+",human
+line5264_lm,"def save_data(fpath, data, **kwargs):
+    """""" More generic interface to write data """"""
+    if fpath.endswith('.h5'):
+        save_h5(fpath, data, **kwargs)
+    elif fpath.endswith('.npz'):
+        save_npz(fpath, data, **kwargs)
+    elif fpath.endswith('.json'):
+        save_json(fpath, data, **kwargs)
+    elif fpath.endswith('.pkl'):
+        save_pkl(fpath, data, **kwargs)
+    else:
+        raise ValueError('Unknown file extension')
+",lm
+line170_human,"def login(self, password):
+        """"""Attempts to log in as the current user with given password""""""
+
+        if self.logged_in:
+            raise RuntimeError(""User already logged in!"")
+
+        params = {""name"": self.nick, ""password"": password}
+        resp = self.conn.make_api_call(""login"", params)
+        if ""error"" in resp:
+            raise RuntimeError(
+                f""Login failed: {resp['error'].get('message') or resp['error']}""
+            )
+        self.session = resp[""session""]
+        self.conn.make_call(""useSession"", self.session)
+        self.conn.cookies.update({""session"": self.session})
+        self.logged_in = True
+        return True
+",human
+line170_lm,"def login(self, password):
+        """"""Attempts to log in as the current user with given password""""""
+        self.password = password
+        self.login_button.click()
+        self.wait_for_page_load()
+",lm
+line2367_human,"def view_interactively(self, backend='wx'):
+        """"""Loads the current sample in a graphical interface for drawing gates.
+
+        Parameters
+        ----------
+        backend: 'auto' | 'wx' | 'webagg'
+            Specifies which backend should be used to view the sample.
+        """"""
+        if backend == 'auto':
+            if matplotlib.__version__ >= '1.4.3':
+                backend = 'WebAgg'
+            else:
+                backend = 'wx'
+
+        if backend == 'wx':
+            from FlowCytometryTools.gui.wx_backend import gui
+        elif backend == 'webagg':
+            from FlowCytometryTools.gui.webagg_backend import gui
+        else:
+            raise ValueError('No support for backend {}'.format(backend))
+
+        gui.GUILauncher(measurement=self)
+",human
+line2367_lm,"def view_interactively(self, backend='wx'):
+        """"""Loads the current sample in a graphical interface for drawing gates.
+
+        Parameters
+        ----------
+        backend: 'auto' | 'wx' | 'webagg'
+            Specifies which backend should be used to view the sample.
+        """"""
+        from .interactive import InteractiveSample
+        InteractiveSample(self, backend=backend)
+",lm
+line2439_human,"def closeView(self, view=None):
+        """"""
+        Closes the inputed view.
+
+        :param      view | <int> || <XView> || None
+        """"""
+        if type(view) == int:
+            view = self.widget(view)
+        elif view == None:
+            view = self.currentView()
+
+        index = self.indexOf(view)
+        if index == -1:
+            return False
+
+        # close the view
+        count = self.count()
+        if count == 1:
+            self.closePanel()
+        else:
+            view.close()
+
+        return True
+",human
+line2439_lm,"def closeView(self, view=None):
+        """"""
+        Closes the inputed view.
+
+        :param      view | <int> || <XView> || None
+        """"""
+        if view is None:
+            self.close()
+        elif isinstance(view, int):
+            self.close(view)
+        elif isinstance(view, XView):
+            self.close(view.id)
+        else:
+            raise TypeError(""View must be an integer, XView, or None."")
+",lm
+line284_human,"def _update_pretty_hostname(new_val: str):
+    """""" Write a new value for the pretty hostname.
+
+    :raises OSError: If the new value could not be written.
+    """"""
+    try:
+        with open('/etc/machine-info') as emi:
+            contents = emi.read()
+    except OSError:
+        LOG.exception(""Couldn't read /etc/machine-info"")
+        contents = ''
+    new_contents = ''
+    for line in contents.split('\n'):
+        if not line.startswith('PRETTY_HOSTNAME'):
+            new_contents += f'{line}\n'
+    new_contents += f'PRETTY_HOSTNAME={new_val}\n'
+    with open('/etc/machine-info', 'w') as emi:
+        emi.write(new_contents)
+",human
+line284_lm,"def _update_pretty_hostname(new_val: str):
+    """""" Write a new value for the pretty hostname.
+
+    :raises OSError: If the new value could not be written.
+    """"""
+    with open(PRETTY_HOSTNAME_FILE, ""w"") as f:
+        f.write(new_val)
+",lm
+line3453_human,"def prepare(self):
+        """"""Check that the file exists, optionally downloads it.
+        Checks that the file is indeed an SQLite3 database.
+        Optionally check the MD5.""""""
+        if not os.path.exists(self.path):
+            if self.retrieve:
+                print(""Downloading SQLite3 database..."")
+                download_from_url(self.retrieve, self.path, progress=True)
+            else: raise Exception(""The file '"" + self.path + ""' does not exist."")
+        self.check_format()
+        if self.known_md5: assert self.known_md5 == self.md5
+        self.prepared = True
+",human
+line3453_lm,"def prepare(self):
+        """"""Check that the file exists, optionally downloads it.
+        Checks that the file is indeed an SQLite3 database.
+        Optionally check the MD5.""""""
+        if not os.path.exists(self.filename):
+            if self.url is None:
+                raise IOError(""File %s does not exist"" % self.filename)
+            else:
+                self.download()
+        if not os.path.exists(self.filename):
+            raise IOError(""File %s does not exist"" % self.filename)
+        if self.check_md5:
+            self.check_md5()
+        if not self.is_sqlite3():
+            raise IOError(""File %s is not a SQLite3 database"" % self.filename)
+",lm
+line5649_human,"def scrypt_mcf_check(scrypt, mcf, password):
+    """"""Returns True if the password matches the given MCF hash
+
+    Supports both the libscrypt $s1$ format and the $7$ format.
+    """"""
+    if not isinstance(mcf, bytes):
+        raise TypeError('MCF must be a byte string')
+    if isinstance(password, unicode):
+        password = password.encode('utf8')
+    elif not isinstance(password, bytes):
+        raise TypeError('password must be a unicode or byte string')
+
+    N, r, p, salt, hash, hlen = _scrypt_mcf_decode(mcf)
+    h = scrypt(password, salt, N=N, r=r, p=p, olen=hlen)
+    cmp = 0
+    for i, j in zip(bytearray(h), bytearray(hash)):
+        cmp |= i ^ j
+    return cmp == 0
+",human
+line5649_lm,"def scrypt_mcf_check(scrypt, mcf, password):
+    """"""Returns True if the password matches the given MCF hash
+
+    Supports both the libscrypt $s1$ format and the $7$ format.
+    """"""
+    if mcf.startswith('$s1$'):
+        return scrypt.check(password, mcf)
+    elif mcf.startswith('$7$'):
+        return scrypt.check(password, mcf)
+    else:
+        raise ValueError('Invalid MCF hash')
+",lm
+line6326_human,"def delete(uuid):
+    """"""
+    Remove an installed image
+
+    uuid : string
+        Specifies uuid to import
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt '*' imgadm.delete e42f8c84-bbea-11e2-b920-078fab2aab1f
+    """"""
+    ret = {}
+    cmd = 'imgadm delete {0}'.format(uuid)
+    res = __salt__['cmd.run_all'](cmd, python_shell=False)
+    retcode = res['retcode']
+    if retcode != 0:
+        ret['Error'] = _exit_status(retcode)
+        return ret
+    # output: Deleted image d5b3865c-0804-11e5-be21-dbc4ce844ddc
+    result = []
+    for image in res['stdout'].splitlines():
+        image = [var for var in image.split("" "") if var]
+        result.append(image[2])
+
+    return result
+",human
+line6326_lm,"def delete(uuid):
+    """"""
+    Remove an installed image
+
+    uuid : string
+        Specifies uuid to import
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt '*' imgadm.delete e42f8c84-bbea-11e2-b920-078fab2aab1f
+    """"""
+    cmd = ""imgadm delete {0}"".format(uuid)
+    return __salt__[""cmd.run""](cmd)
+",lm
+line7916_human,"def post_dissect(self, s):
+        """"""
+        Commit the pending r/w state if it has been triggered (e.g. by an
+        underlying TLSChangeCipherSpec or a SSLv2ClientMasterKey). We update
+        nothing if the prcs was not set, as this probably means that we're
+        working out-of-context (and we need to keep the default rcs).
+        """"""
+        if self.tls_session.triggered_prcs_commit:
+            if self.tls_session.prcs is not None:
+                self.tls_session.rcs = self.tls_session.prcs
+                self.tls_session.prcs = None
+            self.tls_session.triggered_prcs_commit = False
+        if self.tls_session.triggered_pwcs_commit:
+            if self.tls_session.pwcs is not None:
+                self.tls_session.wcs = self.tls_session.pwcs
+                self.tls_session.pwcs = None
+            self.tls_session.triggered_pwcs_commit = False
+        return s
+",human
+line7916_lm,"def post_dissect(self, s):
+        """"""
+        Commit the pending r/w state if it has been triggered (e.g. by an
+        underlying TLSChangeCipherSpec or a SSLv2ClientMasterKey). We update
+        nothing if the prcs was not set, as this probably means that we're
+        working out-of-context (and we need to keep the default rcs).
+        """"""
+        if self.prcs is not None:
+            self.prcs.commit()
+            self.prcs = None
+",lm
+line8515_human,"def equation(self):
+        """"""Mix-in class that returns matrix rows for difference in head between inside and
+        outside equals zeros
+        Returns matrix part (nunknowns,neq)
+        Returns rhs part nunknowns
+        """"""
+        mat = np.empty((self.nunknowns, self.model.neq))
+        rhs = np.zeros(self.nunknowns)  # Needs to be initialized to zero
+        for icp in range(self.ncp):
+            istart = icp * self.nlayers
+            ieq = 0
+            for e in self.model.elementlist:
+                if e.nunknowns > 0:
+                    mat[istart:istart + self.nlayers, ieq:ieq + e.nunknowns] = \
+                        e.potinflayers(self.xcin[icp], self.ycin[icp], self.layers, aq=self.aqin) / self.aqin.Tcol - \
+                        e.potinflayers(self.xcout[icp], self.ycout[icp], self.layers, aq=self.aqout) / self.aqout.Tcol
+                    ieq += e.nunknowns
+                else:
+                    rhs[istart:istart + self.nlayers] -= \
+                        e.potentiallayers(self.xcin[icp], self.ycin[icp], self.layers, aq=self.aqin) / self.aqin.T - \
+                        e.potentiallayers(self.xcout[icp], self.ycout[icp], self.layers, aq=self.aqout) / self.aqout.T
+        return mat, rhs
+",human
+line8515_lm,"def equation(self):
+        """"""Mix-in class that returns matrix rows for difference in head between inside and
+        outside equals zeros
+        Returns matrix part (nunknowns,neq)
+        Returns rhs part nunknowns
+        """"""
+        # Get the matrix part
+        matrix = self.matrix()
+        # Get the rhs part
+        rhs = self.rhs()
+        # Return the matrix part
+        return matrix
+",lm
+line6296_human,"def _normalize_sort_SQL(self, field_name, field_vals, sort_dir_str):
+        """"""
+        allow sorting by a set of values
+
+        http://stackoverflow.com/questions/3303851/sqlite-and-custom-order-by
+        """"""
+        fvi = None
+        if sort_dir_str == 'ASC':
+            fvi = (t for t in enumerate(field_vals)) 
+
+        else:
+            fvi = (t for t in enumerate(reversed(field_vals))) 
+
+        query_sort_str = ['  CASE {}'.format(self._normalize_name(field_name))]
+        query_args = []
+        for i, v in fvi:
+            query_sort_str.append('    WHEN {} THEN {}'.format(self.val_placeholder, i))
+            query_args.append(v)
+
+        query_sort_str.append('  END')
+        query_sort_str = ""\n"".join(query_sort_str)
+        return query_sort_str, query_args
+",human
+line6296_lm,"def _normalize_sort_SQL(self, field_name, field_vals, sort_dir_str):
+        """"""
+        allow sorting by a set of values
+
+        http://stackoverflow.com/questions/3303851/sqlite-and-custom-order-by
+        """"""
+        if sort_dir_str == 'desc':
+            sort_dir_str = 'desc'
+        else:
+            sort_dir_str = 'asc'
+
+        if field_name == 'id':
+            field_name = 'id'
+        else:
+            field_name = 'name'
+
+        if field_vals == 'all':
+            field_vals = 'all'
+        else:
+            field_vals = '(' + ','.join(field_vals) + ')'
+
+        return ' '.join([field_name, field_vals, sort_dir_str])
+",lm
+line1867_human,"def sync_firmware(self):
+        """"""Syncs the emulator's firmware version and the DLL's firmware.
+
+        This method is useful for ensuring that the firmware running on the
+        J-Link matches the firmware supported by the DLL.
+
+        Args:
+          self (JLink): the ``JLink`` instance
+
+        Returns:
+          ``None``
+        """"""
+        serial_no = self.serial_number
+
+        if self.firmware_newer():
+            # The J-Link's firmware is newer than the one compatible with the
+            # DLL (though there are promises of backwards compatibility), so
+            # perform a downgrade.
+            try:
+                # This may throw an exception on older versions of the J-Link
+                # software due to the software timing out after a firmware
+                # upgrade.
+                self.invalidate_firmware()
+                self.update_firmware()
+            except errors.JLinkException as e:
+                pass
+
+            res = self.open(serial_no=serial_no)
+
+            if self.firmware_newer():
+                raise errors.JLinkException('Failed to sync firmware version.')
+
+            return res
+
+        elif self.firmware_outdated():
+            # The J-Link's firmware is older than the one compatible with the
+            # DLL, so perform a firmware upgrade.
+            try:
+                # This may throw an exception on older versions of the J-Link
+                # software due to the software timing out after a firmware
+                # upgrade.
+                self.update_firmware()
+            except errors.JLinkException as e:
+                pass
+
+            if self.firmware_outdated():
+                raise errors.JLinkException('Failed to sync firmware version.')
+
+            return self.open(serial_no=serial_no)
+
+        return None
+",human
+line1867_lm,"def sync_firmware(self):
+        """"""Syncs the emulator's firmware version and the DLL's firmware.
+
+        This method is useful for ensuring that the firmware running on the
+        J-Link matches the firmware supported by the DLL.
+
+        Args:
+          self (JLink): the ``JLink`` instance
+
+        Returns:
+          ``None``
+        """"""
+        self.dll.JLINKARM_SetFirmware(self.handle, self.firmware)
+",lm
+line248_human,"def _check_for_default_values(fname, arg_val_dict, compat_args):
+    """"""
+    Check that the keys in `arg_val_dict` are mapped to their
+    default values as specified in `compat_args`.
+
+    Note that this function is to be called only when it has been
+    checked that arg_val_dict.keys() is a subset of compat_args
+
+    """"""
+    for key in arg_val_dict:
+        # try checking equality directly with '=' operator,
+        # as comparison may have been overridden for the left
+        # hand object
+        try:
+            v1 = arg_val_dict[key]
+            v2 = compat_args[key]
+
+            # check for None-ness otherwise we could end up
+            # comparing a numpy array vs None
+            if (v1 is not None and v2 is None) or \
+               (v1 is None and v2 is not None):
+                match = False
+            else:
+                match = (v1 == v2)
+
+            if not is_bool(match):
+                raise ValueError(""'match' is not a boolean"")
+
+        # could not compare them directly, so try comparison
+        # using the 'is' operator
+        except ValueError:
+            match = (arg_val_dict[key] is compat_args[key])
+
+        if not match:
+            raise ValueError((""the '{arg}' parameter is not ""
+                              ""supported in the pandas ""
+                              ""implementation of {fname}()"".
+                              format(fname=fname, arg=key)))
+",human
+line248_lm,"def _check_for_default_values(fname, arg_val_dict, compat_args):
+    """"""
+    Check that the keys in `arg_val_dict` are mapped to their
+    default values as specified in `compat_args`.
+
+    Note that this function is to be called only when it has been
+    checked that arg_val_dict.keys() is a subset of compat_args
+
+    """"""
+    for arg in compat_args:
+        if arg in arg_val_dict:
+            if arg_val_dict[arg] == compat_args[arg]['default']:
+                continue
+            else:
+                raise ValueError(
+                    ""The value of argument '%s' in function '%s' is not ""
+                    ""compatible with the default value '%s'."" %
+                    (arg, fname, compat_args[arg]['default']))
+",lm
+line4040_human,"def full_award_groups(soup):
+    """"""
+    Find the award-group items and return a list of details
+    """"""
+    award_groups = []
+
+    funding_group_section = extract_nodes(soup, ""funding-group"")
+    # counter for auto generated id values, if required
+    generated_id_counter = 1
+    for fg in funding_group_section:
+
+        award_group_tags = extract_nodes(fg, ""award-group"")
+
+        for ag in award_group_tags:
+            if 'id' in ag.attrs:
+                ref = ag['id']
+            else:
+                # hack: generate and increment an id value none is available
+                ref = ""award-group-{id}"".format(id=generated_id_counter)
+                generated_id_counter += 1
+
+            award_group = {}
+            award_group_id = award_group_award_id(ag)
+            if award_group_id is not None:
+                award_group['award-id'] = first(award_group_id)
+            funding_sources = full_award_group_funding_source(ag)
+            source = first(funding_sources)
+            if source is not None:
+                copy_attribute(source, 'institution', award_group)
+                copy_attribute(source, 'institution-id', award_group, 'id')
+                copy_attribute(source, 'institution-id-type', award_group, destination_key='id-type')
+            award_group_by_ref = {}
+            award_group_by_ref[ref] = award_group
+            award_groups.append(award_group_by_ref)
+
+    return award_groups
+",human
+line4040_lm,"def full_award_groups(soup):
+    """"""
+    Find the award-group items and return a list of details
+    """"""
+    award_groups = soup.find_all('a', {'class': 'award-group'})
+    award_group_details = []
+    for award_group in award_groups:
+        award_group_details.append(award_group.text)
+    return award_group_details
+",lm
+line6842_human,"def start(name, call=None):
+    """"""
+    Start a node.
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt-cloud -a start mymachine
+    """"""
+    if call != 'action':
+        raise SaltCloudSystemExit(
+            'The show_instance action must be called with -a or --action.'
+        )
+
+    data = query(action='ve', command='{0}/start'.format(name), method='PUT')
+
+    if 'error' in data:
+        return data['error']
+
+    return {'Started': '{0} was started.'.format(name)}
+",human
+line6842_lm,"def start(name, call=None):
+    """"""
+    Start a node.
+
+    CLI Example:
+
+    .. code-block:: bash
+
+        salt-cloud -a start mymachine
+    """"""
+    if call != ""action"":
+        raise SaltCloudSystemExit(
+            ""The start action must be called with -a or --action.""
+        )
+
+    node = _get_node(name)
+    if node is None:
+        raise SaltCloudSystemExit(""No node found with the name {}"".format(name))
+
+    if node[""state""] == ""running"":
+        log.info(""Node %s is already running"", name)
+        return {""node"": name, ""action"": ""start"", ""result"": True, ""comment"": """"}
+
+    if node[""state""] == ""stopped"":
+        log.info(""Starting node %s"", name)
+        try:
+            node.start()
+        except SaltCloudSystemExit as exc:
+            return {""node"": name, ""action"": ""start"", ""result"": False, ""comment"": str(exc)}
+        return {""node"": name, ""action"": ""start"", ""result"": True, ""comment"": """"}
+
+    log.info(""Node %s is not running or stopped"", name)
+    return {""node"": name, ""action"": ""start"", ""result"": False, ""comment"": """"}
+",lm
+line7252_human,"def _configure_context(ctx, opts, skip=()):
+        """"""
+        Configures context of public key operations
+        @param ctx - context to configure
+        @param opts - dictionary of options (from kwargs of calling
+            function)
+        @param skip - list of options which shouldn't be passed to
+            context
+        """"""
+
+        for oper in opts:
+            if oper in skip:
+                continue
+            if isinstance(oper,chartype):
+                op = oper.encode(""ascii"")
+            else:
+                op = oper
+            if isinstance(opts[oper],chartype):
+                value = opts[oper].encode(""ascii"")
+            elif isinstance(opts[oper],bintype):
+                value = opts[oper]
+            else:
+                if pyver == 2:
+                    value = str(opts[oper])
+                else:
+                    value = str(opts[oper]).encode('ascii')
+            ret = libcrypto.EVP_PKEY_CTX_ctrl_str(ctx, op, value)
+            if ret == -2:
+                raise PKeyError(""Parameter %s is not supported by key"" % oper)
+            if ret < 1:
+                raise PKeyError(""Error setting parameter %s"" % oper)
+",human
+line7252_lm,"def _configure_context(ctx, opts, skip=()):
+        """"""
+        Configures context of public key operations
+        @param ctx - context to configure
+        @param opts - dictionary of options (from kwargs of calling
+            function)
+        @param skip - list of options which shouldn't be passed to
+            context
+        """"""
+        for k, v in opts.items():
+            if k not in skip:
+                ctx.set_option(k, v)
+",lm
+line4030_human,"def fetch_plos_images(article_doi, output_dir, document):
+    """"""
+    Fetch the images for a PLoS article from the internet.
+
+    PLoS images are known through the inspection of <graphic> and
+    <inline-graphic> elements. The information in these tags are then parsed
+    into appropriate URLs for downloading.
+    """"""
+    log.info('Processing images for {0}...'.format(article_doi))
+
+    #A dict of URLs for PLoS subjournals
+    journal_urls = {'pgen': 'http://www.plosgenetics.org/article/{0}',
+                    'pcbi': 'http://www.ploscompbiol.org/article/{0}',
+                    'ppat': 'http://www.plospathogens.org/article/{0}',
+                    'pntd': 'http://www.plosntds.org/article/{0}',
+                    'pmed': 'http://www.plosmedicine.org/article/{0}',
+                    'pbio': 'http://www.plosbiology.org/article/{0}',
+                    'pone': 'http://www.plosone.org/article/{0}',
+                    'pctr': 'http://clinicaltrials.ploshubs.org/article/{0}'}
+
+    #Identify subjournal name for base URL
+    subjournal_name = article_doi.split('.')[1]
+    base_url = journal_urls[subjournal_name]
+
+    #Acquire <graphic> and <inline-graphic> xml elements
+    graphics = document.document.getroot().findall('.//graphic')
+    graphics += document.document.getroot().findall('.//inline-graphic')
+
+    #Begin to download
+    log.info('Downloading images, this may take some time...')
+    for graphic in graphics:
+        nsmap = document.document.getroot().nsmap
+        xlink_href = graphic.attrib['{' + nsmap['xlink'] + '}' + 'href']
+
+        #Equations are handled a bit differently than the others
+        #Here we decide that an image name starting with ""e"" is an equation
+        if xlink_href.split('.')[-1].startswith('e'):
+            resource = 'fetchObject.action?uri=' + xlink_href + '&representation=PNG'
+        else:
+            resource = xlink_href + '/largerimage'
+        full_url = base_url.format(resource)
+        try:
+            image = urllib.request.urlopen(full_url)
+        except urllib.error.HTTPError as e:
+            if e.code == 503:  # Server overload error
+                time.sleep(1)  # Wait a second
+                try:
+                    image = urllib.request.urlopen(full_url)
+                except:
+                    return False  # Happened twice, give up
+            else:
+                log.error('urllib.error.HTTPError {0}'.format(e.code))
+                return False
+        else:
+            img_name = xlink_href.split('.')[-1] + '.png'
+            img_path = os.path.join(output_dir, img_name)
+            with open(img_path, 'wb') as output:
+                output.write(image.read())
+            log.info('Downloaded image {0}'.format(img_name))
+    log.info('Done downloading images')
+    return True
+",human
+line4030_lm,"def fetch_plos_images(article_doi, output_dir, document):
+    """"""
+    Fetch the images for a PLoS article from the internet.
+
+    PLoS images are known through the inspection of <graphic> and
+    <inline-graphic> elements. The information in these tags are then parsed
+    into appropriate URLs for downloading.
+    """"""
+    # Get the images from the article
+    images = document.findall('.//graphic')
+    images.extend(document.findall('.//inline-graphic'))
+
+    # Download the images
+    for image in images:
+        image_url = image.get('{http://www.w3.org/1999/xlink}href')
+        image_filename = image_url.split('/')[-1]
+        image_path = os.path.join(output_dir, image_filename)
+        if not os.path.exists(image_path):
+            try:
+                urllib.request.urlretrieve(image_url, image_path)
+            except urllib.error.HTTPError:
+                print('Could not download image: {}'.format(image_url))
+",lm
+line1337_human,"def build_condition(filter_map, using=CONDITIONS):
+    """""" Implement the conditions described in
+    docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html
+
+    """"""
+    if not filter_map:
+        return
+
+    filters = {}
+    dynamizer = Dynamizer()
+
+    for field_and_op, value in filter_map.items():
+        field_bits = field_and_op.split('__')
+        fieldname = '__'.join(field_bits[:-1])
+
+        try:
+            op = using[field_bits[-1]]
+        except KeyError:
+            raise ConditionNotRecognizedException(
+                ""Operator '%s' from '%s' is not recognized."" % (
+                    field_bits[-1],
+                    field_and_op
+                )
+            )
+
+        lookup = {
+            'AttributeValueList': [],
+            'ComparisonOperator': op,
+        }
+
+        # Special-case the ``NULL/NOT_NULL`` case.
+        if field_bits[-1] == 'null':
+            del lookup['AttributeValueList']
+
+            if value is False:
+                lookup['ComparisonOperator'] = 'NOT_NULL'
+            else:
+                lookup['ComparisonOperator'] = 'NULL'
+        # Special-case the ``BETWEEN`` case.
+        elif field_bits[-1] == 'between':
+            if len(value) == 2 and isinstance(value, (list, tuple)):
+                lookup['AttributeValueList'].append(
+                    dynamizer.encode(value[0])
+                )
+                lookup['AttributeValueList'].append(
+                    dynamizer.encode(value[1])
+                )
+        # Special-case the ``IN`` case
+        elif field_bits[-1] == 'in':
+            for val in value:
+                lookup['AttributeValueList'].append(dynamizer.encode(val))
+        else:
+            # Fix up the value for encoding, because it was built to only work
+            # with ``set``s.
+            if isinstance(value, (list, tuple)):
+                value = set(value)
+            lookup['AttributeValueList'].append(
+                dynamizer.encode(value)
+            )
+
+        # Finally, insert it into the filters.
+        filters[fieldname] = lookup
+    return filters
+",human
+line1337_lm,"def build_condition(filter_map, using=CONDITIONS):
+    """""" Implement the conditions described in
+    docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html
+
+    """"""
+    conditions = []
+    for key, value in filter_map.items():
+        if key in using:
+            conditions.append(using[key](key, value))
+        else:
+            raise ValueError(""Unknown condition: %s"" % key)
+    return "" AND "".join(conditions)
+",lm
+line1493_human,"def load_from_dict(self, data: dict, overwrite: bool=True):
+        """"""
+        Loads key/values from dicts or list into the ConfigKey.
+        :param data: The data object to load.
+                        This can be a dict, or a list of key/value tuples.
+        :param overwrite: Should the ConfigKey overwrite data already in it?
+        """"""
+        if data is None or data == {}:
+            return False
+        # Loop over items
+        if isinstance(data, list) or isinstance(data, tuple):
+            # Pick a random item from the tuple.
+            if len(data[0]) != 2:
+                raise exc.LoaderException(""Cannot load data with length {}"".format(len(data[0])))
+            items = data
+        elif isinstance(data, dict) or isinstance(data, self.__class__):
+            items = data.items()
+        else:
+            raise exc.LoaderException(""Cannot load data of type {}"".format(type(data)))
+        for key, item in items:
+            assert isinstance(key, str)
+            if hasattr(self, key) and not overwrite:
+                # Refuse to overwrite existing data.
+                continue
+            # Check name to verify it's safe.
+            if self.safe_load:
+                if key.startswith(""__"") or key in ['dump', 'items', 'keys', 'values',
+                                                   'iter_list', 'load_from_dict', 'iter_list_dump',
+                                                   'parsed', 'safe_load']:
+                    # It's evil!
+                    key = ""unsafe_"" + key
+            if '.' in key:
+                # Doubly evil!
+                key = key.replace('.', '_')
+            if isinstance(item, dict):
+                # Create a new ConfigKey object with the dict.
+                ncfg = ConfigKey()
+                # Parse the data.
+                ncfg.load_from_dict(item)
+                # Set our new ConfigKey as an attribute of ourselves.
+                setattr(self, key, ncfg)
+            elif isinstance(item, list):
+                # Iterate over the list, creating ConfigKey items as appropriate.
+                nlst = self.iter_list(item)
+                # Set our new list as an attribute of ourselves.
+                setattr(self, key, nlst)
+            else:
+                # Set the item as an attribute of ourselves.
+                setattr(self, key, item)
+        # Flip the parsed flag,
+        self.parsed = True
+",human
+line1493_lm,"def load_from_dict(self, data: dict, overwrite: bool=True):
+        """"""
+        Loads key/values from dicts or list into the ConfigKey.
+        :param data: The data object to load.
+                        This can be a dict, or a list of key/value tuples.
+        :param overwrite: Should the ConfigKey overwrite data already in it?
+        """"""
+        if isinstance(data, dict):
+            for key, value in data.items():
+                self.set(key, value, overwrite)
+        elif isinstance(data, list):
+            for key, value in data:
+                self.set(key, value, overwrite)
+        else:
+            raise TypeError(""Data must be a dict or a list of key/value tuples."")
+",lm
+line2915_human,"def centroid_refine_triangulation_by_triangles(self, triangles):
+        """"""
+        return points defining a refined triangulation obtained by bisection of all edges
+        in the triangulation that are associated with the triangles in the list provided.
+
+        Notes
+        -----
+         The triangles are here represented as a single index.
+         The vertices of triangle i are given by self.simplices[i].
+        """"""
+
+        # Remove duplicates from the list of triangles
+
+        triangles = np.unique(np.array(triangles))
+
+        mlons, mlats = self.face_midpoints(simplices=self.simplices[triangles])
+
+        lonv1 = np.concatenate((self.lons, mlons), axis=0)
+        latv1 = np.concatenate((self.lats, mlats), axis=0)
+
+        return lonv1, latv1
+",human
+line2915_lm,"def centroid_refine_triangulation_by_triangles(self, triangles):
+        """"""
+        return points defining a refined triangulation obtained by bisection of all edges
+        in the triangulation that are associated with the triangles in the list provided.
+
+        Notes
+        -----
+         The triangles are here represented as a single index.
+         The vertices of triangle i are given by self.simplices[i].
+        """"""
+        # get the edges of the triangles
+        edges = []
+        for i in triangles:
+            edges.extend(self.simplices[i])
+        edges = list(set(edges))
+        # get the points of the triangles
+        points = []
+        for i in triangles:
+            points.extend(self.simplices[i])
+        points = list(set(points))
+        # get the edges of the triangles
+        edges = []
+        for i in triangles:
+            edges.extend(self.simplices[i])
+        edges = list(set(edges))
+        # get the points of the triangles
+        points = []
+        for i in triangles:
+            points.extend(self.simplices[i])
+        points = list(set(points))
+        # get the edges of the triangles
+        edges = []
+        for i in triangles:
+            edges.extend(self.simplices[i])
+        edges = list(set(edges))
+        # get the points of the triangles
+        points = []
+        for i in triangles:
+            points.extend(self.simplices[i])
+        points = list(set(points))
+        # get the edges of the triangles
+        edges = []
+        for i in triangles:
+            edges.extend(self.simplices[i])
+        edges = list(set(edges))
+        # get the points of the triangles
+        points = []
+        for i in triangles:
+            points.extend(self.simplices[i])
+        points = list(set(points))
+        # get the edges of the triangles
+        edges = []
+        for i in triangles:
+            edges.extend(self.simplices[i])
+        edges = list(set(edges))
+        # get the points of the triangles
+        points = []
+        for i in triangles:
+            points.extend(self.simplices[i])
+        points = list(set(points))
+        # get the edges of the triangles
+        edges = []
+        for i in triangles:
+            edges.extend(self.simplices[i])
+        edges = list(set(edges))
+",lm
+line4742_human,"def wrap(self, value, timestamp=None):
+        """"""Pack python value into Value
+        """"""
+        V = self.type()
+        S, NS = divmod(float(timestamp or time.time()), 1.0)
+        V.timeStamp = {
+            'secondsPastEpoch': S,
+            'nanoseconds': NS * 1e9,
+        }
+        if isinstance(value, dict):
+            # assume dict of index and choices list
+            V.value = value
+            self._choices = V['value.choices']
+        else:
+            # index or string
+            self.assign(V, value)
+        return V
+",human
+line4742_lm,"def wrap(self, value, timestamp=None):
+        """"""Pack python value into Value
+        """"""
+        if timestamp is None:
+            timestamp = time.time()
+        return Value(value, timestamp)
+",lm
+line708_human,"def in_book_search_highlighted_results(request):
+    """"""In-book search - returns a highlighted version of the HTML.""""""
+    results = {}
+
+    args = request.matchdict
+    ident_hash = args['ident_hash']
+
+    page_ident_hash = args['page_ident_hash']
+    try:
+        page_uuid, _ = split_ident_hash(page_ident_hash)
+    except IdentHashShortId as e:
+        page_uuid = get_uuid(e.id)
+    except IdentHashMissingVersion as e:
+        page_uuid = e.id
+    args['page_uuid'] = page_uuid
+
+    args['search_term'] = request.params.get('q', '')
+
+    query_type = request.params.get('query_type', '')
+    combiner = ''
+    if query_type:
+        if query_type.lower() == 'or':
+            combiner = '_or'
+
+    # Get version from URL params
+    id, version = split_ident_hash(ident_hash)
+    args['uuid'] = id
+    args['version'] = version
+
+    with db_connect() as db_connection:
+        with db_connection.cursor() as cursor:
+            cursor.execute(SQL['get-collated-state'], args)
+            res = cursor.fetchall()
+            if res and res[0][0]:
+                statement = SQL['get-in-collated-book-search-full-page']
+            else:
+                statement = SQL['get-in-book-search-full-page']
+            cursor.execute(statement.format(combiner=combiner), args)
+            res = cursor.fetchall()
+
+            results['results'] = {'query': [],
+                                  'total': len(res),
+                                  'items': []}
+            results['results']['query'] = {
+                'search_term': args['search_term'],
+                'collection_id': ident_hash,
+            }
+            for uuid, version, title, headline, rank in res:
+                results['results']['items'].append({
+                    'rank': '{}'.format(rank),
+                    'id': '{}'.format(page_ident_hash),
+                    'title': '{}'.format(title),
+                    'html': '{}'.format(headline),
+                })
+
+    resp = request.response
+    resp.status = '200 OK'
+    resp.content_type = 'application/json'
+    resp.body = json.dumps(results)
+
+    return resp
+",human
+line708_lm,"def in_book_search_highlighted_results(request):
+    """"""In-book search - returns a highlighted version of the HTML.""""""
+    if request.method == 'POST':
+        form = InBookSearchForm(request.POST)
+        if form.is_valid():
+            search_term = form.cleaned_data['search_term']
+            search_results = search_in_book(search_term)
+            return render(request, 'search/in_book_search_highlighted_results.html',
+                          {'search_results': search_results, 'search_term': search_term})
+    else:
+        form = InBookSearchForm()
+    return render(request, 'search/in_book_search.html', {'form': form})
+",lm

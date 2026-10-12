@@ -1,0 +1,15 @@
+Experiment: run-x-01
+Status: PASS
+Prediction matrix: 25/25
+Selected model available: True
+Model inference rerun: NO (saved predictions only)
+Checks passed: 187
+Errors: 0
+Warnings: 0
+
+Reproduced baseline (HWC=1, AGC=0):
+  CL-7B: same=0.795035 transfer=0.731940 regret=0.088669
+  SC2-7B: same=0.768926 transfer=0.737538 regret=0.114778
+  SC2-15B: same=0.766563 transfer=0.744975 regret=0.117141
+  GO-120B: same=0.883704 transfer=0.654114 regret=0.090862
+  GM4-31B: same=0.776736 transfer=0.737935 regret=0.106968

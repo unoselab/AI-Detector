@@ -1,0 +1,20 @@
+Experiment: run-x-03 | matched temperature-pair QC
+Status: QC_REVIEW
+Original 4,500: direct-valid T=0.2 AGC 4250/4500
+Original HWC direct-valid: 4500/4500
+Original prompt recoverable: 4500/4500
+T=0.0 pilot: direct-valid 84/100
+Identical T=0.2/T=0.0 codes: 34/100
+Different T=0.2/T=0.0 codes: 66/100
+Common-valid: 84/100; split: {'train': 66, 'dev': 9, 'test': 9}
+Validity cross-table: {'t02_valid_t00_valid': 84, 't02_valid_t00_invalid': 9, 't02_invalid_t00_valid': 0, 't02_invalid_t00_invalid': 7}
+Identical yet invalid: 5 IDs: ['line4914', 'line535', 'line5789', 'line7463', 'line7573']
+Tokenizer loaded: True
+Prompt cap: 128; truncation: 1
+EOS token details: [{'id': 2, 'token': '</s>', 'decoded_repr': "'</s>'", 'is_whitespace_only': False}, {'id': 822, 'token': '▁def', 'decoded_repr': "'def'", 'is_whitespace_only': False}, {'id': 29871, 'token': '▁', 'decoded_repr': "''", 'is_whitespace_only': False}]
+Errors: 0; warnings: 2
+LIMITATION: Original T=0.2 data were validity-filtered before this audit.
+LIMITATION: Pilot 100 pairs are not sufficient for stable detector AUROC inference.
+RECOMMENDATION: Review token-end conditions and common-valid selection before full generation.
+[WARNING] Extra EOS token 29871 is a whitespace/word-boundary token: possible premature stop
+[WARNING] 5 identical T=0.2/T=0.0 codes fail shared direct structural rules

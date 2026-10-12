@@ -1,0 +1,9 @@
+Experiment: run-x-04 | EOS ablation | Status: PASS
+Temperature: T=0.0 greedy for all conditions (no temperature/top_p passed)
+Legacy [2,822,29871] (reused): valid=84/100
+No-boundary [2,822] (generated): valid=89/100
+Standard [2] (generated): valid=33/100
+New generations: 200/200; three-way common-valid: 28
+Legacy EOS cause: UNRECORDED; do not infer from decoded output.
+This ablation isolates EOS policy, not changes to generation temperature.
+Output directory: /home/user1-system12/project-workspace/ai_detector/src/output/run-x-04/20261012-143925-17683

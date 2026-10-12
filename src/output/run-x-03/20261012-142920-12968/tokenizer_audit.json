@@ -1,0 +1,855 @@
+{
+  "availability_reason": "",
+  "eos_ids_expected": [
+    2,
+    822,
+    29871
+  ],
+  "eos_tokens": [
+    {
+      "decoded_repr": "'</s>'",
+      "id": 2,
+      "is_whitespace_only": false,
+      "token": "</s>"
+    },
+    {
+      "decoded_repr": "'def'",
+      "id": 822,
+      "is_whitespace_only": false,
+      "token": "▁def"
+    },
+    {
+      "decoded_repr": "''",
+      "id": 29871,
+      "is_whitespace_only": false,
+      "token": "▁"
+    }
+  ],
+  "loaded": true,
+  "mode": "auto",
+  "model_name": "codellama/CodeLlama-7b-hf",
+  "prompt_cap": 128,
+  "prompt_truncation": {
+    "details": [
+      {
+        "pair_id": "line521",
+        "split": "dev",
+        "tokens_full": 58,
+        "tokens_removed": 0,
+        "tokens_used": 58,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line8896",
+        "split": "test",
+        "tokens_full": 46,
+        "tokens_removed": 0,
+        "tokens_used": 46,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1161",
+        "split": "train",
+        "tokens_full": 33,
+        "tokens_removed": 0,
+        "tokens_used": 33,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5006",
+        "split": "train",
+        "tokens_full": 53,
+        "tokens_removed": 0,
+        "tokens_used": 53,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line535",
+        "split": "train",
+        "tokens_full": 45,
+        "tokens_removed": 0,
+        "tokens_used": 45,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5789",
+        "split": "train",
+        "tokens_full": 27,
+        "tokens_removed": 0,
+        "tokens_used": 27,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line627",
+        "split": "train",
+        "tokens_full": 33,
+        "tokens_removed": 0,
+        "tokens_used": 33,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7837",
+        "split": "train",
+        "tokens_full": 39,
+        "tokens_removed": 0,
+        "tokens_used": 39,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line8459",
+        "split": "train",
+        "tokens_full": 24,
+        "tokens_removed": 0,
+        "tokens_used": 24,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line8817",
+        "split": "train",
+        "tokens_full": 36,
+        "tokens_removed": 0,
+        "tokens_used": 36,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5266",
+        "split": "dev",
+        "tokens_full": 96,
+        "tokens_removed": 0,
+        "tokens_used": 96,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2656",
+        "split": "test",
+        "tokens_full": 41,
+        "tokens_removed": 0,
+        "tokens_used": 41,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line190",
+        "split": "train",
+        "tokens_full": 26,
+        "tokens_removed": 0,
+        "tokens_used": 26,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2365",
+        "split": "train",
+        "tokens_full": 37,
+        "tokens_removed": 0,
+        "tokens_used": 37,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2667",
+        "split": "train",
+        "tokens_full": 25,
+        "tokens_removed": 0,
+        "tokens_used": 25,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4462",
+        "split": "train",
+        "tokens_full": 67,
+        "tokens_removed": 0,
+        "tokens_used": 67,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4878",
+        "split": "train",
+        "tokens_full": 29,
+        "tokens_removed": 0,
+        "tokens_used": 29,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6478",
+        "split": "train",
+        "tokens_full": 25,
+        "tokens_removed": 0,
+        "tokens_used": 25,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7398",
+        "split": "train",
+        "tokens_full": 20,
+        "tokens_removed": 0,
+        "tokens_used": 20,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line864",
+        "split": "train",
+        "tokens_full": 45,
+        "tokens_removed": 0,
+        "tokens_used": 45,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1458",
+        "split": "dev",
+        "tokens_full": 25,
+        "tokens_removed": 0,
+        "tokens_used": 25,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4937",
+        "split": "test",
+        "tokens_full": 104,
+        "tokens_removed": 0,
+        "tokens_used": 104,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2837",
+        "split": "train",
+        "tokens_full": 41,
+        "tokens_removed": 0,
+        "tokens_used": 41,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2886",
+        "split": "train",
+        "tokens_full": 39,
+        "tokens_removed": 0,
+        "tokens_used": 39,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5091",
+        "split": "train",
+        "tokens_full": 59,
+        "tokens_removed": 0,
+        "tokens_used": 59,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5464",
+        "split": "train",
+        "tokens_full": 26,
+        "tokens_removed": 0,
+        "tokens_used": 26,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5965",
+        "split": "train",
+        "tokens_full": 113,
+        "tokens_removed": 0,
+        "tokens_used": 113,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6334",
+        "split": "train",
+        "tokens_full": 84,
+        "tokens_removed": 0,
+        "tokens_used": 84,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6524",
+        "split": "train",
+        "tokens_full": 32,
+        "tokens_removed": 0,
+        "tokens_used": 32,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line748",
+        "split": "train",
+        "tokens_full": 40,
+        "tokens_removed": 0,
+        "tokens_used": 40,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line8375",
+        "split": "dev",
+        "tokens_full": 39,
+        "tokens_removed": 0,
+        "tokens_used": 39,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1642",
+        "split": "test",
+        "tokens_full": 25,
+        "tokens_removed": 0,
+        "tokens_used": 25,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1255",
+        "split": "train",
+        "tokens_full": 69,
+        "tokens_removed": 0,
+        "tokens_used": 69,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line222",
+        "split": "train",
+        "tokens_full": 24,
+        "tokens_removed": 0,
+        "tokens_used": 24,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line3936",
+        "split": "train",
+        "tokens_full": 29,
+        "tokens_removed": 0,
+        "tokens_used": 29,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5527",
+        "split": "train",
+        "tokens_full": 25,
+        "tokens_removed": 0,
+        "tokens_used": 25,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6016",
+        "split": "train",
+        "tokens_full": 52,
+        "tokens_removed": 0,
+        "tokens_used": 52,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6815",
+        "split": "train",
+        "tokens_full": 77,
+        "tokens_removed": 0,
+        "tokens_used": 77,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6966",
+        "split": "train",
+        "tokens_full": 17,
+        "tokens_removed": 0,
+        "tokens_used": 17,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7463",
+        "split": "train",
+        "tokens_full": 47,
+        "tokens_removed": 0,
+        "tokens_used": 47,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2510",
+        "split": "dev",
+        "tokens_full": 69,
+        "tokens_removed": 0,
+        "tokens_used": 69,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line795",
+        "split": "test",
+        "tokens_full": 29,
+        "tokens_removed": 0,
+        "tokens_used": 29,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1254",
+        "split": "train",
+        "tokens_full": 24,
+        "tokens_removed": 0,
+        "tokens_used": 24,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2266",
+        "split": "train",
+        "tokens_full": 29,
+        "tokens_removed": 0,
+        "tokens_used": 29,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line3596",
+        "split": "train",
+        "tokens_full": 38,
+        "tokens_removed": 0,
+        "tokens_used": 38,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5059",
+        "split": "train",
+        "tokens_full": 28,
+        "tokens_removed": 0,
+        "tokens_used": 28,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5556",
+        "split": "train",
+        "tokens_full": 125,
+        "tokens_removed": 0,
+        "tokens_used": 125,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5999",
+        "split": "train",
+        "tokens_full": 46,
+        "tokens_removed": 0,
+        "tokens_used": 46,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7671",
+        "split": "train",
+        "tokens_full": 28,
+        "tokens_removed": 0,
+        "tokens_used": 28,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7698",
+        "split": "train",
+        "tokens_full": 68,
+        "tokens_removed": 0,
+        "tokens_used": 68,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2422",
+        "split": "dev",
+        "tokens_full": 70,
+        "tokens_removed": 0,
+        "tokens_used": 70,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5924",
+        "split": "test",
+        "tokens_full": 114,
+        "tokens_removed": 0,
+        "tokens_used": 114,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2184",
+        "split": "train",
+        "tokens_full": 59,
+        "tokens_removed": 0,
+        "tokens_used": 59,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2462",
+        "split": "train",
+        "tokens_full": 31,
+        "tokens_removed": 0,
+        "tokens_used": 31,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2571",
+        "split": "train",
+        "tokens_full": 84,
+        "tokens_removed": 0,
+        "tokens_used": 84,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line3169",
+        "split": "train",
+        "tokens_full": 29,
+        "tokens_removed": 0,
+        "tokens_used": 29,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4914",
+        "split": "train",
+        "tokens_full": 374,
+        "tokens_removed": 246,
+        "tokens_used": 128,
+        "was_truncated": true
+      },
+      {
+        "pair_id": "line7167",
+        "split": "train",
+        "tokens_full": 120,
+        "tokens_removed": 0,
+        "tokens_used": 120,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7334",
+        "split": "train",
+        "tokens_full": 54,
+        "tokens_removed": 0,
+        "tokens_used": 54,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line891",
+        "split": "train",
+        "tokens_full": 123,
+        "tokens_removed": 0,
+        "tokens_used": 123,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1360",
+        "split": "dev",
+        "tokens_full": 103,
+        "tokens_removed": 0,
+        "tokens_used": 103,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4997",
+        "split": "test",
+        "tokens_full": 60,
+        "tokens_removed": 0,
+        "tokens_used": 60,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1004",
+        "split": "train",
+        "tokens_full": 80,
+        "tokens_removed": 0,
+        "tokens_used": 80,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1294",
+        "split": "train",
+        "tokens_full": 123,
+        "tokens_removed": 0,
+        "tokens_used": 123,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2701",
+        "split": "train",
+        "tokens_full": 29,
+        "tokens_removed": 0,
+        "tokens_used": 29,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4745",
+        "split": "train",
+        "tokens_full": 64,
+        "tokens_removed": 0,
+        "tokens_used": 64,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5244",
+        "split": "train",
+        "tokens_full": 52,
+        "tokens_removed": 0,
+        "tokens_used": 52,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6831",
+        "split": "train",
+        "tokens_full": 115,
+        "tokens_removed": 0,
+        "tokens_used": 115,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line843",
+        "split": "train",
+        "tokens_full": 103,
+        "tokens_removed": 0,
+        "tokens_used": 103,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line8924",
+        "split": "train",
+        "tokens_full": 64,
+        "tokens_removed": 0,
+        "tokens_used": 64,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5264",
+        "split": "dev",
+        "tokens_full": 24,
+        "tokens_removed": 0,
+        "tokens_used": 24,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4911",
+        "split": "test",
+        "tokens_full": 88,
+        "tokens_removed": 0,
+        "tokens_used": 88,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line170",
+        "split": "train",
+        "tokens_full": 26,
+        "tokens_removed": 0,
+        "tokens_used": 26,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2367",
+        "split": "train",
+        "tokens_full": 74,
+        "tokens_removed": 0,
+        "tokens_used": 74,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2439",
+        "split": "train",
+        "tokens_full": 44,
+        "tokens_removed": 0,
+        "tokens_used": 44,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line284",
+        "split": "train",
+        "tokens_full": 50,
+        "tokens_removed": 0,
+        "tokens_used": 50,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line3453",
+        "split": "train",
+        "tokens_full": 45,
+        "tokens_removed": 0,
+        "tokens_used": 45,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5649",
+        "split": "train",
+        "tokens_full": 58,
+        "tokens_removed": 0,
+        "tokens_used": 58,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6326",
+        "split": "train",
+        "tokens_full": 91,
+        "tokens_removed": 0,
+        "tokens_used": 91,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7916",
+        "split": "train",
+        "tokens_full": 97,
+        "tokens_removed": 0,
+        "tokens_used": 97,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line8515",
+        "split": "dev",
+        "tokens_full": 53,
+        "tokens_removed": 0,
+        "tokens_used": 53,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6296",
+        "split": "test",
+        "tokens_full": 70,
+        "tokens_removed": 0,
+        "tokens_used": 70,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1867",
+        "split": "train",
+        "tokens_full": 93,
+        "tokens_removed": 0,
+        "tokens_used": 93,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1958",
+        "split": "train",
+        "tokens_full": 70,
+        "tokens_removed": 0,
+        "tokens_used": 70,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2188",
+        "split": "train",
+        "tokens_full": 80,
+        "tokens_removed": 0,
+        "tokens_used": 80,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line248",
+        "split": "train",
+        "tokens_full": 96,
+        "tokens_removed": 0,
+        "tokens_used": 96,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4040",
+        "split": "train",
+        "tokens_full": 32,
+        "tokens_removed": 0,
+        "tokens_used": 32,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line5173",
+        "split": "train",
+        "tokens_full": 55,
+        "tokens_removed": 0,
+        "tokens_used": 55,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6842",
+        "split": "train",
+        "tokens_full": 48,
+        "tokens_removed": 0,
+        "tokens_used": 48,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7252",
+        "split": "train",
+        "tokens_full": 77,
+        "tokens_removed": 0,
+        "tokens_used": 77,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line7573",
+        "split": "dev",
+        "tokens_full": 92,
+        "tokens_removed": 0,
+        "tokens_used": 92,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4030",
+        "split": "test",
+        "tokens_full": 87,
+        "tokens_removed": 0,
+        "tokens_used": 87,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1146",
+        "split": "train",
+        "tokens_full": 99,
+        "tokens_removed": 0,
+        "tokens_used": 99,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1337",
+        "split": "train",
+        "tokens_full": 56,
+        "tokens_removed": 0,
+        "tokens_used": 56,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line1493",
+        "split": "train",
+        "tokens_full": 90,
+        "tokens_removed": 0,
+        "tokens_used": 90,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2915",
+        "split": "train",
+        "tokens_full": 104,
+        "tokens_removed": 0,
+        "tokens_used": 104,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line2944",
+        "split": "train",
+        "tokens_full": 33,
+        "tokens_removed": 0,
+        "tokens_used": 33,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line4742",
+        "split": "train",
+        "tokens_full": 23,
+        "tokens_removed": 0,
+        "tokens_used": 23,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line6281",
+        "split": "train",
+        "tokens_full": 85,
+        "tokens_removed": 0,
+        "tokens_used": 85,
+        "was_truncated": false
+      },
+      {
+        "pair_id": "line708",
+        "split": "train",
+        "tokens_full": 33,
+        "tokens_removed": 0,
+        "tokens_used": 33,
+        "was_truncated": false
+      }
+    ],
+    "full_token_max": 374,
+    "full_token_median": 52.0,
+    "input_token_count_mismatches": [],
+    "pairs": 100,
+    "truncated": 1,
+    "truncated_pair_ids": [
+      "line4914"
+    ]
+  },
+  "rederived_ids": [
+    2,
+    822,
+    29871
+  ],
+  "tokenizer_class": "CodeLlamaTokenizerFast",
+  "tokenizer_eos_token_id": 2,
+  "tokenizer_truncation_side": "right",
+  "warnings": [
+    "Extra EOS token 29871 is a whitespace/word-boundary token: possible premature stop"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "experiment": "run-x-01",
+  "timestamp_utc": "2026-10-12T18:43:28.535405+00:00",
+  "repo_root": "/home/user1-system12/project-workspace/ai_detector",
+  "out_dir": "/home/user1-system12/project-workspace/ai_detector/src/output/run-x-01/20261012-134327-2293436",
+  "status": "PASS",
+  "prediction_baseline_reproduced": true,
+  "selected_model_available": true,
+  "model_inference_reexecuted": false,
+  "new_agc_generated": false,
+  "errors": [],
+  "warnings": [],
+  "checks_passed": 187,
+  "predictions_recomputed": 25,
+  "expected_paper": {
+    "same_auroc": 0.795,
+    "transfer_auroc": 0.7319,
+    "maximum_regret": 0.0887
+  }
+}

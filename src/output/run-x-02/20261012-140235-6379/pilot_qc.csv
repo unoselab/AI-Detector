@@ -1,0 +1,101 @@
+pair_id,split,complexity_block,status,pipeline_status,raw_mgc_ok,clean_mgc_ok,structure_ok,structure_reason,human_reproduced,input_tokens,generated_tokens,seconds
+line521,dev,40,VALID,salvaged_valid,False,True,True,,True,58,15,0.3754
+line8896,test,40,VALID,salvaged_valid,False,True,True,,True,46,27,0.5054
+line1161,train,40,VALID,salvaged_valid,False,True,True,,True,33,512,9.8027
+line5006,train,40,VALID,salvaged_valid,False,True,True,,True,53,139,2.6165
+line535,train,40,INVALID,invalid,False,False,False,empty or docstring-only body,True,45,2,0.0403
+line5789,train,40,INVALID,invalid,False,False,False,empty or docstring-only body,True,27,2,0.04
+line627,train,40,VALID,salvaged_valid,False,True,True,,True,33,512,9.8084
+line7837,train,40,VALID,salvaged_valid,False,True,True,,True,39,512,9.828
+line8459,train,40,VALID,salvaged_valid,False,True,True,,True,24,512,9.807
+line8817,train,40,VALID,salvaged_valid,False,True,True,,True,36,18,0.3393
+line5266,dev,52,VALID,salvaged_valid,False,True,True,,True,96,22,0.4181
+line2656,test,52,VALID,salvaged_valid,False,True,True,,True,41,120,2.2561
+line190,train,52,VALID,salvaged_valid,False,True,True,,True,26,23,0.4318
+line2365,train,52,VALID,raw_valid,True,True,True,,True,37,13,0.2456
+line2667,train,52,VALID,salvaged_valid,False,True,True,,True,25,28,0.5243
+line4462,train,52,VALID,salvaged_valid,False,True,True,,True,67,17,0.3223
+line4878,train,52,VALID,salvaged_valid,False,True,True,,True,29,512,9.8178
+line6478,train,52,VALID,salvaged_valid,False,True,True,,True,25,21,0.3944
+line7398,train,52,VALID,raw_valid,True,True,True,,True,20,512,9.8113
+line864,train,52,VALID,salvaged_valid,False,True,True,,True,45,13,0.2462
+line1458,dev,91,VALID,salvaged_valid,False,True,True,,True,25,47,0.88
+line4937,test,91,VALID,salvaged_valid,False,True,True,,True,104,20,0.3811
+line2837,train,91,VALID,salvaged_valid,False,True,True,,True,41,15,0.2824
+line2886,train,91,VALID,salvaged_valid,False,True,True,,True,39,11,0.208
+line5091,train,91,VALID,salvaged_valid,False,True,True,,True,59,28,0.5274
+line5464,train,91,VALID,salvaged_valid,False,True,True,,True,26,512,9.8195
+line5965,train,91,VALID,salvaged_valid,False,True,True,,True,113,25,0.4761
+line6334,train,91,VALID,salvaged_valid,False,True,True,,True,84,25,0.4736
+line6524,train,91,VALID,salvaged_valid,False,True,True,,True,32,33,0.6191
+line748,train,91,VALID,salvaged_valid,False,True,True,,True,40,69,1.2941
+line8375,dev,152,VALID,salvaged_valid,False,True,True,,True,39,21,0.3951
+line1642,test,152,VALID,salvaged_valid,False,True,True,,True,25,19,0.3565
+line1255,train,152,VALID,salvaged_valid,False,True,True,,True,69,512,9.8707
+line222,train,152,VALID,salvaged_valid,False,True,True,,True,24,215,4.0576
+line3936,train,152,VALID,salvaged_valid,False,True,True,,True,29,37,0.6937
+line5527,train,152,VALID,salvaged_valid,False,True,True,,True,25,23,0.4313
+line6016,train,152,VALID,salvaged_valid,False,True,True,,True,52,54,1.0153
+line6815,train,152,VALID,salvaged_valid,False,True,True,,True,77,119,2.2518
+line6966,train,152,VALID,salvaged_valid,False,True,True,,True,17,54,1.0113
+line7463,train,152,INVALID,invalid,False,False,False,empty or docstring-only body,True,47,2,0.0393
+line2510,dev,195,VALID,salvaged_valid,False,True,True,,True,69,512,9.8812
+line795,test,195,VALID,salvaged_valid,False,True,True,,True,29,12,0.2265
+line1254,train,195,VALID,salvaged_valid,False,True,True,,True,24,75,1.4063
+line2266,train,195,VALID,salvaged_valid,False,True,True,,True,29,113,2.1242
+line3596,train,195,VALID,salvaged_valid,False,True,True,,True,38,100,1.8802
+line5059,train,195,VALID,salvaged_valid,False,True,True,,True,28,195,3.6811
+line5556,train,195,VALID,salvaged_valid,False,True,True,,True,125,39,0.7437
+line5999,train,195,VALID,salvaged_valid,False,True,True,,True,46,12,0.2266
+line7671,train,195,VALID,salvaged_valid,False,True,True,,True,28,512,9.8363
+line7698,train,195,VALID,salvaged_valid,False,True,True,,True,68,512,9.8858
+line2422,dev,239,VALID,salvaged_valid,False,True,True,,True,70,39,0.738
+line5924,test,239,VALID,salvaged_valid,False,True,True,,True,114,68,1.2927
+line2184,train,239,INVALID,invalid,False,False,False,empty or docstring-only body,True,59,512,9.8822
+line2462,train,239,VALID,salvaged_valid,False,True,True,,True,31,12,0.2275
+line2571,train,239,VALID,salvaged_valid,False,True,True,,True,84,36,0.6836
+line3169,train,239,INVALID,invalid,False,False,False,syntax invalid,True,29,213,4.0384
+line4914,train,239,INVALID,invalid,False,False,False,empty or docstring-only body,True,128,1,0.0243
+line7167,train,239,VALID,salvaged_valid,False,True,True,,True,120,124,2.3694
+line7334,train,239,VALID,salvaged_valid,False,True,True,,True,54,91,1.7197
+line891,train,239,INVALID,invalid,False,False,False,syntax invalid,True,123,29,0.5554
+line1360,dev,278,VALID,salvaged_valid,False,True,True,,True,103,74,1.409
+line4997,test,278,VALID,salvaged_valid,False,True,True,,True,60,512,9.9102
+line1004,train,278,VALID,salvaged_valid,False,True,True,,True,80,131,2.4917
+line1294,train,278,VALID,salvaged_valid,False,True,True,,True,123,80,1.5282
+line2701,train,278,VALID,salvaged_valid,False,True,True,,True,29,512,9.8743
+line4745,train,278,VALID,salvaged_valid,False,True,True,,True,64,26,0.4928
+line5244,train,278,VALID,salvaged_valid,False,True,True,,True,52,41,0.7747
+line6831,train,278,VALID,salvaged_valid,False,True,True,,True,115,118,2.2527
+line843,train,278,VALID,salvaged_valid,False,True,True,,True,103,43,0.8206
+line8924,train,278,INVALID,invalid,False,False,False,empty or docstring-only body,True,64,512,9.9143
+line5264,dev,321,VALID,salvaged_valid,False,True,True,,True,24,512,9.8798
+line4911,test,321,INVALID,invalid,False,False,False,syntax invalid,True,88,512,9.9585
+line170,train,321,VALID,salvaged_valid,False,True,True,,True,26,33,0.6238
+line2367,train,321,VALID,salvaged_valid,False,True,True,,True,74,26,0.4957
+line2439,train,321,VALID,salvaged_valid,False,True,True,,True,44,77,1.4545
+line284,train,321,VALID,salvaged_valid,False,True,True,,True,50,512,9.9184
+line3453,train,321,VALID,salvaged_valid,False,True,True,,True,45,138,2.6163
+line5649,train,321,VALID,salvaged_valid,False,True,True,,True,58,512,9.9327
+line6326,train,321,VALID,salvaged_valid,False,True,True,,True,91,512,9.9692
+line7916,train,321,VALID,salvaged_valid,False,True,True,,True,97,32,0.6113
+line8515,dev,403,VALID,salvaged_valid,False,True,True,,True,53,46,0.8704
+line6296,test,403,VALID,salvaged_valid,False,True,True,,True,70,146,2.781
+line1867,train,403,VALID,salvaged_valid,False,True,True,,True,93,31,0.5917
+line1958,train,403,INVALID,invalid,False,False,False,syntax invalid,True,70,12,0.2307
+line2188,train,403,INVALID,invalid,False,False,False,syntax invalid,True,80,512,9.9584
+line248,train,403,VALID,salvaged_valid,False,True,True,,True,96,512,9.9791
+line4040,train,403,VALID,salvaged_valid,False,True,True,,True,32,512,9.9025
+line5173,train,403,INVALID,invalid,False,False,False,syntax invalid,True,55,512,9.933
+line6842,train,403,VALID,salvaged_valid,False,True,True,,True,48,512,9.9232
+line7252,train,403,VALID,salvaged_valid,False,True,True,,True,77,35,0.6666
+line7573,dev,439,INVALID,invalid,False,False,False,empty or docstring-only body,True,92,2,0.0432
+line4030,test,439,VALID,salvaged_valid,False,True,True,,True,87,512,9.9736
+line1146,train,439,INVALID,invalid,False,False,False,syntax invalid,True,99,512,9.9876
+line1337,train,439,VALID,salvaged_valid,False,True,True,,True,56,512,9.9336
+line1493,train,439,VALID,salvaged_valid,False,True,True,,True,90,92,1.753
+line2915,train,439,VALID,raw_valid,True,True,True,,True,104,512,9.9862
+line2944,train,439,INVALID,invalid,False,False,False,syntax invalid,True,33,75,1.415
+line4742,train,439,VALID,salvaged_valid,False,True,True,,True,23,28,0.5281
+line6281,train,439,INVALID,invalid,False,False,False,syntax invalid,True,85,80,1.5228
+line708,train,439,VALID,salvaged_valid,False,True,True,,True,33,512,9.8959

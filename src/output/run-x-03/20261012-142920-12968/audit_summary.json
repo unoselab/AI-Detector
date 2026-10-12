@@ -1,0 +1,59 @@
+{
+  "common_valid_identical": 29,
+  "common_valid_pairs": 84,
+  "common_valid_split_counts": {
+    "dev": 9,
+    "test": 9,
+    "train": 66
+  },
+  "different_t02_t00": 66,
+  "errors": [],
+  "experiment": "run-x-03",
+  "identical_but_invalid_pair_ids": [
+    "line4914",
+    "line535",
+    "line5789",
+    "line7463",
+    "line7573"
+  ],
+  "identical_t02_t00": 34,
+  "interpretation": "Direct validation is applied to already-saved code at both temperatures. The original 4,500 rows are a pre-filtered sample, so this does not estimate the unconditional T=0.2 generation acceptance rate. Only the common-valid subset supports fully matched validity-filtered comparisons.",
+  "original_direct_reason_counts": {
+    "structure": 250,
+    "valid": 4250
+  },
+  "original_hwc_direct_valid": 4500,
+  "original_pairs_count": 4500,
+  "original_prompt_recoverable": 4500,
+  "original_t02_direct_invalid": 250,
+  "original_t02_direct_valid": 4250,
+  "pilot_1_or_2_token_count": 5,
+  "pilot_512_token_count": 30,
+  "pilot_dir": "/home/user1-system12/project-workspace/ai_detector/src/output/run-x-02/20261012-140235-6379",
+  "pilot_pairs_count": 100,
+  "provenance_checks": {
+    "original_csv_sha256": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+    "split_manifest_sha256": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+    "validator_script_sha256": "537f62325963012a8bc73bd233a5023dd09c2cd98c5116b6bb47e5a682769510"
+  },
+  "status": "QC_REVIEW",
+  "t00_direct_reason_counts": {
+    "structure": 7,
+    "syntax": 9,
+    "valid": 84
+  },
+  "t00_direct_valid": 84,
+  "timestamp_utc": "2026-10-12T19:29:22.994030+00:00",
+  "tokenizer_loaded": true,
+  "validator_script": "/home/user1-system12/project-workspace/ai_detector/src/code-generation/find_validsyntax_mgc.py",
+  "validity_crosstab": {
+    "t02_invalid_t00_invalid": 7,
+    "t02_invalid_t00_valid": 0,
+    "t02_valid_t00_invalid": 9,
+    "t02_valid_t00_valid": 84
+  },
+  "warnings": [
+    "Extra EOS token 29871 is a whitespace/word-boundary token: possible premature stop",
+    "5 identical T=0.2/T=0.0 codes fail shared direct structural rules"
+  ]
+}
