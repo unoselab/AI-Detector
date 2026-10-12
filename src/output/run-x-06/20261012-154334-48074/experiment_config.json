@@ -1,0 +1,30 @@
+{
+  "experiment": "run-x-06",
+  "design": "4500 matched T=0.0 Standard EOS [2] with AST extraction",
+  "model": "codellama/CodeLlama-7b-hf",
+  "temperature": 0.0,
+  "do_sample": false,
+  "top_p_argument": null,
+  "temperature_argument": null,
+  "eos_ids": [
+    2
+  ],
+  "prompt_max_tokens": 128,
+  "max_new_tokens": 512,
+  "original_csv": "/home/user1-system12/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax_4500_complexity/codesearchnet_codellama-7b_python_merged_4500.csv",
+  "original_csv_sha256": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+  "split_manifest": "/home/user1-system12/project-workspace/ai_detector/src/ml_embeddings/data_codesearchnet/splits/codellama-7b_4500_complexity_stratified_maxlen2048/complexity_stratified_pair_manifest.csv",
+  "split_manifest_sha256": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+  "validator_script": "/home/user1-system12/project-workspace/ai_detector/src/code-generation/find_validsyntax_mgc.py",
+  "validator_script_sha256": "537f62325963012a8bc73bd233a5023dd09c2cd98c5116b6bb47e5a682769510",
+  "pilot_reference_sha256": {
+    "pilot_prepared": "b0eea12d71d7c48eb3d52b59676ab74a59ad9b5f3ff089b9c28c4daf2aa3422a",
+    "pilot_config": "2ed207da286720c80ed0b260d54152506e580a18b45a49e026f956ff253b7898",
+    "ablation_generation": "673c042a15ed60e7d49475fc41a5dad19588fe41a49ef54b529ce765bc185646",
+    "extraction_summary": "77c9c923f10a049b343debc59fe35cd444b3602e7103b232a8b1c6220ac316b1"
+  },
+  "full_prepared_sha256": "485bc163816c6075dd7a7c2962102c23537fe90f368e6bde8e8f79acfced1e0e",
+  "expected": 4500,
+  "gpu_assignment": "complexity_block modulo 2 (225 blocks / 2250 procedures per GPU)",
+  "fixture_mode": false
+}

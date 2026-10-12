@@ -1,0 +1,36 @@
+{
+  "experiment": "run-x-05",
+  "status": "PASS",
+  "timestamp_utc": "2026-10-12T20:29:37.510485+00:00",
+  "pilot_pairs": 100,
+  "original_standard_valid": 33,
+  "extracted_standard_valid": 93,
+  "extracted_standard_invalid": 7,
+  "additional_valid_vs_original_standard": 60,
+  "valid_paired_csv_rows": 186,
+  "split": {
+    "train": {
+      "selected": 80,
+      "extracted_valid": 74
+    },
+    "dev": {
+      "selected": 10,
+      "extracted_valid": 10
+    },
+    "test": {
+      "selected": 10,
+      "extracted_valid": 9
+    }
+  },
+  "boundary_counts": {
+    "dedented": 90,
+    "full": 3,
+    "none": 7
+  },
+  "matched_no_boundary_code": 88,
+  "matched_legacy_code": 83,
+  "no_boundary_valid": 89,
+  "previous_legacy_valid": 84,
+  "python311": true,
+  "source_integrity": "PASS"
+}

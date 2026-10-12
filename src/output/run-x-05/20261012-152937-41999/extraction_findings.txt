@@ -1,0 +1,13 @@
+Experiment: run-x-05 | Function extraction from T=0.0 Standard EOS
+Status: PASS
+Original standard validator: 33/100
+AST-boundary extracted valid: 93/100
+Additional valid functions: 60
+Paired CSV rows (HWC + AGC): 186
+Split: {'train': {'selected': 80, 'extracted_valid': 74}, 'dev': {'selected': 10, 'extracted_valid': 10}, 'test': {'selected': 10, 'extracted_valid': 9}}
+Matched no-boundary AGC code: 88
+Python 3.11: True
+Source integrity: PASS
+LIMITATION: AST/structure valid does not prove behavioral completeness.
+LIMITATION: Standard EOS still has a 512-token generation cap.
+NOTE: No GPU generation. No originals modified. No invalid-pair backfill.

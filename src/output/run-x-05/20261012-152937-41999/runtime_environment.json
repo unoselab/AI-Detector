@@ -1,0 +1,9 @@
+{
+  "python_version": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+  "python_executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+  "python_implementation": "CPython",
+  "python311": true,
+  "allow_other_python": false,
+  "validator_path": "/home/user1-system12/project-workspace/ai_detector/src/code-generation/find_validsyntax_mgc.py",
+  "validator_sha256": "537f62325963012a8bc73bd233a5023dd09c2cd98c5116b6bb47e5a682769510"
+}

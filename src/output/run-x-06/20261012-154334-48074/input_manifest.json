@@ -1,0 +1,20 @@
+{
+  "prepared_file_sha256": "dacddd90a703474168c9a428d86bd216bc00f81b92539adba45a7b62c53fed57",
+  "source_csv_sha256": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+  "split_sha256": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+  "validator_sha256": "537f62325963012a8bc73bd233a5023dd09c2cd98c5116b6bb47e5a682769510",
+  "pilot_reference_sha256": {
+    "pilot_prepared": "b0eea12d71d7c48eb3d52b59676ab74a59ad9b5f3ff089b9c28c4daf2aa3422a",
+    "pilot_config": "2ed207da286720c80ed0b260d54152506e580a18b45a49e026f956ff253b7898",
+    "ablation_generation": "673c042a15ed60e7d49475fc41a5dad19588fe41a49ef54b529ce765bc185646",
+    "extraction_summary": "77c9c923f10a049b343debc59fe35cd444b3602e7103b232a8b1c6220ac316b1"
+  },
+  "python": {
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+    "implementation": "CPython",
+    "python311": true,
+    "fixture_mode": false,
+    "offline_non311": false
+  }
+}
