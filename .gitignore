@@ -161,3 +161,7 @@ data*/
 .xrun.sh
 *.gz
 xrun.sh
+
+src/output/run-x-06/20261012-154334-48074/generation_full.jsonl
+src/output/run-x-06/20261012-154334-48074/gpu0_generation.jsonl
+src/output/run-x-06/20261012-154334-48074/gpu1_generation.jsonl

@@ -1,0 +1,7 @@
+run-x-07 | Status: PASS
+Baseline 450 cached AUROC: 0.795035; fresh AUROC: 0.795035
+Common-valid test=380; T=0.2: 0.781527  T=0.0: 0.775963  delta: -0.005564
+Matched bootstrap CI95: [-0.018102579639889232, 0.007095221606648189]
+Warning-free test=329; T=0.2: 0.780439 T=0.0: 0.769320
+Changed AGC test=269; T=0.2: 0.757355 T=0.0: 0.749147
+Interpret as generation+extraction robustness, not a temperature-only effect.

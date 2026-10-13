@@ -1,0 +1,8 @@
+run-x-08 | Controlled CodeLlama-7B T=0.2 test generation | PASS
+Seeds=[20260723] | Generated=450
+T=0.2 sampling top_p=.95 top_k=50 EOS=[2] max_new_tokens=512
+T=0.0 outputs reused read-only from run-x-06; AST extraction copied exactly.
+Seed=20260723 valid=404/450 common=382 identical=115 warning-free=320
+NOTE: No SVM AUROC is calculated in this generation stage.
+NOTE: T=0.2 sampled vs T=0.0 greedy; no assertion of pure temperature effect.
+Source inputs are read-only, and invalid procedures were not backfilled.

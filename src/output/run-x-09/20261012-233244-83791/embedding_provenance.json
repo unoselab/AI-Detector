@@ -1,0 +1,25 @@
+{
+  "inputs_sha256": "a02c09ac90541d03e25f4fe64fba31e2ae23a14bd9ce8c3d14c5d4b6aace60b5",
+  "cache_sha256": "5751814d6f1ef3203474aa9ede05768ac347d2f17b054414fb20612e7cebdf2b",
+  "model": "Salesforce/codet5p-110m-embedding",
+  "max_len": 2048,
+  "batch_size": 16,
+  "device": "cuda",
+  "array_shapes": {
+    "original": [
+      900,
+      256
+    ],
+    "seed20260723_t00": [
+      382,
+      256
+    ],
+    "seed20260723_t02": [
+      382,
+      256
+    ]
+  },
+  "reference_source_ast_sha256": "f97f9b356a14e6137477711b0f86fe2762ef224366b78fa688f3ee63da048223",
+  "reference_embed_script_sha256": "1af73d92beb225a1edabd1ba07689f61be84964d0f7009364d67308a56a39a64",
+  "note": "Original CodeT5+ AST embedding helpers reused directly; no model retraining"
+}

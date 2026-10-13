@@ -1,0 +1,6 @@
+run-x-09 | Controlled T=0.2 sampling versus T=0.0 greedy | PASS
+Original CL-7B SVM+AST baseline 450 AUROC cached=0.79503457 fresh=0.79503457
+seed=20260723 common=382 warning-free=320 changed=267 unchanged=115
+  T02=0.774150 T00=0.776490 delta(T00-T02)=+0.002340 CI95=[-0.0098168395877307, 0.014261190756832305]
+Interpretation: Same EOS, prompt, extraction and validation; T=0.2 sampling versus T=0.0 greedy.
+No change to the original classifier or paper's cross-generator selection.

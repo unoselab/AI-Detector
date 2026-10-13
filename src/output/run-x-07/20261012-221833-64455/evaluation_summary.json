@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "reference_450_auroc": 0.7950345679012345,
+  "fresh_450_auroc": 0.7950345679012345,
+  "reference_vs_fresh_max_score_delta": 3.9863005065754464e-06,
+  "reference_vs_fresh_mean_score_delta": 7.083016183166239e-07,
+  "matched_380": {
+    "subset": "all_common_valid",
+    "pairs": 380,
+    "t02_auroc": 0.7815270083102495,
+    "t00_auroc": 0.7759626038781163,
+    "delta_t00_minus_t02": -0.00556440443213313
+  },
+  "warning_free_329": {
+    "subset": "no_incompleteness_warning",
+    "pairs": 329,
+    "t02_auroc": 0.7804390203342542,
+    "t00_auroc": 0.7693203130052382,
+    "delta_t00_minus_t02": -0.011118707329015987
+  },
+  "changed_269": {
+    "subset": "changed_agc_only",
+    "pairs": 269,
+    "t02_auroc": 0.7573554815439255,
+    "t00_auroc": 0.749146639764514,
+    "delta_t00_minus_t02": -0.008208841779411502
+  },
+  "matched_delta_ci95": [
+    -0.018102579639889232,
+    0.007095221606648189
+  ],
+  "matched_delta_bootstrap_sign_p_two_sided": 0.3849,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260723,
+  "identical_agc_score_max_delta": 3.7910245946903842e-06,
+  "score_mode": "decision",
+  "environment": {
+    "python": "3.11.15",
+    "torch": "2.1.2",
+    "numpy": "1.26.3",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35"
+  },
+  "limitations": [
+    "Generation settings and extraction policy differ across T=0.2/T=0.0.",
+    "Common-valid selection may depend on complexity and prompt length.",
+    "AST validity is not behavioral completeness."
+  ]
+}

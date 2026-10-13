@@ -1,0 +1,41 @@
+{
+  "python": {
+    "version": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+    "implementation": "CPython",
+    "python311": true
+  },
+  "input_hashes": {
+    "run06_config_sha256": "0f288cbd1f11bd2c614fb0fee3fa1d765e3c66371adb5c3d827bbd73d795ec42",
+    "run06_prepared_sha256": "dacddd90a703474168c9a428d86bd216bc00f81b92539adba45a7b62c53fed57",
+    "run06_extracted_sha256": "208c4f7a782fdb0dbb68874928f6603559adefc1c81d93e5a2e029e4f7edb8d2",
+    "run06_summary_sha256": "0b2285907d18769457746c148045248a86f19530ae653af3caef736fd9135113",
+    "original_csv_sha256": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+    "split_manifest_sha256": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+    "validator_sha256": "537f62325963012a8bc73bd233a5023dd09c2cd98c5116b6bb47e5a682769510"
+  },
+  "gpu0": {
+    "torch": "2.1.2",
+    "transformers": "4.36.2",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "model_revision": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+    "tokenizer": "CodeLlamaTokenizerFast",
+    "model_dtype": "torch.float16",
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+    "physical_gpu": "0",
+    "gpu_assignment": 0
+  },
+  "gpu1": {
+    "torch": "2.1.2",
+    "transformers": "4.36.2",
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "model_revision": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+    "tokenizer": "CodeLlamaTokenizerFast",
+    "model_dtype": "torch.float16",
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+    "physical_gpu": "1",
+    "gpu_assignment": 1
+  }
+}

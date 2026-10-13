@@ -1,0 +1,10 @@
+Experiment: run-x-06 | Status: PASS
+Model: CodeLlama-7B; T=0.0 greedy; Standard EOS [2]; max_new_tokens=512
+Generated: 4500/4500 (GPU0=2250 GPU1=2250)
+Extracted valid: 4054/4500 (90.09%)
+Common-valid with original T=0.2 direct rules: 3893/4500
+Pilot 100 raw-generation mismatches: 0/100
+Prompt truncated: 33 | reached length cap: 4485
+Potential incompleteness review flags: 507
+Original sources unmodified; no invalid example replacements.
+NOTE: AST validity is not behavioral completeness; EOS/extraction differs from T=0.2 benchmark.

@@ -1,0 +1,111 @@
+{
+  "seed": 20260723,
+  "status": "PASS",
+  "n_common_valid": 382,
+  "n_warning_free": 320,
+  "n_changed_agc": 267,
+  "n_identical_agc": 115,
+  "matched": {
+    "subset": "all_common_valid",
+    "pairs": 382,
+    "t02_auroc": 0.7741495573038021,
+    "t00_auroc": 0.776489816616869,
+    "delta_t00_minus_t02": 0.002340259313066917,
+    "ci95_low": -0.0098168395877307,
+    "ci95_high": 0.014261190756832305,
+    "bootstrap_sign_tail_fraction": 0.709,
+    "bootstrap_replicates": 20000
+  },
+  "warning_free": {
+    "subset": "no_incompleteness_warning",
+    "pairs": 320,
+    "t02_auroc": 0.7734960937500002,
+    "t00_auroc": 0.7714208984375,
+    "delta_t00_minus_t02": -0.002075195312500222,
+    "ci95_low": -0.013867309570312542,
+    "ci95_high": 0.00941918945312496,
+    "bootstrap_sign_tail_fraction": 0.7446,
+    "bootstrap_replicates": 20000
+  },
+  "changed_agc": {
+    "subset": "changed_agc_only",
+    "pairs": 267,
+    "t02_auroc": 0.7586303637307299,
+    "t00_auroc": 0.760762529983588,
+    "delta_t00_minus_t02": 0.0021321662528580587,
+    "ci95_low": -0.0155855040749625,
+    "ci95_high": 0.019427962238213525,
+    "bootstrap_sign_tail_fraction": 0.8174,
+    "bootstrap_replicates": 20000
+  },
+  "complexity_quintiles": [
+    {
+      "subset": "complexity_quintile_1",
+      "pairs": 77,
+      "t02_auroc": 0.6955641760836566,
+      "t00_auroc": 0.7209478832855456,
+      "delta_t00_minus_t02": 0.025383707201888983,
+      "ci95_low": -0.010710069151627644,
+      "ci95_high": 0.06518805869455224,
+      "bootstrap_sign_tail_fraction": 0.175,
+      "bootstrap_replicates": 20000
+    },
+    {
+      "subset": "complexity_quintile_2",
+      "pairs": 76,
+      "t02_auroc": 0.7366689750692521,
+      "t00_auroc": 0.7493074792243767,
+      "delta_t00_minus_t02": 0.012638504155124575,
+      "ci95_low": -0.012638504155124686,
+      "ci95_high": 0.03670360110803317,
+      "bootstrap_sign_tail_fraction": 0.3071,
+      "bootstrap_replicates": 20000
+    },
+    {
+      "subset": "complexity_quintile_3",
+      "pairs": 76,
+      "t02_auroc": 0.7432479224376731,
+      "t00_auroc": 0.7498268698060941,
+      "delta_t00_minus_t02": 0.006578947368421018,
+      "ci95_low": -0.022857513850415567,
+      "ci95_high": 0.03462603878116344,
+      "bootstrap_sign_tail_fraction": 0.655,
+      "bootstrap_replicates": 20000
+    },
+    {
+      "subset": "complexity_quintile_4",
+      "pairs": 76,
+      "t02_auroc": 0.8687673130193905,
+      "t00_auroc": 0.8523199445983379,
+      "delta_t00_minus_t02": -0.016447368421052544,
+      "ci95_low": -0.04830332409972293,
+      "ci95_high": 0.010387811634349098,
+      "bootstrap_sign_tail_fraction": 0.2786,
+      "bootstrap_replicates": 20000
+    },
+    {
+      "subset": "complexity_quintile_5",
+      "pairs": 77,
+      "t02_auroc": 0.8768763703828639,
+      "t00_auroc": 0.8738404452690166,
+      "delta_t00_minus_t02": -0.0030359251138473153,
+      "ci95_low": -0.027660651037274442,
+      "ci95_high": 0.02125147579693032,
+      "bootstrap_sign_tail_fraction": 0.8131,
+      "bootstrap_replicates": 20000
+    }
+  ],
+  "accuracy": {
+    "t00": 0.7068062827225131,
+    "t02": 0.7120418848167539
+  },
+  "identical_agc_max_score_delta": 3.477659245465503e-06,
+  "baseline_cached_450_auroc": 0.7950345679012345,
+  "baseline_fresh_450_auroc": 0.7950345679012345,
+  "bootstrap_replicates": 20000,
+  "limitations": [
+    "Sampling (T=0.2) versus greedy (T=0.0) is a decoding-regime comparison, not a pure scalar temperature effect.",
+    "Common-valid subset may select less complex functions.",
+    "AST validity is not functional completeness; completeness flags are only heuristic."
+  ]
+}

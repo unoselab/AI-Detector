@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "python": "3.11.15",
+  "executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+  "baseline_pairs": 450,
+  "matched_pairs": 380,
+  "warning_free_pairs": 329,
+  "changed_pairs": 269,
+  "model_key": "codesearchnet_codellama-7b_python_merged_4500ast_",
+  "expected_baseline_auroc": 0.795,
+  "model_sha256": "a7425af490022045d40da3aa660a38bfd2aabc22a27dd70a4f8ee5ebf1a61ce7",
+  "original_sha256": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+  "split_sha256": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+  "test_sha256": "7a0cd5b66e192f3339a78fb87907b757b39da190b4707842d290c00962e88691",
+  "common_sha256": "a0adc013ce113a6222567e756298cd71c4da78799c393057148d6a5400bd1008",
+  "qc_sha256": "5c7aadc1bd9f5177df71285b78f0a26397721836f85cd00a8ef3b227b34bac36",
+  "ast_script_sha256": "f97f9b356a14e6137477711b0f86fe2762ef224366b78fa688f3ee63da048223",
+  "embed_script_sha256": "1af73d92beb225a1edabd1ba07689f61be84964d0f7009364d67308a56a39a64",
+  "output_dir": "/home/user1-system12/project-workspace/ai_detector/src/output/run-x-07/20261012-221833-64455"
+}

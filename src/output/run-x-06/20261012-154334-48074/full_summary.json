@@ -1,0 +1,43 @@
+{
+  "experiment": "run-x-06",
+  "status": "PASS",
+  "timestamp_utc": "2026-10-13T02:56:03.947873+00:00",
+  "generated": 4500,
+  "generation_complete": true,
+  "valid_extracted": 4054,
+  "invalid_extracted": 446,
+  "validity_rate": 0.9008888888888889,
+  "valid_pairs_csv_rows": 8108,
+  "common_valid_pairs": 3893,
+  "original_t02_direct_valid": 4250,
+  "split": {
+    "train": {
+      "selected": 3600,
+      "extracted_valid": 3249,
+      "common_valid": 3127
+    },
+    "dev": {
+      "selected": 450,
+      "extracted_valid": 405,
+      "common_valid": 386
+    },
+    "test": {
+      "selected": 450,
+      "extracted_valid": 400,
+      "common_valid": 380
+    }
+  },
+  "reference_pilot_100_raw_mismatches": 0,
+  "reference_pilot_checked": 100,
+  "prompt_truncated": 33,
+  "generation_length_cap": 4485,
+  "incompleteness_review_flags": 507,
+  "nested_function_cases_valid": 66,
+  "source_data_modified": false,
+  "invalid_backfilled": false,
+  "limitations": [
+    "AST/structure-validity does not establish functional completeness.",
+    "This Standard-EOS extraction pipeline differs from the original T=0.2 generation/filter policy.",
+    "The original T=0.2 sample was already validity-filtered; selection must be reported."
+  ]
+}

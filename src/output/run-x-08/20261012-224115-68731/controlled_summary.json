@@ -1,0 +1,52 @@
+{
+  "experiment": "run-x-08",
+  "status": "PASS",
+  "version": "v1",
+  "seeds": [
+    20260723
+  ],
+  "n_test_per_seed": 450,
+  "total_generations": 450,
+  "per_seed": [
+    {
+      "experiment": "run-x-08",
+      "version": "v1",
+      "seed": 20260723,
+      "status": "PASS",
+      "timestamp_utc": "2026-10-13T04:19:09.758803+00:00",
+      "generated": 450,
+      "gpu0": 225,
+      "gpu1": 225,
+      "temperature": 0.2,
+      "do_sample": true,
+      "top_p": 0.95,
+      "top_k": 50,
+      "eos_ids": [
+        2
+      ],
+      "max_new_tokens": 512,
+      "t02_controlled_valid": 404,
+      "t02_controlled_invalid": 46,
+      "t00_reference_valid": 400,
+      "common_valid": 382,
+      "common_identical_agc": 115,
+      "original_t02_direct_valid": 423,
+      "prompt_truncated": 2,
+      "reached_length_cap": 449,
+      "t02_incompleteness_review_flags": 55,
+      "common_warning_free": 320,
+      "new_valid_pairs_rows": 808,
+      "matched_pairs_rows_per_condition": 764,
+      "limitations": [
+        "AST validity is not behavioral completeness.",
+        "T=0.2 stochastic sampling vs T=0.0 greedy decoding is a decoding-regime comparison.",
+        "Common-valid inclusion may select easier procedures."
+      ]
+    }
+  ],
+  "all_seeds_valid_test": 404,
+  "all_seeds_common_valid_test": 382,
+  "source_inputs_unmodified": true,
+  "backfill": false,
+  "timestamp_utc": "2026-10-13T04:19:09.799384+00:00"
+}

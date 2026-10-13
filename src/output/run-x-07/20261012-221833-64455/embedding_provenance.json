@@ -1,0 +1,13 @@
+{
+  "input_sha256": "751d388c2d42895cbf387dae38856181fc47a0bca05223fba94e30d53fab4cc0",
+  "cache_sha256": "77a358e59e4429adbfa567fa9c5cb17930e5effd554566d051361ea6d80223d2",
+  "model": "Salesforce/codet5p-110m-embedding",
+  "max_len": 2048,
+  "batch_size": 16,
+  "device": "cuda",
+  "original_rows": 900,
+  "novel_rows": 380,
+  "tree_sitter_ast_script_sha256": "f97f9b356a14e6137477711b0f86fe2762ef224366b78fa688f3ee63da048223",
+  "embedding_script_sha256": "1af73d92beb225a1edabd1ba07689f61be84964d0f7009364d67308a56a39a64",
+  "note": "AST-only embeddings via unchanged original generate_embeddings.py load_model and embed_batch"
+}
