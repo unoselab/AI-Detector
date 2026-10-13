@@ -1,0 +1,27 @@
+{
+  "input_digest": "d8bd3a21519b7355b3276b304459d66236506b09e51a7f41036169cee9e381ff",
+  "cache_sha256": "0ebb523ac811913be56d1c2cb0c3d3dfae0204d4079b70bd1f3d19954b718717",
+  "embedding_model": "Salesforce/codet5p-110m-embedding",
+  "max_len": 2048,
+  "batch_size": 16,
+  "device": "cuda",
+  "shapes": {
+    "original": [
+      900,
+      256
+    ],
+    "t02": [
+      370,
+      256
+    ],
+    "t04": [
+      370,
+      256
+    ],
+    "t06": [
+      370,
+      256
+    ]
+  },
+  "reused_historical_embedding_implementation": true
+}

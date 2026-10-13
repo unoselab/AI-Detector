@@ -1,0 +1,19 @@
+{
+  "experiment": "run-x-10",
+  "version": "v1",
+  "status": "PASS",
+  "seed": 20260723,
+  "temperature": 0.4,
+  "temperature_tag": "t04",
+  "generated": 450,
+  "gpu0": 225,
+  "gpu1": 225,
+  "valid": 407,
+  "invalid": 43,
+  "valid_rate": 0.9044444444444445,
+  "prompt_truncated": 2,
+  "reached_length_cap": 445,
+  "incompleteness_warning": 52,
+  "valid_pairs_rows": 814,
+  "backfilled": false
+}

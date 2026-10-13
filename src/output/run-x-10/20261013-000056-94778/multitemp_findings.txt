@@ -1,0 +1,9 @@
+run-x-10 | Controlled CodeLlama-7B T=0.4,0.6 generation | PASS
+Seed=20260723 new_generations=900 reused_T02=450
+All temperatures: top_p=0.95 top_k=50 EOS=[2] max_new_tokens=512
+VALID: T02=404, T04=407, T06=421
+Common-valid(all 3)=370; warning-free=300
+Common paired CSV rows per temperature=740
+NOTE: No AUROC calculated; use same common_valid IDs for all temperatures in run-x-11.
+NOTE: Seed is fixed; additional seeds would require matching T02 source data.
+Original source data and run-x-08 T02 outputs were not modified; no invalid backfill.

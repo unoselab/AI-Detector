@@ -1,0 +1,33 @@
+{
+  "test_prepared_file_sha256": "d1e4dd808ff0bb42cff50130d748a1f2399082d6ddf5e82049010f4722afef30",
+  "run06_source_hashes": {
+    "run06_config_sha256": "0f288cbd1f11bd2c614fb0fee3fa1d765e3c66371adb5c3d827bbd73d795ec42",
+    "run06_prepared_sha256": "dacddd90a703474168c9a428d86bd216bc00f81b92539adba45a7b62c53fed57",
+    "run06_extracted_sha256": "208c4f7a782fdb0dbb68874928f6603559adefc1c81d93e5a2e029e4f7edb8d2",
+    "run06_summary_sha256": "0b2285907d18769457746c148045248a86f19530ae653af3caef736fd9135113",
+    "original_csv_sha256": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+    "split_manifest_sha256": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+    "validator_sha256": "537f62325963012a8bc73bd233a5023dd09c2cd98c5116b6bb47e5a682769510"
+  },
+  "run08_source_hashes": {
+    "experiment_config.json": "e93e6d17a5434c713f05ddbcdaa84eeaf0844d74417f56379a7b872c03ab5f1c",
+    "input_manifest.json": "a420d757336aadbd10fa19b6e883eeffc2bbf5b5cf874c4715c6672bb3470994",
+    "seed20260723_summary.json": "6fd55cf6441f7e324b507a4991c35dfd67c2fe47f39ae3e724ac453a7ea854c6",
+    "test_prepared.jsonl": "d1e4dd808ff0bb42cff50130d748a1f2399082d6ddf5e82049010f4722afef30",
+    "seed20260723_generation.jsonl": "97fc028af9731c08e1e44a423416668dee0a20db78dd5d0f45f12dadde5400d6",
+    "seed20260723_extracted_functions.jsonl": "5e895b6a8aaa4045ddadc9718ec3f9eb442b0f7cc5f358bf74fe9f6c36c10335",
+    "seed20260723_comparison.csv": "5f20949373cb8fdb3af0b705d7061e4c99303b1b7a841a31885e3ee0061b5ff1",
+    "seed20260723_t02_valid_pairs.csv": "87d83e378117095197dfa446f118d41bcccdc081222a0414e527e0c791777745"
+  },
+  "python": {
+    "version": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "executable": "/home/user1-system12/miniconda3/envs/aidetector/bin/python",
+    "implementation": "CPython",
+    "python311": true
+  },
+  "seed": 20260723,
+  "temperature_tags": [
+    "t04",
+    "t06"
+  ]
+}

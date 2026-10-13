@@ -1,0 +1,7 @@
+run-x-11 | T=0.2 vs T=0.4 vs T=0.6 CodeLlama detector AUROC | PASS
+Original baseline 450: cached=0.79503457 fresh=0.79503457
+Generation seed=20260723 common-valid=370/450; 20000 pair-cluster bootstrap resamples
+T=0.2 AUROC=0.768546 (reference)
+T=0.4 AUROC=0.742527 delta_vs_T02=-0.026019 CI95=[-0.043185, -0.009218]
+T=0.6 AUROC=0.722286 delta_vs_T02=-0.046260 CI95=[-0.064909, -0.027867]
+No subgroup analysis, model retraining, model selection or additional source generation.

@@ -1,0 +1,98 @@
+{
+  "experiment": "run-x-11",
+  "version": "v1",
+  "status": "PASS",
+  "generation_seed": 20260723,
+  "bootstrap_seed": 20260723,
+  "bootstrap_replicates": 20000,
+  "baseline_450_cached_auroc": 0.7950345679012345,
+  "baseline_450_fresh_auroc": 0.7950345679012345,
+  "baseline_max_score_drift": 3.9863005065754464e-06,
+  "score_mode": "decision",
+  "matched_test_pairs": 370,
+  "valid_by_temperature": {
+    "t02": 404,
+    "t04": 407,
+    "t06": 421
+  },
+  "comparison_table": [
+    {
+      "temperature": 0.2,
+      "tag": "t02",
+      "common_valid_pairs": 370,
+      "auroc": 0.7685463842220599,
+      "delta_vs_t02": 0.0,
+      "ci95_delta_low": null,
+      "ci95_delta_high": null
+    },
+    {
+      "temperature": 0.4,
+      "tag": "t04",
+      "common_valid_pairs": 370,
+      "auroc": 0.742527392257122,
+      "delta_vs_t02": -0.026018991964937843,
+      "ci95_delta_low": -0.04318517165814463,
+      "ci95_delta_high": -0.009218407596785938
+    },
+    {
+      "temperature": 0.6,
+      "tag": "t06",
+      "common_valid_pairs": 370,
+      "auroc": 0.7222863403944486,
+      "delta_vs_t02": -0.046260043827611286,
+      "ci95_delta_low": -0.06490887509130755,
+      "ci95_delta_high": -0.027866691015339798
+    }
+  ],
+  "preflight": {
+    "status": "PASS",
+    "experiment": "run-x-11",
+    "seed": 20260723,
+    "test_pairs": 450,
+    "common_valid_pairs": 370,
+    "common_warning_free": 300,
+    "valid_by_temperature": {
+      "t02": 404,
+      "t04": 407,
+      "t06": 421
+    },
+    "model_sha256": "a7425af490022045d40da3aa660a38bfd2aabc22a27dd70a4f8ee5ebf1a61ce7",
+    "input_sha256": {
+      "test": "7a0cd5b66e192f3339a78fb87907b757b39da190b4707842d290c00962e88691",
+      "manifest": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+      "original": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+      "model": "a7425af490022045d40da3aa660a38bfd2aabc22a27dd70a4f8ee5ebf1a61ce7",
+      "ast_source": "f97f9b356a14e6137477711b0f86fe2762ef224366b78fa688f3ee63da048223",
+      "embedding_source": "1af73d92beb225a1edabd1ba07689f61be84964d0f7009364d67308a56a39a64",
+      "run10_summary": "ef59fc5ccb4778249f35cdeed221781a335bb04fcaef61a319d1f225839286ba",
+      "run10_comparison": "ce9b396d749dc5097a3ccc63a81b8068ee515aea9a548c394f499557c3e1fccf",
+      "run10_common_ids": "fecd8e8f9ad6dd439c37dd28040198fd0aaed3744b951855b2908c61f16a13e9",
+      "common_t02": "ad8865500d03c48121f01a8d9aac80a805c1eebb34550a25ae039cf4be02538e",
+      "common_t04": "4b034be291589607601a3d32b109e3daeef6e77eee96c591e91791fa91644c64",
+      "common_t06": "67c61ca2e3d6aa3436d7c0c94f947b1734d0a305a776d8df8b18566d8789f1ec"
+    },
+    "generation_settings": {
+      "eos": [
+        2
+      ],
+      "max_new_tokens": 512,
+      "prompt_cap": 128,
+      "top_p": 0.95,
+      "top_k": 50
+    }
+  },
+  "retraining": false,
+  "model_reselection": false,
+  "agc_generation": false,
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "1.26.3",
+    "torch": "2.1.2",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35"
+  },
+  "limitations": [
+    "One stochastic generation seed only; inference is conditional on its outputs.",
+    "Common-valid inclusion can vary with procedure complexity.",
+    "AST validity does not prove functional correctness."
+  ]
+}

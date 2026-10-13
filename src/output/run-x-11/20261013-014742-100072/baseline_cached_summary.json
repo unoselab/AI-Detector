@@ -1,0 +1,7 @@
+{
+  "original_test_pairs": 450,
+  "paper_baseline_auroc": 0.795,
+  "cached_auroc": 0.7950345679012345,
+  "model_sha256": "a7425af490022045d40da3aa660a38bfd2aabc22a27dd70a4f8ee5ebf1a61ce7",
+  "score_mode": "decision"
+}

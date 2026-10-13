@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "experiment": "run-x-11",
+  "seed": 20260723,
+  "test_pairs": 450,
+  "common_valid_pairs": 370,
+  "common_warning_free": 300,
+  "valid_by_temperature": {
+    "t02": 404,
+    "t04": 407,
+    "t06": 421
+  },
+  "model_sha256": "a7425af490022045d40da3aa660a38bfd2aabc22a27dd70a4f8ee5ebf1a61ce7",
+  "input_sha256": {
+    "test": "7a0cd5b66e192f3339a78fb87907b757b39da190b4707842d290c00962e88691",
+    "manifest": "a4ca185f81c7908c7da9f92372fd659707c1f11464a9b8dd2027fa2c0fa9d2ff",
+    "original": "c7cff5cd356849401df5d39de1c67751e58bce10b5988caf9dcbc293441a9dfb",
+    "model": "a7425af490022045d40da3aa660a38bfd2aabc22a27dd70a4f8ee5ebf1a61ce7",
+    "ast_source": "f97f9b356a14e6137477711b0f86fe2762ef224366b78fa688f3ee63da048223",
+    "embedding_source": "1af73d92beb225a1edabd1ba07689f61be84964d0f7009364d67308a56a39a64",
+    "run10_summary": "ef59fc5ccb4778249f35cdeed221781a335bb04fcaef61a319d1f225839286ba",
+    "run10_comparison": "ce9b396d749dc5097a3ccc63a81b8068ee515aea9a548c394f499557c3e1fccf",
+    "run10_common_ids": "fecd8e8f9ad6dd439c37dd28040198fd0aaed3744b951855b2908c61f16a13e9",
+    "common_t02": "ad8865500d03c48121f01a8d9aac80a805c1eebb34550a25ae039cf4be02538e",
+    "common_t04": "4b034be291589607601a3d32b109e3daeef6e77eee96c591e91791fa91644c64",
+    "common_t06": "67c61ca2e3d6aa3436d7c0c94f947b1734d0a305a776d8df8b18566d8789f1ec"
+  },
+  "generation_settings": {
+    "eos": [
+      2
+    ],
+    "max_new_tokens": 512,
+    "prompt_cap": 128,
+    "top_p": 0.95,
+    "top_k": 50
+  }
+}
