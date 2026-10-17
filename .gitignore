@@ -163,3 +163,4 @@ data*/
 xrun.sh
 
 src/output/**/*generation*.jsonl
+output/**/*.json
