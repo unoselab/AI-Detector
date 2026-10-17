@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def deploy(self, id_networkv4):\n        \"\"\"Deploy network in equipments and set column 'active = 1' in tables redeipv4\n\n        :param id_networkv4: ID for NetworkIPv4\n\n        :return: Equipments configuration output\n        \"\"\"\n        equipments = Equipamento.objects.filter(rede__id=id_networkv4)\n\n        for equipment in equipments:\n            if not self.check_equipment_active(equipment.id):\n                self.deploy_network_in_equipment(id_networkv4, equipment.id)\n\n        self.update_network_active(id_networkv4)\n\n        return self.get_network_configuration(id_networkv4)\n",
+  "agc_valid": true,
+  "body_sha256": "6cf4d32e8b99561966c804a6285386c6e550a54728809910f51847539237dfbc",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n        equipments = Equipamento.objects.filter(rede__id=id_networkv4)\n\n        for equipment in equipments:\n            if not self.check_equipment_active(equipment.id):\n                self.deploy_network_in_equipment(id_networkv4, equipment.id)\n\n        self.update_network_active(id_networkv4)\n\n        return self.get_network_configuration(id_networkv4)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2199ecdaf578825fde3c246956a97f6d9d646ff27c86d6b144eb763025a48765",
+  "human_valid": true,
+  "line_no": 4171,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "cc2086798bb2858eee0d243cf5c3d9f551b304d435d7e03ceabbe1f969aebd79",
+  "raw_output": "\n        equipments = Equipamento.objects.filter(rede__id=id_networkv4)\n\n        for equipment in equipments:\n            if not self.check_equipment_active(equipment.id):\n                self.deploy_network_in_equipment(id_networkv4, equipment.id)\n\n        self.update_network_active(id_networkv4)\n\n        return self.get_network_configuration(id_networkv4)\n\n    def",
+  "sampling_seed": 4274245220,
+  "tag": "t04",
+  "temperature": 0.4
+}

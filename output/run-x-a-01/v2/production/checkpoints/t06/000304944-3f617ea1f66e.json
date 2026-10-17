@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def remove_all_cts_records_by(self, crypto_idfp):\n        \"\"\"\n        Remove all CTS records from the specified player\n        :param crypto_idfp:\n        :return:\n        \"\"\"\n        self.log.info(\"Removing all CTS records for player %s\", crypto_idfp)\n        cts_records = self.get_all_cts_records_by(crypto_idfp)\n        if cts_records:\n            for cts_record in cts_records:\n                self.remove_cts_record(cts_record)\n        return cts_records\n",
+  "agc_valid": true,
+  "body_sha256": "f8c13e978eba4bb68aa46cd6060647093e8d232d8b633a0e00fe0875b446fc8a",
+  "body_tokens": 75,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.log.info(\"Removing all CTS records for player %s\", crypto_idfp)\n        cts_records = self.get_all_cts_records_by(crypto_idfp)\n        if cts_records:\n            for cts_record in cts_records:\n                self.remove_cts_record(cts_record)\n        return cts_records\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "f42de52269fb18c7f8049e816bc63963457fd6d6ae0eb6ec53dbf0afabce6feb",
+  "human_valid": true,
+  "line_no": 304944,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3f617ea1f66e0494de67f82a1295a722baaf3acb99ff7f9e73588c92380d2389",
+  "raw_output": "\n        self.log.info(\"Removing all CTS records for player %s\", crypto_idfp)\n        cts_records = self.get_all_cts_records_by(crypto_idfp)\n        if cts_records:\n            for cts_record in cts_records:\n                self.remove_cts_record(cts_record)\n        return cts_records\n\n    def",
+  "sampling_seed": 2027568403,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

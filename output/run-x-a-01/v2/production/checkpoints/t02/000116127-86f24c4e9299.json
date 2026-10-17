@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_raw(path, raw):\n    \"\"\"\n    Set raw data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_raw \"secret/my/secret\" '{\"user\":\"foo\",\"password\": \"bar\"}'\n    \"\"\"\n    return __salt__[\"vault.write\"](path, raw=raw)\n",
+  "agc_valid": true,
+  "body_sha256": "d00b71b930f23c6a86d1a3a89b59189359a4472318b72556fbe111fb71c7bcff",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return __salt__[\"vault.write\"](path, raw=raw)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "745febf76211b041da75d51de32335e96ff109eac3b3bb9aea3c3542188fc7b2",
+  "human_valid": true,
+  "line_no": 116127,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "86f24c4e9299cf48802d204e6f0051a6d6cf44eaaa4f4f22485c7e9a42fddf2c",
+  "raw_output": "\n    return __salt__[\"vault.write\"](path, raw=raw)\n\n\ndef write_json(path, json):\n    \"\"\"\n    Set json data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_json \"secret/my/secret\" '{\"user\":\"foo\",\"password\": \"bar\"}'\n    \"\"\"\n    return __salt__[\"vault.write\"](path, json=json)\n\n\ndef write_yaml(path, yaml):\n    \"\"\"\n    Set yaml data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_yaml \"secret/my/secret\" '{\"user\":\"foo\",\"password\": \"bar\"}'\n    \"\"\"\n    return __salt__[\"vault.write\"](path, yaml=yaml)\n\n\ndef write_file(path, file_path):\n    \"\"\"\n    Set file data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_file \"secret/my/secret\" \"/path/to/file\"\n    \"\"\"\n    return __salt__[\"vault.write\"](path, file_path=file_path)\n\n\ndef write_kv(path, kv):\n    \"\"\"\n    Set kv data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_kv \"secret/my/secret\" '{\"user\":\"foo\",\"password\": \"bar\"}'\n    \"\"\"\n    return __salt__[\"vault.write\"](path, kv=kv)\n\n\ndef write_kv_file(path, file_path):\n    \"\"\"\n    Set kv data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault",
+  "sampling_seed": 1004263199,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

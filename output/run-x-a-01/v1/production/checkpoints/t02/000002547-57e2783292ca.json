@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def send(self, packet_buffer):\n        \"\"\"\n        send a buffer as a packet to the network interface\n        :param packet_buffer: buffer to send (length shouldn't exceed MAX_INT)\n        \"\"\"\n        if len(packet_buffer) > self.MAX_INT:\n            raise ValueError(\"Packet size too large\")\n        self.send_buffer(packet_buffer)\n",
+  "agc_valid": true,
+  "body_sha256": "8258508fa1f57277476176894cbc0402c41985029da53224e2ab8b9ea2861113",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if len(packet_buffer) > self.MAX_INT:\n            raise ValueError(\"Packet size too large\")\n        self.send_buffer(packet_buffer)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "301c89550f42bf9af2f20958aac216e10be4dd97ed1a48d077142d41e6e10442",
+  "human_valid": true,
+  "line_no": 2547,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "57e2783292cabb3a79df6e5a9eeac5dbdceeb27413f29e9103adcba11bcf85d8",
+  "raw_output": "\n        if len(packet_buffer) > self.MAX_INT:\n            raise ValueError(\"Packet size too large\")\n        self.send_buffer(packet_buffer)\n\n    def",
+  "sampling_seed": 3075517439,
+  "tag": "t02",
+  "temperature": 0.2
+}

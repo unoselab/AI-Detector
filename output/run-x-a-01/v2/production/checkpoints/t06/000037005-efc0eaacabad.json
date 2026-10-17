@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def generate(cls, size, string, filetype=\"JPEG\"):\n        \"\"\"\n            Generates a squared avatar with random background color.\n            :param size: size of the avatar, in pixels\n            :param string: string to be used to print text and seed the random\n            :param filetype: the file format of the image (i.e. JPEG, PNG)\n        \"\"\"\n            return cls.generate(size, size, string, filetype)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "d723a10d164d441ddf502de4a99aafe03ccf22be3e892400c5a1a9e8786b61c1",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return cls.generate(size, size, string, filetype)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "c9a1b26d842f3a97664a0ad39de64cb756224598f1ce7d36f2fb553e2840b532",
+  "human_valid": true,
+  "line_no": 37005,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "efc0eaacabad54e8bc23ca61119c23382dde6b6b5c2825af48cfa5346bd93cdd",
+  "raw_output": "\n        return cls.generate(size, size, string, filetype)\n\n    @classmethod\n    def",
+  "sampling_seed": 63281640,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_node(ctx, path):\n    \"\"\"\n    Create node for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :return: Created Node.\n    \"\"\"\n    return ctx.create_node(path)\n",
+  "agc_valid": true,
+  "body_sha256": "192b66416548291bdbda50b6423ee20c04ab2e1e991cf98f5c77c96501a3a977",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return ctx.create_node(path)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "15c1bd9af3dd2a3cab17eeedc6b6d65a4f83ea20f78c117978e7a91df0e2ce15",
+  "human_valid": true,
+  "line_no": 28793,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6d044e690235d1124275f168eb69f275d920c6778de411b96d121ab90798c015",
+  "raw_output": "\n\n    return ctx.create_node(path)\n\n\ndef create_node_from_file(ctx, path):\n    \"\"\"\n    Create node from file for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :return: Created Node.\n    \"\"\"\n\n    return ctx.create_node_from_file(path)\n\n\ndef create_node_from_string(ctx, path, data):\n    \"\"\"\n    Create node from string for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :param data: String data to store in node.\n\n    :return: Created Node.\n    \"\"\"\n\n    return ctx.create_node_from_string(path, data)\n\n\ndef create_node_from_file_list(ctx, path, files):\n    \"\"\"\n    Create node from file list for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :param files: List of files to store in node.\n\n    :return: Created Node.\n    \"\"\"\n\n    return ctx.create_node_from_file_list(path, files)\n\n\ndef create_node_from_node_list(ctx, path, nodes):\n    \"\"\"\n    Create node from node list for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :param nodes: List of nodes to store in node.\n\n    :return: Created Node.\n    \"\"\"\n\n    return ctx.create_node_from_node_list(path, nodes)\n\n\ndef create_node_from_node_dict(ctx, path, nodes):\n    \"\"\"\n    Create node from node dict for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :param nodes: Dict of nodes to store in node.\n\n    :return: Created Node.\n    \"\"\"\n\n    return",
+  "sampling_seed": 4076615127,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _simulate_mixture(self, op: ops.Operation, data: _StateAndBuffer,\n            indices: List[int]) -> None:\n        \"\"\"Simulate an op that is a mixtures of unitaries.\"\"\"\n        if not isinstance(op, ops.Mixture):\n            raise ValueError('_simulate_mixture should only be called on '\n                             'mixtures.')\n\n        # Simulate each of the unitaries.\n        for op_i, op_i_weight in op.components.items():\n            if op_i.is_parameterized():\n                self._simulate_parameterized_op(op_i, data, indices)\n            else:\n                self._simulate_unitary(op_i, data, indices)\n",
+  "agc_valid": true,
+  "body_sha256": "7e4e28ba508fb1949811a4665b5bab812381fe73b839702fd546be92f215f40f",
+  "body_tokens": 146,
+  "bucket": "type05_150",
+  "clean_output": "\n        if not isinstance(op, ops.Mixture):\n            raise ValueError('_simulate_mixture should only be called on '\n                             'mixtures.')\n\n        # Simulate each of the unitaries.\n        for op_i, op_i_weight in op.components.items():\n            if op_i.is_parameterized():\n                self._simulate_parameterized_op(op_i, data, indices)\n            else:\n                self._simulate_unitary(op_i, data, indices)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "a1d24946b98aa39835fb052e3a75507c74867ab96ca10e728a2dceb36cc9c23e",
+  "human_valid": true,
+  "line_no": 367455,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "943a0f481860ee9393e766d67b4377c4905e6fe2f1c21849a44abc96f0ca4a26",
+  "raw_output": "\n        if not isinstance(op, ops.Mixture):\n            raise ValueError('_simulate_mixture should only be called on '\n                             'mixtures.')\n\n        # Simulate each of the unitaries.\n        for op_i, op_i_weight in op.components.items():\n            if op_i.is_parameterized():\n                self._simulate_parameterized_op(op_i, data, indices)\n            else:\n                self._simulate_unitary(op_i, data, indices)\n\n    def",
+  "sampling_seed": 388331046,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

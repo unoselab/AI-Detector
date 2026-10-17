@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def Close(self):\n    \"\"\"Closes the storage.\n\n    Raises:\n      IOError: if the storage file is already closed.\n      OSError: if the storage file is already closed.\n    \"\"\"\n    raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "07f510b039c656038f81a27995cf881d528cc2acdaebe51281c9b15167d3536c",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "b64065675ae196ef27155c705f3e1a2d3065b8b7a3114ef7ee0ec19db1a58663",
+  "human_valid": true,
+  "line_no": 334617,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a2e2ab65690477ed72328c51a77fd9cb735bfe547dd59e7ea440084efd26bec3",
+  "raw_output": "\n    raise NotImplementedError\n\n ",
+  "sampling_seed": 2826569377,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

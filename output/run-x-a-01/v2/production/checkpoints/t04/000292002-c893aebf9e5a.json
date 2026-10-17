@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def activate(self, branches, exclusive=False):\n        \"\"\"\n        Activate branches\n\n        Parameters\n        ----------\n        branches : str or list\n            branch or list of branches to activate\n\n        exclusive : bool, optional (default=False)\n            if True deactivate the remaining branches\n        \"\"\"\n        if isinstance(branches, str):\n            branches = [branches]\n        for branch in branches:\n            if branch not in self.branches:\n                raise ValueError(f\"branch {branch} not found\")\n        if exclusive:\n            for branch in self.branches:\n                if branch not in branches:\n                    self.deactivate(branch)\n        self.active = branches\n",
+  "agc_valid": true,
+  "body_sha256": "49b4d30d003d511df4cdb060cdd90da19927e0c774d842accfa29c6fff465156",
+  "body_tokens": 146,
+  "bucket": "type05_150",
+  "clean_output": "\n        if isinstance(branches, str):\n            branches = [branches]\n        for branch in branches:\n            if branch not in self.branches:\n                raise ValueError(f\"branch {branch} not found\")\n        if exclusive:\n            for branch in self.branches:\n                if branch not in branches:\n                    self.deactivate(branch)\n        self.active = branches\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "a5fa13fe57d13498fb6563de5a10c75511a1bb1a515a50e3513d27e7c66fd305",
+  "human_valid": true,
+  "line_no": 292002,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c893aebf9e5aef9323fa36c4d8cae5475511a54d6f82b9787fdd303a6a79f9e1",
+  "raw_output": "\n        if isinstance(branches, str):\n            branches = [branches]\n        for branch in branches:\n            if branch not in self.branches:\n                raise ValueError(f\"branch {branch} not found\")\n        if exclusive:\n            for branch in self.branches:\n                if branch not in branches:\n                    self.deactivate(branch)\n        self.active = branches\n\n    def",
+  "sampling_seed": 4232190397,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

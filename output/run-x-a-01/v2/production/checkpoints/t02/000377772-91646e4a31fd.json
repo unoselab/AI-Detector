@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def DownloadReportToFile(self, report_job_id, export_format, outfile,\n                           include_report_properties=False,\n                           include_totals_row=None, use_gzip_compression=True):\n    \"\"\"Downloads report data and writes it to a file.\n\n    The report job must be completed before calling this function.\n\n    Args:\n      report_job_id: The ID of the report job to wait for, as a string.\n      export_format: The export format for the report file, as a string.\n      outfile: A writeable, file-like object to write to.\n      include_report_properties: Whether or not to include the report\n        properties (e.g. network, user, date generated...)\n        in the generated report.\n      include_totals_row: Whether or not to include the totals row.\n      use_gzip_compression: Whether or not to use gzip compression.\n    \"\"\"\n    .\n          outfile: The file to write the report data to.\n          include_report_properties: Whether to include report properties in the\n              report data.\n          include_totals_row: Whether to include a totals row in the report data.\n          use_gzip_compression: Whether to use gzip compression for the report data.\n\n        Returns:\n          The number of bytes written to the file.\n        \"\"\"\n        report_data = self.DownloadReport(report_job_id, export_format,\n                                          include_report_properties,\n                                          include_totals_row, use_gzip_compression)\n        return outfile.write(report_data)\n",
+  "agc_valid": false,
+  "body_sha256": "05a91ff4cd6afb5acf3123c29de92a8d1a003cd4ff67f1985c4d2817bed28197",
+  "body_tokens": 232,
+  "bucket": "out_of_range",
+  "clean_output": "\n    .\n          outfile: The file to write the report data to.\n          include_report_properties: Whether to include report properties in the\n              report data.\n          include_totals_row: Whether to include a totals row in the report data.\n          use_gzip_compression: Whether to use gzip compression for the report data.\n\n        Returns:\n          The number of bytes written to the file.\n        \"\"\"\n        report_data = self.DownloadReport(report_job_id, export_format,\n                                          include_report_properties,\n                                          include_totals_row, use_gzip_compression)\n        return outfile.write(report_data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 195,
+  "human_sha256": "9aebbcc3deefa81da5cf7d3f0b35187c25fd49c41236b93c20fd67b8dfe68380",
+  "human_valid": true,
+  "line_no": 377772,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "91646e4a31fdd447398e908065d2d233e9d574b14555f059ab5dc389b967c150",
+  "raw_output": ".\n      outfile: The file to write the report data to.\n      include_report_properties: Whether to include report properties in the\n          report data.\n      include_totals_row: Whether to include a totals row in the report data.\n      use_gzip_compression: Whether to use gzip compression for the report data.\n\n    Returns:\n      The number of bytes written to the file.\n    \"\"\"\n    report_data = self.DownloadReport(report_job_id, export_format,\n                                      include_report_properties,\n                                      include_totals_row, use_gzip_compression)\n    return outfile.write(report_data)\n\n ",
+  "sampling_seed": 2539114890,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

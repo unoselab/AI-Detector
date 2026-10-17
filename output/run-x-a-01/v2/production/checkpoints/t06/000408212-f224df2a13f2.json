@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def download(url, tries=DEFAULT_TRIES, retry_delay=RETRY_DELAY,\n             try_timeout=None, proxies=None, verify=True):\n    \"\"\"\n    Descarga un archivo a través del protocolo HTTP, en uno o más intentos.\n\n    Args:\n        url (str): URL (schema HTTP) del archivo a descargar.\n        tries (int): Intentos a realizar (default: 1).\n        retry_delay (int o float): Tiempo a esperar, en segundos, entre cada\n            intento.\n        try_timeout (int o float): Tiempo máximo a esperar por intento.\n        proxies (dict): Proxies a utilizar. El diccionario debe contener los\n            valores 'http' y 'https', cada uno asociados a la URL del proxy\n            correspondiente.\n\n    Returns:\n        bytes: Contenido del archivo\n    \"\"\"\n    entre cada intento (default:\n",
+  "agc_valid": false,
+  "body_sha256": "959266a00041ecd9bf267a4e621cc2a769d28be541e44b2ac4deeb9dd63da5de",
+  "body_tokens": 8,
+  "bucket": "out_of_range",
+  "clean_output": "\n    entre cada intento (default:\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "e988049a7d851fb4e12db36c9fa3e6d0ccc08b5dd08d23d2cae2e9b07de010f4",
+  "human_valid": true,
+  "line_no": 408212,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f224df2a13f23db043e4d12904ca58976f856cc79b56272a1c072e45be840d02",
+  "raw_output": "entre cada intento (default: ",
+  "sampling_seed": 2559555296,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

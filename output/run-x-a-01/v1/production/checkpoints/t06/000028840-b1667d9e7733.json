@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def update(cls, access_key: str,\n                     is_active: bool = None,\n                     is_admin: bool = None,\n                     resource_policy: str = None,\n                     rate_limit: int = None) -> dict:\n        \"\"\"\n        Creates a new keypair with the given options.\n        You need an admin privilege for this operation.\n        \"\"\"\n            return cls._put(f\"/admin/api/v1/keypairs/{access_key}\",\n                            is_active=is_active,\n                            is_admin=is_admin,\n                            resource_policy=resource_policy,\n                            rate_limit=rate_limit)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "cfc33a8c969ab7bc0f4a34e941a5c1cb547bd0fc1b5b565e8eb15b9cfbd6081a",
+  "body_tokens": 134,
+  "bucket": "type04_140",
+  "clean_output": "\n            return cls._put(f\"/admin/api/v1/keypairs/{access_key}\",\n                            is_active=is_active,\n                            is_admin=is_admin,\n                            resource_policy=resource_policy,\n                            rate_limit=rate_limit)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6530bfe469d580b0fa8a268d29aeb524f452e96c804023733fe8e78d09479cb5",
+  "human_valid": true,
+  "line_no": 28840,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "b1667d9e77336e3568d3c4e3a399ffe3bab18b56a397aa8cf389f956e2423481",
+  "raw_output": "\n        return cls._put(f\"/admin/api/v1/keypairs/{access_key}\",\n                        is_active=is_active,\n                        is_admin=is_admin,\n                        resource_policy=resource_policy,\n                        rate_limit=rate_limit)\n\n    @classmethod\n    def",
+  "sampling_seed": 1380812423,
+  "tag": "t06",
+  "temperature": 0.6
+}

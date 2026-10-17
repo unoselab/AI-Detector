@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def func_quantiles(node, qlist=(.025, .25, .5, .75, .975)):\n    \"\"\"\n    Returns an array whose ith row is the q[i]th quantile of the\n    function.\n\n    :Arguments:\n        func_stacks: The samples of the function. func_stacks[i,:]\n            gives sample i.\n        qlist: A list or array of the quantiles you would like.\n\n    :SeeAlso: func_envelopes, func_hist, weightplot\n    \"\"\"\n    ogram\n        \"\"\"\n        from numpy import array, sort, searchsorted\n        from scipy.stats import scoreatpercentile\n\n        func_stacks = node.get_data()\n        func_stacks = sort(func_stacks, axis=0)\n        func_stacks = func_stacks[::-1]\n        func_stacks = func_stacks[searchsorted(func_stacks[:,0],\n",
+  "agc_valid": false,
+  "body_sha256": "0332f63469abdc4d2ab2ddb2180307a7f85811c422a2e0111e110d7f59ae1fc3",
+  "body_tokens": 78,
+  "bucket": "out_of_range",
+  "clean_output": "\n    ogram\n        \"\"\"\n        from numpy import array, sort, searchsorted\n        from scipy.stats import scoreatpercentile\n\n        func_stacks = node.get_data()\n        func_stacks = sort(func_stacks, axis=0)\n        func_stacks = func_stacks[::-1]\n        func_stacks = func_stacks[searchsorted(func_stacks[:,0],\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 155,
+  "human_sha256": "3e5a283e6886e5fe54ea07282893f58bbc6f089a766b1d5466d25639ff3a0960",
+  "human_valid": true,
+  "line_no": 158913,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4b0571722c4fb30e75e326beeeeb583f69badbc0b288e5f881dd1da781d3cedf",
+  "raw_output": "ogram\n    \"\"\"\n    from numpy import array, sort, searchsorted\n    from scipy.stats import scoreatpercentile\n\n    func_stacks = node.get_data()\n    func_stacks = sort(func_stacks, axis=0)\n    func_stacks = func_stacks[::-1]\n    func_stacks = func_stacks[searchsorted(func_stacks[:,0], ",
+  "sampling_seed": 646851950,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

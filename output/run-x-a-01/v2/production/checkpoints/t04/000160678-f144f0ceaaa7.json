@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def extract_config(self):\n        \"\"\"\n        Gets the contents of the config files\n        startup-config and private-config from NVRAM.\n\n        :returns: tuple (startup-config, private-config) base64 encoded\n        \"\"\"\n        try:\n            startup_config = self.nvram_get_base64(\n                self.NVRAM_STARTUP_CONFIG_KEY)\n            private_config = self.nvram_get_base64(\n                self.NVRAM_PRIVATE_CONFIG_KEY)\n        except Exception as e:\n            raise NvramError(\n                'Could not extract config from NVRAM: {0}'.format(e))\n\n        return (startup_config, private_config)\n",
+  "agc_valid": true,
+  "body_sha256": "54b6e87cc1320f0376a6f1925bb5c3bd205976fa8787aa52be4528371059942b",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n        try:\n            startup_config = self.nvram_get_base64(\n                self.NVRAM_STARTUP_CONFIG_KEY)\n            private_config = self.nvram_get_base64(\n                self.NVRAM_PRIVATE_CONFIG_KEY)\n        except Exception as e:\n            raise NvramError(\n                'Could not extract config from NVRAM: {0}'.format(e))\n\n        return (startup_config, private_config)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "129199e449702032234dcc4904e866b78e3f29f98f51c0ccb65de2efcc0adade",
+  "human_valid": true,
+  "line_no": 160678,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f144f0ceaaa727baeaa6fe17e1a3de354ced2d3d2de7f23e8b8bae50ef8629b3",
+  "raw_output": "\n        try:\n            startup_config = self.nvram_get_base64(\n                self.NVRAM_STARTUP_CONFIG_KEY)\n            private_config = self.nvram_get_base64(\n                self.NVRAM_PRIVATE_CONFIG_KEY)\n        except Exception as e:\n            raise NvramError(\n                'Could not extract config from NVRAM: {0}'.format(e))\n\n        return (startup_config, private_config)\n\n    def",
+  "sampling_seed": 1013336818,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

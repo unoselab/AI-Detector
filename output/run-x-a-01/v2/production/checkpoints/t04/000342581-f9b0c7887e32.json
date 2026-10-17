@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def register_arguments(func, args=None):\n    \"\"\"add given arguments to local\n\n    args is a list that may contains nested lists\n    (i.e. def func(a, (b, c, d)): ...)\n    \"\"\"\n    if args is None:\n        args = []\n    if not isinstance(args, list):\n        raise ValueError('args must be a list')\n    for arg in args:\n        if isinstance(arg, list):\n            register_arguments(func, arg)\n        else:\n            func.arguments.append(arg)\n",
+  "agc_valid": true,
+  "body_sha256": "7ef84c553e5d5cdba149bd705685cc5a5db1003354b44c7355a611ef539d798b",
+  "body_tokens": 88,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if args is None:\n        args = []\n    if not isinstance(args, list):\n        raise ValueError('args must be a list')\n    for arg in args:\n        if isinstance(arg, list):\n            register_arguments(func, arg)\n        else:\n            func.arguments.append(arg)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "a4a8996d8e15231831706c047847dc931a725b7e7d022a72f8cfd34bfd74d52b",
+  "human_valid": true,
+  "line_no": 342581,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f9b0c7887e32117f4ee3523580c4b5e0cb8a58d21a0b5e7798d597eb4a426bc2",
+  "raw_output": "\n    if args is None:\n        args = []\n    if not isinstance(args, list):\n        raise ValueError('args must be a list')\n    for arg in args:\n        if isinstance(arg, list):\n            register_arguments(func, arg)\n        else:\n            func.arguments.append(arg)\n\n\ndef register_return_type(func, return_type):\n    \"\"\"add given return type to local\n\n    return_type is a list that may contains nested lists\n    (i.e. def",
+  "sampling_seed": 3009539937,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

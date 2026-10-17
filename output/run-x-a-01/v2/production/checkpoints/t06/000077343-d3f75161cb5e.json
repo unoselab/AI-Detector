@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_table(self, name='Meta', h5loc='/meta'):\n        \"\"\"Convert metadata to a KM3Pipe Table.\n\n        Returns `None` if there is no data.\n\n        Each column's dtype will be set to a fixed size string (numpy.string_)\n        with the length of the longest entry, since writing variable length\n        strings does not fit the current scheme.\n        \"\"\"\n        if name not in self.data:\n            return None\n        data = self.data[name]\n        if isinstance(data, dict):\n            if len(data) ==\n",
+  "agc_valid": false,
+  "body_sha256": "d6bcd1322dfadbad230432c8d142712dd2a1cca744fe2e34f0d8b055abeb0268",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if name not in self.data:\n            return None\n        data = self.data[name]\n        if isinstance(data, dict):\n            if len(data) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "378915a7cf2cd7da438ab4ee5e3f43e2889f4a65e2a31832d70be5939df69ce4",
+  "human_valid": true,
+  "line_no": 77343,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d3f75161cb5e89f2847cef5718d4315de49473c74c63fb83c7183276b33a130d",
+  "raw_output": "\n        if name not in self.data:\n            return None\n        data = self.data[name]\n        if isinstance(data, dict):\n            if len(data) == ",
+  "sampling_seed": 3410505947,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

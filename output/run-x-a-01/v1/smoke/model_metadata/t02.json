@@ -1,0 +1,13 @@
+{
+  "cuda_visible_devices": "0",
+  "device": "NVIDIA RTX A6000",
+  "dtype": "torch.float16",
+  "eos_token_ids": [
+    2,
+    822,
+    29871
+  ],
+  "model": "codellama/CodeLlama-7b-hf",
+  "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+  "torch": "2.1.2"
+}

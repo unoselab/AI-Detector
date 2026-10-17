@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def FullTransactions(self):\n        \"\"\"\n        Get the list of full Transaction objects.\n\n        Note: Transactions can be trimmed to contain only the header and the hash. This will get the full data if\n        trimmed transactions are found.\n\n        Returns:\n            list: of neo.Core.TX.Transaction.Transaction objects.\n        \"\"\"\n        return self.GetTransactions(True)\n",
+  "agc_valid": true,
+  "body_sha256": "c1b85a7f593ef49e9b09771afb323ab8bc4d26c58edbf64f7f9cfbb8c71f002c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.GetTransactions(True)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "f6124bd3d874086b7bfdf331f4caa8641b56fb69ad47f41d516c348ab3f8e159",
+  "human_valid": true,
+  "line_no": 345459,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "12229ea743b895911fd7aa285d84601b56be031c7515c5dee7c1fdaa2426802a",
+  "raw_output": "\n        return self.GetTransactions(True)\n\n    def",
+  "sampling_seed": 4126362866,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

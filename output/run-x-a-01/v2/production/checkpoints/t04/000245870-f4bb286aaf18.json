@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def batch_update(self, command, rows):\n        \"\"\"\n        Для массовой вставки умеренных объемов 1-5к записей за вызов\n\n        :param command: SQL insert or updtae\n        :param rows: list of dict\n        :return: dict\n        \"\"\"\n        self.cursor.executemany(command, rows)\n        self.connection.commit()\n        return self.cursor.rowcount\n",
+  "agc_valid": true,
+  "body_sha256": "b302413d2dd292a378e542e4c26a482d6c14504c04c7e0a1e1dc6822d370b373",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.cursor.executemany(command, rows)\n        self.connection.commit()\n        return self.cursor.rowcount\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "fdd840591b945653d981f7d744f72b280cc7b2760d495d489c2a0f2358535a7b",
+  "human_valid": true,
+  "line_no": 245870,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f4bb286aaf1880560726075388009ccb3b5942050562736c578a7ce6161afaa5",
+  "raw_output": "\n        self.cursor.executemany(command, rows)\n        self.connection.commit()\n        return self.cursor.rowcount\n\n    def",
+  "sampling_seed": 3656160947,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cmd_show(docid):\n    \"\"\"\n    Arguments: <doc_id>\n\n    Show document information (but not its content, see 'dump').\n    See 'search' for the document id.\n\n    Possible JSON replies:\n        --\n        {\n            \"status\": \"error\", \"exception\": \"yyy\",\n            \"reason\": \"xxxx\", \"args\": \"(xxxx, )\"\n        }\n        --\n        {\n            \"status\": \"ok\",\n            \"type\": \"ImgDoc\",\n            \"nb_pages\": 3,\n            \"pages\": [\n                {\"n\": 1, \"lines\": 10, \"words\": 22},\n                {\"n\": 2, \"lines\": 20, \"words\": 22},\n                {\"n\": 3, \"lines\": 30, \"words\": 34},\n            ],\n            \"labels\": [\"aaa\", \"bbb\"],\n            \"first_line\": \"vwklsd wldkwq\",\n        }\n    \"\"\"\n    1,\n                \"size\":\n",
+  "agc_valid": false,
+  "body_sha256": "b25172a894cf2a071cba1e486d3c922fc899b36208bf368648d75b241c9497d2",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n    1,\n                \"size\":\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "45d7689d740e5269183b0419f8f344dccaf9401d380f4ab056d0aaf0e3cd5504",
+  "human_valid": true,
+  "line_no": 259153,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ff359463ded2803cd952da2f076c53556098f43ec44b248ebe5415f78ee06edf",
+  "raw_output": "1,\n            \"size\": ",
+  "sampling_seed": 1794683607,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

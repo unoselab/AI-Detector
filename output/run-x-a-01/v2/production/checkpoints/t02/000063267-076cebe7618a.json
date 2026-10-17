@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_sds_by_ip(self,ip):\n        \"\"\"\n        Get ScaleIO SDS object by its ip address\n        :param name: IP address of SDS\n        :return: ScaleIO SDS object\n        :raise KeyError: No SDS with specified ip found\n        :rtype: SDS object\n        \"\"\"\n        for sds in self.sds_list:\n            if sds.ip == ip:\n                return sds\n        raise KeyError(\"No SDS with specified ip found\")\n",
+  "agc_valid": true,
+  "body_sha256": "cf852ee53ade05be1b09f734ea5a75ae3f02ec64b7341619b04d0b62601b4c8f",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for sds in self.sds_list:\n            if sds.ip == ip:\n                return sds\n        raise KeyError(\"No SDS with specified ip found\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 135,
+  "human_sha256": "5a59b2e46b9ccc4f8e7ac831b9b777c796a136681cdbfb32f2241beeed87fe31",
+  "human_valid": true,
+  "line_no": 63267,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "076cebe7618a203a75c678c73d025563d48bfe6cab4f2aedb252e2a36429f5ac",
+  "raw_output": "\n        for sds in self.sds_list:\n            if sds.ip == ip:\n                return sds\n        raise KeyError(\"No SDS with specified ip found\")\n\n    def",
+  "sampling_seed": 721589389,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

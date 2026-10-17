@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def edit_scheme(self):\n        \"\"\"Edit current scheme.\"\"\"\n        scheme = self.current_scheme\n        self.root.ids.scheme_name.text = scheme.name\n        self.root.ids.scheme_desc.text = scheme.description\n        self.root.ids.scheme_date.text = scheme.date\n        self.root.ids.scheme_time.text = scheme.time\n        self.root.ids.scheme_duration.text = scheme.duration\n        self.root.ids.scheme_distance.text = scheme.distance\n        self.root.ids.scheme_speed.text = scheme.speed\n        self.root.ids.scheme_pace.text = scheme.pace\n        self.root.ids.scheme_calories.text = scheme.calories\n",
+  "agc_valid": true,
+  "body_sha256": "ab3d32089dbb8e9e72403da98c67abc6a45889e75fcbf2c0443f1b97ab50d499",
+  "body_tokens": 101,
+  "bucket": "type01_110",
+  "clean_output": "\n        scheme = self.current_scheme\n        self.root.ids.scheme_name.text = scheme.name\n        self.root.ids.scheme_desc.text = scheme.description\n        self.root.ids.scheme_date.text = scheme.date\n        self.root.ids.scheme_time.text = scheme.time\n        self.root.ids.scheme_duration.text = scheme.duration\n        self.root.ids.scheme_distance.text = scheme.distance\n        self.root.ids.scheme_speed.text = scheme.speed\n        self.root.ids.scheme_pace.text = scheme.pace\n        self.root.ids.scheme_calories.text = scheme.calories\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "cb70f08412a9bcef46cfa1dcf71b7ecf3ad63b6d934733655ac72ef2447b4c9f",
+  "human_valid": true,
+  "line_no": 109852,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "07e086a9adadf7f4ba1cfaaa3aaec6bf53d782aac74c3f4f5ccf45cc9b1c8fa6",
+  "raw_output": "\n        scheme = self.current_scheme\n        self.root.ids.scheme_name.text = scheme.name\n        self.root.ids.scheme_desc.text = scheme.description\n        self.root.ids.scheme_date.text = scheme.date\n        self.root.ids.scheme_time.text = scheme.time\n        self.root.ids.scheme_duration.text = scheme.duration\n        self.root.ids.scheme_distance.text = scheme.distance\n        self.root.ids.scheme_speed.text = scheme.speed\n        self.root.ids.scheme_pace.text = scheme.pace\n        self.root.ids.scheme_calories.text = scheme.calories\n\n    def",
+  "sampling_seed": 2784849650,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

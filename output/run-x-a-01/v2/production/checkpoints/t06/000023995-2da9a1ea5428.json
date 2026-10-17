@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def do_enable(self, arg):\n        \"\"\"enable bpnumber [bpnumber ...]\n        Enables the breakpoints given as a space separated list of\n        breakpoint numbers.\n        \"\"\"\n            return self.bp.do_enable(arg)\n\n        @command_handler('delete', 'disable', 'enable', 'info', 'list', 'modify', 'set', 'tbreak', 'watch', 'where',\n                         arg_handlers=['bp'],\n                         aliases=['d', 'dis', 'ena', 'inf', 'lis', 'mod', 'set', 'tb', 'wat', 'whe'])\n",
+  "agc_valid": false,
+  "body_sha256": "e99120e8763a58af2effc3a4abc454bd5dd4882def3466be03fcdb96c9e07034",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.bp.do_enable(arg)\n\n        @command_handler('delete', 'disable', 'enable', 'info', 'list', 'modify', 'set', 'tbreak', 'watch', 'where',\n                         arg_handlers=['bp'],\n                         aliases=['d', 'dis', 'ena', 'inf', 'lis', 'mod', 'set', 'tb', 'wat', 'whe'])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "6b448a1ff4ea00389e9979732766fddb92ed1d8513bb336abf413bb1c0a6a0cb",
+  "human_valid": true,
+  "line_no": 23995,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2da9a1ea54285033aa5837725bacde72516b4a77a7280cbf849f8a54efa22991",
+  "raw_output": "\n        return self.bp.do_enable(arg)\n\n    @command_handler('delete', 'disable', 'enable', 'info', 'list', 'modify', 'set', 'tbreak', 'watch', 'where',\n                     arg_handlers=['bp'],\n                     aliases=['d', 'dis', 'ena', 'inf', 'lis', 'mod', 'set', 'tb', 'wat', 'whe'])\n    def",
+  "sampling_seed": 2173615557,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

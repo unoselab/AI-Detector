@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_string(self, hdr, other):\n        \"\"\"String representation with additional information\"\"\"\n        return \"%s, %s\" % (hdr, other)\n",
+  "agc_valid": true,
+  "body_sha256": "1ee5e8d86d521aca782de459ade948880778a14b3bca05adaa93d6dd166e1e52",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return \"%s, %s\" % (hdr, other)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "42d934b23a74cab8c3ca4e70c85413c41a6ed3a882f72ec15484eed53b6e5a3c",
+  "human_valid": true,
+  "line_no": 18993,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fa54ce6e188d52dee670f7e8b16a12dbe1b6e6dd354aa5a9e039a8be55c84d4a",
+  "raw_output": "\n        return \"%s, %s\" % (hdr, other)\n\n\nclass CsvWriter(object):\n    \"\"\"Write a CSV file with a header row and rows of data\"\"\"\n\n    def",
+  "sampling_seed": 1579283183,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

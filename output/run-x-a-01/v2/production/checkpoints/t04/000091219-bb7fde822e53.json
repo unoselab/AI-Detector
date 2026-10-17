@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def reorder_levels(self, order, axis=0):\n        \"\"\"\n        Rearrange index levels using input order. May not drop or\n        duplicate levels.\n\n        Parameters\n        ----------\n        order : list of int or list of str\n            List representing new level order. Reference level by number\n            (position) or by key (label).\n        axis : int\n            Where to reorder levels.\n\n        Returns\n        -------\n        type of caller (new object)\n        \"\"\"\n        if axis !=\n",
+  "agc_valid": false,
+  "body_sha256": "89b29ca273b9c972e22d3167922326ec06918d65bf891c0daabd9ced7b382575",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if axis !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "0c452c83a84d74a4380b8a4e1020553ed07fc24b0b907baa72dd177fd298423d",
+  "human_valid": true,
+  "line_no": 91219,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bb7fde822e53e4d6f054d3649f3c6de42b2a2ee1ffe57df11908510db6286280",
+  "raw_output": "\n        if axis != ",
+  "sampling_seed": 3512807420,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

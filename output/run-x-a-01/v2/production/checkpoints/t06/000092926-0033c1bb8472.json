@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read_dirs(path, folder):\n    \"\"\"\n    Fetches name of all files in path in long form, and labels associated by extrapolation of directory names. \n    \"\"\"\n    file_list = []\n    for (dirpath, dirnames, filenames) in os.walk(path):\n        for file in filenames:\n            if file.endswith(folder):\n                file_list.append(os.path.join(dirpath, file))\n    return file_list\n",
+  "agc_valid": true,
+  "body_sha256": "dcce1f70b1e36c90f650a9f3078cdf06f1910f101caade1075d68f91cee153fd",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    file_list = []\n    for (dirpath, dirnames, filenames) in os.walk(path):\n        for file in filenames:\n            if file.endswith(folder):\n                file_list.append(os.path.join(dirpath, file))\n    return file_list\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "fbde56125df14ff787e5dc31364f62e414981528949b4b6aee0aa5130a81f2f9",
+  "human_valid": true,
+  "line_no": 92926,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0033c1bb84723c006d23ff8bacfec699dc740bd30abe15f4d61e3a9c5cc7c6dd",
+  "raw_output": "\n    file_list = []\n    for (dirpath, dirnames, filenames) in os.walk(path):\n        for file in filenames:\n            if file.endswith(folder):\n                file_list.append(os.path.join(dirpath, file))\n    return file_list\n\ndef read_csv(path):\n    \"\"\"\n    Reads in a csv file and returns a dataframe.\n    \"\"\"\n    return pd.read_csv(path)\n\ndef read_json(path):\n    \"\"\"\n    Reads in a json file and returns a dictionary.\n    \"\"\"\n    with open(path) as f:\n        data = json.load(f)\n    return data\n\ndef read_pickle(path):\n    \"\"\"\n    Reads in a pickle file and returns a dictionary.\n    \"\"\"\n    with open(path, 'rb') as f:\n        data = pickle.load(f)\n    return data\n\ndef write_pickle(data, path):\n    \"\"\"\n    Writes out a pickle file.\n    \"\"\"\n    with open(path, 'wb') as f:\n        pickle.dump(data, f)\n\ndef write_json(data, path):\n    \"\"\"\n    Writes out a json file.\n    \"\"\"\n    with open(path, 'w') as f:\n        json.dump(data, f)\n\ndef write_csv(data, path):\n    \"\"\"\n    Writes out a csv file.\n    \"\"\"\n    data.to_csv(path)\n\ndef write_txt(data, path):\n    \"\"\"\n    Writes out a txt file.\n    \"\"\"\n    with open(path, 'w') as f:\n        f.write(data)\n\ndef write_txt_list(data, path):\n    \"\"\"\n    Writes out a txt file.\n    \"\"\"\n    with open(path, 'w') as f:\n        for line in data:\n            f.write(line + '\\n')\n\ndef read_txt(path):\n    \"\"\"\n    Reads in a txt file and returns a list of strings.\n    \"\"\"\n    with open(path, 'r') as f:\n        data =",
+  "sampling_seed": 2593739568,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

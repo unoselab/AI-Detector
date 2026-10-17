@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def applyTuple(self, tuple, right, env):\n    \"\"\"Apply a tuple to something else.\"\"\"\n    if tuple.type != \"tuple\":\n        raise TypeError(\"Cannot apply a non-tuple to a tuple\")\n    if right.type != \"tuple\":\n        raise TypeError(\"Cannot apply a tuple to a non-tuple\")\n    if len(tuple.elements) != len(right.elements):\n        raise ValueError(\"Cannot apply a tuple of different length to a tuple\")\n    return Tuple(tuple.elements, right.elements)\n",
+  "agc_valid": true,
+  "body_sha256": "f0be09ab8a3ba327065ad5380d476454e859f7b0e0875d553830084879a946aa",
+  "body_tokens": 76,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if tuple.type != \"tuple\":\n        raise TypeError(\"Cannot apply a non-tuple to a tuple\")\n    if right.type != \"tuple\":\n        raise TypeError(\"Cannot apply a tuple to a non-tuple\")\n    if len(tuple.elements) != len(right.elements):\n        raise ValueError(\"Cannot apply a tuple of different length to a tuple\")\n    return Tuple(tuple.elements, right.elements)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2d2d36918b130175779dd882de4114425d29869804fd2279cbdcff330df9a5de",
+  "human_valid": true,
+  "line_no": 18276,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3ea0347595ef6dc6c164aca14417bbb893681f1f934e719570ebaf6e6b013e2e",
+  "raw_output": "\n    if tuple.type != \"tuple\":\n        raise TypeError(\"Cannot apply a non-tuple to a tuple\")\n    if right.type != \"tuple\":\n        raise TypeError(\"Cannot apply a tuple to a non-tuple\")\n    if len(tuple.elements) != len(right.elements):\n        raise ValueError(\"Cannot apply a tuple of different length to a tuple\")\n    return Tuple(tuple.elements, right.elements)\n\ndef applyTupleToTuple(self, tuple, right, env):\n    \"\"\"Apply a tuple to another tuple.\"\"\"\n    if tuple.type != \"tuple\":\n        raise TypeError(\"Cannot apply a non-tuple to a tuple\")\n    if right.type != \"tuple\":\n        raise TypeError(\"Cannot apply a tuple to a non-tuple\")\n    if len(tuple.elements) != len(right.elements):\n        raise ValueError(\"Cannot apply a tuple of different length to a tuple\")\n    return Tuple(tuple.elements, right.elements)\n\ndef applyTupleToTupleOfTuples(self, tuple, right, env):\n    \"\"\"Apply a tuple to a tuple of tuples.\"\"\"\n    if tuple.type != \"tuple\":\n        raise TypeError(\"Cannot apply a non-tuple to a tuple\")\n    if right.type != \"tuple\":\n        raise TypeError(\"Cannot apply a tuple to a non-tuple\")\n    if len(tuple.elements) != len(right.elements):\n        raise ValueError(\"Cannot apply a tuple of different length to a tuple\")\n    return Tuple(tuple.elements, right.elements)\n\ndef applyTupleToTupleOfTuplesOfTuples(self, tuple, right, env):\n    \"\"\"Apply a tuple to a tuple of tuples of tuples.\"\"\"\n    if tuple.type != \"tuple\":\n        raise TypeError(\"Cannot apply a non-tuple to a tuple\")\n    if right.type != \"tuple\":\n        raise TypeError(\"Cannot apply a tuple to a non-tuple\")\n    if len(tuple.elements) != len(right.elements):\n        raise ValueError(\"Cannot apply a tuple of different length to a tuple\")\n    return Tuple(tuple.elements, right.elements)\n\ndef applyTupleToTupleOfTuplesOfTuplesOf",
+  "sampling_seed": 1924685368,
+  "tag": "t04",
+  "temperature": 0.4
+}

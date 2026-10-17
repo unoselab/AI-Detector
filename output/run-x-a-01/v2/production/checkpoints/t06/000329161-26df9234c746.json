@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def identify_groups(ref_labels, pred_labels, return_overlaps=False):\n    \"\"\"Which predicted label explains which reference label?\n\n    A predicted label explains the reference label which maximizes the minimum\n    of ``relative_overlaps_pred`` and ``relative_overlaps_ref``.\n\n    Compare this with ``compute_association_matrix_of_groups``.\n\n    Returns\n    -------\n    A dictionary of length ``len(np.unique(ref_labels))`` that stores for each\n    reference label the predicted label that best explains it.\n\n    If ``return_overlaps`` is ``True``, this will in addition return the overlap\n    of the reference group with the predicted group; normalized with respect to\n    the reference group size and the predicted group size, respectively.\n    \"\"\"\n    explains the reference label.\n        If ``return_overlaps=True``, the dictionary also contains the relative\n        overlaps for each reference label.\n\n        \"\"\"\n        overlaps = compute_relative_overlaps(ref_labels, pred_labels)\n        max_overlaps = np.max(overlaps, axis=1)\n        argmax_overlaps = np.argmax(overlaps, axis=1)\n        argmax_overlaps_ref = np.argmax(overlaps, axis=0)\n        argmax_overlaps_pred = np.argmax(overlaps, axis=2)\n        argmax_overlaps_ref_pred = np.argmax(overlaps, axis=0)\n        argmax_overlaps_ref_pred[np.isnan(argmax_overlaps_ref_pred)] =\n",
+  "agc_valid": false,
+  "body_sha256": "0622dc60a0b25c3c9a3878c32fbd57c8d18eead26daeaf003287d7d704ec5a79",
+  "body_tokens": 118,
+  "bucket": "type02_120",
+  "clean_output": "\n    explains the reference label.\n        If ``return_overlaps=True``, the dictionary also contains the relative\n        overlaps for each reference label.\n\n        \"\"\"\n        overlaps = compute_relative_overlaps(ref_labels, pred_labels)\n        max_overlaps = np.max(overlaps, axis=1)\n        argmax_overlaps = np.argmax(overlaps, axis=1)\n        argmax_overlaps_ref = np.argmax(overlaps, axis=0)\n        argmax_overlaps_pred = np.argmax(overlaps, axis=2)\n        argmax_overlaps_ref_pred = np.argmax(overlaps, axis=0)\n        argmax_overlaps_ref_pred[np.isnan(argmax_overlaps_ref_pred)] =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "4c8596e0cbf8504bf4d695b7fbc9a8d4ea0e543dac4c3ffb45cb87643a9e5659",
+  "human_valid": true,
+  "line_no": 329161,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "26df9234c746f051072d041221cb670358469bd46541fa70ab4fef1402c8b279",
+  "raw_output": "explains the reference label.\n    If ``return_overlaps=True``, the dictionary also contains the relative\n    overlaps for each reference label.\n\n    \"\"\"\n    overlaps = compute_relative_overlaps(ref_labels, pred_labels)\n    max_overlaps = np.max(overlaps, axis=1)\n    argmax_overlaps = np.argmax(overlaps, axis=1)\n    argmax_overlaps_ref = np.argmax(overlaps, axis=0)\n    argmax_overlaps_pred = np.argmax(overlaps, axis=2)\n    argmax_overlaps_ref_pred = np.argmax(overlaps, axis=0)\n    argmax_overlaps_ref_pred[np.isnan(argmax_overlaps_ref_pred)] = ",
+  "sampling_seed": 1678137103,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _set_sampling_priority(self, value):\n        \"\"\"\n        N.B. Caller must be holding update_lock.\n        \"\"\"\n        if value is None:\n            return\n        if value == SAMPLING_PRIORITY_KEY:\n            self._sampling_priority = value\n        elif isinstance(value, numbers.Integral):\n            self._sampling_priority = value\n        else:\n            log.warning(\"Invalid value for sampling priority: %s\", value)\n            self._sampling_priority = None\n",
+  "agc_valid": true,
+  "body_sha256": "49137d35df18f6e03e251ac27c0998640344740cc1b38dff5b1c8ba04d6f5628",
+  "body_tokens": 113,
+  "bucket": "type02_120",
+  "clean_output": "\n        if value is None:\n            return\n        if value == SAMPLING_PRIORITY_KEY:\n            self._sampling_priority = value\n        elif isinstance(value, numbers.Integral):\n            self._sampling_priority = value\n        else:\n            log.warning(\"Invalid value for sampling priority: %s\", value)\n            self._sampling_priority = None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "c55c787e5fed159d9bbd924a9e5d61eba1a0c15e4b6c15e5e8f14c9ccbae3a74",
+  "human_valid": true,
+  "line_no": 159747,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c8ce3288cd7458ce7309e6166c1cfe6eadc0c04828c66a59a9af02541971c6f5",
+  "raw_output": "\n        if value is None:\n            return\n        if value == SAMPLING_PRIORITY_KEY:\n            self._sampling_priority = value\n        elif isinstance(value, numbers.Integral):\n            self._sampling_priority = value\n        else:\n            log.warning(\"Invalid value for sampling priority: %s\", value)\n            self._sampling_priority = None\n\n    def",
+  "sampling_seed": 3636234380,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

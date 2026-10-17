@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_profile(self, user_id):\n        \"\"\"\n        Get user profile.\n\n        Returns user profile data, including user id, name, and profile pic.\n\n        When requesting the profile for the user accessing the API, the user's\n        calendar feed URL will be returned as well.\n        \"\"\"\n        params = {'user_id': user_id}\n        return self.get_data('user_profile', params)\n",
+  "agc_valid": true,
+  "body_sha256": "4a7035afbad2f578a452de6f19ed9a7533b3a2b5d422c6f2e0f1fa92893bb0ab",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n        params = {'user_id': user_id}\n        return self.get_data('user_profile', params)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b20699fcae421e2456dc24688afe02b193a61877fa7af3ec94a1aae9c9c58269",
+  "human_valid": true,
+  "line_no": 38464,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "499d016da1115460d3f90df684cd54bb5b201db2c061278e968715d12314e686",
+  "raw_output": "\r\n        params = {'user_id': user_id}\r\n        return self.get_data('user_profile', params)\r\n\r\n    def",
+  "sampling_seed": 2827707933,
+  "tag": "t04",
+  "temperature": 0.4
+}

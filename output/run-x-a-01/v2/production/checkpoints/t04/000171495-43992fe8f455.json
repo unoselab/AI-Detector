@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _split_match_steps_into_match_traversals(match_steps):\n    \"\"\"Split a list of MatchSteps into multiple lists, each denoting a single MATCH traversal.\"\"\"\n    traversals = []\n    current_traversal = []\n    for step in match_steps:\n        if step.is_traversal_start:\n            if len(current_traversal) >\n",
+  "agc_valid": false,
+  "body_sha256": "e7310ddcebdd963314aebf75c85da420bd5395ad1f0971fcdc1a23a6174f4acd",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n    traversals = []\n    current_traversal = []\n    for step in match_steps:\n        if step.is_traversal_start:\n            if len(current_traversal) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "e41a3729f89ace96fa0e0c3a93596d825d190b462d0d9741a0220bc8dc389a92",
+  "human_valid": true,
+  "line_no": 171495,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "43992fe8f4550ec79ca961d5be0c485e676676a46272921aeaf624a3b42365e3",
+  "raw_output": "\n    traversals = []\n    current_traversal = []\n    for step in match_steps:\n        if step.is_traversal_start:\n            if len(current_traversal) > ",
+  "sampling_seed": 3667938433,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

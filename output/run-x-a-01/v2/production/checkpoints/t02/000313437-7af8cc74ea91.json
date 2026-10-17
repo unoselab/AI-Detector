@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def distance_between(self, string, start, end):\n        \"\"\"Returns number of lines between start and end\"\"\"\n        if start == end:\n            return\n",
+  "agc_valid": true,
+  "body_sha256": "458f961cbb26257417048e8fa5a3b2b55c6a03bef28708196a42979756d59fdf",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if start == end:\n            return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "e048a114f2491785b82ddbbb9986a0a0f057c96e6d24f0504073213e2a4ffc34",
+  "human_valid": true,
+  "line_no": 313437,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7af8cc74ea91af6c964ff8a7103ef61d6615e5d0f43c13b226b6289f82e72adc",
+  "raw_output": "\n        if start == end:\n            return ",
+  "sampling_seed": 888217817,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

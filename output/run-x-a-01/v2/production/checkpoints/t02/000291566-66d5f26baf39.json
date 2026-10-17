@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _mktime(time_struct):\n    \"\"\"Custom mktime because Windows can't be arsed to properly do pre-Epoch\n    dates, probably because it's busy counting all its chromosomes.\n    \"\"\"\n    return time.mktime(time_struct)\n",
+  "agc_valid": true,
+  "body_sha256": "410fb63ba0aacc93a5c9c098a1360a27907ebcac29c40522505b025fb045e61c",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return time.mktime(time_struct)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "235af0becea4ddca6169ac9881d7a3c25046573044c383d968410bfbc9b776f3",
+  "human_valid": true,
+  "line_no": 291566,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "66d5f26baf398605ede83a8bd31692b0eb7eca4925cfcd2d0c365b5b16d5e7f3",
+  "raw_output": "\n    return time.mktime(time_struct)\n\n\ndef _parse_date(date_str):\n    \"\"\"Parse a date string into a datetime object.\n\n    :param date_str: A string in the format YYYY-MM-DD\n    :returns: A datetime object\n    \"\"\"\n    return datetime.datetime.strptime(date_str, '%Y-%m-%d')\n\n\ndef _parse_time(time_str):\n    \"\"\"Parse a time string into a datetime object.\n\n    :param time_str: A string in the format HH:MM:SS\n    :returns: A datetime object\n    \"\"\"\n    return datetime.datetime.strptime(time_str, '%H:%M:%S')\n\n\ndef _parse_datetime(datetime_str):\n    \"\"\"Parse a datetime string into a datetime object.\n\n    :param datetime_str: A string in the format YYYY-MM-DD HH:MM:SS\n    :returns: A datetime object\n    \"\"\"\n    return datetime.datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S')\n\n\ndef _parse_date_time(datetime_str):\n    \"\"\"Parse a datetime string into a datetime object.\n\n    :param datetime_str: A string in the format YYYY-MM-DD HH:MM:SS\n    :returns: A datetime object\n    \"\"\"\n    return datetime.datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S')\n\n\ndef _parse_date_time_tz(datetime_str):\n    \"\"\"Parse a datetime string into a datetime object.\n\n    :param datetime_str: A string in the format YYYY-MM-DD HH:MM:SS\n    :returns: A datetime object\n    \"\"\"\n    return datetime.datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S %Z')\n\n\ndef _parse_date_time_tz_offset(datetime_str):\n    \"\"\"Parse a datetime string into a datetime object.\n\n    :param datetime_str: A string in the format YYYY-MM-DD HH:MM:SS\n    :",
+  "sampling_seed": 116666852,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

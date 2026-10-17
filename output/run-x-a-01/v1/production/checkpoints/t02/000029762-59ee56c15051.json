@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def DomainFactory(domain_name, cmds):\n    \"\"\"Dynamically create Domain class and set it's methods.\"\"\"\n    domain_class = type(domain_name, (Domain,), {})\n    domain_class.cmds = cmds\n    return domain_class\n",
+  "agc_valid": true,
+  "body_sha256": "9cb336c0571ced7751dc2846467ceeebc33159832bff5fcae42a40fb12276a9b",
+  "body_tokens": 20,
+  "bucket": "out_of_range",
+  "clean_output": "\n    domain_class = type(domain_name, (Domain,), {})\n    domain_class.cmds = cmds\n    return domain_class\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d39fc31a37bc7ab2e779f2ab2d0cf822da626c88531a0e852157af434691f3c4",
+  "human_valid": true,
+  "line_no": 29762,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "59ee56c15051d13c594fa984070aff076c3e7b5fcfa23b4bc0064e1b61c8335c",
+  "raw_output": "\n    domain_class = type(domain_name, (Domain,), {})\n    domain_class.cmds = cmds\n    return domain_class\n\n\nclass Domain(object):\n    \"\"\"Base class for all domains.\"\"\"\n\n    def",
+  "sampling_seed": 3349460701,
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def create_single_weather(df, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n    # Create a weather object\n    weather = oemof.solph.custom.Weather(\n        location=df.index[0],\n        latitude=df.latitude[0],\n        longitude=df.longitude[0],\n        altitude=df.altitude[0],\n        tz=df.tz[0],\n        start=df.index[0],\n        end=df.index[-1],\n        weather_file=df.weather_file[0],\n        temp_unit='degC',\n        pressure_unit='Pa',\n        wind_unit='m/s',\n        precipitation_unit='mm/h',\n        weather_format='df',\n        data_source='df',\n        data=df,\n        rename_columns=rename_dc,\n        )\n\n    return weather\n",
+  "agc_valid": true,
+  "body_sha256": "3140bb9e3f16897662d21a325b6354af9dc2fa92482006beadb63bc62a6eec6d",
+  "body_tokens": 156,
+  "bucket": "type06_160",
+  "clean_output": "\n    # Create a weather object\n    weather = oemof.solph.custom.Weather(\n        location=df.index[0],\n        latitude=df.latitude[0],\n        longitude=df.longitude[0],\n        altitude=df.altitude[0],\n        tz=df.tz[0],\n        start=df.index[0],\n        end=df.index[-1],\n        weather_file=df.weather_file[0],\n        temp_unit='degC',\n        pressure_unit='Pa',\n        wind_unit='m/s',\n        precipitation_unit='mm/h',\n        weather_format='df',\n        data_source='df',\n        data=df,\n        rename_columns=rename_dc,\n        )\n\n    return weather\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "e8a0b4b221896ce76ae9e3ee70bed2386a9d36b8df5aa150b6bb74363aa8e7cd",
+  "human_valid": true,
+  "line_no": 86048,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "579a868301632399b84f580067ac65a9c5c2a7a73a3cc20af9c99f58a448ab2a",
+  "raw_output": "\n\n    # Create a weather object\n    weather = oemof.solph.custom.Weather(\n        location=df.index[0],\n        latitude=df.latitude[0],\n        longitude=df.longitude[0],\n        altitude=df.altitude[0],\n        tz=df.tz[0],\n        start=df.index[0],\n        end=df.index[-1],\n        weather_file=df.weather_file[0],\n        temp_unit='degC',\n        pressure_unit='Pa',\n        wind_unit='m/s',\n        precipitation_unit='mm/h',\n        weather_format='df',\n        data_source='df',\n        data=df,\n        rename_columns=rename_dc,\n        )\n\n    return weather\n\n\ndef create_weather_from_df(df, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n\n    # Create a weather object\n    weather = oemof.solph.custom.Weather(\n        location=df.index[0],\n        latitude=df.latitude[0],\n        longitude=df.longitude[0],\n        altitude=df.altitude[0],\n        tz=df.tz[0],\n        start=df.index[0],\n        end=df.index[-1],\n        weather_file=df.weather_file[0],\n        temp_unit='degC',\n        pressure_unit='Pa',\n        wind_unit='m/s',\n        precipitation_unit='mm/h',\n        weather_format='df',\n        data_source='df',\n        data=df,\n        rename_columns=rename_dc,\n        )\n\n    return weather\n\n\ndef create_weather_from_file(file_path, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n\n    # Create a weather object\n    weather = oemof.solph.custom.Weather(\n        location=file_path,\n        latitude=None,\n        longitude=None,\n        altitude=None,\n        t",
+  "sampling_seed": 2848852929,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

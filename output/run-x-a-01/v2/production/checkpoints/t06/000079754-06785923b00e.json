@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def assignEditor(self):\n        \"\"\"\n        Assigns the editor for this entry based on the plugin.\n        \"\"\"\n        if self.plugin.editor:\n            self.editor = self.plugin.editor(self)\n        else:\n            self.editor = None\n\n        return self.editor\n",
+  "agc_valid": true,
+  "body_sha256": "a3f71ebad24d83219381fa042444481eba2b7fe489887e0a6fd8e3454e67ca4f",
+  "body_tokens": 63,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.plugin.editor:\n            self.editor = self.plugin.editor(self)\n        else:\n            self.editor = None\n        \n        return self.editor\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "f0b523c59f71eba3e98b681683c82b8db264ca70502b9cc9ff3a358c45880cce",
+  "human_valid": true,
+  "line_no": 79754,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "06785923b00eea54feac6864caf3729209fbbd0b984dff45cfd8251c3d964e51",
+  "raw_output": "\r\n        if self.plugin.editor:\r\n            self.editor = self.plugin.editor(self)\r\n        else:\r\n            self.editor = None\r\n        \r\n        return self.editor\r\n    \r\n    def",
+  "sampling_seed": 1589778190,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def as_text(self, is_pretty=False):\n        \"\"\"Return the service as a JSON string.\"\"\"\n        return json.dumps(self.as_dict(), indent=4 if is_pretty else None)\n",
+  "agc_valid": true,
+  "body_sha256": "7e08bab3cd31290cf5ba654725dd358be3a0265702ca3da455c0d618e01e3b13",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return json.dumps(self.as_dict(), indent=4 if is_pretty else None)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "1b20e24bb5aa4a9469e4b606194d3463767e7ee57dddfb464eb3caff053281ba",
+  "human_valid": true,
+  "line_no": 274112,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5406d0f776b4966ad1110f39b2ce586624240245c25a175d5a43634b46051e5b",
+  "raw_output": "\n        return json.dumps(self.as_dict(), indent=4 if is_pretty else None)\n\n    def",
+  "sampling_seed": 523604306,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

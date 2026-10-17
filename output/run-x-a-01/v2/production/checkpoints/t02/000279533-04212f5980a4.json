@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _sync_to_uri(self, uri):\n        \"\"\"Copy and sync versioned directory to uri in S3.\n\n        Args:\n            uri (str): S3 URI to sync version to.\n        \"\"\"\n        # Copy and sync versioned directory to uri in S3.\n        self.copy_to_uri(uri)\n        self.sync_from_uri(uri)\n",
+  "agc_valid": true,
+  "body_sha256": "f32fc7b3574f37cc9d9b157ca9177022159fc8c91591e0251f15f1f21e0ea78d",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Copy and sync versioned directory to uri in S3.\n        self.copy_to_uri(uri)\n        self.sync_from_uri(uri)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "457c985ff652c11ed293e5095223f034baccc7841b9f731a949c030d03530854",
+  "human_valid": true,
+  "line_no": 279533,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "04212f5980a49b07df7e70e98fd31c91ccc1d5b0b2dafe7bbb8268196a94c426",
+  "raw_output": "\n        # Copy and sync versioned directory to uri in S3.\n        self.copy_to_uri(uri)\n        self.sync_from_uri(uri)\n\n    def",
+  "sampling_seed": 370307578,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

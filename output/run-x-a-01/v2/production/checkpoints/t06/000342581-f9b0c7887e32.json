@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def register_arguments(func, args=None):\n    \"\"\"add given arguments to local\n\n    args is a list that may contains nested lists\n    (i.e. def func(a, (b, c, d)): ...)\n    \"\"\"\n    if args is None:\n        args = []\n    if not isinstance(args, list):\n        raise TypeError(\"args must be a list\")\n\n    if not hasattr(func, '__args__'):\n        func.__args__ = []\n\n    func.__args__.append(args)\n    return func\n",
+  "agc_valid": true,
+  "body_sha256": "e613f8f0a8a5fec59afa98c47baad27f756bc2c8aaa1881c69bbe9f4e81b9646",
+  "body_tokens": 64,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if args is None:\n        args = []\n    if not isinstance(args, list):\n        raise TypeError(\"args must be a list\")\n\n    if not hasattr(func, '__args__'):\n        func.__args__ = []\n\n    func.__args__.append(args)\n    return func\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "a4a8996d8e15231831706c047847dc931a725b7e7d022a72f8cfd34bfd74d52b",
+  "human_valid": true,
+  "line_no": 342581,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f9b0c7887e32117f4ee3523580c4b5e0cb8a58d21a0b5e7798d597eb4a426bc2",
+  "raw_output": "\n    if args is None:\n        args = []\n    if not isinstance(args, list):\n        raise TypeError(\"args must be a list\")\n\n    if not hasattr(func, '__args__'):\n        func.__args__ = []\n\n    func.__args__.append(args)\n    return func\n\n\ndef _get_arguments(func):\n    \"\"\"return local arguments\n    \"\"\"\n    if hasattr(func, '__args__'):\n        return func.__args__\n    return []\n\n\ndef _get_argument_names(func):\n    \"\"\"return local arguments\n    \"\"\"\n    args = _get_arguments(func)\n    names = []\n    for arg in args:\n        names.extend([x for x in arg if isinstance(x, str)])\n    return names\n\n\ndef _get_argument_defaults(func):\n    \"\"\"return local arguments\n    \"\"\"\n    args = _get_arguments(func)\n    defaults = []\n    for arg in args:\n        defaults.extend([x for x in arg if x is not None])\n    return defaults\n\n\ndef _get_argument_defaults_values(func):\n    \"\"\"return local arguments\n    \"\"\"\n    args = _get_arguments(func)\n    defaults = []\n    for arg in args:\n        defaults.extend([x for x in arg if x is not None])\n    return defaults\n\n\ndef _get_argument_types(func):\n    \"\"\"return local arguments\n    \"\"\"\n    args = _get_arguments(func)\n    types = []\n    for arg in args:\n        types.extend([type(x) for x in arg if isinstance(x, str)])\n    return types\n\n\ndef _get_argument_values(func):\n    \"\"\"return local arguments\n    \"\"\"\n    args = _get_arguments(func)\n    values = []\n    for arg in args:\n        values.extend([x for x in arg if not isinstance(x, str)])\n    return values\n\n\ndef _get_argument_values_dict(func):\n    \"\"\"return local arguments\n    \"\"\"\n    args = _get_arguments(func)\n    values = {}\n    for arg in args:\n       ",
+  "sampling_seed": 3205194985,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

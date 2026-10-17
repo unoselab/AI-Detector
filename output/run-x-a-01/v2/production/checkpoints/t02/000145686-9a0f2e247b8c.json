@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def handle_moban_file(moban_file, options):\n    \"\"\"\n    act upon default moban file\n    \"\"\"\n    #\n",
+  "agc_valid": false,
+  "body_sha256": "03e87712d5294d16e7e4f753081f975159cc520ce7e20a83b3c3f69610c01312",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    #\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "ea34f3e6b7cac034b912f78b66644cff1cac0198449184be228b7ec6b92327ad",
+  "human_valid": true,
+  "line_no": 145686,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9a0f2e247b8c6f4d852ff026afb742718bb23280b56ce485dde7bdec11f58ae7",
+  "raw_output": "\n    # ",
+  "sampling_seed": 4003722860,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

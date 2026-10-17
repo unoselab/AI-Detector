@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hardware_custom_profile_kap_custom_profile_xstp_xstp_hello_interval(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n                self.add_leaf(\n                    cmd=ShowXstpHelloInterval,\n                    src='[hello_interval]',\n                    dest='[hello_interval]',\n                    **kwargs\n                )\n                return self.leafs\n\n\n        # ===============================================================================================================\n        #                                       kap_custom_profile_xstp_xstp_max_age\n        # ===============================================================================================================\n",
+  "agc_valid": false,
+  "body_sha256": "979fff506ad83e88aa040df09840e8a14d72c39a6cc40385de2c6e5bf3e0b468",
+  "body_tokens": 195,
+  "bucket": "type10_200",
+  "clean_output": "\n                self.add_leaf(\n                    cmd=ShowXstpHelloInterval,\n                    src='[hello_interval]',\n                    dest='[hello_interval]',\n                    **kwargs\n                )\n                return self.leafs\n\n\n        # ===============================================================================================================\n        #                                       kap_custom_profile_xstp_xstp_max_age\n        # ===============================================================================================================\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "dd0689be2ec426d746c531ff203f4865047bf6ba96a3580de9dca72c9d66d154",
+  "human_valid": true,
+  "line_no": 269631,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52c18fc09daabf3d0194c01eeb86556dd64d979f415c4f68a0cf0721e44c799f",
+  "raw_output": "\n        self.add_leaf(\n            cmd=ShowXstpHelloInterval,\n            src='[hello_interval]',\n            dest='[hello_interval]',\n            **kwargs\n        )\n        return self.leafs\n\n\n# ===============================================================================================================\n#                                       kap_custom_profile_xstp_xstp_max_age\n# ===============================================================================================================\n\n\nclass KapCustomProfileXstpXstpMaxAge(KapCustomProfileXstp):\n    \"\"\"Auto Generated - do not modify this class manually.\n\n    \"\"\"\n\n    def",
+  "sampling_seed": 3639770716,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

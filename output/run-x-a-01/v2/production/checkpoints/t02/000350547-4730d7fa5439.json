@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_unattached_volumes(self):\n        \"\"\"Build a list of all volumes missing tags and not ignored. Returns a `dict` keyed by the issue_id with the\n        volume as the value\n\n        Returns:\n            :obj:`dict` of `str`: `EBSVolume`\n        \"\"\"\n        unattached_volumes = {}\n        for volume in self.volumes:\n            if not volume.is_ignored():\n                if not volume.has_tags():\n                    unattached_volumes[volume.issue_id] = volume\n        return unattached_volumes\n",
+  "agc_valid": true,
+  "body_sha256": "127513da2d90a0ea7b89ff1eca05ec6b78453523793f4f5456d49f33da91aece",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n        unattached_volumes = {}\n        for volume in self.volumes:\n            if not volume.is_ignored():\n                if not volume.has_tags():\n                    unattached_volumes[volume.issue_id] = volume\n        return unattached_volumes\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "02061a4f2428073a2af567fa1004bdefd1410774c8a69166db24683c90a84255",
+  "human_valid": true,
+  "line_no": 350547,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4730d7fa5439e62da81b4c80333e7bebd7e419c61fbaed4c56de2bb2a77faec0",
+  "raw_output": "\n        unattached_volumes = {}\n        for volume in self.volumes:\n            if not volume.is_ignored():\n                if not volume.has_tags():\n                    unattached_volumes[volume.issue_id] = volume\n        return unattached_volumes\n\n    def",
+  "sampling_seed": 1587146508,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

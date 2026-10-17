@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def allpossibilities(self):\n        \"\"\"Returns all possible outputtemplates that may occur (recusrively applied)\"\"\"\n        if not self.children:\n            return [self]\n        else:\n            return [\n                child.allpossibilities()\n                for child in self.children\n            ]\n",
+  "agc_valid": true,
+  "body_sha256": "2e32a170bf44c6efc3eb067bc03ac5dbf850c9835064f1e154fc14524f3e0a89",
+  "body_tokens": 92,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not self.children:\n            return [self]\n        else:\n            return [\n                child.allpossibilities()\n                for child in self.children\n            ]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "135cbd5d038b0fe72e1102975f00525b5b043c88343e9117679fb769091a8955",
+  "human_valid": true,
+  "line_no": 236293,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aa605169d9a14e8936783971f69f196ffc3cc292fa43c70ecade477b40b6408f",
+  "raw_output": "\n        if not self.children:\n            return [self]\n        else:\n            return [\n                child.allpossibilities()\n                for child in self.children\n            ]\n\n    def",
+  "sampling_seed": 1111546395,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

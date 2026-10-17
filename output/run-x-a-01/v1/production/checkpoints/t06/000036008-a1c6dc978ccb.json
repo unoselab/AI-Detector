@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def setdbo(self, bond1, bond2, dboval):\n        \"\"\"Set the double bond orientation for bond1 and bond2\n        based on this bond\"\"\"\n        if dboval:\n            if bond1.isBondedTo(bond2):\n                bond1.bondOrder = bond2.bondOrder =\n",
+  "agc_valid": false,
+  "body_sha256": "9618215c03a2b42c52ee1b686d7892d47d96d884ca2123adcf349b5acd9e241b",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if dboval:\n            if bond1.isBondedTo(bond2):\n                bond1.bondOrder = bond2.bondOrder =\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c54a713491671e2abdb51ec71a5e4552cae45aa194ea77b1a747bd9a14337bed",
+  "human_valid": true,
+  "line_no": 36008,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "a1c6dc978ccb1e67231b416c0dee52ba4de3bb0e3661d0d6e995f484a7aa3ef6",
+  "raw_output": "\n        if dboval:\n            if bond1.isBondedTo(bond2):\n                bond1.bondOrder = bond2.bondOrder = ",
+  "sampling_seed": 613916974,
+  "tag": "t06",
+  "temperature": 0.6
+}

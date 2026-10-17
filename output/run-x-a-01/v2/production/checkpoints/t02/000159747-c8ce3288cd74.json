@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _set_sampling_priority(self, value):\n        \"\"\"\n        N.B. Caller must be holding update_lock.\n        \"\"\"\n        if value is None:\n            self._sampling_priority = None\n        else:\n            self._sampling_priority = int(value)\n",
+  "agc_valid": true,
+  "body_sha256": "61f0a90237f3d457b7dea694b6e28d84bada9c29a659e14c596e6a5d95a0377f",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if value is None:\n            self._sampling_priority = None\n        else:\n            self._sampling_priority = int(value)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "c55c787e5fed159d9bbd924a9e5d61eba1a0c15e4b6c15e5e8f14c9ccbae3a74",
+  "human_valid": true,
+  "line_no": 159747,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c8ce3288cd7458ce7309e6166c1cfe6eadc0c04828c66a59a9af02541971c6f5",
+  "raw_output": "\n        if value is None:\n            self._sampling_priority = None\n        else:\n            self._sampling_priority = int(value)\n\n    def",
+  "sampling_seed": 2546642559,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

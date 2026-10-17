@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_archive(self, archive_name):\n        \"\"\"\n        Get a data archive given an archive name\n\n        Returns\n        -------\n        archive_specification : dict\n            archive_name: name of the archive to be retrieved\n            authority: name of the archive's authority\n            archive_path: service path of archive\n        \"\"\"\n        self._check_connection()\n        archive_specification = self.connection.call_service(\n            service_name='get_archive',\n            service_type='ArchiveManager',\n            archive_name=archive_name,\n        )\n        return archive_specification\n",
+  "agc_valid": true,
+  "body_sha256": "71ab9409389430382cc01b405f1fd033bd592df8d3012f37d80329ba53804717",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._check_connection()\n        archive_specification = self.connection.call_service(\n            service_name='get_archive',\n            service_type='ArchiveManager',\n            archive_name=archive_name,\n        )\n        return archive_specification\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "42b765f19a7e6007e2866fa76974327f5cc7d809386c71b7ab73c35f874a2208",
+  "human_valid": true,
+  "line_no": 38095,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0c4b8d6b8f86078fc40b81661e4d852066714bf5642b6da9fd3a3f08188f36d0",
+  "raw_output": "\n        self._check_connection()\n        archive_specification = self.connection.call_service(\n            service_name='get_archive',\n            service_type='ArchiveManager',\n            archive_name=archive_name,\n        )\n        return archive_specification\n\n    def",
+  "sampling_seed": 2899087317,
+  "tag": "t06",
+  "temperature": 0.6
+}

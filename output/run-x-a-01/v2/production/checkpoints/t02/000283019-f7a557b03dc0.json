@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def diameter(self, H):\n        r\"\"\"Calculates cooling tower diameter at a specified height, using\n        the formulas for either hyperbola, depending on the height specified.\n\n        .. math::\n            D = D_{throat}\\frac{\\sqrt{H^2 + b^2}}{b}\n\n        The value of `H` and `b` used in the above equation is as follows:\n\n            * `H_throat` - H  and `b_lower` if under the throat\n            * `H` - `H_throat` and `b_upper`, if above the throat\n\n        Parameters\n        ----------\n        H : float\n            Height at which to calculate the cooling tower diameter, [m]\n\n        Returns\n        -------\n        D : float\n            Diameter of the cooling tower at the specified height, [m]\n        \"\"\"\n        H and `b_upper` if above the throat\n\n                Parameters\n                ----------\n                H : float\n                    Height of the cooling tower.\n\n                Returns\n                -------\n                float\n                    Diameter of the cooling tower.\n                \"\"\"\n                if H <= self.H_throat:\n                    return self.D_throat * np.sqrt(H**2 + self.b_lower**2) / self.b_lower\n                else:\n                    return self.D_throat * np.sqrt(H**2 + self.b_upper**2) / self.b_upper\n",
+  "agc_valid": false,
+  "body_sha256": "2ebb2c20e82bf0191968f44b168c32e66075fca661085b44d20b027e392a9414",
+  "body_tokens": 290,
+  "bucket": "out_of_range",
+  "clean_output": "\n        H and `b_upper` if above the throat\n            \n                Parameters\n                ----------\n                H : float\n                    Height of the cooling tower.\n            \n                Returns\n                -------\n                float\n                    Diameter of the cooling tower.\n                \"\"\"\n                if H <= self.H_throat:\n                    return self.D_throat * np.sqrt(H**2 + self.b_lower**2) / self.b_lower\n                else:\n                    return self.D_throat * np.sqrt(H**2 + self.b_upper**2) / self.b_upper\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "8c9b183b7071b58bfe573f031617cfaef451fb7195e9be2de9a1292e0e0e7a89",
+  "human_valid": true,
+  "line_no": 283019,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f7a557b03dc06cd17841d571090924426f0aa37126f6d812832af2eef5b11d19",
+  "raw_output": "H and `b_upper` if above the throat\n            \n        Parameters\n        ----------\n        H : float\n            Height of the cooling tower.\n            \n        Returns\n        -------\n        float\n            Diameter of the cooling tower.\n        \"\"\"\n        if H <= self.H_throat:\n            return self.D_throat * np.sqrt(H**2 + self.b_lower**2) / self.b_lower\n        else:\n            return self.D_throat * np.sqrt(H**2 + self.b_upper**2) / self.b_upper\n\n    def",
+  "sampling_seed": 185603722,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

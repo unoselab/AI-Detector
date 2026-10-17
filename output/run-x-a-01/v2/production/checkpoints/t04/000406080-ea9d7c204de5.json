@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def derivatives(self, x, y, theta_E, center_x=0, center_y=0):\n        \"\"\"\n        returns df/dx and df/dy of the function\n        \"\"\"\n        x_ = x - center_x\n        y_ = y - center_y\n        f_ = self.function(x_, y_, theta_E, center_x, center_y)\n        df_dx = -f_ * (x_ / (theta_E * theta_E * np.sqrt(x_ **\n",
+  "agc_valid": false,
+  "body_sha256": "ee27ceaf4b1fd0d4750dcf1389a451d5d506d12d3c0a64eba4fa8fb435f624ac",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n        x_ = x - center_x\n        y_ = y - center_y\n        f_ = self.function(x_, y_, theta_E, center_x, center_y)\n        df_dx = -f_ * (x_ / (theta_E * theta_E * np.sqrt(x_ **\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "c3be1aeca166468d0ca7613b5ecd9e18ee512164e48d67acd1edc130ecd41007",
+  "human_valid": true,
+  "line_no": 406080,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ea9d7c204de5b3d584a71259f3cf83f0afae899a0b6094b1f16e5194d19ba6d1",
+  "raw_output": "\n        x_ = x - center_x\n        y_ = y - center_y\n        f_ = self.function(x_, y_, theta_E, center_x, center_y)\n        df_dx = -f_ * (x_ / (theta_E * theta_E * np.sqrt(x_ ** ",
+  "sampling_seed": 118521095,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

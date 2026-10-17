@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def edit(self, description=github.GithubObject.NotSet, files=github.GithubObject.NotSet):\n        \"\"\"\n        :calls: `PATCH /gists/:id <http://developer.github.com/v3/gists>`_\n        :param description: string\n        :param files: dict of string to :class:`github.InputFileContent.InputFileContent`\n        :rtype: None\n        \"\"\"\n            assert isinstance(description, (str, unicode, github.GithubObject.NotSet)), description\n            assert isinstance(files, dict), files\n            post_parameters = dict()\n            if description is not github.GithubObject.NotSet:\n                post_parameters[\"description\"] = description\n            if files is not github.GithubObject.NotSet:\n                post_parameters[\"files\"] = files\n            headers, data = self._requester.requestJsonAndCheck(\n                \"PATCH\",\n                self.url,\n                input=post_parameters\n            )\n            self._useAttributes(data)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "6a790d6c6c4114cb246420d0d7f146887bcd329db38e52de63793cab881f18e3",
+  "body_tokens": 210,
+  "bucket": "out_of_range",
+  "clean_output": "\n            assert isinstance(description, (str, unicode, github.GithubObject.NotSet)), description\n            assert isinstance(files, dict), files\n            post_parameters = dict()\n            if description is not github.GithubObject.NotSet:\n                post_parameters[\"description\"] = description\n            if files is not github.GithubObject.NotSet:\n                post_parameters[\"files\"] = files\n            headers, data = self._requester.requestJsonAndCheck(\n                \"PATCH\",\n                self.url,\n                input=post_parameters\n            )\n            self._useAttributes(data)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "2cbe0e1a3534b5a2627f8edc80dd8b7a671f5ad43814facb1305f0ee327bcf91",
+  "human_valid": true,
+  "line_no": 366871,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b9b897d81174581ee8d4a12b289339b3cda174d5cdb653e8b9b4b5acc1fd270c",
+  "raw_output": "\n        assert isinstance(description, (str, unicode, github.GithubObject.NotSet)), description\n        assert isinstance(files, dict), files\n        post_parameters = dict()\n        if description is not github.GithubObject.NotSet:\n            post_parameters[\"description\"] = description\n        if files is not github.GithubObject.NotSet:\n            post_parameters[\"files\"] = files\n        headers, data = self._requester.requestJsonAndCheck(\n            \"PATCH\",\n            self.url,\n            input=post_parameters\n        )\n        self._useAttributes(data)\n\n    @property\n    def",
+  "sampling_seed": 1605824703,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

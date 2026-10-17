@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def l(self, line, *args, **kwds):\n        \"\"\"\n        Short-cut of line. Used for inserting line. It's formated with parameters\n        ``variable``, ``variable_name`` (as ``name`` for short-cut), all keys from\n        current JSON schema ``definition`` and also passed arguments in ``args``\n        and named ``kwds``.\n\n        .. code-block:: python\n\n            self.l('if {variable} not in {enum}: raise JsonSchemaException(\"Wrong!\")')\n\n        When you want to indent block, use it as context manager. For example:\n\n        .. code-block:: python\n\n            with self.l('if {variable} not in {enum}:'):\n                self.l('raise JsonSchemaException(\"Wrong!\")')\n        \"\"\"\n        use ``self.l`` you can use ``self.l.format`` to format line.\n                \"\"\"\n                if not self.line:\n                    self.line = line\n                else:\n                    self.line += line\n",
+  "agc_valid": false,
+  "body_sha256": "fe832c18482a0d1cc0fc5063274e8557f52758d34f0f9854c03d46b8c0e8262d",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n        use ``self.l`` you can use ``self.l.format`` to format line.\n                \"\"\"\n                if not self.line:\n                    self.line = line\n                else:\n                    self.line += line\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "631d40929a8df4b670322eafb2a08faaf68d905fe6f20ab65179d1deb4947f30",
+  "human_valid": true,
+  "line_no": 201246,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "467c18593a84d9a453c17a4976bed7c2c87596ecbf3ca38ea4fe72538a5d8bfd",
+  "raw_output": "use ``self.l`` you can use ``self.l.format`` to format line.\n        \"\"\"\n        if not self.line:\n            self.line = line\n        else:\n            self.line += line\n\n    def",
+  "sampling_seed": 3684470035,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

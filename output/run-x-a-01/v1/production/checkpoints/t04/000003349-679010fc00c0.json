@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def writelines(self, lines, eof = False, buffering = True):\n        \"\"\"\n        Write lines to current output stream\n        \"\"\"\n        for line in lines:\n            self.write(line)\n        if eof:\n            self.write(eof)\n",
+  "agc_valid": true,
+  "body_sha256": "9bfea7024f0cb47c11000799e269a31e4f9ebf998e31cfa60b6dc57b22dd2332",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for line in lines:\n            self.write(line)\n        if eof:\n            self.write(eof)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "dec79705b2d0791ee3ab5b11877b3cbdda7790bcfcfa87eb19a20720217f8bc7",
+  "human_valid": true,
+  "line_no": 3349,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "679010fc00c001b2ab009bc6b8cf3ec35bb50b49bdf66c14ea8c50d6663b228f",
+  "raw_output": "\n        for line in lines:\n            self.write(line)\n        if eof:\n            self.write(eof)\n\n    def",
+  "sampling_seed": 135334700,
+  "tag": "t04",
+  "temperature": 0.4
+}

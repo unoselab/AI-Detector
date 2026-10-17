@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def refresh(self):\n        \"\"\"\n        Periodically refresh the TURN allocation.\n        \"\"\"\n        while self.allocation_timer is not None:\n            time.sleep(self.refresh_time)\n            self.get_turn_allocation()\n",
+  "agc_valid": true,
+  "body_sha256": "27c4d8dfbaefef2cb6ff61a173f53f0c30e20d9c244044d0db5042c979f7d0d4",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n        while self.allocation_timer is not None:\n            time.sleep(self.refresh_time)\n            self.get_turn_allocation()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "4099666a8d6caa42c10485833acbb6b946fa4b7e58011ff532677e33b8f9f487",
+  "human_valid": true,
+  "line_no": 273684,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b41ae84c78bc97011acf89544e5d79a8083f89ae0adec77eda384f17e71fa2d3",
+  "raw_output": "\n        while self.allocation_timer is not None:\n            time.sleep(self.refresh_time)\n            self.get_turn_allocation()\n\n    def",
+  "sampling_seed": 787666263,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

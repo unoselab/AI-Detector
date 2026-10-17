@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sort_func(self, entry):\n        \"\"\"Return the key attribute to determine how data is sorted.\n        Time will need to be converted to 24 hour time.\n        In instances when float attributes will have an 'n/a' string, return 0.\n        \"\"\"\n        if entry.key == 'time':\n            # Convert to\n",
+  "agc_valid": false,
+  "body_sha256": "e313102c7410241c193da76cc3c3d82bec9915ce0543ef4a4cb02d01186af85f",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if entry.key == 'time':\n            # Convert to\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "ec0e3f806402e4ae1f17ebe25c4840e4b2cbf950b35d46c16a2134c8611dbcb5",
+  "human_valid": true,
+  "line_no": 242426,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b45d3aa5e9abed41beb7ea31960a0caacd0d5ec6d19d00cdf6917778f566818e",
+  "raw_output": "\n        if entry.key == 'time':\n            # Convert to ",
+  "sampling_seed": 3052751074,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

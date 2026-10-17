@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def build_graph(layout_str, slanted):\n    \"\"\"\n    builds an adjacency graph as a dictionary: {character: [adjacent_characters]}.\n    adjacent characters occur in a clockwise order.\n    for example:\n    * on qwerty layout, 'g' maps to ['fF', 'tT', 'yY', 'hH', 'bB', 'vV']\n    * on keypad layout, '7' maps to [None, None, None, '=', '8', '5', '4', None]\n    \"\"\"\n    \"\"\"\n     if layout_str == 'qwerty':\n         return qwerty_graph(slanted)\n     elif layout_str == 'keypad':\n         return keypad_graph(slanted)\n     else:\n         raise ValueError(f'unknown layout: {layout_str}')\n",
+  "agc_valid": false,
+  "body_sha256": "7a55e8cea09f7693e9e16318c24953e31f0b538fe6554d4552cd3e80618a462e",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n    \"\"\"\n     if layout_str == 'qwerty':\n         return qwerty_graph(slanted)\n     elif layout_str == 'keypad':\n         return keypad_graph(slanted)\n     else:\n         raise ValueError(f'unknown layout: {layout_str}')\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2a368ece751b66fd373c6715e54eba37809fa23fccd6f0e788e18337df91f1b3",
+  "human_valid": true,
+  "line_no": 43021,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "66ab017e0f8aa038883e47685253e885ce5822f5e73a87fad8b0c37b36a99faa",
+  "raw_output": "   \"\"\"\n    if layout_str == 'qwerty':\n        return qwerty_graph(slanted)\n    elif layout_str == 'keypad':\n        return keypad_graph(slanted)\n    else:\n        raise ValueError(f'unknown layout: {layout_str}')\n\n\ndef qwerty_graph(slanted):\n    \"\"\"\n    returns an adjacency graph of the qwerty keyboard\n    \"\"\"\n    graph = {}\n    for character in 'qwertyuiop':\n        graph[character] = []\n        for character_offset in range(1, ",
+  "sampling_seed": 183431296,
+  "tag": "t06",
+  "temperature": 0.6
+}

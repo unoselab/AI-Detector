@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def deactivate_program(self, program):\n        \"\"\"\n            Called by program, when it is deactivated.\n        \"\"\"\n        self.active_program = None\n",
+  "agc_valid": true,
+  "body_sha256": "64c1fa8127bea5ef02e0b11b8cace18320a1146f25a60e98dbbf28568603664c",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.active_program = None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "11971bf632d924b979da3788ce5ba78ac67c51e15f4880c17107142c27391c5b",
+  "human_valid": true,
+  "line_no": 61778,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2ab7aa9660cdcc14bc4e60c8a6b70251a6126b620081a5b5ba54a7dd550614ab",
+  "raw_output": "\n        self.active_program = None\n\n    def",
+  "sampling_seed": 563190284,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

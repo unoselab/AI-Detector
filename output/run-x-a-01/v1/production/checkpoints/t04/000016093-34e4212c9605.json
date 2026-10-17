@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def encrypt(self, password):\n        \"\"\"Encrypt the password.\n        \"\"\"\n        return self.encryptor.encrypt(password)\n",
+  "agc_valid": true,
+  "body_sha256": "6392fa199d0eed713c84619d66b5ea38019766837b913bb10fb5b02ea3795f9c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.encryptor.encrypt(password)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "73f4752ce1e691b01d4c3913af39e1b04adb8fdabc450b751b4a7fd78b69cb43",
+  "human_valid": true,
+  "line_no": 16093,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "34e4212c960513c2f83e59a0879a8343a291bba8d00b2a364eb8d37c7677abc4",
+  "raw_output": "\n        return self.encryptor.encrypt(password)\n\n    def",
+  "sampling_seed": 1359845151,
+  "tag": "t04",
+  "temperature": 0.4
+}

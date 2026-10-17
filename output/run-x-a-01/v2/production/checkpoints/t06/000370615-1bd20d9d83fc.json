@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _from_dict(cls, _dict):\n        \"\"\"Initialize a LogQueryResponseResultDocuments object from a json dictionary.\"\"\"\n            args = {}\n            if 'id' in _dict:\n                args['id'] = _dict.get('id')\n            if 'result' in _dict:\n                args['result'] = _dict.get('result')\n            if 'message' in _dict:\n                args['message'] = _dict.get('message')\n            if 'query_id' in _dict:\n                args['query_id'] = _dict.get('query_id')\n            if 'document_id' in _dict:\n                args['document_id'] = _dict.get('document_id')\n            if 'project_id' in _dict:\n                args['project_id'] = _dict.get('project_id')\n            if 'score' in _dict:\n                args['score'] = _dict.get('score')\n            return cls(**args)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "2bb9b6a3092ff187e6a2a933cf39dbe3d392d996cb5763a68d7e9bcfab189d82",
+  "body_tokens": 267,
+  "bucket": "out_of_range",
+  "clean_output": "\n            args = {}\n            if 'id' in _dict:\n                args['id'] = _dict.get('id')\n            if 'result' in _dict:\n                args['result'] = _dict.get('result')\n            if 'message' in _dict:\n                args['message'] = _dict.get('message')\n            if 'query_id' in _dict:\n                args['query_id'] = _dict.get('query_id')\n            if 'document_id' in _dict:\n                args['document_id'] = _dict.get('document_id')\n            if 'project_id' in _dict:\n                args['project_id'] = _dict.get('project_id')\n            if 'score' in _dict:\n                args['score'] = _dict.get('score')\n            return cls(**args)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "d4b974ea2f19b78a1080de6701f1f5829309639cd3e8643e74d0ddad8dd139b0",
+  "human_valid": true,
+  "line_no": 370615,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1bd20d9d83fcedaa0045d9c744e477c3c3eadc32e256cf3adc1031fc00cfaadc",
+  "raw_output": "\n        args = {}\n        if 'id' in _dict:\n            args['id'] = _dict.get('id')\n        if 'result' in _dict:\n            args['result'] = _dict.get('result')\n        if 'message' in _dict:\n            args['message'] = _dict.get('message')\n        if 'query_id' in _dict:\n            args['query_id'] = _dict.get('query_id')\n        if 'document_id' in _dict:\n            args['document_id'] = _dict.get('document_id')\n        if 'project_id' in _dict:\n            args['project_id'] = _dict.get('project_id')\n        if 'score' in _dict:\n            args['score'] = _dict.get('score')\n        return cls(**args)\n\n    @classmethod\n    def",
+  "sampling_seed": 3092989050,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

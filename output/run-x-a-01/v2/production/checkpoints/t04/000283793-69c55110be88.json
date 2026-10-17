@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def visit_classdef(self, node):\n        \"\"\"Class visitor.\"\"\"\n        if node.name in self.classes:\n            raise ValueError('Duplicate class definition: %s' % node.name)\n        self.classes[node.name] = node\n        self.visit(node.body)\n",
+  "agc_valid": true,
+  "body_sha256": "bd2b6223abf18f6ffd16094d7ecd8ddd08c18bafbde9a239286a41cc324c9ea4",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if node.name in self.classes:\n            raise ValueError('Duplicate class definition: %s' % node.name)\n        self.classes[node.name] = node\n        self.visit(node.body)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "2f832077810fd55630a344e7234a47c916960721f1f588e8e831b48fb4a27fa7",
+  "human_valid": true,
+  "line_no": 283793,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "69c55110be88e7699a568076d3eec964f593cb408dae4adebbe0a9728dd4a0d8",
+  "raw_output": "\n        if node.name in self.classes:\n            raise ValueError('Duplicate class definition: %s' % node.name)\n        self.classes[node.name] = node\n        self.visit(node.body)\n\n    def",
+  "sampling_seed": 470029601,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

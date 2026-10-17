@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def GetVmodlType(name):\n   \"\"\" Get type from vmodl name \"\"\"\n   return vmodl.query.PropertyCollector.PropertyCollector().GetType(name)\n",
+  "agc_valid": true,
+  "body_sha256": "c3cf272228727afa7765d2ea7c757b5febefdca4f0d675450346a673bd20d627",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n   return vmodl.query.PropertyCollector.PropertyCollector().GetType(name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "ad903f57a14590c4d6d08ee11bb88f91b30d1413a2378592b65d49621a1f32b9",
+  "human_valid": true,
+  "line_no": 329187,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a37f703144ec968eef4136b5a43a5c0211f49f720f1a34edb7edde80b22618d6",
+  "raw_output": "\n   return vmodl.query.PropertyCollector.PropertyCollector().GetType(name)\n\ndef GetVmodlTypeName(type):\n   \"\"\" Get name from vmodl type \"\"\"\n   return type.name\n\ndef GetVmodlTypeVersion(type):\n   \"\"\" Get version from vmodl type \"\"\"\n   return type.version\n\ndef GetVmodlTypeNamespace(type):\n   \"\"\" Get namespace from vmodl type \"\"\"\n   return type.namespace\n\ndef GetVmodlTypeDescription(type):\n   \"\"\" Get description from vmodl type \"\"\"\n   return type.description\n\ndef GetVmodlTypeElementDescription(type, element):\n   \"\"\" Get description of element from vmodl type \"\"\"\n   return type.elements[element].description\n\ndef GetVmodlTypeElementName(type, element):\n   \"\"\" Get name of element from vmodl type \"\"\"\n   return type.elements[element].name\n\ndef GetVmodlTypeElementType(type, element):\n   \"\"\" Get type of element from vmodl type \"\"\"\n   return type.elements[element].type\n\ndef GetVmodlTypeElementVersion(type, element):\n   \"\"\" Get version of element from vmodl type \"\"\"\n   return type.elements[element].version\n\ndef GetVmodlTypeElementNamespace(type, element):\n   \"\"\" Get namespace of element from vmodl type \"\"\"\n   return type.elements[element].namespace\n\ndef GetVmodlTypeElementConstraints(type, element):\n   \"\"\" Get constraints of element from vmodl type \"\"\"\n   return type.elements[element].constraints\n\ndef GetVmodlTypeElementIsArray(type, element):\n   \"\"\" Get isArray of element from vmodl type \"\"\"\n   return type.elements[element].isArray\n\ndef GetVmodlTypeElementIsOptional(type, element):\n   \"\"\" Get isOptional of element from vmodl type \"\"\"\n   return type.elements[element].isOptional\n\ndef GetVmodlTypeElementIsDynamic(type, element):\n   \"\"\" Get isDynamic of element from vmodl type \"\"\"\n   return type.elements[element].isDynamic\n\ndef GetVmodlTypeElementIsSecret(type, element):\n   \"\"\" Get isSecret",
+  "sampling_seed": 3258954084,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

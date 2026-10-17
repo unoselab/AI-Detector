@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def viewbox_mouse_event(self, event):\n        \"\"\"ViewBox mouse event handler\n\n        Parameters\n        ----------\n        event : instance of Event\n            The mouse event.\n        \"\"\"\n        if not self.enabled:\n            return\n        if event.is_dragging():\n            if self.drag_enabled:\n                self.on_drag(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.LeftButton:\n            if self.left_click_enabled:\n                self.on_left_click(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.RightButton:\n            if self.right_click_enabled:\n                self.on_right_click(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.MidButton:\n            if self.middle_click_enabled:\n                self.on_middle_click(event)\n            else:\n                event.ignore()\n        else:\n            event.ignore()\n",
+  "agc_valid": true,
+  "body_sha256": "a6dc460916c5973260e24dde372ee32517864d015ab4a759c2d6f18365a042db",
+  "body_tokens": 313,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not self.enabled:\n            return\n        if event.is_dragging():\n            if self.drag_enabled:\n                self.on_drag(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.LeftButton:\n            if self.left_click_enabled:\n                self.on_left_click(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.RightButton:\n            if self.right_click_enabled:\n                self.on_right_click(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.MidButton:\n            if self.middle_click_enabled:\n                self.on_middle_click(event)\n            else:\n                event.ignore()\n        else:\n            event.ignore()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "160c777a866f90d1177bb1220b22602e99f8ac9b37b0993bdb941432c4e79f23",
+  "human_valid": true,
+  "line_no": 23660,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fecd0f856603dee7fa8f013b0fe828751af132f2c83cdd5cdb3e4f6cc28bced4",
+  "raw_output": "\n        if not self.enabled:\n            return\n        if event.is_dragging():\n            if self.drag_enabled:\n                self.on_drag(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.LeftButton:\n            if self.left_click_enabled:\n                self.on_left_click(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.RightButton:\n            if self.right_click_enabled:\n                self.on_right_click(event)\n            else:\n                event.ignore()\n        elif event.button() == QtCore.Qt.MidButton:\n            if self.middle_click_enabled:\n                self.on_middle_click(event)\n            else:\n                event.ignore()\n        else:\n            event.ignore()\n\n    def",
+  "sampling_seed": 1743436319,
+  "tag": "t06",
+  "temperature": 0.6
+}

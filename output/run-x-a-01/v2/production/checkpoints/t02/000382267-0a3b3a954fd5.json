@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def xml(self, attribs = None,elements = None, skipchildren = False):\n        \"\"\"Serialises the FoLiA element to XML, by returning an XML Element (in lxml.etree) for this element and all its children. For string output, consider the xmlstring() method instead.\"\"\"\n        if attribs is None:\n            attribs = {}\n        if elements is None:\n            elements = []\n        # create the element\n        element = etree.Element(self.tag, attrib = attribs)\n        # add the children\n        for child in self.children:\n            if not skipchildren or not isinstance(child, FoLiAElement):\n                element.append(child.xml())\n        # add the text\n        if self.text:\n            element.text = self.text\n        # return the element\n        return element\n",
+  "agc_valid": true,
+  "body_sha256": "6031483d2e8526dc6359e9d6de836f3376ada5d5bafd81423010c8aa0d731a00",
+  "body_tokens": 185,
+  "bucket": "type09_190",
+  "clean_output": "\n        if attribs is None:\n            attribs = {}\n        if elements is None:\n            elements = []\n        # create the element\n        element = etree.Element(self.tag, attrib = attribs)\n        # add the children\n        for child in self.children:\n            if not skipchildren or not isinstance(child, FoLiAElement):\n                element.append(child.xml())\n        # add the text\n        if self.text:\n            element.text = self.text\n        # return the element\n        return element\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 169,
+  "human_sha256": "3f2e00e30715ad692a614d5f02d9f69cd67ebc8f415afa9ae1e5c51db21d69a9",
+  "human_valid": true,
+  "line_no": 382267,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0a3b3a954fd5e617205e0ac2eadc614e22056872112d0c05318fa6deb145ac2f",
+  "raw_output": "\n        if attribs is None:\n            attribs = {}\n        if elements is None:\n            elements = []\n        # create the element\n        element = etree.Element(self.tag, attrib = attribs)\n        # add the children\n        for child in self.children:\n            if not skipchildren or not isinstance(child, FoLiAElement):\n                element.append(child.xml())\n        # add the text\n        if self.text:\n            element.text = self.text\n        # return the element\n        return element\n\n    def",
+  "sampling_seed": 158996860,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

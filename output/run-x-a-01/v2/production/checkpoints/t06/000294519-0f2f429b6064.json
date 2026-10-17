@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def nice_true_ces(tc):\n    \"\"\"Format a true |CauseEffectStructure|.\"\"\"\n    return tc.format_as_true_ces()\n",
+  "agc_valid": true,
+  "body_sha256": "18195d2f2b0b7f76e38703d98a4d5f55769bbf85822bbc7f9d8b09152b19373d",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return tc.format_as_true_ces()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "cd44602d9d307a8c2b228bd3d91abb7be5ec54cc6903cfbbd92e0209be309e84",
+  "human_valid": true,
+  "line_no": 294519,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0f2f429b60649ced0ff0e493d0d7011faabfb44dcfd602cecb7e3f0f6eea81fe",
+  "raw_output": "\n    return tc.format_as_true_ces()\n\n\ndef nice_false_ces(fc):\n    \"\"\"Format a false |CauseEffectStructure|.\"\"\"\n    return fc.format_as_false_ces()\n\n\ndef nice_ces(ces):\n    \"\"\"Format a |CauseEffectStructure|.\"\"\"\n    return ces.format_as_ces()\n\n\ndef nice_true_ses(ts):\n    \"\"\"Format a true |SemanticStructure|.\"\"\"\n    return ts.format_as_true_ses()\n\n\ndef nice_false_ses(fs):\n    \"\"\"Format a false |SemanticStructure|.\"\"\"\n    return fs.format_as_false_ses()\n\n\ndef nice_ses(ses):\n    \"\"\"Format a |SemanticStructure|.\"\"\"\n    return ses.format_as_ses()\n\n\ndef nice_true_ces_ses(tc, ts):\n    \"\"\"Format a true |CauseEffectStructure| and |SemanticStructure|.\"\"\"\n    return tc.format_as_true_ces() + \"\\n\" + ts.format_as_true_ses()\n\n\ndef nice_false_ces_ses(fc, fs):\n    \"\"\"Format a false |CauseEffectStructure| and |SemanticStructure|.\"\"\"\n    return fc.format_as_false_ces() + \"\\n\" + fs.format_as_false_ses()\n\n\ndef nice_ces_ses(ces, ses):\n    \"\"\"Format a |CauseEffectStructure| and |SemanticStructure|.\"\"\"\n    return ces.format_as_ces() + \"\\n\" + ses.format_as_ses()\n\n\ndef nice_ces_ses_result(ces, ses, result):\n    \"\"\"Format a |CauseEffectStructure| and |SemanticStructure|.\"\"\"\n    return ces.format_as_ces() + \"\\n\" + ses.format_as_ses() + \"\\n\" + result\n\n\ndef nice_true_ses_result(ts, result):\n    \"\"\"Format a true |SemanticStructure|.\"\"\"\n   ",
+  "sampling_seed": 3663482677,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

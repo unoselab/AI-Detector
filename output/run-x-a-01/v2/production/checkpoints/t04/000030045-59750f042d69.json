@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def netconf_state_schemas_schema_version(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n            raise NotImplementedError()\n\n        @abc.abstractmethod\n",
+  "agc_valid": false,
+  "body_sha256": "acf7f880a11598e3d9ac134bccdd0f3ed0abaf46ed415c8550ff4fa700fae97c",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            raise NotImplementedError()\n\n        @abc.abstractmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "195246c0c13281df11df8c65745db1be52989860fb56e7795e720f7b1eae4882",
+  "human_valid": true,
+  "line_no": 30045,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "59750f042d69b2299afac78701a9cec71ced6ffd53cc08f313c17391a7059b5d",
+  "raw_output": "\n        raise NotImplementedError()\n\n    @abc.abstractmethod\n    def",
+  "sampling_seed": 2618838598,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

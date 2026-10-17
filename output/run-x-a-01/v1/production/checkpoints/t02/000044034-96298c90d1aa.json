@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def update(self, index, iterable, commit=True):\n        \"\"\"\n        Updates the index with current data.\n        :param index: The search_indexes.Index object\n        :param iterable: The queryset\n        :param commit: commit to the backend.\n        \"\"\"\n        if not index.get_backend().exists():\n            index.get_backend().create()\n\n        if not isinstance(iterable, QuerySet):\n            iterable = QuerySet(model=iterable.model)\n            iterable._iterable_class = iterable._iterable_class.from_queryset(iterable)\n\n        if not index.get_backend().is_alias:\n            index.get_backend().refresh()\n\n        if index.get_backend().is_alias:\n            index.get_backend().clear()\n\n        for obj in iterable:\n            index.get_backend().add(obj)\n\n        if commit:\n            index.get_backend().commit()\n",
+  "agc_valid": true,
+  "body_sha256": "d8560f902c4372e8cbe8d49971d704f81ff11d418a8dceb6de8e41588c987b9c",
+  "body_tokens": 149,
+  "bucket": "type05_150",
+  "clean_output": "\n        if not index.get_backend().exists():\n            index.get_backend().create()\n\n        if not isinstance(iterable, QuerySet):\n            iterable = QuerySet(model=iterable.model)\n            iterable._iterable_class = iterable._iterable_class.from_queryset(iterable)\n\n        if not index.get_backend().is_alias:\n            index.get_backend().refresh()\n\n        if index.get_backend().is_alias:\n            index.get_backend().clear()\n\n        for obj in iterable:\n            index.get_backend().add(obj)\n\n        if commit:\n            index.get_backend().commit()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5943e72e3b968b99cf07fc366bef3274f7e532f1f87b0e708e2529661cf9bdd0",
+  "human_valid": true,
+  "line_no": 44034,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "96298c90d1aa8b3efc0225088d8bbbca0f6221b253ca328ac18bf679e74f0446",
+  "raw_output": "\n        if not index.get_backend().exists():\n            index.get_backend().create()\n\n        if not isinstance(iterable, QuerySet):\n            iterable = QuerySet(model=iterable.model)\n            iterable._iterable_class = iterable._iterable_class.from_queryset(iterable)\n\n        if not index.get_backend().is_alias:\n            index.get_backend().refresh()\n\n        if index.get_backend().is_alias:\n            index.get_backend().clear()\n\n        for obj in iterable:\n            index.get_backend().add(obj)\n\n        if commit:\n            index.get_backend().commit()\n\n    def",
+  "sampling_seed": 2246634989,
+  "tag": "t02",
+  "temperature": 0.2
+}

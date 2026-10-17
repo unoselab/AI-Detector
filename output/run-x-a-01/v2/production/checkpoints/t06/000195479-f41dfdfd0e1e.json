@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def finish_parse(self, last_lineno_seen):\n        \"\"\"Clean-up/summary tasks run at the end of parsing.\"\"\"\n        # If we were parsing a multi-line comment, we need to\n        # \"finish\" it here.\n        if self.comment_stack:\n            self.handle_comment_end(last_lineno_seen)\n        # We need to finish parsing the last line of the file.\n        if self.line_stack:\n            self.handle_line(self.line_stack.pop())\n",
+  "agc_valid": true,
+  "body_sha256": "8bb53ff92dcf4a5d62496792944523cce6b4357fcc5065d2f8c8b5d6ed13b3f2",
+  "body_tokens": 91,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # If we were parsing a multi-line comment, we need to\n        # \"finish\" it here.\n        if self.comment_stack:\n            self.handle_comment_end(last_lineno_seen)\n        # We need to finish parsing the last line of the file.\n        if self.line_stack:\n            self.handle_line(self.line_stack.pop())\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "dde75f1f809a07832ace174c21b1f55793781009fe57d11d9eebf57cb4b99686",
+  "human_valid": true,
+  "line_no": 195479,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f41dfdfd0e1ecad2b2ee338394a59a1281ba0ef29fdd8729cb4f7acbdc4208f3",
+  "raw_output": "\n        # If we were parsing a multi-line comment, we need to\n        # \"finish\" it here.\n        if self.comment_stack:\n            self.handle_comment_end(last_lineno_seen)\n        # We need to finish parsing the last line of the file.\n        if self.line_stack:\n            self.handle_line(self.line_stack.pop())\n\n    def",
+  "sampling_seed": 548489944,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

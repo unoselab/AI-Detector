@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _serialize_lnk(lnk):\n    \"\"\"Serialize a predication lnk to surface form into the SimpleMRS\n       encoding.\"\"\"\n       if lnk.is_arg():\n           return f'{lnk.role}:{lnk.arg.surface}'\n       else:\n           return f'{lnk.role}:{lnk.arg.surface}'\n",
+  "agc_valid": false,
+  "body_sha256": "621294c265bb91ebb286a926eac6f4d481b764422b85f98632a0fb86de0dd4e0",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n       if lnk.is_arg():\n           return f'{lnk.role}:{lnk.arg.surface}'\n       else:\n           return f'{lnk.role}:{lnk.arg.surface}'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "23265499229307e2449d0d71be938448a623c8074b11684a16900e6bd231d07a",
+  "human_valid": true,
+  "line_no": 396894,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ff2dee1687ab3623487114e0d60ba1a51f6c799910024adfae4681bb948df81",
+  "raw_output": "\n    if lnk.is_arg():\n        return f'{lnk.role}:{lnk.arg.surface}'\n    else:\n        return f'{lnk.role}:{lnk.arg.surface}'\n\n\ndef _serialize_mrs(mrs):\n    \"\"\"Serialize a SimpleMRS to surface form.\"\"\"\n    if mrs.predication.is_arg():\n        predication = _serialize_lnk(mrs.predication)\n    else:\n        predication = mrs.predication.surface\n    return f'({predication} {_serialize_lnk(mrs.subject)} {_serialize_lnk(mrs.object)})'\n\n\ndef _serialize_mrs_to_surface(mrs):\n    \"\"\"Serialize a SimpleMRS to surface form.\"\"\"\n    return _serialize_mrs(mrs)\n\n\ndef _serialize_mrs_to_surface_with_arg_tags(mrs):\n    \"\"\"Serialize a SimpleMRS to surface form, including argument tags.\"\"\"\n    if mrs.predication.is_arg():\n        predication = _serialize_lnk(mrs.predication)\n    else:\n        predication = mrs.predication.surface\n    subject = _serialize_lnk(mrs.subject)\n    object = _serialize_lnk(mrs.object)\n    return f'({predication} {subject} {object})'\n\n\ndef _serialize_mrs_to_xml(mrs):\n    \"\"\"Serialize a SimpleMRS to XML.\"\"\"\n    # TODO: implement this\n    return None\n\n\ndef _serialize_mrs_to_xml_with_arg_tags(mrs):\n    \"\"\"Serialize a SimpleMRS to XML, including argument tags.\"\"\"\n    # TODO: implement this\n    return None\n\n\ndef _serialize_mrs_to_json(mrs):\n    \"\"\"Serialize a SimpleMRS to JSON.\"\"\"\n    # TODO: implement this\n    return None\n\n\ndef _serialize_mrs_to",
+  "sampling_seed": 3145053482,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

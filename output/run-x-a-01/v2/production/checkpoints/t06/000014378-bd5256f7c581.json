@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _markup(self, entry):\n        \"\"\"\n        Recursively generates HTML for the current entry.\n\n        Parameters\n        ----------\n        entry : object\n            Object to convert to HTML. Maybe be a single entity or contain multiple and/or nested objects.\n\n        Returns\n        -------\n        str\n            String of HTML formatted json.\n        \"\"\"\n        if isinstance(entry, list):\n            return ''.join([self._markup(e) for e in entry])\n\n        if isinstance(entry, dict):\n            return self._markup_dict(entry)\n\n        if isinstance(entry, str):\n            return self._markup_str(entry)\n\n        if isinstance(entry, int) or isinstance(entry, float):\n            return self._markup_int(entry)\n\n        if isinstance(entry, bool):\n            return self._markup_bool(entry)\n\n        if isinstance(entry, NoneType):\n            return self._markup_null(entry)\n\n        return ''\n",
+  "agc_valid": true,
+  "body_sha256": "9d87f0c1895d70fb5b226406f6037fefc554369f1fb0c2f2c4edee2a1a8d179f",
+  "body_tokens": 155,
+  "bucket": "type06_160",
+  "clean_output": "\n        if isinstance(entry, list):\n            return ''.join([self._markup(e) for e in entry])\n\n        if isinstance(entry, dict):\n            return self._markup_dict(entry)\n\n        if isinstance(entry, str):\n            return self._markup_str(entry)\n\n        if isinstance(entry, int) or isinstance(entry, float):\n            return self._markup_int(entry)\n\n        if isinstance(entry, bool):\n            return self._markup_bool(entry)\n\n        if isinstance(entry, NoneType):\n            return self._markup_null(entry)\n\n        return ''\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "57a5833e653b94751390483e46bd6e00a5f9bfacc7da8eb59508ac10f26a50b4",
+  "human_valid": true,
+  "line_no": 14378,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bd5256f7c581d1ed9ea82c713906117e1d6ce57a1ec46739c6ff16428663fdea",
+  "raw_output": "\n\n        if isinstance(entry, list):\n            return ''.join([self._markup(e) for e in entry])\n\n        if isinstance(entry, dict):\n            return self._markup_dict(entry)\n\n        if isinstance(entry, str):\n            return self._markup_str(entry)\n\n        if isinstance(entry, int) or isinstance(entry, float):\n            return self._markup_int(entry)\n\n        if isinstance(entry, bool):\n            return self._markup_bool(entry)\n\n        if isinstance(entry, NoneType):\n            return self._markup_null(entry)\n\n        return ''\n\n    def",
+  "sampling_seed": 1837975494,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

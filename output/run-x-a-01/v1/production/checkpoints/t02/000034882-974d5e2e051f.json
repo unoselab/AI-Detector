@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def on_uppercase(self):\n        \"\"\" Uppercase key press handler. \"\"\"\n        if self.is_uppercase:\n            self.is_uppercase = False\n        else:\n            self.is_uppercase = True\n",
+  "agc_valid": true,
+  "body_sha256": "8cbb17e87d59c76bda070a04bd2286154b3512a1535dcb97af74161b8bd37007",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.is_uppercase:\n            self.is_uppercase = False\n        else:\n            self.is_uppercase = True\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "69e6b45d7f32aea57a5649b267b6de3861dc1b61160de450fb9b5a4d76a869ef",
+  "human_valid": true,
+  "line_no": 34882,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "974d5e2e051f43fda80ddb84bae60df58c558c188277a7d2611394a529b34500",
+  "raw_output": "\n        if self.is_uppercase:\n            self.is_uppercase = False\n        else:\n            self.is_uppercase = True\n\n    def",
+  "sampling_seed": 2882701885,
+  "tag": "t02",
+  "temperature": 0.2
+}

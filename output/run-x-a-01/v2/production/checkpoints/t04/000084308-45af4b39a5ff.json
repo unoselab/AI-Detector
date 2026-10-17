@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def merge_range_pairs(prs):\n    \"\"\"Takes in a list of pairs specifying ranges and returns a sorted list of merged, sorted ranges.\"\"\"\n    merged_ranges = []\n    for pr in prs:\n        if not merged_ranges:\n            merged_ranges.append(pr)\n            continue\n        last_range = merged_ranges[-1]\n        if pr[0] <= last_range[1] +\n",
+  "agc_valid": false,
+  "body_sha256": "99992612e6b445a325f59da843335d59c7d74a359de98d9735483dba44695edf",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    merged_ranges = []\n    for pr in prs:\n        if not merged_ranges:\n            merged_ranges.append(pr)\n            continue\n        last_range = merged_ranges[-1]\n        if pr[0] <= last_range[1] +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "1fed882eafa039790bf6839095c11212234bd09656e7bef0548a908ed200be77",
+  "human_valid": true,
+  "line_no": 84308,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "45af4b39a5ffa50ff237c35c7ee63c60e6f5f0ace89759fd00880cc70d85a5b6",
+  "raw_output": "\n    merged_ranges = []\n    for pr in prs:\n        if not merged_ranges:\n            merged_ranges.append(pr)\n            continue\n        last_range = merged_ranges[-1]\n        if pr[0] <= last_range[1] + ",
+  "sampling_seed": 2961619158,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

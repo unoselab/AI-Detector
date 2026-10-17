@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _xml_to_dict(xml):\n    \"\"\"\n    Helper function to covert xml into a data dictionary.\n\n    xml\n        The xml data to convert.\n    \"\"\"\n    if not xml:\n        return None\n    root = ET.fromstring(xml)\n    data = {}\n    for child in root:\n        if child.tag in data:\n            if type(data[child.tag]) is list:\n                data[child.tag].append(_xml_to_dict(ET.tostring(child)))\n            else:\n                data[child.tag] = [data[child.tag], _xml_to_dict(ET.tostring(child))]\n        else:\n            data[child.tag] = _xml_to_dict(ET.tostring(child))\n    return data\n",
+  "agc_valid": true,
+  "body_sha256": "d7265d2ac88f094e0a6f8655d0ae758194b5b8c2bcf87e51d430e5af92721d9c",
+  "body_tokens": 135,
+  "bucket": "type04_140",
+  "clean_output": "\n    if not xml:\n        return None\n    root = ET.fromstring(xml)\n    data = {}\n    for child in root:\n        if child.tag in data:\n            if type(data[child.tag]) is list:\n                data[child.tag].append(_xml_to_dict(ET.tostring(child)))\n            else:\n                data[child.tag] = [data[child.tag], _xml_to_dict(ET.tostring(child))]\n        else:\n            data[child.tag] = _xml_to_dict(ET.tostring(child))\n    return data\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "5219544f080e5de5963cae957501cfd94138cbb2d6e138de5917266984fe40a3",
+  "human_valid": true,
+  "line_no": 114772,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a0e1963aa931ce020b83914da4825f3171a647adf648709a96c378162977f037",
+  "raw_output": "\n    if not xml:\n        return None\n    root = ET.fromstring(xml)\n    data = {}\n    for child in root:\n        if child.tag in data:\n            if type(data[child.tag]) is list:\n                data[child.tag].append(_xml_to_dict(ET.tostring(child)))\n            else:\n                data[child.tag] = [data[child.tag], _xml_to_dict(ET.tostring(child))]\n        else:\n            data[child.tag] = _xml_to_dict(ET.tostring(child))\n    return data\n\n\ndef _dict_to_xml(data):\n    \"\"\"\n    Helper function to convert a data dictionary into xml.\n\n    data\n        The data dictionary to convert.\n    \"\"\"\n    if not data:\n        return None\n    xml = \"<xml>\"\n    for key in data:\n        if type(data[key]) is list:\n            for value in data[key]:\n                xml += \"<{0}>{1}</{0}>\".format(key, value)\n        else:\n            xml += \"<{0}>{1}</{0}>\".format(key, data[key])\n    xml += \"</xml>\"\n    return xml\n\n\ndef _get_id_from_xml(xml):\n    \"\"\"\n    Helper function to extract the id from an xml response.\n\n    xml\n        The xml data to extract the id from.\n    \"\"\"\n    if not xml:\n        return None\n    root = ET.fromstring(xml)\n    return root.attrib[\"id\"]\n\n\ndef _get_status_from_xml(xml):\n    \"\"\"\n    Helper function to extract the status from an xml response.\n\n    xml\n        The xml data to extract the status from.\n    \"\"\"\n    if not xml:\n        return None\n    root = ET.fromstring(xml)\n    return root.attrib[\"status\"]\n\n\ndef _get_status_from_json(json):\n    \"\"\"\n    Helper function to extract the status from a json response.\n\n    json\n        The json data to extract the status from.\n    \"\"\"\n    if not json",
+  "sampling_seed": 1744973209,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

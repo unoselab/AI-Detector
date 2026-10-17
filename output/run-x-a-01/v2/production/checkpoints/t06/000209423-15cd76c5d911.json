@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_site_amplification(self, C, sites):\n        \"\"\"\n        Returns the site amplification term\n        \"\"\"\n        # Check if the site is in the molecule\n        if sites in self.molecule.sites:\n            return C * self.molecule.sites[sites].amplification\n        else:\n            raise Exception('Site ' + str(sites) + ' not in molecule')\n",
+  "agc_valid": true,
+  "body_sha256": "e4d3f4a26a25e7f9d88bfac77ff19621b9f873d4b7c308f6e775ebad643de16c",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Check if the site is in the molecule\n        if sites in self.molecule.sites:\n            return C * self.molecule.sites[sites].amplification\n        else:\n            raise Exception('Site ' + str(sites) + ' not in molecule')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "7269c53a920092aedf9b59fb4dc6bfd666cd993c31846b6c9dfe903180b3c15a",
+  "human_valid": true,
+  "line_no": 209423,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "15cd76c5d91184e05bd70c06f1fe8cd9986f9c81243de6f1d64c306226772be3",
+  "raw_output": "\n        # Check if the site is in the molecule\n        if sites in self.molecule.sites:\n            return C * self.molecule.sites[sites].amplification\n        else:\n            raise Exception('Site ' + str(sites) + ' not in molecule')\n\n    def",
+  "sampling_seed": 408474021,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

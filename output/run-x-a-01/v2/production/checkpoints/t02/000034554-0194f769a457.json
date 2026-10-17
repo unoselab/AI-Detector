@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_dn(self,dn):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n\n    dn = dn to be added\n    \"\"\"\n    self.process_table.domain = dn\n    self.process_table.save()\n",
+  "agc_valid": true,
+  "body_sha256": "c90047f7ee49fcdc9f66befd30b7622cd618c85625722fb8dcedc7805244c2e7",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n    self.process_table.domain = dn\n    self.process_table.save()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 108,
+  "human_sha256": "f520910ec7de3e2deb9de88a01d54e1b76dff3197f24aee8ca8059c60573fab3",
+  "human_valid": true,
+  "line_no": 34554,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0194f769a457fbbaa13b92e58b95780733a1d3009033d8b177eb509b9854b31c",
+  "raw_output": "\n    self.process_table.domain = dn\n    self.process_table.save()\n\ndef get_dn(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n\n    dn = dn to be added\n    \"\"\"\n    return self.process_table.domain\n\ndef set_username(self,username):\n    \"\"\"\n    Use the username column in the process table to store the username\n\n    username = username to be added\n    \"\"\"\n    self.process_table.username = username\n    self.process_table.save()\n\ndef get_username(self):\n    \"\"\"\n    Use the username column in the process table to store the username\n\n    username = username to be added\n    \"\"\"\n    return self.process_table.username\n\ndef set_password(self,password):\n    \"\"\"\n    Use the password column in the process table to store the password\n\n    password = password to be added\n    \"\"\"\n    self.process_table.password = password\n    self.process_table.save()\n\ndef get_password(self):\n    \"\"\"\n    Use the password column in the process table to store the password\n\n    password = password to be added\n    \"\"\"\n    return self.process_table.password\n\ndef set_server(self,server):\n    \"\"\"\n    Use the server column in the process table to store the server\n\n    server = server to be added\n    \"\"\"\n    self.process_table.server = server\n    self.process_table.save()\n\ndef get_server(self):\n    \"\"\"\n    Use the server column in the process table to store the server\n\n    server = server to be added\n    \"\"\"\n    return self.process_table.server\n\ndef set_port(self,port):\n    \"\"\"\n    Use the port column in the process table to store the port\n\n    port = port to be added\n    \"\"\"\n    self.process_table.port = port\n    self.process_table.save()\n\ndef get_port(self):\n    \"\"\"\n    Use the port column in the process table to store the port\n\n    port = port to be added\n    \"\"\"\n    return self.process_table.port\n\ndef",
+  "sampling_seed": 2345106037,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

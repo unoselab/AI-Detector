@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_last_child_with_lineno(node):\n    \"\"\"\n    Return the last direct child of `node` that has a lineno attribute,\n    or None if `node` has no such children.\n\n    Almost all node._field lists are sorted by the order in which they\n    appear in source code. For some nodes however, we have to skip some\n    fields that either don't have line numbers (e.g., \"ctx\" and \"names\")\n    or that are in the wrong position (e.g., \"decorator_list\" and\n    \"returns\"). Then we choose the first field (i.e., the field with the\n    highest line number) that actually contains a node. If it contains a\n    list of nodes, we return the last one.\n\n    \"\"\"\n    and \"returns\").\n        \"\"\"\n        for child in reversed(node._fields):\n            if hasattr(node, child):\n                child_node = getattr(node, child)\n                if hasattr(child_node, \"lineno\"):\n                    return child_node\n        return None\n",
+  "agc_valid": false,
+  "body_sha256": "43ed2fe05e91e63f190c069b23c98fe238002dbd4aa346e259f1e9c08f6bee74",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n    and \"returns\").\n        \"\"\"\n        for child in reversed(node._fields):\n            if hasattr(node, child):\n                child_node = getattr(node, child)\n                if hasattr(child_node, \"lineno\"):\n                    return child_node\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "f1e499c1b1aaf334d41cb71eef5ff22d354bc414d9e808b8e6a17456f8d573e7",
+  "human_valid": true,
+  "line_no": 195920,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "055077ab13df07f3868670024704b9ef4c38ab4b4366546259c7a66d35fb56a7",
+  "raw_output": "and \"returns\").\n    \"\"\"\n    for child in reversed(node._fields):\n        if hasattr(node, child):\n            child_node = getattr(node, child)\n            if hasattr(child_node, \"lineno\"):\n                return child_node\n    return None\n\n\ndef _get_last_child_with_lineno_or_none(node):\n    \"\"\"\n    Return the last direct child of `node` that has a lineno attribute,\n    or None if `node` has no such children.\n\n    Almost all node._field lists are sorted by the order in which they\n    appear in source code. For some nodes however, we have to skip some\n    fields that either don't have line numbers (e.g., \"ctx\" and \"names\")\n    or that are in the wrong position (e.g., \"decorator_list\" and \"returns\").\n    \"\"\"\n    for child in reversed(node._fields):\n        if hasattr(node, child):\n            child_node = getattr(node, child)\n            if hasattr(child_node, \"lineno\"):\n                return child_node\n    return None\n\n\ndef _get_last_child_with_lineno_or_none_or_empty_list(node):\n    \"\"\"\n    Return the last direct child of `node` that has a lineno attribute,\n    or None if `node` has no such children.\n\n    Almost all node._field lists are sorted by the order in which they\n    appear in source code. For some nodes however, we have to skip some\n    fields that either don't have line numbers (e.g., \"ctx\" and \"names\")\n    or that are in the wrong position (e.g., \"decorator_list\" and \"returns\").\n    \"\"\"\n    for child in reversed(node._fields):\n        if hasattr(node, child):\n            child_node = getattr(node, child)\n            if hasattr(child_node, \"lineno\"):\n                return child_node\n            elif isinstance(child_node, list) and len(child_node) == ",
+  "sampling_seed": 3468408622,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

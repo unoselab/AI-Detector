@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def pass_control_back(self, primary, secondary):\n        \"\"\"The address to which the controll is to be passed back.\n\n        Tells a potential controller device the address to which the control is\n        to be passed back.\n\n        :param primary: An integer in the range 0 to 30 representing the\n            primary address of the controller sending the command.\n        :param secondary: An integer in the range of 0 to 30 representing the\n            secondary address of the controller sending the command. If it is\n            missing, it indicates that the controller sending this command does\n            not have extended addressing.\n\n        \"\"\"\n        the command is\n                    not a secondary controller.\n                :return: None\n                \"\"\"\n                pass\n\n            @abstractmethod\n",
+  "agc_valid": false,
+  "body_sha256": "fb582f707f703c923f7205b201892249b116c9ca6cea19f0bb8abfd8e9a07559",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n        the command is\n                    not a secondary controller.\n                :return: None\n                \"\"\"\n                pass\n\n            @abstractmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b7253a57806dc08823f6847dcc19a18fd830148c98b7aea98b983ccf679df478",
+  "human_valid": true,
+  "line_no": 33391,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "856889f6e9bb481c55c90006a7c7c127b85981fa93a5e87ca3b6cba87dd82127",
+  "raw_output": "the command is\n            not a secondary controller.\n        :return: None\n        \"\"\"\n        pass\n\n    @abstractmethod\n    def",
+  "sampling_seed": 2668525021,
+  "tag": "t04",
+  "temperature": 0.4
+}

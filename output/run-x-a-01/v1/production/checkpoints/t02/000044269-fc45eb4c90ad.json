@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def design_matrix(phases, degree):\n        r\"\"\"\n        Constructs an :math:`N \\times 2n+1` matrix of the form:\n\n        .. math::\n\n            \\begin{bmatrix}\n              1\n            & \\sin(1 \\cdot 2\\pi \\cdot \\phi_0)\n            & \\cos(1 \\cdot 2\\pi \\cdot \\phi_0)\n            & \\ldots\n            & \\sin(n \\cdot 2\\pi \\cdot \\phi_0)\n            & \\cos(n \\cdot 2\\pi \\cdot \\phi_0)\n            \\\\\n              \\vdots\n            & \\vdots\n            & \\vdots\n            & \\ddots\n            & \\vdots\n            & \\vdots\n            \\\\\n              1\n            & \\sin(1 \\cdot 2\\pi \\cdot \\phi_N)\n            & \\cos(1 \\cdot 2\\pi \\cdot \\phi_N)\n            & \\ldots\n            & \\sin(n \\cdot 2\\pi \\cdot \\phi_N)\n            & \\cos(n \\cdot 2\\pi \\cdot \\phi_N)\n            \\end{bmatrix}\n\n        where :math:`n =` *degree*, :math:`N =` *n_samples*, and\n        :math:`\\phi_i =` *phases[i]*.\n\n        Parameters\n        ----------\n        phases : array-like, shape = [n_samples]\n\n        \"\"\"\n        \\cdot\n",
+  "agc_valid": false,
+  "body_sha256": "8784f26e283edb17cc97e696a39d624113889bc41f386e3f50d5d0b18dd064d6",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        \\cdot\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "df6fa593b7f3bb4e6c13be3403dba5fae70a843a14f78949c3c1e9dd9e7a815b",
+  "human_valid": true,
+  "line_no": 44269,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fc45eb4c90adcc65e4c77afcac4b5e7727dddc7d676dca839e69ce072fae9a01",
+  "raw_output": "\\cdot ",
+  "sampling_seed": 2705966235,
+  "tag": "t02",
+  "temperature": 0.2
+}

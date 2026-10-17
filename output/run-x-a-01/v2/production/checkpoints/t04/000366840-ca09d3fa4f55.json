@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def upload_asset(self, path, label=\"\", content_type=\"\"):\n        \"\"\"\n        :calls: `POST https://<upload_url>/repos/:owner/:repo/releases/:release_id/assets?name=foo.zip <https://developer.github.com/v3/repos/releases/#upload-a-release-asset>`_\n        :rtype: :class:`github.GitReleaseAsset.GitReleaseAsset`\n        \"\"\"\n        assert isinstance(path, (str, unicode)), path\n        assert isinstance(label, (str, unicode)), label\n        assert isinstance(content_type, (str, unicode)), content_type\n        post_parameters = {\n            \"name\": path,\n            \"label\": label,\n            \"content_type\": content_type,\n        }\n        headers, data = self._requester.requestJsonAndCheck(\n            \"POST\",\n            self.url + \"/assets\",\n            input=post_parameters,\n            headers={\"content-length\": os.path.getsize(path)},\n            accept=None,\n        )\n        return github.GitReleaseAsset.GitReleaseAsset(self._requester, headers, data, self.url)\n",
+  "agc_valid": true,
+  "body_sha256": "a81486f9dcff9317613be66d26b59ad7e5a061ffec58a69545afe558970e0465",
+  "body_tokens": 188,
+  "bucket": "type09_190",
+  "clean_output": "\n        assert isinstance(path, (str, unicode)), path\n        assert isinstance(label, (str, unicode)), label\n        assert isinstance(content_type, (str, unicode)), content_type\n        post_parameters = {\n            \"name\": path,\n            \"label\": label,\n            \"content_type\": content_type,\n        }\n        headers, data = self._requester.requestJsonAndCheck(\n            \"POST\",\n            self.url + \"/assets\",\n            input=post_parameters,\n            headers={\"content-length\": os.path.getsize(path)},\n            accept=None,\n        )\n        return github.GitReleaseAsset.GitReleaseAsset(self._requester, headers, data, self.url)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 195,
+  "human_sha256": "4eeca44cff7ffa41792e7cbc362943a52ad4d641db717f5578b068db965b86c1",
+  "human_valid": true,
+  "line_no": 366840,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ca09d3fa4f55f007eb75047fddb15c172979683bff8778193f5f5cf1618f6a19",
+  "raw_output": "\n        assert isinstance(path, (str, unicode)), path\n        assert isinstance(label, (str, unicode)), label\n        assert isinstance(content_type, (str, unicode)), content_type\n        post_parameters = {\n            \"name\": path,\n            \"label\": label,\n            \"content_type\": content_type,\n        }\n        headers, data = self._requester.requestJsonAndCheck(\n            \"POST\",\n            self.url + \"/assets\",\n            input=post_parameters,\n            headers={\"content-length\": os.path.getsize(path)},\n            accept=None,\n        )\n        return github.GitReleaseAsset.GitReleaseAsset(self._requester, headers, data, self.url)\n\n    def",
+  "sampling_seed": 773102036,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

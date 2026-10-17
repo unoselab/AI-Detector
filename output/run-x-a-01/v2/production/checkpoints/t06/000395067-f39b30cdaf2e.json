@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_channel(self):\n        \"\"\"\n        Fetch a channel from the pool. Will return a new one if necessary. If\n        a channel in the free pool is closed, will remove it. Will return None\n        if we hit the cap. Will clean up any channels that were published to\n        but closed due to error.\n        \"\"\"\n        if self._closed:\n            raise RuntimeError(\"Pool is closed\")\n\n        if len(self._free) >\n",
+  "agc_valid": false,
+  "body_sha256": "202f447c4147b9fb06b91641ca7c456c513be1ed099d83234533514de6847c45",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self._closed:\n            raise RuntimeError(\"Pool is closed\")\n\n        if len(self._free) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "e85e53afa4026f98e80c24f23dd972b0f49b91f188dab902ace93e728e5083b0",
+  "human_valid": true,
+  "line_no": 395067,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f39b30cdaf2eed25058a79f8d3018474dc837d992d84e49ca73f9879110e9d34",
+  "raw_output": "\n        if self._closed:\n            raise RuntimeError(\"Pool is closed\")\n\n        if len(self._free) > ",
+  "sampling_seed": 535321309,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

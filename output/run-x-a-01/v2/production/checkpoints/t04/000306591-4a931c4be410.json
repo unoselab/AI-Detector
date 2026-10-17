@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bar(self, progress):\n        \"\"\"Shows on the stdout the progress bar for the given progress.\"\"\"\n        progress_bar_length =\n",
+  "agc_valid": false,
+  "body_sha256": "35c268a13112576d61f7049e595c4678f5b4aa0d25d7f538ad248448bee82978",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        progress_bar_length =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "19e96d326040f1c2e2b468c3a537477d0f2bdaad80f7cba437b95946842e5e65",
+  "human_valid": true,
+  "line_no": 306591,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4a931c4be410e4bcf3faaa653e1bbc26885a2319126b3c0ba2f8e9248cfaa243",
+  "raw_output": "\n        progress_bar_length = ",
+  "sampling_seed": 3358628526,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

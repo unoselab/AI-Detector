@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _cleanup_container(self, cinfo):\n        \"\"\"\n        Remove a container and clean up its image if necessary.\n        \"\"\"\n        if cinfo.container:\n            try:\n                self.docker_client.remove_container(cinfo.container)\n            except docker.errors.APIError as e:\n                if e.response.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "f94df3e19c8cc821ee0c69b108a14ebeacaa0b5ee6d7642030a154640845d543",
+  "body_tokens": 71,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if cinfo.container:\n            try:\n                self.docker_client.remove_container(cinfo.container)\n            except docker.errors.APIError as e:\n                if e.response.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "c1e3512f79b36dd8402276a1e4abd29f6e20ad9b15316205d3de2d351fecdc4a",
+  "human_valid": true,
+  "line_no": 159901,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f58f8258fced4f87da76f57ddf35f203b65b82566eee5df04c82153f69e13c30",
+  "raw_output": "\n        if cinfo.container:\n            try:\n                self.docker_client.remove_container(cinfo.container)\n            except docker.errors.APIError as e:\n                if e.response.status_code == ",
+  "sampling_seed": 3016082141,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

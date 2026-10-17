@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def main():\n  \"\"\"Main function for DFTimewolf.\"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "14612a4f1ec0cbafa1dbfdb365155e4f7a570edccade64f7b14b340a71d7ffd9",
+  "human_valid": true,
+  "line_no": 193192,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "67a8f7f7d0c9af351f6fc66642208a95166ec0a6019cbcb7fcbfa53f386f8391",
+  "raw_output": "\n ",
+  "sampling_seed": 1658552812,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

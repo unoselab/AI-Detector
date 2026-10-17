@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_ngrams(self, corpus, minimum, maximum, catalogue=None):\n        \"\"\"Adds n-gram data from `corpus` to the data store.\n\n        :param corpus: corpus of works\n        :type corpus: `Corpus`\n        :param minimum: minimum n-gram size\n        :type minimum: `int`\n        :param maximum: maximum n-gram size\n        :type maximum: `int`\n        :param catalogue: optional catalogue to limit corpus to\n        :type catalogue: `Catalogue`\n\n        \"\"\"\n        atalogue`\n                \"\"\"\n                if catalogue is None:\n                    catalogue = corpus.catalogue\n                if not isinstance(catalogue, Catalogue):\n                    raise TypeError(\"catalogue must be a Catalogue\")\n                if not isinstance(minimum, int):\n                    raise TypeError(\"minimum must be an integer\")\n                if not isinstance(maximum, int):\n                    raise TypeError(\"maximum must be an integer\")\n                if minimum <\n",
+  "agc_valid": false,
+  "body_sha256": "6cce915d8149387e6e049f052daf31c07a53a18b8361f469f8f0a519cd6084f3",
+  "body_tokens": 216,
+  "bucket": "out_of_range",
+  "clean_output": "\n        atalogue`\n                \"\"\"\n                if catalogue is None:\n                    catalogue = corpus.catalogue\n                if not isinstance(catalogue, Catalogue):\n                    raise TypeError(\"catalogue must be a Catalogue\")\n                if not isinstance(minimum, int):\n                    raise TypeError(\"minimum must be an integer\")\n                if not isinstance(maximum, int):\n                    raise TypeError(\"maximum must be an integer\")\n                if minimum <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "612aee8e14ce29411fb4e26fff8161577f1e0ad42348199213e55bc8244e3644",
+  "human_valid": true,
+  "line_no": 230857,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d39e6b1580ac3d3efff1a7a6287b09f61b5f827efdb35fb080fa9721e06df436",
+  "raw_output": "atalogue`\n        \"\"\"\n        if catalogue is None:\n            catalogue = corpus.catalogue\n        if not isinstance(catalogue, Catalogue):\n            raise TypeError(\"catalogue must be a Catalogue\")\n        if not isinstance(minimum, int):\n            raise TypeError(\"minimum must be an integer\")\n        if not isinstance(maximum, int):\n            raise TypeError(\"maximum must be an integer\")\n        if minimum < ",
+  "sampling_seed": 2108060668,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bed(args):\n    \"\"\"\n    %prog bed maffiles > out.bed\n\n    Convert a folder of maf alignments to the bed features\n    then useful to check coverage, etc.\n    \"\"\"\n    import sys, os\n    from jcvi.formats.base import get_file_path\n    from jcvi.formats.bed import Bed\n    from jcvi.formats.maf import Maf\n    p = OptionParser(bed.__doc__)\n    opts, args = p.parse_args()\n\n    if len(args) !=\n",
+  "agc_valid": false,
+  "body_sha256": "7243ea2d5b7fee6afc4d21a0282cb5ec7a49b7eae5978f4746058c965d1dc740",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import sys, os\n    from jcvi.formats.base import get_file_path\n    from jcvi.formats.bed import Bed\n    from jcvi.formats.maf import Maf\n    p = OptionParser(bed.__doc__)\n    opts, args = p.parse_args()\n\n    if len(args) !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "2acb65f0560d3e66b84005b850f772221754e88c9ace1391483a0bd8853b305e",
+  "human_valid": true,
+  "line_no": 188059,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1a632db8787a5d587d460d30a76812ad54953c0c90c9e0c8667d92ca913610ad",
+  "raw_output": "\n    import sys, os\n    from jcvi.formats.base import get_file_path\n    from jcvi.formats.bed import Bed\n    from jcvi.formats.maf import Maf\n    p = OptionParser(bed.__doc__)\n    opts, args = p.parse_args()\n\n    if len(args) != ",
+  "sampling_seed": 2166424955,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

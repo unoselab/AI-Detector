@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _cast_empty_df_dtypes(schema_fields, df):\n    \"\"\"Cast any columns in an empty dataframe to correct type.\n\n    In an empty dataframe, pandas cannot choose a dtype unless one is\n    explicitly provided. The _bqschema_to_nullsafe_dtypes() function only\n    provides dtypes when the dtype safely handles null values. This means\n    that empty int64 and boolean columns are incorrectly classified as\n    ``object``.\n    \"\"\"\n    if len(df) ==\n",
+  "agc_valid": false,
+  "body_sha256": "6c1ccc3d5b4b8d20aa6984eb7c48ef90202af00ef8b2cc3be0cf72e012efcdbd",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(df) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "c367497db4de82fa1287d3653643c17fab110bf9149c211dd1cd0ccf9bb8d895",
+  "human_valid": true,
+  "line_no": 346904,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e72d5a28a5e20f4c2b20c317704b2469a3e5bb0bc92cfa05f34793f5c8454059",
+  "raw_output": "\n    if len(df) == ",
+  "sampling_seed": 3499606954,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

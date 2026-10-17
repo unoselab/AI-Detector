@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_folder(name, location='\\\\'):\n    r\"\"\"\n    Create a folder in which to create tasks.\n\n    :param str name: The name of the folder. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the folder. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :return: True if successful, False if unsuccessful\n    :rtype: bool\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt 'minion-id' task.create_folder <folder_name>\n    \"\"\"\n    :Example:\n\n     >>> from win_task_scheduler import create_folder\n     >>> create_folder('My Folder')\n     True\n     \"\"\"\n     try:\n         task_scheduler.create_folder(name, location)\n         return True\n     except Exception as e:\n         print(e)\n         return False\n",
+  "agc_valid": false,
+  "body_sha256": "0d4f4cc60c1cbe809c16ab277aa68b1c346e00940b822ff05372d8464f20d015",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n    :Example:\n\n     >>> from win_task_scheduler import create_folder\n     >>> create_folder('My Folder')\n     True\n     \"\"\"\n     try:\n         task_scheduler.create_folder(name, location)\n         return True\n     except Exception as e:\n         print(e)\n         return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "c521adf46887f665e1bd15df48d8727371cb0a3bfbf63136452e53d92a5a5d2b",
+  "human_valid": true,
+  "line_no": 119116,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6731a6cf750d902c8d94bfdb35ac0a5daa596072dd1c85c21ed28121660454e1",
+  "raw_output": "   :Example:\n\n    >>> from win_task_scheduler import create_folder\n    >>> create_folder('My Folder')\n    True\n    \"\"\"\n    try:\n        task_scheduler.create_folder(name, location)\n        return True\n    except Exception as e:\n        print(e)\n        return False\n\n\ndef delete_folder(name, location='\\\\'):\n    r\"\"\"\n    Delete a folder from the task scheduler.\n\n    :param str name: The name of the folder. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the folder. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :return: True if successful, False if unsuccessful\n    :rtype: bool\n\n    :Example:\n\n    >>> from win_task_scheduler import delete_folder\n    >>> delete_folder('My Folder')\n    True\n    \"\"\"\n    try:\n        task_scheduler.delete_folder(name, location)\n        return True\n    except Exception as e:\n        print(e)\n        return False\n\n\ndef get_folder(name, location='\\\\'):\n    r\"\"\"\n    Get a folder from the task scheduler.\n\n    :param str name: The name of the folder. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the folder. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :return: The folder object\n    :rtype: :class:`Folder <win_task_scheduler.Folder>`\n\n    :Example:\n\n    >>> from win_task_scheduler import get_folder\n    >>> folder = get_folder('My Folder')\n    \"\"\"\n    return task_scheduler.get_folder(name, location)\n\n\ndef get_folders(location='\\\\'):\n    r\"\"\"\n    Get all folders from the task scheduler.\n\n    :param str location: A string value representing the",
+  "sampling_seed": 2299788041,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

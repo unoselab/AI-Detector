@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def serialize_search(self, pid_fetcher, search_result,\n                         item_links_factory=None, **kwargs):\n        \"\"\"Serialize a search result.\n\n        :param pid_fetcher: Persistent identifier fetcher.\n        :param search_result: Elasticsearch search result.\n        :param item_links_factory: Factory function for the items in result.\n            (Default: ``None``)\n        :returns: The objects serialized.\n        \"\"\"\n        hits = search_result.hits\n        if not hits:\n            return []\n        hits_data = hits.hits\n        objects = []\n        for hit in hits_data:\n            object_pid = hit.meta.id\n            object_obj = pid_fetcher(object_pid)\n            if object_obj:\n                objects.append(object_obj)\n        return objects\n",
+  "agc_valid": true,
+  "body_sha256": "21e217b96c1dee1e2998e4fd3dea3f66b4651c9fb44d6b9479bdf48939f694be",
+  "body_tokens": 131,
+  "bucket": "type04_140",
+  "clean_output": "\n        hits = search_result.hits\n        if not hits:\n            return []\n        hits_data = hits.hits\n        objects = []\n        for hit in hits_data:\n            object_pid = hit.meta.id\n            object_obj = pid_fetcher(object_pid)\n            if object_obj:\n                objects.append(object_obj)\n        return objects\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "b9d2581013b9dd6a352c8abc982cb913d3fce229ea8e9a46b04a49a77d0b9b04",
+  "human_valid": true,
+  "line_no": 44779,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1489559d249401898b9045cd161ddd1a1fc91d78cf714987355fa619214f38a8",
+  "raw_output": "\n        hits = search_result.hits\n        if not hits:\n            return []\n        hits_data = hits.hits\n        objects = []\n        for hit in hits_data:\n            object_pid = hit.meta.id\n            object_obj = pid_fetcher(object_pid)\n            if object_obj:\n                objects.append(object_obj)\n        return objects\n\n\nclass RecordSerializer(BaseSerializer):\n    \"\"\"Record serializer.\"\"\"\n\n    def",
+  "sampling_seed": 1163097418,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

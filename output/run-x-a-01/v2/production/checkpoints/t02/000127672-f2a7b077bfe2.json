@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fromdict(self, dikt):\n        \"\"\"Load data from dictionary. Dictionary should contain int keys\n        representing addresses. Values should be the data to be stored in\n        those addresses in unsigned char form (i.e. not strings).\n        The dictionary may contain the key, ``start_addr``\n        to indicate the starting address of the data as described in README.\n\n        The contents of the dict will be merged with this object and will\n        overwrite any conflicts. This function is not necessary if the\n        object was initialized with source specified.\n        \"\"\"\n        if 'start_addr' in dikt:\n            self.start_addr = dikt['start_addr']\n        for addr, data in dikt.items():\n            if addr not in self.data:\n                self.data[addr] = []\n            self.data[addr].extend(data)\n",
+  "agc_valid": true,
+  "body_sha256": "250acc3b30191558e1f15e45b02006f6e51a8252be9591be849f315fc0b3c75c",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if 'start_addr' in dikt:\n            self.start_addr = dikt['start_addr']\n        for addr, data in dikt.items():\n            if addr not in self.data:\n                self.data[addr] = []\n            self.data[addr].extend(data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "b37316477c9ede2aed343d6290f2c0eb1821232bb46bb7eaaa70475cdf6e722f",
+  "human_valid": true,
+  "line_no": 127672,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f2a7b077bfe253aef9f3732027f04f2cd8ce948b78831ac76bad04abd8c44d51",
+  "raw_output": "\n        if 'start_addr' in dikt:\n            self.start_addr = dikt['start_addr']\n        for addr, data in dikt.items():\n            if addr not in self.data:\n                self.data[addr] = []\n            self.data[addr].extend(data)\n\n    def",
+  "sampling_seed": 3595556134,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

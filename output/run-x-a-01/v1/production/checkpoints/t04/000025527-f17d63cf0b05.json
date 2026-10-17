@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_string(self, prompt, default_str=None) -> str:\n        \"\"\"Return a string value that the user enters. Raises exception for cancel.\"\"\"\n        prompt = self._format_prompt(prompt)\n        if default_str is not None:\n            prompt += f\" [{default_str}]: \"\n        else:\n            prompt += \": \"\n        while True:\n            s = input(prompt)\n            if s == \"\":\n                if default_str is not None:\n                    return default_str\n                else:\n                    raise ValueError(\"No input\")\n            if s.lower() == \"cancel\":\n                raise UserCancelledError()\n            return s\n",
+  "agc_valid": true,
+  "body_sha256": "48c7b2ff80464e0e2e508c5fa7d93eed723e6da348fcf6c71ab3f74ffafb724b",
+  "body_tokens": 224,
+  "bucket": "out_of_range",
+  "clean_output": "\n        prompt = self._format_prompt(prompt)\n        if default_str is not None:\n            prompt += f\" [{default_str}]: \"\n        else:\n            prompt += \": \"\n        while True:\n            s = input(prompt)\n            if s == \"\":\n                if default_str is not None:\n                    return default_str\n                else:\n                    raise ValueError(\"No input\")\n            if s.lower() == \"cancel\":\n                raise UserCancelledError()\n            return s\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "4933cd436fd355036af789d94432114966bf58c71f4effbce0df7ed0e9bbb0af",
+  "human_valid": true,
+  "line_no": 25527,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f17d63cf0b051430dffcdc110f8bd3026e2c6094ad1562817a3fa092eccbbc75",
+  "raw_output": "\n        prompt = self._format_prompt(prompt)\n        if default_str is not None:\n            prompt += f\" [{default_str}]: \"\n        else:\n            prompt += \": \"\n        while True:\n            s = input(prompt)\n            if s == \"\":\n                if default_str is not None:\n                    return default_str\n                else:\n                    raise ValueError(\"No input\")\n            if s.lower() == \"cancel\":\n                raise UserCancelledError()\n            return s\n\n    def",
+  "sampling_seed": 3322525579,
+  "tag": "t04",
+  "temperature": 0.4
+}

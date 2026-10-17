@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def normalize_list(self, text, cache=None):\n        \"\"\"\n        Get a canonical list representation of text, with words\n        separated and reduced to their base forms.\n\n        TODO: use the cache.\n        \"\"\"\n        if cache is None:\n            cache = {}\n        if text in cache:\n            return cache[text]\n        text = self.normalize(text)\n        if self.is_list(text):\n            return text\n        # Remove commas in the middle of words.\n        text = re.sub(r\"(?<=[a-zA-Z])(,)(?=[a-zA-Z])\", \"\", text)\n        # Remove commas before and after.\n        text = re.sub(r\"^,\", \"\", text)\n        text = re.sub(r\",$\", \"\", text)\n        # Split on commas.\n        text = re.split(r\",\", text)\n        # Remove whitespace.\n        text = [t.strip() for t in text]\n        # Remove empty strings.\n        text = [t for t in text if t]\n        # Lowercase.\n        text = [t.lower() for t in text]\n        # Remove stopwords.\n        text = [t for t in text if t not in self.stopwords]\n        # Reduce to base form.\n        text = [self.normalize(t) for t in text]\n        # Remove duplicates.\n        text = list(set(text))\n        # Sort.\n        text.sort()\n        cache[text] = text\n        return text\n",
+  "agc_valid": true,
+  "body_sha256": "baba5a4fdfd55fa4cd0c0b8f5a0232811bfb8fb2a2edfc67042a14a77d94b0af",
+  "body_tokens": 353,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if cache is None:\n            cache = {}\n        if text in cache:\n            return cache[text]\n        text = self.normalize(text)\n        if self.is_list(text):\n            return text\n        # Remove commas in the middle of words.\n        text = re.sub(r\"(?<=[a-zA-Z])(,)(?=[a-zA-Z])\", \"\", text)\n        # Remove commas before and after.\n        text = re.sub(r\"^,\", \"\", text)\n        text = re.sub(r\",$\", \"\", text)\n        # Split on commas.\n        text = re.split(r\",\", text)\n        # Remove whitespace.\n        text = [t.strip() for t in text]\n        # Remove empty strings.\n        text = [t for t in text if t]\n        # Lowercase.\n        text = [t.lower() for t in text]\n        # Remove stopwords.\n        text = [t for t in text if t not in self.stopwords]\n        # Reduce to base form.\n        text = [self.normalize(t) for t in text]\n        # Remove duplicates.\n        text = list(set(text))\n        # Sort.\n        text.sort()\n        cache[text] = text\n        return text\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "a0ad538112bb4dff84d2034faf62d6ede198375195bf9f1a72ecd6ea710f20dc",
+  "human_valid": true,
+  "line_no": 12900,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bdf13203168ae9431008c9729ef266dcd3b614b3349f4dcadce8fe984ac98a3a",
+  "raw_output": "\n        if cache is None:\n            cache = {}\n        if text in cache:\n            return cache[text]\n        text = self.normalize(text)\n        if self.is_list(text):\n            return text\n        # Remove commas in the middle of words.\n        text = re.sub(r\"(?<=[a-zA-Z])(,)(?=[a-zA-Z])\", \"\", text)\n        # Remove commas before and after.\n        text = re.sub(r\"^,\", \"\", text)\n        text = re.sub(r\",$\", \"\", text)\n        # Split on commas.\n        text = re.split(r\",\", text)\n        # Remove whitespace.\n        text = [t.strip() for t in text]\n        # Remove empty strings.\n        text = [t for t in text if t]\n        # Lowercase.\n        text = [t.lower() for t in text]\n        # Remove stopwords.\n        text = [t for t in text if t not in self.stopwords]\n        # Reduce to base form.\n        text = [self.normalize(t) for t in text]\n        # Remove duplicates.\n        text = list(set(text))\n        # Sort.\n        text.sort()\n        cache[text] = text\n        return text\n\n    def",
+  "sampling_seed": 1213839599,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

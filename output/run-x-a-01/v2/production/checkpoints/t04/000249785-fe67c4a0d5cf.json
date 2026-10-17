@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def tag_secondary_structure(self, force=False):\n        \"\"\"Tags each `Residue` of the `Polypeptide` with secondary structure.\n\n        Notes\n        -----\n        DSSP must be available to call. Check by running\n        `isambard.external_programs.dssp.test_dssp`. If DSSP is not\n        available, please follow instruction here to add it:\n        https://github.com/woolfson-group/isambard#external-programs\n\n        For more information on DSSP see [1].\n\n        References\n        ----------\n        .. [1] Kabsch W, Sander C (1983) \"Dictionary of protein\n           secondary structure: pattern recognition of hydrogen-bonded\n           and geometrical features\", Biopolymers, 22, 2577-637.\n\n        Parameters\n        ----------\n        force : bool, optional\n            If `True` the tag will be run even if `Residues` are\n            already tagged.\n        \"\"\"\n        secondary structure see:\n                https://en.wikipedia.org/wiki/Secondary_structure\n\n                Parameters\n                ----------\n                force : bool, optional\n                    If True, the secondary structure will be tagged even if it has\n                    already been tagged.\n\n                \"\"\"\n                if self.secondary_structure is None or force:\n                    self.secondary_structure = self._dssp_parser.parse_dssp(self.pdb_path)\n",
+  "agc_valid": false,
+  "body_sha256": "5c5d9becc28f377678efe08fbc3c30893f0a18ffd4f5fe8aa8c8ac6eb2eeea0a",
+  "body_tokens": 190,
+  "bucket": "type09_190",
+  "clean_output": "\n        secondary structure see:\n                https://en.wikipedia.org/wiki/Secondary_structure\n\n                Parameters\n                ----------\n                force : bool, optional\n                    If True, the secondary structure will be tagged even if it has\n                    already been tagged.\n\n                \"\"\"\n                if self.secondary_structure is None or force:\n                    self.secondary_structure = self._dssp_parser.parse_dssp(self.pdb_path)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 150,
+  "human_sha256": "cbae8f8049bb8757431def5877a550f6517cc0460928a9992b4ccd13de74e148",
+  "human_valid": true,
+  "line_no": 249785,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fe67c4a0d5cf529a89d5765ebcd970a2971358ea21668d3b9a06cbc0fb86ba7c",
+  "raw_output": "secondary structure see:\n        https://en.wikipedia.org/wiki/Secondary_structure\n\n        Parameters\n        ----------\n        force : bool, optional\n            If True, the secondary structure will be tagged even if it has\n            already been tagged.\n\n        \"\"\"\n        if self.secondary_structure is None or force:\n            self.secondary_structure = self._dssp_parser.parse_dssp(self.pdb_path)\n\n    def",
+  "sampling_seed": 2719928814,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

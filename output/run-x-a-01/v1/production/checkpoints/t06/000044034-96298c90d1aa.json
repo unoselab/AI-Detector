@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update(self, index, iterable, commit=True):\n        \"\"\"\n        Updates the index with current data.\n        :param index: The search_indexes.Index object\n        :param iterable: The queryset\n        :param commit: commit to the backend.\n        \"\"\"\n        for obj in iterable:\n            self.update_object(obj, commit=False)\n        if commit:\n            index.refresh()\n",
+  "agc_valid": true,
+  "body_sha256": "74629e1e0250de270c915cfdfe2ba32f7ef7d44d97591a173e6b8212d6cdc730",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for obj in iterable:\n            self.update_object(obj, commit=False)\n        if commit:\n            index.refresh()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5943e72e3b968b99cf07fc366bef3274f7e532f1f87b0e708e2529661cf9bdd0",
+  "human_valid": true,
+  "line_no": 44034,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "96298c90d1aa8b3efc0225088d8bbbca0f6221b253ca328ac18bf679e74f0446",
+  "raw_output": "\n        for obj in iterable:\n            self.update_object(obj, commit=False)\n        if commit:\n            index.refresh()\n\n    def",
+  "sampling_seed": 2772244898,
+  "tag": "t06",
+  "temperature": 0.6
+}

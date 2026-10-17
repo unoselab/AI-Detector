@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _add_complex_section(self, item):\n        \"\"\"Add a section that has a filter and set of constraints\n\n        :raise: ValueError if filter or constraints is missing\n        \"\"\"\n        if \"filter\" not in item:\n            raise ValueError(\n                \"Complex section %s must contain a filter\" % item[\"name\"]\n            )\n        if \"constraints\" not in item:\n            raise ValueError(\n                \"Complex section %s must contain constraints\" % item[\"name\"]\n            )\n        filter_item = item[\"filter\"]\n        self.add_filter(filter_item[\"name\"], filter_item[\"type\"])\n        for constraint in item[\"constraints\"]:\n            self.add_constraint(constraint)\n",
+  "agc_valid": true,
+  "body_sha256": "c3b16cf0dd19b624f6fa7a56894323210de2d61cd37d40c7d32a9aee9d9278e8",
+  "body_tokens": 164,
+  "bucket": "type07_170",
+  "clean_output": "\n        if \"filter\" not in item:\n            raise ValueError(\n                \"Complex section %s must contain a filter\" % item[\"name\"]\n            )\n        if \"constraints\" not in item:\n            raise ValueError(\n                \"Complex section %s must contain constraints\" % item[\"name\"]\n            )\n        filter_item = item[\"filter\"]\n        self.add_filter(filter_item[\"name\"], filter_item[\"type\"])\n        for constraint in item[\"constraints\"]:\n            self.add_constraint(constraint)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "e77f9d570205f7e62bc75bd0d79dbe0b799828714e4d1b64b52292752fac7512",
+  "human_valid": true,
+  "line_no": 406997,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8d9c4ad9a5c9de1966698817743bc7bfbe6a596a440356133de9292ed0275cb2",
+  "raw_output": "\n        if \"filter\" not in item:\n            raise ValueError(\n                \"Complex section %s must contain a filter\" % item[\"name\"]\n            )\n        if \"constraints\" not in item:\n            raise ValueError(\n                \"Complex section %s must contain constraints\" % item[\"name\"]\n            )\n        filter_item = item[\"filter\"]\n        self.add_filter(filter_item[\"name\"], filter_item[\"type\"])\n        for constraint in item[\"constraints\"]:\n            self.add_constraint(constraint)\n\n    def",
+  "sampling_seed": 2140392090,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

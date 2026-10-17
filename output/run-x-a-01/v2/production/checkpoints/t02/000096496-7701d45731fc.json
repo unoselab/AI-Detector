@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def on_intent(intent_request, session):\n    \"\"\" Called when the user specifies an intent for this skill \"\"\"\n    intent = intent_request['intent']\n    intent_name = intent_request['intent']['name']\n\n    # Dispatch to your skill's intent handlers\n    if intent_name == \"GetNewFactIntent\":\n        return get_new_fact(intent, session)\n    elif intent_name == \"GetFactIntent\":\n        return get_fact(intent, session)\n    elif intent_name == \"AMAZON.HelpIntent\":\n        return get_welcome_response()\n    elif intent_name == \"AMAZON.CancelIntent\" or intent_name == \"AMAZON.StopIntent\":\n        return handle_session_end_request()\n    else:\n        raise ValueError(\"Invalid intent\")\n",
+  "agc_valid": true,
+  "body_sha256": "dc1579b2cbbf9c8fe8db7d690a6de4ac599b8ae2ed514a2e7c8e97e9a74fed7e",
+  "body_tokens": 107,
+  "bucket": "type01_110",
+  "clean_output": "\n    intent = intent_request['intent']\n    intent_name = intent_request['intent']['name']\n\n    # Dispatch to your skill's intent handlers\n    if intent_name == \"GetNewFactIntent\":\n        return get_new_fact(intent, session)\n    elif intent_name == \"GetFactIntent\":\n        return get_fact(intent, session)\n    elif intent_name == \"AMAZON.HelpIntent\":\n        return get_welcome_response()\n    elif intent_name == \"AMAZON.CancelIntent\" or intent_name == \"AMAZON.StopIntent\":\n        return handle_session_end_request()\n    else:\n        raise ValueError(\"Invalid intent\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "31a45d266d5db3b0fddbc2bd8c1bbe57c29275cb9a3783b611f0fb8b83b41f1f",
+  "human_valid": true,
+  "line_no": 96496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7701d45731fcb4a735eda3b7f020985395e934a1010e9655c78d4bb12ae27a87",
+  "raw_output": "\n\n    intent = intent_request['intent']\n    intent_name = intent_request['intent']['name']\n\n    # Dispatch to your skill's intent handlers\n    if intent_name == \"GetNewFactIntent\":\n        return get_new_fact(intent, session)\n    elif intent_name == \"GetFactIntent\":\n        return get_fact(intent, session)\n    elif intent_name == \"AMAZON.HelpIntent\":\n        return get_welcome_response()\n    elif intent_name == \"AMAZON.CancelIntent\" or intent_name == \"AMAZON.StopIntent\":\n        return handle_session_end_request()\n    else:\n        raise ValueError(\"Invalid intent\")\n\n\ndef on_session_ended(session_ended_request, session):\n    \"\"\" Called when the user ends the session.\n\n    Is not called when the skill returns should_end_session=true\n    \"\"\"\n    return handle_session_end_request()\n\n\n# --------------- Functions that control the skill's behavior ------------------\n\ndef get_welcome_response():\n    \"\"\" If we wanted to initialize the session to have some attributes we could\n    add those here\n    \"\"\"\n\n    session_attributes = {}\n    card_title = \"Welcome\"\n    speech_output = \"Welcome to the Alexa Skills Kit sample, \" \\\n                    \"try saying hello\"\n    # If the user either does not reply to the welcome message or says something\n    # that is not understood, they will be prompted again with this text.\n    reprompt_text = \"For instructions on what you can say, please say help me\"\n    should_end_session = False\n    return build_response(session_attributes, build_speechlet_response(\n        card_title, speech_output, reprompt_text, should_end_session))\n\n\ndef handle_session_end_request():\n    card_title = \"Session Ended\"\n    speech_output = \"Thank you for trying the Alexa Skills Kit sample. \" \\\n                    \"Have a nice day! \"\n    # Setting this to true ends the session and exits the skill.\n    should_end_session =",
+  "sampling_seed": 2065255282,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

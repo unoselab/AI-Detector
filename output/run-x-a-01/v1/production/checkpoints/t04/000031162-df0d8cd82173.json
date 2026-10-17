@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_readable(self):\n        \"\"\"\n        Gets human-readable representation of the url (as unicode string,\n        IRI according RFC3987)\n        \"\"\"\n            return self.iri.to_unicode()\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "6948c9b2fed3a5aaaa61c80ec5cc69a95f7e526f993223e37d684e5f956eacf3",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.iri.to_unicode()\n\n        @property\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c4c3a41000fdf83c5978439057492d9fa1cb317b18a063dab5df4544f506d1c1",
+  "human_valid": true,
+  "line_no": 31162,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "df0d8cd821738cdc9713933e71fc2c4d7a5c2fa3488bdca044ca67a219ca6cc1",
+  "raw_output": "\n        return self.iri.to_unicode()\n\n    @property\n    def",
+  "sampling_seed": 474894977,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def default_base_dir():\n    \"\"\"Determine the default base directory path\n\n    If the OS_REFRESH_CONFIG_BASE_DIR environment variable is set,\n    use its value.\n    Otherwise, prefer the new default path, but still allow the old one for\n    backwards compatibility.\n    \"\"\"\n    base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not base_dir:\n        base_dir = os.path.join(os.getcwd(), '.openstack')\n    return base_dir\n",
+  "agc_valid": true,
+  "body_sha256": "ab094a3279dd9cfa94a2e42c50792f73b663a0c9725605e4f5dd86619b1d90d4",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not base_dir:\n        base_dir = os.path.join(os.getcwd(), '.openstack')\n    return base_dir\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "1a187601c4c288a93108cd3722e729188106c539bf6447c0d06869634c93e953",
+  "human_valid": true,
+  "line_no": 211796,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "93d8677fa8135274019d32506afa9b4ff24b6352cd62007f21f3bebcca3a3de7",
+  "raw_output": "\n    base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not base_dir:\n        base_dir = os.path.join(os.getcwd(), '.openstack')\n    return base_dir\n\n\ndef get_config_path():\n    \"\"\"Return the path to the config file\n\n    The config file path is determined by the following priority:\n\n    - If the OS_REFRESH_CONFIG_PATH environment variable is set, use its value.\n    - If the OS_REFRESH_CONFIG_BASE_DIR environment variable is set, use\n      $OS_REFRESH_CONFIG_BASE_DIR/config.yaml.\n    - Otherwise, use $HOME/.openstack/config.yaml.\n    \"\"\"\n    config_path = os.environ.get('OS_REFRESH_CONFIG_PATH')\n    if not config_path:\n        config_path = os.path.join(default_base_dir(), 'config.yaml')\n    return config_path\n\n\ndef get_config_dir():\n    \"\"\"Return the path to the config directory\n\n    The config directory path is determined by the following priority:\n\n    - If the OS_REFRESH_CONFIG_BASE_DIR environment variable is set, use its\n      value.\n    - Otherwise, use $HOME/.openstack.\n    \"\"\"\n    config_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not config_dir:\n        config_dir = default_base_dir()\n    return config_dir\n\n\ndef get_config_file():\n    \"\"\"Return the path to the config file\n\n    The config file path is determined by the following priority:\n\n    - If the OS_REFRESH_CONFIG_PATH environment variable is set, use its value.\n    - If the OS_REFRESH_CONFIG_BASE_DIR environment variable is set, use\n      $OS_REFRESH_CONFIG_BASE_DIR/config.yaml.\n    - Otherwise, use $HOME/.openstack/config.yaml.\n    \"\"\"\n    config_path = os.environ.get('OS_REFRESH_CONFIG_PATH')\n    if not config_path:",
+  "sampling_seed": 3914135992,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

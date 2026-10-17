@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_external_reference(self,ext_ref):\n        \"\"\"\n        Adds an external reference to the role\n        @param ext_ref: the external reference object\n        @type ext_ref: L{CexternalReference}\n        \"\"\"\n        self.external_references.append(ext_ref)\n",
+  "agc_valid": true,
+  "body_sha256": "f820492ed0057456ccea508e9ef434d1505e4d05d1584255ba2766e6affd98da",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.external_references.append(ext_ref)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "a2d79ee627a0a5b6261b3b3b5dbe1fef7dcebbe134825f5b525d83e8f10629b4",
+  "human_valid": true,
+  "line_no": 72215,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "02b286fd455fdbb913ae876198b16b0b75fc44ade103f7099de2a337e38f3aef",
+  "raw_output": "\n        self.external_references.append(ext_ref)\n\n    def",
+  "sampling_seed": 3819760494,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

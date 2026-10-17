@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def move(name, entry_name, config=None):\n    \"\"\"\n    Move an entry to the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    entry = config.get_entry(entry_name)\n    if entry is None:\n        raise ValueError(\"Entry not found: %s\" % entry_name)\n\n    if name in config.entries:\n        raise ValueError(\"Entry already exists: %s\" % name)\n\n    config.entries[name] = entry\n    config.save()\n",
+  "agc_valid": true,
+  "body_sha256": "b72ef666a66ef84dc1421475f83dcaf343e89d8f8459e18645731153ca9d6814",
+  "body_tokens": 76,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if config is None:\n        config = Config()\n\n    entry = config.get_entry(entry_name)\n    if entry is None:\n        raise ValueError(\"Entry not found: %s\" % entry_name)\n\n    if name in config.entries:\n        raise ValueError(\"Entry already exists: %s\" % name)\n\n    config.entries[name] = entry\n    config.save()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "65f87d7199b1648b419383bfb179d19066d20b93611efa9db825dffa28f974b6",
+  "human_valid": true,
+  "line_no": 285868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "95f422c6cb659a8b0a49c7a9f52451b23e633f43bd3d1a21bd0055152637014a",
+  "raw_output": "\n    if config is None:\n        config = Config()\n\n    entry = config.get_entry(entry_name)\n    if entry is None:\n        raise ValueError(\"Entry not found: %s\" % entry_name)\n\n    if name in config.entries:\n        raise ValueError(\"Entry already exists: %s\" % name)\n\n    config.entries[name] = entry\n    config.save()\n\n\ndef remove(name, config=None):\n    \"\"\"\n    Remove an entry from the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    if name not in config.entries:\n        raise ValueError(\"Entry not found: %s\" % name)\n\n    del config.entries[name]\n    config.save()\n\n\ndef list_entries(config=None):\n    \"\"\"\n    List all entries in the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    for name, entry in config.entries.items():\n        print(name)\n\n\ndef list_hosts(config=None):\n    \"\"\"\n    List all hosts in the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    for name, entry in config.entries.items():\n        print(entry.host)\n\n\ndef list_hosts_with_aliases(config=None):\n    \"\"\"\n    List all hosts in the sshconfig, including aliases.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    for name, entry in config.entries.items():\n        print(\"%s (%s)\" % (entry.host, name))\n\n\ndef list_aliases(config=None):\n    \"\"\"\n    List all aliases in the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    for name, entry in config.entries.items():\n        if entry.host is None:\n            print(name)\n\n\ndef list_aliases_with_hosts(config=None):\n    \"\"\"\n    List all aliases in the sshconfig, including hosts.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    for name",
+  "sampling_seed": 8522642,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def should_obfuscate_filename(self):\n        \"\"\"Returns True if hide_file_names is true or the entity file path\n        matches one in the list of obfuscated file paths.\"\"\"\n        if self.hide_file_names:\n            return True\n\n        return self.file_path in self.obfuscated_file_paths\n",
+  "agc_valid": true,
+  "body_sha256": "f3ac79a20ad1fc1cded0a7024fd104e8a7677c5bd9aef224b4401ce8f1526875",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.hide_file_names:\n            return True\n\n        return self.file_path in self.obfuscated_file_paths\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "79062f657d5e62f391cdf8b612a0bb4aed1f2ca452401dd385e2e7331a8c4f29",
+  "human_valid": true,
+  "line_no": 283645,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aadea8282a0ee6d03d5542da21847116670c1564e6a9c80b21f6a99cc019c693",
+  "raw_output": "\n        if self.hide_file_names:\n            return True\n\n        return self.file_path in self.obfuscated_file_paths\n\n    def",
+  "sampling_seed": 994177459,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def Scan(self, fd,\n           matcher):\n    \"\"\"Scans given file searching for occurrences of given pattern.\n\n    Args:\n      fd: A file descriptor of the file that needs to be searched.\n      matcher: A matcher object specifying a pattern to search for.\n\n    Yields:\n      `BufferReference` objects pointing to file parts with matching content.\n    \"\"\"\n    # TODO: Implement this method.\n    raise NotImplementedError()\n",
+  "agc_valid": true,
+  "body_sha256": "77717eb2a089d32a1e79006296ea1f93249866250cb48ec3a70bf588375c4ca7",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: Implement this method.\n    raise NotImplementedError()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 150,
+  "human_sha256": "b56f90f87cc1a43347df35c9303d1acc35774aac41f11b094b3362ca6e4dd275",
+  "human_valid": true,
+  "line_no": 369843,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d1c41caccd1f15757449f23ef4d5c76f8d053073689fa00443f4bb9484bc01a5",
+  "raw_output": "\n    # TODO: Implement this method.\n    raise NotImplementedError()\n\n\nclass Matcher(object):\n ",
+  "sampling_seed": 1415330199,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

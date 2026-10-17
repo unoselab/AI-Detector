@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def build_graph(layout_str, slanted):\n    \"\"\"\n    builds an adjacency graph as a dictionary: {character: [adjacent_characters]}.\n    adjacent characters occur in a clockwise order.\n    for example:\n    * on qwerty layout, 'g' maps to ['fF', 'tT', 'yY', 'hH', 'bB', 'vV']\n    * on keypad layout, '7' maps to [None, None, None, '=', '8', '5', '4', None]\n    \"\"\"\n    \"\"\"\n     layout = layout_str.split('\\n')\n     graph = {}\n     for row in layout:\n         for col in row:\n             if col == ' ':\n                 continue\n             if col not in graph:\n                 graph[col] = []\n             if slanted:\n                 graph[col].append(row[col.find(col) -\n",
+  "agc_valid": false,
+  "body_sha256": "578b7b77c1289196973ae3474faf0d263e1046773c8bd9ff7939eb6778a7328f",
+  "body_tokens": 141,
+  "bucket": "type05_150",
+  "clean_output": "\n    \"\"\"\n     layout = layout_str.split('\\n')\n     graph = {}\n     for row in layout:\n         for col in row:\n             if col == ' ':\n                 continue\n             if col not in graph:\n                 graph[col] = []\n             if slanted:\n                 graph[col].append(row[col.find(col) -\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2a368ece751b66fd373c6715e54eba37809fa23fccd6f0e788e18337df91f1b3",
+  "human_valid": true,
+  "line_no": 43021,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "66ab017e0f8aa038883e47685253e885ce5822f5e73a87fad8b0c37b36a99faa",
+  "raw_output": "   \"\"\"\n    layout = layout_str.split('\\n')\n    graph = {}\n    for row in layout:\n        for col in row:\n            if col == ' ':\n                continue\n            if col not in graph:\n                graph[col] = []\n            if slanted:\n                graph[col].append(row[col.find(col) - ",
+  "sampling_seed": 3032945426,
+  "tag": "t02",
+  "temperature": 0.2
+}

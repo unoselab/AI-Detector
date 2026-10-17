@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _download_biogrid_data(url):\n    \"\"\"Downloads zipped, tab-separated Biogrid data in .tab2 format.\n\n    Parameters:\n    -----------\n    url : str\n        URL of the BioGrid zip file.\n\n    Returns\n    -------\n    csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n    \"\"\"\n    print('Downloading Biogrid data from %s...' % url)\n    with closing(urllib.request.urlopen(url)) as zf:\n        zf_content = zf.read()\n    with closing(io.BytesIO(zf_content)) as f:\n        with closing(zipfile.ZipFile(f)) as zf:\n            with closing(zf.open(zf.namelist()[0])) as f:\n                return csv.reader(f, delimiter='\\t')\n",
+  "agc_valid": true,
+  "body_sha256": "de033e091d82300292f621fbad49f0b8b3b51d2c127e7a935187a2e0644ae279",
+  "body_tokens": 79,
+  "bucket": "out_of_range",
+  "clean_output": "\n    print('Downloading Biogrid data from %s...' % url)\n    with closing(urllib.request.urlopen(url)) as zf:\n        zf_content = zf.read()\n    with closing(io.BytesIO(zf_content)) as f:\n        with closing(zipfile.ZipFile(f)) as zf:\n            with closing(zf.open(zf.namelist()[0])) as f:\n                return csv.reader(f, delimiter='\\t')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "f53f3f7a66679ae0ce8a48ee1c8db3294ed9b1be65688ef5d88a8ecb4dc54b1f",
+  "human_valid": true,
+  "line_no": 121199,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c6379d315928dac200910acc265f2c01d21a43bd8dd1d04b39d05d97de31c431",
+  "raw_output": "\n    print('Downloading Biogrid data from %s...' % url)\n    with closing(urllib.request.urlopen(url)) as zf:\n        zf_content = zf.read()\n    with closing(io.BytesIO(zf_content)) as f:\n        with closing(zipfile.ZipFile(f)) as zf:\n            with closing(zf.open(zf.namelist()[0])) as f:\n                return csv.reader(f, delimiter='\\t')\n\n\ndef _download_biogrid_data_from_url(url):\n    \"\"\"Downloads zipped, tab-separated Biogrid data in .tab2 format.\n\n    Parameters:\n    -----------\n    url : str\n        URL of the BioGrid zip file.\n\n    Returns\n    -------\n    csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n    \"\"\"\n    print('Downloading Biogrid data from %s...' % url)\n    with closing(urllib.request.urlopen(url)) as zf:\n        zf_content = zf.read()\n    with closing(io.BytesIO(zf_content)) as f:\n        with closing(zipfile.ZipFile(f)) as zf:\n            with closing(zf.open(zf.namelist()[0])) as f:\n                return csv.reader(f, delimiter='\\t')\n\n\ndef _parse_biogrid_data(rows):\n    \"\"\"Parses the rows of a zipped, tab-separated Biogrid data file.\n\n    Parameters:\n    -----------\n    rows : iterable\n        An iterable of rows from a zipped, tab-separated Biogrid data file.\n\n    Returns\n    -------\n    dict\n        A dictionary mapping the gene identifiers to the corresponding\n        BioGrid interaction identifiers.\n    \"\"\"\n    biogrid_dict = {}\n    for row in rows:\n        if row[0] == 'INTERACTION':\n            continue\n        biogrid_dict[row[0]] = row[1]\n    return biog",
+  "sampling_seed": 3031125141,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

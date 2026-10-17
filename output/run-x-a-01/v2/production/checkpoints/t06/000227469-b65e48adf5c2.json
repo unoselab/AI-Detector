@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_gtf_db(gtf, in_memory=False):\n    \"\"\"\n    create a gffutils DB\n    \"\"\"\n    if in_memory:\n        db = gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        db = gffutils.create_db(gtf, '.%s.db' % os.path.basename(gtf), merge_strategy='create_unique')\n    return db\n",
+  "agc_valid": true,
+  "body_sha256": "9ce336ef96e24dfa346ca255bcb9d3f207bc801360351d02202981e357b29b3f",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if in_memory:\n        db = gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        db = gffutils.create_db(gtf, '.%s.db' % os.path.basename(gtf), merge_strategy='create_unique')\n    return db\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "0cd710d73f554c3a5a3319da599d1552e054c18b995e00c5a3fe494727d592cb",
+  "human_valid": true,
+  "line_no": 227469,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b65e48adf5c2620f9738c9b352d73e2a366e994f4d6f09707ced15962226e0a8",
+  "raw_output": "\n    if in_memory:\n        db = gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        db = gffutils.create_db(gtf, '.%s.db' % os.path.basename(gtf), merge_strategy='create_unique')\n    return db\n\n\ndef get_gene_transcript_dict(gtf):\n    \"\"\"\n    get the gene and transcript dict\n    \"\"\"\n    db = get_gtf_db(gtf)\n    gene_transcript_dict = {}\n    for gene in db.features_of_type('gene'):\n        gene_id = gene.id\n        gene_transcript_dict[gene_id] = []\n        for transcript in db.children(gene, featuretype='transcript', order_by='start'):\n            gene_transcript_dict[gene_id].append(transcript.id)\n    return gene_transcript_dict\n\n\ndef get_transcript_exon_dict(gtf):\n    \"\"\"\n    get the transcript and exon dict\n    \"\"\"\n    db = get_gtf_db(gtf)\n    transcript_exon_dict = {}\n    for transcript in db.features_of_type('transcript'):\n        transcript_exon_dict[transcript.id] = []\n        for exon in db.children(transcript, featuretype='exon', order_by='start'):\n            transcript_exon_dict[transcript.id].append(exon.id)\n    return transcript_exon_dict\n\n\ndef get_gene_exon_dict(gtf):\n    \"\"\"\n    get the gene and exon dict\n    \"\"\"\n    db = get_gtf_db(gtf)\n    gene_exon_dict = {}\n    for gene in db.features_of_type('gene'):\n        gene_id = gene.id\n        gene_exon_dict[gene_id] = []\n        for exon in db.children(gene, featuretype='exon', order_by='start'):\n            gene_",
+  "sampling_seed": 385439970,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

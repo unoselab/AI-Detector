@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def onPlanParticipation(\n        self,\n        mid=None,\n        plan=None,\n        take_part=None,\n        author_id=None,\n        thread_id=None,\n        thread_type=None,\n        ts=None,\n        metadata=None,\n        msg=None,\n    ):\n        \"\"\"\n        Called when the client is listening, and somebody takes part in a plan or not\n\n        :param mid: The action ID\n        :param plan: Plan\n        :param take_part: Whether the person takes part in the plan or not\n        :param author_id: The ID of the person who will participate in the plan or not\n        :param thread_id: Thread ID that the action was sent to. See :ref:`intro_threads`\n        :param thread_type: Type of thread that the action was sent to. See :ref:`intro_threads`\n        :param ts: A timestamp of the action\n        :param metadata: Extra metadata about the action\n        :param msg: A full set of the data recieved\n        :type plan: models.Plan\n        :type take_part: bool\n        :type thread_type: models.ThreadType\n        \"\"\"\n        part in the plan or not\n                :param author_id: The ID of the person who took part or not\n                :param thread_id: The thread ID\n                :param thread_type: The thread type\n                :param ts: A timestamp\n                :param metadata: Metadata\n                :param msg: The raw body\n                :type mid: str\n                :type plan: str\n                :type take_part: bool\n                :type author_id: str\n                :type thread_id: str\n                :type thread_type: ThreadType\n                :type ts: int\n                :type metadata: Metadata\n                :type msg: str\n                \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "f461b88c7caaa7a4b3e88fdffc50accb5cc612ea3900b02e2f495d230c54d19c",
+  "body_tokens": 316,
+  "bucket": "out_of_range",
+  "clean_output": "\n        part in the plan or not\n                :param author_id: The ID of the person who took part or not\n                :param thread_id: The thread ID\n                :param thread_type: The thread type\n                :param ts: A timestamp\n                :param metadata: Metadata\n                :param msg: The raw body\n                :type mid: str\n                :type plan: str\n                :type take_part: bool\n                :type author_id: str\n                :type thread_id: str\n                :type thread_type: ThreadType\n                :type ts: int\n                :type metadata: Metadata\n                :type msg: str\n                \"\"\"\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "1b60fa87fff7ff96879ad791ff2c447fe148acdc4d0d12cbb142fafe3756203d",
+  "human_valid": true,
+  "line_no": 151580,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0ee8dc65b023781e5bfd2dc3e56a8d717541a128a49d3df93de1831e44e83a6d",
+  "raw_output": "part in the plan or not\n        :param author_id: The ID of the person who took part or not\n        :param thread_id: The thread ID\n        :param thread_type: The thread type\n        :param ts: A timestamp\n        :param metadata: Metadata\n        :param msg: The raw body\n        :type mid: str\n        :type plan: str\n        :type take_part: bool\n        :type author_id: str\n        :type thread_id: str\n        :type thread_type: ThreadType\n        :type ts: int\n        :type metadata: Metadata\n        :type msg: str\n        \"\"\"\n\n    def",
+  "sampling_seed": 2141978757,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

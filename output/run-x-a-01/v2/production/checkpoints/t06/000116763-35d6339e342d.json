@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list_sets(family='ipv4'):\n    \"\"\"\n    .. versionadded:: 2014.7.0\n\n    List all ipset sets.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' ipset.list_sets\n\n    \"\"\"\n    cmd = \"ipset -l\"\n    out = __salt__[\"cmd.run\"](cmd).split(\"\\n\")\n    ret = {}\n    for line in out:\n        if line.startswith(\"Name\"):\n            continue\n        if not line:\n            continue\n        if \"Name:\" not in line:\n            continue\n        if line.startswith(\"Name:\"):\n            setname = line.split(\":\")[1].strip()\n            ret[setname] = {}\n        else:\n            if \":\" in line:\n                key, value = line.split(\":\",\n",
+  "agc_valid": false,
+  "body_sha256": "26bd6c262b2dc905ed5c53aad4165315f422321b25ca7a8946ea867f2d006e05",
+  "body_tokens": 173,
+  "bucket": "type08_180",
+  "clean_output": "\n    cmd = \"ipset -l\"\n    out = __salt__[\"cmd.run\"](cmd).split(\"\\n\")\n    ret = {}\n    for line in out:\n        if line.startswith(\"Name\"):\n            continue\n        if not line:\n            continue\n        if \"Name:\" not in line:\n            continue\n        if line.startswith(\"Name:\"):\n            setname = line.split(\":\")[1].strip()\n            ret[setname] = {}\n        else:\n            if \":\" in line:\n                key, value = line.split(\":\",\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "5cdc1bfcfc1a2df5c073ec7924d43fd5404eeba6c83e211231c5f436968662ce",
+  "human_valid": true,
+  "line_no": 116763,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "35d6339e342d2117075c88a39cf7b7ea4c9b90b758cfcd8719e26088bc04c4bc",
+  "raw_output": "\n    cmd = \"ipset -l\"\n    out = __salt__[\"cmd.run\"](cmd).split(\"\\n\")\n    ret = {}\n    for line in out:\n        if line.startswith(\"Name\"):\n            continue\n        if not line:\n            continue\n        if \"Name:\" not in line:\n            continue\n        if line.startswith(\"Name:\"):\n            setname = line.split(\":\")[1].strip()\n            ret[setname] = {}\n        else:\n            if \":\" in line:\n                key, value = line.split(\":\", ",
+  "sampling_seed": 2831642001,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

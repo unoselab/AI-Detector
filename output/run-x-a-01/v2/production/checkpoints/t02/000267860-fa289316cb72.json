@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _get_node(self, time_qualifier, timeperiod):\n        \"\"\"\n        Method retrieves a tree node identified by time_qualifier and timeperiod\n        In case intermittent or target nodes does not exist - method will request their creation\n        :param time_qualifier: identifies the tree level\n        :param timeperiod: identifies the target node timeperiod\n        :return: requested node; type <AbstractNode>\n        \"\"\"\n        if time_qualifier == 'intermittent':\n            if not self.intermittent_node:\n                self.intermittent_node = self._create_node(time_qualifier, timeperiod)\n            return self.intermittent_node\n        else:\n            if not self.target_node:\n                self.target_node = self._create_node(time_qualifier, timeperiod)\n            return self.target_node\n",
+  "agc_valid": true,
+  "body_sha256": "0d11c72d497ba0ca60c5a459a2878c0a2b049c741e70d5cbcf7381a92cd38163",
+  "body_tokens": 112,
+  "bucket": "type02_120",
+  "clean_output": "\n        if time_qualifier == 'intermittent':\n            if not self.intermittent_node:\n                self.intermittent_node = self._create_node(time_qualifier, timeperiod)\n            return self.intermittent_node\n        else:\n            if not self.target_node:\n                self.target_node = self._create_node(time_qualifier, timeperiod)\n            return self.target_node\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "0ad56b04530e1fc6a976d6d5f7e1891ae3bed6d9664556fe352b851e6c89de4e",
+  "human_valid": true,
+  "line_no": 267860,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fa289316cb727d4fa5c5f0b7f34f063ea25a206801fddc80700b4459cbf3709f",
+  "raw_output": "\n        if time_qualifier == 'intermittent':\n            if not self.intermittent_node:\n                self.intermittent_node = self._create_node(time_qualifier, timeperiod)\n            return self.intermittent_node\n        else:\n            if not self.target_node:\n                self.target_node = self._create_node(time_qualifier, timeperiod)\n            return self.target_node\n\n    def",
+  "sampling_seed": 174952335,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def group_consecutives(data, stepsize=1):\n    \"\"\"\n    Return list of consecutive lists of numbers from data (number list).\n\n    References:\n        http://stackoverflow.com/questions/7352684/how-to-find-the-groups-of-consecutive-elements-from-an-array-in-numpy\n    \"\"\"\n    data = np.array(data)\n    if stepsize ==\n",
+  "agc_valid": false,
+  "body_sha256": "10b54f82fca046301ad9c7ba113563792ddd63f7eda16abcd9bba44a26b4fe10",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n    data = np.array(data)\n    if stepsize ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 104,
+  "human_sha256": "3005ac072798ed35b75e98f25ca51f5968c82408b209f4b1b2658a2c1ab76e79",
+  "human_valid": true,
+  "line_no": 76621,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e19be4fdc06e1f43fb5d98b78ae0dd1c5beea7f0d82153c7e3520e82863c7230",
+  "raw_output": "\n    data = np.array(data)\n    if stepsize == ",
+  "sampling_seed": 840264764,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

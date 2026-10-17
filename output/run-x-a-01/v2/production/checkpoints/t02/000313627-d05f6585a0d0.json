@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def request(self, url, method, body=None, headers=None, **kwargs):\n        \"\"\"Request without authentication.\"\"\"\n        return self.session.request(\n            method, url, body=body, headers=headers, **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "e83ed07d8fd29316a948526d159f14c6db5850e38598c7e481d7cdd7ae0b21e9",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.session.request(\n            method, url, body=body, headers=headers, **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "867aed683d95f3ed167812c6a73871ea15d0773e0eef37d6de50b05cf4897682",
+  "human_valid": true,
+  "line_no": 313627,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d05f6585a0d056724be11d177fb8ea0f31f8ee852b461191c6c368174a0dd628",
+  "raw_output": "\n        return self.session.request(\n            method, url, body=body, headers=headers, **kwargs)\n\n    def",
+  "sampling_seed": 2361589538,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

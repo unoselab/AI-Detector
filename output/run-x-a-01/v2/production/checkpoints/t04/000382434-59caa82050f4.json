@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def move_temp_file(src, dest):\n    \"\"\"Move src to dest. Delete src if something goes wrong.\n\n    Overwrites dest.\n\n    Args:\n        src: str or path-like. source file\n        dest: str or path-like. destination file\n\n    Returns:\n        None.\n\n    Raises:\n        FileNotFoundError: out path parent doesn't exist.\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    # Make sure the parent dir exists\n    out_dir = os.path.dirname(dest)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError(\n            \"{} is not a directory\".format(out_dir))\n\n    # Make sure the out file doesn't exist\n    if os.path.exists(dest):\n        os.remove(dest)\n\n    # Move the file\n    try:\n        shutil.move(src, dest)\n    except Exception:\n        # If the move fails, remove the temp file\n        try:\n            os.remove(src)\n        except Exception:\n            pass\n        raise\n",
+  "agc_valid": true,
+  "body_sha256": "80975e4a20e09bd933972520c32e76e01467449cf927d91ec44d1feaac64aaf9",
+  "body_tokens": 162,
+  "bucket": "type07_170",
+  "clean_output": "\n    # Make sure the parent dir exists\n    out_dir = os.path.dirname(dest)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError(\n            \"{} is not a directory\".format(out_dir))\n\n    # Make sure the out file doesn't exist\n    if os.path.exists(dest):\n        os.remove(dest)\n\n    # Move the file\n    try:\n        shutil.move(src, dest)\n    except Exception:\n        # If the move fails, remove the temp file\n        try:\n            os.remove(src)\n        except Exception:\n            pass\n        raise\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "03938d9e54231ce5d5356ad2a08f470061adf3c309f3ac0ad7b9017bc7fa0ba3",
+  "human_valid": true,
+  "line_no": 382434,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "59caa82050f465b3a67ee3b15c5c3e714ef42f602d82f1bb93d5f443fd889f11",
+  "raw_output": "\n    # Make sure the parent dir exists\n    out_dir = os.path.dirname(dest)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError(\n            \"{} is not a directory\".format(out_dir))\n\n    # Make sure the out file doesn't exist\n    if os.path.exists(dest):\n        os.remove(dest)\n\n    # Move the file\n    try:\n        shutil.move(src, dest)\n    except Exception:\n        # If the move fails, remove the temp file\n        try:\n            os.remove(src)\n        except Exception:\n            pass\n        raise\n\n\ndef get_temp_file(prefix):\n    \"\"\"Get a temp file.\n\n    Args:\n        prefix: str. Prefix for the temp file.\n\n    Returns:\n        str. Path to the temp file.\n\n    Raises:\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    temp_file = tempfile.NamedTemporaryFile(prefix=prefix, delete=False)\n    temp_file.close()\n    return temp_file.name\n\n\ndef get_temp_dir(prefix):\n    \"\"\"Get a temp directory.\n\n    Args:\n        prefix: str. Prefix for the temp directory.\n\n    Returns:\n        str. Path to the temp directory.\n\n    Raises:\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    temp_dir = tempfile.mkdtemp(prefix=prefix)\n    return temp_dir\n\n\ndef get_temp_dir_and_file(prefix):\n    \"\"\"Get a temp directory and a temp file inside it.\n\n    Args:\n        prefix: str. Prefix for the temp directory.\n\n    Returns:\n        tuple(str, str). Path to the temp directory and path to the temp file.\n\n    Raises:\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"",
+  "sampling_seed": 2158335844,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _write_packed_data(self, data_out, table):\n        \"\"\"This is kind of legacy function - this functionality may be useful for some people, so even though\n        now the default of writing CSV is writing unpacked data (divided by independent variable) this method is\n        still available and accessible if ```pack``` flag is specified in Writer's options\n\n        :param output: output file like object to which data will be written\n        :param table: input table\n        :type table: hepdata_converter.parsers.Table\n        \"\"\"\n        if len(table.column_names) !=\n",
+  "agc_valid": false,
+  "body_sha256": "5687293d87f3bcdfdf3c28b3fcb2820c81eca8fb87f328dcfead325f5999cf36",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if len(table.column_names) !=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d30eb3248b1ac6daaea8a974f868d587e2055ccf751086e6dcde785191bd4777",
+  "human_valid": true,
+  "line_no": 29202,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f67d84c6020aa8a384ee4cfa5b8e756e38a5f1dccf6058f0d9b2259e4c0dc9c2",
+  "raw_output": "\n\n        if len(table.column_names) != ",
+  "sampling_seed": 1990509670,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def close(self):\n        \"\"\"\n        Flush the write buffers of the stream if applicable and\n        close the object.\n        \"\"\"\n        pass\n",
+  "agc_valid": false,
+  "body_sha256": "0b35470fd90e318ed51e754d5837ebd51e1adb2bb11ee5c4d4fb7ce4345d7673",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        pass\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 106,
+  "human_sha256": "4116db52df2a3a65ce04c5bb8f6ec63ee47be3169cd51db46a67bd3bc0831bdc",
+  "human_valid": true,
+  "line_no": 230416,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "87c8b9d41cceb266d5d5251d2d99f0555d2ac6c1f8ad7807755a1802225bdc5c",
+  "raw_output": "\n        pass\n\n    def",
+  "sampling_seed": 1652281403,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

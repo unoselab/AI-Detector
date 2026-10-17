@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_list(path_out, image_list):\n    \"\"\"Hepler function to write image list into the file.\n    The format is as below,\n    integer_image_index \\t float_label_index \\t path_to_image\n    Note that the blank between number and tab is only used for readability.\n    Parameters\n    ----------\n    path_out: string\n    image_list: list\n    \"\"\"\n    with open(path_out, 'w') as f:\n        for i in range(len(image_list)):\n            f.write(str(i) + '\\t')\n            f.write(str(image_list[i][1]) + '\\t')\n            f.write(image_list[i][0] + '\\n')\n",
+  "agc_valid": true,
+  "body_sha256": "96388f238dbfab541de471a4a5b667ac44f7b5b47e624928fdeac561ea9905a1",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(path_out, 'w') as f:\n        for i in range(len(image_list)):\n            f.write(str(i) + '\\t')\n            f.write(str(image_list[i][1]) + '\\t')\n            f.write(image_list[i][0] + '\\n')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "cb3e52e0551e90516a938a74d570f224dd855189e0fae431a2322fd055132406",
+  "human_valid": true,
+  "line_no": 96864,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a99e65a3c813711219f739adf629a74b3b7e5e0c7eed8e5b87c9087a6fd6cdee",
+  "raw_output": "\n    with open(path_out, 'w') as f:\n        for i in range(len(image_list)):\n            f.write(str(i) + '\\t')\n            f.write(str(image_list[i][1]) + '\\t')\n            f.write(image_list[i][0] + '\\n')\n\n\ndef read_list(path_in, shuffle=False, seed=None):\n    \"\"\"Hepler function to read image list from the file.\n    The format is as below,\n    integer_image_index \\t float_label_index \\t path_to_image\n    Note that the blank between number and tab is only used for readability.\n    Parameters\n    ----------\n    path_in: string\n    shuffle: bool\n        True if shuffle the list\n    seed: int\n        random seed\n    Returns\n    -------\n    image_list: list\n    \"\"\"\n    image_list = []\n    with open(path_in, 'r') as f:\n        for line in f:\n            image_list.append(line.strip().split('\\t'))\n    if shuffle:\n        random.seed(seed)\n        random.shuffle(image_list)\n    return image_list\n\n\ndef write_list_by_group(path_out, image_list):\n    \"\"\"Hepler function to write image list into the file.\n    The format is as below,\n    integer_image_index \\t float_label_index \\t path_to_image\n    Note that the blank between number and tab is only used for readability.\n    Parameters\n    ----------\n    path_out: string\n    image_list: list\n    \"\"\"\n    with open(path_out, 'w') as f:\n        for i in range(len(image_list)):\n            f.write(str(i) + '\\t')\n            f.write(str(image_list[i][1]) + '\\t')\n            f.write(image_list[i][0] + '\\n')\n\n\ndef read_list_by_group(path_in, shuffle=False, seed=None):\n    \"\"\"Hepler function to read",
+  "sampling_seed": 2268962038,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def p_methodDeclaration(p):\n    # pylint: disable=line-too-long\n    \"\"\"methodDeclaration : dataType methodName '(' ')' ';'\n                         | dataType methodName '(' parameterList ')' ';'\n                         | qualifierList dataType methodName '(' ')' ';'\n                         | qualifierList dataType methodName '(' parameterList ')' ';'\n                         \"\"\"\n                         if len(p) ==\n",
+  "agc_valid": false,
+  "body_sha256": "6f4d4484db18fe70224593deafb4746576ffa5d562dffc2fcaf31055b2ef338a",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n                         if len(p) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "64c0fea15d503e0791719622b4e123bfc03aab2ed086cb702089c6a3a8138699",
+  "human_valid": true,
+  "line_no": 139164,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "66848df140d18f7693ffc1af2523413d37513db04307f835107047cce34ed814",
+  "raw_output": "\n    if len(p) == ",
+  "sampling_seed": 3441696662,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

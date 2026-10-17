@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def make_symbols(symbols, *args):\n    \"\"\"Return a list of uppercase strings like \"GOOG\", \"$SPX, \"XOM\"...\n\n    Arguments:\n      symbols (str or list of str): list of market ticker symbols to normalize\n        If `symbols` is a str a get_symbols_from_list() call is used to retrieve the list of symbols\n\n    Returns:\n      list of str: list of cananical ticker symbol strings (typically after .upper().strip())\n\n    See Also:\n      pug.dj.db.normalize_names\n\n    Examples:\n      >>> make_symbols(\"Goog\")\n      ['GOOG']\n      >>> make_symbols(\"  $SPX   \", \" aaPL \")\n      ['$SPX', 'AAPL']\n      >>> make_symbols([\"$SPX\", [\"GOOG\", \"AAPL\"]])\n      ['GOOG', 'AAPL', '$SPX']\n      >>> make_symbols(\" $Spy, Goog, aAPL \")\n      ['$SPY', 'GOOG', 'AAPL']\n    \"\"\"\n     get_symbols_from_list()\n    \"\"\"\n    if isinstance(symbols, str):\n        symbols = get_symbols_from_list(symbols)\n    return [symbol.upper().strip() for symbol in symbols]\n",
+  "agc_valid": false,
+  "body_sha256": "a56251123245d6a45a97418f61ce9eb5101ad7ec29563c36f46a098d7f85e710",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n     get_symbols_from_list()\n    \"\"\"\n    if isinstance(symbols, str):\n        symbols = get_symbols_from_list(symbols)\n    return [symbol.upper().strip() for symbol in symbols]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 181,
+  "human_sha256": "0e96f9f97132c89e11b55ba60dc83a8a551af3198fb60fcf9740ec50cb960640",
+  "human_valid": true,
+  "line_no": 308054,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "718ab44cc4f91ca99c9c05088fee05ed8860b14cf0803f835990749cd22d6fbe",
+  "raw_output": "     get_symbols_from_list()\n    \"\"\"\n    if isinstance(symbols, str):\n        symbols = get_symbols_from_list(symbols)\n    return [symbol.upper().strip() for symbol in symbols]\n\n\ndef get_symbols_from_list(list_name):\n    \"\"\"Return a list of symbols from the list_name provided\n\n    Arguments:\n      list_name (str): the name of the list to retrieve\n\n    Returns:\n      list of str: the list of symbols found in the list\n    \"\"\"\n    list_name = list_name.upper().strip()\n    symbols = None\n    if list_name in [\"NASDAQ\", \"NASDAQ_100\", \"NASDAQ_COMPOSITE\", \"NASDAQ_COMPOSITE_A\", \"NASDAQ_COMPOSITE_B\"]:\n        symbols = _get_nasdaq_symbols(list_name)\n    elif list_name in [\"SP500\", \"S&P_500\", \"S&P500\"]:\n        symbols = _get_sp500_symbols()\n    elif list_name in [\"DOW\", \"DOW_JONES\", \"DOW_JONES_COMPOSITE\", \"DOW_JONES_COMPOSITE_A\", \"DOW_JONES_COMPOSITE_B\"]:\n        symbols = _get_dow_symbols()\n    elif list_name in [\"S&P_100\", \"S&P100\"]:\n        symbols = _get_sp100_symbols()\n    elif list_name in [\"S&P_100_A\", \"S&P100_A\"]:\n        symbols = _get_sp100_a_symbols()\n    elif list_name in [\"S&P_100_B\", \"S&P100_B\"]:\n        symbols = _get_sp100_b_symbols()\n    elif list_name in [\"S&P_400\", \"S&P400\"]:\n        symbols = _get_sp400_",
+  "sampling_seed": 1266724532,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

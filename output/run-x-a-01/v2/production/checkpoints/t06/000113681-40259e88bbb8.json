@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_name(name):\n    \"\"\"\n    Checks if the provided name fits Linode's labeling parameters.\n\n    .. versionadded:: 2015.5.6\n\n    name\n        The VM name to validate\n    \"\"\"\n    if name.startswith(\"-\"):\n        raise SaltInvocationError(\n            \"Invalid name: names cannot start with '-'. \" \"Try again.\"\n        )\n    if name.endswith(\"-\"):\n        raise SaltInvocationError(\n            \"Invalid name: names cannot end with '-'. \" \"Try again.\"\n        )\n    if len(name) <\n",
+  "agc_valid": false,
+  "body_sha256": "85df8ddf2aab82dec0947fdb280a634120a6754638c885e8c79b40c0105bb3ed",
+  "body_tokens": 93,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if name.startswith(\"-\"):\n        raise SaltInvocationError(\n            \"Invalid name: names cannot start with '-'. \" \"Try again.\"\n        )\n    if name.endswith(\"-\"):\n        raise SaltInvocationError(\n            \"Invalid name: names cannot end with '-'. \" \"Try again.\"\n        )\n    if len(name) <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "92b7c0574c31d97b8895c7815b4b7668a678b19bd453a0befc74b0b8913d86f3",
+  "human_valid": true,
+  "line_no": 113681,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "40259e88bbb842d5dddfd9d7adf54f94ab2b5b3e87572d23198a881a372412a9",
+  "raw_output": "\n    if name.startswith(\"-\"):\n        raise SaltInvocationError(\n            \"Invalid name: names cannot start with '-'. \" \"Try again.\"\n        )\n    if name.endswith(\"-\"):\n        raise SaltInvocationError(\n            \"Invalid name: names cannot end with '-'. \" \"Try again.\"\n        )\n    if len(name) < ",
+  "sampling_seed": 2295144967,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

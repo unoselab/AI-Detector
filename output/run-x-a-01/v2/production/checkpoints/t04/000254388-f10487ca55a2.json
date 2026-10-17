@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def published(self, for_user=None):\n        \"\"\"\n        Return only published entries for the current site.\n        \"\"\"\n        if for_user:\n            return self.filter(sites_published__site=for_user.site)\n        else:\n            return self.filter(sites_published__site=Site.objects.get_current())\n",
+  "agc_valid": true,
+  "body_sha256": "419499deeaa5b0aea80ba0d6602921ce75a024f06cb18c13636e800344c529b3",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if for_user:\n            return self.filter(sites_published__site=for_user.site)\n        else:\n            return self.filter(sites_published__site=Site.objects.get_current())\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "d8f3c8927430a0a8b61464b7f10264407d716c9082ae1bc65e255309e6d78efe",
+  "human_valid": true,
+  "line_no": 254388,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f10487ca55a2e5b9266aa536648b64e7d6bb280c45f5c1ca033cb75dba402c77",
+  "raw_output": "\n        if for_user:\n            return self.filter(sites_published__site=for_user.site)\n        else:\n            return self.filter(sites_published__site=Site.objects.get_current())\n\n\nclass PublishedManager(models.Manager):\n    \"\"\"\n    A manager that returns only published entries.\n    \"\"\"\n    def",
+  "sampling_seed": 3149770146,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

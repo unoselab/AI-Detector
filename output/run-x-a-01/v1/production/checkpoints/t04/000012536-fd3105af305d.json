@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_publish(self):\n        \"\"\"\n        Find this publish on remote\n        \"\"\"\n        publish_id = self.data.get(\"publish_id\")\n        if not publish_id:\n            return None\n        return self.api.publish.get(publish_id)\n",
+  "agc_valid": true,
+  "body_sha256": "2f9573cf9c4925c27c19133cb04aa4a5a238294df48fa14e2488e5fb32a79632",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n        publish_id = self.data.get(\"publish_id\")\n        if not publish_id:\n            return None\n        return self.api.publish.get(publish_id)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a6c9d60c059c93ec3ab20d86eb1ed161d11edcb3ea8435ba5cc514fa96f8e32b",
+  "human_valid": true,
+  "line_no": 12536,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fd3105af305d11ecfeb4114dd0146744296fb147e7585e8bb68cfc34bb3f2f53",
+  "raw_output": "\n        publish_id = self.data.get(\"publish_id\")\n        if not publish_id:\n            return None\n        return self.api.publish.get(publish_id)\n\n    def",
+  "sampling_seed": 4180998792,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def validate(self, attrs):\n        \"\"\" checks if login credentials are correct \"\"\"\n        username = attrs.get('username')\n        password = attrs.get('password')\n        user = authenticate(username=username, password=password)\n        if user:\n            if user.is_active:\n                return attrs\n            else:\n                raise serializers.ValidationError(\"User is not active\")\n        else:\n            raise serializers.ValidationError(\"Incorrect credentials\")\n",
+  "agc_valid": true,
+  "body_sha256": "08b3bfc281c92dcf43adc4f8eae0f1422130a7df2d133c85f824c523b841b5e1",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n        username = attrs.get('username')\n        password = attrs.get('password')\n        user = authenticate(username=username, password=password)\n        if user:\n            if user.is_active:\n                return attrs\n            else:\n                raise serializers.ValidationError(\"User is not active\")\n        else:\n            raise serializers.ValidationError(\"Incorrect credentials\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "9341809b068628ddc7cfa1fdcff2adedfd29563ce95394e01f650468e51d7db5",
+  "human_valid": true,
+  "line_no": 236595,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "948acbdd5716d37748cf7559a520908d31227d9627810e6abccaa647bbba1488",
+  "raw_output": "\n        username = attrs.get('username')\n        password = attrs.get('password')\n        user = authenticate(username=username, password=password)\n        if user:\n            if user.is_active:\n                return attrs\n            else:\n                raise serializers.ValidationError(\"User is not active\")\n        else:\n            raise serializers.ValidationError(\"Incorrect credentials\")\n\n    def",
+  "sampling_seed": 2921123980,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

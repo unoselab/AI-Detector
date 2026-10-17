@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _on_wheel_event(self, event):\n        \"\"\"\n        Increments or decrements editor fonts settings on mouse wheel event\n        if ctrl modifier is on.\n\n        :param event: wheel event\n        :type event: QWheelEvent\n        \"\"\"\n        if event.modifiers() & Qt.ControlModifier:\n            if event.angleDelta().y() >\n",
+  "agc_valid": false,
+  "body_sha256": "096c8f860744da174be08ef55fb67cbb819794a1a52e981023c10c9d28dc3353",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if event.modifiers() & Qt.ControlModifier:\n            if event.angleDelta().y() >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "0f49ca19f1b889c87c54edc54fef051efdfe45d517644fbf8333d895020ba893",
+  "human_valid": true,
+  "line_no": 227557,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9e706c335a7fb70e777e257a47edfde770a7ac2b09bb20ed7de08e94c0b35ec0",
+  "raw_output": "\n        if event.modifiers() & Qt.ControlModifier:\n            if event.angleDelta().y() > ",
+  "sampling_seed": 478392026,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

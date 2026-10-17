@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_str(self, f, off):\n        \"\"\"\n        Convenience function to quickly pull out strings.\n        \"\"\"\n        return f.read(off).decode('utf-8')\n",
+  "agc_valid": true,
+  "body_sha256": "600b8fa3e6d25b77d0d3f4c123746e86131e68211bcc71be9a0f18c1e4ddc226",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return f.read(off).decode('utf-8')\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f14fd32a5617907eb3a3a39fc99e2b5f442675681b434643f5c4f46f9cdd883e",
+  "human_valid": true,
+  "line_no": 36549,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "754d1f9998e5d337ca5ac68acba70921a79b6e0387ec2dcb6df632a2dab4cdba",
+  "raw_output": "\n        return f.read(off).decode('utf-8')\n\n    def",
+  "sampling_seed": 3508324411,
+  "tag": "t02",
+  "temperature": 0.2
+}

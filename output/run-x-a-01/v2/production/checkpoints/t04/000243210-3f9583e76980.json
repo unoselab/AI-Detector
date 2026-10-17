@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def nexec(statement, globals=None, locals=None, **kwargs):\n    \"\"\"Execute *statement* using *globals* and *locals* dictionaries as\n    *global* and *local* namespace.  *statement* is transformed using\n    :class:`.NapiTransformer`.\"\"\"\n    return NapiTransformer(globals, locals, **kwargs).transform(statement)\n",
+  "agc_valid": true,
+  "body_sha256": "478f31e80ad00a29935525d30e2a2a9d8193e73f365b1c225031757572d57f19",
+  "body_tokens": 8,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return NapiTransformer(globals, locals, **kwargs).transform(statement)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "ffa2f3f461933767c4f5502d5b8f0d3f2d5d567c235d40b4fd44d2270820aff5",
+  "human_valid": true,
+  "line_no": 243210,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3f9583e76980566649d7d419c5c9090635765049a5ec38cb72fc9944fd119f9c",
+  "raw_output": "\n    return NapiTransformer(globals, locals, **kwargs).transform(statement)\n\n\nclass NapiTransformer(Transformer):\n    \"\"\"A transformer that transforms a statement into a :class:`Napi`\n    expression.\"\"\"\n\n    def",
+  "sampling_seed": 2235405142,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

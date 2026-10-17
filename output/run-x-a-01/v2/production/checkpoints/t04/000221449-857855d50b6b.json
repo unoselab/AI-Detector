@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _wait_for_output(self):\n        \"\"\"\n        Check if output matches banner.\n\n        .. warning::\n            Waiting for I/O completion. It does not work on Windows. Sorry.\n        \"\"\"\n        if os.name == 'nt':\n            return\n\n        # Wait for output\n        while True:\n            if self._banner_matched:\n                break\n            if self._banner_timeout_reached:\n                break\n            if self._process.poll() is not None:\n                break\n            time.sleep(0.01)\n",
+  "agc_valid": true,
+  "body_sha256": "90e8b92daf7ab03bd49e7d06752e1b7c3a0492dbd953d88892e9df50b3cae812",
+  "body_tokens": 146,
+  "bucket": "type05_150",
+  "clean_output": "\n        if os.name == 'nt':\n            return\n\n        # Wait for output\n        while True:\n            if self._banner_matched:\n                break\n            if self._banner_timeout_reached:\n                break\n            if self._process.poll() is not None:\n                break\n            time.sleep(0.01)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "c2e4823c6c7496066b883391de0dd74e0b51d60a5929a9c22974605cd48a6f07",
+  "human_valid": true,
+  "line_no": 221449,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "857855d50b6b5744d39a2771a2f549bc6e5a4aa34da3a0cff9d1f049c3d416f6",
+  "raw_output": "\n        if os.name == 'nt':\n            return\n\n        # Wait for output\n        while True:\n            if self._banner_matched:\n                break\n            if self._banner_timeout_reached:\n                break\n            if self._process.poll() is not None:\n                break\n            time.sleep(0.01)\n\n    def",
+  "sampling_seed": 2953077975,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

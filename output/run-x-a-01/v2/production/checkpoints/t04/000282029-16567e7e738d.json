@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _make_axes_dict(self, axes):\n        \"\"\"Makes an axes dictionary.\n\n        .. note::\n\n            In case the input is ``None``, the dictionary :code:`{'empty': None}`\n            is returned.\n\n        **Function-call argument** \\n\n\n        :param axes:    axes input\n        :type axes:     dict or single instance of\n                        :class:`~climlab.domain.axis.Axis` object or ``None``\n        :raises: :exc:`ValueError`  if input is not an instance of Axis class\n                                    or a dictionary of Axis objetcs\n        :returns: dictionary of input axes\n        :rtype: dict\n\n        \"\"\"\n        not a dictionary\n\n                \"\"\"\n\n                if axes is None:\n                    return {'empty': None}\n                elif isinstance(axes, dict):\n                    return axes\n                else:\n                    raise ValueError('axes input must be a dictionary')\n",
+  "agc_valid": false,
+  "body_sha256": "6a1f41a1cc9cf294b5fa14826f792514e8275671c10af91a9c9378bf9b9cf5ed",
+  "body_tokens": 149,
+  "bucket": "type05_150",
+  "clean_output": "\n        not a dictionary\n\n                \"\"\"\n\n                if axes is None:\n                    return {'empty': None}\n                elif isinstance(axes, dict):\n                    return axes\n                else:\n                    raise ValueError('axes input must be a dictionary')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "11a5484365480651cff1f44bb042b55afa8f57849d5fdc46d3c57e87ee8cd650",
+  "human_valid": true,
+  "line_no": 282029,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "16567e7e738d96d893b0818977c624cd88d6c05f9fca3ed164c6bd1997af7262",
+  "raw_output": "not a dictionary\n\n        \"\"\"\n\n        if axes is None:\n            return {'empty': None}\n        elif isinstance(axes, dict):\n            return axes\n        else:\n            raise ValueError('axes input must be a dictionary')\n\n    def",
+  "sampling_seed": 101030769,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

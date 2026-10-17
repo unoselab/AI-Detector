@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _get_publish(self):\n        \"\"\"\n        Find this publish on remote\n        \"\"\"\n        # Get the publish path from the asset\n        publish_path = self._get_publish_path()\n\n        # Get the current user\n        current_user = self.api.Session[\"AVALON_USER\"]\n\n        # Get the current project\n        project = self.api.Session[\"AVALON_PROJECT\"]\n\n        # Get the remote project\n        remote_project = self._get_remote_project()\n\n        # Get the remote publish path\n        remote_publish_path = os.path.join(\n            remote_project, \"publish\", current_user, publish_path)\n\n        # Get the remote publish\n        remote_publish = self.api.get(remote_publish_path)\n\n        return remote_publish\n",
+  "agc_valid": true,
+  "body_sha256": "ccc85818f33435f2332349b468776a7b18dd9927d3eece367321f8d891d879f5",
+  "body_tokens": 161,
+  "bucket": "type07_170",
+  "clean_output": "\n        # Get the publish path from the asset\n        publish_path = self._get_publish_path()\n\n        # Get the current user\n        current_user = self.api.Session[\"AVALON_USER\"]\n\n        # Get the current project\n        project = self.api.Session[\"AVALON_PROJECT\"]\n\n        # Get the remote project\n        remote_project = self._get_remote_project()\n\n        # Get the remote publish path\n        remote_publish_path = os.path.join(\n            remote_project, \"publish\", current_user, publish_path)\n\n        # Get the remote publish\n        remote_publish = self.api.get(remote_publish_path)\n\n        return remote_publish\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "a6c9d60c059c93ec3ab20d86eb1ed161d11edcb3ea8435ba5cc514fa96f8e32b",
+  "human_valid": true,
+  "line_no": 12536,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fd3105af305d11ecfeb4114dd0146744296fb147e7585e8bb68cfc34bb3f2f53",
+  "raw_output": "\n\n        # Get the publish path from the asset\n        publish_path = self._get_publish_path()\n\n        # Get the current user\n        current_user = self.api.Session[\"AVALON_USER\"]\n\n        # Get the current project\n        project = self.api.Session[\"AVALON_PROJECT\"]\n\n        # Get the remote project\n        remote_project = self._get_remote_project()\n\n        # Get the remote publish path\n        remote_publish_path = os.path.join(\n            remote_project, \"publish\", current_user, publish_path)\n\n        # Get the remote publish\n        remote_publish = self.api.get(remote_publish_path)\n\n        return remote_publish\n\n    def",
+  "sampling_seed": 614141783,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

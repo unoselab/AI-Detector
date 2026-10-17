@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _worker_thread_transfer(self):\n        # type: (SyncCopy) -> None\n        \"\"\"Worker thread download\n        :param SyncCopy self: this\n        \"\"\"\n        while True:\n            try:\n                item = self.transfer_queue.get()\n                if item is None:\n                    break\n                if item.get('type') == 'file':\n                    self.transfer_file(item)\n                elif item.get('type') == 'folder':\n                    self.transfer_folder(item)\n                else:\n                    raise Exception('Unknown item type')\n            except Exception as e:\n                self.logger.error(e)\n                self.logger.error(traceback.format_exc())\n            finally:\n                self.transfer_queue.task_done()\n",
+  "agc_valid": true,
+  "body_sha256": "edb55bf824b55f20189d9aabcf55ea88f13db09ba23ad2f2134ceee79250add5",
+  "body_tokens": 271,
+  "bucket": "out_of_range",
+  "clean_output": "\n        while True:\n            try:\n                item = self.transfer_queue.get()\n                if item is None:\n                    break\n                if item.get('type') == 'file':\n                    self.transfer_file(item)\n                elif item.get('type') == 'folder':\n                    self.transfer_folder(item)\n                else:\n                    raise Exception('Unknown item type')\n            except Exception as e:\n                self.logger.error(e)\n                self.logger.error(traceback.format_exc())\n            finally:\n                self.transfer_queue.task_done()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "d4b19e69cae90174e33fd2b0ac266a8229f105c86fd1c35c03aa2fec2129c691",
+  "human_valid": true,
+  "line_no": 299612,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f587be831abe043b799024b034a0ec872525308494cc33da6d62979b4d9b1160",
+  "raw_output": "\n        while True:\n            try:\n                item = self.transfer_queue.get()\n                if item is None:\n                    break\n                if item.get('type') == 'file':\n                    self.transfer_file(item)\n                elif item.get('type') == 'folder':\n                    self.transfer_folder(item)\n                else:\n                    raise Exception('Unknown item type')\n            except Exception as e:\n                self.logger.error(e)\n                self.logger.error(traceback.format_exc())\n            finally:\n                self.transfer_queue.task_done()\n\n    def",
+  "sampling_seed": 1946228105,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

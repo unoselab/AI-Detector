@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def deploy(self, id_networkv4):\n        \"\"\"Deploy network in equipments and set column 'active = 1' in tables redeipv4\n\n        :param id_networkv4: ID for NetworkIPv4\n\n        :return: Equipments configuration output\n        \"\"\"\n        net_ipv4 = NetworkIPv4.objects.get(pk=id_networkv4)\n        for eqt in Equipamento.objects.filter(ambiente__rede__id__in=[net_ipv4.id]):\n            try:\n                cmd = 'ip -4 route add {0} dev {1}'.format(net_ipv4.networkv4, eqt.interface_name)\n                output = self._execute_command(eqt, cmd)\n                self._set_active(id_networkv4, eqt.id)\n            except Exception, e:\n                raise NetworkIPv4Error(str(e), e)\n",
+  "agc_valid": false,
+  "body_sha256": "e892c0ef6d359ae2001a86a7995055ba6e7dc98db19d33aa42f176b17c3d8329",
+  "body_tokens": 127,
+  "bucket": "type03_130",
+  "clean_output": "\n        net_ipv4 = NetworkIPv4.objects.get(pk=id_networkv4)\n        for eqt in Equipamento.objects.filter(ambiente__rede__id__in=[net_ipv4.id]):\n            try:\n                cmd = 'ip -4 route add {0} dev {1}'.format(net_ipv4.networkv4, eqt.interface_name)\n                output = self._execute_command(eqt, cmd)\n                self._set_active(id_networkv4, eqt.id)\n            except Exception, e:\n                raise NetworkIPv4Error(str(e), e)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2199ecdaf578825fde3c246956a97f6d9d646ff27c86d6b144eb763025a48765",
+  "human_valid": true,
+  "line_no": 4171,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "cc2086798bb2858eee0d243cf5c3d9f551b304d435d7e03ceabbe1f969aebd79",
+  "raw_output": "\n        net_ipv4 = NetworkIPv4.objects.get(pk=id_networkv4)\n        for eqt in Equipamento.objects.filter(ambiente__rede__id__in=[net_ipv4.id]):\n            try:\n                cmd = 'ip -4 route add {0} dev {1}'.format(net_ipv4.networkv4, eqt.interface_name)\n                output = self._execute_command(eqt, cmd)\n                self._set_active(id_networkv4, eqt.id)\n            except Exception, e:\n                raise NetworkIPv4Error(str(e), e)\n\n    def",
+  "sampling_seed": 1932466004,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _send_request(self, url, method=\"get\", data=None, extra_headers=None):\n        \"\"\"Performs a given request and returns a json object\n\n        Args:\n            url (str): URL of the request\n            method (str): Any of \"get\", \"post\", \"delete\"\n            data (any): Possible extra data to send with the request\n            extra_headers (dict): Possible extra headers to send along in the request\n        Returns:\n            dict\n        \"\"\"\n        headers = {\"Content-Type\": \"application/json\"}\n        if extra_headers:\n            headers.update(extra_headers)\n\n        if method == \"get\":\n            response = requests.get(url, headers=headers)\n        elif method == \"post\":\n            response = requests.post(url, headers=headers, json=data)\n        elif method == \"delete\":\n            response = requests.delete(url, headers=headers)\n        else:\n            raise ValueError(\"Method not supported\")\n\n        if response.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "d9b9723d016139aa676b7f53855808c42487cd0419aa48aa776febee32ed0f48",
+  "body_tokens": 145,
+  "bucket": "type05_150",
+  "clean_output": "\n        headers = {\"Content-Type\": \"application/json\"}\n        if extra_headers:\n            headers.update(extra_headers)\n\n        if method == \"get\":\n            response = requests.get(url, headers=headers)\n        elif method == \"post\":\n            response = requests.post(url, headers=headers, json=data)\n        elif method == \"delete\":\n            response = requests.delete(url, headers=headers)\n        else:\n            raise ValueError(\"Method not supported\")\n\n        if response.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "7b01a7c3d7afa388496e491e49e3969de8499ce1e6200a1aa4259ec95cebbe83",
+  "human_valid": true,
+  "line_no": 398958,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bc461899989fea34e451c21c87fd7d669d832a4608808bf86715642771959c67",
+  "raw_output": "\n        headers = {\"Content-Type\": \"application/json\"}\n        if extra_headers:\n            headers.update(extra_headers)\n\n        if method == \"get\":\n            response = requests.get(url, headers=headers)\n        elif method == \"post\":\n            response = requests.post(url, headers=headers, json=data)\n        elif method == \"delete\":\n            response = requests.delete(url, headers=headers)\n        else:\n            raise ValueError(\"Method not supported\")\n\n        if response.status_code == ",
+  "sampling_seed": 1529915574,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

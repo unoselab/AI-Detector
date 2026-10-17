@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_mem_usage(soft_percent=None, hard_percent=None):\n    \"\"\"\n    Display a warning if we are running out of memory\n    \"\"\"\n    import psutil\n    mem = psutil.virtual_memory()\n    percent = mem.percent\n    if soft_percent is not None and percent > soft_percent:\n        print(\"Memory usage warning: {}%\".format(percent))\n    if hard_percent is not None and percent > hard_percent:\n        print(\"Memory usage error: {}%\".format(percent))\n        raise MemoryError(\"Memory usage error: {}%\".format(percent))\n",
+  "agc_valid": true,
+  "body_sha256": "048d6eaebb0325032af18a27de7017bc1e2dfd4f815185994c2dc23885d54e75",
+  "body_tokens": 76,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import psutil\n    mem = psutil.virtual_memory()\n    percent = mem.percent\n    if soft_percent is not None and percent > soft_percent:\n        print(\"Memory usage warning: {}%\".format(percent))\n    if hard_percent is not None and percent > hard_percent:\n        print(\"Memory usage error: {}%\".format(percent))\n        raise MemoryError(\"Memory usage error: {}%\".format(percent))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "38e59c0ade09f65014ad649b8be1611b08a4ddf879d22bccf68b45aaa964a54a",
+  "human_valid": true,
+  "line_no": 270668,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d95baf35ee49237c6c5c333c30ade5466c30cba47a67ad7f2ff9eca2cb643b84",
+  "raw_output": "\n    import psutil\n    mem = psutil.virtual_memory()\n    percent = mem.percent\n    if soft_percent is not None and percent > soft_percent:\n        print(\"Memory usage warning: {}%\".format(percent))\n    if hard_percent is not None and percent > hard_percent:\n        print(\"Memory usage error: {}%\".format(percent))\n        raise MemoryError(\"Memory usage error: {}%\".format(percent))\n\n\ndef check_memory_usage(soft_percent=None, hard_percent=None):\n    \"\"\"\n    Display a warning if we are running out of memory\n    \"\"\"\n    import psutil\n    mem = psutil.virtual_memory()\n    percent = mem.percent\n    if soft_percent is not None and percent > soft_percent:\n        print(\"Memory usage warning: {}%\".format(percent))\n    if hard_percent is not None and percent > hard_percent:\n        print(\"Memory usage error: {}%\".format(percent))\n        raise MemoryError(\"Memory usage error: {}%\".format(percent))\n\n\ndef check_memory_usage_and_exit(soft_percent=None, hard_percent=None):\n    \"\"\"\n    Display a warning if we are running out of memory\n    \"\"\"\n    import psutil\n    mem = psutil.virtual_memory()\n    percent = mem.percent\n    if soft_percent is not None and percent > soft_percent:\n        print(\"Memory usage warning: {}%\".format(percent))\n    if hard_percent is not None and percent > hard_percent:\n        print(\"Memory usage error: {}%\".format(percent))\n        raise MemoryError(\"Memory usage error: {}%\".format(percent))\n\n\ndef check_memory_usage_and_exit_if_high(percent=90):\n    \"\"\"\n    Display a warning if we are running out of memory\n    \"\"\"\n    import psutil\n    mem = psutil.virtual_memory()\n    percent = mem.percent\n    if percent > percent:\n        print(\"Memory usage error: {}%\".format(percent))\n        raise MemoryError(\"Memory usage error: {}%\".format(percent))\n\n\ndef check_memory_usage_and_exit_if_high_or",
+  "sampling_seed": 4175700642,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_file(self, file_name=None):\n        \"\"\"Saves a DataFrame with all the needed info about the experiment\"\"\"\n        if file_name is None:\n            file_name = self.file_name\n\n        with open(file_name, \"w\") as f:\n            f.write(str(self.data))\n",
+  "agc_valid": true,
+  "body_sha256": "01d7eda8db3f92da31fd3f459170207482269ca24f45f24894f06b868a91c50c",
+  "body_tokens": 50,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if file_name is None:\n            file_name = self.file_name\n\n        with open(file_name, \"w\") as f:\n            f.write(str(self.data))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 190,
+  "human_sha256": "3ff6ade95047d471cda3cd49c8804636b320b0f37c9e66d61219580505e84ee6",
+  "human_valid": true,
+  "line_no": 219481,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "99e18bde03d10f84dc377e9fd3fb17a4d3cc63b1f66fd3cb044ee4063e7ea63b",
+  "raw_output": "\n\n        if file_name is None:\n            file_name = self.file_name\n\n        with open(file_name, \"w\") as f:\n            f.write(str(self.data))\n\n    def",
+  "sampling_seed": 12230596,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

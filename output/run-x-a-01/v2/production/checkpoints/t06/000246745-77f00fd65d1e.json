@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def validate_password_reset(cls, code, new_password):\n        \"\"\"\n        Validates an unhashed code against a hashed code.\n        Once the code has been validated and confirmed\n        new_password will replace the old users password\n        \"\"\"\n        try:\n            code = cls.objects.get(code=code)\n        except cls.DoesNotExist:\n            raise cls.DoesNotExist('Invalid password reset code')\n\n        if not cls.is_code_expired(code):\n            code.confirm_code(new_password)\n            return True\n        else:\n            raise cls.DoesNotExist('Code has expired')\n",
+  "agc_valid": true,
+  "body_sha256": "14baca956dbe0a875d8f49a33f8da42b78b6c9b863b41359db49157bb98352af",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n        try:\n            code = cls.objects.get(code=code)\n        except cls.DoesNotExist:\n            raise cls.DoesNotExist('Invalid password reset code')\n\n        if not cls.is_code_expired(code):\n            code.confirm_code(new_password)\n            return True\n        else:\n            raise cls.DoesNotExist('Code has expired')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "f6f3dafc5eef00f78e8ebacbd7f8ab82d0d2b5c7e811421efd34c013bd177d2f",
+  "human_valid": true,
+  "line_no": 246745,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "77f00fd65d1e089cbedaf43cb33f25cc481344020b70705a1928db4e6c3520a7",
+  "raw_output": "\r\n\r\n        try:\r\n            code = cls.objects.get(code=code)\r\n        except cls.DoesNotExist:\r\n            raise cls.DoesNotExist('Invalid password reset code')\r\n\r\n        if not cls.is_code_expired(code):\r\n            code.confirm_code(new_password)\r\n            return True\r\n        else:\r\n            raise cls.DoesNotExist('Code has expired')\r\n\r\n\r\n    def",
+  "sampling_seed": 2593057590,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

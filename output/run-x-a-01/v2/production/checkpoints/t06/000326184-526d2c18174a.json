@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_or_update(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Create or update a django model instance.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    if defaults is None:\n        defaults = {}\n\n    instance = model(**defaults, **kwargs)\n    if save:\n        instance.save()\n\n    return instance, instance.pk is not None\n",
+  "agc_valid": true,
+  "body_sha256": "20ed900bd1858a7f7e27e1de39ac769562f44d22077e0bf38d68b65e39a8c2b3",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if defaults is None:\n        defaults = {}\n\n    instance = model(**defaults, **kwargs)\n    if save:\n        instance.save()\n\n    return instance, instance.pk is not None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "0d2a2a8b57c4fcc92a783db83bb386efecbfc9b3c9cb8a5d067a54e3f0ca73f9",
+  "human_valid": true,
+  "line_no": 326184,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "526d2c18174aa729c5c768e8dac07815ad6c26ea821475364e9468ef8915ebd2",
+  "raw_output": "\n    if defaults is None:\n        defaults = {}\n\n    instance = model(**defaults, **kwargs)\n    if save:\n        instance.save()\n\n    return instance, instance.pk is not None\n\n\ndef create_or_update_object(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Create or update an object.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    if defaults is None:\n        defaults = {}\n\n    instance = model(**defaults, **kwargs)\n    if save:\n        instance.save()\n\n    return instance, instance.pk is not None\n\n\ndef create_or_update_user(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Create or update a user.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    if defaults is None:\n        defaults = {}\n\n    instance = model(**defaults, **kwargs)\n    if save:\n        instance.save()\n        instance.set_password(instance.password)\n        instance.save()\n\n    return instance, instance.pk is not None\n\n\ndef create_or_update_with_pk(model, pk, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Create or update a django model instance.\n\n    :param model:\n    :param pk:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    if defaults is None:\n        defaults = {}\n\n    instance = model(**defaults, **kwargs)\n    if pk:\n        instance.pk = pk\n    if save:\n        instance.save()\n\n    return instance, instance.pk is not None\n\n\ndef create_or_update_with_id(model, id, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Create or update a django model instance.\n\n    :param model:\n    :",
+  "sampling_seed": 957541774,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

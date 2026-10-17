@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _convert_token(self, token):\n        \"\"\"Convert token fields from camel case.\n\n        :param dict token: An authentication token.\n        :rtype: dict\n        \"\"\"\n        token_dict = {}\n        for key, value in token.items():\n            token_dict[key.lower()] = value\n        token_dict['expires_in'] = token_dict['expires_in']\n        return token_dict\n",
+  "agc_valid": true,
+  "body_sha256": "7bf359c1ac7b4f85ea95f37cf411a4f33c2a1dabd469bd61239a8d5f8cc8e42d",
+  "body_tokens": 56,
+  "bucket": "out_of_range",
+  "clean_output": "\n        token_dict = {}\n        for key, value in token.items():\n            token_dict[key.lower()] = value\n        token_dict['expires_in'] = token_dict['expires_in']\n        return token_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "7fd730e0387576cdf4c650473044dccc4e858e146c7424820030932b18f35ff9",
+  "human_valid": true,
+  "line_no": 124181,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e110159b270f932ab992e4d81ae5ecaa615d41ce2d34f0c22d9a7e71e4dc38c",
+  "raw_output": "\n        token_dict = {}\n        for key, value in token.items():\n            token_dict[key.lower()] = value\n        token_dict['expires_in'] = token_dict['expires_in']\n        return token_dict\n\n    def",
+  "sampling_seed": 3086797043,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

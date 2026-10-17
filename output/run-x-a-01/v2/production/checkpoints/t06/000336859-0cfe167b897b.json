@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def binary(self):\n    \"\"\"Load and return the path to the native engine binary.\"\"\"\n    if self.engine is None:\n      raise RuntimeError(\"The engine is not loaded.\")\n\n    return os.path.join(self.engine, self.engine_name)\n",
+  "agc_valid": true,
+  "body_sha256": "632b55d58924a0eebe672ec37fcaa5c6c9227bdde87564fbaf03bc31cddd238b",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if self.engine is None:\n      raise RuntimeError(\"The engine is not loaded.\")\n\n    return os.path.join(self.engine, self.engine_name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "e1f7df7f2b9f69ec097463d842cc89522b148505f18840d12cbd418eae61d5c3",
+  "human_valid": true,
+  "line_no": 336859,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0cfe167b897b8d4f1ddd6a7137a3743b0d0808ae9f6a156d18a257f09e93b326",
+  "raw_output": "\n    if self.engine is None:\n      raise RuntimeError(\"The engine is not loaded.\")\n\n    return os.path.join(self.engine, self.engine_name)\n\n ",
+  "sampling_seed": 1991591928,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

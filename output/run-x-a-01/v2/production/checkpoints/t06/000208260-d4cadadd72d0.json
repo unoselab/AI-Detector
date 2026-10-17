@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def daemonize():\n    \"\"\"\n    Forks and daemonizes the current process. Does not automatically track\n    the process id; to do this, use :class:`Exscript.util.pidutil`.\n    \"\"\"\n    try:\n        pid = os.fork()\n        if pid >\n",
+  "agc_valid": false,
+  "body_sha256": "2fd502dff00e21182c449f237238f5c29e6f6a9b6926c1797c94b9428c5f0724",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        pid = os.fork()\n        if pid >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "395c5dbe4732340743267c6230bc5f7003c35419d40dafde1f8aff63ba940bcf",
+  "human_valid": true,
+  "line_no": 208260,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d4cadadd72d0f47d33ab1d49a5c3a774d29bfb092809816a0b70dcbb6fac41dc",
+  "raw_output": "\n    try:\n        pid = os.fork()\n        if pid > ",
+  "sampling_seed": 847203618,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

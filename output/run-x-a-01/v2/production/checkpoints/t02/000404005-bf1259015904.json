@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_group(self, t, i):\n        \"\"\"Get group number.\"\"\"\n        return self.groups[i]\n",
+  "agc_valid": true,
+  "body_sha256": "e99b204a1e0de18bf36c280c1ecfeadbc62f3d77276ea8f66d4382f64d9fdb97",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.groups[i]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "5b58b8f28eb2809d9daf4bab5dbb94050a82ab4cd1223b8c55f9da658e54c6df",
+  "human_valid": true,
+  "line_no": 404005,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bf1259015904c4d747325ec56b46d862aece04074d3b614dc3b6cc8b506124af",
+  "raw_output": "\n        return self.groups[i]\n\n    def",
+  "sampling_seed": 509247341,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

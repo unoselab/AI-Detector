@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_units(username):\n    \"\"\"\n    Return all units of user 'username'\n    \"\"\"\n    return Unit.query.filter_by(owner=username).all()\n",
+  "agc_valid": true,
+  "body_sha256": "ea3f22c7ca82a4592d8135f96bafcdba4a33b04d04853e5691bc2b82cc2d3a85",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return Unit.query.filter_by(owner=username).all()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "a0be61210f1cd6ed387b926483af56e15a3e3234daeccd733ab2b89c6df8e621",
+  "human_valid": true,
+  "line_no": 303152,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "34419371e10ecf02dd1196ce1bec9207ccb74fc87d9955e03a8553810e9670bb",
+  "raw_output": "\n    return Unit.query.filter_by(owner=username).all()\n\n\ndef get_unit(username, unit_name):\n    \"\"\"\n    Return unit of user 'username' with name 'unit_name'\n    \"\"\"\n    return Unit.query.filter_by(owner=username, name=unit_name).first()\n\n\ndef add_unit(username, unit_name, unit_type):\n    \"\"\"\n    Create and add unit of user 'username' with name 'unit_name' and type 'unit_type'\n    \"\"\"\n    unit = Unit(owner=username, name=unit_name, type=unit_type)\n    db.session.add(unit)\n    db.session.commit()\n    return unit\n\n\ndef delete_unit(username, unit_name):\n    \"\"\"\n    Delete unit of user 'username' with name 'unit_name'\n    \"\"\"\n    unit = Unit.query.filter_by(owner=username, name=unit_name).first()\n    if unit is None:\n        return False\n    db.session.delete(unit)\n    db.session.commit()\n    return True\n\n\ndef get_unit_types():\n    \"\"\"\n    Return all unit types\n    \"\"\"\n    return UnitType.query.all()\n\n\ndef add_unit_type(unit_type):\n    \"\"\"\n    Create and add unit type 'unit_type'\n    \"\"\"\n    new_unit_type = UnitType(name=unit_type)\n    db.session.add(new_unit_type)\n    db.session.commit()\n    return new_unit_type\n\n\ndef delete_unit_type(unit_type):\n    \"\"\"\n    Delete unit type 'unit_type'\n    \"\"\"\n    unit_type = UnitType.query.filter_by(name=unit_type).first()\n    if unit_type is None:\n        return False\n    db.session.delete(unit_type)\n    db.session.commit()\n    return True\n\n\ndef get_unit_types_for_user(username):\n    \"\"\"\n    Return all unit types of user 'username'\n    \"\"\"\n    return UnitType.query.filter_by(owner=username).",
+  "sampling_seed": 3059608766,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

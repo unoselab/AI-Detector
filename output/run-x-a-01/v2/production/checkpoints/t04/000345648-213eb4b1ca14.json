@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _set_keyspace_for_all_conns(self, keyspace, callback):\n        \"\"\"\n        Asynchronously sets the keyspace for all connections.  When all\n        connections have been set, `callback` will be called with two\n        arguments: this pool, and a list of any errors that occurred.\n        \"\"\"\n        errors = []\n",
+  "agc_valid": true,
+  "body_sha256": "5cfc35de4e4463607c233838fca0c7abc7489733449f8a00e4571faf4062bd6b",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        errors = []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "9050d9d37e0027e345a74829ddacb27e65a80ebc858abeb1c6a84c8701c09a2f",
+  "human_valid": true,
+  "line_no": 345648,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "213eb4b1ca14328b4848ad5fa2bc2be31761356c6999ed79067be3e3f157213a",
+  "raw_output": "\n        errors = []\n\n        def",
+  "sampling_seed": 1341138719,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

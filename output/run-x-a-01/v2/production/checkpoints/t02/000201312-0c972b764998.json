@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def nn_setsockopt(socket, level, option, value):\n    \"\"\"set a socket option\n\n    socket - socket number\n    level - option level\n    option - option\n    value - a readable byte buffer (not a Unicode string) containing the value\n    returns - 0 on success or < 0 on error\n\n    \"\"\"\n    return _lib.nn_setsockopt(socket, level, option, value, len(value))\n",
+  "agc_valid": true,
+  "body_sha256": "1b8c36bb99585b54d730660bcf69f9924b6c907061b7b10d97b944860768fb8d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return _lib.nn_setsockopt(socket, level, option, value, len(value))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "b7a36e3a6ffa82c70f5dba8e4023c846cae5910363142cc4c714e1bf3d4680f9",
+  "human_valid": true,
+  "line_no": 201312,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0c972b7649987cdaf17d3ec1fd42a5ff2f3027c755b388b85869d2daccb62c96",
+  "raw_output": "\n    return _lib.nn_setsockopt(socket, level, option, value, len(value))\n\n\ndef nn_getsockopt(socket, level, option, value):\n    \"\"\"get a socket option\n\n    socket - socket number\n    level - option level\n    option - option\n    value - a writable byte buffer (not a Unicode string) to receive the value\n    returns - ",
+  "sampling_seed": 2671597676,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

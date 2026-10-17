@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _linear_selection(self, non_empty_slices, num_slices):\n        \"\"\"Selects linearly spaced slices in given\"\"\"\n        return [x for x in range(non_empty_slices[0], non_empty_slices[-1] +\n",
+  "agc_valid": false,
+  "body_sha256": "f638818463957c0056b7aa23c9fa1f6faa66c52c43475991133dda3cc1ba19fe",
+  "body_tokens": 16,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return [x for x in range(non_empty_slices[0], non_empty_slices[-1] +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "3b9b4534d6f6476c1a80a34d254b3a3f83d77db378ecce3c37cce77441b971b1",
+  "human_valid": true,
+  "line_no": 261254,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f27f4da7b1b2c2a67d64be4ced6cca390791d8c876c9c49b6db653cc8ed5278b",
+  "raw_output": "\n        return [x for x in range(non_empty_slices[0], non_empty_slices[-1] + ",
+  "sampling_seed": 4091824278,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

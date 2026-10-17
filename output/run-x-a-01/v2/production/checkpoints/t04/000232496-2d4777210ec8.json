@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fetch_resources(uri, rel):\n    \"\"\"\n    Retrieves embeddable resource from given ``uri``.\n\n    For now only local resources (images, fonts) are supported.\n\n    :param str uri: path or url to image or font resource\n    :returns: path to local resource file.\n    :rtype: str\n    :raises: :exc:`~easy_pdf.exceptions.UnsupportedMediaPathException`\n    \"\"\"\n    if uri.startswith('http'):\n        raise UnsupportedMediaPathException('Remote resources are not supported.')\n    if not uri.startswith('/'):\n        uri = '/' + uri\n    return os.path.join(os.path.dirname(__file__), 'resources', uri)\n",
+  "agc_valid": true,
+  "body_sha256": "b8c035b3d6efa1ccb5dfe12c2d204f8ec164b772ad35933e52dbf31eba5a2925",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if uri.startswith('http'):\n        raise UnsupportedMediaPathException('Remote resources are not supported.')\n    if not uri.startswith('/'):\n        uri = '/' + uri\n    return os.path.join(os.path.dirname(__file__), 'resources', uri)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "00bb984f36e9babe15c1de0ac92c1d3c6204528e1a6c58ebfe174d4aceebc273",
+  "human_valid": true,
+  "line_no": 232496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2d4777210ec8d1f2249a00d8b782ec2f6379bdb529028509a3d06f06c07b8a2e",
+  "raw_output": "\n    if uri.startswith('http'):\n        raise UnsupportedMediaPathException('Remote resources are not supported.')\n    if not uri.startswith('/'):\n        uri = '/' + uri\n    return os.path.join(os.path.dirname(__file__), 'resources', uri)\n\n\ndef get_font_path(font_name, font_style):\n    \"\"\"\n    Retrieves path to font file from given ``font_name`` and ``font_style``.\n\n    :param str font_name: name of font\n    :param str font_style: style of font\n    :returns: path to font file.\n    :rtype: str\n    \"\"\"\n    return fetch_resources(f'fonts/{font_name}/{font_style}.ttf', 'font')\n\n\ndef get_image_path(image_name):\n    \"\"\"\n    Retrieves path to image file from given ``image_name``.\n\n    :param str image_name: name of image\n    :returns: path to image file.\n    :rtype: str\n    \"\"\"\n    return fetch_resources(f'images/{image_name}.png', 'image')\n\n\ndef get_template_path(template_name):\n    \"\"\"\n    Retrieves path to template file from given ``template_name``.\n\n    :param str template_name: name of template\n    :returns: path to template file.\n    :rtype: str\n    \"\"\"\n    return fetch_resources(f'templates/{template_name}.html', 'template')\n\n\ndef get_css_path(css_name):\n    \"\"\"\n    Retrieves path to css file from given ``css_name``.\n\n    :param str css_name: name of css\n    :returns: path to css file.\n    :rtype: str\n    \"\"\"\n    return fetch_resources(f'css/{css_name}.css', 'css')\n\n\ndef get_js_path(js_name):\n    \"\"\"\n    Retrieves path to js file from given ``js_name``.\n\n    :param str js_name: name of js\n    :returns: path to js file.\n    :rtype: str\n    \"\"\"\n    return fetch_resources(",
+  "sampling_seed": 2197751927,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

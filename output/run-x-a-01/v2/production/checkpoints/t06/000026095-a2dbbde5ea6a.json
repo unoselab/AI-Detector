@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_msp_crunch(self):\n        \"\"\"Returns the alignment as a line in MSPcrunch format. The columns are space-separated and are:\n           1. score\n           2. percent identity\n           3. match start in the query sequence\n           4. match end in the query sequence\n           5. query sequence name\n           6. subject sequence start\n           7. subject sequence end\n           8. subject sequence name\"\"\"\n           return '%s %s %i %i %s %i %i %s' % (\n               self.score,\n               self.percent_identity,\n               self.q_start,\n               self.q_end,\n               self.q_id,\n               self.s_start,\n               self.s_end,\n               self.s_id)\n",
+  "agc_valid": false,
+  "body_sha256": "ccf3f6581b7f449a9ad1525a43be2e19387b6d6273acd1dd2ef3e3f768a36487",
+  "body_tokens": 142,
+  "bucket": "type05_150",
+  "clean_output": "\n           return '%s %s %i %i %s %i %i %s' % (\n               self.score,\n               self.percent_identity,\n               self.q_start,\n               self.q_end,\n               self.q_id,\n               self.s_start,\n               self.s_end,\n               self.s_id)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "e74718597293ff82cbd3a9ca7090aee7699832f0ab255366707c59f1a471afd6",
+  "human_valid": true,
+  "line_no": 26095,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a2dbbde5ea6a1ce6a45d05d081ea8013b75a3162d8609b09466a82972742b276",
+  "raw_output": "\n        return '%s %s %i %i %s %i %i %s' % (\n            self.score,\n            self.percent_identity,\n            self.q_start,\n            self.q_end,\n            self.q_id,\n            self.s_start,\n            self.s_end,\n            self.s_id)\n\n\nclass PairwiseAlignment(object):\n    \"\"\"A pairwise alignment between two sequences.\n\n    Attributes:\n        q_id (str): the query sequence id\n        q_seq (str): the query sequence\n        q_start (int): the start of the query sequence (1-based)\n        q_end (int): the end of the query sequence (1-based)\n        s_id (str): the subject sequence id\n        s_seq (str): the subject sequence\n        s_start (int): the start of the subject sequence (1-based)\n        s_end (int): the end of the subject sequence (1-based)\n        score (int): the bit score\n        percent_identity (float): the percent identity\n        q_ali (str): the query alignment\n        s_ali (str): the subject alignment\n        q_seq_len (int): the length of the query sequence\n        s_seq_len (int): the length of the subject sequence\n        q_start_ali (int): the start of the query alignment in the query sequence\n        q_end_ali (int): the end of the query alignment in the query sequence\n        s_start_ali (int): the start of the subject alignment in the subject sequence\n        s_end_ali (int): the end of the subject alignment in the subject sequence\n        q_seq_start (int): the start of the query sequence in the subject sequence\n        q_seq_end (int): the end of the query sequence in the subject sequence\n        s_seq_start (int): the start of the subject sequence in the subject sequence\n        s_seq_end (int): the end of the subject sequence in the subject sequence\n        gaps (int): the number of gaps in the alignment\n        q_seq_len_aligned (int): the length of the aligned query sequence\n        s_seq_len_aligned (",
+  "sampling_seed": 4184971381,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

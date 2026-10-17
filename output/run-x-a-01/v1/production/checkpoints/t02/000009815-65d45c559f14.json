@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def from_file(self, fp):\n        \"\"\"Create a new image attachment from an image file.\n\n        :param file fp: a file object containing binary image data\n        :return: an image attachment\n        :rtype: :class:`~groupy.api.attachments.Image`\n        \"\"\"\n        return Image(fp.read())\n",
+  "agc_valid": true,
+  "body_sha256": "8e022d643054716d1b2cf5310107344401aaea6ebdd027585a1b582f8a2814cd",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return Image(fp.read())\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d158b64f5f54936575e857582e5794f645579f3377d2d5ab1ba51d9dc37e96d6",
+  "human_valid": true,
+  "line_no": 9815,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "65d45c559f14a236ff10bca8d318fd0308bb18632bb831a069384e86123b7d05",
+  "raw_output": "\n        return Image(fp.read())\n\n    def",
+  "sampling_seed": 4012718948,
+  "tag": "t02",
+  "temperature": 0.2
+}

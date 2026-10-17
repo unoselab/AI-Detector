@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def nice_true_ces(tc):\n    \"\"\"Format a true |CauseEffectStructure|.\"\"\"\n    return nice_ces(tc.true_ces)\n",
+  "agc_valid": true,
+  "body_sha256": "083d922dd07da9582b911cb116412c7864369c3862b098d1988f77a9075fb5f7",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return nice_ces(tc.true_ces)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "cd44602d9d307a8c2b228bd3d91abb7be5ec54cc6903cfbbd92e0209be309e84",
+  "human_valid": true,
+  "line_no": 294519,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0f2f429b60649ced0ff0e493d0d7011faabfb44dcfd602cecb7e3f0f6eea81fe",
+  "raw_output": "\n    return nice_ces(tc.true_ces)\n\n\ndef nice_false_ces(tc):\n    \"\"\"Format a false |CauseEffectStructure|.\"\"\"\n    return nice_ces(tc.false_ces)\n\n\ndef nice_ces(ces):\n    \"\"\"Format a |CauseEffectStructure|.\"\"\"\n    return ' '.join(\n        [nice_cause(c) for c in ces.causes] +\n        [nice_effect(e) for e in ces.effects]\n    )\n\n\ndef nice_cause(c):\n    \"\"\"Format a |Cause|.\"\"\"\n    return '{} {}'.format(nice_predicate(c.predicate), nice_arguments(c.arguments))\n\n\ndef nice_effect(e):\n    \"\"\"Format a |Effect|.\"\"\"\n    return '{} {}'.format(nice_predicate(e.predicate), nice_arguments(e.arguments))\n\n\ndef nice_predicate(p):\n    \"\"\"Format a |Predicate|.\"\"\"\n    return '{} {}'.format(p.name, nice_arguments(p.arguments))\n\n\ndef nice_arguments(args):\n    \"\"\"Format a list of |Argument|s.\"\"\"\n    return ' '.join([nice_argument(a) for a in args])\n\n\ndef nice_argument(a):\n    \"\"\"Format an |Argument|.\"\"\"\n    return '{} {}'.format(a.role, nice_value(a.value))\n\n\ndef nice_value(v):\n    \"\"\"Format a |Value|.\"\"\"\n    if isinstance(v, str):\n        return v\n    elif isinstance(v, int):\n        return str(v)\n    elif isinstance(v, float):\n        return str(v)\n    elif isinstance(v, bool):\n        return 'true' if v else 'false'\n    elif isinstance(v, list):\n        return ' '.join([nice_value(x) for x in v])\n    else:\n        raise ValueError('Unknown value type: {}'.format(type(v)))\n\n\ndef nice_sentence(s):\n    \"\"\"Format a |Sentence|.\"\"\"\n    return '{}",
+  "sampling_seed": 4252104541,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

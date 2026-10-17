@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def subprocess_check_output(*args, cwd=None, env=None, stderr=False):\n    \"\"\"\n    Run a command and capture output\n\n    :param *args: List of command arguments\n    :param cwd: Current working directory\n    :param env: Command environment\n    :param stderr: Read on stderr\n    :returns: Command output\n    \"\"\"\n    if cwd is None:\n        cwd = os.getcwd()\n    if env is None:\n        env = os.environ\n    if stderr:\n        cmd = subprocess.Popen(\n            args, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env)\n        out, err = cmd.communicate()\n        if cmd.returncode:\n            raise subprocess.CalledProcessError(cmd.returncode, args, output=err)\n    else:\n        cmd = subprocess.Popen(\n            args, cwd=cwd, stdout=subprocess.PIPE, env=env)\n        out = cmd.communicate()[0]\n        if cmd.returncode:\n            raise subprocess.CalledProcessError(cmd.returncode, args, output=out)\n    return out\n",
+  "agc_valid": true,
+  "body_sha256": "4c3e6fb9646bf5ad678dc86861116cde6eb6445c204023a53f76cb0f1636bd0b",
+  "body_tokens": 169,
+  "bucket": "type07_170",
+  "clean_output": "\n    if cwd is None:\n        cwd = os.getcwd()\n    if env is None:\n        env = os.environ\n    if stderr:\n        cmd = subprocess.Popen(\n            args, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env)\n        out, err = cmd.communicate()\n        if cmd.returncode:\n            raise subprocess.CalledProcessError(cmd.returncode, args, output=err)\n    else:\n        cmd = subprocess.Popen(\n            args, cwd=cwd, stdout=subprocess.PIPE, env=env)\n        out = cmd.communicate()[0]\n        if cmd.returncode:\n            raise subprocess.CalledProcessError(cmd.returncode, args, output=out)\n    return out\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "600c1532b193b8b9c133623b4e3d1a58553af6c4a9a23855b1835093e98fdf92",
+  "human_valid": true,
+  "line_no": 160808,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8d9209cfdee09148b36cdecd8a11c3cad42e42b991137c292760b7545b6c2510",
+  "raw_output": "\n    if cwd is None:\n        cwd = os.getcwd()\n    if env is None:\n        env = os.environ\n    if stderr:\n        cmd = subprocess.Popen(\n            args, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env)\n        out, err = cmd.communicate()\n        if cmd.returncode:\n            raise subprocess.CalledProcessError(cmd.returncode, args, output=err)\n    else:\n        cmd = subprocess.Popen(\n            args, cwd=cwd, stdout=subprocess.PIPE, env=env)\n        out = cmd.communicate()[0]\n        if cmd.returncode:\n            raise subprocess.CalledProcessError(cmd.returncode, args, output=out)\n    return out\n\n\ndef find_executable(name, path=None):\n    \"\"\"\n    Find an executable\n\n    :param name: Name of the executable\n    :param path: Path to search\n    :returns: Path to the executable\n    \"\"\"\n    if path is None:\n        path = os.environ.get('PATH', os.defpath)\n    path = path.split(os.pathsep)\n    extlist = ['']\n    if os.name == 'os2':\n        (base, ext) = os.path.splitext(name)\n        # executable extensions are things like \".exe\", \".com\", \".cmd\", \"\"\n        if ext.lower() not in extlist:\n            extlist = [ext.lower()] + extlist\n    for ext in extlist:\n        execname = name + ext\n        if os.path.isfile(execname):\n            return execname\n        else:\n            for p in path:\n                f = os.path.join(p, execname)\n                if os.path.isfile(f):\n                    return f\n    return None\n\n\ndef find_executable_in_path(name):\n    \"\"\"\n    Find an executable in the PATH\n\n    :param name: Name of the executable\n    :returns: Path to the executable\n    \"\"\"\n    return find_executable",
+  "sampling_seed": 3853521339,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

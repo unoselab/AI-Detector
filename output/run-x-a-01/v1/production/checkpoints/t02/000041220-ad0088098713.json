@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def unregister(self, itemtype, item_id):\n        \"\"\"\n        deregister the item in zookeeper /list/\n        itemtype must be a Zooborg constant\n        item_id must be a string\n        \"\"\"\n        if itemtype not in self.itemtypes:\n            raise ValueError(\"itemtype must be a Zooborg constant\")\n        if not isinstance(item_id, str):\n            raise ValueError(\"item_id must be a string\")\n        self.zk.delete(self.list_path + itemtype + \"/\" + item_id)\n",
+  "agc_valid": true,
+  "body_sha256": "21a2be2b38fbdb37a4e1038864d67ab5f12edccb3f24ef735d42cd6636fe319f",
+  "body_tokens": 73,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if itemtype not in self.itemtypes:\n            raise ValueError(\"itemtype must be a Zooborg constant\")\n        if not isinstance(item_id, str):\n            raise ValueError(\"item_id must be a string\")\n        self.zk.delete(self.list_path + itemtype + \"/\" + item_id)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "00c7babeced80a22c031c529d78717ff308e7257f868d1e213f5eabd78d1632f",
+  "human_valid": true,
+  "line_no": 41220,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ad0088098713f9dcf04c68fab0c1c392d226a3d6246d80b065c8cd6b7306aaec",
+  "raw_output": "\n        if itemtype not in self.itemtypes:\n            raise ValueError(\"itemtype must be a Zooborg constant\")\n        if not isinstance(item_id, str):\n            raise ValueError(\"item_id must be a string\")\n        self.zk.delete(self.list_path + itemtype + \"/\" + item_id)\n\n    def",
+  "sampling_seed": 2975664191,
+  "tag": "t02",
+  "temperature": 0.2
+}

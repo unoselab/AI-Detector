@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def confd_state_internal_callpoints_callpoint_registration_type_range_path(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n            path = '/internal/callpoints/callpoint-registration-type-range'\n            return self._request(kwargs.pop('method', 'GET'), path, kwargs)\n\n        @requestwrapper\n",
+  "agc_valid": false,
+  "body_sha256": "30032ad9a3bf78815affbc0a67a411e6d04a28fea3b4a1ea91038751c8624eb5",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n            path = '/internal/callpoints/callpoint-registration-type-range'\n            return self._request(kwargs.pop('method', 'GET'), path, kwargs)\n\n        @requestwrapper\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "e5fae04a2bac120a4cfbd5052adb9646f46dfe3e8e831b47bf1bb0c9076eeb21",
+  "human_valid": true,
+  "line_no": 268289,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "17c8372ec0b41569a491e1a47bbcab628f815f61165cf6ff0bf079c3d32c6608",
+  "raw_output": "\n        path = '/internal/callpoints/callpoint-registration-type-range'\n        return self._request(kwargs.pop('method', 'GET'), path, kwargs)\n\n    @requestwrapper\n    def",
+  "sampling_seed": 2344934062,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

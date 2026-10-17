@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def log_html(self, log) -> str:\n        \"\"\"Return single check sub-result string as HTML or not if below log\n        level.\"\"\"\n        if self.log_level <= log.level:\n            return log.html\n        return ''\n",
+  "agc_valid": true,
+  "body_sha256": "9031c5ffa93e31fa864778a7062c4d3b92f08d5b793230fe5e4d436162b4011e",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.log_level <= log.level:\n            return log.html\n        return ''\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "8c94a5ed2462f4a0d975c7fd222e425360ff977cb944761c6a91fb291416a246",
+  "human_valid": true,
+  "line_no": 285488,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f5e06d0caed11a18423fb454aae53907c1af936febf4d345569ed12989ba0c96",
+  "raw_output": "\n        if self.log_level <= log.level:\n            return log.html\n        return ''\n\n    def",
+  "sampling_seed": 1525289701,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

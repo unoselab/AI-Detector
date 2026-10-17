@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_str_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list of strings\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list of strings\".format(arg))\n    if not all([isinstance(s, str) for s in arg]):\n        raise TypeError(\"{} must be a list of strings\".format(arg))\n    return arg\n",
+  "agc_valid": true,
+  "body_sha256": "0e9f8a4b9b4a699c75a26a1e74dda2728489eaad29233a3844a29a777b8a689b",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list of strings\".format(arg))\n    if not all([isinstance(s, str) for s in arg]):\n        raise TypeError(\"{} must be a list of strings\".format(arg))\n    return arg\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "bf3de59e4b1cf3d8476b2bf4d2ebd7cdc153082325cfdbbaa00cc54f07f2ef47",
+  "human_valid": true,
+  "line_no": 115861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "97bed77551039b98c99a7f1e8a14810afff64ae738beafb2657f9ce27ffd8c3a",
+  "raw_output": "\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list of strings\".format(arg))\n    if not all([isinstance(s, str) for s in arg]):\n        raise TypeError(\"{} must be a list of strings\".format(arg))\n    return arg\n\n\ndef _validate_str(arg):\n    \"\"\"\n    ensure ``arg`` is a string\n    \"\"\"\n    if not isinstance(arg, str):\n        raise TypeError(\"{} must be a string\".format(arg))\n    return arg\n\n\ndef _validate_int(arg):\n    \"\"\"\n    ensure ``arg`` is an integer\n    \"\"\"\n    if not isinstance(arg, int):\n        raise TypeError(\"{} must be an integer\".format(arg))\n    return arg\n\n\ndef _validate_float(arg):\n    \"\"\"\n    ensure ``arg`` is a float\n    \"\"\"\n    if not isinstance(arg, float):\n        raise TypeError(\"{} must be a float\".format(arg))\n    return arg\n\n\ndef _validate_bool(arg):\n    \"\"\"\n    ensure ``arg`` is a boolean\n    \"\"\"\n    if not isinstance(arg, bool):\n        raise TypeError(\"{} must be a boolean\".format(arg))\n    return arg\n\n\ndef _validate_dict(arg):\n    \"\"\"\n    ensure ``arg`` is a dict\n    \"\"\"\n    if not isinstance(arg, dict):\n        raise TypeError(\"{} must be a dict\".format(arg))\n    return arg\n\n\ndef _validate_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list\".format(arg))\n    return arg\n\n\ndef _validate_tuple(arg):\n    \"\"\"\n    ensure ``arg`` is a tuple\n    \"\"\"\n    if not isinstance(arg, tuple):\n        raise TypeError(\"{} must be a tuple\".format(arg))\n    return arg\n\n\ndef _validate_list_of_str(arg):\n    \"\"\"\n    ensure ``arg`` is a list of strings\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a",
+  "sampling_seed": 3416795539,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def remove_cycle_mrkr(self):\n        \"\"\"Remove cycle marker.\"\"\"\n        if self.cycle_mrkr is not None:\n            self.cycle_mrkr.remove()\n            self.cycle_mrkr = None\n",
+  "agc_valid": true,
+  "body_sha256": "bda280a5b1f8cc3bd4c3a4be403c02c0b3da612f2136c12aeddc7746d1736fa0",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.cycle_mrkr is not None:\n            self.cycle_mrkr.remove()\n            self.cycle_mrkr = None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "3b93c53cff02f142f00ace1f154006e532d764c9b911f2b0dc7388c5ccf9c671",
+  "human_valid": true,
+  "line_no": 130523,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d678fbafd1f095ddb709fe04abf15138a49a5592891ae18563d3e472a276c6d9",
+  "raw_output": "\n        if self.cycle_mrkr is not None:\n            self.cycle_mrkr.remove()\n            self.cycle_mrkr = None\n\n    def",
+  "sampling_seed": 1143399548,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

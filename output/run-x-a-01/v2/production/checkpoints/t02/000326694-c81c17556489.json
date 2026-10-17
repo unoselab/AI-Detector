@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _process_value(value):\n    \"\"\"Convert the value into a human readable diff string\n    \"\"\"\n    if value is None:\n        return 'None'\n    elif isinstance(value, dict):\n        return '{' + ', '.join(\n            '{}={}'.format(k, _process_value(v))\n            for k, v in value.items()\n        ) + '}'\n    elif isinstance(value, list):\n        return '[' + ', '.join(\n            _process_value(v) for v in value\n        ) + ']'\n    elif isinstance(value, str):\n        return '\"{}\"'.format(value)\n    else:\n        return str(value)\n",
+  "agc_valid": true,
+  "body_sha256": "12beff7543b02622af9d4d397ff4a6175f8510789499ac3a1dd77723e0fe69ce",
+  "body_tokens": 146,
+  "bucket": "type05_150",
+  "clean_output": "\n    if value is None:\n        return 'None'\n    elif isinstance(value, dict):\n        return '{' + ', '.join(\n            '{}={}'.format(k, _process_value(v))\n            for k, v in value.items()\n        ) + '}'\n    elif isinstance(value, list):\n        return '[' + ', '.join(\n            _process_value(v) for v in value\n        ) + ']'\n    elif isinstance(value, str):\n        return '\"{}\"'.format(value)\n    else:\n        return str(value)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "8e49c1b9e1a6525ec2a525b07deb88fc9ffa1e2e023e496727a3dbffc14f4a45",
+  "human_valid": true,
+  "line_no": 326694,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c81c17556489156c7bb8ebebd8ceab837d7e95d9825635d36c5c8089f3844b9c",
+  "raw_output": "\n    if value is None:\n        return 'None'\n    elif isinstance(value, dict):\n        return '{' + ', '.join(\n            '{}={}'.format(k, _process_value(v))\n            for k, v in value.items()\n        ) + '}'\n    elif isinstance(value, list):\n        return '[' + ', '.join(\n            _process_value(v) for v in value\n        ) + ']'\n    elif isinstance(value, str):\n        return '\"{}\"'.format(value)\n    else:\n        return str(value)\n\n\ndef _process_diff(diff):\n    \"\"\"Convert the diff into a human readable diff string\n    \"\"\"\n    if diff is None:\n        return 'None'\n    elif isinstance(diff, dict):\n        return '{' + ', '.join(\n            '{}={}'.format(k, _process_diff(v))\n            for k, v in diff.items()\n        ) + '}'\n    elif isinstance(diff, list):\n        return '[' + ', '.join(\n            _process_diff(v) for v in diff\n        ) + ']'\n    elif isinstance(diff, str):\n        return '\"{}\"'.format(diff)\n    else:\n        return str(diff)\n\n\ndef _process_diff_list(diff_list):\n    \"\"\"Convert the diff list into a human readable diff string\n    \"\"\"\n    return '[' + ', '.join(\n        _process_diff(diff) for diff in diff_list\n    ) + ']'\n\n\ndef _process_diff_dict(diff_dict):\n    \"\"\"Convert the diff dict into a human readable diff string\n    \"\"\"\n    return '{' + ', '.join(\n        '{}={}'.format(k, _process_diff(v))\n        for k, v in diff_dict.items()\n    ) + '}'\n\n\ndef _process_diff_value(diff_value):\n    \"\"\"Convert the diff value into a human readable diff string\n    \"\"\"\n    if diff_value is None:\n        return 'None'\n    elif isinstance(diff_value, dict):\n        return '{' + ',",
+  "sampling_seed": 609808418,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

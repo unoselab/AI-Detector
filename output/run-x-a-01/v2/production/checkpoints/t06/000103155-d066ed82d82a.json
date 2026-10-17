@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def dependency_of_fetches(fetches, op):\n    \"\"\"\n    Check that op is in the subgraph induced by the dependencies of fetches.\n    fetches may have more general structure.\n\n    Args:\n        fetches: An argument to `sess.run`. Nested structure will affect performance.\n        op (tf.Operation or tf.Tensor):\n\n    Returns:\n        bool: True if any of `fetches` depend on `op`.\n    \"\"\"\n    if isinstance(op, tf.Operation):\n        op = op.node_def\n    if isinstance(fetches, tf.Tensor):\n        fetches = [fetches]\n    if isinstance(fetches, tf.Operation):\n        fetches = [fetches]\n",
+  "agc_valid": true,
+  "body_sha256": "3294301f62928dcb6e470f2356be7cd0e6b6a62344b581a2fbbb53df62aaf15c",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(op, tf.Operation):\n        op = op.node_def\n    if isinstance(fetches, tf.Tensor):\n        fetches = [fetches]\n    if isinstance(fetches, tf.Operation):\n        fetches = [fetches]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "4cb9051a82ae2a8803a40268d4a275c5d960130bd36932d96cfb0fef3ea3131a",
+  "human_valid": true,
+  "line_no": 103155,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d066ed82d82aa79e1955d413c5b0f8379db2bb5a3f63021792d2a22ee70d373d",
+  "raw_output": "\n    if isinstance(op, tf.Operation):\n        op = op.node_def\n    if isinstance(fetches, tf.Tensor):\n        fetches = [fetches]\n    if isinstance(fetches, tf.Operation):\n        fetches = [fetches]\n\n    def",
+  "sampling_seed": 2389978248,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

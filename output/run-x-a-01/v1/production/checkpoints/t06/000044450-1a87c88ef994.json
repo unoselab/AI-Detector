@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def recv_multipart(self):\n        \"\"\"\n        Read from all the associated sockets.\n\n        :returns: A list of tuples (socket, frames) for each socket that\n            returned a result.\n        \"\"\"\n        try:\n            return self._loop.recv_multipart()\n        except zmq.ZMQError as e:\n            if e.errno == zmq.EAGAIN:\n                return []\n            raise\n",
+  "agc_valid": true,
+  "body_sha256": "f93493ee60f7b8ea3ecadaf282dceea2fbdffd181abe42a43d780613cff714a7",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n        try:\n            return self._loop.recv_multipart()\n        except zmq.ZMQError as e:\n            if e.errno == zmq.EAGAIN:\n                return []\n            raise\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "55a2830aaafdde1aa0eb42b431103b4420983406dc252019764f2b3f6c31cf99",
+  "human_valid": true,
+  "line_no": 44450,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1a87c88ef99425150cd98df5468d286410b7bf9a938384275d6d31f0f38b2214",
+  "raw_output": "\n        try:\n            return self._loop.recv_multipart()\n        except zmq.ZMQError as e:\n            if e.errno == zmq.EAGAIN:\n                return []\n            raise\n\n    def",
+  "sampling_seed": 3549842344,
+  "tag": "t06",
+  "temperature": 0.6
+}

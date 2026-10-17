@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def lookup_subsystem_device_name(\n            self, vendor_id, device_id, subvendor_id, subdevice_id):\n        \"\"\"\n        Lookup the name of a given subsystem device.\n\n        :param vendor_id:\n            PCI vendor identifier\n        :ptype vendor_id:\n            int\n        :param device_id:\n            PCI device identifier\n        :ptype device_id:\n            int\n        :param subvendor_id:\n            PCI subvendor identifier\n        :ptype subvendor_id:\n            int\n        :param device_id:\n            PCI subdevice identifier\n        :ptype subdevice_id:\n            int\n        :returns:\n            Name of the PCI subsystem device.\n\n        .. note::\n            Lookup respects various flag properties that impact the behavior\n            in case the name cannot be found in the local database. Refer to\n            the documentation of each of the ``flag_`` properties.\n        \"\"\"\n            int\n        :param subdevice_id:\n            PCI subdevice identifier\n        :ptype subdevice_id:\n            int\n        :returns:\n            the name of the subsystem device\n        :rtype:\n            str\n        \"\"\"\n        if subdevice_id is None:\n            subdevice_id =\n",
+  "agc_valid": false,
+  "body_sha256": "d0ae97f385597ab552ed167ad374c067e90fc8e208c9b456dc1185f1966b1aea",
+  "body_tokens": 134,
+  "bucket": "type04_140",
+  "clean_output": "\n            int\n        :param subdevice_id:\n            PCI subdevice identifier\n        :ptype subdevice_id:\n            int\n        :returns:\n            the name of the subsystem device\n        :rtype:\n            str\n        \"\"\"\n        if subdevice_id is None:\n            subdevice_id =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "ce9aa5a9ff868039e813799752327b70e448fddb5218b412574005b5e7800c17",
+  "human_valid": true,
+  "line_no": 260776,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "397e9cb4a70913bacf2242d25b313200b33adbd6c5401845e410b7debb913328",
+  "raw_output": "\n            int\n        :param subdevice_id:\n            PCI subdevice identifier\n        :ptype subdevice_id:\n            int\n        :returns:\n            the name of the subsystem device\n        :rtype:\n            str\n        \"\"\"\n        if subdevice_id is None:\n            subdevice_id = ",
+  "sampling_seed": 114860854,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

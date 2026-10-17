@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_ngrams(self, corpus, minimum, maximum, catalogue=None):\n        \"\"\"Adds n-gram data from `corpus` to the data store.\n\n        :param corpus: corpus of works\n        :type corpus: `Corpus`\n        :param minimum: minimum n-gram size\n        :type minimum: `int`\n        :param maximum: maximum n-gram size\n        :type maximum: `int`\n        :param catalogue: optional catalogue to limit corpus to\n        :type catalogue: `Catalogue`\n\n        \"\"\"\n        atalogue`\n                :returns: `True` if successful\n                :rtype: `bool`\n                \"\"\"\n                self._check_corpus(corpus)\n                if not isinstance(minimum, int) or not isinstance(maximum, int):\n                    raise TypeError(\"minimum and maximum must be integers\")\n                if minimum <\n",
+  "agc_valid": false,
+  "body_sha256": "df4c125ba51476665192949977331ad1bb5d3809f05025c1d5d162bc14544348",
+  "body_tokens": 144,
+  "bucket": "type05_150",
+  "clean_output": "\n        atalogue`\n                :returns: `True` if successful\n                :rtype: `bool`\n                \"\"\"\n                self._check_corpus(corpus)\n                if not isinstance(minimum, int) or not isinstance(maximum, int):\n                    raise TypeError(\"minimum and maximum must be integers\")\n                if minimum <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "612aee8e14ce29411fb4e26fff8161577f1e0ad42348199213e55bc8244e3644",
+  "human_valid": true,
+  "line_no": 230857,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d39e6b1580ac3d3efff1a7a6287b09f61b5f827efdb35fb080fa9721e06df436",
+  "raw_output": "atalogue`\n        :returns: `True` if successful\n        :rtype: `bool`\n        \"\"\"\n        self._check_corpus(corpus)\n        if not isinstance(minimum, int) or not isinstance(maximum, int):\n            raise TypeError(\"minimum and maximum must be integers\")\n        if minimum < ",
+  "sampling_seed": 3381707814,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

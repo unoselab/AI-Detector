@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def convertLatLngToPixelXY(self, lat, lng, level):\n        \"\"\"\n        returns the x and y values of the pixel corresponding to a latitude\n        and longitude.\n        \"\"\"\n        # convert latitude and longitude to pixel coordinates\n        lat = math.radians(lat)\n        lng = math.radians(lng)\n        x = int(self.x_origin + (self.pixels_per_lon_degree * lng))\n        y = int(self.y_origin - (self.pixels_per_lat_degree * math.log(math.tan(math.pi /\n",
+  "agc_valid": false,
+  "body_sha256": "bee3a79b80cdc675145939e8f06f26c85e6ee23d005ada056c38ae4f11a8f37f",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # convert latitude and longitude to pixel coordinates\n        lat = math.radians(lat)\n        lng = math.radians(lng)\n        x = int(self.x_origin + (self.pixels_per_lon_degree * lng))\n        y = int(self.y_origin - (self.pixels_per_lat_degree * math.log(math.tan(math.pi /\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "e7b3ed48c57548702d77685562416771db18fc1aa7b6427aa00acdd162a51f9e",
+  "human_valid": true,
+  "line_no": 27128,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f204acc267842298f01e67940e85d350ffd2991f5660f3d46f77935f7d48f616",
+  "raw_output": "\n        # convert latitude and longitude to pixel coordinates\n        lat = math.radians(lat)\n        lng = math.radians(lng)\n        x = int(self.x_origin + (self.pixels_per_lon_degree * lng))\n        y = int(self.y_origin - (self.pixels_per_lat_degree * math.log(math.tan(math.pi / ",
+  "sampling_seed": 223795189,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

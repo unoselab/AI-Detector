@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def deleteAllActivationKeys(server):\n    \"\"\"\n    Delete all activation keys from Spacewalk\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt-run spacewalk.deleteAllActivationKeys spacewalk01.domain.com\n    \"\"\"\n    server = _check_server(server)\n    try:\n        keys = list(server.activation_keys())\n    except Exception as exc:\n        raise CommandExecutionError(\n            \"Could not list activation keys: {0}\".format(exc)\n        )\n    if keys:\n        try:\n            for key in keys:\n                server.delete_activation_key(key)\n        except Exception as exc:\n            raise CommandExecutionError(\n                \"Could not delete activation key: {0}\".format(exc)\n            )\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "34a70f660f8b3d1e2e751ceca02281d008c6769e43428a18ef92da41cef4de8e",
+  "body_tokens": 168,
+  "bucket": "type07_170",
+  "clean_output": "\n    server = _check_server(server)\n    try:\n        keys = list(server.activation_keys())\n    except Exception as exc:\n        raise CommandExecutionError(\n            \"Could not list activation keys: {0}\".format(exc)\n        )\n    if keys:\n        try:\n            for key in keys:\n                server.delete_activation_key(key)\n        except Exception as exc:\n            raise CommandExecutionError(\n                \"Could not delete activation key: {0}\".format(exc)\n            )\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "985826e1dbe15541d2872780a4474747a4996a22f16b40b77549991510bea77e",
+  "human_valid": true,
+  "line_no": 118395,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6bad8c03120d3aa1c80a13e4a543dad312dae4e911a624bbbf522c9c35208243",
+  "raw_output": "\n    server = _check_server(server)\n    try:\n        keys = list(server.activation_keys())\n    except Exception as exc:\n        raise CommandExecutionError(\n            \"Could not list activation keys: {0}\".format(exc)\n        )\n    if keys:\n        try:\n            for key in keys:\n                server.delete_activation_key(key)\n        except Exception as exc:\n            raise CommandExecutionError(\n                \"Could not delete activation key: {0}\".format(exc)\n            )\n    return True\n\n\ndef deleteActivationKey(server, key):\n    \"\"\"\n    Delete an activation key from Spacewalk\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt-run spacewalk.deleteActivationKey spacewalk01.domain.com ",
+  "sampling_seed": 2935416721,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

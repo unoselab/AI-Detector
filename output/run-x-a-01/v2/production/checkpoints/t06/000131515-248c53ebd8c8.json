@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _bounds(component, glyph_set):\n    \"\"\"Return the (xmin, ymin) of the bounds of `component`.\"\"\"\n    # Find the xmin, ymin of the bounds of the components\n    # This is necessary since the bounds of the components\n    # do not include the components of the components\n    bounds = []\n    for glyph in component.references:\n        glyph = glyph_set[glyph.name]\n        if glyph.lib is None:\n            continue\n        bounds.append(glyph.lib.get(\"public.glyphBounds\", (0,\n",
+  "agc_valid": false,
+  "body_sha256": "70e2be59ceccd847282d82a7ca57e89e4abc100fa6dc28924d9d9a3329bb5c5c",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Find the xmin, ymin of the bounds of the components\n    # This is necessary since the bounds of the components\n    # do not include the components of the components\n    bounds = []\n    for glyph in component.references:\n        glyph = glyph_set[glyph.name]\n        if glyph.lib is None:\n            continue\n        bounds.append(glyph.lib.get(\"public.glyphBounds\", (0,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "42dcde6474fbe3482efa371b54336b867baf54dc9fbc3e3102f98e063e3f39bd",
+  "human_valid": true,
+  "line_no": 131515,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "248c53ebd8c84732fa9d2413157e54f19d1cc065b8486fcaa5aab038739eff50",
+  "raw_output": "\n    # Find the xmin, ymin of the bounds of the components\n    # This is necessary since the bounds of the components\n    # do not include the components of the components\n    bounds = []\n    for glyph in component.references:\n        glyph = glyph_set[glyph.name]\n        if glyph.lib is None:\n            continue\n        bounds.append(glyph.lib.get(\"public.glyphBounds\", (0, ",
+  "sampling_seed": 735699773,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

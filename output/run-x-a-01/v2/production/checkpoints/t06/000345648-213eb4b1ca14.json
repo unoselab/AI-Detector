@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _set_keyspace_for_all_conns(self, keyspace, callback):\n        \"\"\"\n        Asynchronously sets the keyspace for all connections.  When all\n        connections have been set, `callback` will be called with two\n        arguments: this pool, and a list of any errors that occurred.\n        \"\"\"\n        self.log.debug(\"Setting keyspace %s on %d connections\", keyspace, len(self.conns))\n        errors = []\n        all_conns = list(self.conns.values())\n        for conn in all_conns:\n            try:\n                conn.set_keyspace(keyspace)\n            except Exception as exc:\n                errors.append(exc)\n        if callback is not None:\n            callback(self, errors)\n",
+  "agc_valid": true,
+  "body_sha256": "d76d822f176a04511ac5c7749d5bc18bf609f668d65a0f474d4fce1eae7054d2",
+  "body_tokens": 131,
+  "bucket": "type04_140",
+  "clean_output": "\n        self.log.debug(\"Setting keyspace %s on %d connections\", keyspace, len(self.conns))\n        errors = []\n        all_conns = list(self.conns.values())\n        for conn in all_conns:\n            try:\n                conn.set_keyspace(keyspace)\n            except Exception as exc:\n                errors.append(exc)\n        if callback is not None:\n            callback(self, errors)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "9050d9d37e0027e345a74829ddacb27e65a80ebc858abeb1c6a84c8701c09a2f",
+  "human_valid": true,
+  "line_no": 345648,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "213eb4b1ca14328b4848ad5fa2bc2be31761356c6999ed79067be3e3f157213a",
+  "raw_output": "\n        self.log.debug(\"Setting keyspace %s on %d connections\", keyspace, len(self.conns))\n        errors = []\n        all_conns = list(self.conns.values())\n        for conn in all_conns:\n            try:\n                conn.set_keyspace(keyspace)\n            except Exception as exc:\n                errors.append(exc)\n        if callback is not None:\n            callback(self, errors)\n\n    def",
+  "sampling_seed": 3766713613,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

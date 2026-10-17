@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _bounds(component, glyph_set):\n    \"\"\"Return the (xmin, ymin) of the bounds of `component`.\"\"\"\n    return (\n        min(glyph_set.get_glyph(g).x for g in component.get_glyphs()),\n        min(glyph_set.get_glyph(g).y for g in component.get_glyphs()),\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "57c16bff597a49d219af3b08fa04e2b0b0eac68afca17358ef57d41a56a83aef",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return (\n        min(glyph_set.get_glyph(g).x for g in component.get_glyphs()),\n        min(glyph_set.get_glyph(g).y for g in component.get_glyphs()),\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "42dcde6474fbe3482efa371b54336b867baf54dc9fbc3e3102f98e063e3f39bd",
+  "human_valid": true,
+  "line_no": 131515,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "248c53ebd8c84732fa9d2413157e54f19d1cc065b8486fcaa5aab038739eff50",
+  "raw_output": "\n    return (\n        min(glyph_set.get_glyph(g).x for g in component.get_glyphs()),\n        min(glyph_set.get_glyph(g).y for g in component.get_glyphs()),\n    )\n\n\ndef _get_glyphs(component, glyph_set):\n    \"\"\"Return the glyphs of `component`.\"\"\"\n    return [glyph_set.get_glyph(g) for g in component.get_glyphs()]\n\n\ndef _get_glyph_names(component, glyph_set):\n    \"\"\"Return the glyph names of `component`.\"\"\"\n    return [glyph_set.get_glyph(g).name for g in component.get_glyphs()]\n\n\ndef _get_glyph_names_and_coords(component, glyph_set):\n    \"\"\"Return the glyph names and coordinates of `component`.\"\"\"\n    return [\n        (glyph_set.get_glyph(g).name, glyph_set.get_glyph(g).x, glyph_set.get_glyph(g).y)\n        for g in component.get_glyphs()\n    ]\n\n\ndef _get_glyph_names_and_coords_and_anchors(component, glyph_set):\n    \"\"\"Return the glyph names, coordinates, and anchors of `component`.\"\"\"\n    return [\n        (\n            glyph_set.get_glyph(g).name,\n            glyph_set.get_glyph(g).x,\n            glyph_set.get_glyph(g).y,\n            glyph_set.get_glyph(g).anchors,\n        )\n        for g in component.get_glyphs()\n    ]\n\n\ndef _get_glyph_names_and_coords_and_anchors_and_widths(component, glyph_set):\n    \"\"\"Return the glyph names, coordinates, anchors, and widths of `component`.\"\"\"\n    return [\n        (\n            glyph_set.get_glyph(g).name,\n           ",
+  "sampling_seed": 3919379079,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

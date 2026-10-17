@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def xml_marshal_complete_multipart_upload(uploaded_parts):\n    \"\"\"\n    Marshal's complete multipart upload request based on *uploaded_parts*.\n\n    :param uploaded_parts: List of all uploaded parts, ordered by part number.\n    :return: Marshalled XML data.\n    \"\"\"\n        return \"\"\"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n    <CompleteMultipartUpload>\n        <Part>\n            <PartNumber>{}</PartNumber>\n            <ETag>{}</ETag>\n        </Part>\n    </CompleteMultipartUpload>\"\"\".format(\n            uploaded_parts[0].part_number, uploaded_parts[0].etag\n        )\n",
+  "agc_valid": false,
+  "body_sha256": "a95ee08f571ca7be3b1a8a319e5f39a0d4b06f539831559403d58e2d02d288c8",
+  "body_tokens": 81,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return \"\"\"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n    <CompleteMultipartUpload>\n        <Part>\n            <PartNumber>{}</PartNumber>\n            <ETag>{}</ETag>\n        </Part>\n    </CompleteMultipartUpload>\"\"\".format(\n            uploaded_parts[0].part_number, uploaded_parts[0].etag\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "471105f9f2325b4a44c59867d6cd66723d54419e29320f0d631b7b31377823de",
+  "human_valid": true,
+  "line_no": 341622,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dee1473082966348f7f98a57782d1e1417b6d52d000f1d9feda67fb0a470eccd",
+  "raw_output": "\n    return \"\"\"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CompleteMultipartUpload>\n    <Part>\n        <PartNumber>{}</PartNumber>\n        <ETag>{}</ETag>\n    </Part>\n</CompleteMultipartUpload>\"\"\".format(\n        uploaded_parts[0].part_number, uploaded_parts[0].etag\n    )\n\n\ndef xml_marshal_list_multipart_uploads(uploads):\n    \"\"\"\n    Marshal's list multipart uploads request based on *uploads*.\n\n    :param uploads: List of all uploads.\n    :return: Marshalled XML data.\n    \"\"\"\n    return \"\"\"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListMultipartUploadsResult>\n    <Bucket>{}</Bucket>\n    <KeyMarker>{}</KeyMarker>\n    <UploadIdMarker>{}</UploadIdMarker>\n    <NextKeyMarker>{}</NextKeyMarker>\n    <NextUploadIdMarker>{}</NextUploadIdMarker>\n    <Delimiter>{}</Delimiter>\n    <MaxUploads>{}</MaxUploads>\n    <IsTruncated>{}</IsTruncated>\n    <Upload>\n        <Key>{}</Key>\n        <UploadId>{}</UploadId>\n        <Initiated>{}</Initiated>\n    </Upload>\n</ListMultipartUploadsResult>\"\"\".format(\n        uploads[0].bucket,\n        uploads[0].key_marker,\n        uploads[0].upload_id_marker,\n        uploads[0].next_key_marker,\n        uploads[0].next_upload_id_marker,\n        uploads[0].delimiter,\n        uploads[0].max_uploads,\n        uploads[0].is_truncated,\n        uploads[0].key,\n        uploads[0].upload_id,\n        uploads[0].initiated,\n    )\n\n\ndef xml_marshal_list_parts(parts):\n    \"\"\"\n    Marshal's list parts request based on *parts*.\n\n    :param",
+  "sampling_seed": 2335502693,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

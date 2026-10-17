@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def basic_decrypt() -> Response:\n    \"\"\"Basic decrypt handler for decrypt oracle v0.\n\n    **Request**\n\n    * **Method**: POST\n    * **Body**: Raw ciphertext bytes\n    * **Headers**:\n\n      * **Content-Type**: ``application/octet-stream``\n      * **Accept**: ``application/octet-stream``\n\n    **Response**\n\n    * 200 response code with the raw plaintext bytes as the body\n    * 400 response code with whatever error code was encountered as the body\n    \"\"\"\n    message is thrown\n\n        \"\"\"\n        try:\n            plaintext = decrypt_oracle(request.get_data())\n        except Exception as e:\n            return Response(str(e), status=400)\n        return Response(plaintext, status=200)\n",
+  "agc_valid": false,
+  "body_sha256": "cee444e152681d8af5865300a8dcc4480a85536ebb04d890588ee5d61970fbd1",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n    message is thrown\n\n        \"\"\"\n        try:\n            plaintext = decrypt_oracle(request.get_data())\n        except Exception as e:\n            return Response(str(e), status=400)\n        return Response(plaintext, status=200)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "71dd86b77dfbeddbc67ca3d8315431cce413aaf5052a711394c6422fab9bad80",
+  "human_valid": true,
+  "line_no": 294011,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "596243d06a8d360aab9ddfe168ba688d50a506dd642790b9d7a79e223d3cf8e6",
+  "raw_output": "message is thrown\n\n    \"\"\"\n    try:\n        plaintext = decrypt_oracle(request.get_data())\n    except Exception as e:\n        return Response(str(e), status=400)\n    return Response(plaintext, status=200)\n\n\ndef basic_encrypt() -> Response:\n    \"\"\"Basic encrypt handler for encrypt oracle v0.\n\n    **Request**\n\n    * **Method**: POST\n    * **Body**: Raw plaintext bytes\n    * **Headers**:\n\n      * **Content-Type**: ``application/octet-stream``\n      * **Accept**: ``application/octet-stream``\n\n    **Response**\n\n    * ",
+  "sampling_seed": 3736584655,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

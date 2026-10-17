@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def open(self, mode):\n        \"\"\"\n        Open the FileSystem target.\n\n        This method returns a file-like object which can either be read from or written to depending\n        on the specified mode.\n\n        :param mode: the mode `r` opens the FileSystemTarget in read-only mode, whereas `w` will\n                     open the FileSystemTarget in write mode. Subclasses can implement\n                     additional options.\n        :type mode: str\n        \"\"\"\n        if mode == 'r':\n            return self._open_read()\n        elif mode == 'w':\n            return self._open_write()\n        else:\n            raise ValueError('Unsupported mode: {}'.format(mode))\n",
+  "agc_valid": true,
+  "body_sha256": "a47f0bb6b95a44e95574ca19ef767d3d2d3e6113a0743f5c6cab5147f92e373b",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if mode == 'r':\n            return self._open_read()\n        elif mode == 'w':\n            return self._open_write()\n        else:\n            raise ValueError('Unsupported mode: {}'.format(mode))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "93ed282e824a022604f345f53a7b01e02f41a92cc2b67cf01f3904f8068e1afa",
+  "human_valid": true,
+  "line_no": 110585,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "01a19a96e0c6c39eb922a24a9903d51734230296552adace605b29b5ecaaf998",
+  "raw_output": "\n        if mode == 'r':\n            return self._open_read()\n        elif mode == 'w':\n            return self._open_write()\n        else:\n            raise ValueError('Unsupported mode: {}'.format(mode))\n\n    def",
+  "sampling_seed": 2435836658,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

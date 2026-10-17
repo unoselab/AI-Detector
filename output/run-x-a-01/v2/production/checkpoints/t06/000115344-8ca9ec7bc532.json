@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_advanced_configs(vm_name, datacenter, service_instance=None):\n    \"\"\"\n    Returns extra config parameters from a virtual machine advanced config list\n\n    vm_name\n        Virtual machine name\n\n    datacenter\n        Datacenter name where the virtual machine is available\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__,\n                                               opts_id=None)\n    if not service_instance:\n        raise VMwareObjectRetrievalError('Unable to establish connection to'\n                                        ' vCenter server')\n    vm_obj = _get_vm_ref(service_instance, vm_name, datacenter)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError('VM \\'{0}\\' was not found'\n                                        .format(vm_name))\n    advanced_configs = vm_obj.config.extraConfig\n    return advanced_configs\n",
+  "agc_valid": true,
+  "body_sha256": "1ca97dc31a498ffadb49503da51cf3571adec18477addb11579e4cfe5af4090e",
+  "body_tokens": 203,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__,\n                                               opts_id=None)\n    if not service_instance:\n        raise VMwareObjectRetrievalError('Unable to establish connection to'\n                                        ' vCenter server')\n    vm_obj = _get_vm_ref(service_instance, vm_name, datacenter)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError('VM \\'{0}\\' was not found'\n                                        .format(vm_name))\n    advanced_configs = vm_obj.config.extraConfig\n    return advanced_configs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "1f54df7cc6745125b244300e14107345bcb3a76b6f5d47ba352d6df78bff9192",
+  "human_valid": true,
+  "line_no": 115344,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ca9ec7bc5324d57ba9caf9a57587b85f46efcf8a4abd74aa33d55f2b2e7e810",
+  "raw_output": "\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__,\n                                               opts_id=None)\n    if not service_instance:\n        raise VMwareObjectRetrievalError('Unable to establish connection to'\n                                        ' vCenter server')\n    vm_obj = _get_vm_ref(service_instance, vm_name, datacenter)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError('VM \\'{0}\\' was not found'\n                                        .format(vm_name))\n    advanced_configs = vm_obj.config.extraConfig\n    return advanced_configs\n\n\ndef set_advanced_config(vm_name, datacenter, config_key, config_value,\n                        service_instance=None):\n    \"\"\"\n    Sets extra config parameters to a virtual machine advanced config list\n\n    vm_name\n        Virtual machine name\n\n    datacenter\n        Datacenter name where the virtual machine is available\n\n    config_key\n        Name of the extra config parameter to set\n\n    config_value\n        Value of the extra config parameter to set\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__,\n                                               opts_id=None)\n    if not service_instance:\n        raise VMwareObjectRetrievalError('Unable to establish connection to'\n                                        ' vCenter server')\n    vm_obj = _get_vm_ref(service_instance, vm_name, datacenter)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError('VM \\'{0}\\' was not found'\n                                        .format(vm_name))\n    configs = vm_obj.config.extraConfig\n    configs.append(vim.option.OptionValue(key=config_key, value=config_value))\n    vm_obj.config.extraConfig = configs\n    vm_obj.config.extraConfig = configs\n\n\ndef remove_advanced_config(vm_name, datacenter, config_key,",
+  "sampling_seed": 716270433,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def probably_geojson(input):\n    \"\"\"A quick check to see if this input looks like GeoJSON. If not a dict\n    JSON-like object, attempt to parse input as JSON. If the resulting object\n    has a type property that looks like GeoJSON, return that object or None\"\"\"\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input and input['type'] in ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']:\n        return input\n    else:\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "99feb25065ffbe110aa7957b30ce33ff51bfb9169f9db34dce138a67f5e1809d",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input and input['type'] in ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']:\n        return input\n    else:\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "e34c2029fff376b65f18dbfdd68047265db3651df46c5a6caefcdb099b21903f",
+  "human_valid": true,
+  "line_no": 324497,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0f1d3ec8566e2b0273ca61c3d19486fc756c35856d0600ec1cdc22916d60b467",
+  "raw_output": "\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input and input['type'] in ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']:\n        return input\n    else:\n        return None\n\n\ndef probably_geojson_file(input):\n    \"\"\"A quick check to see if this file looks like GeoJSON. If not a dict\n    JSON-like object, attempt to parse input as JSON. If the resulting object\n    has a type property that looks like GeoJSON, return that object or None\"\"\"\n    try:\n        input = json.load(input)\n    except ValueError:\n        return None\n    if 'type' in input and input['type'] in ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']:\n        return input\n    else:\n        return None\n\n\ndef probably_geojson_str(input):\n    \"\"\"A quick check to see if this input looks like GeoJSON. If not a dict\n    JSON-like object, attempt to parse input as JSON. If the resulting object\n    has a type property that looks like GeoJSON, return that object or None\"\"\"\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input and input['type'] in ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']:\n        return input\n    else:\n        return None\n\n\ndef probably_geojson_url(input):\n    \"\"\"A quick check to see if this input looks like GeoJSON. If not a dict\n    JSON-like object, attempt to parse input as JSON. If the resulting object\n    has a type property that looks like GeoJSON, return that object or None\"\"\"\n    try:\n        input = json.load(input)\n    except ValueError:\n        return None\n    if 'type' in input and input['type'] in ['Point', 'LineString', '",
+  "sampling_seed": 3300297910,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

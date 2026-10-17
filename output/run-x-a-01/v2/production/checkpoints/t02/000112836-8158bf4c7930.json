@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_running(self):\n        \"\"\"\n        Check if a pid file exists and if it is associated with\n        a running process.\n        \"\"\"\n        if not os.path.exists(self.pid_file):\n            return False\n        pid = int(open(self.pid_file).read())\n        if not pid:\n            return False\n        if not os.path.exists(\"/proc/%s\" % pid):\n            return False\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "440efb565bece1f448e45cdebbbd8fb77cc7ace5a1d0179281c7512a5b3cac86",
+  "body_tokens": 91,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not os.path.exists(self.pid_file):\n            return False\n        pid = int(open(self.pid_file).read())\n        if not pid:\n            return False\n        if not os.path.exists(\"/proc/%s\" % pid):\n            return False\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "7e3973624ce4bfb18de3d10821674abe3d4aa45006f11937fc69ae61e42fdab1",
+  "human_valid": true,
+  "line_no": 112836,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8158bf4c7930a9f9e9e25cc60a41722e4b710c7418a4855c46f494cad017cb3e",
+  "raw_output": "\n        if not os.path.exists(self.pid_file):\n            return False\n        pid = int(open(self.pid_file).read())\n        if not pid:\n            return False\n        if not os.path.exists(\"/proc/%s\" % pid):\n            return False\n        return True\n\n    def",
+  "sampling_seed": 1008668436,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

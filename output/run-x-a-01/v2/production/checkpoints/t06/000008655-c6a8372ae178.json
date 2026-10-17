@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _parse_token(word, chunk=\"O\", pnp=\"O\", relation=\"O\", anchor=\"O\", \n                 format=[WORD, POS, CHUNK, PNP, REL, ANCHOR, LEMMA]):\n    \"\"\" Returns a list of token tags parsed from the given <word> element.\n        Tags that are not attributes in a <word> (e.g., relation) can be given as parameters.\n    \"\"\"\n    token = []\n    if WORD in format:\n        token.append(word.text)\n    if POS in format:\n        token.append(word.get(\"pos\"))\n    if CHUNK in format:\n        token.append(chunk)\n    if PNP in format:\n        token.append(pnp)\n    if REL in format:\n        token.append(relation)\n    if ANCHOR in format:\n        token.append(anchor)\n    if LEMMA in format:\n        token.append(word.get(\"lemma\"))\n    return token\n",
+  "agc_valid": true,
+  "body_sha256": "294d39b85aa83700638fb9b2ccf781b91d2cd235c4c04221b0730a54339a5ce7",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n    token = []\n    if WORD in format:\n        token.append(word.text)\n    if POS in format:\n        token.append(word.get(\"pos\"))\n    if CHUNK in format:\n        token.append(chunk)\n    if PNP in format:\n        token.append(pnp)\n    if REL in format:\n        token.append(relation)\n    if ANCHOR in format:\n        token.append(anchor)\n    if LEMMA in format:\n        token.append(word.get(\"lemma\"))\n    return token\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "ad609b21b44a246969da09387d372a9faab3e37488f657d8c04141107b99c1ec",
+  "human_valid": true,
+  "line_no": 8655,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c6a8372ae1787fa9e1f5c4aca4f3c23955a6a699c636852dc0d496864117e9ec",
+  "raw_output": "\n    token = []\n    if WORD in format:\n        token.append(word.text)\n    if POS in format:\n        token.append(word.get(\"pos\"))\n    if CHUNK in format:\n        token.append(chunk)\n    if PNP in format:\n        token.append(pnp)\n    if REL in format:\n        token.append(relation)\n    if ANCHOR in format:\n        token.append(anchor)\n    if LEMMA in format:\n        token.append(word.get(\"lemma\"))\n    return token\n\n\ndef _parse_sentence(sentence):\n    \"\"\" Returns a list of tokens in a sentence.\n    \"\"\"\n    tokens = []\n    for word in sentence:\n        tokens.append(_parse_token(word))\n    return tokens\n\n\ndef _parse_snippet(snippet, format=[WORD, POS, CHUNK, PNP, REL, ANCHOR, LEMMA]):\n    \"\"\" Returns a list of sentences in a snippet.\n    \"\"\"\n    sentences = []\n    for sentence in snippet:\n        sentences.append(_parse_sentence(sentence, format))\n    return sentences\n\n\ndef _parse_doc(doc, format=[WORD, POS, CHUNK, PNP, REL, ANCHOR, LEMMA]):\n    \"\"\" Returns a list of snippets in a document.\n    \"\"\"\n    snippets = []\n    for snippet in doc:\n        snippets.append(_parse_snippet(snippet, format))\n    return snippets\n\n\ndef _parse_corpus(corpus, format=[WORD, POS, CHUNK, PNP, REL, ANCHOR, LEMMA]):\n    \"\"\" Returns a list of documents in a corpus.\n    \"\"\"\n    docs = []\n    for doc in corpus:\n        docs.append(_parse_doc(doc, format))\n    return docs\n\n\ndef _parse_xml(xml, format=[WORD, POS, CHUNK, PNP, REL, ANCHOR, LEMMA]):\n    \"\"\" Returns a list of documents in a XML corpus.\n    \"\"\"\n    cor",
+  "sampling_seed": 906972779,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

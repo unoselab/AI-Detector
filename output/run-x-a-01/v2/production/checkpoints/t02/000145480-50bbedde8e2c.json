@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hsig(self, es):\n        \"\"\"return \"OK-signal\" for rank-one update, `True` (OK) or `False`\n        (stall rank-one update), based on the length of an evolution path\n\n        \"\"\"\n        if es.rank1_path_length() > self.rank1_path_length_threshold:\n            return True\n        else:\n            return False\n",
+  "agc_valid": true,
+  "body_sha256": "ae21bef095cc77393fbd6aec50256a4839f0218af306d513f056f18791a5dddc",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if es.rank1_path_length() > self.rank1_path_length_threshold:\n            return True\n        else:\n            return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "3e0425834cf704c9bb0fb7713c8d0693ee1b1d3e6e110ed3006322aa5d7347d7",
+  "human_valid": true,
+  "line_no": 145480,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "50bbedde8e2c98d42eb17e3d03a86e580101ffa2181fe1b18eaf754f30dbf3ed",
+  "raw_output": "\n        if es.rank1_path_length() > self.rank1_path_length_threshold:\n            return True\n        else:\n            return False\n\n    def",
+  "sampling_seed": 2474473552,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

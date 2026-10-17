@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def endnotemap(self, cache=True):\n        \"\"\"return the endnotes from the docx, keyed to string id.\"\"\"\n        if cache and hasattr(self, '_endnotes'):\n            return self._endnotes\n        endnotes = self.document.endnotes\n        endnotes_map = {}\n        for endnote in endnotes:\n            endnotes_map[endnote.id] = endnote\n        if cache:\n            self._endnotes = endnotes_map\n        return endnotes_map\n",
+  "agc_valid": true,
+  "body_sha256": "4a95bcda79e44efd8a3e14151a3ec1680fcc200df023c765c352a8d735ccad5c",
+  "body_tokens": 103,
+  "bucket": "type01_110",
+  "clean_output": "\n        if cache and hasattr(self, '_endnotes'):\n            return self._endnotes\n        endnotes = self.document.endnotes\n        endnotes_map = {}\n        for endnote in endnotes:\n            endnotes_map[endnote.id] = endnote\n        if cache:\n            self._endnotes = endnotes_map\n        return endnotes_map\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "cf1ff82f85c0093f0191d2e8f767ee05c80daa779af6b55afbfbe7a8222359fd",
+  "human_valid": true,
+  "line_no": 247425,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6e269f61ca25150c914fdd45df04b3119c49fae8fe45b2da7702ad501407827d",
+  "raw_output": "\n        if cache and hasattr(self, '_endnotes'):\n            return self._endnotes\n        endnotes = self.document.endnotes\n        endnotes_map = {}\n        for endnote in endnotes:\n            endnotes_map[endnote.id] = endnote\n        if cache:\n            self._endnotes = endnotes_map\n        return endnotes_map\n\n    def",
+  "sampling_seed": 2118763560,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

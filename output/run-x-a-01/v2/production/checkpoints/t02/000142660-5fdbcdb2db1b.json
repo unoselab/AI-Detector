@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fitness(self, width, height):\n        \"\"\"\n        In guillotine algorithm case, returns the min of the fitness of all \n        free sections, for the given dimension, both normal and rotated\n        (if rotation enabled.)\n        \"\"\"\n        min_fitness = None\n        for section in self.free_sections:\n            fitness = section.fitness(width, height)\n            if min_fitness is None or fitness < min_fitness:\n                min_fitness = fitness\n        return min_fitness\n",
+  "agc_valid": true,
+  "body_sha256": "ec2fe78f21e9ec8ce96ccc8f8e962b39d278fe90878047e9d7be8179442bcbea",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n        min_fitness = None\n        for section in self.free_sections:\n            fitness = section.fitness(width, height)\n            if min_fitness is None or fitness < min_fitness:\n                min_fitness = fitness\n        return min_fitness\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "942008852f3e28221903379ea2dc505e3a2a14e716a0d8c6afcc29d71554558c",
+  "human_valid": true,
+  "line_no": 142660,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5fdbcdb2db1bc6bb48b8459fe6473c92b45cf7ebcf7a9bbde64d656ee4111d27",
+  "raw_output": "\n        min_fitness = None\n        for section in self.free_sections:\n            fitness = section.fitness(width, height)\n            if min_fitness is None or fitness < min_fitness:\n                min_fitness = fitness\n        return min_fitness\n\n    def",
+  "sampling_seed": 2478798356,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_path(path, overrides=None, **kwargs):\n    \"\"\"\n    Convenience function for loading a YAML configuration from a file.\n\n    Parameters\n    ----------\n    path : str\n        The path to the file to load on disk.\n    overrides : dict, optional\n        A dictionary containing overrides to apply. The location of\n        the override is specified in the key as a dot-delimited path\n        to the desired parameter, e.g. \"model.corruptor.corruption_level\".\n\n    Returns\n    -------\n    graph : dict or object\n        The dictionary or object (if the top-level element specified an\n        Python object to instantiate).\n\n    Notes\n    -----\n    Other keyword arguments are passed on to `yaml.load`.\n    \"\"\"\n    -------\n     config : dict\n         A dictionary containing the loaded configuration.\n     \"\"\"\n     with open(path, 'r') as f:\n         config = yaml.load(f, Loader=yaml.FullLoader)\n\n     if overrides is not None:\n         for key, value in overrides.items():\n             set_nested_value(config, key, value)\n\n     return config\n",
+  "agc_valid": false,
+  "body_sha256": "f7c49b43ad748a98776397f033ff1fcc3ce44aed8a9d960fa467dbec46dd15f5",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n    -------\n     config : dict\n         A dictionary containing the loaded configuration.\n     \"\"\"\n     with open(path, 'r') as f:\n         config = yaml.load(f, Loader=yaml.FullLoader)\n\n     if overrides is not None:\n         for key, value in overrides.items():\n             set_nested_value(config, key, value)\n\n     return config\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9e0bef581f979186a14801a4d6d1b11127773cd1554634a5652816bdb8b39aff",
+  "human_valid": true,
+  "line_no": 18374,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "5f925ef9ad5bfad015e5fcdd770aceeaf2905a4c41c7b1e88e46bf21230f8b72",
+  "raw_output": "   -------\n    config : dict\n        A dictionary containing the loaded configuration.\n    \"\"\"\n    with open(path, 'r') as f:\n        config = yaml.load(f, Loader=yaml.FullLoader)\n\n    if overrides is not None:\n        for key, value in overrides.items():\n            set_nested_value(config, key, value)\n\n    return config\n\n\ndef set_nested_value(dictionary, key, value):\n    \"\"\"\n    Set a value in a nested dictionary.\n\n    Parameters\n    ----------\n    dictionary : dict\n        The dictionary to set the value in.\n    key : str\n        The key to set.\n    value : object\n        The value to set.\n    \"\"\"\n    keys = key.split('.')\n    for k in keys[:-1]:\n        dictionary = dictionary[k]\n    dictionary[keys[-1]] = value\n\n\ndef get_nested_value(dictionary, key):\n    \"\"\"\n    Get a value from a nested dictionary.\n\n    Parameters\n    ----------\n    dictionary : dict\n        The dictionary to get the value from.\n    key : str\n        The key to get.\n\n    Returns\n    -------\n    value : object\n        The value.\n    \"\"\"\n    keys = key.split('.')\n    for k in keys[:-1]:\n        dictionary = dictionary[k]\n    return dictionary[keys[-1]]\n\n\ndef get_nested_keys(dictionary, key):\n    \"\"\"\n    Get the keys of a nested dictionary.\n\n    Parameters\n    ----------\n    dictionary : dict\n        The dictionary to get the keys from.\n    key : str\n        The key to get.\n\n    Returns\n    -------\n    keys : list\n        The keys.\n    \"\"\"\n    keys = key.split('.')\n    for k in keys[:-1]:\n        dictionary = dictionary[k]\n    return list(dictionary[keys[-1]].keys())\n\n\ndef get_nested_values(dictionary, key):\n    \"\"\"\n    Get the values of a nested dictionary.\n\n    Parameters\n    ----------\n    dictionary : dict\n        The dictionary to get the values from.\n   ",
+  "sampling_seed": 3564121063,
+  "tag": "t04",
+  "temperature": 0.4
+}

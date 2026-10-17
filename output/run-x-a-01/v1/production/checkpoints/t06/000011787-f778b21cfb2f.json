@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def post_save_update_cache(sender, instance, created, raw, **kwargs):\n    \"\"\"Update the cache when an instance is created or modified.\"\"\"\n    if created:\n        # If it's a new instance, it's not in the cache yet.\n        # Since it's a new instance, it can't have any relationships.\n        return\n    else:\n        # If it's an existing instance, it's already in the cache.\n        # Update the cache with the latest data.\n        instance._update_cache()\n",
+  "agc_valid": true,
+  "body_sha256": "50e77197dcb19d4c306d53ffc83fa54f6129ccfa8a966426b938044441d0c46d",
+  "body_tokens": 96,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if created:\n        # If it's a new instance, it's not in the cache yet.\n        # Since it's a new instance, it can't have any relationships.\n        return\n    else:\n        # If it's an existing instance, it's already in the cache.\n        # Update the cache with the latest data.\n        instance._update_cache()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0b3cc29bd14848935d5ba5d656dfc5b6be02c24f515ad564830f13f659dc96e9",
+  "human_valid": true,
+  "line_no": 11787,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f778b21cfb2f73b76bf5ff82ec53c57b4caf42b0f457a40f6e47c8e55a24f9a9",
+  "raw_output": "\n    if created:\n        # If it's a new instance, it's not in the cache yet.\n        # Since it's a new instance, it can't have any relationships.\n        return\n    else:\n        # If it's an existing instance, it's already in the cache.\n        # Update the cache with the latest data.\n        instance._update_cache()\n\n\ndef post_delete_remove_from_cache(sender, instance, **kwargs):\n    \"\"\"Remove the object from the cache when it's deleted.\"\"\"\n    instance._remove_from_cache()\n\n\ndef pre_delete_remove_from_cache(sender, instance, **kwargs):\n    \"\"\"Remove the object from the cache when it's deleted.\"\"\"\n    instance._remove_from_cache()\n\n\ndef pre_delete_remove_from_cache(sender, instance, **kwargs):\n    \"\"\"Remove the object from the cache when it's deleted.\"\"\"\n    instance._remove_from_cache()\n\n\ndef post_save_add_to_cache(sender, instance, created, raw, **kwargs):\n    \"\"\"Add the object to the cache when it's created or modified.\"\"\"\n    if created:\n        # If it's a new instance, it's not in the cache yet.\n        # Add it to the cache.\n        instance._add_to_cache()\n    else:\n        # If it's an existing instance, it's already in the cache.\n        # Update the cache with the latest data.\n        instance._update_cache()\n\n\ndef post_delete_remove_from_cache(sender, instance, **kwargs):\n    \"\"\"Remove the object from the cache when it's deleted.\"\"\"\n    instance._remove_from_cache()\n\n\ndef pre_delete_remove_from_cache(sender, instance, **kwargs):\n    \"\"\"Remove the object from the cache when it's deleted.\"\"\"\n    instance._remove_from_cache()\n\n\ndef post_save_add_to_cache(sender, instance, created, raw, **kwargs):\n    \"\"\"Add the object to the cache when it's created or modified.\"\"\"\n    if created:\n        # If it's a new instance,",
+  "sampling_seed": 2461756678,
+  "tag": "t06",
+  "temperature": 0.6
+}

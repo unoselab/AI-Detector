@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def balancer_present(name, port, protocol, profile, algorithm=None, members=None, **libcloud_kwargs):\n    \"\"\"\n    Ensures a load balancer is present.\n\n    :param name: Load Balancer name\n    :type  name: ``str``\n\n    :param port: Port the load balancer should listen on, defaults to 80\n    :type  port: ``str``\n\n    :param protocol: Loadbalancer protocol, defaults to http.\n    :type  protocol: ``str``\n\n    :param profile: The profile key\n    :type  profile: ``str``\n\n    :param algorithm: Load balancing algorithm, defaults to ROUND_ROBIN. See Algorithm type\n        in Libcloud documentation for a full listing.\n    :type algorithm: ``str``\n\n    :param members: An optional list of members to create on deployment\n    :type  members: ``list`` of ``dict`` (ip, port)\n    \"\"\"\n    Name of the profile to use\n        :type\n",
+  "agc_valid": false,
+  "body_sha256": "0b7872b7e2965fff87862691f47c31ef421fee9307d6831b756df34f661e65cc",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Name of the profile to use\n        :type\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "bc4b5e0c86ea8b23383f82e6632f9e89375db4a2f014526c43cdaf81792baddb",
+  "human_valid": true,
+  "line_no": 119257,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c9710bd6b9ada9591ee8ec22c26653405175c2bdda385f7ecbade8bdbc1076e",
+  "raw_output": "Name of the profile to use\n    :type ",
+  "sampling_seed": 3352758957,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

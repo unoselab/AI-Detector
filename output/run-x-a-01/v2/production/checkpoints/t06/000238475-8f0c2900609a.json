@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_spec(self, fullname, path, target=None):\n        \"\"\"\n        Claims modules that are under ipynb.fs\n        \"\"\"\n        if fullname.startswith('ipynb.fs'):\n            if target is None:\n                target = self.path\n            fullname = fullname.replace('.', '/')\n            return spec_from_file_location(fullname, os.path.join(target, fullname + '.py'))\n",
+  "agc_valid": true,
+  "body_sha256": "26f0d65be9c51f82a63c8c015375e8349d501638d02f979033db927665f9c2fd",
+  "body_tokens": 75,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if fullname.startswith('ipynb.fs'):\n            if target is None:\n                target = self.path\n            fullname = fullname.replace('.', '/')\n            return spec_from_file_location(fullname, os.path.join(target, fullname + '.py'))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "872593dc005f9fe06e3e173b13097249cbebe51edd93def588db73bae1a77e44",
+  "human_valid": true,
+  "line_no": 238475,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8f0c2900609a141ad2a083fedcb5442ac02d4679f5da7132aeddc01f93899f06",
+  "raw_output": "\n        if fullname.startswith('ipynb.fs'):\n            if target is None:\n                target = self.path\n            fullname = fullname.replace('.', '/')\n            return spec_from_file_location(fullname, os.path.join(target, fullname + '.py'))\n\n\ndef find_loader(fullname, path=None):\n    \"\"\"\n    Claims modules that are under ipynb.fs\n    \"\"\"\n    if fullname.startswith('ipynb.fs'):\n        return Loader()\n\n\nsys.meta_path.append(find_loader)\nsys.meta_path.append(find_spec)\n\n\ndef _get_path(path):\n    if path.endswith('.ipynb'):\n        path = path[:-6]\n    if path.endswith('.ipynb.py'):\n        path = path[:-9]\n    if path.endswith('.ipynb.pyc'):\n        path = path[:-10]\n    if path.endswith('.ipynb.pyo'):\n        path = path[:-10]\n    if path.endswith('.ipynb.pyd'):\n        path = path[:-10]\n    return path\n\n\ndef _get_cell(path):\n    if path.endswith('.py'):\n        path = path[:-3]\n    if path.endswith('.pyc'):\n        path = path[:-4]\n    if path.endswith('.pyo'):\n        path = path[:-4]\n    if path.endswith('.pyd'):\n        path = path[:-4]\n    if path.endswith('.pyw'):\n        path = path[:-4]\n    if path.endswith('.ipynb'):\n        path = path[:-6]\n    if path.endswith('.ipynb.py'):\n        path = path[:-9]\n    return path\n\n\ndef _get_cell_name(path):\n    return _get_cell(path).split('/')[-1]\n\n\ndef _get_cell_path(path):\n    return '/'.join(_get_cell(path).split('/')[:-1])\n\n\ndef _",
+  "sampling_seed": 4161684982,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,29 @@
+{
+  "benchmark_length": "literal_space_split_100_to_200_in_ten_buckets",
+  "exclusions": [
+    {
+      "hwc_rows": 4500,
+      "path": "/home/user1-system11/project-workspace/ai_detector/src/code-analyzer-tree-sitter/data_codesearchnet/codellama-7b/validsyntax/codesearchnet_codellama-7b_python_merged_4500.csv",
+      "rows": 9000,
+      "sha256": "016a928ee5d3dce50723680a4ee70ae1497102bae233144e049c2aa6edd7c8c5"
+    }
+  ],
+  "experiment": "run-x-a-01-v1",
+  "filter": "CodeSearchNet 5..128 prompt words, 5..256 solution words, valid HWC AST",
+  "generator_script_sha256": "148ce6efaa7360bac2b87e3c729302d6bd1ad753413b9b52ce390274d3929bab",
+  "max_input_tokens": 128,
+  "max_new_tokens": 512,
+  "max_prompts": 1500,
+  "model": "codellama/CodeLlama-7b-hf",
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "seed": 20260723,
+  "selection": "lowest_seeded_hash_ranks_after_historical_exclusion",
+  "temperatures": {
+    "t02": 0.2,
+    "t04": 0.4,
+    "t06": 0.6
+  },
+  "top_p": 0.95,
+  "train_path": "/home/user1-system11/project-workspace/ai_detector/data/CodeSearchNet/python/train.jsonl",
+  "train_sha256": "de2c5260187058b3f5cdec3a8bd27242b87778b1c4398b8fc254f2ba825dc903"
+}

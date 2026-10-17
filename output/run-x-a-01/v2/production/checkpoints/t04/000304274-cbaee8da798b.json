@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def pt_on_bezier_curve(P=[(0.0, 0.0)], t=0.5):\n    \"\"\"Return point at t on bezier curve defined by control points P.\n    \"\"\"\n    if len(P) ==\n",
+  "agc_valid": false,
+  "body_sha256": "4ae58796b23a152f9affe2dde7932fd5ab2aad919c1e5684c90cb2c097624cd0",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(P) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 190,
+  "human_sha256": "5bd3bff17240058ef8e29c94a39017708096bd093681630548ad75ce5b911c1a",
+  "human_valid": true,
+  "line_no": 304274,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cbaee8da798b12262f0705bb5d4816f920dbb166e757110c4e15f96bc28b5735",
+  "raw_output": "\n    if len(P) == ",
+  "sampling_seed": 115438777,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

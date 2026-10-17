@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def monitor_resource_sync_state(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's sync state.\n\n    Calls callback(True/False) whenever the resource becomes synced or unsynced. Will\n    always do an initial callback(False) call. Exits without calling callback() if\n    exit_event is set\n    \"\"\"\n    from katcp import SyncStatus\n    from katcp.core import KATCPClientResource\n\n    if not isinstance(resource, KATCPClientResource):\n        raise ValueError(\"resource must be a KATCPClientResource\")\n    if not callable(callback):\n        raise ValueError(\"callback must be callable\")\n\n    # Initial callback to set up the monitor\n    callback(False)\n    # Callback to set up the monitor\n",
+  "agc_valid": true,
+  "body_sha256": "2b8ea442b0043ea3b4d15d1b9f92ee0311804be29609ac759aaa3af11a6fa639",
+  "body_tokens": 78,
+  "bucket": "out_of_range",
+  "clean_output": "\n    from katcp import SyncStatus\n    from katcp.core import KATCPClientResource\n\n    if not isinstance(resource, KATCPClientResource):\n        raise ValueError(\"resource must be a KATCPClientResource\")\n    if not callable(callback):\n        raise ValueError(\"callback must be callable\")\n\n    # Initial callback to set up the monitor\n    callback(False)\n    # Callback to set up the monitor\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "fbd016b5dabec6e84a125679e27e35c42c8c2254f4790bec34208706756355f9",
+  "human_valid": true,
+  "line_no": 409308,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36576fae851de26dd84673e71751ba862c203c7ca2bbf46a7544f3234203671a",
+  "raw_output": "\n    from katcp import SyncStatus\n    from katcp.core import KATCPClientResource\n\n    if not isinstance(resource, KATCPClientResource):\n        raise ValueError(\"resource must be a KATCPClientResource\")\n    if not callable(callback):\n        raise ValueError(\"callback must be callable\")\n\n    # Initial callback to set up the monitor\n    callback(False)\n    # Callback to set up the monitor\n    def",
+  "sampling_seed": 2734329971,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

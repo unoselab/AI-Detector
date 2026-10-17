@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run_restore(self, snapshot: Dict[Union[str, Key], Any]) -> 'BaseItemCollection':\n        \"\"\"\n        Restores the state of a collection from a snapshot\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b1127dde5d3190a6e9d3127a37fa67046f63f39c87845b46b88911567c6b6acb",
+  "human_valid": true,
+  "line_no": 18987,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "df17c7e62e35078626ebbce78486e9d9cee133a4a08f7756ca32b01ed8b7b0c2",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 2253504855,
+  "tag": "t06",
+  "temperature": 0.6
+}

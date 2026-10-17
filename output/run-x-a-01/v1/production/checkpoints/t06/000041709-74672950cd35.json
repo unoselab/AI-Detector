@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bounding_box(dset):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``dset``\"\"\"\n    return [\n        [dset.x.min(), dset.y.min(), dset.z.min()],\n        [dset.x.max(), dset.y.max(), dset.z.max()],\n    ]\n",
+  "agc_valid": true,
+  "body_sha256": "bcd7cc4931a5382150e97ae42e62c2d2cca2318e6dc1545a4fe6e5a5bcb676eb",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return [\n        [dset.x.min(), dset.y.min(), dset.z.min()],\n        [dset.x.max(), dset.y.max(), dset.z.max()],\n    ]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "179cee18908a9368f52a88d4eb4a45f8141f98eae6605d1517e66ceca897e7e9",
+  "human_valid": true,
+  "line_no": 41709,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "74672950cd352c1b2ab5f332d977514bd209be495e556ac2b2a29e9a67e051c9",
+  "raw_output": "\n    return [\n        [dset.x.min(), dset.y.min(), dset.z.min()],\n        [dset.x.max(), dset.y.max(), dset.z.max()],\n    ]\n\n\ndef load_data_from_file(filename, data_type=\"tiff\"):\n    \"\"\"load the data contained in the given file as a dataset\n\n    Parameters\n    ----------\n    filename : str\n        path to the file to load\n    data_type : {'tiff', 'vti', 'raw'}\n        the type of the data contained in the file\n\n    Returns\n    -------\n    dataset\n        the dataset containing the data\n    \"\"\"\n    if data_type == \"tiff\":\n        return tiff_reader(filename)\n    elif data_type == \"vti\":\n        return vti_reader(filename)\n    elif data_type == \"raw\":\n        return raw_reader(filename)\n\n\ndef tiff_reader(filename):\n    \"\"\"load a dataset from a tiff file\n\n    Parameters\n    ----------\n    filename : str\n        path to the file to load\n\n    Returns\n    -------\n    dataset\n        the dataset containing the data\n    \"\"\"\n    with tifffile.TiffFile(filename) as tif:\n        data = tif.asarray()\n        data = data.squeeze()\n        data = data.astype(np.float32)\n        data = data.transpose(2, ",
+  "sampling_seed": 3393997633,
+  "tag": "t06",
+  "temperature": 0.6
+}

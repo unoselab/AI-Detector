@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def datetime(self):\n        \"\"\"\n        Returns a datetime object representing the date the game was played.\n        \"\"\"\n        return datetime.datetime(self.year, self.month, self.day, self.hour, self.minute)\n",
+  "agc_valid": true,
+  "body_sha256": "3ae2bd41e81ef98b1ac57acbdff3a96c57be857af802e2b049061d02d5fc3dec",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return datetime.datetime(self.year, self.month, self.day, self.hour, self.minute)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "073a66c5b9840768f642eab7a2040d6f7e542d8e6695b049eac2d5de7bbaeb8d",
+  "human_valid": true,
+  "line_no": 148745,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6a2a6c13a51359de4cc55c47fc904be28d3382fcbab95b9ca0e917116cde5f7f",
+  "raw_output": "\n        return datetime.datetime(self.year, self.month, self.day, self.hour, self.minute)\n\n    def",
+  "sampling_seed": 1644932069,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def estimator_cov(self,method):\n        \"\"\" Creates covariance matrix for the estimators\n\n        Parameters\n        ----------\n        method : str\n            Estimation method\n\n        Returns\n        ----------\n        A Covariance Matrix\n        \"\"\"\n        if method == 'MLE':\n            return self.estimator_cov_MLE()\n        elif method == 'ML':\n            return self.estimator_cov_ML()\n        elif method == 'PML':\n            return self.estimator_cov_PML()\n        else:\n            raise ValueError('method must be either MLE or ML')\n",
+  "agc_valid": true,
+  "body_sha256": "5001d45024a3c4aabb6526fc5190664b7438f35a97f98a1e0d2ee0d3dda3c996",
+  "body_tokens": 100,
+  "bucket": "type01_110",
+  "clean_output": "\n        if method == 'MLE':\n            return self.estimator_cov_MLE()\n        elif method == 'ML':\n            return self.estimator_cov_ML()\n        elif method == 'PML':\n            return self.estimator_cov_PML()\n        else:\n            raise ValueError('method must be either MLE or ML')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 114,
+  "human_sha256": "013d39f0865305e120c7ef58793fdf721aaac8142a87190f8b51f6120acfd93b",
+  "human_valid": true,
+  "line_no": 155020,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0dabd5402b72b234aae7d2270bef3c6ab7b734661180e8b8d11cc5c29553aa42",
+  "raw_output": "\n        if method == 'MLE':\n            return self.estimator_cov_MLE()\n        elif method == 'ML':\n            return self.estimator_cov_ML()\n        elif method == 'PML':\n            return self.estimator_cov_PML()\n        else:\n            raise ValueError('method must be either MLE or ML')\n\n    def",
+  "sampling_seed": 2068854511,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

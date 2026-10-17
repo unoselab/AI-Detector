@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_config_file(cls, config_filepath):\n        \"\"\" Validates the filepath to the config.  Detects whether it is a true YAML file + existance\n\n        :param config_filepath: str, file path to the config file to query\n        :return: None\n        :raises: IOError\n        \"\"\"\n            # TODO: add more validation\n            if not os.path.exists(config_filepath):\n                raise IOError(\"File does not exist: {0}\".format(config_filepath))\n            if not config_filepath.endswith(\".yaml\"):\n                raise IOError(\"File is not a YAML file: {0}\".format(config_filepath))\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "3f806d9cb3d67e238baace570dfa5261b1cec8eb5566fdfdcefa70bf464b216a",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n            # TODO: add more validation\n            if not os.path.exists(config_filepath):\n                raise IOError(\"File does not exist: {0}\".format(config_filepath))\n            if not config_filepath.endswith(\".yaml\"):\n                raise IOError(\"File is not a YAML file: {0}\".format(config_filepath))\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "6194c80f6838559e624a748f5d8376a125b8618280ac25fdb1ebb41b992facf9",
+  "human_valid": true,
+  "line_no": 306332,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "543c35f4ac05475f6983709120c8ac028f3e35a7731358cb7535e14f52a0f601",
+  "raw_output": "\n        # TODO: add more validation\n        if not os.path.exists(config_filepath):\n            raise IOError(\"File does not exist: {0}\".format(config_filepath))\n        if not config_filepath.endswith(\".yaml\"):\n            raise IOError(\"File is not a YAML file: {0}\".format(config_filepath))\n\n    @classmethod\n    def",
+  "sampling_seed": 3596365733,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

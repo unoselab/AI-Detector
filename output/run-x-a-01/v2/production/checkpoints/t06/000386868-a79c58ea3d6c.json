@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _load_data(path):\n    \"\"\"\n    Loads data from a directory.\n    Returns tuple (config_dict, wordlists).\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    try:\n        with open(path + 'config.json') as f:\n            config_dict = json.load(f)\n        wordlists = []\n        for wordlist_name in config_dict['wordlist_names']:\n            wordlist = []\n            with open(path + wordlist_name) as f:\n                for line in f:\n                    wordlist.append(line.strip())\n            wordlists.append(wordlist)\n        return config_dict, wordlists\n    except Exception as e:\n        print('Error loading data: ' + str(e))\n        raise\n",
+  "agc_valid": true,
+  "body_sha256": "d3291ded0ca16c7b69cf513f78e139d75c6b43a5bed6ffb254087e80a076c5ee",
+  "body_tokens": 173,
+  "bucket": "type08_180",
+  "clean_output": "\n    try:\n        with open(path + 'config.json') as f:\n            config_dict = json.load(f)\n        wordlists = []\n        for wordlist_name in config_dict['wordlist_names']:\n            wordlist = []\n            with open(path + wordlist_name) as f:\n                for line in f:\n                    wordlist.append(line.strip())\n            wordlists.append(wordlist)\n        return config_dict, wordlists\n    except Exception as e:\n        print('Error loading data: ' + str(e))\n        raise\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "767bd1133344db6156a52ba3c698ecb06f0cf3231098c49d3cb1a8ccd12c9888",
+  "human_valid": true,
+  "line_no": 386868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a79c58ea3d6c022b0e7312e4cb7415817cab239d8c48a39a49228f244a8317e1",
+  "raw_output": "\n    try:\n        with open(path + 'config.json') as f:\n            config_dict = json.load(f)\n        wordlists = []\n        for wordlist_name in config_dict['wordlist_names']:\n            wordlist = []\n            with open(path + wordlist_name) as f:\n                for line in f:\n                    wordlist.append(line.strip())\n            wordlists.append(wordlist)\n        return config_dict, wordlists\n    except Exception as e:\n        print('Error loading data: ' + str(e))\n        raise\n\n\ndef _save_data(path, config_dict, wordlists):\n    \"\"\"\n    Saves data to a directory.\n    Raises Exception on failure.\n    \"\"\"\n    try:\n        with open(path + 'config.json', 'w') as f:\n            json.dump(config_dict, f)\n        for i, wordlist in enumerate(wordlists):\n            with open(path + config_dict['wordlist_names'][i], 'w') as f:\n                for word in wordlist:\n                    f.write(word + '\\n')\n    except Exception as e:\n        print('Error saving data: ' + str(e))\n        raise\n\n\ndef _load_data_from_url(url):\n    \"\"\"\n    Loads data from a URL.\n    Returns tuple (config_dict, wordlists).\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    try:\n        data = urllib.request.urlopen(url).read()\n        z = zipfile.ZipFile(io.BytesIO(data))\n        config_dict = json.loads(z.read('config.json').decode())\n        wordlists = []\n        for wordlist_name in config_dict['wordlist_names']:\n            wordlist = z.read(wordlist_name).decode().split('\\n')\n            wordlists.append(wordlist)\n        return config_dict, wordlists\n    except Exception as e:\n        print('Error loading data from URL: ' + str(e))\n        raise\n\n\ndef _save_data",
+  "sampling_seed": 1475589996,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

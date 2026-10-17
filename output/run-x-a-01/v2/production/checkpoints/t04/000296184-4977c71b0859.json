@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_splits_in_period(self, start: Datum, end: Datum) -> List[Split]:\n        \"\"\" returns splits only up to the given date \"\"\"\n        return self.get_splits_up_to_date(end)\n",
+  "agc_valid": true,
+  "body_sha256": "6a0d3e32000830ec3247df050272033be2b8cdf5e6837ead77a7c9863f637a3d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_splits_up_to_date(end)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "24476cd24f2cffadded2950472c55bd65e5f9b4e848819e2161664339eae1158",
+  "human_valid": true,
+  "line_no": 296184,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4977c71b085978b3c5aa5323b5dee2fb7f7d6377e5e590ad91b5095625338241",
+  "raw_output": "\n        return self.get_splits_up_to_date(end)\n\n    def",
+  "sampling_seed": 516690963,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

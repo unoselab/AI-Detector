@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def instance():\n        \"\"\" :returns the TrajectoryInfoCache singleton instance\"\"\"\n        if TrajectoryInfoCache._instance is None:\n            TrajectoryInfoCache._instance = TrajectoryInfoCache()\n        return TrajectoryInfoCache._instance\n",
+  "agc_valid": true,
+  "body_sha256": "823467947b6852a10560ae5146c2ee726d0e138382245b8c7821d8d6e3896a39",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if TrajectoryInfoCache._instance is None:\n            TrajectoryInfoCache._instance = TrajectoryInfoCache()\n        return TrajectoryInfoCache._instance\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "1337820e1b553efce5739f9f18b70aaaa91c4ed9b7f72960f9f0d105528bce3a",
+  "human_valid": true,
+  "line_no": 193496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0a2344c15a36d7b026d739f9ec51c234f39be63cd36feffb5669aa903d1ec943",
+  "raw_output": "\n        if TrajectoryInfoCache._instance is None:\n            TrajectoryInfoCache._instance = TrajectoryInfoCache()\n        return TrajectoryInfoCache._instance\n\n    def",
+  "sampling_seed": 763361662,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

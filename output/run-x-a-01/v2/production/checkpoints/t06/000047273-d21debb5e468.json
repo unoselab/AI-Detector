@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_level(self):\n        \"\"\"Gets the ``Grade`` corresponding to the assessment difficulty.\n\n        return: (osid.grading.Grade) - the level\n        raise:  OperationFailed - unable to complete request\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "075da1329bf98305ddcc57e5c54ff9464a19fba45924fd3dcdaeec84bf84cdea",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "e957b5c0e50217b93d417f859f704680d8227e297e593b6c862c96dd1d6be4e3",
+  "human_valid": true,
+  "line_no": 47273,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d21debb5e468c2ec6750c29c9707b6ea08da96034c6182ec1d99cc2ff44bafe3",
+  "raw_output": "\n        return ",
+  "sampling_seed": 322635899,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

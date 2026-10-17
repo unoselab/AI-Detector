@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def send(self, content):\n        \"\"\"Sends a JavaScript command to PS\n\n        :param content: Script content\n        :type content: str\n        :yields: :class:`.Message`\n        \"\"\"\n        return self.send_script(content)\n",
+  "agc_valid": true,
+  "body_sha256": "405e8d368361f2415d599e7730cf57f69569cd308490997e596ef5cf85d52468",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.send_script(content)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "1e696554fb92d3541dc22162f45d8dd2f1cf827d0eeec108492cb76623238a45",
+  "human_valid": true,
+  "line_no": 44934,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bf79b1e7b01973f5c1b3b11a74647b5912ceea96786f59be535d56298c97cc51",
+  "raw_output": "\n        return self.send_script(content)\n\n    def",
+  "sampling_seed": 2551624350,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

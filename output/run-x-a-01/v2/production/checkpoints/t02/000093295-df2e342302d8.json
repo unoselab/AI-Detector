@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_connectable_ip(host, port=None):\n    \"\"\"Resolve a hostname to an IP, preferring IPv4 addresses.\n\n    We prefer IPv4 so that we don't change behavior from previous IPv4-only\n    implementations, and because some drivers (e.g., FirefoxDriver) do not\n    support IPv6 connections.\n\n    If the optional port number is provided, only IPs that listen on the given\n    port are considered.\n\n    :Args:\n        - host - A hostname.\n        - port - Optional port number.\n\n    :Returns:\n        A single IP address, as a string. If any IPv4 address is found, one is\n        returned. Otherwise, if any IPv6 address is found, one is returned. If\n        neither, then None is returned.\n\n    \"\"\"\n    An optional port number.\n\n        :Returns:\n            An IPv4 address if one is available, otherwise an IPv6 address.\n        \"\"\"\n        if port is None:\n            port =\n",
+  "agc_valid": false,
+  "body_sha256": "bf6f3b664f1fb88197a69811eab36920a23236ff1ec49f5a908942aae56ae551",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    An optional port number.\n\n        :Returns:\n            An IPv4 address if one is available, otherwise an IPv6 address.\n        \"\"\"\n        if port is None:\n            port =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "81dd9fb553f7dce0878e792559166e4a3840f296bc08c5508ef73559aca62b55",
+  "human_valid": true,
+  "line_no": 93295,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "df2e342302d87e4a708f470c71df23a6a94d4fcfbcb03e73c03bd30ec6c6c5cf",
+  "raw_output": "An optional port number.\n\n    :Returns:\n        An IPv4 address if one is available, otherwise an IPv6 address.\n    \"\"\"\n    if port is None:\n        port = ",
+  "sampling_seed": 1939565431,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

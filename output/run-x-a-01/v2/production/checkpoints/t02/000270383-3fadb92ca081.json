@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def strictly_increasing(self):\n        \"\"\"\n        :returns:\n          a new vulnerability function that is strictly increasing.\n          It is built by removing piece of the function where the mean\n          loss ratio is constant.\n        \"\"\"\n        # TODO: implement this\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "f5217abab64f60b7816e5fb79d67c3857ad465f4cf5221e28d564cd39d48e15c",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # TODO: implement this\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "ce09d9914ba6df7dced8baefe9fba48bdea3f12efd778f709034db46e8047578",
+  "human_valid": true,
+  "line_no": 270383,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3fadb92ca081b4ac88ad9003afc4526733d8474d40e308fd482b2613a9724510",
+  "raw_output": "\n        # TODO: implement this\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 3502764703,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

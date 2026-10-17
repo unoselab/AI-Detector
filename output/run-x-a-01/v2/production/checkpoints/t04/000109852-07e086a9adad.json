@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def edit_scheme(self):\n        \"\"\"Edit current scheme.\"\"\"\n        self.edit_scheme_dialog = EditSchemeDialog(self.scheme)\n        self.edit_scheme_dialog.exec_()\n",
+  "agc_valid": true,
+  "body_sha256": "60cc60a9fdbcadba7989a243fd6423a941bc26b52744858a8a1ac50e769cc0ba",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.edit_scheme_dialog = EditSchemeDialog(self.scheme)\n        self.edit_scheme_dialog.exec_()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "cb70f08412a9bcef46cfa1dcf71b7ecf3ad63b6d934733655ac72ef2447b4c9f",
+  "human_valid": true,
+  "line_no": 109852,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "07e086a9adadf7f4ba1cfaaa3aaec6bf53d782aac74c3f4f5ccf45cc9b1c8fa6",
+  "raw_output": "\n        self.edit_scheme_dialog = EditSchemeDialog(self.scheme)\n        self.edit_scheme_dialog.exec_()\n\n    def",
+  "sampling_seed": 1264520526,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

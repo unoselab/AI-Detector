@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def create_client(self, client_id=None, client_secret=None, uaa=None):\n        \"\"\"\n        Create a client and add it to the manifest.\n\n        :param client_id: The client id used to authenticate as a client\n            in UAA.\n\n        :param client_secret: The secret password used by a client to\n            authenticate and generate a UAA token.\n\n        :param uaa: The UAA to create client with\n        \"\"\"\n        if not client_id:\n            client_id = uuid.uuid4().hex\n        if not client_secret:\n            client_secret = uuid.uuid4().hex\n        if not uaa:\n            uaa = self.uaa\n        client = uaa.create_client(client_id, client_secret)\n        self.manifest.add_client(client)\n        return client\n",
+  "agc_valid": true,
+  "body_sha256": "72611dbcf9e8814a1464031a62c5886a3ee630263a5332e669b8bb068e275627",
+  "body_tokens": 101,
+  "bucket": "type01_110",
+  "clean_output": "\n        if not client_id:\n            client_id = uuid.uuid4().hex\n        if not client_secret:\n            client_secret = uuid.uuid4().hex\n        if not uaa:\n            uaa = self.uaa\n        client = uaa.create_client(client_id, client_secret)\n        self.manifest.add_client(client)\n        return client\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "10241be728906cb94197d78266da2dd6e775ce6a5da5eb15f8d49c4c98ce3033",
+  "human_valid": true,
+  "line_no": 25430,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "48ed481797a7d68ee24d993b001e93b780c2fbe13b4c1d657e9c7bd80cbf0a99",
+  "raw_output": "\n        if not client_id:\n            client_id = uuid.uuid4().hex\n        if not client_secret:\n            client_secret = uuid.uuid4().hex\n        if not uaa:\n            uaa = self.uaa\n        client = uaa.create_client(client_id, client_secret)\n        self.manifest.add_client(client)\n        return client\n\n    def",
+  "sampling_seed": 1690733780,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

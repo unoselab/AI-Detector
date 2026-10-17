@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def send(self, content):\n        \"\"\"Sends a JavaScript command to PS\n\n        :param content: Script content\n        :type content: str\n        :yields: :class:`.Message`\n        \"\"\"\n        self.ws.send(content)\n",
+  "agc_valid": true,
+  "body_sha256": "e05650ae3a727e62dc0b9d7f56838af9b9b739f70ae10adabd5d00062d8887f4",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.ws.send(content)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1e696554fb92d3541dc22162f45d8dd2f1cf827d0eeec108492cb76623238a45",
+  "human_valid": true,
+  "line_no": 44934,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "bf79b1e7b01973f5c1b3b11a74647b5912ceea96786f59be535d56298c97cc51",
+  "raw_output": "\n        self.ws.send(content)\n\n    def",
+  "sampling_seed": 2933530284,
+  "tag": "t06",
+  "temperature": 0.6
+}

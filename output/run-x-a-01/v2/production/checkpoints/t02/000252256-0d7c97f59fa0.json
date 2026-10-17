@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read(self, data, offset=0):\n        \"\"\" Read data structure and return (nested) named tuple(s). \"\"\"\n        if self.size is None:\n            raise ValueError(\"size must be specified\")\n        if offset + self.size > len(data):\n            raise ValueError(\"data is too short\")\n        return self.struct.unpack_from(data, offset)\n",
+  "agc_valid": true,
+  "body_sha256": "565b3816e4c0fb4ba45351269502ea78043408a78e6a4f14c96b389f92d378b8",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.size is None:\n            raise ValueError(\"size must be specified\")\n        if offset + self.size > len(data):\n            raise ValueError(\"data is too short\")\n        return self.struct.unpack_from(data, offset)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "6324221a859b7844529c413c59dec2f2b49fbd1e92dc724ac75464cbdd87c768",
+  "human_valid": true,
+  "line_no": 252256,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0d7c97f59fa06b012544c8f6cd29763e568191295c0c5d9cc2ebeed200594aff",
+  "raw_output": "\n        if self.size is None:\n            raise ValueError(\"size must be specified\")\n        if offset + self.size > len(data):\n            raise ValueError(\"data is too short\")\n        return self.struct.unpack_from(data, offset)\n\n    def",
+  "sampling_seed": 3747949729,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

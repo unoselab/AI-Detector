@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _ensure_programmer_executable():\n    \"\"\" Find the lpc21isp executable and ensure it is executable\n    \"\"\"\n    import os\n    import stat\n    import shutil\n    import sys\n\n    lpc21isp_exe = \"lpc21isp\"\n    if sys.platform == \"win32\":\n        lpc21isp_exe = \"lpc21isp.exe\"\n\n    lpc21isp_path = os.path.join(os.path.dirname(__file__), lpc21isp_exe)\n\n    if not os.path.exists(lpc21isp_path):\n        raise IOError(\"Could not find the lpc21isp executable. \"\n                      \"Please install it from http://www.lpcware.com/content/downloads\")\n\n    if not os.access(lpc21isp_path, os.X_OK):\n        print(\"Making lpc21isp executable\")\n        st = os.stat(lpc21isp_path)\n        os.chmod(lpc21isp_path, st.st_mode | stat.S_IEXEC)\n\n    return lpc21isp_path\n",
+  "agc_valid": true,
+  "body_sha256": "681e67792a238a06b84be9da44d109e2101d005e06f399a77629de972396d74e",
+  "body_tokens": 141,
+  "bucket": "type05_150",
+  "clean_output": "\n    import os\n    import stat\n    import shutil\n    import sys\n\n    lpc21isp_exe = \"lpc21isp\"\n    if sys.platform == \"win32\":\n        lpc21isp_exe = \"lpc21isp.exe\"\n\n    lpc21isp_path = os.path.join(os.path.dirname(__file__), lpc21isp_exe)\n\n    if not os.path.exists(lpc21isp_path):\n        raise IOError(\"Could not find the lpc21isp executable. \"\n                      \"Please install it from http://www.lpcware.com/content/downloads\")\n\n    if not os.access(lpc21isp_path, os.X_OK):\n        print(\"Making lpc21isp executable\")\n        st = os.stat(lpc21isp_path)\n        os.chmod(lpc21isp_path, st.st_mode | stat.S_IEXEC)\n\n    return lpc21isp_path\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "db7ab1b63366127d107536083c6401f5beb9db995bbabeba451ad82288e2d8e7",
+  "human_valid": true,
+  "line_no": 183165,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3650e4298771c7ad41e635041bf60f63065fc2686dcc6d2dfcca4f275ec6b4d1",
+  "raw_output": "\n    import os\n    import stat\n    import shutil\n    import sys\n\n    lpc21isp_exe = \"lpc21isp\"\n    if sys.platform == \"win32\":\n        lpc21isp_exe = \"lpc21isp.exe\"\n\n    lpc21isp_path = os.path.join(os.path.dirname(__file__), lpc21isp_exe)\n\n    if not os.path.exists(lpc21isp_path):\n        raise IOError(\"Could not find the lpc21isp executable. \"\n                      \"Please install it from http://www.lpcware.com/content/downloads\")\n\n    if not os.access(lpc21isp_path, os.X_OK):\n        print(\"Making lpc21isp executable\")\n        st = os.stat(lpc21isp_path)\n        os.chmod(lpc21isp_path, st.st_mode | stat.S_IEXEC)\n\n    return lpc21isp_path\n\n\ndef _ensure_programmer_files():\n    \"\"\" Copy the programmer files to the current directory\n    \"\"\"\n    import shutil\n    import os\n\n    programmer_files = [\n        \"lpc21isp.cfg\",\n        \"lpc21isp_stk500.cfg\",\n        \"lpc21isp_stk600.cfg\",\n    ]\n\n    lpc21isp_path = _ensure_programmer_executable()\n\n    for f in programmer_files:\n        src = os.path.join(os.path.dirname(lpc21isp_path), f)\n        dst = os.path.join(os.path.dirname(__file__), f)\n        print(\"Copying %s to %s\" % (src, dst))\n        shutil.copyfile(src, dst)\n\n\ndef _get_lpc21isp_path():\n    \"\"\" Find the lpc21isp executable and ensure it is executable\n    \"\"\"\n    import os\n    import sys\n\n    lpc21isp_exe = \"lpc21isp\"\n   ",
+  "sampling_seed": 1400954295,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

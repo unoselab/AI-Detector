@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _wait_for_output(self):\n        \"\"\"\n        Check if output matches banner.\n\n        .. warning::\n            Waiting for I/O completion. It does not work on Windows. Sorry.\n        \"\"\"\n        if self.is_running():\n            out, err = self.read_io()\n            if not err:\n                return out\n            else:\n                raise Exception(\n                    'Failed to start process. Error:\\n%s' % err)\n",
+  "agc_valid": true,
+  "body_sha256": "94e692f9cc4d9d573593c4e2f07e493e91b91bad5ea1df479d76971f93fda6c0",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n        if self.is_running():\n            out, err = self.read_io()\n            if not err:\n                return out\n            else:\n                raise Exception(\n                    'Failed to start process. Error:\\n%s' % err)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "c2e4823c6c7496066b883391de0dd74e0b51d60a5929a9c22974605cd48a6f07",
+  "human_valid": true,
+  "line_no": 221449,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "857855d50b6b5744d39a2771a2f549bc6e5a4aa34da3a0cff9d1f049c3d416f6",
+  "raw_output": "\n        if self.is_running():\n            out, err = self.read_io()\n            if not err:\n                return out\n            else:\n                raise Exception(\n                    'Failed to start process. Error:\\n%s' % err)\n\n    def",
+  "sampling_seed": 3661150892,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

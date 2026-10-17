@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def execute(self, sensor_graph, scope_stack):\n        \"\"\"Execute this statement on the sensor_graph given the current scope tree.\n\n        This adds a single config variable assignment to the current sensor graph\n\n        Args:\n            sensor_graph (SensorGraph): The sensor graph that we are building or\n                modifying\n            scope_stack (list(Scope)): A stack of nested scopes that may influence\n                how this statement allocates clocks or other stream resources.\n        \"\"\"\n        # Get the name of the config variable from the scope stack\n        name = scope_stack[-1].get_scope_variable_name(self.name)\n        # Get the value of the config variable\n        value = self.value.get_value(sensor_graph, scope_stack)\n        # Add the config variable to the sensor graph\n        sensor_graph.config_variables[name] = value\n",
+  "agc_valid": true,
+  "body_sha256": "2eab1165cc9990a674b0a7fa8a513cbe19cc869de7c2265576dac833c7fde9da",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Get the name of the config variable from the scope stack\n        name = scope_stack[-1].get_scope_variable_name(self.name)\n        # Get the value of the config variable\n        value = self.value.get_value(sensor_graph, scope_stack)\n        # Add the config variable to the sensor graph\n        sensor_graph.config_variables[name] = value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "5984f48b10d353c6ec418823ebc9d725afc8c73a23977a61e01d893cb2d21fad",
+  "human_valid": true,
+  "line_no": 129210,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bb7c6a69dc2fc97ef1aab2d1e1591b1a46d3653c6fe15edaf84b17700a6a7724",
+  "raw_output": "\n        # Get the name of the config variable from the scope stack\n        name = scope_stack[-1].get_scope_variable_name(self.name)\n        # Get the value of the config variable\n        value = self.value.get_value(sensor_graph, scope_stack)\n        # Add the config variable to the sensor graph\n        sensor_graph.config_variables[name] = value\n\n\nclass ConfigVariables(object):\n    \"\"\"A class that represents a group of configuration variables.\n\n    This class is a container for a set of configuration variables.\n    \"\"\"\n\n    def",
+  "sampling_seed": 2571756600,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

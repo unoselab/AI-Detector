@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read_message_type(file):\n    \"\"\"Read the message type from a file.\"\"\"\n    with open(file, 'r') as f:\n        message_type = f.read()\n    return message_type\n",
+  "agc_valid": true,
+  "body_sha256": "0a35b4103fe7c99dc72ff6933a31619205bd02831fd153bf7c127c06efd89ebe",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(file, 'r') as f:\n        message_type = f.read()\n    return message_type\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "33b3c8e90c4de009cd3eb52f8b0d8fb1d7291193c525bf1ced6a623021a158a7",
+  "human_valid": true,
+  "line_no": 3581,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0a1d8b0aa9444a92642b249a3ba090346a5453d65902ce19e146a7d1c0101c1e",
+  "raw_output": "\n    with open(file, 'r') as f:\n        message_type = f.read()\n    return message_type\n\ndef read_message_body(file):\n    \"\"\"Read the message body from a file.\"\"\"\n    with open(file, 'r') as f:\n        message_body = f.read()\n    return message_body\n\ndef read_message_body_from_file(file):\n    \"\"\"Read the message body from a file.\"\"\"\n    with open(file, 'r') as f:\n        message_body = f.read()\n    return message_body\n\ndef read_message_body_from_string(string):\n    \"\"\"Read the message body from a string.\"\"\"\n    message_body = string\n    return message_body\n\ndef read_message_body_from_bytes(bytes):\n    \"\"\"Read the message body from bytes.\"\"\"\n    message_body = bytes\n    return message_body\n\ndef read_message_body_from_stream(stream):\n    \"\"\"Read the message body from a stream.\"\"\"\n    message_body = stream.read()\n    return message_body\n\ndef read_message_body_from_stream_with_length(stream, length):\n    \"\"\"Read the message body from a stream with a given length.\"\"\"\n    message_body = stream.read(length)\n    return message_body\n\ndef read_message_body_from_stream_with_length_and_offset(stream, length, offset):\n    \"\"\"Read the message body from a stream with a given length and offset.\"\"\"\n    message_body = stream.read(length, offset)\n    return message_body\n\ndef read_message_body_from_stream_with_length_and_offset_and_seek(stream, length, offset, seek):\n    \"\"\"Read the message body from a stream with a given length, offset and seek.\"\"\"\n    message_body = stream.read(length, offset, seek)\n    return message_body\n\ndef read_message_body_from_stream_with_length_and_offset_and_seek_and_whence(stream, length, offset, seek, whence):\n    \"\"\"Read the message body from a stream with a given length,",
+  "sampling_seed": 3126237741,
+  "tag": "t04",
+  "temperature": 0.4
+}

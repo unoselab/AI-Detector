@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_cache(new_path=None):\n    \"\"\"Simple function to change the cache location.\n\n    `new_path` can be an absolute or relative path. If the directory does not\n    exist yet, this function will create it. If None it will set the cache to\n    the default cache directory.\n\n    If you are going to change the cache directory, this function should be\n    called at the top of your script, before you make any calls to the API.\n    This is to avoid duplicate files and excess API calls.\n\n    :param new_path: relative or absolute path to the desired new cache\n    directory\n    :return: str, str\n    \"\"\"\n    New path to use for the cache\n        :type new_path: str\n        \"\"\"\n\n        from os import path\n\n        if new_path is None:\n            new_path = path.join(path.expanduser(\"~\"), \".pypi_cache\")\n\n        if not path.isdir(new_path):\n            path.mkdir(new_path)\n\n        global cache\n        cache = new_path\n",
+  "agc_valid": false,
+  "body_sha256": "64b84ec9ec166315870941fb590e73b1d744a6dc144ded5f94400d46f154108b",
+  "body_tokens": 107,
+  "bucket": "type01_110",
+  "clean_output": "\n    New path to use for the cache\n        :type new_path: str\n        \"\"\"\n\n        from os import path\n\n        if new_path is None:\n            new_path = path.join(path.expanduser(\"~\"), \".pypi_cache\")\n\n        if not path.isdir(new_path):\n            path.mkdir(new_path)\n\n        global cache\n        cache = new_path\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "919923b9cff09edbb715859a76ac9e36333ce74fe2dafc378fb9d5161908151e",
+  "human_valid": true,
+  "line_no": 14045,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "71ca0106331df00320e015710d4f0d4c136a2bff7610720964a862c470b697d3",
+  "raw_output": "New path to use for the cache\n    :type new_path: str\n    \"\"\"\n\n    from os import path\n\n    if new_path is None:\n        new_path = path.join(path.expanduser(\"~\"), \".pypi_cache\")\n\n    if not path.isdir(new_path):\n        path.mkdir(new_path)\n\n    global cache\n    cache = new_path\n\n\ndef get_cache():\n    \"\"\"Returns the current cache location\n\n    :return: Current cache location\n    :rtype: str\n    \"\"\"\n    global cache\n    return cache\n\n\ndef cache_file(url, file_name):\n    \"\"\"Caches a file from a given URL\n\n    This function will cache a file from a given URL. If the file already exists\n    in the cache, it will not be downloaded again.\n\n    :param url: URL to download\n    :type url: str\n    :param file_name: Name to save the file as\n    :type file_name: str\n    :return: Absolute path to the cached file\n    :rtype: str\n    \"\"\"\n\n    from os import path\n    from urllib.request import urlretrieve\n\n    cache_dir = path.join(get_cache(), url.split(\"/\")[-2])\n    if not path.isdir(cache_dir):\n        path.mkdir(cache_dir)\n\n    file_path = path.join(cache_dir, file_name)\n    if not path.exists(file_path):\n        urlretrieve(url, file_path)\n\n    return file_path\n\n\ndef get_cache_file(url):\n    \"\"\"Gets a cached file from a given URL\n\n    This function will return the absolute path to a cached file from a given\n    URL. If the file does not exist in the cache, None will be returned.\n\n    :param url: URL to download\n    :type url: str\n    :return: Absolute path to the cached file\n    :rtype: str\n    \"\"\"\n\n    from os import path\n\n    cache_dir = path.join(get_cache(), url.split(\"/\")[-2])\n    if not path.",
+  "sampling_seed": 2524068908,
+  "tag": "t06",
+  "temperature": 0.6
+}

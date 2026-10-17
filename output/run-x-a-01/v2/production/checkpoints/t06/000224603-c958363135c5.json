@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def thaw_from_args(parser):\n    \"\"\"Adds command line options for things related to inline thawing\n    of icefiles\"\"\"\n    parser.add_argument('--thaw-source-file',\n                        help=\"If given, read the given file (which must be \"\n                        \"a pickle) and use it to populate the icefile \"\n                        \"repository.\n",
+  "agc_valid": false,
+  "body_sha256": "86391cde8613e0adc90d7529214db4becbf6c3c5d9345e3aebd3f5fac362746d",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n    parser.add_argument('--thaw-source-file',\n                        help=\"If given, read the given file (which must be \"\n                        \"a pickle) and use it to populate the icefile \"\n                        \"repository.\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "e214bc4c8e65c1f78b939e128fe4c5609816078f3acb7391bb4bdba37095966b",
+  "human_valid": true,
+  "line_no": 224603,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c958363135c569f6497d7d60c45dda2522e5301dfab05868f9fa9ecb3b0d545d",
+  "raw_output": "\n    parser.add_argument('--thaw-source-file',\n                        help=\"If given, read the given file (which must be \"\n                        \"a pickle) and use it to populate the icefile \"\n                        \"repository. ",
+  "sampling_seed": 1326893088,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

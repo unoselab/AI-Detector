@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_aot(self, first, name_first):  # type: (Table, str) -> AoT\n        \"\"\"\n        Parses all siblings of the provided table first and bundles them into\n        an AoT.\n        \"\"\"\n        if first.tag == 'aot':\n            return AoT(name_first, self._parse_all_siblings(first))\n        else:\n            raise ValueError(\"Expected AoT table, got {}\".format(first.tag))\n",
+  "agc_valid": true,
+  "body_sha256": "a8883a88513b96f6cac955e79923228df05bb480e12bdeaea0103b24cc75d610",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if first.tag == 'aot':\n            return AoT(name_first, self._parse_all_siblings(first))\n        else:\n            raise ValueError(\"Expected AoT table, got {}\".format(first.tag))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "18ae11a5c576dc8fadb8cb893be843178854cba0bb5ee837f31493de80a5c1ad",
+  "human_valid": true,
+  "line_no": 100320,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4e9102a022b7630f63e28f067484bb921fc7995cf7f78f49d4956667f6acdf72",
+  "raw_output": "\n        if first.tag == 'aot':\n            return AoT(name_first, self._parse_all_siblings(first))\n        else:\n            raise ValueError(\"Expected AoT table, got {}\".format(first.tag))\n\n    def",
+  "sampling_seed": 1195611788,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _load_data(path):\n    \"\"\"\n    Loads data from a directory.\n    Returns tuple (config_dict, wordlists).\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    config_dict = {}\n    wordlists = []\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            wordlist = []\n            with open(os.path.join(path, filename), 'r') as f:\n                for line in f:\n                    wordlist.append(line.strip())\n            wordlists.append(wordlist)\n        elif filename.endswith('.json'):\n            with open(os.path.join(path, filename), 'r') as f:\n                config_dict = json.load(f)\n        else:\n            raise Exception('Unknown file in data directory: %s' % filename)\n    return config_dict, wordlists\n",
+  "agc_valid": true,
+  "body_sha256": "a4dff7fca928f657bd516efeda0737eb7cf6c068a311b13964cdb9bd63b282e1",
+  "body_tokens": 189,
+  "bucket": "type09_190",
+  "clean_output": "\n    config_dict = {}\n    wordlists = []\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            wordlist = []\n            with open(os.path.join(path, filename), 'r') as f:\n                for line in f:\n                    wordlist.append(line.strip())\n            wordlists.append(wordlist)\n        elif filename.endswith('.json'):\n            with open(os.path.join(path, filename), 'r') as f:\n                config_dict = json.load(f)\n        else:\n            raise Exception('Unknown file in data directory: %s' % filename)\n    return config_dict, wordlists\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "767bd1133344db6156a52ba3c698ecb06f0cf3231098c49d3cb1a8ccd12c9888",
+  "human_valid": true,
+  "line_no": 386868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a79c58ea3d6c022b0e7312e4cb7415817cab239d8c48a39a49228f244a8317e1",
+  "raw_output": "\n    config_dict = {}\n    wordlists = []\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            wordlist = []\n            with open(os.path.join(path, filename), 'r') as f:\n                for line in f:\n                    wordlist.append(line.strip())\n            wordlists.append(wordlist)\n        elif filename.endswith('.json'):\n            with open(os.path.join(path, filename), 'r') as f:\n                config_dict = json.load(f)\n        else:\n            raise Exception('Unknown file in data directory: %s' % filename)\n    return config_dict, wordlists\n\n\ndef _save_data(path, config_dict, wordlists):\n    \"\"\"\n    Saves data to a directory.\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    if not os.path.exists(path):\n        os.makedirs(path)\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            os.remove(os.path.join(path, filename))\n    for filename in os.listdir(path):\n        if filename.endswith('.json'):\n            os.remove(os.path.join(path, filename))\n    for wordlist in wordlists:\n        with open(os.path.join(path, 'words.txt'), 'a') as f:\n            for word in wordlist:\n                f.write(word + '\\n')\n    with open(os.path.join(path, 'config.json'), 'w') as f:\n        json.dump(config_dict, f)\n\n\ndef _get_data_path(app_name):\n    \"\"\"\n    Returns path to the data directory.\n    \"\"\"\n    return os.path.join(os.path.expanduser('~'), '.%s' % app_name)\n\n\ndef _get_config_path(app_name):\n    \"\"\"\n    Returns path to the config file.\n    \"\"\"\n    return os.path.join(_get_data_path(app_name), 'config.json",
+  "sampling_seed": 1642943898,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

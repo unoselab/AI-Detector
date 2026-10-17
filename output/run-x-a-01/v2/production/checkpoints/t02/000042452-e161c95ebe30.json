@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_arg_types(funcname, *args):\n    \"\"\"Raise TypeError if not all items of `args` are same string type.\"\"\"\n    if not all(isinstance(arg, str) for arg in args):\n        raise TypeError(f\"{funcname}() argument must be str, not {type(args[0])}\")\n",
+  "agc_valid": true,
+  "body_sha256": "e3217e5a0d069816f07d9d5ddfae4ab12fdb77efd7291ffd0437107297cda496",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not all(isinstance(arg, str) for arg in args):\n        raise TypeError(f\"{funcname}() argument must be str, not {type(args[0])}\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "e0944e35e37ddcd361f1fb551369e7f2940515b014f80cafc5220a4236c22484",
+  "human_valid": true,
+  "line_no": 42452,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e161c95ebe306ba7507ccdb1e2e11218777f8039d1098a5393c3e61afdfd675b",
+  "raw_output": "\n    if not all(isinstance(arg, str) for arg in args):\n        raise TypeError(f\"{funcname}() argument must be str, not {type(args[0])}\")\n\n\ndef check_arg_lengths(funcname, *args):\n    \"\"\"Raise ValueError if not all items of `args` have same length.\"\"\"\n    if not all(len(arg) == len(args[0]) for arg in args):\n        raise ValueError(f\"{funcname}() argument must have same length\")\n\n\ndef check_arg_lengths_and_types(funcname, *args):\n    \"\"\"Raise TypeError if not all items of `args` are same string type.\"\"\"\n    check_arg_types(funcname, *args)\n    check_arg_lengths(funcname, *args)\n\n\ndef check_arg_lengths_and_types_and_values(funcname, *args):\n    \"\"\"Raise TypeError if not all items of `args` are same string type.\"\"\"\n    check_arg_types(funcname, *args)\n    check_arg_lengths(funcname, *args)\n    if not all(arg == args[0] for arg in args):\n        raise ValueError(f\"{funcname}() argument must be same value\")\n\n\ndef check_arg_lengths_and_types_and_values_and_values(funcname, *args):\n    \"\"\"Raise TypeError if not all items of `args` are same string type.\"\"\"\n    check_arg_types(funcname, *args)\n    check_arg_lengths(funcname, *args)\n    if not all(arg == args[0] for arg in args):\n        raise ValueError(f\"{funcname}() argument must be same value\")\n    if not all(arg == args[1] for arg in args):\n        raise ValueError(f\"{funcname}() argument must be same value\")\n\n\ndef check_arg_lengths_and_types_and_values_and_values_and_values(funcname, *args):\n    \"\"\"Raise TypeError if not all items of `args` are same string type.\"\"\"\n   ",
+  "sampling_seed": 2945379933,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

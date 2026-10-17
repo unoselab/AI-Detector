@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_metric_can_be_zero(metric_name, metric_value, json_attributes):\n    \"\"\"\n    When a counter is reset, don't send a zero because it will look bad on the graphs\n    This checks if the zero makes sense or not\n    \"\"\"\n    if metric_name == 'counter':\n        if metric_value ==\n",
+  "agc_valid": false,
+  "body_sha256": "f8725a772b471cb52b7385c6d340343ca9bf462e64451549eeb7e0ed2357d884",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if metric_name == 'counter':\n        if metric_value ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "fbffadfae682f83bfb8b7660abc68020fc4d5a5028165f54a4723a906a5deadf",
+  "human_valid": true,
+  "line_no": 365354,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bc8cb9513b55e38c9e51bc612cdab39c13396c11dfaaf277e9b866a105fc831d",
+  "raw_output": "\n    if metric_name == 'counter':\n        if metric_value == ",
+  "sampling_seed": 1392483537,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

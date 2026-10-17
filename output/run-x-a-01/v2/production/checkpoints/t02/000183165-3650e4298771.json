@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _ensure_programmer_executable():\n    \"\"\" Find the lpc21isp executable and ensure it is executable\n    \"\"\"\n    if not os.path.exists(LPC21ISP_EXECUTABLE):\n        raise IOError(\"Could not find lpc21isp executable at %s\" % LPC21ISP_EXECUTABLE)\n    if not os.access(LPC21ISP_EXECUTABLE, os.X_OK):\n        raise IOError(\"lpc21isp executable at %s is not executable\" % LPC21ISP_EXECUTABLE)\n",
+  "agc_valid": true,
+  "body_sha256": "434a7e62e98629a48c880179d1dc6e01d350d99391cc7f41378424bc7dd0be1b",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not os.path.exists(LPC21ISP_EXECUTABLE):\n        raise IOError(\"Could not find lpc21isp executable at %s\" % LPC21ISP_EXECUTABLE)\n    if not os.access(LPC21ISP_EXECUTABLE, os.X_OK):\n        raise IOError(\"lpc21isp executable at %s is not executable\" % LPC21ISP_EXECUTABLE)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "db7ab1b63366127d107536083c6401f5beb9db995bbabeba451ad82288e2d8e7",
+  "human_valid": true,
+  "line_no": 183165,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3650e4298771c7ad41e635041bf60f63065fc2686dcc6d2dfcca4f275ec6b4d1",
+  "raw_output": "\n    if not os.path.exists(LPC21ISP_EXECUTABLE):\n        raise IOError(\"Could not find lpc21isp executable at %s\" % LPC21ISP_EXECUTABLE)\n    if not os.access(LPC21ISP_EXECUTABLE, os.X_OK):\n        raise IOError(\"lpc21isp executable at %s is not executable\" % LPC21ISP_EXECUTABLE)\n\n\ndef _ensure_programmer_library():\n    \"\"\" Find the lpc21isp library and ensure it is executable\n    \"\"\"\n    if not os.path.exists(LPC21ISP_LIBRARY):\n        raise IOError(\"Could not find lpc21isp library at %s\" % LPC21ISP_LIBRARY)\n    if not os.access(LPC21ISP_LIBRARY, os.X_OK):\n        raise IOError(\"lpc21isp library at %s is not executable\" % LPC21ISP_LIBRARY)\n\n\ndef _ensure_programmer_library_exists():\n    \"\"\" Ensure the lpc21isp library exists\n    \"\"\"\n    if not os.path.exists(LPC21ISP_LIBRARY):\n        raise IOError(\"Could not find lpc21isp library at %s\" % LPC21ISP_LIBRARY)\n\n\ndef _ensure_programmer_executable_exists():\n    \"\"\" Ensure the lpc21isp executable exists\n    \"\"\"\n    if not os.path.exists(LPC21ISP_EXECUTABLE):\n        raise IOError(\"Could not find lpc21isp executable at %s\" % LPC21ISP_EXECUTABLE)\n\n\ndef _ensure_programmer_executable_is_executable():\n    \"\"\" Ensure the lpc21isp executable is executable\n    \"\"\"\n    if not os.access(LPC21ISP_EXECUTABLE, os.X_OK):\n        raise IOError(\"lpc21isp executable at %s is not executable\" % LPC21ISP_EXECUTABLE)\n",
+  "sampling_seed": 3123440533,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

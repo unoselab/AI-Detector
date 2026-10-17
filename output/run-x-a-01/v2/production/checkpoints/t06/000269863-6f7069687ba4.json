@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        self.m_parameterName = 'stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority'\n        self.m_xml_tag = 'stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority'\n        self.m_namespace = 'urn:brocade.com:mgmt:brocade-spanning-tree'\n        self.m_value_tag = 'stp_root_bridge_priority'\n        self.m_xml_ns = 'urn:brocade.com:mgmt:brocade-spanning-tree'\n        super().__init__(**kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "dfbc7e59fcdb1432cd2c0e4af808fcbfecbae7f6dc9503d9c8ae0ae5923b4373",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.m_parameterName = 'stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority'\n        self.m_xml_tag = 'stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority'\n        self.m_namespace = 'urn:brocade.com:mgmt:brocade-spanning-tree'\n        self.m_value_tag = 'stp_root_bridge_priority'\n        self.m_xml_ns = 'urn:brocade.com:mgmt:brocade-spanning-tree'\n        super().__init__(**kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "4350ab3f5b10583c296c210015f92c5ef72403c0ea675fbe88c350f7b36bdff0",
+  "human_valid": true,
+  "line_no": 269863,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6f7069687ba43dc7470df74a9cc60d520648fa9f7104f2ba11f29cdc59363f36",
+  "raw_output": "\n        self.m_parameterName = 'stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority'\n        self.m_xml_tag = 'stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority'\n        self.m_namespace = 'urn:brocade.com:mgmt:brocade-spanning-tree'\n        self.m_value_tag = 'stp_root_bridge_priority'\n        self.m_xml_ns = 'urn:brocade.com:mgmt:brocade-spanning-tree'\n        super().__init__(**kwargs)\n\n\nclass stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_id(CliType):\n    def",
+  "sampling_seed": 1414849325,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

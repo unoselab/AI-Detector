@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def inject_basic_program(self, ascii_listing):\n        \"\"\"\n        save the given ASCII BASIC program listing into the emulator RAM.\n        \"\"\"\n        self.emulator.ram.write_ascii_listing(ascii_listing)\n",
+  "agc_valid": true,
+  "body_sha256": "3fbf5bdf2e45a365a3378fbc8119dfa65ee07a581cc32f13f67dd649c3db3ae0",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.emulator.ram.write_ascii_listing(ascii_listing)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 123,
+  "human_sha256": "b8dbb2d547d76efa589a210c45825ce4ec3620dad13e53bdb8d4f70148bb9619",
+  "human_valid": true,
+  "line_no": 392326,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "deca041ffc18bf185b9f76ad0f2b902d62b92164548266c7c90392936f62d001",
+  "raw_output": "\n        self.emulator.ram.write_ascii_listing(ascii_listing)\n\n    def",
+  "sampling_seed": 4243830990,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

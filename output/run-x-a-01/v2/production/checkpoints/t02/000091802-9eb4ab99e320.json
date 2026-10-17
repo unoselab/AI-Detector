@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_metadata(self, handler):\n        \"\"\" validate that kind=category does not change the categories \"\"\"\n        if handler.content.get('kind') == 'category':\n            if handler.content.get('categories') is not None:\n                raise ValidationError('categories cannot be set for category kind')\n",
+  "agc_valid": true,
+  "body_sha256": "a836cb23b93b76c921d13b0be2790755feda20247a3f09bbe0028aebaa9e5c88",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if handler.content.get('kind') == 'category':\n            if handler.content.get('categories') is not None:\n                raise ValidationError('categories cannot be set for category kind')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "bb75d681f6dfb9e411418eafa8c383b16d6cffd87fac59093ed698b97d4c3a5d",
+  "human_valid": true,
+  "line_no": 91802,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9eb4ab99e320913dfa7676a3c0b2f2b4608dbb18304a679f56afebbbfad617d8",
+  "raw_output": "\n        if handler.content.get('kind') == 'category':\n            if handler.content.get('categories') is not None:\n                raise ValidationError('categories cannot be set for category kind')\n\n    def",
+  "sampling_seed": 3913122863,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

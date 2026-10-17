@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_modules_from_path(path):\n    \"\"\"\n    Import all modules from the given directory\n    \"\"\"\n    import os\n    import sys\n    import importlib\n\n    for file in os.listdir(path):\n        if file.endswith(\".py\") and not file.startswith(\"_\"):\n            module_name = file[:-3]\n            module_path = os.path.join(path, module_name)\n            sys.path.insert(0, module_path)\n            importlib.import_module(module_name)\n",
+  "agc_valid": true,
+  "body_sha256": "06cef4bd58681d18e5aa2ba125aa155d7ded47f0e75cb2a25db82c4e37fe821c",
+  "body_tokens": 89,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import os\n    import sys\n    import importlib\n\n    for file in os.listdir(path):\n        if file.endswith(\".py\") and not file.startswith(\"_\"):\n            module_name = file[:-3]\n            module_path = os.path.join(path, module_name)\n            sys.path.insert(0, module_path)\n            importlib.import_module(module_name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 169,
+  "human_sha256": "0bc1b428de19bd271f5d91b524f391cefd99c8311868efed3fcd61c07a5c0e83",
+  "human_valid": true,
+  "line_no": 154704,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a3747aab7c5570b06b125d7fb0b278ac43c4da95f34530f0eead3b7c40ba4f28",
+  "raw_output": "\n    import os\n    import sys\n    import importlib\n\n    for file in os.listdir(path):\n        if file.endswith(\".py\") and not file.startswith(\"_\"):\n            module_name = file[:-3]\n            module_path = os.path.join(path, module_name)\n            sys.path.insert(0, module_path)\n            importlib.import_module(module_name)\n\n\ndef load_modules_from_dir(dir_name):\n    \"\"\"\n    Import all modules from the given directory\n    \"\"\"\n    import os\n    import sys\n    import importlib\n\n    dir_path = os.path.join(os.path.dirname(__file__), dir_name)\n    for file in os.listdir(dir_path):\n        if file.endswith(\".py\") and not file.startswith(\"_\"):\n            module_name = file[:-3]\n            module_path = os.path.join(dir_path, module_name)\n            sys.path.insert(0, module_path)\n            importlib.import_module(module_name)\n\n\ndef load_modules_from_files(files):\n    \"\"\"\n    Import all modules from the given list of files\n    \"\"\"\n    import os\n    import sys\n    import importlib\n\n    for file in files:\n        if file.endswith(\".py\") and not file.startswith(\"_\"):\n            module_name = file[:-3]\n            module_path = os.path.dirname(file)\n            sys.path.insert(0, module_path)\n            importlib.import_module(module_name)\n\n\ndef load_modules_from_package(package_name):\n    \"\"\"\n    Import all modules from the given package\n    \"\"\"\n    import os\n    import sys\n    import importlib\n\n    package_path = os.path.dirname(os.path.abspath(package_name.__file__))\n    sys.path.insert(0, package_path)\n    importlib.import_module(package_name.__name__)\n\n\ndef load_modules_from_packages(packages):\n    \"\"\"\n    Import all modules from the given",
+  "sampling_seed": 4182678965,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

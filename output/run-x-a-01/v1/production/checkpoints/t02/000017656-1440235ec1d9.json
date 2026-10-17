@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def significant_format(number, decimal_sep='.', thousand_sep=',', n=3):\n    \"\"\"Format a number according to a given number of significant figures.\n    \"\"\"\n    if number ==\n",
+  "agc_valid": false,
+  "body_sha256": "fbaa8fb9ad619d8b18bc7b76657d0032bb67cb436403f21dd5de263bae19675e",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if number ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "3231a89f3696d076cf513d076aa2f5a75922c1eb4db87a5eece2fd022c711a8e",
+  "human_valid": true,
+  "line_no": 17656,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1440235ec1d9ba775234a9f7fcfee1df7a164ec6c497d4392c4d1d672f327ca5",
+  "raw_output": "\r\n    if number == ",
+  "sampling_seed": 2155472218,
+  "tag": "t02",
+  "temperature": 0.2
+}

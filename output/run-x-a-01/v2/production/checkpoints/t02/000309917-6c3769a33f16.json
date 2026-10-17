@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def start(self):\n        \"\"\"Start the consumer.  This starts a listen loop on a zmq.PULL socket,\n        calling ``self.handle`` on each incoming request and pushing the response\n        on a zmq.PUSH socket back to the producer.\"\"\"\n        self.socket = self.context.socket(zmq.PULL)\n        self.socket.bind(self.endpoint)\n        self.push_socket = self.context.socket(zmq.PUSH)\n        self.push_socket.connect(self.push_endpoint)\n        self.logger.info(\"Starting consumer on %s\", self.endpoint)\n        self.logger.info(\"Connecting to producer on %s\", self.push_endpoint)\n        while True:\n            try:\n                self.handle(self.socket.recv_json())\n            except zmq.ZMQError as e:\n                if e.errno == zmq.ETERM:\n                    break\n                else:\n                    raise\n",
+  "agc_valid": true,
+  "body_sha256": "585b6c0326b01662c5b4c2c4b2f29d802eab5886ec59b8d813f10c555dcb13e2",
+  "body_tokens": 189,
+  "bucket": "type09_190",
+  "clean_output": "\n        self.socket = self.context.socket(zmq.PULL)\n        self.socket.bind(self.endpoint)\n        self.push_socket = self.context.socket(zmq.PUSH)\n        self.push_socket.connect(self.push_endpoint)\n        self.logger.info(\"Starting consumer on %s\", self.endpoint)\n        self.logger.info(\"Connecting to producer on %s\", self.push_endpoint)\n        while True:\n            try:\n                self.handle(self.socket.recv_json())\n            except zmq.ZMQError as e:\n                if e.errno == zmq.ETERM:\n                    break\n                else:\n                    raise\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "ba9d9a259f06c4f453ecb177b7679a0ebc28610b9bb87f9122fea0654c0384e2",
+  "human_valid": true,
+  "line_no": 309917,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6c3769a33f16994cc54210c16840ec1fe0dfb2dbc88f883eecf47b3d22c6d70c",
+  "raw_output": "\n        self.socket = self.context.socket(zmq.PULL)\n        self.socket.bind(self.endpoint)\n        self.push_socket = self.context.socket(zmq.PUSH)\n        self.push_socket.connect(self.push_endpoint)\n        self.logger.info(\"Starting consumer on %s\", self.endpoint)\n        self.logger.info(\"Connecting to producer on %s\", self.push_endpoint)\n        while True:\n            try:\n                self.handle(self.socket.recv_json())\n            except zmq.ZMQError as e:\n                if e.errno == zmq.ETERM:\n                    break\n                else:\n                    raise\n\n    def",
+  "sampling_seed": 3023944297,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

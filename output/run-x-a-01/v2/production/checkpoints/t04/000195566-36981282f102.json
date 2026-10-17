@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def failure_line_summary(formatter, failure_line):\n    \"\"\"\n    Create a mozlog formatted error summary string from the given failure_line.\n\n    Create a string which can be compared to a TextLogError.line string to see\n    if they match.\n    \"\"\"\n    return formatter.format(failure_line)\n",
+  "agc_valid": true,
+  "body_sha256": "1bcdc129a1c626044b2fd2e9ca0f5aa5ff51f6cf9b3524bfc98022dcc4803fe6",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return formatter.format(failure_line)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "01c7d06c6403922aec0f416577f52990ab9f9748101e9441e9013f0bf435fb46",
+  "human_valid": true,
+  "line_no": 195566,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36981282f1026c9845a8529300de74c162ac1de828e064858481914014c26da1",
+  "raw_output": "\n    return formatter.format(failure_line)\n\n\ndef failure_line_to_error(formatter, failure_line):\n    \"\"\"\n    Create a mozlog TextLogError from the given failure_line.\n\n    Create a TextLogError which can be compared to a TextLogError.line string to\n    see if they match.\n    \"\"\"\n    return formatter.format_error(failure_line)\n\n\ndef failure_line_to_message(formatter, failure_line):\n    \"\"\"\n    Create a mozlog TextLogMessage from the given failure_line.\n\n    Create a TextLogMessage which can be compared to a TextLogMessage.line string\n    to see if they match.\n    \"\"\"\n    return formatter.format_message(failure_line)\n\n\ndef failure_line_to_log(formatter, failure_line):\n    \"\"\"\n    Create a mozlog TextLog from the given failure_line.\n\n    Create a TextLog which can be compared to a TextLog.lines string to see if\n    they match.\n    \"\"\"\n    return formatter.format_log(failure_line)\n\n\ndef failure_line_to_text(formatter, failure_line):\n    \"\"\"\n    Create a mozlog TextLog from the given failure_line.\n\n    Create a TextLog which can be compared to a TextLog.lines string to see if\n    they match.\n    \"\"\"\n    return formatter.format_text(failure_line)\n\n\ndef failure_line_to_log_text(formatter, failure_line):\n    \"\"\"\n    Create a mozlog TextLog from the given failure_line.\n\n    Create a TextLog which can be compared to a TextLog.lines string to see if\n    they match.\n    \"\"\"\n    return formatter.format_log_text(failure_line)\n\n\ndef failure_line_to_log_error(formatter, failure_line):\n    \"\"\"\n    Create a mozlog TextLogError from the given failure_line.\n\n    Create a TextLogError which can be compared to a TextLogError.line string to\n    see if they match.\n    \"\"\"\n    return formatter.format",
+  "sampling_seed": 3808236681,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

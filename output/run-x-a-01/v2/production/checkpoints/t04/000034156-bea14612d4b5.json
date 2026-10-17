@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def strain_in_plane(self, **kwargs):\n        \"\"\"\n        Returns the in-plane strain assuming no lattice relaxation, which\n        is positive for tensile strain and negative for compressive strain.\n        \"\"\"\n        return self.strain_in_plane(**kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "18ddb0524b7000a2889465379723fd714a15064789419a891892a59b2cf1b97f",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.strain_in_plane(**kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "e879825e005e3a2e9cb8592873ce9e16a7356b9bd2c6d34632f405908c2aa1d9",
+  "human_valid": true,
+  "line_no": 34156,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bea14612d4b58f1f7be45b990cf6e14ec50e9dcf6d786159192f53bad33a9d50",
+  "raw_output": "\n        return self.strain_in_plane(**kwargs)\n\n    def",
+  "sampling_seed": 1438622719,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

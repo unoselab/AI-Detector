@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_remote_content_len(self, remote, headers=None):\n        \"\"\"\n        :param remote:\n        :return: size of remote file\n        \"\"\"\n        # TODO: Make this work with https\n        # TODO: Make this work with non-GET requests\n        # TODO: Make this work with non-200 responses\n        # TODO: Make this work with chunked responses\n        if remote.startswith('https://'):\n            raise NotImplementedError\n\n        url = urlparse(remote)\n        if url.scheme == '':\n            url = urlparse('http://' + url.geturl())\n\n        if url.scheme != 'http':\n            raise NotImplementedError\n\n        req = urllib2.Request(url.geturl(), headers=headers)\n        res = urllib2.urlopen(req)\n\n        return int(res.headers['Content-Length'])\n",
+  "agc_valid": true,
+  "body_sha256": "6c7de1b25a2356b989094002297c333161fc7dcbf57b32d06a1a8f1921b48d33",
+  "body_tokens": 173,
+  "bucket": "type08_180",
+  "clean_output": "\n        # TODO: Make this work with https\n        # TODO: Make this work with non-GET requests\n        # TODO: Make this work with non-200 responses\n        # TODO: Make this work with chunked responses\n        if remote.startswith('https://'):\n            raise NotImplementedError\n\n        url = urlparse(remote)\n        if url.scheme == '':\n            url = urlparse('http://' + url.geturl())\n\n        if url.scheme != 'http':\n            raise NotImplementedError\n\n        req = urllib2.Request(url.geturl(), headers=headers)\n        res = urllib2.urlopen(req)\n\n        return int(res.headers['Content-Length'])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "4322c838f936cfe4660abac66a4a9e5d69bca56a9142ecc3eb7267bd1605c45f",
+  "human_valid": true,
+  "line_no": 298836,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dc02befd9326fbc9a03c0beefe9e4b7155fc0ab024174f0eb1a9111acc0e3286",
+  "raw_output": "\n        # TODO: Make this work with https\n        # TODO: Make this work with non-GET requests\n        # TODO: Make this work with non-200 responses\n        # TODO: Make this work with chunked responses\n        if remote.startswith('https://'):\n            raise NotImplementedError\n\n        url = urlparse(remote)\n        if url.scheme == '':\n            url = urlparse('http://' + url.geturl())\n\n        if url.scheme != 'http':\n            raise NotImplementedError\n\n        req = urllib2.Request(url.geturl(), headers=headers)\n        res = urllib2.urlopen(req)\n\n        return int(res.headers['Content-Length'])\n\n    def",
+  "sampling_seed": 2489377921,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

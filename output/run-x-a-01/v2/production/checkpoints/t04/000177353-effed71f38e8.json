@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def collides_axisaligned_rect(self, other):\n        \"\"\"Returns collision with axis aligned other rect\"\"\"\n        return self.collides_rect(other)\n",
+  "agc_valid": true,
+  "body_sha256": "aa6879692ef96d71107ffecf043cc564438893d33efeab49094e5f9f2370822d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.collides_rect(other)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "8066c7412ecd998f756437faa0e8c9d667d390f4427bd7224ff5c1784ae0e976",
+  "human_valid": true,
+  "line_no": 177353,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "effed71f38e8fb35169348eefbe2d6e8083d6dfa1d95ddd2816f030a5cc8b14b",
+  "raw_output": "\n        return self.collides_rect(other)\n\n    def",
+  "sampling_seed": 1951009396,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sort_sites_by_integrated_chg(self, r=0.4):\n        \"\"\"\n        Get the average charge density around each local minima in the charge density\n        and store the result in _extrema_df\n        Args:\n            r (float): radius of sphere around each site to evaluate the average\n        \"\"\"\n        self._extrema_df = self._get_extrema_df(r)\n",
+  "agc_valid": true,
+  "body_sha256": "ea5ac143247e2937c563df06c60a6914fd5b56efc48a978002a29105e10d5f0a",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._extrema_df = self._get_extrema_df(r)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "486c816daf5bd5632b59a1136c16ce042cb24fef0ab5c53aa645961eb98c3f35",
+  "human_valid": true,
+  "line_no": 372044,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "201a2fc55a99d4e0bb1ad9fa048e10d2e7015c5b1ebadbdd53d646328209ed7b",
+  "raw_output": "\n        self._extrema_df = self._get_extrema_df(r)\n\n    def",
+  "sampling_seed": 1934680569,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

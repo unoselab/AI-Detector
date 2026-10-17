@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ensure_tty(file=sys.stdout):\n    \"\"\" Ensure a file object is a tty. It must have an `isatty` method that\n        returns True.\n        TypeError is raised if the method doesn't exist, or returns False.\n    \"\"\"\n    if not hasattr(file, 'isatty'):\n        raise TypeError('file object has no isatty method')\n    if not file.isatty():\n        raise TypeError('file object is not a tty')\n",
+  "agc_valid": true,
+  "body_sha256": "6e9d40906c08374026c8cc003d76a77fadd2d77d9992185d453518477c1e33dd",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not hasattr(file, 'isatty'):\n        raise TypeError('file object has no isatty method')\n    if not file.isatty():\n        raise TypeError('file object is not a tty')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "da1a03cfcaa9d96022fd1e93d31f59e07d0df4b5acc1dcf4fb784fba3ae342b2",
+  "human_valid": true,
+  "line_no": 405485,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "959bc3e1c31ee6c9332e01d50bd333af23ae2b84f37a0758921d23254caa395b",
+  "raw_output": "\n    if not hasattr(file, 'isatty'):\n        raise TypeError('file object has no isatty method')\n    if not file.isatty():\n        raise TypeError('file object is not a tty')\n\n\ndef get_terminal_size(file=sys.stdout):\n    \"\"\" Get the terminal size of the given file object.\n        Returns a tuple of (rows, columns).\n    \"\"\"\n    ensure_tty(file)\n    try:\n        return os.get_terminal_size(file.fileno())\n    except OSError:\n        return os.get_terminal_size(0)\n\n\ndef get_terminal_width(file=sys.stdout):\n    \"\"\" Get the terminal width of the given file object.\n    \"\"\"\n    return get_terminal_size(file)[0]\n\n\ndef get_terminal_height(file=sys.stdout):\n    \"\"\" Get the terminal height of the given file object.\n    \"\"\"\n    return get_terminal_size(file)[1]\n\n\ndef get_terminal_columns(file=sys.stdout):\n    \"\"\" Get the terminal width of the given file object.\n    \"\"\"\n    return get_terminal_width(file)\n\n\ndef get_terminal_rows(file=sys.stdout):\n    \"\"\" Get the terminal height of the given file object.\n    \"\"\"\n    return get_terminal_height(file)\n\n\ndef get_terminal_size_or_default(file=sys.stdout):\n    \"\"\" Get the terminal size of the given file object.\n        Returns a tuple of (rows, columns).\n    \"\"\"\n    try:\n        return get_terminal_size(file)\n    except (OSError, TypeError):\n        return (25, ",
+  "sampling_seed": 1594615923,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

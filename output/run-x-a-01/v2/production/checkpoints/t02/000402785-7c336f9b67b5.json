@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _check_valid_data(self, data):\n        \"\"\"Checks that the given data is a float array with four channels.\n\n        Parameters\n        ----------\n        data : :obj:`numpy.ndarray`\n            The data to check.\n\n        Raises\n        ------\n        ValueError\n            If the data is invalid.\n        \"\"\"\n        if not isinstance(data, np.ndarray):\n            raise ValueError(\"Data must be a numpy array.\")\n        if data.ndim !=\n",
+  "agc_valid": false,
+  "body_sha256": "7fcb02bb80bbed58f17c48d4986a421664cbd907451369a4b5d2d919bd001caf",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(data, np.ndarray):\n            raise ValueError(\"Data must be a numpy array.\")\n        if data.ndim !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "be363fde48bcd0d60077bcb2bfe3778f68199ca6232b88e68f62c7b7ea299354",
+  "human_valid": true,
+  "line_no": 402785,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7c336f9b67b5958423060435d9bd9075219408b9845041874de5023154538cbe",
+  "raw_output": "\n        if not isinstance(data, np.ndarray):\n            raise ValueError(\"Data must be a numpy array.\")\n        if data.ndim != ",
+  "sampling_seed": 707174895,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def execute_command(self, parts, dry_run):\n        \"\"\"\n        Execute a command.\n\n        Parameters\n        ----------\n        parts : list\n            Sequence of strings constituting a command.\n        dry_run : bool\n            Whether to just log the command instead of executing it.\n\n        Returns\n        -------\n        status : int\n            Status code of the executed command or 0 if `dry_run` is `True`.\n        \"\"\"\n        if len(parts) ==\n",
+  "agc_valid": false,
+  "body_sha256": "07e868a4d8368fe4b692f0980c2a796a8e55d7be47b6ed12a48b1e751ba94602",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if len(parts) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 173,
+  "human_sha256": "addfcac2e9a1b63b94121abdef234a102cf933ed41cd09796633d9fc9d418e27",
+  "human_valid": true,
+  "line_no": 142708,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c02d7266e6a170d052cfeeedbcee22a335335a0968aa64ebb9ca2f2ab8a4fd72",
+  "raw_output": "\n        if len(parts) == ",
+  "sampling_seed": 3327972501,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

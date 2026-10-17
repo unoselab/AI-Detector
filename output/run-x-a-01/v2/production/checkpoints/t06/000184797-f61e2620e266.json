@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def computePWCorrelationsWithinCol(spikeTrains, removeAutoCorr, cellsPerColumn):\n  \"\"\"\n  Computes pairwise correlations from spikeTrains\n\n  @param spikeTrains (array) spike trains obtained from the activation of cells in the TM\n     the array dimensions are: numCells x timeSteps\n  @param removeAutoCorr (boolean) if true, auto-correlations are removed by substracting\n     the diagonal of the correlation matrix\n  @param cellsPerColumn (int) number of cells per column in thr TM\n  @return corrMatrix (array) numCells x numCells matrix containing the Pearson correlation\n      coefficient of spike trains of cell i and cell j\n  @return numNegPCC (int) number of negative pairwise correlations (PCC(i,j) < 0)\n  \"\"\"\n  column\n",
+  "agc_valid": true,
+  "body_sha256": "ffc897e205276b5dbfb3bccbdeab5b6d70d07ad9a5598dff6d911ef71f1e2716",
+  "body_tokens": 3,
+  "bucket": "out_of_range",
+  "clean_output": "\n  column\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 175,
+  "human_sha256": "77ad4593dce314e584486c641051f3af2a2d91b7af8260ce4369a2ef376682d7",
+  "human_valid": true,
+  "line_no": 184797,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f61e2620e266cac6cc1e5e8f6b449272d3b6c01295f45be9c0e12bcb71b49d68",
+  "raw_output": "column\n  \n ",
+  "sampling_seed": 2069670351,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

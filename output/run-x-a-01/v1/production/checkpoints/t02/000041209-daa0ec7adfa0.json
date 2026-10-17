@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def has_node_with_value(self, value):\n        \"\"\"\n        Whether any node in ``self.node_list`` has the value ``value``.\n\n        Args:\n            value (Any): The value to find in ``self.node_list``\n\n        Returns: bool\n\n        Example:\n            >>> from blur.markov.node import Node\n            >>> node_1 = Node('One')\n            >>> graph = Graph([node_1])\n            >>> graph.has_node_with_value('One')\n            True\n            >>> graph.has_node_with_value('Foo')\n            False\n        \"\"\"\n        graph.has_node_with_value('Two')\n                    False\n                \"\"\"\n                for node in self.node_list:\n                    if node.value == value:\n                        return True\n                return False\n",
+  "agc_valid": false,
+  "body_sha256": "8e746bd70c4312aa3b108921c4de2d2d0cf70c5700af182c188a1cc80b62d849",
+  "body_tokens": 129,
+  "bucket": "type03_130",
+  "clean_output": "\n        graph.has_node_with_value('Two')\n                    False\n                \"\"\"\n                for node in self.node_list:\n                    if node.value == value:\n                        return True\n                return False\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5cfbc9042b8f4cffe1cb197bfa4cd15b8908b00857a79c965863fc359ea1df1b",
+  "human_valid": true,
+  "line_no": 41209,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "daa0ec7adfa085585be034549fca13116d2cbe2c7a5b5e7545fe5a305dc846ad",
+  "raw_output": "graph.has_node_with_value('Two')\n            False\n        \"\"\"\n        for node in self.node_list:\n            if node.value == value:\n                return True\n        return False\n\n    def",
+  "sampling_seed": 1261041722,
+  "tag": "t02",
+  "temperature": 0.2
+}

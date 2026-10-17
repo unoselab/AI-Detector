@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fill(metrics_headers=()):\n    \"\"\"Add the metrics headers known to GAX.\n\n    Return an OrderedDict with all of the metrics headers provided to\n    this function, as well as the metrics known to GAX (such as its own\n    version, the GRPC version, etc.).\n    \"\"\"\n    headers = OrderedDict()\n    headers.update(metrics_headers)\n    headers.update(METRICS_HEADERS)\n    return headers\n",
+  "agc_valid": true,
+  "body_sha256": "13ea77164b9399f766bcb5a98bf44f86b71491fe4920c0039e822055ccfb6ef8",
+  "body_tokens": 20,
+  "bucket": "out_of_range",
+  "clean_output": "\n    headers = OrderedDict()\n    headers.update(metrics_headers)\n    headers.update(METRICS_HEADERS)\n    return headers\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "c5f0504afdc121d16a83348a43bbc1372aed08df79519a74d0a73097bc13c6cc",
+  "human_valid": true,
+  "line_no": 249130,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d95faa3dac4a9b130845abfa1aa2e4733397f973229ad4a08733bd65d89c9d15",
+  "raw_output": "\n    headers = OrderedDict()\n    headers.update(metrics_headers)\n    headers.update(METRICS_HEADERS)\n    return headers\n\n\ndef add_client_info(headers, client_info):\n    \"\"\"Add client information to the headers.\n\n    Args:\n        headers (OrderedDict): The headers to add the client information to.\n        client_info (ClientInfo): The client information to add to the headers.\n    \"\"\"\n    headers[CLIENT_INFO_HEADER] = client_info.to_header()\n\n\ndef add_gax_metadata(headers, metadata):\n    \"\"\"Add GAX metadata to the headers.\n\n    Args:\n        headers (OrderedDict): The headers to add the GAX metadata to.\n        metadata (Sequence[Tuple[str, str]]): The GAX metadata to add to the\n            headers.\n    \"\"\"\n    for key, value in metadata:\n        headers[key] = value\n\n\ndef add_gax_metadata_to_call(call, metadata):\n    \"\"\"Add GAX metadata to a call.\n\n    Args:\n        call (Call): The call to add the GAX metadata to.\n        metadata (Sequence[Tuple[str, str]]): The GAX metadata to add to the\n            call.\n    \"\"\"\n    for key, value in metadata:\n        call.add_metadata(key, value)\n\n\ndef add_gax_metadata_to_page_stream(page_stream, metadata):\n    \"\"\"Add GAX metadata to a page stream.\n\n    Args:\n        page_stream (PageStream): The page stream to add the GAX metadata to.\n        metadata (Sequence[Tuple[str, str]]): The GAX metadata to add to the\n            page stream.\n    \"\"\"\n    for key, value in metadata:\n        page_stream.add_metadata(key, value)\n\n\ndef add_gax_metadata_to_page_iterator(page_iterator, metadata):\n    \"\"\"Add GAX metadata to a page iterator.\n\n    Args:\n        page_iterator (PageIterator): The page iterator to add the GAX metadata\n            to.\n        metadata (Sequence[Tuple[",
+  "sampling_seed": 3099641642,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

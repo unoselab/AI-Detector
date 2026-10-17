@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_metadata(self, handler):\n        \"\"\" validate that kind=category does not change the categories \"\"\"\n        if handler.kind != 'category':\n            return\n        categories = handler.categories\n        if categories and categories != self.categories:\n            raise ValueError('categories cannot be changed')\n",
+  "agc_valid": true,
+  "body_sha256": "351758c686192556b3cdcc2e6d53effc7a71ae5c11dacc3ce4f63f6343d0a58e",
+  "body_tokens": 63,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if handler.kind != 'category':\n            return\n        categories = handler.categories\n        if categories and categories != self.categories:\n            raise ValueError('categories cannot be changed')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "bb75d681f6dfb9e411418eafa8c383b16d6cffd87fac59093ed698b97d4c3a5d",
+  "human_valid": true,
+  "line_no": 91802,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9eb4ab99e320913dfa7676a3c0b2f2b4608dbb18304a679f56afebbbfad617d8",
+  "raw_output": "\n        if handler.kind != 'category':\n            return\n        categories = handler.categories\n        if categories and categories != self.categories:\n            raise ValueError('categories cannot be changed')\n\n    def",
+  "sampling_seed": 3499241741,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

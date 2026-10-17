@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_title(self, title=None):\n        \"\"\"Sets the title.\n\n        :param title: the new title\n        :type title: ``string``\n        :raise: ``InvalidArgument`` -- ``title`` is invalid\n        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``\n        :raise: ``NullArgument`` -- ``title`` is ``null``\n\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n            pass\n\n        @abc.abstractmethod\n",
+  "agc_valid": false,
+  "body_sha256": "abfedaf90d6fa63ae8ae0844ec0495e0181d8fbec6f38a61c2a11d025972f250",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n            pass\n\n        @abc.abstractmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "83f82ec4d3aa697554da32acbc193ea883da3bcc5554294f2409b326711b8efc",
+  "human_valid": true,
+  "line_no": 47165,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "37bf0f81ae65be0f8e69f4a5781031e03e219d2269ff11dd4151741184a0783a",
+  "raw_output": "\n        pass\n\n    @abc.abstractmethod\n    def",
+  "sampling_seed": 2995491568,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

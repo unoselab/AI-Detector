@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_dummy_thread(nsamples, **kwargs):\n    \"\"\"Generate dummy data for a single nested sampling thread.\n\n    Log-likelihood values of points are generated from a uniform distribution\n    in (0, 1), sorted, scaled by logl_range and shifted by logl_start (if it is\n    not -np.inf). Theta values of each point are each generated from a uniform\n    distribution in (0, 1).\n\n    Parameters\n    ----------\n    nsamples: int\n        Number of samples in thread.\n    ndim: int, optional\n        Number of dimensions.\n    seed: int, optional\n        If not False, the seed is set with np.random.seed(seed).\n    logl_start: float, optional\n        logl at which thread starts.\n    logl_range: float, optional\n        Scale factor applied to logl values.\n    \"\"\"\n    logl_start: float, optional\n        Log-likelihood of the first sample\n    logl_range: float, optional\n        Range of log-likelihood values\n\n    Returns\n    -------\n    samples: array\n        Numpy array of shape (nsamples,\n",
+  "agc_valid": false,
+  "body_sha256": "b4ef38e39e9799dcd3c2b42a6b315146bd08fb8fd9d9232cb6e53fa0c38946c8",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n    logl_start: float, optional\n        Log-likelihood of the first sample\n    logl_range: float, optional\n        Range of log-likelihood values\n\n    Returns\n    -------\n    samples: array\n        Numpy array of shape (nsamples,\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1e6240f2680ac2a0fc23974ddcfb3af6af74e47de2b1a5a15583ec71ebd7bb6a",
+  "human_valid": true,
+  "line_no": 12559,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "4065085db782e33d389e6ff57ac17e5ac639d38935597627763c9621c1575f6e",
+  "raw_output": "\n    logl_start: float, optional\n        Log-likelihood of the first sample\n    logl_range: float, optional\n        Range of log-likelihood values\n\n    Returns\n    -------\n    samples: array\n        Numpy array of shape (nsamples, ",
+  "sampling_seed": 2754079728,
+  "tag": "t06",
+  "temperature": 0.6
+}

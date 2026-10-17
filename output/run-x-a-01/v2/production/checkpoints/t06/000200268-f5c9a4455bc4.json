@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def GetParentFileEntry(self):\n    \"\"\"Retrieves the parent file entry.\n\n    Returns:\n      TSKFileEntry: parent file entry or None.\n    \"\"\"\n    if self.parent_file_entry is None:\n      self.parent_file_entry = self._GetParentFileEntry()\n\n    return self.parent_file_entry\n",
+  "agc_valid": true,
+  "body_sha256": "0179da98dd4a81a8492c710abaced981505d20cee323a8b64ec4a793122079cc",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if self.parent_file_entry is None:\n      self.parent_file_entry = self._GetParentFileEntry()\n\n    return self.parent_file_entry\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "40045f71ac057b6b949234bbe4443a30f0da7c3f2b2545dbca091e7bacce3308",
+  "human_valid": true,
+  "line_no": 200268,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f5c9a4455bc47ff8b35e8bd56b9157a25e3a0a920d170c0edfd7d2939d7a37f9",
+  "raw_output": "\n    if self.parent_file_entry is None:\n      self.parent_file_entry = self._GetParentFileEntry()\n\n    return self.parent_file_entry\n\n ",
+  "sampling_seed": 1289036985,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

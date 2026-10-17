@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_config_file(config_file_path, config_file):\n    \"\"\"\n    Loads a config file, whether it is a yaml file or a .INI file.\n\n    :param config_file_path: Path of the configuration file, used to infer the file format.\n    :returns: Dictionary representation of the configuration file.\n    \"\"\"\n    if config_file_path.endswith('.yaml') or config_file_path.endswith('.yml'):\n        with open(config_file_path, 'r') as config_file:\n            return yaml.load(config_file)\n    elif config_file_path.endswith('.ini'):\n        config = configparser.ConfigParser()\n        config.read(config_file_path)\n        return config\n    else:\n        raise ValueError('Unknown configuration file format.')\n",
+  "agc_valid": true,
+  "body_sha256": "fa0a29265352710f43f24edd34e7cd9672584d84b13ae24bb46f61e49dc1376f",
+  "body_tokens": 81,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if config_file_path.endswith('.yaml') or config_file_path.endswith('.yml'):\n        with open(config_file_path, 'r') as config_file:\n            return yaml.load(config_file)\n    elif config_file_path.endswith('.ini'):\n        config = configparser.ConfigParser()\n        config.read(config_file_path)\n        return config\n    else:\n        raise ValueError('Unknown configuration file format.')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 110,
+  "human_sha256": "8db33f69ee2589dd52b6515f83c69f6c120066739c21cdedad0925f1ff265242",
+  "human_valid": true,
+  "line_no": 87827,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "20c27111f464feee442c1e3a6fa18a9f6fb29e576e29eb2653e429cac33a4757",
+  "raw_output": "\n    if config_file_path.endswith('.yaml') or config_file_path.endswith('.yml'):\n        with open(config_file_path, 'r') as config_file:\n            return yaml.load(config_file)\n    elif config_file_path.endswith('.ini'):\n        config = configparser.ConfigParser()\n        config.read(config_file_path)\n        return config\n    else:\n        raise ValueError('Unknown configuration file format.')\n\n\ndef load_config_file_from_string(config_file_string, config_file_path):\n    \"\"\"\n    Loads a config file from a string, whether it is a yaml file or a .INI file.\n\n    :param config_file_string: String representation of the configuration file.\n    :param config_file_path: Path of the configuration file, used to infer the file format.\n    :returns: Dictionary representation of the configuration file.\n    \"\"\"\n    if config_file_path.endswith('.yaml') or config_file_path.endswith('.yml'):\n        return yaml.load(config_file_string)\n    elif config_file_path.endswith('.ini'):\n        config = configparser.ConfigParser()\n        config.read_string(config_file_string)\n        return config\n    else:\n        raise ValueError('Unknown configuration file format.')\n\n\ndef load_config_file_from_dict(config_file_dict, config_file_path):\n    \"\"\"\n    Loads a config file from a dictionary, whether it is a yaml file or a .INI file.\n\n    :param config_file_dict: Dictionary representation of the configuration file.\n    :param config_file_path: Path of the configuration file, used to infer the file format.\n    :returns: Dictionary representation of the configuration file.\n    \"\"\"\n    if config_file_path.endswith('.yaml') or config_file_path.endswith('.yml'):\n        return config_file_dict\n    elif config_file_path.endswith('.ini'):\n        config = configparser.ConfigParser()\n        config.read_dict(config_file_dict)\n        return config\n    else:\n",
+  "sampling_seed": 2351435214,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

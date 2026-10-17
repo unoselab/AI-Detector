@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def switch(self):\n        \"\"\"Switch if time for eAgc has come\"\"\"\n        if self.eagc_time < time.time():\n            self.eagc_time = time.time() +\n",
+  "agc_valid": false,
+  "body_sha256": "93d54e2d61eeba05aabb75105c9897e791b7620448b462f28cbace17c922290a",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.eagc_time < time.time():\n            self.eagc_time = time.time() +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "01771c791db67414be9e0d8f1f12faeb2145f2fa7dfe8c9f5cb876ed0c838b30",
+  "human_valid": true,
+  "line_no": 411080,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "def12c34172a848ed347780936360aff6590bb8018bae7e8f9a3381158f3ba8f",
+  "raw_output": "\n        if self.eagc_time < time.time():\n            self.eagc_time = time.time() + ",
+  "sampling_seed": 3918240980,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

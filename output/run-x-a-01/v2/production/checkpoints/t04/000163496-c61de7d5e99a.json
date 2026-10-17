@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stock_image(width: Union[int, str] = 1920,\n                    height: Union[int, str] = 1080,\n                    keywords: Optional[List[str]] = None,\n                    writable: bool = False) -> Union[str, bytes]:\n        \"\"\"Generate random stock image (JPEG) hosted on Unsplash.\n\n        .. note:: This method required an active HTTP connection.\n\n        :param width: Width of the image.\n        :param height: Height of the image.\n        :param keywords: List of search keywords.\n        :param writable: Return image as sequence ob bytes.\n        :return: Link to the image.\n        \"\"\"\n        :param keywords: List of keywords to filter the image.\n                :param writable: Whether to return a bytes object or a string.\n                :return: A bytes object or a string containing the image.\n                \"\"\"\n                url = 'https://source.unsplash.com/featured/'\n                if keywords:\n                    url += '/'.join(keywords)\n                url += f'/{width}x{height}'\n                response = requests.get(url)\n                if writable:\n                    return response.content\n                else:\n                    return response.text\n\n            @staticmethod\n",
+  "agc_valid": false,
+  "body_sha256": "734516c242fa1fc0436682dc0300535f6ea39e20a93016dd24bbc8bee436b175",
+  "body_tokens": 264,
+  "bucket": "out_of_range",
+  "clean_output": "\n        :param keywords: List of keywords to filter the image.\n                :param writable: Whether to return a bytes object or a string.\n                :return: A bytes object or a string containing the image.\n                \"\"\"\n                url = 'https://source.unsplash.com/featured/'\n                if keywords:\n                    url += '/'.join(keywords)\n                url += f'/{width}x{height}'\n                response = requests.get(url)\n                if writable:\n                    return response.content\n                else:\n                    return response.text\n\n            @staticmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "c7cc6cfdd2c1163f6ad5dda656d1dda1ce1b5a4c6343cc254e94a920aee8a0a4",
+  "human_valid": true,
+  "line_no": 163496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c61de7d5e99a0eba6900a1b5fcff7cbd62657f7926435f8e3d8d08bc1410e7d3",
+  "raw_output": ":param keywords: List of keywords to filter the image.\n        :param writable: Whether to return a bytes object or a string.\n        :return: A bytes object or a string containing the image.\n        \"\"\"\n        url = 'https://source.unsplash.com/featured/'\n        if keywords:\n            url += '/'.join(keywords)\n        url += f'/{width}x{height}'\n        response = requests.get(url)\n        if writable:\n            return response.content\n        else:\n            return response.text\n\n    @staticmethod\n    def",
+  "sampling_seed": 2571173571,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

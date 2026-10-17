@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stmt_lambda_proc(self, inputstring, **kwargs):\n        \"\"\"Add statement lambda definitions.\"\"\"\n        # pylint: disable=unused-argument\n        if inputstring:\n            self.statements.append(inputstring)\n        else:\n            self.statements.append(\"\")\n",
+  "agc_valid": true,
+  "body_sha256": "2cf26dabb2b42f1b69ff010ee2d5be1c41bd8032932c50de09629afed9a0eb49",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # pylint: disable=unused-argument\n        if inputstring:\n            self.statements.append(inputstring)\n        else:\n            self.statements.append(\"\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "d804e0a0e721ba9aab22ee0302177419daa9712a46a3c0806499cadf6548f572",
+  "human_valid": true,
+  "line_no": 181174,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "db5fefcc4f931a94d8e0ef83cf0ebb0fef3824f93168ec079932b9883c8dfbb9",
+  "raw_output": "\n        # pylint: disable=unused-argument\n        if inputstring:\n            self.statements.append(inputstring)\n        else:\n            self.statements.append(\"\")\n\n    def",
+  "sampling_seed": 1392419830,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

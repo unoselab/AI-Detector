@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def normalize_list(self, text, cache=None):\n        \"\"\"\n        Get a canonical list representation of text, with words\n        separated and reduced to their base forms.\n\n        TODO: use the cache.\n        \"\"\"\n        if cache is None:\n            cache = {}\n        if text in cache:\n            return cache[text]\n        words = self.normalize_words(text, cache=cache)\n        return ' '.join(words)\n",
+  "agc_valid": true,
+  "body_sha256": "193207ff8ebd3fb63cf2ce2a6e809d80d676194745bfe7f5aa633ad82919dae5",
+  "body_tokens": 71,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if cache is None:\n            cache = {}\n        if text in cache:\n            return cache[text]\n        words = self.normalize_words(text, cache=cache)\n        return ' '.join(words)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "a0ad538112bb4dff84d2034faf62d6ede198375195bf9f1a72ecd6ea710f20dc",
+  "human_valid": true,
+  "line_no": 12900,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bdf13203168ae9431008c9729ef266dcd3b614b3349f4dcadce8fe984ac98a3a",
+  "raw_output": "\n        if cache is None:\n            cache = {}\n        if text in cache:\n            return cache[text]\n        words = self.normalize_words(text, cache=cache)\n        return ' '.join(words)\n\n    def",
+  "sampling_seed": 3496686912,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

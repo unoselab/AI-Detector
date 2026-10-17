@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def clear(self):\n        \"\"\"Close all opened files if not in use.\"\"\"\n        if self.in_use:\n            return\n        for f in self.files:\n            f.close()\n        self.files = []\n",
+  "agc_valid": true,
+  "body_sha256": "b275f964f344740a544460a4155647555b6bf6b156312049d36792c79bece339",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.in_use:\n            return\n        for f in self.files:\n            f.close()\n        self.files = []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "2852d66f622abac01a660cfafc3f170c2f4e20e92b727d328187900f6c949bbf",
+  "human_valid": true,
+  "line_no": 237335,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "09eefdb2fa7c85b764219fa12deb0ffde6a0fc3ea26f4ffb9387922fd3681ce7",
+  "raw_output": "\n        if self.in_use:\n            return\n        for f in self.files:\n            f.close()\n        self.files = []\n\n    def",
+  "sampling_seed": 1594714263,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

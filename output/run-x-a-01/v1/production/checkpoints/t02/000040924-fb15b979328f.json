@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_model(app_dot_model):\n    \"\"\"\n    Returns Django model class corresponding to passed-in `app_dot_model`\n    string. This is helpful for preventing circular-import errors in a Django\n    project.\n\n    Positional Arguments:\n    =====================\n    - `app_dot_model`: Django's `<app_name>.<model_name>` syntax. For example,\n                       the default Django User model would be `auth.User`,\n                       where `auth` is the app and `User` is the model.\n    \"\"\"\n    Returns:\n    ========\n    - `model`: Django model class corresponding to `app_dot_model`.\n    \"\"\"\n    app_name, model_name = app_dot_model.split('.')\n    return apps.get_model(app_name, model_name)\n",
+  "agc_valid": false,
+  "body_sha256": "4be3d5c38b5e378d35e09612e518de3815a95f78684fd1440da5155c45304641",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Returns:\n    ========\n    - `model`: Django model class corresponding to `app_dot_model`.\n    \"\"\"\n    app_name, model_name = app_dot_model.split('.')\n    return apps.get_model(app_name, model_name)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f2f7dc3c23586e34cba701b039fb66046bb9717e8fe63f7de97fc1df8c6ed9d4",
+  "human_valid": true,
+  "line_no": 40924,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fb15b979328fccd53a6de9e9731423fa1ab0ddd8bc928bdc56f923464852a117",
+  "raw_output": "\n\n    Returns:\n    ========\n    - `model`: Django model class corresponding to `app_dot_model`.\n    \"\"\"\n    app_name, model_name = app_dot_model.split('.')\n    return apps.get_model(app_name, model_name)\n\n\ndef get_model_field(model, field_name):\n    \"\"\"\n    Returns Django model field corresponding to passed-in `field_name`\n    string. This is helpful for preventing circular-import errors in a Django\n    project.\n\n    Positional Arguments:\n    =====================\n    - `model`: Django model class.\n    - `field_name`: Django model field name.\n\n    Returns:\n    ========\n    - `field`: Django model field corresponding to `field_name`.\n    \"\"\"\n    return model._meta.get_field(field_name)\n\n\ndef get_model_field_choices(model, field_name):\n    \"\"\"\n    Returns Django model field choices corresponding to passed-in `field_name`\n    string. This is helpful for preventing circular-import errors in a Django\n    project.\n\n    Positional Arguments:\n    =====================\n    - `model`: Django model class.\n    - `field_name`: Django model field name.\n\n    Returns:\n    ========\n    - `choices`: Django model field choices corresponding to `field_name`.\n    \"\"\"\n    field = get_model_field(model, field_name)\n    return field.choices\n\n\ndef get_model_field_max_length(model, field_name):\n    \"\"\"\n    Returns Django model field max_length corresponding to passed-in\n    `field_name` string. This is helpful for preventing circular-import errors\n    in a Django project.\n\n    Positional Arguments:\n    =====================\n    - `model`: Django model class.\n    - `field_name`: Django model field name.\n\n    Returns:\n    ========\n    - `max_length`: Django model field max_length corresponding to `field_name`.\n    \"\"\"\n    field = get_model_field(model, field_name)\n    return field.max_length\n\n",
+  "sampling_seed": 3370779207,
+  "tag": "t02",
+  "temperature": 0.2
+}

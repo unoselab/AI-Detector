@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def terminate_process(self, idf):\n        \"\"\" Terminate a process by id \"\"\"\n        self.get_process_by_id(idf).terminate()\n",
+  "agc_valid": true,
+  "body_sha256": "7a407ac2ce7860e498ec9bc1bc0ecebb3b26998b226d11c2cf6e72decc522b4d",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.get_process_by_id(idf).terminate()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c30cf3a5c7e38bfc8ea0e0a83a1bb2437d4214fafc6bb42b886c51440e6dbd0e",
+  "human_valid": true,
+  "line_no": 40188,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e6d49108ca2f244ad1e23b03c3a38959982812b505e49b1cf0fea1bd264552d4",
+  "raw_output": "\n        self.get_process_by_id(idf).terminate()\n\n    def",
+  "sampling_seed": 621573510,
+  "tag": "t06",
+  "temperature": 0.6
+}

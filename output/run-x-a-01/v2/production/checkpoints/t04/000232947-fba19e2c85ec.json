@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def save(self, mode=0o600):\n        \"\"\"\n        Serialize the config data to the user home directory.\n\n        :param mode: The octal Unix mode (permissions) for the config file.\n        \"\"\"\n        self.write(self.path, mode)\n",
+  "agc_valid": true,
+  "body_sha256": "d3313a7984dee370c6107c04387ecd172c6828eb351365f16c5f594c9301573f",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.write(self.path, mode)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "fe125f2535cf8614d17449e6686952c2539cb1bfb3f34fdd8b4cfafa16e14f1a",
+  "human_valid": true,
+  "line_no": 232947,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fba19e2c85ec197e50535d15cdadc22a35ac4764b241b6b860cd5fb29435224d",
+  "raw_output": "\n        self.write(self.path, mode)\n\n    def",
+  "sampling_seed": 390610042,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

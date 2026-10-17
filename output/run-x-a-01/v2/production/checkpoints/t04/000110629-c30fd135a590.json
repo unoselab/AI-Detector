@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def init_copy(self, connection):\n        \"\"\"\n        Perform pre-copy sql - such as creating table, truncating, or removing data older than x.\n        \"\"\"\n        pass\n",
+  "agc_valid": false,
+  "body_sha256": "0b35470fd90e318ed51e754d5837ebd51e1adb2bb11ee5c4d4fb7ce4345d7673",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        pass\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 175,
+  "human_sha256": "f1332a8f0f6a3e28184b103eec8335eb6032153421bae5c6edef22c42512822b",
+  "human_valid": true,
+  "line_no": 110629,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c30fd135a59090a2e80523b63df1ad891a20fbad7bf9ac6b74abe5ac650c2f8a",
+  "raw_output": "\n        pass\n\n    def",
+  "sampling_seed": 3749126372,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

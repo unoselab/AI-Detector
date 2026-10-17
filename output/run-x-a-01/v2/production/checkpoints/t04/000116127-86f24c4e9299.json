@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_raw(path, raw):\n    \"\"\"\n    Set raw data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_raw \"secret/my/secret\" '{\"user\":\"foo\",\"password\": \"bar\"}'\n    \"\"\"\n    return __salt__[\"vault.write\"](path, raw)\n",
+  "agc_valid": true,
+  "body_sha256": "3e55c5e32c72979ab3ba8ec3d37d652acfa44b9c048cb08cd160225f6a661083",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return __salt__[\"vault.write\"](path, raw)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "745febf76211b041da75d51de32335e96ff109eac3b3bb9aea3c3542188fc7b2",
+  "human_valid": true,
+  "line_no": 116127,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "86f24c4e9299cf48802d204e6f0051a6d6cf44eaaa4f4f22485c7e9a42fddf2c",
+  "raw_output": "\n    return __salt__[\"vault.write\"](path, raw)\n\n\ndef write(path, **kwargs):\n    \"\"\"\n    Set data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write \"secret/my/secret\" user=\"foo\" password=\"bar\"\n    \"\"\"\n    return __salt__[\"vault.write\"](path, kwargs)\n\n\ndef delete(path):\n    \"\"\"\n    Delete the secret at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.delete \"secret/my/secret\"\n    \"\"\"\n    return __salt__[\"vault.delete\"](path)\n\n\ndef list_(path):\n    \"\"\"\n    List the secrets at the path in vault.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.list \"secret/my/secret\"\n    \"\"\"\n    return __salt__[\"vault.list\"](path)\n\n\ndef read_raw(path):\n    \"\"\"\n    Read the raw data at the path in vault.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.read_raw \"secret/my/secret\"\n    \"\"\"\n    return __salt__[\"vault.read\"](path)\n\n\ndef read(path):\n    \"\"\"\n    Read the data at the path in vault.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.read \"secret/my/secret\"\n    \"\"\"\n    return __salt__[\"vault.read\"](path)\n\n\ndef read_with_metadata(path):\n    \"\"\"\n    Read the data at the path in vault.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.read_with_metadata \"secret/my/secret\"\n    \"\"\"\n    return __salt__[\"vault.read_with_",
+  "sampling_seed": 2853302990,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

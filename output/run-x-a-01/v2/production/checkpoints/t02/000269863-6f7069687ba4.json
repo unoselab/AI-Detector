@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_stp_brief_info_output_spanning_tree_info_spanning_tree_mode_stp_stp_root_bridge_priority(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        return self.cli_command(command='show spanning-tree info output spanning-tree mode stp stp root bridge priority',\n                                output='StpRootBridgePriority',\n                                **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "3fc5da69dc0db361dad7b46f0934e6842eeedddefa382ed012d4d20372211d00",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.cli_command(command='show spanning-tree info output spanning-tree mode stp stp root bridge priority',\n                                output='StpRootBridgePriority',\n                                **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "4350ab3f5b10583c296c210015f92c5ef72403c0ea675fbe88c350f7b36bdff0",
+  "human_valid": true,
+  "line_no": 269863,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6f7069687ba43dc7470df74a9cc60d520648fa9f7104f2ba11f29cdc59363f36",
+  "raw_output": "\n        return self.cli_command(command='show spanning-tree info output spanning-tree mode stp stp root bridge priority',\n                                output='StpRootBridgePriority',\n                                **kwargs)\n\n\nclass ShowSpanningTreeInfoOutputSpanningTreeModeStpStpRootBridgeSystemId(ShowSpanningTreeInfoOutputSpanningTreeModeStpStpRootBridgePriority):\n    \"\"\"Parser for show spanning-tree info output spanning-tree mode stp stp root bridge system-id\"\"\"\n\n    cli_command = ['show spanning-tree info output spanning-tree mode stp stp root bridge system-id',\n                   'show spanning-tree info output spanning-tree mode stp stp root bridge system-id {interface}']\n\n    def",
+  "sampling_seed": 566582393,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def translate_purposes(f):\n    \"\"\"decorator to translate the purposes field.\n\n    translate the values of the purposes field of the API response into\n    translated values.\n    \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "42ff0009c586d805a250dd2790af0e127d8eef65b6b3ef8ca73e486758f36d60",
+  "human_valid": true,
+  "line_no": 69916,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "19fc5f86ba9075329d698c8cd5be8d3cf1142638dcec7630c6ae2ca59df81f86",
+  "raw_output": "\n    def",
+  "sampling_seed": 2060811429,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def add(self):\n        \"\"\" Add a new VRF.\n        \"\"\"\n        if self.vrf_id is None:\n            raise ValueError('VRF ID is required')\n        if self.vrf_name is None:\n            raise ValueError('VRF Name is required')\n        if self.vrf_description is None:\n            raise ValueError('VRF Description is required')\n\n        if self.vrf_id in self.vrfs:\n            raise ValueError('VRF ID already exists')\n\n        self.vrfs[self.vrf_id] = {\n            'name': self.vrf_name,\n            'description': self.vrf_description\n        }\n",
+  "agc_valid": true,
+  "body_sha256": "6e92cc93b5bd80a80273876d535e8d191166b94533d729b0b9f1dfd86392915e",
+  "body_tokens": 153,
+  "bucket": "type06_160",
+  "clean_output": "\n        if self.vrf_id is None:\n            raise ValueError('VRF ID is required')\n        if self.vrf_name is None:\n            raise ValueError('VRF Name is required')\n        if self.vrf_description is None:\n            raise ValueError('VRF Description is required')\n\n        if self.vrf_id in self.vrfs:\n            raise ValueError('VRF ID already exists')\n\n        self.vrfs[self.vrf_id] = {\n            'name': self.vrf_name,\n            'description': self.vrf_description\n        }\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "77cfac042964027747778a8560188b4fad65675382827e9ffbc1048f949deb5a",
+  "human_valid": true,
+  "line_no": 322768,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9b050fd65f168ad747a622607e2a8de3a81617b57ab580fd558e3209787b5668",
+  "raw_output": "\n        if self.vrf_id is None:\n            raise ValueError('VRF ID is required')\n        if self.vrf_name is None:\n            raise ValueError('VRF Name is required')\n        if self.vrf_description is None:\n            raise ValueError('VRF Description is required')\n\n        if self.vrf_id in self.vrfs:\n            raise ValueError('VRF ID already exists')\n\n        self.vrfs[self.vrf_id] = {\n            'name': self.vrf_name,\n            'description': self.vrf_description\n        }\n\n    def",
+  "sampling_seed": 108316473,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

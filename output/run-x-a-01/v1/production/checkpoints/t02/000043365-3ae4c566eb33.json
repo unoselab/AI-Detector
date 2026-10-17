@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def deconstruct(self):\n        \"\"\"\n        FK to version always points to a version table\n        \"\"\"\n        return (\n            self.__class__,\n            (self.app_label, self.model, self.field_name),\n            {\"to\": self.to},\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "de3a3f7a5fd5a5629b80908f5cf52497082d688e2ee16467feb7d2c38b912a3c",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return (\n            self.__class__,\n            (self.app_label, self.model, self.field_name),\n            {\"to\": self.to},\n        )\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "67f0d28b3d0f123d81dfaa5de839d1bf9cec2b8b3729e0b0d5c11fe0ed33c1a2",
+  "human_valid": true,
+  "line_no": 43365,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3ae4c566eb33e78dd759de2f75d47f1eb5ce4799cee51ea9a83671bf5c673f01",
+  "raw_output": "\n        return (\n            self.__class__,\n            (self.app_label, self.model, self.field_name),\n            {\"to\": self.to},\n        )\n\n    def",
+  "sampling_seed": 1537113171,
+  "tag": "t02",
+  "temperature": 0.2
+}

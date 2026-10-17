@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getMeta(self, uri):\n        \"\"\"Return meta information about an action. Cache the result as specified by the server\"\"\"\n        if uri in self._meta:\n            return self._meta[uri]\n        else:\n            data = self._get(uri)\n            self._meta[uri] = data\n            return data\n",
+  "agc_valid": true,
+  "body_sha256": "6bc15436414e20ece67b4d45ae9a76b425e11ef31b29b13258eaf1625ee033e2",
+  "body_tokens": 74,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if uri in self._meta:\n            return self._meta[uri]\n        else:\n            data = self._get(uri)\n            self._meta[uri] = data\n            return data\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "713e58bd42dc0c21a9da1a4442a77a60e21193afce5d4091e55426c0c6d4c72c",
+  "human_valid": true,
+  "line_no": 34324,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e1560f51a611495f6401347eea31191f55763d0e2c4c55ad7052d5d7c8fd4b98",
+  "raw_output": "\n        if uri in self._meta:\n            return self._meta[uri]\n        else:\n            data = self._get(uri)\n            self._meta[uri] = data\n            return data\n\n    def",
+  "sampling_seed": 1881805889,
+  "tag": "t06",
+  "temperature": 0.6
+}

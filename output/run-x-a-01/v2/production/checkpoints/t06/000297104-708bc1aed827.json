@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def count_subscriptions(self, params={}):\n        \"\"\"\n        Count all subscriptions\n        \"\"\"\n        return self.client.get_json(\n            '/subscriptions/count',\n            params=params\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "8fb220dce5b61003a2efca97f17181a9297ed5a66681674aadea9e63c9aac1d2",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.client.get_json(\n            '/subscriptions/count',\n            params=params\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "e6008662093caa985c62458082553200692029d21a5a206134e79928541c07e3",
+  "human_valid": true,
+  "line_no": 297104,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "708bc1aed827337b6808b83a0a456e8c765161b3a2bca6dcc605258847629832",
+  "raw_output": "\n        return self.client.get_json(\n            '/subscriptions/count',\n            params=params\n        )\n\n    def",
+  "sampling_seed": 3508012237,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

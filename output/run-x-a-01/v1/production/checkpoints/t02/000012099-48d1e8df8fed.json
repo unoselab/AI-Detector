@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def deep_documents(self):\n        \"\"\"\n        list of all documents find in subtrees of this node\n        \"\"\"\n        return self.documents() + [d for d in self.subtrees() if d.is_document()]\n",
+  "agc_valid": true,
+  "body_sha256": "b4432c4b28bf3c0112cf39869ca436e3932340477430b57e2dba11873eceec6a",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.documents() + [d for d in self.subtrees() if d.is_document()]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1b0117442750745eb77c1f68c5aa1c1b34c22b6d73a7ee5cfac63559bf57ddf2",
+  "human_valid": true,
+  "line_no": 12099,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "48d1e8df8fedf08f27f8bc2927a8edebd5350a78e73b46217b9efe9ec1f25a96",
+  "raw_output": "\n        return self.documents() + [d for d in self.subtrees() if d.is_document()]\n\n    def",
+  "sampling_seed": 2343302825,
+  "tag": "t02",
+  "temperature": 0.2
+}

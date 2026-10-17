@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_icohp_by_label(self, label, summed_spin_channels=True, spin=Spin.up):\n        \"\"\"\n        get an icohp value for a certain bond as indicated by the label (bond labels starting by \"1\" as in ICOHPLIST/ICOOPLIST)\n        Args:\n            label: label in str format (usually the bond number in Icohplist.lobster/Icooplist.lobster\n            summed_spin_channels: Boolean to indicate whether the ICOHPs/ICOOPs of both spin channels should be summed\n            spin: if summed_spin_channels is equal to False, this spin indicates which spin channel should be returned\n\n        Returns:\n            float describing ICOHP/ICOOP value\n        \"\"\"\n        COHP values should be summed over the spin channels\n                    spin: Spin.up or Spin.down to indicate whether the ICOHP values should be summed over the spin channels\n\n                Returns:\n                    ICOHP value in eV\n                \"\"\"\n                if label not in self.icohp_dict:\n                    raise ValueError(\"Label {} not in ICOHP dictionary\".format(label))\n                if summed_spin_channels:\n                    return self.icohp_dict[label][spin]\n                else:\n                    return self.icohp_dict[label]\n",
+  "agc_valid": false,
+  "body_sha256": "0dd976940de099e78c5758bf4cff1e6f8b1d5ed944e6ae6e93c8a3ecbaf29eb4",
+  "body_tokens": 229,
+  "bucket": "out_of_range",
+  "clean_output": "\n        COHP values should be summed over the spin channels\n                    spin: Spin.up or Spin.down to indicate whether the ICOHP values should be summed over the spin channels\n\n                Returns:\n                    ICOHP value in eV\n                \"\"\"\n                if label not in self.icohp_dict:\n                    raise ValueError(\"Label {} not in ICOHP dictionary\".format(label))\n                if summed_spin_channels:\n                    return self.icohp_dict[label][spin]\n                else:\n                    return self.icohp_dict[label]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "2c6b07cae512d8f3c7d6e48dc52ecd0c9e3eb618dc12544e9d06bd9236f0c5e0",
+  "human_valid": true,
+  "line_no": 372531,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c08e6a2d339e73e31a2e95168d217649c758925433297c1efa15b905183bc558",
+  "raw_output": "COHP values should be summed over the spin channels\n            spin: Spin.up or Spin.down to indicate whether the ICOHP values should be summed over the spin channels\n\n        Returns:\n            ICOHP value in eV\n        \"\"\"\n        if label not in self.icohp_dict:\n            raise ValueError(\"Label {} not in ICOHP dictionary\".format(label))\n        if summed_spin_channels:\n            return self.icohp_dict[label][spin]\n        else:\n            return self.icohp_dict[label]\n\n    def",
+  "sampling_seed": 265958362,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

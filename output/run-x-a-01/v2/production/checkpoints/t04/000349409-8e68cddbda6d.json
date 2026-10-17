@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cli(ctx):\n    \"\"\"Check the latest Apio version.\"\"\"\n    try:\n        import apio\n        import requests\n        import semver\n        from tabulate import tabulate\n\n        r = requests.get(\"https://pypi.python.org/pypi/apio/json\")\n        data = r.json()\n        latest = data['info']['version']\n        current = apio.__version__\n        if semver.compare(latest, current) ==\n",
+  "agc_valid": false,
+  "body_sha256": "ebcd655da79ab5f8d552b82454281e210c0e28d3ade6d71c5e36a03a9ab2b2a5",
+  "body_tokens": 94,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        import apio\n        import requests\n        import semver\n        from tabulate import tabulate\n\n        r = requests.get(\"https://pypi.python.org/pypi/apio/json\")\n        data = r.json()\n        latest = data['info']['version']\n        current = apio.__version__\n        if semver.compare(latest, current) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "e01388f1e4e76ffa435b6f0e308a5c4e0497e1f65dc6b4bb6affe936250c755c",
+  "human_valid": true,
+  "line_no": 349409,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8e68cddbda6dab2932966b8b209c9224b833e5356471a152119e6c983cdc337c",
+  "raw_output": "\n    try:\n        import apio\n        import requests\n        import semver\n        from tabulate import tabulate\n\n        r = requests.get(\"https://pypi.python.org/pypi/apio/json\")\n        data = r.json()\n        latest = data['info']['version']\n        current = apio.__version__\n        if semver.compare(latest, current) == ",
+  "sampling_seed": 1981859321,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

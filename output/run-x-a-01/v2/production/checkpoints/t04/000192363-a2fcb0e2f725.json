@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def unspent_outputs(self):\n        \"\"\"UnspentOutput: The outputs of this transaction, in a data\n        structure containing relevant information for storing them in\n        a UTXO set, and performing validation.\n        \"\"\"\n            return self._unspent_outputs\n\n        @unspent_outputs.setter\n",
+  "agc_valid": false,
+  "body_sha256": "6bcf0a2c5a6e379b50d3c798ffd663d7025248f5db2bf92f7ad94ffa442b2d69",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._unspent_outputs\n\n        @unspent_outputs.setter\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "8c2dd9303de99aed1643cda0831d36041dc503fb9791e653a19fb194d6151f57",
+  "human_valid": true,
+  "line_no": 192363,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a2fcb0e2f7250db6f0c3ace407078bf613a8f964ca1ba5ba091822d158aa1b2e",
+  "raw_output": "\n        return self._unspent_outputs\n\n    @unspent_outputs.setter\n    def",
+  "sampling_seed": 4251312979,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

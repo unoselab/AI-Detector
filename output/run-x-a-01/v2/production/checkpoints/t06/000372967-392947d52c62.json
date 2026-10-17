@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_garbage_collector(self, exts=None, policy=\"task\"):\n        \"\"\"\n        Enable the garbage collector that will remove the big output files that are not needed.\n\n        Args:\n            exts: string or list with the Abinit file extensions to be removed. A default is\n                provided if exts is None\n            policy: Either `flow` or `task`. If policy is set to 'task', we remove the output\n                files as soon as the task reaches S_OK. If 'flow', the files are removed\n                only when the flow is finalized. This option should be used when we are dealing\n                with a dynamic flow with callbacks generating other tasks since a :class:`Task`\n                might not be aware of its children when it reached S_OK.\n        \"\"\"\n        when the flow finishes (i.e. the `finalize()` method is called).\n\n                \"\"\"\n                if exts is None:\n                    exts = [\"abo\", \"abg\", \"abr\", \"abd\", \"abn\", \"abj\", \"abm\", \"abq\", \"abu\", \"abv\", \"abx\", \"abw\", \"abt\"]\n\n                if isinstance(exts, str):\n                    exts = [exts]\n\n                self.garbage_collector = GarbageCollector(self, exts=exts, policy=policy)\n\n                # Set the garbage collector for all tasks\n                for task in self.tasks:\n                    task.garbage_collector = self.garbage_collector\n",
+  "agc_valid": false,
+  "body_sha256": "267c4734374607b54832d8467e8a92c3551427a3eb37e7c157e18bd4453cbe92",
+  "body_tokens": 211,
+  "bucket": "out_of_range",
+  "clean_output": "\n        when the flow finishes (i.e. the `finalize()` method is called).\n\n                \"\"\"\n                if exts is None:\n                    exts = [\"abo\", \"abg\", \"abr\", \"abd\", \"abn\", \"abj\", \"abm\", \"abq\", \"abu\", \"abv\", \"abx\", \"abw\", \"abt\"]\n\n                if isinstance(exts, str):\n                    exts = [exts]\n\n                self.garbage_collector = GarbageCollector(self, exts=exts, policy=policy)\n\n                # Set the garbage collector for all tasks\n                for task in self.tasks:\n                    task.garbage_collector = self.garbage_collector\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "39adb83115f965dec3592f32caf96f0ae8d9bd096a2d9c10d4a1899da2b584c5",
+  "human_valid": true,
+  "line_no": 372967,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "392947d52c6274cd420a967d876d15a16c1cd58ff7768a857c07f0e41ff1fd2c",
+  "raw_output": "when the flow finishes (i.e. the `finalize()` method is called).\n\n        \"\"\"\n        if exts is None:\n            exts = [\"abo\", \"abg\", \"abr\", \"abd\", \"abn\", \"abj\", \"abm\", \"abq\", \"abu\", \"abv\", \"abx\", \"abw\", \"abt\"]\n\n        if isinstance(exts, str):\n            exts = [exts]\n\n        self.garbage_collector = GarbageCollector(self, exts=exts, policy=policy)\n\n        # Set the garbage collector for all tasks\n        for task in self.tasks:\n            task.garbage_collector = self.garbage_collector\n\n    def",
+  "sampling_seed": 3282319094,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

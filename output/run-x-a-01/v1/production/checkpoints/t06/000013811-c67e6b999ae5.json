@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _extractAssociationsDetails(self, associations):\n        \"\"\"\n        Given a set of results from our search query, return the\n        `details` (feature,environment,phenotype)\n        \"\"\"\n        features = []\n        phenotypes = []\n        environments = []\n        for assoc in associations:\n            features.append(assoc['feature']['id'])\n            phenotypes.append(assoc['phenotype']['id'])\n            environments.append(assoc['environment']['id'])\n\n        return features, phenotypes, environments\n",
+  "agc_valid": true,
+  "body_sha256": "86bea1ae4bfe414d6fcbe7dfa976e9fa19bf206148d16511c465fe2b0bb9558f",
+  "body_tokens": 89,
+  "bucket": "out_of_range",
+  "clean_output": "\n        features = []\n        phenotypes = []\n        environments = []\n        for assoc in associations:\n            features.append(assoc['feature']['id'])\n            phenotypes.append(assoc['phenotype']['id'])\n            environments.append(assoc['environment']['id'])\n\n        return features, phenotypes, environments\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5c6685574a58fd1d2af23f15aefa03acbc286c2162be30f75cdd3f0e7402cf89",
+  "human_valid": true,
+  "line_no": 13811,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "c67e6b999ae5e081b37eb1d7abccee23f2f2a90021b9ba018cc51ca1f10ae2cd",
+  "raw_output": "\n        features = []\n        phenotypes = []\n        environments = []\n        for assoc in associations:\n            features.append(assoc['feature']['id'])\n            phenotypes.append(assoc['phenotype']['id'])\n            environments.append(assoc['environment']['id'])\n\n        return features, phenotypes, environments\n\n    def",
+  "sampling_seed": 4121159649,
+  "tag": "t06",
+  "temperature": 0.6
+}

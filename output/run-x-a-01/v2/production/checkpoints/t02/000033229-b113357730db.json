@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def writeQuotes(self, quotes):\n        \"\"\" write quotes \"\"\"\n        if not quotes:\n            return\n        self.writeQuotesToFile(quotes)\n        self.writeQuotesToDB(quotes)\n",
+  "agc_valid": true,
+  "body_sha256": "c679b1dcfc6426990dbdf04916a2977faee6520174cdaede53fa7ec84cf732e3",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not quotes:\n            return\n        self.writeQuotesToFile(quotes)\n        self.writeQuotesToDB(quotes)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "25c5e552ea92363d8aeb3b2ab6ebccdf9fa816ee31f0801b53468ab8c4a75b2c",
+  "human_valid": true,
+  "line_no": 33229,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b113357730db8a78f39a30f64a0525272442dfdc7cb76b1ab7d518099c845078",
+  "raw_output": "\r\n        if not quotes:\r\n            return\r\n        self.writeQuotesToFile(quotes)\r\n        self.writeQuotesToDB(quotes)\r\n\r\n    def",
+  "sampling_seed": 3367716000,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

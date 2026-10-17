@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def encry_decry_chunk(chunk, key, algo, bool_encry, assoc_data):\n    \"\"\"\n    When bool_encry is True, encrypt a chunk of the file with the key and a randomly generated nonce. When it is False,\n    the function extract the nonce from the cipherchunk (first 16 bytes), and decrypt the rest of the chunk.\n    :param chunk: a chunk in bytes to encrypt or decrypt.\n    :param key: a 32 bytes key in bytes.\n    :param algo: a string of algorithm. Can be \"srp\" , \"AES\" or \"twf\"\n    :param bool_encry: if bool_encry is True, chunk is encrypted. Else, it will be decrypted.\n    :param assoc_data: bytes string of additional data for GCM Authentication.\n    :return: if bool_encry is True, corresponding nonce + cipherchunk else, a decrypted chunk.\n    \"\"\"\n    with the algorithm to use.\n        :param bool_encry: a boolean to know if we want to encrypt or decrypt.\n        :param assoc_data: a bytes array with the associated data.\n        :return: a tuple (cipherchunk, nonce) if bool_encry is True, or a tuple (plainchunk, nonce) if bool_encry is False.\n        \"\"\"\n        if bool_encry:\n            nonce = os.urandom(16)\n            cipherchunk = encrypt_chunk(chunk, key, algo, nonce, assoc_data)\n            return cipherchunk, nonce\n        else:\n            nonce = chunk[:16]\n            plainchunk = decrypt_chunk(chunk[16:], key, algo, nonce, assoc_data)\n            return plainchunk, nonce\n",
+  "agc_valid": false,
+  "body_sha256": "e8de145d900e412f349d165e60ab89e999d4bd825cb44000c5fa8bb6dfa96f7f",
+  "body_tokens": 187,
+  "bucket": "type09_190",
+  "clean_output": "\n    with the algorithm to use.\n        :param bool_encry: a boolean to know if we want to encrypt or decrypt.\n        :param assoc_data: a bytes array with the associated data.\n        :return: a tuple (cipherchunk, nonce) if bool_encry is True, or a tuple (plainchunk, nonce) if bool_encry is False.\n        \"\"\"\n        if bool_encry:\n            nonce = os.urandom(16)\n            cipherchunk = encrypt_chunk(chunk, key, algo, nonce, assoc_data)\n            return cipherchunk, nonce\n        else:\n            nonce = chunk[:16]\n            plainchunk = decrypt_chunk(chunk[16:], key, algo, nonce, assoc_data)\n            return plainchunk, nonce\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "3169e87904ce716b47cc7680772d9efd61e44970f637f00b3917d9722c6fa7df",
+  "human_valid": true,
+  "line_no": 28057,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f3a997034ad6fa08ffef5ba53e41a9e1d7b2e05af8ac8252118a85940a8e5676",
+  "raw_output": "with the algorithm to use.\n    :param bool_encry: a boolean to know if we want to encrypt or decrypt.\n    :param assoc_data: a bytes array with the associated data.\n    :return: a tuple (cipherchunk, nonce) if bool_encry is True, or a tuple (plainchunk, nonce) if bool_encry is False.\n    \"\"\"\n    if bool_encry:\n        nonce = os.urandom(16)\n        cipherchunk = encrypt_chunk(chunk, key, algo, nonce, assoc_data)\n        return cipherchunk, nonce\n    else:\n        nonce = chunk[:16]\n        plainchunk = decrypt_chunk(chunk[16:], key, algo, nonce, assoc_data)\n        return plainchunk, nonce\n\n\ndef encrypt_chunk(chunk, key, algo, nonce, assoc_data):\n    \"\"\"\n    Encrypt a chunk with the key and a nonce.\n    :param chunk: a chunk in bytes to encrypt.\n    :param key: a ",
+  "sampling_seed": 3045053231,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

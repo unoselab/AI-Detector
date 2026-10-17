@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def clear(self):\n        \"\"\"Close all opened files if not in use.\"\"\"\n        self.close()\n",
+  "agc_valid": true,
+  "body_sha256": "ca090f0c59135f5b36fca06b07cd0174d0298d481eca8d52c77a13f5230e4da1",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.close()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "2852d66f622abac01a660cfafc3f170c2f4e20e92b727d328187900f6c949bbf",
+  "human_valid": true,
+  "line_no": 237335,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "09eefdb2fa7c85b764219fa12deb0ffde6a0fc3ea26f4ffb9387922fd3681ce7",
+  "raw_output": "\n        self.close()\n\n    def",
+  "sampling_seed": 2102819974,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

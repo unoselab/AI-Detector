@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def kitchen_get(backend, kitchen_name, recipe):\n    \"\"\"\n    Get an existing Kitchen\n    \"\"\"\n    return backend.get_kitchen(kitchen_name, recipe)\n",
+  "agc_valid": true,
+  "body_sha256": "49919efd185d4a799d7254f3bcf12c56a0319b29c49ae14a9f4ea417b113930e",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return backend.get_kitchen(kitchen_name, recipe)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5da9a95a10e91a67f658d49c70b8afe884f6362fd22cb842486b5d6467b30239",
+  "human_valid": true,
+  "line_no": 36616,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "2c4779fbc8b6efbbec0515f8722834acfb79cdb739750b5b9cd44baea59900c2",
+  "raw_output": "\n    return backend.get_kitchen(kitchen_name, recipe)\n\ndef kitchen_create(backend, kitchen_name, recipe):\n    \"\"\"\n    Create a new Kitchen\n    \"\"\"\n    return backend.create_kitchen(kitchen_name, recipe)\n\ndef kitchen_delete(backend, kitchen_name, recipe):\n    \"\"\"\n    Delete an existing Kitchen\n    \"\"\"\n    return backend.delete_kitchen(kitchen_name, recipe)\n\ndef kitchen_update(backend, kitchen_name, recipe):\n    \"\"\"\n    Update an existing Kitchen\n    \"\"\"\n    return backend.update_kitchen(kitchen_name, recipe)\n\ndef kitchen_list(backend):\n    \"\"\"\n    List all Kitchens\n    \"\"\"\n    return backend.list_kitchens()\n\ndef kitchen_list_recipes(backend, kitchen_name):\n    \"\"\"\n    List all recipes in a Kitchen\n    \"\"\"\n    return backend.list_recipes(kitchen_name)\n\ndef kitchen_list_nodes(backend, kitchen_name):\n    \"\"\"\n    List all nodes in a Kitchen\n    \"\"\"\n    return backend.list_nodes(kitchen_name)\n\ndef kitchen_list_nodes_by_recipe(backend, kitchen_name, recipe):\n    \"\"\"\n    List all nodes in a Kitchen for a given recipe\n    \"\"\"\n    return backend.list_nodes(kitchen_name, recipe)\n\ndef kitchen_list_nodes_by_name(backend, kitchen_name, node_name):\n    \"\"\"\n    List all nodes in a Kitchen for a given name\n    \"\"\"\n    return backend.list_nodes(kitchen_name, node_name)\n\ndef kitchen_list_nodes_by_tag(backend, kitchen_name, tag):\n    \"\"\"\n    List all nodes in a Kitchen for a given tag\n    \"\"\"\n    return backend.list_nodes(kitchen_name, tag)\n\ndef kitchen_list_nodes_by_tags(backend, kitchen_name, tags):\n    \"\"\"\n    List all nodes in a Kitchen for a given list of tags\n    \"\"\"\n    return backend.list_nodes(kitchen",
+  "sampling_seed": 3055123171,
+  "tag": "t04",
+  "temperature": 0.4
+}

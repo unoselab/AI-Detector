@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def xml_marshal_complete_multipart_upload(uploaded_parts):\n    \"\"\"\n    Marshal's complete multipart upload request based on *uploaded_parts*.\n\n    :param uploaded_parts: List of all uploaded parts, ordered by part number.\n    :return: Marshalled XML data.\n    \"\"\"\n    root = ET.Element('CompleteMultipartUpload')\n    for part in uploaded_parts:\n        ET.SubElement(root, 'Part', {'PartNumber': str(part.part_number),\n                                      'ETag': part.etag})\n    return ET.tostring(root)\n",
+  "agc_valid": true,
+  "body_sha256": "ca0786495ca4776c6ba7bbd4b0a6b50c037625172ef719acdbfb7e1bcc63cb26",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n    root = ET.Element('CompleteMultipartUpload')\n    for part in uploaded_parts:\n        ET.SubElement(root, 'Part', {'PartNumber': str(part.part_number),\n                                      'ETag': part.etag})\n    return ET.tostring(root)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "471105f9f2325b4a44c59867d6cd66723d54419e29320f0d631b7b31377823de",
+  "human_valid": true,
+  "line_no": 341622,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dee1473082966348f7f98a57782d1e1417b6d52d000f1d9feda67fb0a470eccd",
+  "raw_output": "\n    root = ET.Element('CompleteMultipartUpload')\n    for part in uploaded_parts:\n        ET.SubElement(root, 'Part', {'PartNumber': str(part.part_number),\n                                      'ETag': part.etag})\n    return ET.tostring(root)\n\n\ndef xml_marshal_list_multipart_uploads(uploads):\n    \"\"\"\n    Marshal's list multipart uploads request based on *uploads*.\n\n    :param uploads: List of all uploads.\n    :return: Marshalled XML data.\n    \"\"\"\n    root = ET.Element('ListMultipartUploadsResult')\n    ET.SubElement(root, 'Bucket').text = uploads.bucket\n    ET.SubElement(root, 'KeyMarker').text = uploads.key_marker\n    ET.SubElement(root, 'UploadIdMarker').text = uploads.upload_id_marker\n    ET.SubElement(root, 'NextKeyMarker').text = uploads.next_key_marker\n    ET.SubElement(root, 'NextUploadIdMarker').text = uploads.next_upload_id_marker\n    ET.SubElement(root, 'MaxUploads').text = str(uploads.max_uploads)\n    ET.SubElement(root, 'IsTruncated').text = str(uploads.is_truncated).lower()\n\n    for upload in uploads.uploads:\n        ET.SubElement(root, 'Upload', {'Key': upload.key,\n                                       'UploadId': upload.upload_id,\n                                       'Initiated': upload.initiated.strftime('%Y-%m-%dT%H:%M:%S.%fZ')})\n\n    return ET.tostring(root)\n\n\ndef xml_marshal_list_parts(parts):\n    \"\"\"\n    Marshal's list parts request based on *parts*.\n\n    :param parts: List of all parts.\n    :return: Marshalled XML data.\n    \"\"\"\n    root = ET.Element('ListPartsResult')\n    ET.SubElement(root,",
+  "sampling_seed": 2698978346,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

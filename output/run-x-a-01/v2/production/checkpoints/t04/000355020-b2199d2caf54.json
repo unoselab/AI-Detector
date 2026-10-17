@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _acl_exists(name=None, id=None, token=None, consul_url=None):\n    \"\"\"\n       Check the acl exists by using the name or the ID,\n       name is ignored if ID is specified,\n       if only Name is used the ID associated with it is returned\n    \"\"\"\n    if not name and not id:\n        raise Exception('Name or ID must be specified')\n\n    if id:\n        acl_id = id\n    else:\n        acl_id = _acl_get_id(name=name, token=token, consul_url=consul_url)\n\n    if not acl_id:\n        return False\n\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "41eaea833fdd1ef6841666001d7316308e85f3a233d6be43b19d16ff07224f02",
+  "body_tokens": 75,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not name and not id:\n        raise Exception('Name or ID must be specified')\n\n    if id:\n        acl_id = id\n    else:\n        acl_id = _acl_get_id(name=name, token=token, consul_url=consul_url)\n\n    if not acl_id:\n        return False\n\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "7c9495356bb1c0311329a2328864b932a89ae7d5032dab846ee3aa4e11e6106f",
+  "human_valid": true,
+  "line_no": 355020,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b2199d2caf54cc3d78351b485a77104cdfa8c1c9b8ea86d355f1cec8dba7ae11",
+  "raw_output": "\n    if not name and not id:\n        raise Exception('Name or ID must be specified')\n\n    if id:\n        acl_id = id\n    else:\n        acl_id = _acl_get_id(name=name, token=token, consul_url=consul_url)\n\n    if not acl_id:\n        return False\n\n    return True\n\n\ndef _acl_get_id(name=None, token=None, consul_url=None):\n    \"\"\"\n        Get the ID of an ACL by using the name\n    \"\"\"\n    if not name:\n        raise Exception('Name must be specified')\n\n    if not token:\n        raise Exception('Token must be specified')\n\n    if not consul_url:\n        raise Exception('Consul URL must be specified')\n\n    url = '{0}/v1/acl/info/{1}'.format(consul_url, name)\n\n    r = requests.get(url, headers={'X-Consul-Token': token})\n\n    if r.status_code != ",
+  "sampling_seed": 2461284802,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def setHtml(self, column, html):\n        \"\"\"\n        Creates a label with the given HTML for this item and column.  This\n        method requires the item to be a part of the tree.\n\n        :param      column | <int>\n                    html   | <unicode>\n\n        :return     <bool> | success\n        \"\"\"\n        return self.tree.setHtml(self.id, column, html)\n",
+  "agc_valid": true,
+  "body_sha256": "32ade41f2bdafb3606af99a4046ecc9b9096bb85c4f4dead79792e12fdaf5992",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.tree.setHtml(self.id, column, html)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "628ed05ba7955cc0838cd26d6c1e495c3dc4cdd97f6191b813ad798117969ece",
+  "human_valid": true,
+  "line_no": 79478,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "426cc18a63ed381259c9b2ff7ca647884ad9c2e4e74d92fae9090ab5150ebd9c",
+  "raw_output": "\r\n        return self.tree.setHtml(self.id, column, html)\r\n    \r\n    def",
+  "sampling_seed": 1099286958,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

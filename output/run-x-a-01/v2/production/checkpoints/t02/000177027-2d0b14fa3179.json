@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def AUC_analysis(AUC):\n    \"\"\"\n    Analysis AUC with interpretation table.\n\n    :param AUC: area under the ROC curve\n    :type AUC : float\n    :return: interpretation result as str\n    \"\"\"\n    if AUC >=\n",
+  "agc_valid": false,
+  "body_sha256": "b8975c18adfe6eaec2086bd62b98114b7a5a75f6567210a668a6773b9a59fb30",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if AUC >=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "cdef1f379b49c6f713a54ae2e6ee53f5da6072336ebc547fa90dd983508bc2a2",
+  "human_valid": true,
+  "line_no": 177027,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2d0b14fa317951c83a37644bc8d3a77017750f4e784a55dc3762efe0b4fc4d52",
+  "raw_output": "\n    if AUC >= ",
+  "sampling_seed": 1510211269,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

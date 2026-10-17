@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_creative_commons(self, slug, jurisdiction=None):\n        \"\"\"Returns the Creative Commons license for the given attributes.\n\n        :param str slug: the type of Creative Commons license. It must start with\n            ``cc-by`` and can optionally contain ``nc`` (non-commercial),\n            ``sa`` (share-alike), ``nd`` (no derivatives) terms, seperated by\n            hyphens. Note that a CC license cannot be both ``sa`` and ``nd``\n        :param str jurisdiction: The jurisdiction for a ported Creative Commons\n            license (eg. ``nz``), or ``None`` for unported/international licenses.\n        :rtype: License\n        \"\"\"\n        the jurisdiction of the license. This is\n                    optional, but if present must be the two-letter code of the\n                    jurisdiction, e.g. ``US``, ``DE``, etc.\n                :returns: the Creative Commons license object\n                :rtype: :class:`~.models.licenses.CCLicense`\n                \"\"\"\n                return CCLicense(slug, jurisdiction)\n",
+  "agc_valid": false,
+  "body_sha256": "98bc9f50fc611c407b80cc7d665effc1a17a36a5059c77bf132e8c9810e30f52",
+  "body_tokens": 141,
+  "bucket": "type05_150",
+  "clean_output": "\n        the jurisdiction of the license. This is\n                    optional, but if present must be the two-letter code of the\n                    jurisdiction, e.g. ``US``, ``DE``, etc.\n                :returns: the Creative Commons license object\n                :rtype: :class:`~.models.licenses.CCLicense`\n                \"\"\"\n                return CCLicense(slug, jurisdiction)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c4a75cfe813ba89f3d9e5ad99318230778ef0366f1fc7ab7ca29f4a8307aae6d",
+  "human_valid": true,
+  "line_no": 2067,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0843074bc59c24b6a2bf15d67adda9a5c86ef816dc86eed0c158805d6f24b3f3",
+  "raw_output": "the jurisdiction of the license. This is\n            optional, but if present must be the two-letter code of the\n            jurisdiction, e.g. ``US``, ``DE``, etc.\n        :returns: the Creative Commons license object\n        :rtype: :class:`~.models.licenses.CCLicense`\n        \"\"\"\n        return CCLicense(slug, jurisdiction)\n\n    def",
+  "sampling_seed": 2432938716,
+  "tag": "t06",
+  "temperature": 0.6
+}

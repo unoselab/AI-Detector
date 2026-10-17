@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _acl_exists(name=None, id=None, token=None, consul_url=None):\n    \"\"\"\n       Check the acl exists by using the name or the ID,\n       name is ignored if ID is specified,\n       if only Name is used the ID associated with it is returned\n    \"\"\"\n    if id:\n        acl_id = id\n    else:\n        acl_id = name\n\n    acl_exists = False\n    acl_data = _acl_get(name=name, id=acl_id, token=token, consul_url=consul_url)\n    if acl_data:\n        acl_exists = True\n\n    return acl_exists\n",
+  "agc_valid": true,
+  "body_sha256": "53ef177feb9bc2c72f73fe2c1ee0c770dadc8738d44f99c8fc498a27fc35c71e",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if id:\n        acl_id = id\n    else:\n        acl_id = name\n\n    acl_exists = False\n    acl_data = _acl_get(name=name, id=acl_id, token=token, consul_url=consul_url)\n    if acl_data:\n        acl_exists = True\n\n    return acl_exists\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "7c9495356bb1c0311329a2328864b932a89ae7d5032dab846ee3aa4e11e6106f",
+  "human_valid": true,
+  "line_no": 355020,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b2199d2caf54cc3d78351b485a77104cdfa8c1c9b8ea86d355f1cec8dba7ae11",
+  "raw_output": "\n    if id:\n        acl_id = id\n    else:\n        acl_id = name\n\n    acl_exists = False\n    acl_data = _acl_get(name=name, id=acl_id, token=token, consul_url=consul_url)\n    if acl_data:\n        acl_exists = True\n\n    return acl_exists\n\n\ndef _acl_get(name=None, id=None, token=None, consul_url=None):\n    \"\"\"\n       Get the acl by using the name or the ID,\n       name is ignored if ID is specified,\n       if only Name is used the ID associated with it is returned\n    \"\"\"\n    if id:\n        acl_id = id\n    else:\n        acl_id = name\n\n    acl_data = None\n    if acl_id:\n        acl_data = _acl_get_by_id(id=acl_id, token=token, consul_url=consul_url)\n    else:\n        acl_data = _acl_get_by_name(name=name, token=token, consul_url=consul_url)\n\n    return acl_data\n\n\ndef _acl_get_by_id(id=None, token=None, consul_url=None):\n    \"\"\"\n       Get the acl by using the ID\n    \"\"\"\n    acl_data = None\n    if id:\n        acl_data = _acl_get_by_name(name=id, token=token, consul_url=consul_url)\n\n    return acl_data\n\n\ndef _acl_get_by_name(name=None, token=None, consul_url=None):\n    \"\"\"\n       Get the acl by using the name\n    \"\"\"\n    acl_data = None\n    if name:\n        acl_data = _acl_get_by_name(name=name, token=token, consul_url=consul_url)\n\n    return acl_data\n\n\ndef _acl_get_by_name(",
+  "sampling_seed": 1712165129,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

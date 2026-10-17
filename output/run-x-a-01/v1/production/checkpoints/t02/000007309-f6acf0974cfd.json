@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def strtime(at=None, fmt=PERFECT_TIME_FORMAT):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.strftime(fmt)\n",
+  "agc_valid": true,
+  "body_sha256": "94ebc73abf1cdd35289e43f305037691fa9772bee07cd5819b4dca2595eb0f7a",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if at is None:\n        at = datetime.utcnow()\n    return at.strftime(fmt)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "731d7f494d4b5a2f128e87c17beaa61802ffa77d8e8912ea81412daf2b36076e",
+  "human_valid": true,
+  "line_no": 7309,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f6acf0974cfd48903c59b525d9981610451400fbf61d51ae66486f194b11d72c",
+  "raw_output": "\n    if at is None:\n        at = datetime.utcnow()\n    return at.strftime(fmt)\n\n\ndef strtime_local(at=None, fmt=PERFECT_TIME_FORMAT):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.astimezone(tz=None).strftime(fmt)\n\n\ndef strtime_utc(at=None, fmt=PERFECT_TIME_FORMAT):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.astimezone(tz=timezone.utc).strftime(fmt)\n\n\ndef strtime_tz(at=None, fmt=PERFECT_TIME_FORMAT, tz=None):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.astimezone(tz=tz).strftime(fmt)\n\n\ndef strtime_tz_local(at=None, fmt=PERFECT_TIME_FORMAT):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.astimezone(tz=timezone.utc).astimezone(tz=None).strftime(fmt)\n\n\ndef strtime_tz_utc(at=None, fmt=PERFECT_TIME_FORMAT):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.astimezone(tz=timezone.utc).astimezone(tz=timezone.utc).strftime(fmt)\n\n\ndef strtime_tz_tz(at=None, fmt=PERFECT_TIME_FORMAT, tz=None):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    if at is None:\n        at = datetime.utcnow()\n    return at.astimezone(tz=timezone.utc).astimezone(tz=tz).strft",
+  "sampling_seed": 3858094762,
+  "tag": "t02",
+  "temperature": 0.2
+}

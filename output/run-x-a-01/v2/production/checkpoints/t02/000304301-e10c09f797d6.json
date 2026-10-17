@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def generate_checksums(directory, blacklist=_BLACKLIST):\n    \"\"\"\n    Compute checksum for each file in `directory`, with exception of files\n    specified in `blacklist`.\n\n    Args:\n        directory (str): Absolute or relative path to the directory.\n        blacklist (list/set/tuple): List of blacklisted filenames. Only\n                  filenames are checked, not paths!\n\n    Returns:\n        dict: Dict in format ``{fn: md5_hash}``.\n\n    Note:\n        File paths are returned as absolute paths from package root.\n\n    Raises:\n        UserWarning: When `directory` doesn't exists.\n    \"\"\"\n        If `directory` is a file, it will be ignored.\n    \"\"\"\n    checksums = {}\n    for root, dirs, files in os.walk(directory):\n        for fn in files:\n            if fn in blacklist:\n                continue\n            full_path = os.path.join(root, fn)\n            with open(full_path, 'rb') as f:\n                checksums[fn] = hashlib.md5(f.read()).hexdigest()\n    return checksums\n",
+  "agc_valid": false,
+  "body_sha256": "40e90f45e163cc03548ed67017f826850fd46bb812d5a66f2944254a35a1c3bf",
+  "body_tokens": 132,
+  "bucket": "type04_140",
+  "clean_output": "\n        If `directory` is a file, it will be ignored.\n    \"\"\"\n    checksums = {}\n    for root, dirs, files in os.walk(directory):\n        for fn in files:\n            if fn in blacklist:\n                continue\n            full_path = os.path.join(root, fn)\n            with open(full_path, 'rb') as f:\n                checksums[fn] = hashlib.md5(f.read()).hexdigest()\n    return checksums\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "4a3236f43449fc8ff1633f8178a93d5058f66af54562d91a92b28902fe5208a8",
+  "human_valid": true,
+  "line_no": 304301,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e10c09f797d685ea8c5e9c0e042da018461ec9bc43065b3b6e8824a2bd7c764d",
+  "raw_output": "\n        If `directory` is a file, it will be ignored.\n    \"\"\"\n    checksums = {}\n    for root, dirs, files in os.walk(directory):\n        for fn in files:\n            if fn in blacklist:\n                continue\n            full_path = os.path.join(root, fn)\n            with open(full_path, 'rb') as f:\n                checksums[fn] = hashlib.md5(f.read()).hexdigest()\n    return checksums\n\n\ndef check_checksums(directory, checksums, blacklist=_BLACKLIST):\n    \"\"\"\n    Check if checksums of files in `directory` match those in `checksums`.\n\n    Args:\n        directory (str): Absolute or relative path to the directory.\n        checksums (dict): Dict in format ``{fn: md5_hash}``.\n        blacklist (list/set/tuple): List of blacklisted filenames. Only\n                 ",
+  "sampling_seed": 3510051299,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

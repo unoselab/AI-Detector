@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _convert_to_indexer(self, obj, axis=None, is_setter=False):\n        \"\"\" much simpler as we only have to deal with our valid types \"\"\"\n        if isinstance(obj, slice):\n            return slice(obj.start, obj.stop, obj.step)\n        elif isinstance(obj, (np.ndarray, ABCSeries, ABCIndexClass)):\n            return obj\n        elif isinstance(obj, list):\n            return obj\n        elif isinstance(obj, tuple):\n            return list(obj)\n        elif isinstance(obj, (np.integer, int)):\n            return slice(obj, obj +\n",
+  "agc_valid": false,
+  "body_sha256": "1f48c766e02e9cd4020732b093fcbb8e556b8f0fb81ef83135f182aed8a908ff",
+  "body_tokens": 123,
+  "bucket": "type03_130",
+  "clean_output": "\n        if isinstance(obj, slice):\n            return slice(obj.start, obj.stop, obj.step)\n        elif isinstance(obj, (np.ndarray, ABCSeries, ABCIndexClass)):\n            return obj\n        elif isinstance(obj, list):\n            return obj\n        elif isinstance(obj, tuple):\n            return list(obj)\n        elif isinstance(obj, (np.integer, int)):\n            return slice(obj, obj +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "755382e88caf52d2a704bcf9b104e33529ea1661f10fba9cadd0e6d945a9316f",
+  "human_valid": true,
+  "line_no": 91276,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9953b4a8a4ac3a2d9b0d89d883d87c8d0c6e131f9fb9d773955647784f59569e",
+  "raw_output": "\n        if isinstance(obj, slice):\n            return slice(obj.start, obj.stop, obj.step)\n        elif isinstance(obj, (np.ndarray, ABCSeries, ABCIndexClass)):\n            return obj\n        elif isinstance(obj, list):\n            return obj\n        elif isinstance(obj, tuple):\n            return list(obj)\n        elif isinstance(obj, (np.integer, int)):\n            return slice(obj, obj + ",
+  "sampling_seed": 2381226372,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

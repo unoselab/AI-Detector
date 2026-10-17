@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def finish_parse(self, last_lineno_seen):\n        \"\"\"Clean-up/summary tasks run at the end of parsing.\"\"\"\n        if self.lineno != last_lineno_seen:\n            # We've got a trailing comment\n            self.lineno = last_lineno_seen\n            self.add_token(Token.NEWLINE)\n        self.add_token(Token.ENDMARKER)\n        self.tokens.reverse()\n        return self.tokens\n",
+  "agc_valid": true,
+  "body_sha256": "d08a78222ac7d6be1f297322cb1daa2c5e9b5da0e5f44cc3f6b4667571c6fbb2",
+  "body_tokens": 80,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.lineno != last_lineno_seen:\n            # We've got a trailing comment\n            self.lineno = last_lineno_seen\n            self.add_token(Token.NEWLINE)\n        self.add_token(Token.ENDMARKER)\n        self.tokens.reverse()\n        return self.tokens\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "dde75f1f809a07832ace174c21b1f55793781009fe57d11d9eebf57cb4b99686",
+  "human_valid": true,
+  "line_no": 195479,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f41dfdfd0e1ecad2b2ee338394a59a1281ba0ef29fdd8729cb4f7acbdc4208f3",
+  "raw_output": "\n        if self.lineno != last_lineno_seen:\n            # We've got a trailing comment\n            self.lineno = last_lineno_seen\n            self.add_token(Token.NEWLINE)\n        self.add_token(Token.ENDMARKER)\n        self.tokens.reverse()\n        return self.tokens\n\n    def",
+  "sampling_seed": 2036926790,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

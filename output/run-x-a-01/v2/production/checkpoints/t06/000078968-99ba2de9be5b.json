@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def preprocess(self):\n        \"\"\"Preprocessing.\n\n        Flattens the object. Important data comes on the 'theGroup'\n        dictionary inside of the response. Instead, every element of the\n        'theGroup' dictionary is taken out to the main attrs dictionary.\n\n        Notes on the group get some html tags removed.\n\n.. todo:: use mambuutil.strip_tags() method\n\n        A 'name' field is added, equivalent to the 'groupName' field.\n        This is useful on loan accounts. They get a 'holder' field added\n        somewhere, which may be an individual client, or a group. So to\n        get the holder name, you just access the 'holder'['name']. No\n        matter if you have a client loan or a group loan, you get the\n        name of the holder.\n        \"\"\"\n        .\n\n                \"\"\"\n\n                self.attrs = self.response.get('theGroup')\n                self.attrs['name'] = self.attrs['groupName']\n                self.attrs.pop('groupName')\n",
+  "agc_valid": false,
+  "body_sha256": "3046edd559873d28185e8de55b322cbd4b539a12bda50179a7f17b84a4a1900d",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n        .\n\n                \"\"\"\n\n                self.attrs = self.response.get('theGroup')\n                self.attrs['name'] = self.attrs['groupName']\n                self.attrs.pop('groupName')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "8270f73e4ac63d3342fab46216d913030154e50884b9e5350abe1185fc3912cc",
+  "human_valid": true,
+  "line_no": 78968,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "99ba2de9be5b75cfa615c7999653d4aedc5dd5498c59adae6d6f0acc6fa6066d",
+  "raw_output": ".\n\n        \"\"\"\n\n        self.attrs = self.response.get('theGroup')\n        self.attrs['name'] = self.attrs['groupName']\n        self.attrs.pop('groupName')\n\n\ndef get_by_id(client, id):\n    \"\"\"Retrieves a group by its ID.\n\n    :param client: instance of\n        :class:`mambu_client.client.MambuClient`\n    :param id: ID of the group to retrieve\n    :return: instance of :class:`mambu_client.model.group.Group`\n    \"\"\"\n    return Group(client, id)\n\n\ndef get_all(client, **kwargs):\n    \"\"\"Retrieves all groups.\n\n    :param client: instance of\n        :class:`mambu_client.client.MambuClient`\n    :param kwargs: additional arguments\n    :return: list of instances of :class:`mambu_client.model.group.Group`\n    \"\"\"\n    return GroupCollection(client, **kwargs)\n\n\ndef create(client, **kwargs):\n    \"\"\"Creates a group.\n\n    :param client: instance of\n        :class:`mambu_client.client.MambuClient`\n    :param kwargs: additional arguments\n    :return: instance of :class:`mambu_client.model.group.Group`\n    \"\"\"\n    return Group(client, **kwargs)\n\n\ndef update(client, id, **kwargs):\n    \"\"\"Updates a group.\n\n    :param client: instance of\n        :class:`mambu_client.client.MambuClient`\n    :param id: ID of the group to update\n    :param kwargs: additional arguments\n    :return: instance of :class:`mambu_client.model.group.Group`\n    \"\"\"\n    return Group(client, id, **kwargs)\n\n\ndef delete(client, id):\n    \"\"\"Deletes a group.\n\n    :param client: instance of\n        :class:`mambu_client.client.MambuClient`\n    :param id: ID of the group to delete\n    :return: instance of :class:`m",
+  "sampling_seed": 1996717211,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

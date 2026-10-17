@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def UpsertPermission(self, user_link, permission, options=None):\n        \"\"\"Upserts a permission for a user.\n\n        :param str user_link:\n            The link to the user entity.\n        :param dict permission:\n            The Azure Cosmos user permission to upsert.\n        :param dict options:\n            The request options for the request.\n\n        :return:\n            The upserted permission.\n        :rtype:\n            dict\n\n        \"\"\"\n        if options is None:\n            options = {}\n\n        if permission is None:\n            raise ValueError(\"permission must be set\")\n\n        if not isinstance(permission, dict):\n            raise TypeError(\"permission must be a dict\")\n\n        if not isinstance(user_link, six.string_types):\n            raise TypeError(\"user_link must be a string\")\n\n        if not user_link:\n            raise ValueError(\"user_link must be set\")\n\n        if not isinstance(options, dict):\n            raise TypeError(\"options must be a dict\")\n\n        request_options = {\n            'offerThroughput': options.get('offer_throughput')\n        }\n\n        return self.client_connection.UpsertPermission(\n            user_link, permission, request_options)\n",
+  "agc_valid": true,
+  "body_sha256": "e17f0a9a02a3c81c7e59f81b28813562715430668a192fbc046a5b0bc465d097",
+  "body_tokens": 217,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if options is None:\n            options = {}\n\n        if permission is None:\n            raise ValueError(\"permission must be set\")\n\n        if not isinstance(permission, dict):\n            raise TypeError(\"permission must be a dict\")\n\n        if not isinstance(user_link, six.string_types):\n            raise TypeError(\"user_link must be a string\")\n\n        if not user_link:\n            raise ValueError(\"user_link must be set\")\n\n        if not isinstance(options, dict):\n            raise TypeError(\"options must be a dict\")\n\n        request_options = {\n            'offerThroughput': options.get('offer_throughput')\n        }\n\n        return self.client_connection.UpsertPermission(\n            user_link, permission, request_options)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "25596fed9b184847b4b5a714c515eb339f2ea6be44a31d38443b15c3a2b944ff",
+  "human_valid": true,
+  "line_no": 166024,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "977dc2bf2d4c6afba91bd0981a97cef577ed34fe355a0dbb39e7f043eebfb835",
+  "raw_output": "\n        if options is None:\n            options = {}\n\n        if permission is None:\n            raise ValueError(\"permission must be set\")\n\n        if not isinstance(permission, dict):\n            raise TypeError(\"permission must be a dict\")\n\n        if not isinstance(user_link, six.string_types):\n            raise TypeError(\"user_link must be a string\")\n\n        if not user_link:\n            raise ValueError(\"user_link must be set\")\n\n        if not isinstance(options, dict):\n            raise TypeError(\"options must be a dict\")\n\n        request_options = {\n            'offerThroughput': options.get('offer_throughput')\n        }\n\n        return self.client_connection.UpsertPermission(\n            user_link, permission, request_options)\n\n    def",
+  "sampling_seed": 3530955790,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

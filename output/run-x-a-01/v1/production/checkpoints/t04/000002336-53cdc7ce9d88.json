@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def process_exception(self, request, exception):\n        \"\"\"\n        Return a redirect response for the :class:`~fluent_contents.extensions.HttpRedirectRequest`\n        \"\"\"\n        if isinstance(exception, HttpRedirectRequest):\n            return HttpResponseRedirect(exception.url)\n\n        return super(HttpRedirectRequest, self).process_exception(request, exception)\n",
+  "agc_valid": true,
+  "body_sha256": "ed62a05d5c14de3a793c3b58efc9ddd0de1e200bf412b74c9efd6594203b2015",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(exception, HttpRedirectRequest):\n            return HttpResponseRedirect(exception.url)\n\n        return super(HttpRedirectRequest, self).process_exception(request, exception)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c586f9856b7892d6a707fc0f5d146b3eec986593193384c843a0138d4123820e",
+  "human_valid": true,
+  "line_no": 2336,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "53cdc7ce9d88e36c38406b11063225d1da1b9ec6a4a73f160f0a023931b1461d",
+  "raw_output": "\n        if isinstance(exception, HttpRedirectRequest):\n            return HttpResponseRedirect(exception.url)\n\n        return super(HttpRedirectRequest, self).process_exception(request, exception)\n\n\nclass HttpRedirectResponse(HttpResponseRedirect):\n    \"\"\"\n    A custom HttpResponseRedirect that can be used to redirect to a\n    :class:`~fluent_contents.extensions.HttpRedirectRequest`.\n    \"\"\"\n    def",
+  "sampling_seed": 1310730558,
+  "tag": "t04",
+  "temperature": 0.4
+}

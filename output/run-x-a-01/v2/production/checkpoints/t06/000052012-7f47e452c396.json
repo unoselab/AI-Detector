@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def append(self, mode=\"a\", encoding=Constants.default_codec, errors=Constants.codec_error):\n        \"\"\"\n        Appends content to defined file.\n\n        :param mode: File write mode.\n        :type mode: unicode\n        :param encoding: File encoding codec.\n        :type encoding: unicode\n        :param errors: File encoding errors handling.\n        :type errors: unicode\n        :return: Method success.\n        :rtype: bool\n        \"\"\"\n        if not self.exists:\n            return False\n\n        if not isinstance(mode, unicode):\n            mode = mode.decode(Constants.default_codec)\n\n        if not isinstance(encoding, unicode):\n            encoding = encoding.decode(Constants.default_codec)\n\n        if not isinstance(errors, unicode):\n            errors = errors.decode(Constants.default_codec)\n\n        with codecs.open(self.path, mode=mode, encoding=encoding, errors=errors) as file:\n            file.write(self.content)\n\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "418503a9008ffbd14e8faa1acd49f20fe97cafaa67b523a78875b6ef36a69409",
+  "body_tokens": 134,
+  "bucket": "type04_140",
+  "clean_output": "\n        if not self.exists:\n            return False\n\n        if not isinstance(mode, unicode):\n            mode = mode.decode(Constants.default_codec)\n\n        if not isinstance(encoding, unicode):\n            encoding = encoding.decode(Constants.default_codec)\n\n        if not isinstance(errors, unicode):\n            errors = errors.decode(Constants.default_codec)\n\n        with codecs.open(self.path, mode=mode, encoding=encoding, errors=errors) as file:\n            file.write(self.content)\n\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "dc5a3ba67d63baeacef9c8c66ecb8d27e2f74603ab46aa2b105db317420c0852",
+  "human_valid": true,
+  "line_no": 52012,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7f47e452c3965a6f307be0a6e1c4f5db85edc1cd04e9553336e124c6e2ca2d7b",
+  "raw_output": "\n        if not self.exists:\n            return False\n\n        if not isinstance(mode, unicode):\n            mode = mode.decode(Constants.default_codec)\n\n        if not isinstance(encoding, unicode):\n            encoding = encoding.decode(Constants.default_codec)\n\n        if not isinstance(errors, unicode):\n            errors = errors.decode(Constants.default_codec)\n\n        with codecs.open(self.path, mode=mode, encoding=encoding, errors=errors) as file:\n            file.write(self.content)\n\n        return True\n\n    def",
+  "sampling_seed": 2979013671,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

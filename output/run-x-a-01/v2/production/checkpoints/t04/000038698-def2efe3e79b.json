@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_item(name, command, system_wide=False):\n\n\t\"\"\"Adds a program to startup.\n\n\tAdds a program to user startup.\n\n\tArgs:\n\t\tname        (str) : The name of the startup entry.\n\t\tcommand     (str) : The command to run.\n\t\tsystem_wide (bool): Add to system-wide startup.\n\n\tNote:\n\t\t``system_wide`` requires superuser/admin privileges.\n\n\t\"\"\"\n    if system_wide:\n        if not os.geteuid() ==\n",
+  "agc_valid": false,
+  "body_sha256": "f2af54b39abd801eed8857299302e7428da5b8d5a1aabf9169e4a15d769920f7",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if system_wide:\n        if not os.geteuid() ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "81bec63587ea30869a4f28ab7ed385a4ae2044f74ad2a15374f2fb70c1d69d36",
+  "human_valid": true,
+  "line_no": 38698,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "def2efe3e79b5faabfccced1c75c4c839f7948354d5912adb66e8b150e44b905",
+  "raw_output": "\n\n\tif system_wide:\n\t\tif not os.geteuid() == ",
+  "sampling_seed": 2031372642,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

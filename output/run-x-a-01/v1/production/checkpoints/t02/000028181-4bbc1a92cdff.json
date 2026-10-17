@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_seeded_answers_simple(answers, options, algo):\n    \"\"\"\n    This validator checks if the answers includes all possible options\n\n    Args:\n        answers (str): the answers to be checked\n        options (dict): all options that should exist in the answers\n        algo (str): selection algorithm\n\n    Returns:\n        None if everything is good. Otherwise, the missing option error message.\n    \"\"\"\n    if algo == \"simple\":\n        for option in options:\n            if option not in answers:\n                return f\"Missing option: {option}\"\n",
+  "agc_valid": true,
+  "body_sha256": "d11a3b77331d5274b9d218b28f03be302f54f3f8f01fc77a34271951001843b4",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if algo == \"simple\":\n        for option in options:\n            if option not in answers:\n                return f\"Missing option: {option}\"\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "ce11da2bfc8a76116cf2ef63a59686c2d56f3fff5911d3de2ac3b801c3518f54",
+  "human_valid": true,
+  "line_no": 28181,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "4bbc1a92cdff58b4d537231aab614c8bb6f98ce945ff6a8d3f515887f15dca37",
+  "raw_output": "\n    if algo == \"simple\":\n        for option in options:\n            if option not in answers:\n                return f\"Missing option: {option}\"\n\n\ndef validate_seeded_answers_random(answers, options, algo):\n    \"\"\"\n    This validator checks if the answers includes all possible options\n\n    Args:\n        answers (str): the answers to be checked\n        options (dict): all options that should exist in the answers\n        algo (str): selection algorithm\n\n    Returns:\n        None if everything is good. Otherwise, the missing option error message.\n    \"\"\"\n    if algo == \"random\":\n        for option in options:\n            if option not in answers:\n                return f\"Missing option: {option}\"\n\n\ndef validate_seeded_answers_random_with_replacement(answers, options, algo):\n    \"\"\"\n    This validator checks if the answers includes all possible options\n\n    Args:\n        answers (str): the answers to be checked\n        options (dict): all options that should exist in the answers\n        algo (str): selection algorithm\n\n    Returns:\n        None if everything is good. Otherwise, the missing option error message.\n    \"\"\"\n    if algo == \"random_with_replacement\":\n        for option in options:\n            if option not in answers:\n                return f\"Missing option: {option}\"\n\n\ndef validate_seeded_answers_random_without_replacement(answers, options, algo):\n    \"\"\"\n    This validator checks if the answers includes all possible options\n\n    Args:\n        answers (str): the answers to be checked\n        options (dict): all options that should exist in the answers\n        algo (str): selection algorithm\n\n    Returns:\n        None if everything is good. Otherwise, the missing option error message.\n    \"\"\"\n    if algo == \"random_without_replacement\":\n        for option in options:\n            if option not in answers:\n                return f\"Missing option: {option}\"\n\n\ndef validate_seeded_answers_random_with_replacement_with_weights(answers, options, algo):\n    \"\"\"\n    This validator checks if the answers includes all possible options\n\n    Args",
+  "sampling_seed": 621918154,
+  "tag": "t02",
+  "temperature": 0.2
+}

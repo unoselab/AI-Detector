@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_wms_version_negotiate(url, timeout=10):\n    \"\"\"\n    OWSLib wrapper function to perform version negotiation against owslib.wms.WebMapService\n    \"\"\"\n    try:\n        from owslib.wms import WebMapService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n    # Perform version negotiation\n    wms = WebMapService(url, version='auto', timeout=timeout)\n    return wms.version\n",
+  "agc_valid": true,
+  "body_sha256": "d308cea98b0353284505ad9b3bfea9a2ad98220fc06aeccdf15173071524656a",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        from owslib.wms import WebMapService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n    # Perform version negotiation\n    wms = WebMapService(url, version='auto', timeout=timeout)\n    return wms.version\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "102660902d65fe9f1d2f54f7bb1b453e31446d2f1c700b9db7b0c690fa53e07b",
+  "human_valid": true,
+  "line_no": 22444,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "71768170dde66b29a790b7b9995ac20cd6aa93b3c00431930aab4507ce38c970",
+  "raw_output": "\n    try:\n        from owslib.wms import WebMapService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n    # Perform version negotiation\n    wms = WebMapService(url, version='auto', timeout=timeout)\n    return wms.version\n\n\ndef get_wms_version(url, timeout=10):\n    \"\"\"\n    OWSLib wrapper function to get the WMS version of a service\n    \"\"\"\n    try:\n        from owslib.wms import WebMapService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n    # Perform version negotiation\n    wms = WebMapService(url, version='auto', timeout=timeout)\n    return wms.version\n\n\ndef get_wfs_version(url, timeout=10):\n    \"\"\"\n    OWSLib wrapper function to get the WFS version of a service\n    \"\"\"\n    try:\n        from owslib.wfs import WebFeatureService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n    # Perform version negotiation\n    wfs = WebFeatureService(url, version='auto', timeout=timeout)\n    return wfs.version\n\n\ndef get_wcs_version(url, timeout=10):\n    \"\"\"\n    OWSLib wrapper function to get the WCS version of a service\n    \"\"\"\n    try:\n        from owslib.wcs import WebCoverageService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n    # Perform version negotiation\n    wcs = WebCoverageService(url, version='auto', timeout=timeout)\n    return wcs.version\n\n\ndef get_wps_version(url, timeout=10):\n    \"\"\"\n    OWSLib wrapper function to get the WPS version of a service\n    \"\"\"\n    try:\n        from owslib.wps import WebProcessingService\n    except ImportError:\n        raise ImportError(\"This method requires the OWSLib package to be installed\")\n\n",
+  "sampling_seed": 4204354634,
+  "tag": "t04",
+  "temperature": 0.4
+}

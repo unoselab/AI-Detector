@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def render_generator(self, context, result):\n\t\t\"\"\"Attempt to serve generator responses through stream encoding.\n\n\t\tThis allows for direct use of cinje template functions, which are generators, as returned views.\n\t\t\"\"\"\n        if not isinstance(result, Generator):\n            return result\n\n        # We're going to try to stream this response.\n        # We'll need to know the content type.\n        content_type = context.get('content_type', 'text/html')\n\n        # We'll need to know the encoding.\n        encoding = context.get('encoding', 'utf-8')\n\n        # We'll need to know the charset.\n        charset = context.get('charset', 'utf-8')\n\n        # We'll need to know the content length.\n        content_length = context.get('content_length', None)\n\n        # We'll need to know the status code.\n        status_code = context.get('status_code',\n",
+  "agc_valid": false,
+  "body_sha256": "a56ef857092280c692638ae6c5387c743a9744a8956a8a556767c688c2e21b9c",
+  "body_tokens": 168,
+  "bucket": "type07_170",
+  "clean_output": "\n        if not isinstance(result, Generator):\n            return result\n\t\t\n        # We're going to try to stream this response.\n        # We'll need to know the content type.\n        content_type = context.get('content_type', 'text/html')\n\t\t\n        # We'll need to know the encoding.\n        encoding = context.get('encoding', 'utf-8')\n\t\t\n        # We'll need to know the charset.\n        charset = context.get('charset', 'utf-8')\n\t\t\n        # We'll need to know the content length.\n        content_length = context.get('content_length', None)\n\t\t\n        # We'll need to know the status code.\n        status_code = context.get('status_code',\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "01993afc4e49e2ddfa88b176b7e15da8e54a5641eeb3bcb977415621ba61fd7c",
+  "human_valid": true,
+  "line_no": 26055,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "9c2621ca9102328325b5414d287312bc6b6ac97233177dff9de856e102202fb0",
+  "raw_output": "\n\t\t\n\t\tif not isinstance(result, Generator):\n\t\t\treturn result\n\t\t\n\t\t# We're going to try to stream this response.\n\t\t# We'll need to know the content type.\n\t\tcontent_type = context.get('content_type', 'text/html')\n\t\t\n\t\t# We'll need to know the encoding.\n\t\tencoding = context.get('encoding', 'utf-8')\n\t\t\n\t\t# We'll need to know the charset.\n\t\tcharset = context.get('charset', 'utf-8')\n\t\t\n\t\t# We'll need to know the content length.\n\t\tcontent_length = context.get('content_length', None)\n\t\t\n\t\t# We'll need to know the status code.\n\t\tstatus_code = context.get('status_code', ",
+  "sampling_seed": 3597179075,
+  "tag": "t02",
+  "temperature": 0.2
+}

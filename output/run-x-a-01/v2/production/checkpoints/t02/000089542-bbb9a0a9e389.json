@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def format_info(raw):\n    \"\"\"Format a string representing the information\n    concerning the name.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n",
+  "agc_valid": true,
+  "body_sha256": "194842be54a37b70269e0b91bc8c937b88c66059b8be3c0acc84409249d93265",
+  "body_tokens": 8,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return raw.replace(\"_\", \" \").title()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "ef894babd979927fb119571513e0b627851d8f7349dc120668c44e7efcdc9131",
+  "human_valid": true,
+  "line_no": 89542,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bbb9a0a9e389f2e3b5728ea99a214061277a492bd517d346f213956d5cc6cfe6",
+  "raw_output": "\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_name(raw):\n    \"\"\"Format a string representing the name.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_title(raw):\n    \"\"\"Format a string representing the title.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_description(raw):\n    \"\"\"Format a string representing the description.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_url(raw):\n    \"\"\"Format a string representing the URL.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_date(raw):\n    \"\"\"Format a string representing the date.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_time(raw):\n    \"\"\"Format a string representing the time.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_location(raw):\n    \"\"\"Format a string representing the location.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_price(raw):\n    \"\"\"Format a string representing the price.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_price_range(raw):\n    \"\"\"Format a string representing the price range.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_price_type(raw):\n    \"\"\"Format a string representing the price type.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_price_unit(raw):\n    \"\"\"Format a string representing the price unit.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_price_currency(raw):\n    \"\"\"Format a string representing the price currency.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n\ndef format_price_min(raw):\n    \"\"\"Format a string representing the price minimum.\n    \"\"\"\n    return raw.replace(\"_\", \" \").title()\n\n",
+  "sampling_seed": 1313389493,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

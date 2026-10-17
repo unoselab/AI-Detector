@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _wait_for_output(self):\n        \"\"\"\n        Check if output matches banner.\n\n        .. warning::\n            Waiting for I/O completion. It does not work on Windows. Sorry.\n        \"\"\"\n        if self.is_windows:\n            return\n        if not self.is_alive():\n            return\n        while not self.is_alive():\n            time.sleep(0.1)\n        while not self.is_output_matched():\n            time.sleep(0.1)\n",
+  "agc_valid": true,
+  "body_sha256": "ba4a59d466b9a3139f9a62629f5448d86e179d84ab837a721d0ee4589da8a86a",
+  "body_tokens": 88,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.is_windows:\n            return\n        if not self.is_alive():\n            return\n        while not self.is_alive():\n            time.sleep(0.1)\n        while not self.is_output_matched():\n            time.sleep(0.1)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "c2e4823c6c7496066b883391de0dd74e0b51d60a5929a9c22974605cd48a6f07",
+  "human_valid": true,
+  "line_no": 221449,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "857855d50b6b5744d39a2771a2f549bc6e5a4aa34da3a0cff9d1f049c3d416f6",
+  "raw_output": "\n        if self.is_windows:\n            return\n        if not self.is_alive():\n            return\n        while not self.is_alive():\n            time.sleep(0.1)\n        while not self.is_output_matched():\n            time.sleep(0.1)\n\n    def",
+  "sampling_seed": 2552985345,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def saveSettings(self, groupName=None):\n        \"\"\" Writes the registry items into the persistent settings store.\n        \"\"\"\n        if groupName is None:\n            groupName = self.groupName\n        if groupName is None:\n            raise ValueError(\"No group name specified\")\n        if self.settings is None:\n            raise ValueError(\"No settings to save\")\n        if not self.settings.has_key(groupName):\n            raise ValueError(\"No settings for group %s\" % groupName)\n        settings = self.settings[groupName]\n        for key, value in settings.items():\n            self.setSetting(key, value, groupName)\n",
+  "agc_valid": true,
+  "body_sha256": "c0c6c5f4ecaea99f4184b9d39540ee69c2954227bfefa48bc4aa62098db767b9",
+  "body_tokens": 145,
+  "bucket": "type05_150",
+  "clean_output": "\n        if groupName is None:\n            groupName = self.groupName\n        if groupName is None:\n            raise ValueError(\"No group name specified\")\n        if self.settings is None:\n            raise ValueError(\"No settings to save\")\n        if not self.settings.has_key(groupName):\n            raise ValueError(\"No settings for group %s\" % groupName)\n        settings = self.settings[groupName]\n        for key, value in settings.items():\n            self.setSetting(key, value, groupName)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "1ead6e08dd08c716a3adab7b24d9f41a25279bc1647db07d96bacf29ed59d37e",
+  "human_valid": true,
+  "line_no": 391948,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5f0fc79538c9877a394d87171f169c4a197066addb79da717290566e3a5155f1",
+  "raw_output": "\n        if groupName is None:\n            groupName = self.groupName\n        if groupName is None:\n            raise ValueError(\"No group name specified\")\n        if self.settings is None:\n            raise ValueError(\"No settings to save\")\n        if not self.settings.has_key(groupName):\n            raise ValueError(\"No settings for group %s\" % groupName)\n        settings = self.settings[groupName]\n        for key, value in settings.items():\n            self.setSetting(key, value, groupName)\n\n    def",
+  "sampling_seed": 1528232924,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

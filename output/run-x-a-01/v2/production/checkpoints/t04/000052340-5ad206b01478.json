@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _skw_matches_comparator(kw0, kw1):\n    \"\"\"Compare 2 single keywords objects.\n\n    First by the number of their spans (ie. how many times they were found),\n    if it is equal it compares them by lenghts of their labels.\n    \"\"\"\n    if len(kw0.spans) > len(kw1.spans):\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "7d0e4d94d1c2a6dc298330793dfa8cb753ba958be21a1f2e25cf2bccab97c7ea",
+  "body_tokens": 16,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(kw0.spans) > len(kw1.spans):\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "8265843811e7c522565a05f5853c8827831cbb9bfc09e4e2015d68ab765a2e24",
+  "human_valid": true,
+  "line_no": 52340,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5ad206b014786c1b9d0f75bf8129c2e98a0482688f8252962c858fee620f4b88",
+  "raw_output": "\n    if len(kw0.spans) > len(kw1.spans):\n        return ",
+  "sampling_seed": 3373024407,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

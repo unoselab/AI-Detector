@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_file(filepath):\n    \"\"\"\n        - Checks if the parent directories for this path exist.\n        - Checks that the file exists.\n        - Donates the file to the web server user.\n\n        TODO: This is Debian / Ubuntu specific.\n    \"\"\"\n    if not os.path.exists(filepath):\n        raise Exception(\"File does not exist: %s\" % filepath)\n\n    # Check that the parent directories exist.\n    parent_dir = os.path.dirname(filepath)\n    if not os.path.exists(parent_dir):\n        raise Exception(\"Parent directory does not exist: %s\" % parent_dir)\n\n    # Check that the file is owned by the web server user.\n    if not os.path.isfile(filepath):\n        raise Exception(\"File is not a file: %s\" % filepath)\n    if os.stat(filepath).st_uid !=\n",
+  "agc_valid": false,
+  "body_sha256": "5f3e93434df4116c64c703eedcac0632b10398873671767028fcb27c63dba8a3",
+  "body_tokens": 103,
+  "bucket": "type01_110",
+  "clean_output": "\n    if not os.path.exists(filepath):\n        raise Exception(\"File does not exist: %s\" % filepath)\n\n    # Check that the parent directories exist.\n    parent_dir = os.path.dirname(filepath)\n    if not os.path.exists(parent_dir):\n        raise Exception(\"Parent directory does not exist: %s\" % parent_dir)\n\n    # Check that the file is owned by the web server user.\n    if not os.path.isfile(filepath):\n        raise Exception(\"File is not a file: %s\" % filepath)\n    if os.stat(filepath).st_uid !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "aa3046d7a3040aa2748c7230b7a53bb2aec72df5ba116e20580bf7b9e69cd626",
+  "human_valid": true,
+  "line_no": 256583,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "319e7f0dc342a86a5a7b97d814a53bc63e03ad2bce61c3335594853c4dffc243",
+  "raw_output": "\n    if not os.path.exists(filepath):\n        raise Exception(\"File does not exist: %s\" % filepath)\n\n    # Check that the parent directories exist.\n    parent_dir = os.path.dirname(filepath)\n    if not os.path.exists(parent_dir):\n        raise Exception(\"Parent directory does not exist: %s\" % parent_dir)\n\n    # Check that the file is owned by the web server user.\n    if not os.path.isfile(filepath):\n        raise Exception(\"File is not a file: %s\" % filepath)\n    if os.stat(filepath).st_uid != ",
+  "sampling_seed": 3357975282,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

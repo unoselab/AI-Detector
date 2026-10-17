@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def nice_true_ces(tc):\n    \"\"\"Format a true |CauseEffectStructure|.\"\"\"\n    return nice_ces(tc.ces)\n",
+  "agc_valid": true,
+  "body_sha256": "2a43e2aeac2a9c518ec2fef1707fe798b0035f37c1b9b147167bddb804e337f8",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return nice_ces(tc.ces)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "cd44602d9d307a8c2b228bd3d91abb7be5ec54cc6903cfbbd92e0209be309e84",
+  "human_valid": true,
+  "line_no": 294519,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0f2f429b60649ced0ff0e493d0d7011faabfb44dcfd602cecb7e3f0f6eea81fe",
+  "raw_output": "\n    return nice_ces(tc.ces)\n\n\ndef nice_false_ces(fc):\n    \"\"\"Format a false |CauseEffectStructure|.\"\"\"\n    return nice_ces(fc.ces)\n\n\ndef nice_ces(ces):\n    \"\"\"Format a |CauseEffectStructure|.\"\"\"\n    return '{} => {}'.format(nice_causes(ces.causes), nice_effects(ces.effects))\n\n\ndef nice_causes(causes):\n    \"\"\"Format a list of |Cause|s.\"\"\"\n    return ' & '.join(map(nice_cause, causes))\n\n\ndef nice_cause(cause):\n    \"\"\"Format a |Cause|.\"\"\"\n    return '{} {} {}'.format(nice_cause_type(cause.cause_type), nice_cause_arg(cause.cause_arg), nice_cause_mod(cause.cause_mod))\n\n\ndef nice_cause_type(cause_type):\n    \"\"\"Format a |CauseType|.\"\"\"\n    return '{} {}'.format(cause_type.cause_type_name, nice_cause_type_mod(cause_type.cause_type_mod))\n\n\ndef nice_cause_type_mod(cause_type_mod):\n    \"\"\"Format a |CauseTypeMod|.\"\"\"\n    return '{} {}'.format(cause_type_mod.cause_type_mod_name, nice_cause_type_mod_arg(cause_type_mod.cause_type_mod_arg))\n\n\ndef nice_cause_type_mod_arg(cause_type_mod_arg):\n    \"\"\"Format a |CauseTypeModArg|.\"\"\"\n    if cause_type_mod_arg is None:\n        return ''\n    elif cause_type_mod_arg.cause_type_mod_arg_name == '':\n        return '{}'.format(cause_type_mod_arg.cause_type_mod_arg_value)\n    else:\n        return '{} {}'.format(cause_type_mod_arg.cause_type",
+  "sampling_seed": 3320319576,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

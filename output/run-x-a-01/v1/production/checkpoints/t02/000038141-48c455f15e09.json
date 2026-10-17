@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list(self, label=None, per_page=20, page=1):\n        \"\"\" Get a list of identities that have been created\n\n            :param per_page: The number of results per page returned\n            :type per_page: int\n            :param page: The page number of the results\n            :type page: int\n            :return: dict of REST API output with headers attached\n            :rtype: :class:`~datasift.request.DictResponse`\n            :raises: :class:`~datasift.exceptions.DataSiftApiException`,\n                :class:`requests.exceptions.HTTPError`\n        \"\"\"\n        ApiException`,\n                        :class:`~datasift.exceptions.DataSiftApiUsageException`\n                \"\"\"\n                params = {}\n                if label:\n                    params['label'] = label\n                return self._get('/identities', params, per_page, page)\n",
+  "agc_valid": false,
+  "body_sha256": "12d863ef64e2d890b2ab5d1ae8b4030d5003b5f7c1fbc7749e5ce1e8e854e6e3",
+  "body_tokens": 126,
+  "bucket": "type03_130",
+  "clean_output": "\n        ApiException`,\n                        :class:`~datasift.exceptions.DataSiftApiUsageException`\n                \"\"\"\n                params = {}\n                if label:\n                    params['label'] = label\n                return self._get('/identities', params, per_page, page)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cb3b8354a1d3587c242d330ca0370e149bcfde3f24b9bca1a9eed2c439406fba",
+  "human_valid": true,
+  "line_no": 38141,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "48c455f15e09f9a7f7b4ef3bcf2ad6a751b16d9a239a1fe5d8addf2b8f97d815",
+  "raw_output": "ApiException`,\n                :class:`~datasift.exceptions.DataSiftApiUsageException`\n        \"\"\"\n        params = {}\n        if label:\n            params['label'] = label\n        return self._get('/identities', params, per_page, page)\n\n    def",
+  "sampling_seed": 4294280034,
+  "tag": "t02",
+  "temperature": 0.2
+}

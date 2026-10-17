@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_file(filepath):\n    \"\"\"\n        - Checks if the parent directories for this path exist.\n        - Checks that the file exists.\n        - Donates the file to the web server user.\n\n        TODO: This is Debian / Ubuntu specific.\n    \"\"\"\n    if not os.path.exists(os.path.dirname(filepath)):\n        raise IOError('Parent directory of {} does not exist.'.format(filepath))\n\n    if not os.path.isfile(filepath):\n        raise IOError('{} is not a file.'.format(filepath))\n\n    os.chown(filepath, pwd.getpwnam('www-data').pw_uid, pwd.getpwnam('www-data').pw_gid)\n",
+  "agc_valid": true,
+  "body_sha256": "5c3cd9a5ac8894e559d77532eae37280b11d71c9c9be548317423b8549566d4b",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not os.path.exists(os.path.dirname(filepath)):\n        raise IOError('Parent directory of {} does not exist.'.format(filepath))\n\n    if not os.path.isfile(filepath):\n        raise IOError('{} is not a file.'.format(filepath))\n\n    os.chown(filepath, pwd.getpwnam('www-data').pw_uid, pwd.getpwnam('www-data').pw_gid)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "aa3046d7a3040aa2748c7230b7a53bb2aec72df5ba116e20580bf7b9e69cd626",
+  "human_valid": true,
+  "line_no": 256583,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "319e7f0dc342a86a5a7b97d814a53bc63e03ad2bce61c3335594853c4dffc243",
+  "raw_output": "\n    if not os.path.exists(os.path.dirname(filepath)):\n        raise IOError('Parent directory of {} does not exist.'.format(filepath))\n\n    if not os.path.isfile(filepath):\n        raise IOError('{} is not a file.'.format(filepath))\n\n    os.chown(filepath, pwd.getpwnam('www-data').pw_uid, pwd.getpwnam('www-data').pw_gid)\n\n\ndef check_directory(directory):\n    \"\"\"\n        - Checks if the parent directories for this path exist.\n        - Checks that the directory exists.\n        - Donates the directory to the web server user.\n\n        TODO: This is Debian / Ubuntu specific.\n    \"\"\"\n    if not os.path.exists(os.path.dirname(directory)):\n        raise IOError('Parent directory of {} does not exist.'.format(directory))\n\n    if not os.path.isdir(directory):\n        raise IOError('{} is not a directory.'.format(directory))\n\n    os.chown(directory, pwd.getpwnam('www-data').pw_uid, pwd.getpwnam('www-data').pw_gid)\n\n\ndef check_path(path):\n    \"\"\"\n        - Checks if the parent directories for this path exist.\n        - Checks that the path exists.\n        - Donates the path to the web server user.\n\n        TODO: This is Debian / Ubuntu specific.\n    \"\"\"\n    if not os.path.exists(os.path.dirname(path)):\n        raise IOError('Parent directory of {} does not exist.'.format(path))\n\n    if not os.path.exists(path):\n        raise IOError('{} does not exist.'.format(path))\n\n    os.chown(path, pwd.getpwnam('www-data').pw_uid, pwd.getpwnam('www-data').pw_gid)\n\n\ndef check_command(command):\n    \"\"\"\n        - Checks if the command exists.\n        - Donates the command to the web server user.\n\n",
+  "sampling_seed": 223746001,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

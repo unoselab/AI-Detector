@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sim_combi(self):\n        \"\"\" Simulate data to model combi regulation.\n        \"\"\"\n        # Simulate data to model combi regulation.\n        #\n        # The combi regulation is a special case of the general\n        # regulation, in which the rate of change of the\n        # concentration of the substrate is proportional to the\n        # concentration of the product.\n        #\n        # The model is:\n        #\n        #     d[S]/dt = - k_1 [S] [I]\n        #     d[I]/dt = k_1 [S] [I] - k_2 [I]\n        #\n        # The parameters are:\n        #\n        #     k_1: the rate of change of the concentration of the\n        #          substrate\n        #     k_2: the rate of change of the concentration of the\n        #          product\n        #\n        # The initial conditions are:\n        #\n        #     [S] =\n",
+  "agc_valid": false,
+  "body_sha256": "1fc63566f6175ebfae640d87beb8da5abd78de8a81ba8df3938d551f614da26f",
+  "body_tokens": 300,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Simulate data to model combi regulation.\n        #\n        # The combi regulation is a special case of the general\n        # regulation, in which the rate of change of the\n        # concentration of the substrate is proportional to the\n        # concentration of the product.\n        #\n        # The model is:\n        #\n        #     d[S]/dt = - k_1 [S] [I]\n        #     d[I]/dt = k_1 [S] [I] - k_2 [I]\n        #\n        # The parameters are:\n        #\n        #     k_1: the rate of change of the concentration of the\n        #          substrate\n        #     k_2: the rate of change of the concentration of the\n        #          product\n        #\n        # The initial conditions are:\n        #\n        #     [S] =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "8b0cde270cc794c4dd415ae7880946a50d206077162e4ca92f35a408274da308",
+  "human_valid": true,
+  "line_no": 329071,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc3978ec6321b6a3c20c13e254a1a61e437b08686fed6771750cfb9cc6adb6b8",
+  "raw_output": "\n        # Simulate data to model combi regulation.\n        #\n        # The combi regulation is a special case of the general\n        # regulation, in which the rate of change of the\n        # concentration of the substrate is proportional to the\n        # concentration of the product.\n        #\n        # The model is:\n        #\n        #     d[S]/dt = - k_1 [S] [I]\n        #     d[I]/dt = k_1 [S] [I] - k_2 [I]\n        #\n        # The parameters are:\n        #\n        #     k_1: the rate of change of the concentration of the\n        #          substrate\n        #     k_2: the rate of change of the concentration of the\n        #          product\n        #\n        # The initial conditions are:\n        #\n        #     [S] = ",
+  "sampling_seed": 2886527207,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

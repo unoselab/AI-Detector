@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def install_json(self):\n        \"\"\"Return contents of install.json configuration file, loading from disk if required.\"\"\"\n        if self._install_json is None:\n            self._install_json = self.load_json(self.install_json_path)\n        return self._install_json\n",
+  "agc_valid": true,
+  "body_sha256": "b8c5321777cdafaa85bc75e5da610eb5fcb0b129e508e27a4564100bce944c40",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self._install_json is None:\n            self._install_json = self.load_json(self.install_json_path)\n        return self._install_json\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "94ad0e99074014d2a8d25c0c5b88b493e8ffbeb4358874253b9c0b309a9cbe5d",
+  "human_valid": true,
+  "line_no": 137073,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8770b141ca4afc032867dfe26e2727de0d5889869e93344fcaaf703f58375d94",
+  "raw_output": "\n        if self._install_json is None:\n            self._install_json = self.load_json(self.install_json_path)\n        return self._install_json\n\n    def",
+  "sampling_seed": 2117072880,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

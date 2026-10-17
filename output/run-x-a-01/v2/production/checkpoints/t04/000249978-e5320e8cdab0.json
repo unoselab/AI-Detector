@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def commit_config(self, label=None, comment=None, confirmed=None):\n        \"\"\"\n        Commit the candidate config.\n\n        :param label:     Commit comment, displayed in the commit entry on the device.\n        :param comment:   Commit label, displayed instead of the commit ID on the device. (Max 60 characters)\n        :param confirmed: Commit with auto-rollback if new commit is not made in 30 to 300 sec\n        \"\"\"\n        if not self.is_connected():\n            raise ValueError('Not connected to a device.')\n\n        if self.is_candidate_config_pending():\n            raise ValueError('Candidate config is pending.')\n\n        if self.is_config_locked():\n            raise ValueError('Configuration is locked.')\n\n        if label is None:\n            label = 'Automatic commit'\n        if comment is None:\n            comment = ''\n        if confirmed is None:\n            confirmed = False\n\n        if len(label) >\n",
+  "agc_valid": false,
+  "body_sha256": "0ff3e3163e1f88c9bb620ed31bca45e882d0939c7c9346e3806324c9e248149d",
+  "body_tokens": 163,
+  "bucket": "type07_170",
+  "clean_output": "\n        if not self.is_connected():\n            raise ValueError('Not connected to a device.')\n\n        if self.is_candidate_config_pending():\n            raise ValueError('Candidate config is pending.')\n\n        if self.is_config_locked():\n            raise ValueError('Configuration is locked.')\n\n        if label is None:\n            label = 'Automatic commit'\n        if comment is None:\n            comment = ''\n        if confirmed is None:\n            confirmed = False\n\n        if len(label) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "11a8c81ca36bfcffc3724fc63664fac963ef1633d9acf8c4f6149b90f8cfb009",
+  "human_valid": true,
+  "line_no": 249978,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e5320e8cdab0453417acc3234e9f907688066f51652ea62383a5e3e2a706903e",
+  "raw_output": "\n        if not self.is_connected():\n            raise ValueError('Not connected to a device.')\n\n        if self.is_candidate_config_pending():\n            raise ValueError('Candidate config is pending.')\n\n        if self.is_config_locked():\n            raise ValueError('Configuration is locked.')\n\n        if label is None:\n            label = 'Automatic commit'\n        if comment is None:\n            comment = ''\n        if confirmed is None:\n            confirmed = False\n\n        if len(label) > ",
+  "sampling_seed": 1969883508,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_result(self, data):\n        \"\"\"\n        Parse result of L{pyhsm.defines.YSM_KEY_STORAGE_UNLOCK} command.\n\n        @return: Only returns (True) on successful unlock\n        @rtype: bool\n\n        @raise pyhsm.exception.YHSM_CommandFailed: YubiHSM failed to unlock key storage\n        \"\"\"\n        if data[0] != YSM_KEY_STORAGE_UNLOCK:\n            raise YHSM_CommandFailed('Unexpected response to unlock key storage command')\n        if data[1] != YSM_STATUS_OK:\n            raise YHSM_CommandFailed('Failed to unlock key storage')\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "2b19be4949de0983c51d882df3ce1e71dd91dae1bca69bf4ce89c865403d6520",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if data[0] != YSM_KEY_STORAGE_UNLOCK:\n            raise YHSM_CommandFailed('Unexpected response to unlock key storage command')\n        if data[1] != YSM_STATUS_OK:\n            raise YHSM_CommandFailed('Failed to unlock key storage')\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "ea2ca2412cad2ada940ae2f51917bd71fc0f8423e61a45d3e2c7eb7852be1a6d",
+  "human_valid": true,
+  "line_no": 284291,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e24792696ae2aefd0eb641d1d09449e4133ff6ff5aba999c43e626eb28bc3742",
+  "raw_output": "\n        if data[0] != YSM_KEY_STORAGE_UNLOCK:\n            raise YHSM_CommandFailed('Unexpected response to unlock key storage command')\n        if data[1] != YSM_STATUS_OK:\n            raise YHSM_CommandFailed('Failed to unlock key storage')\n        return True\n\n    def",
+  "sampling_seed": 1317505750,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

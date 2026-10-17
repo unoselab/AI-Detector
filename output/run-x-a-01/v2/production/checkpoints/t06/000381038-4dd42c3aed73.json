@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _find_travis_job(self, build, toxenv):\n        \"\"\"Given a build object, find the acceptance36 job\"\"\"\n        jobs = build.jobs()\n        for job in jobs:\n            if job.number == build.number:\n                continue\n            if job.number == build.number +\n",
+  "agc_valid": false,
+  "body_sha256": "bd81cd5eaf7c1c51cc35788fe3a573041abb282d924295f0423076cebe180e59",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n        jobs = build.jobs()\n        for job in jobs:\n            if job.number == build.number:\n                continue\n            if job.number == build.number +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "89fd5bc89853cfdf621397483a483af4b09f3abf6f76354ea92d821a48b14ad9",
+  "human_valid": true,
+  "line_no": 381038,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4dd42c3aed7363360cdf35150aa4a0b815c43430f7217c08b95050b41eaf6ccd",
+  "raw_output": "\n        jobs = build.jobs()\n        for job in jobs:\n            if job.number == build.number:\n                continue\n            if job.number == build.number + ",
+  "sampling_seed": 3065632066,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

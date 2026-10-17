@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def my_import(name, path=None):\n    \"\"\"Return imported module for the given name.\"\"\"\n    import sys\n    import importlib\n\n    if path is None:\n        path = name\n    if path in sys.modules:\n        return sys.modules[path]\n\n    try:\n        return importlib.import_module(path)\n    except ImportError:\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "dd265ddfaa1cc86267bf8faa4db7c114518ded58badb4ac7fa33ec5c93960df1",
+  "body_tokens": 71,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import sys\n    import importlib\n\n    if path is None:\n        path = name\n    if path in sys.modules:\n        return sys.modules[path]\n\n    try:\n        return importlib.import_module(path)\n    except ImportError:\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "e7ca33353cbabe4929ff2afab12c7af419ac0062d53bd476783269aa1811a7ad",
+  "human_valid": true,
+  "line_no": 133023,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "871d8deada187f9003fd3e1511361469cc40769c23355f3828dcaf91241dc472",
+  "raw_output": "\n    import sys\n    import importlib\n\n    if path is None:\n        path = name\n    if path in sys.modules:\n        return sys.modules[path]\n\n    try:\n        return importlib.import_module(path)\n    except ImportError:\n        return None\n\n\ndef import_module(name):\n    \"\"\"Return imported module for the given name.\"\"\"\n    return my_import(name)\n\n\ndef get_module_name(name):\n    \"\"\"Return name of the module for the given name.\"\"\"\n    if name.endswith('.'):\n        name = name[:-1]\n    name = name.replace('/', '.')\n    return name\n\n\ndef is_module_available(name):\n    \"\"\"Check if the module is available.\"\"\"\n    if name.endswith('.'):\n        name = name[:-1]\n    name = name.replace('/', '.')\n    module = importlib.import_module(name)\n    return module is not None\n\n\ndef get_all_submodules(module):\n    \"\"\"Return all submodules of a module.\"\"\"\n    import inspect\n    import pkgutil\n\n    def",
+  "sampling_seed": 1938771906,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

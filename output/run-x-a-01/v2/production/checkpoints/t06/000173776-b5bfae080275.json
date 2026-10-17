@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update_index_for_direction(self, index_direction, index):\n        \"\"\"\n        :type index_direction: SliceDirection\n        :type index: int\n        \"\"\"\n        if index_direction == SliceDirection.Forward:\n            self.current_index = index\n        else:\n            self.current_index = len(self.slice) - index -\n",
+  "agc_valid": false,
+  "body_sha256": "105ba4dbdc99959f7c0e29bc9cf21ade9fb71715a6dd578b225a1839fa4421f2",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if index_direction == SliceDirection.Forward:\n            self.current_index = index\n        else:\n            self.current_index = len(self.slice) - index -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 181,
+  "human_sha256": "27a3607f402cdf84c1109b799a0785afee626a895df5da43af2af8046c210c9c",
+  "human_valid": true,
+  "line_no": 173776,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b5bfae08027594d07f1d63e9facf304fb4395050d6a5426b5350aaa0cb66e323",
+  "raw_output": "\n        if index_direction == SliceDirection.Forward:\n            self.current_index = index\n        else:\n            self.current_index = len(self.slice) - index - ",
+  "sampling_seed": 1767561464,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

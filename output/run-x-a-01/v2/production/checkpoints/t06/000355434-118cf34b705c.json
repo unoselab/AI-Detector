@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_proxy():\n    \"\"\"\n    Return True if this minion is a proxy minion.\n    Leverages the fact that is_linux() and is_windows\n    both return False for proxies.\n    TODO: Need to extend this for proxies that might run on\n    other Unices\n    \"\"\"\n    return not is_linux() and not is_windows()\n",
+  "agc_valid": true,
+  "body_sha256": "145a2da028bae589f7c755fa92d3141772b2abb22de1908d59bc519792f7c526",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return not is_linux() and not is_windows()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "b7161dfe2eed903d95532e28582e82ab3bba8ab4fae6db16663285552d6e6ef8",
+  "human_valid": true,
+  "line_no": 355434,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "118cf34b705c348c791054cbbe3a5874242e1232542579212b059fdb8e2190cb",
+  "raw_output": "\n    return not is_linux() and not is_windows()\n\n\ndef is_linux():\n    \"\"\"\n    Return True if this minion is running on a linux OS\n    \"\"\"\n    return salt.utils.platform.is_linux()\n\n\ndef is_darwin():\n    \"\"\"\n    Return True if this minion is running on a Mac OS X\n    \"\"\"\n    return salt.utils.platform.is_darwin()\n\n\ndef is_windows():\n    \"\"\"\n    Return True if this minion is running on a windows OS\n    \"\"\"\n    return salt.utils.platform.is_windows()\n\n\ndef is_freebsd():\n    \"\"\"\n    Return True if this minion is running on a FreeBSD OS\n    \"\"\"\n    return salt.utils.platform.is_freebsd()\n\n\ndef is_openbsd():\n    \"\"\"\n    Return True if this minion is running on a OpenBSD OS\n    \"\"\"\n    return salt.utils.platform.is_openbsd()\n\n\ndef is_netbsd():\n    \"\"\"\n    Return True if this minion is running on a NetBSD OS\n    \"\"\"\n    return salt.utils.platform.is_netbsd()\n\n\ndef is_smartos():\n    \"\"\"\n    Return True if this minion is running on a SmartOS OS\n    \"\"\"\n    return salt.utils.platform.is_smartos()\n\n\ndef is_aix():\n    \"\"\"\n    Return True if this minion is running on a AIX OS\n    \"\"\"\n    return salt.utils.platform.is_aix()\n\n\ndef is_solaris():\n    \"\"\"\n    Return True if this minion is running on a Solaris OS\n    \"\"\"\n    return salt.utils.platform.is_solaris()\n\n\ndef is_sunos():\n    \"\"\"\n    Return True if this minion is running on a SunOS OS\n    \"\"\"\n    return salt.utils.platform.is_sunos()\n\n\ndef is_bsd():\n    \"\"\"\n    Return True if this minion is running on a BSD OS\n    \"\"\"\n    return salt.utils.platform.is_bsd()\n\n\ndef is_linux_",
+  "sampling_seed": 2715235471,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self, *, no_ack=False):\n        \"\"\"\n        Synchronously get a message from the queue.\n\n        This method is a :ref:`coroutine <coroutine>`.\n\n        :keyword bool no_ack: if true, the broker does not require acknowledgement of receipt of the message.\n\n        :return: an :class:`~asynqp.message.IncomingMessage`,\n            or ``None`` if there were no messages on the queue.\n        \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "efec263a5575a60f3f78086e2b23de4f048fc9f67aa9a50bd7d6ee461d0c04b9",
+  "human_valid": true,
+  "line_no": 8811,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "dcf11596edb875295c36bc70b5061f9008fc1e84df29ac83590b191dfa2682c3",
+  "raw_output": "\n\n    def",
+  "sampling_seed": 3409211513,
+  "tag": "t06",
+  "temperature": 0.6
+}

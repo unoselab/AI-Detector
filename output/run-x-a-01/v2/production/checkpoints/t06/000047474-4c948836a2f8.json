@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_relationships(self):\n        \"\"\"Gets all ``Relationships``.\n\n        return: (osid.relationship.RelationshipList) - a list of\n                ``Relationships``\n        raise:  OperationFailed - unable to complete request\n        raise:  PermissionDenied - authorization failure\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "075da1329bf98305ddcc57e5c54ff9464a19fba45924fd3dcdaeec84bf84cdea",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "936369a26a8a87b7ee2ac6bce34c16e060337220a9401da05e57723db68b47f8",
+  "human_valid": true,
+  "line_no": 47474,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4c948836a2f8bd5975b58bd8fe9b9c70dea60aef71625bc1f2937242cd7ab111",
+  "raw_output": "\n        return ",
+  "sampling_seed": 4171347879,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

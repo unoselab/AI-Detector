@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def upload_from_fs(fn, profile=None, label=None):\n    \"\"\"\n    Saves image from fn with TMP prefix and returns img_id.\n    \"\"\"\n    if profile is None:\n        profile = get_default_profile()\n    if label is None:\n        label = fn\n    data = open(fn, 'rb').read()\n    data = {'data': data, 'label': label, 'profile': profile}\n    r = requests.post(\n        '%s/image/upload_from_fs' % get_api_url(), data=data)\n    r.raise_for_status()\n    return r.json()['img_id']\n",
+  "agc_valid": true,
+  "body_sha256": "429f1090771efe65063929468cff062189ea7d45041ae13b7cd26f4ca7e77ca4",
+  "body_tokens": 79,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if profile is None:\n        profile = get_default_profile()\n    if label is None:\n        label = fn\n    data = open(fn, 'rb').read()\n    data = {'data': data, 'label': label, 'profile': profile}\n    r = requests.post(\n        '%s/image/upload_from_fs' % get_api_url(), data=data)\n    r.raise_for_status()\n    return r.json()['img_id']\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "d658bbefb4ff8f728064f92b0bebba4512a77f513ce21c02f8a08def3c078895",
+  "human_valid": true,
+  "line_no": 247814,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "400e4aab753c996a58f794bd38a1a6cc65d1d28e82bb55f603ce8f0eb50ea935",
+  "raw_output": "\n    if profile is None:\n        profile = get_default_profile()\n    if label is None:\n        label = fn\n    data = open(fn, 'rb').read()\n    data = {'data': data, 'label': label, 'profile': profile}\n    r = requests.post(\n        '%s/image/upload_from_fs' % get_api_url(), data=data)\n    r.raise_for_status()\n    return r.json()['img_id']\n\n\ndef upload_from_url(url, profile=None, label=None):\n    \"\"\"\n    Saves image from url with TMP prefix and returns img_id.\n    \"\"\"\n    if profile is None:\n        profile = get_default_profile()\n    if label is None:\n        label = url\n    data = {'url': url, 'label': label, 'profile': profile}\n    r = requests.post(\n        '%s/image/upload_from_url' % get_api_url(), data=data)\n    r.raise_for_status()\n    return r.json()['img_id']\n\n\ndef upload_from_buffer(buf, profile=None, label=None):\n    \"\"\"\n    Saves image from buf with TMP prefix and returns img_id.\n    \"\"\"\n    if profile is None:\n        profile = get_default_profile()\n    if label is None:\n        label = 'buffer'\n    data = {'data': buf, 'label': label, 'profile': profile}\n    r = requests.post(\n        '%s/image/upload_from_buffer' % get_api_url(), data=data)\n    r.raise_for_status()\n    return r.json()['img_id']\n\n\ndef upload_from_base64(base64_data, profile=None, label=None):\n    \"\"\"\n    Saves image from base64_data with TMP prefix and returns img_id.\n    \"\"\"\n    if profile is None:\n        profile = get_default_profile()\n    if label is None:\n        label = 'base64'\n    data = {'data': base64_data, 'label': label, '",
+  "sampling_seed": 1943468778,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

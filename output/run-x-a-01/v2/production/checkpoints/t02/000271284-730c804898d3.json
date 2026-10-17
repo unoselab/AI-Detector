@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_if_exists(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Return a User with the given username iff the User exists.\"\"\"\n    if user:\n        return user\n    try:\n        return strategy.storage.user.get_by_natural_key(details.get('username'))\n    except strategy.storage.user.DoesNotExist:\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "888ba427732b34897f061e35d84ccf45fa9827facdc99a9ac26e2c8baf8465b1",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if user:\n        return user\n    try:\n        return strategy.storage.user.get_by_natural_key(details.get('username'))\n    except strategy.storage.user.DoesNotExist:\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "9fd64f3ea962cdfb6b166cc2759385100c2f3c070a00d5e5dba18de64d4ab5b9",
+  "human_valid": true,
+  "line_no": 271284,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "730c804898d3aa312d4ac19143a8c187c5f54ab1549762324210110dbafa611a",
+  "raw_output": "\n    if user:\n        return user\n    try:\n        return strategy.storage.user.get_by_natural_key(details.get('username'))\n    except strategy.storage.user.DoesNotExist:\n        return None\n\n\ndef get_user_by_email(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Return a User with the given email iff the User exists.\"\"\"\n    if user:\n        return user\n    try:\n        return strategy.storage.user.get_by_email(details.get('email'))\n    except strategy.storage.user.DoesNotExist:\n        return None\n\n\ndef create_user(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Create a User with the given details.\"\"\"\n    if user:\n        return user\n    return strategy.storage.user.create_user(\n        username=details.get('username'),\n        email=details.get('email'),\n        password=details.get('password'),\n        **kwargs\n    )\n\n\ndef create_user_from_details(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Create a User with the given details.\"\"\"\n    if user:\n        return user\n    return strategy.storage.user.create_user(\n        username=details.get('username'),\n        email=details.get('email'),\n        **kwargs\n    )\n\n\ndef create_user_from_email(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Create a User with the given details.\"\"\"\n    if user:\n        return user\n    return strategy.storage.user.create_user(\n        email=details.get('email'),\n        **kwargs\n    )\n\n\ndef create_user_from_username(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Create a User with the given details.\"\"\"\n    if user:\n        return user\n    return strategy.storage.user.create_user(\n        username=details.get('username'),\n        **kwargs\n    )\n\n\ndef create_user_from_username_email(strategy, details, user=None, *",
+  "sampling_seed": 3018048897,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

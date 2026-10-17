@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def mousePressEvent(self, event):\n        \"\"\"Jump to window when user clicks on overview.\n\n        Parameters\n        ----------\n        event : instance of QtCore.QEvent\n            it contains the position that was clicked.\n        \"\"\"\n        if event.button() == QtCore.Qt.LeftButton:\n            self.jumpToWindow()\n",
+  "agc_valid": true,
+  "body_sha256": "dee5a3a6cc4e88673633c42047288d60fd30c101fa0de4eddc42151db54eb526",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if event.button() == QtCore.Qt.LeftButton:\n            self.jumpToWindow()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "3739b9474d6c7a88a67bb91aaaec6d107fdbe0c85db27dc10e5e8a0ee4cb0258",
+  "human_valid": true,
+  "line_no": 130589,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "87db4c0c26bc1d0229720bbc7d3f9344b36ee52ae3dcd4ffc675195bfd13ceca",
+  "raw_output": "\n        if event.button() == QtCore.Qt.LeftButton:\n            self.jumpToWindow()\n\n    def",
+  "sampling_seed": 3224338667,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

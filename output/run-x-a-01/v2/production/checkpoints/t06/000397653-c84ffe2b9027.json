@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def complete(\n        self, config, prompt, session, context, current_arguments, current\n    ):\n        # type: (CompletionInfo, str, ShellSession, BundleContext, List[str], str) -> List[str]\n        \"\"\"\n        Returns the list of bundle IDs matching the current state\n\n        :param config: Configuration of the current completion\n        :param prompt: Shell prompt (for re-display)\n        :param session: Shell session (to display in shell)\n        :param context: Bundle context of the Shell bundle\n        :param current_arguments: Current arguments (without the command itself)\n        :param current: Current word\n        :return: A list of matches\n        \"\"\"\n        _arguments: List of the current command line arguments\n                :param current: Current state of completion\n                :return: List of bundle IDs\n                \"\"\"\n                # Fetch the list of bundle IDs\n                bundle_ids = self._get_bundle_ids(context)\n\n                # Filter the list according to the current state\n                if current == CompletionState.START:\n                    return bundle_ids\n                elif current == CompletionState.FIRST_ARG:\n                    return self._filter_bundle_ids(bundle_ids, current_arguments[0])\n                else:\n                    return []\n",
+  "agc_valid": false,
+  "body_sha256": "40dfa95c2c7976ef107fb4f08703408f9d5032256563f97db8801f3ab0b2b210",
+  "body_tokens": 255,
+  "bucket": "out_of_range",
+  "clean_output": "\n        _arguments: List of the current command line arguments\n                :param current: Current state of completion\n                :return: List of bundle IDs\n                \"\"\"\n                # Fetch the list of bundle IDs\n                bundle_ids = self._get_bundle_ids(context)\n\n                # Filter the list according to the current state\n                if current == CompletionState.START:\n                    return bundle_ids\n                elif current == CompletionState.FIRST_ARG:\n                    return self._filter_bundle_ids(bundle_ids, current_arguments[0])\n                else:\n                    return []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "f9bf6849ecaed9b507677997d64ebbd0452cd496536715169a9d28f8866dc461",
+  "human_valid": true,
+  "line_no": 397653,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c84ffe2b902763f4f47b6997d42a6c6f42d923f1cf611c8b4bb005d304a771ce",
+  "raw_output": "_arguments: List of the current command line arguments\n        :param current: Current state of completion\n        :return: List of bundle IDs\n        \"\"\"\n        # Fetch the list of bundle IDs\n        bundle_ids = self._get_bundle_ids(context)\n\n        # Filter the list according to the current state\n        if current == CompletionState.START:\n            return bundle_ids\n        elif current == CompletionState.FIRST_ARG:\n            return self._filter_bundle_ids(bundle_ids, current_arguments[0])\n        else:\n            return []\n\n    def",
+  "sampling_seed": 4263128908,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

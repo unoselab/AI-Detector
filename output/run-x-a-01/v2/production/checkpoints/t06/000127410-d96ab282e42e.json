@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def batch_update(self, outcomes, expparams, resample_interval=5):\n        r\"\"\"\n        Updates based on a batch of outcomes and experiments, rather than just\n        one.\n\n        :param numpy.ndarray outcomes: An array of outcomes of the experiments that\n            were performed.\n        :param numpy.ndarray expparams: Either a scalar or record single-index\n            array of experiments that were performed.\n        :param int resample_interval: Controls how often to check whether\n            :math:`N_{\\text{ess}}` falls below the resample threshold.\n        \"\"\"\n        ` should be resampled.\n                \"\"\"\n                if outcomes.ndim ==\n",
+  "agc_valid": false,
+  "body_sha256": "95277f4cc95195737ef95e19f3b57bdfb91c8c1a8500022298283cac3cf11595",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        ` should be resampled.\n                \"\"\"\n                if outcomes.ndim ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "522c00a3dc171c8aade1ad58bc051739b6bceac84b480a4baacfd995f14302ee",
+  "human_valid": true,
+  "line_no": 127410,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d96ab282e42ea8201269ef528254d40f16f1cd49ec519fcf6fbac1ebec245ca5",
+  "raw_output": "` should be resampled.\n        \"\"\"\n        if outcomes.ndim == ",
+  "sampling_seed": 3153900425,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

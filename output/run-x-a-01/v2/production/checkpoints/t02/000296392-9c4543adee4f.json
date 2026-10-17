@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def parse_target(self, runtime, target_str):\n        \"\"\"A target is a pipeline of a module into zero or more rules, and each\n        module and rule can itself be scoped with zero or more module names.\"\"\"\n        target = Target()\n        target.runtime = runtime\n        target.module_names = []\n        target.rule_names = []\n        target.module_names.extend(self.parse_module_names(target_str))\n        target.rule_names.extend(self.parse_rule_names(target_str))\n        return target\n",
+  "agc_valid": true,
+  "body_sha256": "2b62b8f493dc935b93c4d3f456fcd3bac97f02f8895f0df5b59f5ce2db8d7cd7",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n        target = Target()\n        target.runtime = runtime\n        target.module_names = []\n        target.rule_names = []\n        target.module_names.extend(self.parse_module_names(target_str))\n        target.rule_names.extend(self.parse_rule_names(target_str))\n        return target\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "ef6904144752baa43f817c720e68c1fa7b955bff725966759f28529244fb8efb",
+  "human_valid": true,
+  "line_no": 296392,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c4543adee4febf5585abe9515bf8c24ff71d77e6bee295810572b373c166a82",
+  "raw_output": "\n        target = Target()\n        target.runtime = runtime\n        target.module_names = []\n        target.rule_names = []\n        target.module_names.extend(self.parse_module_names(target_str))\n        target.rule_names.extend(self.parse_rule_names(target_str))\n        return target\n\n    def",
+  "sampling_seed": 1032693073,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

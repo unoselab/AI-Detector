@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_next_token(self, string):\n        \"\"\"\n        \"eats\" up the string until it hits an ending character to get valid leaf expressions.\n        For example, given \\\\Phi_{z}(L) = \\\\sum_{i=1}^{N} \\\\frac{1}{C_{i} \\\\times V_{\\\\rm max, i}},\n        this function would pull out \\\\Phi, stopping at _\n        @ string: str\n        returns a tuple of (expression [ex: \\\\Phi], remaining_chars [ex: _{z}(L) = \\\\sum_{i=1}^{N}...])\n        \"\"\"\n        i=1}^{N} \\\\frac{1}{C_{i} \\\\times V_{\\\\rm max, i}}])\n                \"\"\"\n                #\n",
+  "agc_valid": false,
+  "body_sha256": "7640899e78ffbe4618a4e0d447b556052d26576fbbc704dc13480a4042bc2f93",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        i=1}^{N} \\\\frac{1}{C_{i} \\\\times V_{\\\\rm max, i}}])\n                \"\"\"\n                #\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "329a7561f603432b80f7dc47ca34006fb479737c320e1f204188083723e0f70b",
+  "human_valid": true,
+  "line_no": 78405,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "050f431df9a912e55c26d21187e6fc159391b24f71de50b0d69019c7658e69ed",
+  "raw_output": "i=1}^{N} \\\\frac{1}{C_{i} \\\\times V_{\\\\rm max, i}}])\n        \"\"\"\n        # ",
+  "sampling_seed": 3193850179,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

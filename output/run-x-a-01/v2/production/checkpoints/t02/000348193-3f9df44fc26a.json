@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_text(self, fields=None):\n        \"\"\"\n        return plaintext CDX record (includes newline).\n        if ``fields`` is ``None``, output will have all fields\n        in the order they are stored.\n\n        :param fields: list of field names to output.\n        \"\"\"\n        if fields is None:\n            fields = self.fields\n        return '\\t'.join(self.get(field) for field in fields) + '\\n'\n",
+  "agc_valid": true,
+  "body_sha256": "f452e2eed199d27c57c563fa4db199e00223de746f1630be7847320aef8ac79b",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if fields is None:\n            fields = self.fields\n        return '\\t'.join(self.get(field) for field in fields) + '\\n'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 123,
+  "human_sha256": "522e255caea2fb42eaf662a75039c66d6b42b01b6ec8fcc68ab32852b452fe0f",
+  "human_valid": true,
+  "line_no": 348193,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3f9df44fc26a814d251423a4e2c57e6278993df9860ea8253aeefa47942e2f2e",
+  "raw_output": "\n        if fields is None:\n            fields = self.fields\n        return '\\t'.join(self.get(field) for field in fields) + '\\n'\n\n    def",
+  "sampling_seed": 2266658720,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

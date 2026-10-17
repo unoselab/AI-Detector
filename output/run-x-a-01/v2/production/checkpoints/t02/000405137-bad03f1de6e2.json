@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _noise(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    if c == 'start':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    elif c == 'end':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    else:\n        return seq\n",
+  "agc_valid": true,
+  "body_sha256": "d1a383baddc866d70a4a70d298198be186614dc04ec76b9d730194c0db0b6d39",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if c == 'start':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    elif c == 'end':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    else:\n        return seq\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "dec8e27569231af4170c4dc3b35bc12f9ba97efad415a175a36aaad4d28231c6",
+  "human_valid": true,
+  "line_no": 405137,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bad03f1de6e2b851818f4f968f5543d4870b6ff41d8a3f47604b4d0cdedf1b6b",
+  "raw_output": "\n    if c == 'start':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    elif c == 'end':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    else:\n        return seq\n\n\ndef _mutate(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    if c == 'start':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    elif c == 'end':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    else:\n        return seq\n\n\ndef _insertion(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    if c == 'start':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    elif c == 'end':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    else:\n        return seq\n\n\ndef _deletion(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    if c == 'start':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    elif c == 'end':\n        return seq[:size] + ''.join([random.choice(seq) for _ in range(total)]) + seq[-size:]\n    else:\n        return seq\n\n\ndef _duplication(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    if c == 'start':\n        return seq[:size] + ''.join",
+  "sampling_seed": 3588778088,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

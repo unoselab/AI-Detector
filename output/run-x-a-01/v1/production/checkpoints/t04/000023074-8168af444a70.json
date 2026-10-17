@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def value_eq(self, other):\n        \"\"\"Sorted comparison of values.\"\"\"\n        return self.value == other.value\n",
+  "agc_valid": true,
+  "body_sha256": "d263310f967cfc8fd938e737c6524468611db97fa71d63de12bb2c70d895c5e3",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.value == other.value\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f2439323cd614636bf00a5f9c1d13a44162dfcded50649124b0b458fa1beff64",
+  "human_valid": true,
+  "line_no": 23074,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8168af444a70bae8e87ccd0c68901478b31e9411501839db74087950b0300e17",
+  "raw_output": "\n        return self.value == other.value\n\n    def",
+  "sampling_seed": 2445256927,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_cache(new_path=None):\n    \"\"\"Simple function to change the cache location.\n\n    `new_path` can be an absolute or relative path. If the directory does not\n    exist yet, this function will create it. If None it will set the cache to\n    the default cache directory.\n\n    If you are going to change the cache directory, this function should be\n    called at the top of your script, before you make any calls to the API.\n    This is to avoid duplicate files and excess API calls.\n\n    :param new_path: relative or absolute path to the desired new cache\n    directory\n    :return: str, str\n    \"\"\"\n    path to the new cache directory\n        :type new_path: str\n        \"\"\"\n        if new_path is None:\n            new_path = get_default_cache_dir()\n\n        if not os.path.exists(new_path):\n            os.makedirs(new_path)\n\n        global _cache_dir\n        _cache_dir = new_path\n",
+  "agc_valid": false,
+  "body_sha256": "9bb333a037c9291cdcbe8e0159d9be070c6a949e3ee5e7be9a7ab7402b2bfdd8",
+  "body_tokens": 94,
+  "bucket": "out_of_range",
+  "clean_output": "\n    path to the new cache directory\n        :type new_path: str\n        \"\"\"\n        if new_path is None:\n            new_path = get_default_cache_dir()\n\n        if not os.path.exists(new_path):\n            os.makedirs(new_path)\n\n        global _cache_dir\n        _cache_dir = new_path\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "919923b9cff09edbb715859a76ac9e36333ce74fe2dafc378fb9d5161908151e",
+  "human_valid": true,
+  "line_no": 14045,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "71ca0106331df00320e015710d4f0d4c136a2bff7610720964a862c470b697d3",
+  "raw_output": "path to the new cache directory\n    :type new_path: str\n    \"\"\"\n    if new_path is None:\n        new_path = get_default_cache_dir()\n\n    if not os.path.exists(new_path):\n        os.makedirs(new_path)\n\n    global _cache_dir\n    _cache_dir = new_path\n\n\ndef get_cache_dir():\n    \"\"\"Return the path to the cache directory.\n\n    :returns: path to the cache directory\n    :rtype: str\n    \"\"\"\n    return _cache_dir\n\n\ndef get_default_cache_dir():\n    \"\"\"Return the path to the default cache directory.\n\n    :returns: path to the default cache directory\n    :rtype: str\n    \"\"\"\n    return os.path.join(get_user_dir(), 'cache')\n\n\ndef get_user_dir():\n    \"\"\"Return the path to the user directory.\n\n    :returns: path to the user directory\n    :rtype: str\n    \"\"\"\n    return os.path.expanduser('~')\n\n\ndef get_file_path(file_name, cache=True):\n    \"\"\"Return the path to a file in the cache.\n\n    :param file_name: name of the file\n    :type file_name: str\n    :param cache: whether to use the cache or not\n    :type cache: bool\n    :returns: path to the file\n    :rtype: str\n    \"\"\"\n    if cache:\n        return os.path.join(get_cache_dir(), file_name)\n    else:\n        return file_name\n\n\ndef get_file_path_from_url(url, cache=True):\n    \"\"\"Return the path to a file in the cache, given a URL.\n\n    :param url: URL of the file\n    :type url: str\n    :param cache: whether to use the cache or not\n    :type cache: bool\n    :returns: path to the file\n    :rtype: str\n    \"\"\"\n    file_name = url.split('/')[-1]\n    return get_file_path(file_name, cache)\n\n\ndef get_file_path_",
+  "sampling_seed": 4181801425,
+  "tag": "t04",
+  "temperature": 0.4
+}

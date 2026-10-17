@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def refs_section(doc):\n    \"\"\"\n    Generate a References section.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    list of str\n        Markdown for references section\n    \"\"\"\n    refs = doc['refs']\n    if not refs:\n        return []\n    refs = [\n        '## References\\n',\n        'The following references are used in the documentation:\\n',\n        '\n",
+  "agc_valid": false,
+  "body_sha256": "eca1c9d46931e4218f1bfb956987d8dca24463896bf2f5c8b1f381f867308a6b",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n    refs = doc['refs']\n    if not refs:\n        return []\n    refs = [\n        '## References\\n',\n        'The following references are used in the documentation:\\n',\n        '\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "e99c33a405e57cbac8582b222dc21879b51e3ccded88a8cdfce2fa715c9195f4",
+  "human_valid": true,
+  "line_no": 246533,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0a421251456b29b504d8c7c771b17c07b69b2cb4a5dd2f4c892f8e3809e940be",
+  "raw_output": "\n    refs = doc['refs']\n    if not refs:\n        return []\n    refs = [\n        '## References\\n',\n        'The following references are used in the documentation:\\n',\n        '```\\n',\n    ]\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs.append(ref)\n    for ref in refs:\n        refs",
+  "sampling_seed": 2877779291,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

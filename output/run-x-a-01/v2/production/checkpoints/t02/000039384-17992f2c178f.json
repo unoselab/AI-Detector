@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def pop(self, key, default=UNSET):\n        \"\"\"Remove the first key-value pair with key *key*.\n\n        If a pair was removed, return its value. Otherwise if *default* was\n        provided, return *default*. Otherwise a ``KeyError`` is raised.\n        \"\"\"\n        if key not in self:\n            if default is UNSET:\n                raise KeyError(key)\n            return default\n        value = self[key]\n        del self[key]\n        return value\n",
+  "agc_valid": true,
+  "body_sha256": "784912ebebe0e648bae7bdc0f78e73c121efd773a55dfe97b6f2757f5f721458",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if key not in self:\n            if default is UNSET:\n                raise KeyError(key)\n            return default\n        value = self[key]\n        del self[key]\n        return value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "16ccbd70adf651ee5167ee2febe428faa17e48fe7dc58e6ea40c4244d37c2d30",
+  "human_valid": true,
+  "line_no": 39384,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "17992f2c178f1cb913b6d6c4aed56b9f302fe24e1b2ea7f5e972ac182cb44237",
+  "raw_output": "\n        if key not in self:\n            if default is UNSET:\n                raise KeyError(key)\n            return default\n        value = self[key]\n        del self[key]\n        return value\n\n    def",
+  "sampling_seed": 2598691490,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

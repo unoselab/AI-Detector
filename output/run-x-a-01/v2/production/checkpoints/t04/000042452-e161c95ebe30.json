@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_arg_types(funcname, *args):\n    \"\"\"Raise TypeError if not all items of `args` are same string type.\"\"\"\n    if len(set(type(arg) for arg in args)) >\n",
+  "agc_valid": false,
+  "body_sha256": "6b5a3cd5de292da198556f59a64d47d2e2938da302d25a51d47573bd3f027e25",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(set(type(arg) for arg in args)) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "e0944e35e37ddcd361f1fb551369e7f2940515b014f80cafc5220a4236c22484",
+  "human_valid": true,
+  "line_no": 42452,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e161c95ebe306ba7507ccdb1e2e11218777f8039d1098a5393c3e61afdfd675b",
+  "raw_output": "\n    if len(set(type(arg) for arg in args)) > ",
+  "sampling_seed": 142474628,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

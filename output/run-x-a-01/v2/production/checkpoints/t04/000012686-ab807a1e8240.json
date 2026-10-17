@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _generate_badge(self, subject, status):\n        \"\"\"\n        Generate SVG for one badge via shields.io.\n\n        :param subject: subject; left-hand side of badge\n        :type subject: str\n        :param status: status; right-hand side of badge\n        :type status: str\n        :return: badge SVG\n        :rtype: str\n        \"\"\"\n        return self._request(\n            'https://img.shields.io/badge/{subject}-{status}-{color}.svg'.format(\n                subject=subject,\n                status=status,\n                color=self._color,\n            )\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "590d6e8e61b42434462f83339f0f0298f8ecc58459231ff3ce67c01ac168efa5",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._request(\n            'https://img.shields.io/badge/{subject}-{status}-{color}.svg'.format(\n                subject=subject,\n                status=status,\n                color=self._color,\n            )\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 139,
+  "human_sha256": "5375af5c158446e776fe5fb9166899edc200e927ef1fb32ed14adf57eb4fee04",
+  "human_valid": true,
+  "line_no": 12686,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab807a1e82407d8fedd26272a1e45dc687562a8997cb6c142865d1b9c04b56c5",
+  "raw_output": "\n        return self._request(\n            'https://img.shields.io/badge/{subject}-{status}-{color}.svg'.format(\n                subject=subject,\n                status=status,\n                color=self._color,\n            )\n        )\n\n    def",
+  "sampling_seed": 3006293387,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_script(zap_helper, **options):\n    \"\"\"Load a script from a file.\"\"\"\n    zap_helper.zap.script.load(options['file'])\n",
+  "agc_valid": true,
+  "body_sha256": "e4cb31d7cbc95a3918ae5a4419b89765c95d745023c3a1642ce5a841c9ede7e3",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    zap_helper.zap.script.load(options['file'])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "9ae90c83e2c7101b8e580fe8469e35a665f9f64b4ed534fb4dcbca731f1272f4",
+  "human_valid": true,
+  "line_no": 190483,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc5ba61427a4a595bde6c03d8fa4746269f0e9d9b13736d90e2f7db3dc45c9e7",
+  "raw_output": "\n    zap_helper.zap.script.load(options['file'])\n\n\ndef remove_script(zap_helper, **options):\n    \"\"\"Remove a script.\"\"\"\n    zap_helper.zap.script.remove(options['name'])\n\n\ndef remove_all_scripts(zap_helper, **options):\n    \"\"\"Remove all scripts.\"\"\"\n    zap_helper.zap.script.remove_all()\n\n\ndef enable_script(zap_helper, **options):\n    \"\"\"Enable a script.\"\"\"\n    zap_helper.zap.script.enable(options['name'])\n\n\ndef disable_script(zap_helper, **options):\n    \"\"\"Disable a script.\"\"\"\n    zap_helper.zap.script.disable(options['name'])\n\n\ndef enable_all_scripts(zap_helper, **options):\n    \"\"\"Enable all scripts.\"\"\"\n    zap_helper.zap.script.enable_all()\n\n\ndef disable_all_scripts(zap_helper, **options):\n    \"\"\"Disable all scripts.\"\"\"\n    zap_helper.zap.script.disable_all()\n\n\ndef list_scripts(zap_helper, **options):\n    \"\"\"List all scripts.\"\"\"\n    scripts = zap_helper.zap.script.list()\n    for script in scripts:\n        print(script)\n\n\ndef list_script_tags(zap_helper, **options):\n    \"\"\"List all script tags.\"\"\"\n    script_tags = zap_helper.zap.script.tags()\n    for script_tag in script_tags:\n        print(script_tag)\n\n\ndef list_script_types(zap_helper, **options):\n    \"\"\"List all script types.\"\"\"\n    script_types = zap_helper.zap.script.types()\n    for script_type in script_types:\n        print(script_type)\n\n\ndef list_script_engines(zap_helper, **options):\n    \"\"\"List all script engines.\"\"\"\n    script_engines = zap_helper.zap.script.engines()\n    for script_engine in script_engines:\n        print(script_engine)\n\n",
+  "sampling_seed": 3909789508,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

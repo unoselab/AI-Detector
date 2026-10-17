@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(dic, path, seps=PATH_SEPS, idx_reg=_JSNP_GET_ARRAY_IDX_REG):\n    \"\"\"getter for nested dicts.\n\n    :param dic: a dict[-like] object\n    :param path: Path expression to point object wanted\n    :param seps: Separator char candidates\n    :return: A tuple of (result_object, error_message)\n\n    >>> d = {'a': {'b': {'c': 0, 'd': [1, 2]}}, '': 3}\n    >>> assert get(d, '/') == (3, '')  # key becomes '' (empty string).\n    >>> assert get(d, \"/a/b/c\") == (0, '')\n    >>> sorted(get(d, \"a.b\")[0].items())\n    [('c', 0), ('d', [1, 2])]\n    >>> (get(d, \"a.b.d\"), get(d, \"/a/b/d/1\"))\n    (([1, 2], ''), (2, ''))\n    >>> get(d, \"a.b.key_not_exist\")  # doctest: +ELLIPSIS\n    (None, \"'...'\")\n    >>> get(d, \"/a/b/d/2\")\n    (None, 'list index out of range')\n    >>> get(d, \"/a/b/d/-\")  # doctest: +ELLIPSIS\n    (None, 'list indices must be integers...')\n    \"\"\"\n    1}\n        >>> get(d, 'a.b.c')\n        (0, None)\n        >>> get(d, 'a.b.d[1]')\n        (2, None)\n        >>> get(d, 'a.b.d[10]')\n        (None, 'IndexError: list index out of range')\n        >>> get(d, 'a.b.d[10]', idx_reg=_JSNP_GET_ARRAY_IDX_REG_WITH_RANGE)\n        (None, 'IndexError: list index out of range:\n",
+  "agc_valid": false,
+  "body_sha256": "c2bc3bf40dc8385040cc2ac0de405cb77077c272fb92917507f6e5305742b271",
+  "body_tokens": 92,
+  "bucket": "out_of_range",
+  "clean_output": "\n    1}\n        >>> get(d, 'a.b.c')\n        (0, None)\n        >>> get(d, 'a.b.d[1]')\n        (2, None)\n        >>> get(d, 'a.b.d[10]')\n        (None, 'IndexError: list index out of range')\n        >>> get(d, 'a.b.d[10]', idx_reg=_JSNP_GET_ARRAY_IDX_REG_WITH_RANGE)\n        (None, 'IndexError: list index out of range:\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "054a3df341ba8e3f1854201176824d81aa232d6c976076e8d1f1d01f98c98ed8",
+  "human_valid": true,
+  "line_no": 386518,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0f8cbf1a9dd7dc15db7b9690d1e0f99d16e11fcb3632e98654c38d5f535267ba",
+  "raw_output": "1}\n    >>> get(d, 'a.b.c')\n    (0, None)\n    >>> get(d, 'a.b.d[1]')\n    (2, None)\n    >>> get(d, 'a.b.d[10]')\n    (None, 'IndexError: list index out of range')\n    >>> get(d, 'a.b.d[10]', idx_reg=_JSNP_GET_ARRAY_IDX_REG_WITH_RANGE)\n    (None, 'IndexError: list index out of range: ",
+  "sampling_seed": 1542908829,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def overlap_size(self,in_genomic_range):\n    \"\"\" The size of the overlap\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: count of overlapping bases\n    :rtype: int\n    \"\"\"\n    return self.overlap(in_genomic_range).size()\n",
+  "agc_valid": true,
+  "body_sha256": "866b9df557fec1dca7244d666ec00ce4c10056916cf0833b379503fac55f624c",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return self.overlap(in_genomic_range).size()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "80b208df6d145d872ead061a10771859ede70cf94cde9254e0fbe9972d477eb7",
+  "human_valid": true,
+  "line_no": 48382,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "070c0768cd38f2a752749b7dfa3a1dd383beef11684d6e95731303b729c515da",
+  "raw_output": "\n    return self.overlap(in_genomic_range).size()\n\ndef size(self):\n    \"\"\"The size of this range.\n\n    :return: the size of this range\n    :rtype: int\n    \"\"\"\n    return self.end - self.start\n\ndef to_string(self):\n    \"\"\"Return a string representation of this range.\n\n    :return: the string representation of this range\n    :rtype: str\n    \"\"\"\n    return \"%s:%s-%s\" % (self.chrom, self.start, self.end)\n\ndef __repr__(self):\n    \"\"\"Return a string representation of this range.\n\n    :return: the string representation of this range\n    :rtype: str\n    \"\"\"\n    return self.to_string()\n\ndef __str__(self):\n    \"\"\"Return a string representation of this range.\n\n    :return: the string representation of this range\n    :rtype: str\n    \"\"\"\n    return self.to_string()\n\ndef __eq__(self, other):\n    \"\"\"Test whether this range is equal to another.\n\n    :param other: the other range to test for equality\n    :type other: GenomicRange\n\n    :return: True if this range is equal to the other range\n    :rtype: bool\n    \"\"\"\n    return (self.chrom == other.chrom and\n            self.start == other.start and\n            self.end == other.end)\n\ndef __ne__(self, other):\n    \"\"\"Test whether this range is not equal to another.\n\n    :param other: the other range to test for inequality\n    :type other: GenomicRange\n\n    :return: True if this range is not equal to the other range\n    :rtype: bool\n    \"\"\"\n    return not self.__eq__(other)\n\ndef __lt__(self, other):\n    \"\"\"Test whether this range is less than another.\n\n    :param other: the other range to test for less than\n    :type other: GenomicRange\n\n    :return: True if this range is less than the other range\n    :rtype: bool\n    \"\"\"\n    return (self.chrom < other.chrom or\n            (self.chrom == other.chrom and",
+  "sampling_seed": 947976494,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

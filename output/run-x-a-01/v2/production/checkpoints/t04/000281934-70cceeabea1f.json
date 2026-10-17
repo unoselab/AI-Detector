@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _handle_result(self):\n        \"\"\"Process one result. Block untill one is available\n        \"\"\"\n        # Get a result\n        result = self.result_queue.get()\n        # Process it\n        self._process_result(result)\n",
+  "agc_valid": true,
+  "body_sha256": "1c6b80d3e5c5b1b65b83b883beb34deff28629d045262305936777e24abd1fac",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Get a result\n        result = self.result_queue.get()\n        # Process it\n        self._process_result(result)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "f15674847d22cdfc2daccaa168c8045c1e1e48911341d06e489e6744017ea6c0",
+  "human_valid": true,
+  "line_no": 281934,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "70cceeabea1f748c07b8070a4caee60df9fc1355c158c4cea1a5b758441dd9d8",
+  "raw_output": "\n        # Get a result\n        result = self.result_queue.get()\n        # Process it\n        self._process_result(result)\n\n    def",
+  "sampling_seed": 1451311045,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

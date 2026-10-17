@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def convertLatLngToPixelXY(self, lat, lng, level):\n        \"\"\"\n        returns the x and y values of the pixel corresponding to a latitude\n        and longitude.\n        \"\"\"\n        lat = float(lat)\n        lng = float(lng)\n        level = int(level)\n        x = int((lng +\n",
+  "agc_valid": false,
+  "body_sha256": "ca7954372d393dac9b7c4f8b69bd2b1edb09b2a984ca014f1ac9c529dda1ca0b",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        lat = float(lat)\n        lng = float(lng)\n        level = int(level)\n        x = int((lng +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "e7b3ed48c57548702d77685562416771db18fc1aa7b6427aa00acdd162a51f9e",
+  "human_valid": true,
+  "line_no": 27128,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f204acc267842298f01e67940e85d350ffd2991f5660f3d46f77935f7d48f616",
+  "raw_output": "\n        lat = float(lat)\n        lng = float(lng)\n        level = int(level)\n        x = int((lng + ",
+  "sampling_seed": 4287766614,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

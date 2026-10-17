@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def parse_target(self, runtime, target_str):\n        \"\"\"A target is a pipeline of a module into zero or more rules, and each\n        module and rule can itself be scoped with zero or more module names.\"\"\"\n        if ':' in target_str:\n            return self.parse_module_target(runtime, target_str)\n        else:\n            return self.parse_rule_target(runtime, target_str)\n",
+  "agc_valid": true,
+  "body_sha256": "5f31215ebd89a47062b93e0744fad840d6dcf4fc8ad22980d4c140bcd71cf2d9",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if ':' in target_str:\n            return self.parse_module_target(runtime, target_str)\n        else:\n            return self.parse_rule_target(runtime, target_str)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "ef6904144752baa43f817c720e68c1fa7b955bff725966759f28529244fb8efb",
+  "human_valid": true,
+  "line_no": 296392,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c4543adee4febf5585abe9515bf8c24ff71d77e6bee295810572b373c166a82",
+  "raw_output": "\n        if ':' in target_str:\n            return self.parse_module_target(runtime, target_str)\n        else:\n            return self.parse_rule_target(runtime, target_str)\n\n    def",
+  "sampling_seed": 579825683,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

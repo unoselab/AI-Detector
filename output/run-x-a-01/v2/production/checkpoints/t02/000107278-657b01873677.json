@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def asnumpy(self):\n        \"\"\"Copy the data from TCMPS into a new numpy ndarray\"\"\"\n        return self.data.copy()\n",
+  "agc_valid": true,
+  "body_sha256": "d9a30611cd69d396882eaf848ec3afe872bc257d3bdacba11d070160d08d602c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.data.copy()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "ff83b07db4e8fe77179c43a6085db7ea958ceba603f7754fba5f753ec3b002e3",
+  "human_valid": true,
+  "line_no": 107278,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "657b01873677ad7ac5338bac0a1bc94e0c2f2f51c5edd1201c6f6d7e2ab338ab",
+  "raw_output": "\n        return self.data.copy()\n\n    def",
+  "sampling_seed": 2313202843,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update(self, forecasts, observations):\n        \"\"\"\n        Update the statistics with forecasts and observations.\n\n        Args:\n            forecasts: The discrete Cumulative Distribution Functions of\n            observations:\n        \"\"\"\n        self._forecasts = forecasts\n        self._observations = observations\n        self._update_forecasts()\n        self._update_observations()\n",
+  "agc_valid": true,
+  "body_sha256": "aa7839a8e2a1db1c656f6acd6305e52a00e3979b65da35408badd8a670d0a7cd",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._forecasts = forecasts\n        self._observations = observations\n        self._update_forecasts()\n        self._update_observations()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "ec9153451d6d9d4ea92834ad7f36040809bd4a557d4363670ad990050428a30d",
+  "human_valid": true,
+  "line_no": 25873,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "447c358cfeb60670145f6f8b1f3e89c7038164834efa6cca22906b2fbdf657e6",
+  "raw_output": "\n        self._forecasts = forecasts\n        self._observations = observations\n        self._update_forecasts()\n        self._update_observations()\n\n    def",
+  "sampling_seed": 1334336001,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

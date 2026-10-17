@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_args_and_kwargs(self, cmdline):\n        \"\"\"\n        cmdline: list\n\n        returns tuple of: args (list), kwargs (dict)\n        \"\"\"\n        args = []\n        kwargs = {}\n        for arg in cmdline:\n            if '=' in arg:\n                key, value = arg.split('=',\n",
+  "agc_valid": false,
+  "body_sha256": "072e7681ef5020657833620da8f578a2248d021a8a1729307f4607d16cbdd7f8",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n        args = []\n        kwargs = {}\n        for arg in cmdline:\n            if '=' in arg:\n                key, value = arg.split('=',\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "e28faee7c58fb9e4ac989433bd5cf3246f5aa7d62c19ff7298e21f63f167287c",
+  "human_valid": true,
+  "line_no": 118580,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "90efb82a29e3e21974231f38a444d449f76b0eecfdcbcd73c827c290b359a175",
+  "raw_output": "\n        args = []\n        kwargs = {}\n        for arg in cmdline:\n            if '=' in arg:\n                key, value = arg.split('=', ",
+  "sampling_seed": 3565850834,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

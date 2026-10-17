@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def index(self, key):\n        \"\"\" Return the index of the given item.\n\n        :param key:\n        :return:\n        \"\"\"\n        if key in self.map:\n            return self.map[key]\n        else:\n            raise KeyError(\"Key not found\")\n",
+  "agc_valid": true,
+  "body_sha256": "79fcf523314147d232bf040591f4e6932d00c345f248e48e160fd311339dfffa",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if key in self.map:\n            return self.map[key]\n        else:\n            raise KeyError(\"Key not found\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "fa9bcfdc82572a660ecfd0fe5cfae85474ad2bfc5e8b201b45c89b22a79f45ff",
+  "human_valid": true,
+  "line_no": 169312,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "28065d615529787ecb9c18f3814c10b2d01e1470472b8f95bdd2e92ef11cd986",
+  "raw_output": "\n        if key in self.map:\n            return self.map[key]\n        else:\n            raise KeyError(\"Key not found\")\n\n    def",
+  "sampling_seed": 68075879,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

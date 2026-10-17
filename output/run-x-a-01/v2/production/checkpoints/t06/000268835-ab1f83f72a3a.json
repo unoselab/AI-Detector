@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cee_map_priority_group_table_pfc(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "605e853890e53a200fdf13a6e39dfbd25042f43b3ee4ebc327588ff60303c869",
+  "human_valid": true,
+  "line_no": 268835,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab1f83f72a3a71f01218cf380fac1a240fa15b713a992cf663e942e8234cdd80",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 1144995007,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

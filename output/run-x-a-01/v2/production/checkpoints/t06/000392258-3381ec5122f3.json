@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def overloaded_constants(type_, __doc__=None):\n    \"\"\"A factory for transformers that apply functions to literals.\n\n    Parameters\n    ----------\n    type_ : type\n        The type to overload.\n    __doc__ : str, optional\n        Docstring for the generated transformer.\n\n    Returns\n    -------\n    transformer : subclass of CodeTransformer\n        A new code transformer class that will overload the provided\n        literal types.\n    \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "765ae8156ebdf06311f051ebe88be4fc99944227705f36d40914fc0107571722",
+  "human_valid": true,
+  "line_no": 392258,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3381ec5122f3bd75d4b16412517d201fea245f50764c804d11ac8bddf7f628bb",
+  "raw_output": "\n    def",
+  "sampling_seed": 3259187559,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

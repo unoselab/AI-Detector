@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def spkt_welch_density(x, param):\n    \"\"\"\n    This feature calculator estimates the cross power spectral density of the time series x at different frequencies.\n    To do so, the time series is first shifted from the time domain to the frequency domain.\n\n    The feature calculators returns the power spectrum of the different frequencies.\n\n    :param x: the time series to calculate the feature of\n    :type x: numpy.ndarray\n    :param param: contains dictionaries {\"coeff\": x} with x int\n    :type param: list\n    :return: the different feature values\n    :return type: pandas.Series\n    \"\"\"\n    :return: the cross power spectral density of the time series at the different frequencies\n     :rtype: numpy.ndarray\n     \"\"\"\n     return spkt_welch_density_coeff(x, param)\n",
+  "agc_valid": false,
+  "body_sha256": "f16a9f4b23c8709b3b226af4dd2a1b1001d82fb6698f1b8eb985eb2d2c7920bf",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n    :return: the cross power spectral density of the time series at the different frequencies\n     :rtype: numpy.ndarray\n     \"\"\"\n     return spkt_welch_density_coeff(x, param)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "4663f27e5c172f19fc2bd9584e3f258af130c1157713254d75a8c6c6810f42c2",
+  "human_valid": true,
+  "line_no": 360659,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b57607b9f5c71824760a793027ab914fed494ff525bb1ab1ec958d05fc004b71",
+  "raw_output": "   :return: the cross power spectral density of the time series at the different frequencies\n    :rtype: numpy.ndarray\n    \"\"\"\n    return spkt_welch_density_coeff(x, param)\n\n\ndef spkt_welch_density_coeff(x, param):\n    \"\"\"\n    This feature calculator estimates the cross power spectral density of the time series x at different frequencies.\n    To do so, the time series is first shifted from the time domain to the frequency domain.\n\n    The feature calculators returns the power spectrum of the different frequencies.\n\n    :param x: the time series to calculate the feature of\n    :type x: numpy.ndarray\n    :param param: contains dictionaries {\"coeff\": x} with x int\n    :type param: list\n    :return: the cross power spectral density of the time series at the different frequencies\n    :rtype: numpy.ndarray\n    \"\"\"\n    if len(param) == ",
+  "sampling_seed": 1256953973,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

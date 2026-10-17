@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_args(cls, logging=False):\n        \"\"\"\n        Parses command line arguments.\n\n        Looks for --liveandletdie [host]\n\n        :returns:\n            A ``(str(host), int(port))`` or ``(None, None)`` tuple.\n        \"\"\"\n        parser = argparse.ArgumentParser(\n            prog=cls.__name__,\n            description=\"liveandletdie.server\"\n        )\n        parser.add_argument(\n            \"--liveandletdie\",\n            metavar=\"HOST\",\n            help=\"Start the server at HOST (default:\n",
+  "agc_valid": false,
+  "body_sha256": "ecd9523224c3e4785910963c4e30d87e4613921cd342c54a1b0720dfc3ad6aa3",
+  "body_tokens": 92,
+  "bucket": "out_of_range",
+  "clean_output": "\n        parser = argparse.ArgumentParser(\n            prog=cls.__name__,\n            description=\"liveandletdie.server\"\n        )\n        parser.add_argument(\n            \"--liveandletdie\",\n            metavar=\"HOST\",\n            help=\"Start the server at HOST (default:\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "7fe0bf2e59a4c8e87ec8d67ad9c43c01b17cdd6c2c51e3b9a9739afb97dd273c",
+  "human_valid": true,
+  "line_no": 44676,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ebe893ac34f9b72bdaafacd963037e45c471f46ee5faaa1ce39c8099269c0f0c",
+  "raw_output": "\n        parser = argparse.ArgumentParser(\n            prog=cls.__name__,\n            description=\"liveandletdie.server\"\n        )\n        parser.add_argument(\n            \"--liveandletdie\",\n            metavar=\"HOST\",\n            help=\"Start the server at HOST (default: ",
+  "sampling_seed": 3645537943,
+  "tag": "t06",
+  "temperature": 0.6
+}

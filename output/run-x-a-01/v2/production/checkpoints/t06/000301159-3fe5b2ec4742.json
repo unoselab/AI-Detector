@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run(itf):\n    \"\"\"\n\tRun preprocess functions\n\t\"\"\"\n        for i in range(100):\n            itf.send_preprocess(i)\n            print(f'sent {i}')\n            print(f'got {itf.receive_preprocess()}')\n\n\n    if __name__ == '__main__':\n        # Create a socket\n        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        # Connect the socket to the port where the server is listening\n        server_address = ('localhost',\n",
+  "agc_valid": false,
+  "body_sha256": "e640d3975ca543dbf3dcae1329c14a58193bb9f4d03337b7dd69b45febbc7c4d",
+  "body_tokens": 108,
+  "bucket": "type01_110",
+  "clean_output": "\n        for i in range(100):\n            itf.send_preprocess(i)\n            print(f'sent {i}')\n            print(f'got {itf.receive_preprocess()}')\n\n\n    if __name__ == '__main__':\n        # Create a socket\n        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        # Connect the socket to the port where the server is listening\n        server_address = ('localhost',\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "90af5ee01af3eac0e5d0e9b32438545271cf395676b62d6a0b228313c15b3a3e",
+  "human_valid": true,
+  "line_no": 301159,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3fe5b2ec47427ae720003f126c7b857b02916759547417944c55441af8afefc4",
+  "raw_output": "\n    for i in range(100):\n        itf.send_preprocess(i)\n        print(f'sent {i}')\n        print(f'got {itf.receive_preprocess()}')\n\n\nif __name__ == '__main__':\n    # Create a socket\n    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Connect the socket to the port where the server is listening\n    server_address = ('localhost', ",
+  "sampling_seed": 207960808,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _worker_thread_transfer(self):\n        # type: (SyncCopy) -> None\n        \"\"\"Worker thread download\n        :param SyncCopy self: this\n        \"\"\"\n        # pylint: disable=broad-except\n        # pylint: disable=too-many-branches\n        try:\n            # Get file list\n            with self.lock:\n                file_list = list(self.file_list)\n                self.file_list.clear()\n            # Transfer\n            for file_info in file_list:\n                # Get file path\n                file_path = file_info.get(\"file_path\")\n                # Get file size\n                file_size = file_info.get(\"file_size\")\n                # Get file info\n                file_info_get = self.sync_copy_client.get_file_info(file_path)\n                # Check file exist\n                if file_info_get.get(\"code\") !=\n",
+  "agc_valid": false,
+  "body_sha256": "b47f969a7fe1ec81e268cfd9342e4601941b12320a238186c297bb0c97cb3532",
+  "body_tokens": 267,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # pylint: disable=broad-except\n        # pylint: disable=too-many-branches\n        try:\n            # Get file list\n            with self.lock:\n                file_list = list(self.file_list)\n                self.file_list.clear()\n            # Transfer\n            for file_info in file_list:\n                # Get file path\n                file_path = file_info.get(\"file_path\")\n                # Get file size\n                file_size = file_info.get(\"file_size\")\n                # Get file info\n                file_info_get = self.sync_copy_client.get_file_info(file_path)\n                # Check file exist\n                if file_info_get.get(\"code\") !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "d4b19e69cae90174e33fd2b0ac266a8229f105c86fd1c35c03aa2fec2129c691",
+  "human_valid": true,
+  "line_no": 299612,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f587be831abe043b799024b034a0ec872525308494cc33da6d62979b4d9b1160",
+  "raw_output": "\n        # pylint: disable=broad-except\n        # pylint: disable=too-many-branches\n        try:\n            # Get file list\n            with self.lock:\n                file_list = list(self.file_list)\n                self.file_list.clear()\n            # Transfer\n            for file_info in file_list:\n                # Get file path\n                file_path = file_info.get(\"file_path\")\n                # Get file size\n                file_size = file_info.get(\"file_size\")\n                # Get file info\n                file_info_get = self.sync_copy_client.get_file_info(file_path)\n                # Check file exist\n                if file_info_get.get(\"code\") != ",
+  "sampling_seed": 2768628353,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def coarse_grain(coarse_grain):\n    \"\"\"Validate a macro coarse-graining.\"\"\"\n    if coarse_grain not in ['none', 'dihedral', 'pair']:\n        raise ValueError('Invalid coarse-graining: {}.'.format(coarse_grain))\n    return coarse_grain\n",
+  "agc_valid": true,
+  "body_sha256": "589d373541bddf991acf10cdf57360d9b6f69ae0bae54d90cf117ebd0dc86d0f",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if coarse_grain not in ['none', 'dihedral', 'pair']:\n        raise ValueError('Invalid coarse-graining: {}.'.format(coarse_grain))\n    return coarse_grain\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "51f247cfa91eab83d2fd4a6d8ceb664bb19e60b7d9db2f425bb0a284b79233ae",
+  "human_valid": true,
+  "line_no": 294614,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6973299e1d2e4049823ef7279f231eb928638f7ca3feb95ec5314c04ee6c4170",
+  "raw_output": "\n    if coarse_grain not in ['none', 'dihedral', 'pair']:\n        raise ValueError('Invalid coarse-graining: {}.'.format(coarse_grain))\n    return coarse_grain\n\n\ndef coarse_grain_type(coarse_grain_type):\n    \"\"\"Validate a macro coarse-graining type.\"\"\"\n    if coarse_grain_type not in ['dihedral', 'pair']:\n        raise ValueError('Invalid coarse-graining type: {}.'.format(coarse_grain_type))\n    return coarse_grain_type\n\n\ndef coarse_grain_types(coarse_grain_types):\n    \"\"\"Validate a list of macro coarse-graining types.\"\"\"\n    if not isinstance(coarse_grain_types, list):\n        raise ValueError('Invalid coarse-graining types: {}.'.format(coarse_grain_types))\n    for coarse_grain_type in coarse_grain_types:\n        coarse_grain_type(coarse_grain_type)\n    return coarse_grain_types\n\n\ndef coarse_grain_types_or_none(coarse_grain_types):\n    \"\"\"Validate a list of macro coarse-graining types or None.\"\"\"\n    if coarse_grain_types is None:\n        return coarse_grain_types\n    return coarse_grain_types_or_none(coarse_grain_types)\n\n\ndef coarse_grain_types_or_none(coarse_grain_types):\n    \"\"\"Validate a list of macro coarse-graining types or None.\"\"\"\n    if coarse_grain_types is None:\n        return coarse_grain_types\n    return coarse_grain_types_or_none(coarse_grain_types)\n\n\ndef cutoff(cutoff):\n    \"\"\"Validate a cutoff.\"\"\"\n    if not isinstance(cutoff, (int, float)):\n        raise ValueError('Invalid cutoff: {}.'.format(cutoff))\n    if cut",
+  "sampling_seed": 3704128007,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _new_sensor_reading(self, sensor_value):\n        \"\"\"\n        Call this method to signal a new sensor reading.\n        This method handles DB storage and triggers different events.\n\n        :param value:\n            New value to be stored in the system.\n        \"\"\"\n        # TODO: Implement this method\n        pass\n",
+  "agc_valid": false,
+  "body_sha256": "796394b4cee5e2d63acb95df024e5f3e84879d0792e4ad700a68b760b4d96456",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # TODO: Implement this method\n        pass\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "d3f32c56bd3b71be22fbf820d0082ab574c29c9372432b4367d5b7fb6462be24",
+  "human_valid": true,
+  "line_no": 317378,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "221fc89052f8f23b971c6b36f46583d1c2e7eecbfa40dad6bd4b12b0f2e9361a",
+  "raw_output": "\n        # TODO: Implement this method\n        pass\n\n    def",
+  "sampling_seed": 2707190382,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_password_reset(cls, code, new_password):\n        \"\"\"\n        Validates an unhashed code against a hashed code.\n        Once the code has been validated and confirmed\n        new_password will replace the old users password\n        \"\"\"\n        if cls.query.filter_by(password_reset_code=code).first() is None:\n            raise ValidationError(\"Invalid code.\")\n\n        user = cls.query.filter_by(password_reset_code=code).first()\n        user.password = new_password\n        user.password_reset_code = None\n        db.session.commit()\n",
+  "agc_valid": true,
+  "body_sha256": "2328878fe0c2548236126751988dba31f9499ba8fd6add0f79216d59b7677381",
+  "body_tokens": 64,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if cls.query.filter_by(password_reset_code=code).first() is None:\n            raise ValidationError(\"Invalid code.\")\n\n        user = cls.query.filter_by(password_reset_code=code).first()\n        user.password = new_password\n        user.password_reset_code = None\n        db.session.commit()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "f6f3dafc5eef00f78e8ebacbd7f8ab82d0d2b5c7e811421efd34c013bd177d2f",
+  "human_valid": true,
+  "line_no": 246745,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "77f00fd65d1e089cbedaf43cb33f25cc481344020b70705a1928db4e6c3520a7",
+  "raw_output": "\r\n        if cls.query.filter_by(password_reset_code=code).first() is None:\r\n            raise ValidationError(\"Invalid code.\")\r\n\r\n        user = cls.query.filter_by(password_reset_code=code).first()\r\n        user.password = new_password\r\n        user.password_reset_code = None\r\n        db.session.commit()\r\n\r\n\r\nclass Post(db.Model):\r\n    __tablename__ = 'posts'\r\n    id = db.Column(db.Integer, primary_key=True)\r\n    title = db.Column(db.String(120), nullable=False)\r\n    content = db.Column(db.Text, nullable=False)\r\n    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)\r\n    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)\r\n\r\n    def",
+  "sampling_seed": 361550355,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

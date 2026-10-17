@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def my_import(name, path=None):\n    \"\"\"Return imported module for the given name.\"\"\"\n    if path is None:\n        path = name\n    try:\n        return __import__(path, globals(), locals(), [name])\n    except ImportError:\n        return __import__(path)\n",
+  "agc_valid": true,
+  "body_sha256": "c3a5162895e372c5d44c7f93f195b642ccaa0117b285c2cc536db3273aa49871",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if path is None:\n        path = name\n    try:\n        return __import__(path, globals(), locals(), [name])\n    except ImportError:\n        return __import__(path)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "e7ca33353cbabe4929ff2afab12c7af419ac0062d53bd476783269aa1811a7ad",
+  "human_valid": true,
+  "line_no": 133023,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "871d8deada187f9003fd3e1511361469cc40769c23355f3828dcaf91241dc472",
+  "raw_output": "\n    if path is None:\n        path = name\n    try:\n        return __import__(path, globals(), locals(), [name])\n    except ImportError:\n        return __import__(path)\n\n\ndef get_module(name, path=None):\n    \"\"\"Return imported module for the given name.\"\"\"\n    if path is None:\n        path = name\n    try:\n        return __import__(path, globals(), locals(), [name])\n    except ImportError:\n        return __import__(path)\n\n\ndef get_class(name, path=None):\n    \"\"\"Return imported class for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_module(path)\n    return getattr(mod, name)\n\n\ndef get_object(name, path=None):\n    \"\"\"Return imported object for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_module(path)\n    return getattr(mod, name)\n\n\ndef get_function(name, path=None):\n    \"\"\"Return imported function for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_module(path)\n    return getattr(mod, name)\n\n\ndef get_variable(name, path=None):\n    \"\"\"Return imported variable for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_module(path)\n    return getattr(mod, name)\n\n\ndef get_const(name, path=None):\n    \"\"\"Return imported const for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_module(path)\n    return getattr(mod, name)\n\n\ndef get_method(name, path=None):\n    \"\"\"Return imported method for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_module(path)\n    return getattr(mod, name)\n\n\ndef get_attribute(name, path=None):\n    \"\"\"Return imported attribute for the given name.\"\"\"\n    if path is None:\n        path = name\n    mod = get_",
+  "sampling_seed": 3200364959,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

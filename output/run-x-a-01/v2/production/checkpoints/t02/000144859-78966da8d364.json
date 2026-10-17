@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def checkmagic(self):\n        \"\"\"\n        Overridable.\n        Check to see if the file object self.lib actually has a file\n        we understand.\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "5b6530df10953664aa7c28cf3b760566cfa9e97d25763e4a7281c92181d38c53",
+  "human_valid": true,
+  "line_no": 144859,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "78966da8d36421e8eb77d2a90885c1622841cf2bf558b9d5802a6c5291701cf7",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 3183548369,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

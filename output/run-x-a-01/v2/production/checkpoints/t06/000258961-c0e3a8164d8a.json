@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _login(session):\n    \"\"\"Login to Fedex Delivery Manager.\"\"\"\n    session.visit(LOGIN_URL)\n\n    username = session.find(id='username')\n    password = session.find(id='password')\n    submit = session.find(id='login')\n\n    username.fill(USERNAME)\n    password.fill(PASSWORD)\n    submit.click()\n\n    session.find(id='logout').click()\n\n    session.visit(LOGIN_URL)\n\n    username.fill(USERNAME)\n    password.fill(PASSWORD)\n    submit.click()\n",
+  "agc_valid": true,
+  "body_sha256": "24aeeaaa4aed7f37a7cb61b32fec3bf851f49e781d83b88822a8881dfa8ccb27",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n    session.visit(LOGIN_URL)\n\n    username = session.find(id='username')\n    password = session.find(id='password')\n    submit = session.find(id='login')\n\n    username.fill(USERNAME)\n    password.fill(PASSWORD)\n    submit.click()\n\n    session.find(id='logout').click()\n\n    session.visit(LOGIN_URL)\n\n    username.fill(USERNAME)\n    password.fill(PASSWORD)\n    submit.click()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 101,
+  "human_sha256": "4b4d67e843bd9c39182092158404ef5479255dd2d1f34a5223bf5726a83caa86",
+  "human_valid": true,
+  "line_no": 258961,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c0e3a8164d8a30b40362bb9c0c6be28d6bc4b5543a4ef09b88ff6dff3e6104f7",
+  "raw_output": "\n    session.visit(LOGIN_URL)\n\n    username = session.find(id='username')\n    password = session.find(id='password')\n    submit = session.find(id='login')\n\n    username.fill(USERNAME)\n    password.fill(PASSWORD)\n    submit.click()\n\n    session.find(id='logout').click()\n\n    session.visit(LOGIN_URL)\n\n    username.fill(USERNAME)\n    password.fill(PASSWORD)\n    submit.click()\n\n\ndef _logout(session):\n    \"\"\"Logout from Fedex Delivery Manager.\"\"\"\n    session.visit(LOGIN_URL)\n\n    session.find(id='logout').click()\n\n\ndef _get_tracking_code(session):\n    \"\"\"Get tracking code from Fedex Delivery Manager.\"\"\"\n    session.visit(TRACKING_URL)\n\n    session.find(id='trackingNumber').fill(TRACKING_NUMBER)\n    session.find(id='track').click()\n\n    # Wait for tracking number to be displayed\n    session.wait(lambda: session.find(text=TRACKING_NUMBER).visible)\n\n    return session.find(text=TRACKING_NUMBER).parent.find('a').text\n\n\ndef _get_tracking_status(session):\n    \"\"\"Get tracking status from Fedex Delivery Manager.\"\"\"\n    session.visit(TRACKING_URL)\n\n    session.find(id='trackingNumber').fill(TRACKING_NUMBER)\n    session.find(id='track').click()\n\n    # Wait for tracking number to be displayed\n    session.wait(lambda: session.find(text=TRACKING_NUMBER).visible)\n\n    return session.find(text=TRACKING_NUMBER).parent.find('span').text\n\n\ndef _get_tracking_info(session):\n    \"\"\"Get tracking info from Fedex Delivery Manager.\"\"\"\n    session.visit(TRACKING_URL)\n\n    session.find(id='trackingNumber').fill(TRACKING_NUMBER)\n    session.find(id='track').click()\n\n   ",
+  "sampling_seed": 3214105652,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

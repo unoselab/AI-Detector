@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def workflow_stop(obj, names):\n    \"\"\" Stop one or more running workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be stopped.\n           Leave empty to stop all running workflows.\n    \"\"\"\n    if not names:\n        names = [w.name for w in obj.workflows() if w.status == 'running']\n    for name in names:\n        obj.stop_workflow(name)\n",
+  "agc_valid": true,
+  "body_sha256": "f492615722eaefc51858fe2320b580d5971a2d1de2416778133aa5839b69daf2",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not names:\n        names = [w.name for w in obj.workflows() if w.status == 'running']\n    for name in names:\n        obj.stop_workflow(name)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "63cd8f276825aa293f0d0a445858dd8cacc2804f78432c92e777a5164c783ce6",
+  "human_valid": true,
+  "line_no": 10792,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "a161070d61f022acfff803f032f984f12cb988246fed76b23bb56c68e9f7f352",
+  "raw_output": "\n    if not names:\n        names = [w.name for w in obj.workflows() if w.status == 'running']\n    for name in names:\n        obj.stop_workflow(name)\n\n\ndef workflow_status(obj, names):\n    \"\"\" Show the status of one or more workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be shown.\n           Leave empty to show the status of all workflows.\n    \"\"\"\n    if not names:\n        names = [w.name for w in obj.workflows()]\n    for name in names:\n        obj.status_workflow(name)\n\n\ndef workflow_delete(obj, names):\n    \"\"\" Delete one or more workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be deleted.\n           Leave empty to delete all workflows.\n    \"\"\"\n    if not names:\n        names = [w.name for w in obj.workflows()]\n    for name in names:\n        obj.delete_workflow(name)\n\n\ndef workflow_show(obj, names):\n    \"\"\" Show one or more workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be shown.\n           Leave empty to show all workflows.\n    \"\"\"\n    if not names:\n        names = [w.name for w in obj.workflows()]\n    for name in names:\n        obj.show_workflow(name)\n\n\ndef workflow_create(obj, name, workflow):\n    \"\"\" Create a new workflow.\n\n    \\b\n    NAME: The name of the workflow.\n    WORKFLOW: The workflow definition.\n    \"\"\"\n    obj.create_workflow(name, workflow)\n\n\ndef workflow_update(obj, name, workflow):\n    \"\"\" Update an existing workflow.\n\n    \\b\n    NAME: The name of the workflow.\n    WORKFLOW: The workflow definition.\n    \"\"\"\n    obj.update_workflow(name, workflow)\n\n\ndef workflow_run(obj, name, inputs, outputs",
+  "sampling_seed": 44307399,
+  "tag": "t02",
+  "temperature": 0.2
+}

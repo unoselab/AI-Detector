@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bar_chart_mf(data, path_name):\n    \"\"\"Make a bar chart for data on MF quantities.\"\"\"\n    # create a new figure\n    fig = plt.figure(figsize=(10,\n",
+  "agc_valid": false,
+  "body_sha256": "548d4f2171ed204637bf1271b8d43e00d3ab68986ac84ad7df72abe9e382ea3c",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # create a new figure\n    fig = plt.figure(figsize=(10,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "ccca14479af994953f72a05e6e583763c57a3b82d78ce75b1cc129c60b222dcc",
+  "human_valid": true,
+  "line_no": 233991,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4308cf16c377ea65c93614c394136a9a92f00f32b601b9e7b307b259ec90f274",
+  "raw_output": "\r\n    # create a new figure\r\n    fig = plt.figure(figsize=(10, ",
+  "sampling_seed": 3815850861,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

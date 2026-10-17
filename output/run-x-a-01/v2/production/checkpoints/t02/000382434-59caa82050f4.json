@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def move_temp_file(src, dest):\n    \"\"\"Move src to dest. Delete src if something goes wrong.\n\n    Overwrites dest.\n\n    Args:\n        src: str or path-like. source file\n        dest: str or path-like. destination file\n\n    Returns:\n        None.\n\n    Raises:\n        FileNotFoundError: out path parent doesn't exist.\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    if not os.path.exists(os.path.dirname(dest)):\n        raise FileNotFoundError(\n            \"Destination path parent doesn't exist: {}\".format(dest))\n    try:\n        shutil.move(src, dest)\n    except OSError as e:\n        # If we can't move, try to remove the temp file.\n        try:\n            os.remove(src)\n        except OSError:\n            pass\n        raise e\n",
+  "agc_valid": true,
+  "body_sha256": "58660281fe5f37c3d3b01f4a3ee68e83d0d08434be2e74803fc4b279a668c722",
+  "body_tokens": 121,
+  "bucket": "type03_130",
+  "clean_output": "\n    if not os.path.exists(os.path.dirname(dest)):\n        raise FileNotFoundError(\n            \"Destination path parent doesn't exist: {}\".format(dest))\n    try:\n        shutil.move(src, dest)\n    except OSError as e:\n        # If we can't move, try to remove the temp file.\n        try:\n            os.remove(src)\n        except OSError:\n            pass\n        raise e\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "03938d9e54231ce5d5356ad2a08f470061adf3c309f3ac0ad7b9017bc7fa0ba3",
+  "human_valid": true,
+  "line_no": 382434,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "59caa82050f465b3a67ee3b15c5c3e714ef42f602d82f1bb93d5f443fd889f11",
+  "raw_output": "\n    if not os.path.exists(os.path.dirname(dest)):\n        raise FileNotFoundError(\n            \"Destination path parent doesn't exist: {}\".format(dest))\n    try:\n        shutil.move(src, dest)\n    except OSError as e:\n        # If we can't move, try to remove the temp file.\n        try:\n            os.remove(src)\n        except OSError:\n            pass\n        raise e\n\n\ndef move_temp_dir(src, dest):\n    \"\"\"Move src to dest. Delete src if something goes wrong.\n\n    Overwrites dest.\n\n    Args:\n        src: str or path-like. source file\n        dest: str or path-like. destination file\n\n    Returns:\n        None.\n\n    Raises:\n        FileNotFoundError: out path parent doesn't exist.\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    if not os.path.exists(os.path.dirname(dest)):\n        raise FileNotFoundError(\n            \"Destination path parent doesn't exist: {}\".format(dest))\n    try:\n        shutil.move(src, dest)\n    except OSError as e:\n        # If we can't move, try to remove the temp file.\n        try:\n            shutil.rmtree(src)\n        except OSError:\n            pass\n        raise e\n\n\ndef copy_temp_file(src, dest):\n    \"\"\"Copy src to dest. Delete src if something goes wrong.\n\n    Overwrites dest.\n\n    Args:\n        src: str or path-like. source file\n        dest: str or path-like. destination file\n\n    Returns:\n        None.\n\n    Raises:\n        FileNotFoundError: out path parent doesn't exist.\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    if not os.path.exists(os.path.dirname(dest)):\n        raise FileNotFoundError(\n            \"Destination path parent doesn't exist: {}",
+  "sampling_seed": 3927888333,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

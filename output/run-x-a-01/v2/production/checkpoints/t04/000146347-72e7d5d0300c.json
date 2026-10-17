@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_result_group_names(self, request_datetime):\n        \"\"\"Only today/yesterday/last interval are valid datetime\"\"\"\n        if request_datetime == 'today':\n            return ['today', 'yesterday', 'last_interval']\n        elif request_datetime == 'yesterday':\n            return ['yesterday', 'last_interval']\n        elif request_datetime == 'last_interval':\n            return ['last_interval']\n        else:\n            return []\n",
+  "agc_valid": true,
+  "body_sha256": "9c1b866fca54d1812877314734e24019bb407b6cc0e8e4ef7f8205f4636817a3",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if request_datetime == 'today':\n            return ['today', 'yesterday', 'last_interval']\n        elif request_datetime == 'yesterday':\n            return ['yesterday', 'last_interval']\n        elif request_datetime == 'last_interval':\n            return ['last_interval']\n        else:\n            return []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 123,
+  "human_sha256": "7c3e718d4897f44ded6048f6afe5ef705a86332cca307140c6887055bc59eb09",
+  "human_valid": true,
+  "line_no": 146347,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "72e7d5d0300cba9091931432cce9476d77aee8381a7f5e6d71c4be7e30907719",
+  "raw_output": "\n        if request_datetime == 'today':\n            return ['today', 'yesterday', 'last_interval']\n        elif request_datetime == 'yesterday':\n            return ['yesterday', 'last_interval']\n        elif request_datetime == 'last_interval':\n            return ['last_interval']\n        else:\n            return []\n\n    def",
+  "sampling_seed": 3511203474,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

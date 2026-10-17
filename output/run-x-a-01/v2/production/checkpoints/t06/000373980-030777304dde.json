@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse(self):\n        \"\"\"\n        Parse for the occurens of all errors defined in ERRORS\n        \"\"\"\n        for error in self.ERRORS:\n            self.parse_error(error)\n",
+  "agc_valid": true,
+  "body_sha256": "f1cad24aefe3e6a805a2273dc2208680da66364bb5abc1b940e5a25cecf0ea90",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for error in self.ERRORS:\n            self.parse_error(error)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "6a7f56a62d92e22739e4f27e2ef3c78b6839af73883803678d62cd027e79c66f",
+  "human_valid": true,
+  "line_no": 373980,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "030777304dde13f2c2dd3dfa593a2a58bb681a780ce959e21627a277ff542e7a",
+  "raw_output": "\n        for error in self.ERRORS:\n            self.parse_error(error)\n\n    def",
+  "sampling_seed": 1217737408,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

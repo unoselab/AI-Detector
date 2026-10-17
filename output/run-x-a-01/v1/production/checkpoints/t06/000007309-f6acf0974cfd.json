@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def strtime(at=None, fmt=PERFECT_TIME_FORMAT):\n    \"\"\"Returns formatted utcnow.\"\"\"\n    return time.strftime(fmt, at or time.gmtime())\n",
+  "agc_valid": true,
+  "body_sha256": "4cee08a01177e73d25b45c197fa8a51578e864c21614a780bccd5c17ee703d59",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return time.strftime(fmt, at or time.gmtime())\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "731d7f494d4b5a2f128e87c17beaa61802ffa77d8e8912ea81412daf2b36076e",
+  "human_valid": true,
+  "line_no": 7309,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f6acf0974cfd48903c59b525d9981610451400fbf61d51ae66486f194b11d72c",
+  "raw_output": "\n    return time.strftime(fmt, at or time.gmtime())\n\n\ndef parse_time(s):\n    \"\"\"Parse time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_TIME_FORMAT))\n\n\ndef parse_date(s):\n    \"\"\"Parse date from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_FORMAT))\n\n\ndef parse_date_time(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_FORMAT))\n\n\ndef parse_date_time_tz(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_TZ_FORMAT))\n\n\ndef parse_date_time_local(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_LOCAL_FORMAT))\n\n\ndef parse_date_time_local_tz(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_LOCAL_TZ_FORMAT))\n\n\ndef parse_date_time_iso(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_ISO_FORMAT))\n\n\ndef parse_date_time_iso_tz(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_ISO_TZ_FORMAT))\n\n\ndef parse_date_time_iso_local(s):\n    \"\"\"Parse date time from a string.\"\"\"\n    return time.mktime(time.strptime(s, PERFECT_DATE_TIME_ISO",
+  "sampling_seed": 3530821265,
+  "tag": "t06",
+  "temperature": 0.6
+}

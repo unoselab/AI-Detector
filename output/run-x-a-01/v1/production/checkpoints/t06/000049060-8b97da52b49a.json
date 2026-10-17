@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def use_comparative_relationship_view(self):\n        \"\"\"Pass through to provider RelationshipLookupSession.use_comparative_relationship_view\"\"\"\n            # Implemented from kitosid template for -\n            # osid.resource.ResourceLookupSession.use_comparative_resource_view_template\n            self._provider_session.use_comparative_relationship_view()\n\n        @utilities.arguments_not_none\n",
+  "agc_valid": false,
+  "body_sha256": "599b62307935efcd094bbfb3e7c2db207feca388fbcde9fa790831ff806091e9",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n            # Implemented from kitosid template for -\n            # osid.resource.ResourceLookupSession.use_comparative_resource_view_template\n            self._provider_session.use_comparative_relationship_view()\n\n        @utilities.arguments_not_none\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "4f67af2ef08d76a98800e245a587da339630aa946eec1797d94ddc0fa20be4a1",
+  "human_valid": true,
+  "line_no": 49060,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8b97da52b49a68b25b4597967c06085610528cdc0689509f99bb293518ba8dfb",
+  "raw_output": "\n        # Implemented from kitosid template for -\n        # osid.resource.ResourceLookupSession.use_comparative_resource_view_template\n        self._provider_session.use_comparative_relationship_view()\n\n    @utilities.arguments_not_none\n    def",
+  "sampling_seed": 646347726,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getAllChildNodeUids(self):\n        \"\"\"\n            getAllChildNodeUids - Returns all the unique internal IDs for all children, and there children, \n              so on and so forth until the end.\n\n              For performing \"contains node\" kind of logic, this is more efficent than copying the entire nodeset\n\n            @return set<uuid.UUID> A set of uuid objects\n        \"\"\"\n        childNodeUids = set()\n        for child in self.getAllChildNodes():\n            childNodeUids.add(child.getInternalUid())\n            childNodeUids.update(child.getAllChildNodeUids())\n        return childNodeUids\n",
+  "agc_valid": true,
+  "body_sha256": "9148ebe794f9d7cada022e167c41a734db06a72ba02ea09bfa371505c5977bba",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n        childNodeUids = set()\n        for child in self.getAllChildNodes():\n            childNodeUids.add(child.getInternalUid())\n            childNodeUids.update(child.getAllChildNodeUids())\n        return childNodeUids\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d9dce442e70a683b3ba172f8ab8ae935423e679360eea580f1ca854788343158",
+  "human_valid": true,
+  "line_no": 14934,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "7fdc6709011cfd44ef47569c8131949d8f0979829e34b44ffd9a17cf6e583a54",
+  "raw_output": "\n        childNodeUids = set()\n        for child in self.getAllChildNodes():\n            childNodeUids.add(child.getInternalUid())\n            childNodeUids.update(child.getAllChildNodeUids())\n        return childNodeUids\n\n    def",
+  "sampling_seed": 1714274683,
+  "tag": "t06",
+  "temperature": 0.6
+}

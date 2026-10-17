@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def move(name, entry_name, config=None):\n    \"\"\"\n    Move an entry to the sshconfig.\n    \"\"\"\n    if config is None:\n        config = ConfigParser.ConfigParser()\n    try:\n        config.read(SSHCONFIG_FILE)\n    except ConfigParser.MissingSectionHeaderError:\n        pass\n    config.set(entry_name, \"Host\", name)\n    config.set(entry_name, \"HostName\", name)\n    config.set(entry_name, \"User\", name)\n    config.set(entry_name, \"Port\", \"22\")\n    config.set(entry_name, \"IdentityFile\", SSH_KEY_FILE)\n    config.set(entry_name, \"IdentitiesOnly\", \"yes\")\n    config.set(entry_name, \"StrictHostKeyChecking\", \"no\")\n    config.set(entry_name, \"UserKnownHostsFile\", \"/dev/null\")\n    config.set(entry_name, \"LogLevel\", \"ERROR\")\n    with open(SSHCONFIG_FILE, \"w\") as f:\n        config.write(f)\n    return config\n",
+  "agc_valid": true,
+  "body_sha256": "5bace11b2f9cf63588a64e94a64bb2ea998c779761add3454c5426e467eb689a",
+  "body_tokens": 118,
+  "bucket": "type02_120",
+  "clean_output": "\n    if config is None:\n        config = ConfigParser.ConfigParser()\n    try:\n        config.read(SSHCONFIG_FILE)\n    except ConfigParser.MissingSectionHeaderError:\n        pass\n    config.set(entry_name, \"Host\", name)\n    config.set(entry_name, \"HostName\", name)\n    config.set(entry_name, \"User\", name)\n    config.set(entry_name, \"Port\", \"22\")\n    config.set(entry_name, \"IdentityFile\", SSH_KEY_FILE)\n    config.set(entry_name, \"IdentitiesOnly\", \"yes\")\n    config.set(entry_name, \"StrictHostKeyChecking\", \"no\")\n    config.set(entry_name, \"UserKnownHostsFile\", \"/dev/null\")\n    config.set(entry_name, \"LogLevel\", \"ERROR\")\n    with open(SSHCONFIG_FILE, \"w\") as f:\n        config.write(f)\n    return config\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "65f87d7199b1648b419383bfb179d19066d20b93611efa9db825dffa28f974b6",
+  "human_valid": true,
+  "line_no": 285868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "95f422c6cb659a8b0a49c7a9f52451b23e633f43bd3d1a21bd0055152637014a",
+  "raw_output": "\n    if config is None:\n        config = ConfigParser.ConfigParser()\n    try:\n        config.read(SSHCONFIG_FILE)\n    except ConfigParser.MissingSectionHeaderError:\n        pass\n    config.set(entry_name, \"Host\", name)\n    config.set(entry_name, \"HostName\", name)\n    config.set(entry_name, \"User\", name)\n    config.set(entry_name, \"Port\", \"22\")\n    config.set(entry_name, \"IdentityFile\", SSH_KEY_FILE)\n    config.set(entry_name, \"IdentitiesOnly\", \"yes\")\n    config.set(entry_name, \"StrictHostKeyChecking\", \"no\")\n    config.set(entry_name, \"UserKnownHostsFile\", \"/dev/null\")\n    config.set(entry_name, \"LogLevel\", \"ERROR\")\n    with open(SSHCONFIG_FILE, \"w\") as f:\n        config.write(f)\n    return config\n\n\ndef delete(name, entry_name, config=None):\n    \"\"\"\n    Delete an entry from the sshconfig.\n    \"\"\"\n    if config is None:\n        config = ConfigParser.ConfigParser()\n    try:\n        config.read(SSHCONFIG_FILE)\n    except ConfigParser.MissingSectionHeaderError:\n        pass\n    config.remove_section(entry_name)\n    with open(SSHCONFIG_FILE, \"w\") as f:\n        config.write(f)\n    return config\n\n\ndef get_config():\n    \"\"\"\n    Get the current sshconfig.\n    \"\"\"\n    config = ConfigParser.ConfigParser()\n    try:\n        config.read(SSHCONFIG_FILE)\n    except ConfigParser.MissingSectionHeaderError:\n        pass\n    return config\n\n\ndef get_entries(config=None):\n    \"\"\"\n    Get a list of entries from the sshconfig.\n    \"\"\"\n    if config is None:\n        config = ConfigParser.ConfigParser()\n    try:\n        config.read(SSHCONFIG_FILE)\n    except ConfigParser.MissingSectionHeaderError:\n        pass\n    return config.sections()",
+  "sampling_seed": 3851212187,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

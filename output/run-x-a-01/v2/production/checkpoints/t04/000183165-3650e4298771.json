@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _ensure_programmer_executable():\n    \"\"\" Find the lpc21isp executable and ensure it is executable\n    \"\"\"\n    global _lpc21isp_executable\n    if _lpc21isp_executable is None:\n        _lpc21isp_executable = find_executable('lpc21isp')\n        if _lpc21isp_executable is None:\n            raise RuntimeError('Could not find lpc21isp executable')\n        if not os.access(_lpc21isp_executable, os.X_OK):\n            os.chmod(_lpc21isp_executable, os.stat(_lpc21isp_executable).st_mode | stat.S_IXUSR)\n",
+  "agc_valid": true,
+  "body_sha256": "5f6db82f3bfff1805a3454778ca238dfab3d4eb3630b4c792f1c1be2eb8d7777",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n    global _lpc21isp_executable\n    if _lpc21isp_executable is None:\n        _lpc21isp_executable = find_executable('lpc21isp')\n        if _lpc21isp_executable is None:\n            raise RuntimeError('Could not find lpc21isp executable')\n        if not os.access(_lpc21isp_executable, os.X_OK):\n            os.chmod(_lpc21isp_executable, os.stat(_lpc21isp_executable).st_mode | stat.S_IXUSR)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "db7ab1b63366127d107536083c6401f5beb9db995bbabeba451ad82288e2d8e7",
+  "human_valid": true,
+  "line_no": 183165,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3650e4298771c7ad41e635041bf60f63065fc2686dcc6d2dfcca4f275ec6b4d1",
+  "raw_output": "\n    global _lpc21isp_executable\n    if _lpc21isp_executable is None:\n        _lpc21isp_executable = find_executable('lpc21isp')\n        if _lpc21isp_executable is None:\n            raise RuntimeError('Could not find lpc21isp executable')\n        if not os.access(_lpc21isp_executable, os.X_OK):\n            os.chmod(_lpc21isp_executable, os.stat(_lpc21isp_executable).st_mode | stat.S_IXUSR)\n\n\ndef _get_device_name(device_id):\n    \"\"\" Get the device name for a given device id\n    \"\"\"\n    _ensure_programmer_executable()\n    return subprocess.check_output([_lpc21isp_executable, '-d', device_id, '-n']).strip()\n\n\ndef _get_device_id(device_name):\n    \"\"\" Get the device id for a given device name\n    \"\"\"\n    _ensure_programmer_executable()\n    return subprocess.check_output([_lpc21isp_executable, '-n', device_name, '-d']).strip()\n\n\ndef _get_device_type(device_id):\n    \"\"\" Get the device type for a given device id\n    \"\"\"\n    _ensure_programmer_executable()\n    return subprocess.check_output([_lpc21isp_executable, '-d', device_id, '-t']).strip()\n\n\ndef _get_device_flash_size(device_id):\n    \"\"\" Get the device flash size for a given device id\n    \"\"\"\n    _ensure_programmer_executable()\n    return subprocess.check_output([_lpc21isp_executable, '-d', device_id, '-s']).strip()\n\n\ndef _get_device_info(device_id):\n    \"\"\" Get the device info for a given device id\n    \"\"\"\n    _ensure_programmer_executable()\n    return subprocess.check_output([_lpc21isp_executable, '-d', device_id,",
+  "sampling_seed": 3988609357,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

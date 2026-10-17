@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_feature(self, feature):\n        # type: (Any) -> int\n        \"\"\" Add a new feature name, return it's index.\n        \"\"\"\n        if feature in self.feature_names:\n            return self.feature_names.index(feature)\n        else:\n            self.feature_names.append(feature)\n            return len(self.feature_names) -\n",
+  "agc_valid": false,
+  "body_sha256": "f560dc955326b7fd1977056790cee8e37aeef1b8132eec71a98019f51eab6412",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if feature in self.feature_names:\n            return self.feature_names.index(feature)\n        else:\n            self.feature_names.append(feature)\n            return len(self.feature_names) -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "03a71c4cca6ab8582d3b7f5ca4f374910a6fcbb6a9c600988c40f18169d63d27",
+  "human_valid": true,
+  "line_no": 362461,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "51b2818113e1003b5f9d9aa085f07b42b70d791ecf32142e4010a8d6820652f3",
+  "raw_output": "\n        if feature in self.feature_names:\n            return self.feature_names.index(feature)\n        else:\n            self.feature_names.append(feature)\n            return len(self.feature_names) - ",
+  "sampling_seed": 4272830108,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

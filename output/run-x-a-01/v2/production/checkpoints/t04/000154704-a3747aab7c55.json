@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_modules_from_path(path):\n    \"\"\"\n    Import all modules from the given directory\n    \"\"\"\n    import importlib.util\n    import os\n    import glob\n\n    # Import all modules\n    for module_path in glob.glob(os.path.join(path, \"*.py\")):\n        module_name = os.path.basename(module_path)[:-3]\n        spec = importlib.util.spec_from_file_location(module_name, module_path)\n        module = importlib.util.module_from_spec(spec)\n        spec.loader.exec_module(module)\n",
+  "agc_valid": true,
+  "body_sha256": "f7a9818e9fc6aab67c93f95a7b481668808cdff0f9c08faf65829cd0bcb451ba",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import importlib.util\n    import os\n    import glob\n\n    # Import all modules\n    for module_path in glob.glob(os.path.join(path, \"*.py\")):\n        module_name = os.path.basename(module_path)[:-3]\n        spec = importlib.util.spec_from_file_location(module_name, module_path)\n        module = importlib.util.module_from_spec(spec)\n        spec.loader.exec_module(module)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 169,
+  "human_sha256": "0bc1b428de19bd271f5d91b524f391cefd99c8311868efed3fcd61c07a5c0e83",
+  "human_valid": true,
+  "line_no": 154704,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a3747aab7c5570b06b125d7fb0b278ac43c4da95f34530f0eead3b7c40ba4f28",
+  "raw_output": "\n    import importlib.util\n    import os\n    import glob\n\n    # Import all modules\n    for module_path in glob.glob(os.path.join(path, \"*.py\")):\n        module_name = os.path.basename(module_path)[:-3]\n        spec = importlib.util.spec_from_file_location(module_name, module_path)\n        module = importlib.util.module_from_spec(spec)\n        spec.loader.exec_module(module)\n\n\ndef load_modules_from_paths(paths):\n    \"\"\"\n    Import all modules from the given directories\n    \"\"\"\n    for path in paths:\n        load_modules_from_path(path)\n\n\ndef load_modules_from_package(package):\n    \"\"\"\n    Import all modules from the given package\n    \"\"\"\n    import importlib.util\n    import os\n    import glob\n\n    # Import all modules\n    for module_path in glob.glob(os.path.join(package, \"*.py\")):\n        module_name = os.path.basename(module_path)[:-3]\n        spec = importlib.util.spec_from_file_location(module_name, module_path)\n        module = importlib.util.module_from_spec(spec)\n        spec.loader.exec_module(module)\n\n\ndef load_modules_from_packages(packages):\n    \"\"\"\n    Import all modules from the given packages\n    \"\"\"\n    for package in packages:\n        load_modules_from_package(package)\n\n\ndef load_modules_from_package_path(package_path):\n    \"\"\"\n    Import all modules from the given package path\n    \"\"\"\n    import importlib.util\n    import os\n    import glob\n\n    # Import all modules\n    for module_path in glob.glob(os.path.join(package_path, \"*.py\")):\n        module_name = os.path.basename(module_path)[:-3]\n        spec = importlib.util.spec_from_file_location(module_name, module_path)\n        module = importlib.util.module_from_spec(spec)",
+  "sampling_seed": 2785462951,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

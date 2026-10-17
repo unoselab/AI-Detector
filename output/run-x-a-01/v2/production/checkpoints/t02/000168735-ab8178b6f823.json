@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_submodule_included(src, tgt):\n    \"\"\"Check that the tgt's submodule is included by src, if they belong\n    to the same module.\"\"\"\n    if src.module == tgt.module:\n        return src.module.submodule_includes(src, tgt)\n    else:\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "f8bfda184bb2454d4d5481b6d4ac2e3a6cfee19f363b8afd2ce777a9034d47d2",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if src.module == tgt.module:\n        return src.module.submodule_includes(src, tgt)\n    else:\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "a08661236d0aa409040065d26329c2209b58642a57b9548df93aacd7f084a767",
+  "human_valid": true,
+  "line_no": 168735,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab8178b6f823294e30f684bbe4d2008864259e4a685b4fc5b0fbe324676545fb",
+  "raw_output": "\n    if src.module == tgt.module:\n        return src.module.submodule_includes(src, tgt)\n    else:\n        return True\n\n\ndef is_submodule_excluded(src, tgt):\n    \"\"\"Check that the tgt's submodule is excluded by src, if they belong\n    to the same module.\"\"\"\n    if src.module == tgt.module:\n        return src.module.submodule_excludes(src, tgt)\n    else:\n        return False\n\n\ndef is_submodule_included_or_excluded(src, tgt):\n    \"\"\"Check that the tgt's submodule is included or excluded by src, if they\n    belong to the same module.\"\"\"\n    if src.module == tgt.module:\n        return src.module.submodule_includes_or_excludes(src, tgt)\n    else:\n        return True\n\n\ndef is_submodule_included_or_excluded_or_equal(src, tgt):\n    \"\"\"Check that the tgt's submodule is included or excluded or equal to src,\n    if they belong to the same module.\"\"\"\n    if src.module == tgt.module:\n        return src.module.submodule_includes_or_excludes_or_equal(src, tgt)\n    else:\n        return True\n\n\ndef is_submodule_included_or_excluded_or_equal_or_submodule(src, tgt):\n    \"\"\"Check that the tgt's submodule is included or excluded or equal to src\n    or is a submodule of src, if they belong to the same module.\"\"\"\n    if src.module == tgt.module:\n        return src.module.submodule_includes_or_excludes_or_equal_or_submodule(\n            src, tgt)\n    else:\n        return True\n\n\ndef is_submodule_included_or_excluded_or_equal_or_submodule_or_equal(src, tgt):\n    \"\"\"Check that the tgt's submodule is included or excluded or equal to src\n    or is a submodule of src or equal",
+  "sampling_seed": 1563747320,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

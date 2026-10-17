@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def scatter(h1: Histogram1D, **kwargs) -> dict:\n    \"\"\"Scatter plot of 1D histogram values.\n\n    Points are horizontally placed in bin centers.\n\n    Parameters\n    ----------\n    shape : str\n    \"\"\"\n    return h1.to_dict(\n        plot=dict(\n            type=\"scatter\",\n            mode=\"markers\",\n            x=h1.bin_centers,\n            y=h1.values,\n            **kwargs\n        )\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "83d515d69a255c369060e86e444a4603a0dc607b6898277e6dbc07368934781a",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return h1.to_dict(\n        plot=dict(\n            type=\"scatter\",\n            mode=\"markers\",\n            x=h1.bin_centers,\n            y=h1.values,\n            **kwargs\n        )\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "8c4255193e3b59f2a468d9d77cecd2bb338792cf2c156db0f9c7f4b5c231ccb0",
+  "human_valid": true,
+  "line_no": 295430,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "25e89936cb9245ab98c3b1e527fd005b5b4d200491fc8bcba4673176fdce27a0",
+  "raw_output": "\n\n    return h1.to_dict(\n        plot=dict(\n            type=\"scatter\",\n            mode=\"markers\",\n            x=h1.bin_centers,\n            y=h1.values,\n            **kwargs\n        )\n    )\n\n\ndef histogram(h1: Histogram1D, **kwargs) -> dict:\n    \"\"\"Histogram of ",
+  "sampling_seed": 2994263839,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

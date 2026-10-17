@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_readme():\n    \"\"\"Generate long description\"\"\"\n    with open('README.md', 'r') as f:\n        return f.read()\n",
+  "agc_valid": true,
+  "body_sha256": "278ee45af08b439ea98f1db48630ebcda1c570491118faa74ee5b54ea433caa2",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open('README.md', 'r') as f:\n        return f.read()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "f35cd2613074d8d17a4fd8254bbc84afdfec18c35cda901997851f827040d90a",
+  "human_valid": true,
+  "line_no": 38050,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8fd849a65f33aaca22a966adaf3ae13cf032a65edf93a9d9269ef0c3556ec2d1",
+  "raw_output": "\n    with open('README.md', 'r') as f:\n        return f.read()\n\n\ndef get_requirements():\n    \"\"\"Get requirements\"\"\"\n    with open('requirements.txt', 'r') as f:\n        return f.read().splitlines()\n\n\nsetup(\n    name='pytest-testrail',\n    version='0.1.0',\n    description='Pytest plugin for TestRail',\n    long_description=get_readme(),\n    long_description_content_type='text/markdown',\n    url='https://github.com/matthew-kay/pytest-testrail',\n    author='Matthew Kay',\n    author_email='matthew.kay@gmail.com',\n    license='MIT',\n    classifiers=[\n        'Development Status :: ",
+  "sampling_seed": 3017922581,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

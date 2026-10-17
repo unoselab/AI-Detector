@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def make_data(n):\n    \"\"\"make_data: compute matrix distance based on euclidean distance\"\"\"\n    data = np.random.rand(n,\n",
+  "agc_valid": false,
+  "body_sha256": "02b3106809e4fbb3b99547ab60b19cc8594b87805af3bf92581c4a79ac2f847c",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    data = np.random.rand(n,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "1a47a08eb4da08c30183a2d01d954c7e3e19b497386d86b85f548acfc676f0ed",
+  "human_valid": true,
+  "line_no": 165760,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6031925749b37f71bcc26b13e7819a1d38582ac43a5239c21edea65502253b72",
+  "raw_output": "\n    data = np.random.rand(n, ",
+  "sampling_seed": 12469447,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

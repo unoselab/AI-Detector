@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def populate_headers(headers):\n    \"\"\"\n    Concatenate headers with subheaders\n    \"\"\"\n    result = {}\n    for header in headers:\n        result.update({header.get(\"name\"): header.get(\"value\")})\n    return result\n",
+  "agc_valid": true,
+  "body_sha256": "7de2055bf036adc26866ce7adf08a6c86fe067b2f99764b81f551d43cf2e69dc",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n    result = {}\n    for header in headers:\n        result.update({header.get(\"name\"): header.get(\"value\")})\n    return result\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "6830412ca39ffdebf8c0ee319bd210c89aa63295bb4a2b73ce4b1dfddf0027ca",
+  "human_valid": true,
+  "line_no": 41752,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "98a0543f957b6452275d0f9d37370b02cdb02005666b7ab23f52098df7e2ea5f",
+  "raw_output": "\n    result = {}\n    for header in headers:\n        result.update({header.get(\"name\"): header.get(\"value\")})\n    return result\n\n\ndef get_response_headers(response):\n    \"\"\"\n    Extract headers from response\n    \"\"\"\n    return populate_headers(response.get(\"headers\"))\n\n\ndef get_response_status_code(response):\n    \"\"\"\n    Extract status code from response\n    \"\"\"\n    return response.get(\"status\")\n\n\ndef get_response_status_message(response):\n    \"\"\"\n    Extract status message from response\n    \"\"\"\n    return response.get(\"statusText\")\n\n\ndef get_response_content(response):\n    \"\"\"\n    Extract content from response\n    \"\"\"\n    return response.get(\"content\")\n\n\ndef get_response_cookies(response):\n    \"\"\"\n    Extract cookies from response\n    \"\"\"\n    return response.get(\"cookies\")\n\n\ndef get_response_request_headers(response):\n    \"\"\"\n    Extract request headers from response\n    \"\"\"\n    return populate_headers(response.get(\"requestHeaders\"))\n\n\ndef get_response_request_body(response):\n    \"\"\"\n    Extract request body from response\n    \"\"\"\n    return response.get(\"requestBody\")\n\n\ndef get_response_request_cookies(response):\n    \"\"\"\n    Extract request cookies from response\n    \"\"\"\n    return response.get(\"requestCookies\")\n\n\ndef get_response_time(response):\n    \"\"\"\n    Extract response time from response\n    \"\"\"\n    return response.get(\"timings\").get(\"receive\")\n\n\ndef get_response_url(response):\n    \"\"\"\n    Extract response url from response\n    \"\"\"\n    return response.get(\"url\")\n\n\ndef get_response_redirect_url(response):\n    \"\"\"\n    Extract redirect url from response\n    \"\"\"\n    return response.get(\"redirectURL\")\n\n\ndef get_response_headers_size(response):\n    \"\"\"\n    Extract headers size from response\n    \"\"\"\n    return response.get(\"headersSize\")\n\n\ndef get_response_body_size(response):\n    \"\"\"\n    Extract",
+  "sampling_seed": 1954345950,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

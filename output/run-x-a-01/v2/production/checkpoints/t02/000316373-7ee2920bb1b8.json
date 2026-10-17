@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fullqualname_py3(obj):\n    \"\"\"Fully qualified name for objects in Python 3.\"\"\"\n    if hasattr(obj, '__module__'):\n        module = obj.__module__\n        if module is None:\n            module = '__main__'\n        return module + '.' + obj.__qualname__\n    else:\n        return obj.__name__\n",
+  "agc_valid": true,
+  "body_sha256": "03ea88ee984a20c33c14f8033fa2dc974131cd9a8bf291351e9904a8e9ba5139",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if hasattr(obj, '__module__'):\n        module = obj.__module__\n        if module is None:\n            module = '__main__'\n        return module + '.' + obj.__qualname__\n    else:\n        return obj.__name__\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "68aabcbd56098fb927b0add1cdcd13c66de44f2e023cdf341a47e959ebfb9b75",
+  "human_valid": true,
+  "line_no": 316373,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7ee2920bb1b8a903a0e4f42566a48f9287b1d0ac26ffa12790a9f126e23cfa14",
+  "raw_output": "\n    if hasattr(obj, '__module__'):\n        module = obj.__module__\n        if module is None:\n            module = '__main__'\n        return module + '.' + obj.__qualname__\n    else:\n        return obj.__name__\n\n\ndef fullqualname_py2(obj):\n    \"\"\"Fully qualified name for objects in Python ",
+  "sampling_seed": 3869711575,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

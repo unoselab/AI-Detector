@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def workflow_stop(obj, names):\n    \"\"\" Stop one or more running workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be stopped.\n           Leave empty to stop all running workflows.\n    \"\"\"\n    if not names:\n        names = [wf.id for wf in obj.workflows() if wf.is_running]\n    if not names:\n        raise click.ClickException('No workflows running.')\n\n    # Stop workflows\n    obj.stop_workflows(names)\n",
+  "agc_valid": true,
+  "body_sha256": "46227bcee812379ab566e5c60ea0b04108917b132d15b5d0842899d21378192c",
+  "body_tokens": 50,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not names:\n        names = [wf.id for wf in obj.workflows() if wf.is_running]\n    if not names:\n        raise click.ClickException('No workflows running.')\n\n    # Stop workflows\n    obj.stop_workflows(names)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "63cd8f276825aa293f0d0a445858dd8cacc2804f78432c92e777a5164c783ce6",
+  "human_valid": true,
+  "line_no": 10792,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a161070d61f022acfff803f032f984f12cb988246fed76b23bb56c68e9f7f352",
+  "raw_output": "\n    if not names:\n        names = [wf.id for wf in obj.workflows() if wf.is_running]\n    if not names:\n        raise click.ClickException('No workflows running.')\n\n    # Stop workflows\n    obj.stop_workflows(names)\n\n\ndef workflow_start(obj, names, force):\n    \"\"\" Start one or more stopped workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be started.\n           Leave empty to start all stopped workflows.\n    \"\"\"\n    if not names:\n        names = [wf.id for wf in obj.workflows() if wf.is_stopped]\n    if not names:\n        raise click.ClickException('No workflows stopped.')\n\n    # Start workflows\n    obj.start_workflows(names, force)\n\n\ndef workflow_delete(obj, names):\n    \"\"\" Delete one or more workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be deleted.\n           Leave empty to delete all workflows.\n    \"\"\"\n    if not names:\n        names = [wf.id for wf in obj.workflows()]\n    if not names:\n        raise click.ClickException('No workflows available.')\n\n    # Delete workflows\n    obj.delete_workflows(names)\n\n\ndef workflow_show(obj, names):\n    \"\"\" Show one or more workflows.\n\n    \\b\n    NAMES: The names, ids or job ids of the workflows that should be shown.\n           Leave empty to show all workflows.\n    \"\"\"\n    if not names:\n        names = [wf.id for wf in obj.workflows()]\n    if not names:\n        raise click.ClickException('No workflows available.')\n\n    # Show workflows\n    for wf in obj.workflows(names):\n        click.echo(wf)\n\n\ndef workflow_list(obj):\n    \"\"\" List all workflows. \"\"\"\n    # List workflows\n    for wf in obj.work",
+  "sampling_seed": 1367458859,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

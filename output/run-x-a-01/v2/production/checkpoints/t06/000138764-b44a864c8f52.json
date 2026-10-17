@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_qualifier(parser, event, node): #pylint: disable=unused-argument\n    \"\"\"Parse CIM/XML QUALIFIER element and return CIMQualifier\"\"\"\n    qualifier = CIMQualifier()\n    qualifier.name = node.attrib.get('NAME')\n    qualifier.value = node.attrib.get('VALUE')\n    qualifier.type = node.attrib.get('TYPE')\n    qualifier.flavor = node.attrib.get('FLAVOR')\n    return qualifier\n",
+  "agc_valid": true,
+  "body_sha256": "d2450d9759aacd7159b8002e31c2a461ee0100dbac14d4188be9d47206d7dc78",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n    qualifier = CIMQualifier()\n    qualifier.name = node.attrib.get('NAME')\n    qualifier.value = node.attrib.get('VALUE')\n    qualifier.type = node.attrib.get('TYPE')\n    qualifier.flavor = node.attrib.get('FLAVOR')\n    return qualifier\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "9c7ca938a45af00a85eb25778c6f28c53d80b07a9d16a39a720212589159e748",
+  "human_valid": true,
+  "line_no": 138764,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b44a864c8f52fa6cbc4651eae600dc0fa0b6e2aa4d2a7e3d67d74b9d1fe55ba3",
+  "raw_output": "\n    qualifier = CIMQualifier()\n    qualifier.name = node.attrib.get('NAME')\n    qualifier.value = node.attrib.get('VALUE')\n    qualifier.type = node.attrib.get('TYPE')\n    qualifier.flavor = node.attrib.get('FLAVOR')\n    return qualifier\n\ndef parse_property(parser, event, node): #pylint: disable=unused-argument\n    \"\"\"Parse CIM/XML PROPERTY element and return CIMProperty\"\"\"\n    property = CIMProperty()\n    property.name = node.attrib.get('NAME')\n    property.type = node.attrib.get('TYPE')\n    property.flavor = node.attrib.get('FLAVOR')\n    property.is_array = node.attrib.get('ARRAY') == 'true'\n    property.value = node.text\n    return property\n\ndef parse_reference(parser, event, node): #pylint: disable=unused-argument\n    \"\"\"Parse CIM/XML REFERENCE element and return CIMReference\"\"\"\n    reference = CIMReference()\n    reference.name = node.attrib.get('NAME')\n    reference.class_name = node.attrib.get('REFERENCEDCLASS')\n    reference.is_array = node.attrib.get('ARRAY') == 'true'\n    return reference\n\ndef parse_method(parser, event, node): #pylint: disable=unused-argument\n    \"\"\"Parse CIM/XML METHOD element and return CIMMethod\"\"\"\n    method = CIMMethod()\n    method.name = node.attrib.get('NAME')\n    method.return_type = node.attrib.get('RETURNTYPE')\n    method.is_array = node.attrib.get('ARRAY') == 'true'\n    return method\n\ndef parse_param(parser, event, node): #pylint: disable=unused-argument\n    \"\"\"Parse CIM/XML PARAM element and return CIMParam\"\"\"\n    param = CIMParam()\n    param.name = node.attrib.get('NAME')\n   ",
+  "sampling_seed": 3315218228,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

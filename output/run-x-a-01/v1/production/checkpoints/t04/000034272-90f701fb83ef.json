@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _spawn(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    return t\n",
+  "agc_valid": true,
+  "body_sha256": "acaae4bbbbb1990ddbdee65cae0706c97eceaaafa6010fe283eaf67a1dd5f075",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    return t\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0ba5eb7e0fbd1d6f3dde98c89a7d48d2a15cdb9b674fdc6eb599735e6d404f23",
+  "human_valid": true,
+  "line_no": 34272,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "90f701fb83ef3574e4ac421e0c02d0d19a8a03935431877d4a1914dab369d619",
+  "raw_output": "\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    return t\n\n\ndef _wait_for_thread(thread):\n    \"\"\"\n    Waits for thread to finish, and returns the result.\n    \"\"\"\n    thread.join()\n    return thread.result\n\n\ndef _wait_for_threads(threads):\n    \"\"\"\n    Waits for all threads in `threads` to finish, and returns a list of their\n    results.\n    \"\"\"\n    results = []\n    for thread in threads:\n        results.append(_wait_for_thread(thread))\n    return results\n\n\ndef _run_in_parallel(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    return _spawn(func, *args, **kwargs)\n\n\ndef _run_in_parallel_with_result(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    thread = _spawn(func, *args, **kwargs)\n    thread.result = None\n    return thread\n\n\ndef _run_in_parallel_with_results(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    threads = [_run_in_parallel_with_result(func, *args, **kwargs) for _ in range(len(args))]\n    return threads\n\n\ndef _run_in_parallel_with_results_and_wait(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    threads = [_run_in_parallel_with_result(func, *args, **kwargs) for _ in range(len(args))]\n    return _wait_for_",
+  "sampling_seed": 2820632038,
+  "tag": "t04",
+  "temperature": 0.4
+}

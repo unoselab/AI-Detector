@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def disconnect(self, connection):\n        \"\"\"\n        Removes a subscriber connection.\n\n        @param connection: The client connection to unsubscribe.\n        @type connection: L{coilmq.server.StompConnection}\n        \"\"\"\n        self.subscribers.remove(connection)\n",
+  "agc_valid": true,
+  "body_sha256": "61eb6a83a1db461d777d2669942809346cc01a2b4032d21a10f8b29c48c03344",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.subscribers.remove(connection)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "de2e068e48c34cc34378eec12b257636f6dc68de441de238e3f81d0cee22390b",
+  "human_valid": true,
+  "line_no": 220821,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9439bcbc7ece8badec0a7426f12820dc84636672aa9b0d8f57f0c6cb5c2768db",
+  "raw_output": "\n        self.subscribers.remove(connection)\n\n    def",
+  "sampling_seed": 2259302781,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def distinguish(self, id_, how=True):\n        \"\"\"Login required.  Sends POST to distinguish a submission or comment.  Returns :class:`things.Link` or :class:`things.Comment`, or raises :class:`exceptions.UnexpectedResponse` otherwise.\n\n        URL: ``http://www.reddit.com/api/distinguish/``\n\n        :param id\\_: full id of object to distinguish\n        :param how: either True, False, or 'admin'\n        \"\"\"\n        if how not in (True, False, 'admin'):\n            raise ValueError('distinguish() how must be True, False, or \"admin\"')\n        if how == 'admin':\n            how = 'yes'\n        else:\n            how = 'yes' if how else 'no'\n        params = {'id': id_, 'how': how}\n        return self.post('api/distinguish', params=params)\n",
+  "agc_valid": true,
+  "body_sha256": "f74d2dc0be4c6292b886d9c45fd9546bf2b01d796bc298b7e46609009107ecf1",
+  "body_tokens": 109,
+  "bucket": "type01_110",
+  "clean_output": "\n        if how not in (True, False, 'admin'):\n            raise ValueError('distinguish() how must be True, False, or \"admin\"')\n        if how == 'admin':\n            how = 'yes'\n        else:\n            how = 'yes' if how else 'no'\n        params = {'id': id_, 'how': how}\n        return self.post('api/distinguish', params=params)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2887afa8f103305c3a953d9a4661388a3918083b0f4c177b1408dfb51a39e20f",
+  "human_valid": true,
+  "line_no": 40583,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "6eacadc3e4f5738b7e6293709142294bddd4f056fcc9b234e7bf6d83f602e084",
+  "raw_output": "\n        if how not in (True, False, 'admin'):\n            raise ValueError('distinguish() how must be True, False, or \"admin\"')\n        if how == 'admin':\n            how = 'yes'\n        else:\n            how = 'yes' if how else 'no'\n        params = {'id': id_, 'how': how}\n        return self.post('api/distinguish', params=params)\n\n    def",
+  "sampling_seed": 3363206866,
+  "tag": "t04",
+  "temperature": 0.4
+}

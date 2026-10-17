@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def __register_types(self):\n        \"\"\"Iterates all entry points for resource types and registers a `resource_type_id` to class mapping\n\n        Returns:\n            `None`\n        \"\"\"\n        for entry_point in iter_entry_points(group='mangum.resource_types'):\n            resource_type_id = entry_point.name\n            resource_type_class = entry_point.load()\n            self.resource_types[resource_type_id] = resource_type_class\n",
+  "agc_valid": true,
+  "body_sha256": "9fe1947d9c74f76767dec031aa3a265658e225c474503c6e7c88027a35a1b15c",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for entry_point in iter_entry_points(group='mangum.resource_types'):\n            resource_type_id = entry_point.name\n            resource_type_class = entry_point.load()\n            self.resource_types[resource_type_id] = resource_type_class\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 106,
+  "human_sha256": "53f4f04be1278cb0050a43fa921e026e1314c0f5bacf4d75397b7be5022628bc",
+  "human_valid": true,
+  "line_no": 350506,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0ba16dc320d98d0ab39cb8f827a358507843a54d0e28f000f9926a5f5b0e2251",
+  "raw_output": "\n        for entry_point in iter_entry_points(group='mangum.resource_types'):\n            resource_type_id = entry_point.name\n            resource_type_class = entry_point.load()\n            self.resource_types[resource_type_id] = resource_type_class\n\n    def",
+  "sampling_seed": 1255021457,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

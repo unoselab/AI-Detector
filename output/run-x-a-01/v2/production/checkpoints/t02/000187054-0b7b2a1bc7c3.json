@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def matching_supported(self, options=None):\n        \"\"\"\n        Return whether this rule can return meaningful result,\n        given the `options` dict. If some options are missing,\n        then rule shouldn't be matched against, and this function\n        returns False.\n\n        No options:\n        >>> rule = AdblockRule(\"swf|\")\n        >>> rule.matching_supported({})\n        True\n\n        Option is used in the rule, but its value is not available\n        at matching time:\n        >>> rule = AdblockRule(\"swf|$third-party\")\n        >>> rule.matching_supported({})\n        False\n\n        Option is used in the rule, and option value is available\n        at matching time:\n        >>> rule = AdblockRule(\"swf|$third-party\")\n        >>> rule.matching_supported({'domain': 'example.com', 'third-party': False})\n        True\n\n        Rule is a comment:\n        >>> rule = AdblockRule(\"!this is not a rule\")\n        >>> rule.matching_supported({})\n        False\n\n        \"\"\"\n        domain\")\n                >>> rule.matching_supported({})\n                False\n\n                Option is used in the rule, and its value is available\n                at matching time:\n                >>> rule = AdblockRule(\"swf|$domain\")\n                >>> rule.matching_supported({\"domain\": \"example.com\"})\n                True\n\n                Option is used in the rule, and its value is available\n                at matching time, but it's not a string:\n                >>> rule = AdblockRule(\"swf|$domain\")\n                >>> rule.matching_supported({\"domain\":\n",
+  "agc_valid": false,
+  "body_sha256": "24fee1a286b21bd4adeb07d0d2974301da696230cd3817394362de2dfd081e6c",
+  "body_tokens": 224,
+  "bucket": "out_of_range",
+  "clean_output": "\n        domain\")\n                >>> rule.matching_supported({})\n                False\n\n                Option is used in the rule, and its value is available\n                at matching time:\n                >>> rule = AdblockRule(\"swf|$domain\")\n                >>> rule.matching_supported({\"domain\": \"example.com\"})\n                True\n\n                Option is used in the rule, and its value is available\n                at matching time, but it's not a string:\n                >>> rule = AdblockRule(\"swf|$domain\")\n                >>> rule.matching_supported({\"domain\":\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "6307e841571f04b3cd58e1db224ebeb843d3f5832a80367518be31112183f6e8",
+  "human_valid": true,
+  "line_no": 187054,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0b7b2a1bc7c3bee2ffab17e2eea3f96ff5af65b1259c81ce5e3e6f602b6f3658",
+  "raw_output": "domain\")\n        >>> rule.matching_supported({})\n        False\n\n        Option is used in the rule, and its value is available\n        at matching time:\n        >>> rule = AdblockRule(\"swf|$domain\")\n        >>> rule.matching_supported({\"domain\": \"example.com\"})\n        True\n\n        Option is used in the rule, and its value is available\n        at matching time, but it's not a string:\n        >>> rule = AdblockRule(\"swf|$domain\")\n        >>> rule.matching_supported({\"domain\": ",
+  "sampling_seed": 25277601,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _fetch(self, uri, sub_domain=False):\n        \"\"\"\n        Send a HEAD request to URL and print response code if it's not in ignored_error_codes\n        :param uri: URI to fuzz\n        :param sub_domain: If True, build destination URL with {URL}.{HOST} else {HOST}/{URL}\n        \"\"\"\n        if sub_domain:\n            url = self.url.format(URL=uri, HOST=self.host)\n        else:\n            url = self.url.format(HOST=self.host, URL=uri)\n\n        try:\n            response = requests.head(url, timeout=self.timeout)\n        except requests.exceptions.Timeout:\n            self.logger.error(\"Timeout error\")\n            return\n        except requests.exceptions.ConnectionError:\n            self.logger.error(\"Connection error\")\n            return\n        except requests.exceptions.RequestException as e:\n            self.logger.error(\"Request error: {}\".format(e))\n            return\n\n        if response.status_code not in self.ignored_error_codes:\n            self.logger.info(\"{} {}\".format(response.status_code, url))\n",
+  "agc_valid": true,
+  "body_sha256": "d60f42b53eecb2bdaeb8a67432961cfce56a67c95984ff76bb41c9d1b699debf",
+  "body_tokens": 202,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if sub_domain:\n            url = self.url.format(URL=uri, HOST=self.host)\n        else:\n            url = self.url.format(HOST=self.host, URL=uri)\n\n        try:\n            response = requests.head(url, timeout=self.timeout)\n        except requests.exceptions.Timeout:\n            self.logger.error(\"Timeout error\")\n            return\n        except requests.exceptions.ConnectionError:\n            self.logger.error(\"Connection error\")\n            return\n        except requests.exceptions.RequestException as e:\n            self.logger.error(\"Request error: {}\".format(e))\n            return\n\n        if response.status_code not in self.ignored_error_codes:\n            self.logger.info(\"{} {}\".format(response.status_code, url))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "34bdc95d6c9524da3d6afa1f2e80acdaadee8027e7dd43efe3f80ea686704148",
+  "human_valid": true,
+  "line_no": 331485,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "24f3376f1249f646d966b6b82ce94db9b25eb0bcc85ddbcede807013022e6830",
+  "raw_output": "\n        if sub_domain:\n            url = self.url.format(URL=uri, HOST=self.host)\n        else:\n            url = self.url.format(HOST=self.host, URL=uri)\n\n        try:\n            response = requests.head(url, timeout=self.timeout)\n        except requests.exceptions.Timeout:\n            self.logger.error(\"Timeout error\")\n            return\n        except requests.exceptions.ConnectionError:\n            self.logger.error(\"Connection error\")\n            return\n        except requests.exceptions.RequestException as e:\n            self.logger.error(\"Request error: {}\".format(e))\n            return\n\n        if response.status_code not in self.ignored_error_codes:\n            self.logger.info(\"{} {}\".format(response.status_code, url))\n\n    def",
+  "sampling_seed": 1691747137,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

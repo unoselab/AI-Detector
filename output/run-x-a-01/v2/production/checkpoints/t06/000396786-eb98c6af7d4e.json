@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def to_array(self):\n        \"\"\"\n        Serializes this ShippingAddress to a dictionary.\n\n        :return: dictionary representation of this object.\n        :rtype: dict\n        \"\"\"\n        return self._to_array(\n            self.address_line_1,\n            self.address_line_2,\n            self.address_line_3,\n            self.city,\n            self.state,\n            self.postal_code,\n            self.country,\n            self.phone,\n            self.email\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "51bffb71cac4e10441d3d0ab89db4ceae7b84cb3592625e39a28fde9760550b1",
+  "body_tokens": 126,
+  "bucket": "type03_130",
+  "clean_output": "\n        return self._to_array(\n            self.address_line_1,\n            self.address_line_2,\n            self.address_line_3,\n            self.city,\n            self.state,\n            self.postal_code,\n            self.country,\n            self.phone,\n            self.email\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "3a112152bf9c3ffc802900cebeb7cbf1e8c4f281217c0d588800c87e5cad7388",
+  "human_valid": true,
+  "line_no": 396786,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "eb98c6af7d4ec0d0ad8253d2cc621b65400c43dea12802f53f67c70e48e98c72",
+  "raw_output": "\n        return self._to_array(\n            self.address_line_1,\n            self.address_line_2,\n            self.address_line_3,\n            self.city,\n            self.state,\n            self.postal_code,\n            self.country,\n            self.phone,\n            self.email\n        )\n\n    def",
+  "sampling_seed": 825801518,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

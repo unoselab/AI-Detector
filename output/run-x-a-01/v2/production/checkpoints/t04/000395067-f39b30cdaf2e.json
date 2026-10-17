@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_channel(self):\n        \"\"\"\n        Fetch a channel from the pool. Will return a new one if necessary. If\n        a channel in the free pool is closed, will remove it. Will return None\n        if we hit the cap. Will clean up any channels that were published to\n        but closed due to error.\n        \"\"\"\n        if self.closed:\n            raise RuntimeError(\"ChannelPool is closed\")\n\n        # Clean up any channels that were published to but closed due to error\n        self._cleanup_channels()\n\n        # Check if we can use a free channel\n        if self._free_channels:\n            channel = self._free_channels.pop()\n            self._check_channel(channel)\n            return channel\n\n        # Check if we can create a new channel\n        if self._total_channels < self.max_channels:\n            channel = self._create_channel()\n            self._check_channel(channel)\n            return channel\n\n        # We're at the max channels\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "4d53ed935385303a37bf5885f62e2c49e2fd63d4e22b9c7aba736dcebcabd53f",
+  "body_tokens": 206,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.closed:\n            raise RuntimeError(\"ChannelPool is closed\")\n\n        # Clean up any channels that were published to but closed due to error\n        self._cleanup_channels()\n\n        # Check if we can use a free channel\n        if self._free_channels:\n            channel = self._free_channels.pop()\n            self._check_channel(channel)\n            return channel\n\n        # Check if we can create a new channel\n        if self._total_channels < self.max_channels:\n            channel = self._create_channel()\n            self._check_channel(channel)\n            return channel\n\n        # We're at the max channels\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "e85e53afa4026f98e80c24f23dd972b0f49b91f188dab902ace93e728e5083b0",
+  "human_valid": true,
+  "line_no": 395067,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f39b30cdaf2eed25058a79f8d3018474dc837d992d84e49ca73f9879110e9d34",
+  "raw_output": "\n        if self.closed:\n            raise RuntimeError(\"ChannelPool is closed\")\n\n        # Clean up any channels that were published to but closed due to error\n        self._cleanup_channels()\n\n        # Check if we can use a free channel\n        if self._free_channels:\n            channel = self._free_channels.pop()\n            self._check_channel(channel)\n            return channel\n\n        # Check if we can create a new channel\n        if self._total_channels < self.max_channels:\n            channel = self._create_channel()\n            self._check_channel(channel)\n            return channel\n\n        # We're at the max channels\n        return None\n\n    def",
+  "sampling_seed": 3269227718,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

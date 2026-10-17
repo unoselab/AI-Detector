@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def distance_between(self, string, start, end):\n        \"\"\"Returns number of lines between start and end\"\"\"\n        if start > end:\n            raise ValueError(\"Start must be before end\")\n        start_line = self.line_number(string, start)\n        end_line = self.line_number(string, end)\n        return end_line - start_line\n",
+  "agc_valid": true,
+  "body_sha256": "1acc2bf5619d8afb5c1eb7e8d2f2570ed351b30831dc1a1c4e0e60e219c9302b",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if start > end:\n            raise ValueError(\"Start must be before end\")\n        start_line = self.line_number(string, start)\n        end_line = self.line_number(string, end)\n        return end_line - start_line\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "e048a114f2491785b82ddbbb9986a0a0f057c96e6d24f0504073213e2a4ffc34",
+  "human_valid": true,
+  "line_no": 313437,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7af8cc74ea91af6c964ff8a7103ef61d6615e5d0f43c13b226b6289f82e72adc",
+  "raw_output": "\n        if start > end:\n            raise ValueError(\"Start must be before end\")\n        start_line = self.line_number(string, start)\n        end_line = self.line_number(string, end)\n        return end_line - start_line\n\n    def",
+  "sampling_seed": 1659353190,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

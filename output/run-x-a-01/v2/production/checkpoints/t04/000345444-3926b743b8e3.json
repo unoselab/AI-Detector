@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list_address(self):\n        \"\"\"Get information about all the addresses present on the open wallet\"\"\"\n        return self._list_address()\n",
+  "agc_valid": true,
+  "body_sha256": "f81b2baabe7de18e648fa73c360b462e277755a44a1e389d089ddd2bb4e8ef9a",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._list_address()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "d6543673841f4ad548574c81100f70d4cc283d845126b26f10b0a2479755dc34",
+  "human_valid": true,
+  "line_no": 345444,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3926b743b8e32cdc2dfc7c3eec45a4ef9124183c30a1ce7aa4d2fe1cbc668b1d",
+  "raw_output": "\n        return self._list_address()\n\n    def",
+  "sampling_seed": 3661039334,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

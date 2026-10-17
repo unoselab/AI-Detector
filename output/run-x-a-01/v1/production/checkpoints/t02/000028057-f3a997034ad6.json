@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def encry_decry_chunk(chunk, key, algo, bool_encry, assoc_data):\n    \"\"\"\n    When bool_encry is True, encrypt a chunk of the file with the key and a randomly generated nonce. When it is False,\n    the function extract the nonce from the cipherchunk (first 16 bytes), and decrypt the rest of the chunk.\n    :param chunk: a chunk in bytes to encrypt or decrypt.\n    :param key: a 32 bytes key in bytes.\n    :param algo: a string of algorithm. Can be \"srp\" , \"AES\" or \"twf\"\n    :param bool_encry: if bool_encry is True, chunk is encrypted. Else, it will be decrypted.\n    :param assoc_data: bytes string of additional data for GCM Authentication.\n    :return: if bool_encry is True, corresponding nonce + cipherchunk else, a decrypted chunk.\n    \"\"\"\n    that represents the algorithm to use.\n        :param bool_encry: a boolean that represents if we want to encrypt or decrypt.\n        :param assoc_data: a string that represents the associated data.\n        :return: the encrypted or decrypted chunk in bytes.\n        \"\"\"\n        if bool_encry:\n            nonce = os.urandom(16)\n            cipherchunk = encrypt_chunk(chunk, key, algo, nonce, assoc_data)\n            return cipherchunk\n        else:\n            nonce = chunk[:16]\n            chunk = chunk[16:]\n            return decrypt_chunk(chunk, key, algo, nonce, assoc_data)\n",
+  "agc_valid": false,
+  "body_sha256": "48305f0dc8fa82172097edb099cdf0d4dd2072de7af52c7dda8fab751098ab1b",
+  "body_tokens": 176,
+  "bucket": "type08_180",
+  "clean_output": "\n    that represents the algorithm to use.\n        :param bool_encry: a boolean that represents if we want to encrypt or decrypt.\n        :param assoc_data: a string that represents the associated data.\n        :return: the encrypted or decrypted chunk in bytes.\n        \"\"\"\n        if bool_encry:\n            nonce = os.urandom(16)\n            cipherchunk = encrypt_chunk(chunk, key, algo, nonce, assoc_data)\n            return cipherchunk\n        else:\n            nonce = chunk[:16]\n            chunk = chunk[16:]\n            return decrypt_chunk(chunk, key, algo, nonce, assoc_data)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "3169e87904ce716b47cc7680772d9efd61e44970f637f00b3917d9722c6fa7df",
+  "human_valid": true,
+  "line_no": 28057,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f3a997034ad6fa08ffef5ba53e41a9e1d7b2e05af8ac8252118a85940a8e5676",
+  "raw_output": "that represents the algorithm to use.\n    :param bool_encry: a boolean that represents if we want to encrypt or decrypt.\n    :param assoc_data: a string that represents the associated data.\n    :return: the encrypted or decrypted chunk in bytes.\n    \"\"\"\n    if bool_encry:\n        nonce = os.urandom(16)\n        cipherchunk = encrypt_chunk(chunk, key, algo, nonce, assoc_data)\n        return cipherchunk\n    else:\n        nonce = chunk[:16]\n        chunk = chunk[16:]\n        return decrypt_chunk(chunk, key, algo, nonce, assoc_data)\n\n\ndef encrypt_chunk(chunk, key, algo, nonce, assoc_data):\n    \"\"\"\n    Encrypt a chunk of the file with the key and a randomly generated nonce.\n    :param chunk: a chunk in bytes to encrypt.\n    :param key: a ",
+  "sampling_seed": 3197777290,
+  "tag": "t02",
+  "temperature": 0.2
+}

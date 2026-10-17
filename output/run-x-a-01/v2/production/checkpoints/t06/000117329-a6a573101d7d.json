@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def launchctl(sub_cmd, *args, **kwargs):\n    \"\"\"\n    Run a launchctl command and raise an error if it fails\n\n    Args: additional args are passed to launchctl\n        sub_cmd (str): Sub command supplied to launchctl\n\n    Kwargs: passed to ``cmd.run_all``\n        return_stdout (bool): A keyword argument. If true return the stdout of\n            the launchctl command\n\n    Returns:\n        bool: ``True`` if successful\n        str: The stdout of the launchctl command if requested\n\n    Raises:\n        CommandExecutionError: If command fails\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        import salt.utils.mac_service\n        salt.utils.mac_service.launchctl('debug', 'org.cups.cupsd')\n    \"\"\"\n    Raises:\n         CommandExecutionError: If the launchctl command fails\n     \"\"\"\n     ret = __salt__[\"cmd.run_all\"](\n         [\"launchctl\", sub_cmd] + list(args), python_shell=False, **kwargs\n     )\n     if ret[\"retcode\"]:\n         raise CommandExecutionError(\n             \"Error executing launchctl command: {0}\".format(ret[\"stderr\"])\n         )\n     if kwargs.get(\"return_stdout\"):\n         return ret[\"stdout\"]\n     return True\n",
+  "agc_valid": false,
+  "body_sha256": "f9cf4c769ea41c8606dbfbb556346dc5d06759741ed1fd4882323b6f2a3cc886",
+  "body_tokens": 114,
+  "bucket": "type02_120",
+  "clean_output": "\n    Raises:\n         CommandExecutionError: If the launchctl command fails\n     \"\"\"\n     ret = __salt__[\"cmd.run_all\"](\n         [\"launchctl\", sub_cmd] + list(args), python_shell=False, **kwargs\n     )\n     if ret[\"retcode\"]:\n         raise CommandExecutionError(\n             \"Error executing launchctl command: {0}\".format(ret[\"stderr\"])\n         )\n     if kwargs.get(\"return_stdout\"):\n         return ret[\"stdout\"]\n     return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "97537c4e09216fba1500fc7d5d528d625b6cfb84539e64f04b1d82b4a0f81a75",
+  "human_valid": true,
+  "line_no": 117329,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a6a573101d7d4053b4225d5e0170505a7abdf6cdf14df3cde6410d528467e395",
+  "raw_output": "   Raises:\n        CommandExecutionError: If the launchctl command fails\n    \"\"\"\n    ret = __salt__[\"cmd.run_all\"](\n        [\"launchctl\", sub_cmd] + list(args), python_shell=False, **kwargs\n    )\n    if ret[\"retcode\"]:\n        raise CommandExecutionError(\n            \"Error executing launchctl command: {0}\".format(ret[\"stderr\"])\n        )\n    if kwargs.get(\"return_stdout\"):\n        return ret[\"stdout\"]\n    return True\n\n\ndef _get_service_status(service):\n    \"\"\"\n    Return the status of the service\n    \"\"\"\n    try:\n        output = launchctl(\n            \"list\", service, return_stdout=True, ignore_retcode=True, python_shell=False\n        )\n        if \"Error\" in output:\n            return None\n        return \"running\" if output else \"stopped\"\n    except CommandExecutionError:\n        return None\n\n\ndef start(service):\n    \"\"\"\n    Start a launchd service\n\n    Args:\n        service (str): The name of the service\n\n    Returns:\n        bool: ``True`` if successful\n\n    Raises:\n        CommandExecutionError: If the launchctl command fails\n    \"\"\"\n    return launchctl(\"start\", service)\n\n\ndef stop(service):\n    \"\"\"\n    Stop a launchd service\n\n    Args:\n        service (str): The name of the service\n\n    Returns:\n        bool: ``True`` if successful\n\n    Raises:\n        CommandExecutionError: If the launchctl command fails\n    \"\"\"\n    return launchctl(\"stop\", service)\n\n\ndef restart(service):\n    \"\"\"\n    Restart a launchd service\n\n    Args:\n        service (str): The name of the service\n\n    Returns:\n        bool: ``True`` if successful\n\n    Raises:\n        CommandExecutionError: If the launchctl command fails\n    \"\"\"\n    return launchctl(\"restart\", service)\n\n\ndef load(service, label=None):\n    \"\"\"\n    Load a launchd service\n\n    Args:\n        service (str): The name of the service",
+  "sampling_seed": 743206534,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

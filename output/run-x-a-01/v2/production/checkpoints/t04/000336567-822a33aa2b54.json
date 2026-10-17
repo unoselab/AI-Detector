@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _install_eslint(self, bootstrap_dir):\n    \"\"\"Install the ESLint distribution.\n\n    :rtype: string\n    \"\"\"\n    if not os.path.exists(bootstrap_dir):\n      os.makedirs(bootstrap_dir)\n\n    eslint_zip = os.path.join(bootstrap_dir, 'eslint.zip')\n    if not os.path.exists(eslint_zip):\n      with open(eslint_zip, 'w') as f:\n        f.write(self.eslint_zip)\n\n    if not os.path.exists(os.path.join(bootstrap_dir, 'eslint')):\n      with zipfile.ZipFile(eslint_zip) as z:\n        z.extractall(bootstrap_dir)\n\n    return os.path.join(bootstrap_dir, 'eslint')\n",
+  "agc_valid": true,
+  "body_sha256": "a3b34dc73bce89da4f20327fdf23baf99a2c6438d7670bda57d4902b114b70b4",
+  "body_tokens": 74,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not os.path.exists(bootstrap_dir):\n      os.makedirs(bootstrap_dir)\n\n    eslint_zip = os.path.join(bootstrap_dir, 'eslint.zip')\n    if not os.path.exists(eslint_zip):\n      with open(eslint_zip, 'w') as f:\n        f.write(self.eslint_zip)\n\n    if not os.path.exists(os.path.join(bootstrap_dir, 'eslint')):\n      with zipfile.ZipFile(eslint_zip) as z:\n        z.extractall(bootstrap_dir)\n\n    return os.path.join(bootstrap_dir, 'eslint')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "33489f642f37b7e2014d1c67cf4b2197b67def797feb228584de993daf927f30",
+  "human_valid": true,
+  "line_no": 336567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "822a33aa2b5477c432088935b154c128338a3260af3fdae6804b215ece36a85d",
+  "raw_output": "\n    if not os.path.exists(bootstrap_dir):\n      os.makedirs(bootstrap_dir)\n\n    eslint_zip = os.path.join(bootstrap_dir, 'eslint.zip')\n    if not os.path.exists(eslint_zip):\n      with open(eslint_zip, 'w') as f:\n        f.write(self.eslint_zip)\n\n    if not os.path.exists(os.path.join(bootstrap_dir, 'eslint')):\n      with zipfile.ZipFile(eslint_zip) as z:\n        z.extractall(bootstrap_dir)\n\n    return os.path.join(bootstrap_dir, 'eslint')\n\n ",
+  "sampling_seed": 3960691771,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

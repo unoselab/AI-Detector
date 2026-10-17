@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_online_version ():\n    \"\"\"Download update info and parse it.\"\"\"\n    import urllib.request\n    import json\n    import os\n    import sys\n    import re\n\n    try:\n        with urllib.request.urlopen('https://raw.githubusercontent.com/michael-lazar/rtv/master/rtv/__init__.py') as f:\n            content = f.read().decode('utf-8')\n    except urllib.error.HTTPError as e:\n        print('Error:', e.code, e.reason)\n        return\n\n    match = re.search(r'^__version__ = \\'(.*)\\'', content, re.M)\n    if match:\n        version = match.group(1)\n    else:\n        print('Error: Could not find version number')\n        return\n\n    if version == __version__:\n        print('You are already using the latest version.')\n        return\n\n    print('Online version:', version)\n    print('Your version:', __version__)\n\n    if sys.version_info[0] <\n",
+  "agc_valid": false,
+  "body_sha256": "a6b2ba008eb0c0929f4752566961e3b53a65876b432fce7a73167aef46c5305a",
+  "body_tokens": 177,
+  "bucket": "type08_180",
+  "clean_output": "\n    import urllib.request\n    import json\n    import os\n    import sys\n    import re\n\n    try:\n        with urllib.request.urlopen('https://raw.githubusercontent.com/michael-lazar/rtv/master/rtv/__init__.py') as f:\n            content = f.read().decode('utf-8')\n    except urllib.error.HTTPError as e:\n        print('Error:', e.code, e.reason)\n        return\n\n    match = re.search(r'^__version__ = \\'(.*)\\'', content, re.M)\n    if match:\n        version = match.group(1)\n    else:\n        print('Error: Could not find version number')\n        return\n\n    if version == __version__:\n        print('You are already using the latest version.')\n        return\n\n    print('Online version:', version)\n    print('Your version:', __version__)\n\n    if sys.version_info[0] <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "a3c0d9ca0a6cff548c01d2c37dd8d54e5c4cb7d24c7ae1ef6841e7a769ed1054",
+  "human_valid": true,
+  "line_no": 180612,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e25de4c21adf5eab2b7db58759f24203b3700841b8619db42582a6a27284b18f",
+  "raw_output": "\n    import urllib.request\n    import json\n    import os\n    import sys\n    import re\n\n    try:\n        with urllib.request.urlopen('https://raw.githubusercontent.com/michael-lazar/rtv/master/rtv/__init__.py') as f:\n            content = f.read().decode('utf-8')\n    except urllib.error.HTTPError as e:\n        print('Error:', e.code, e.reason)\n        return\n\n    match = re.search(r'^__version__ = \\'(.*)\\'', content, re.M)\n    if match:\n        version = match.group(1)\n    else:\n        print('Error: Could not find version number')\n        return\n\n    if version == __version__:\n        print('You are already using the latest version.')\n        return\n\n    print('Online version:', version)\n    print('Your version:', __version__)\n\n    if sys.version_info[0] < ",
+  "sampling_seed": 428836647,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

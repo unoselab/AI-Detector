@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_from_bin(self):\n        \"\"\"\n        Retrieves the Java library path according to the real installation of\n        the java executable\n\n        :return: The path to the JVM library, or None\n        \"\"\"\n        if self.java_home is None:\n            return None\n        return os.path.join(self.java_home, 'jre', 'lib', 'amd64', 'server')\n",
+  "agc_valid": true,
+  "body_sha256": "dc5151df465cd559331261aff2aa8b002bcdbc809fdbc23b1d22170eb84cb70b",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.java_home is None:\n            return None\n        return os.path.join(self.java_home, 'jre', 'lib', 'amd64', 'server')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "498ea08707e7e6fea6bae8cd0f1924e77a28032729eabf56f51486648a51dc73",
+  "human_valid": true,
+  "line_no": 283855,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d711527e725d5d958d74c7a459a9a3638051de9af024546458fcd1656a53f5e2",
+  "raw_output": "\n        if self.java_home is None:\n            return None\n        return os.path.join(self.java_home, 'jre', 'lib', 'amd64', 'server')\n\n    def",
+  "sampling_seed": 3779640478,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

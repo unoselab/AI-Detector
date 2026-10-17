@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update_status(self, *args, **kwargs):\n        \"\"\" :reference: https://dev.twitter.com/rest/reference/post/statuses/update\n            :allowed_param:'status', 'in_reply_to_status_id', 'in_reply_to_status_id_str', 'auto_populate_reply_metadata', 'lat', 'long', 'source', 'place_id', 'display_coordinates', 'media_ids'\n        \"\"\"\n            post_data = kwargs.copy()\n            post_data.update({'status': args[0]})\n            return bind_api(\n                api=self,\n                path='/statuses/update.json',\n                method='POST',\n                payload_type='status',\n                allowed_param=['status', 'in_reply_to_status_id', 'in_reply_to_status_id_str', 'auto_populate_reply_metadata', 'lat', 'long', 'source', 'place_id', 'display_coordinates', 'media_ids'],\n                require_auth=True\n            )(*args, **kwargs)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "1d658718827c7ce1c73b1cadbb1c872cdd61c089a416d78dd5af09465d120d4b",
+  "body_tokens": 167,
+  "bucket": "type07_170",
+  "clean_output": "\n            post_data = kwargs.copy()\n            post_data.update({'status': args[0]})\n            return bind_api(\n                api=self,\n                path='/statuses/update.json',\n                method='POST',\n                payload_type='status',\n                allowed_param=['status', 'in_reply_to_status_id', 'in_reply_to_status_id_str', 'auto_populate_reply_metadata', 'lat', 'long', 'source', 'place_id', 'display_coordinates', 'media_ids'],\n                require_auth=True\n            )(*args, **kwargs)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 173,
+  "human_sha256": "5041f463e272b330b0864506867f61d0442b33a99a222673de8e43ab8c9c57de",
+  "human_valid": true,
+  "line_no": 295984,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7a9de50ef94993e1a108f74fd226f2705e9669b5f75c214751362e1ca6afaf5c",
+  "raw_output": "\n        post_data = kwargs.copy()\n        post_data.update({'status': args[0]})\n        return bind_api(\n            api=self,\n            path='/statuses/update.json',\n            method='POST',\n            payload_type='status',\n            allowed_param=['status', 'in_reply_to_status_id', 'in_reply_to_status_id_str', 'auto_populate_reply_metadata', 'lat', 'long', 'source', 'place_id', 'display_coordinates', 'media_ids'],\n            require_auth=True\n        )(*args, **kwargs)\n\n    @property\n    def",
+  "sampling_seed": 588333227,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

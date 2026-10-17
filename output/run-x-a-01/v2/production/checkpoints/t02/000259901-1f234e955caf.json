@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def browse(self, folder, levels=None, prefix=None):\n        \"\"\" Returns the directory tree of the global model.\n\n            Directories are always JSON objects (map/dictionary), and files are\n            always arrays of modification time and size. The first integer is\n            the files modification time, and the second integer is the file\n            size.\n\n            Args:\n                folder (str): The root folder to traverse.\n                levels (int): How deep within the tree we want to dwell down.\n                    (0 based, defaults to unlimited depth)\n                prefix (str): Defines a prefix within the tree where to start\n                    building the structure.\n\n            Returns:\n                dict\n        \"\"\"\n        prefix (str): A prefix to add to the folder names.\n\n                    Returns:\n                        dict: A directory tree of the global model.\n                \"\"\"\n                if levels is None:\n                    levels =\n",
+  "agc_valid": false,
+  "body_sha256": "b7a9679f19e20077bb28f9f2be56a33f23eda7708411a5cf6507cf4782f99910",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n        prefix (str): A prefix to add to the folder names.\n\n                    Returns:\n                        dict: A directory tree of the global model.\n                \"\"\"\n                if levels is None:\n                    levels =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "8666b01a231270ba204230699a3625777431b08d73425e0fd23866387802eef1",
+  "human_valid": true,
+  "line_no": 259901,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1f234e955caf5af3f78089678ba425a9c34f0968eb68aa18dd0e9772d49b421d",
+  "raw_output": "prefix (str): A prefix to add to the folder names.\n\n            Returns:\n                dict: A directory tree of the global model.\n        \"\"\"\n        if levels is None:\n            levels = ",
+  "sampling_seed": 2520730902,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

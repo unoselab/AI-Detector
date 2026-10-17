@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def skip_format_url(format_, url):\n    \"\"\"\n    Checks whether a give format/url should be skipped and not downloaded.\n\n    @param format_: Filename format (extension).\n    @type format_: str (e.g. html, txt, zip, pdf)\n\n    @param url: URL.\n    @type url: str\n\n    @return: True if format/url should be skipped, False otherwise.\n    @rtype bool\n    \"\"\"\n    # Check if format is in the list of skipped formats.\n    if format_ in SKIPPED_FORMATS:\n        return True\n\n    # Check if url is in the list of skipped urls.\n    if url in SKIPPED_URLS:\n        return True\n\n    # Check if format is in the list of skipped formats based on the url.\n    if format_ in SKIPPED_FORMATS_BASED_ON_URL:\n        for skipped_format_based_on_url in SKIPPED_FORMATS_BASED_ON_URL[format_]:\n            if skipped_format_based_on_url in url:\n                return True\n\n    return False\n",
+  "agc_valid": true,
+  "body_sha256": "1cb46947015e179e3974631556cdd12750c8c1863793af44f4f07abad7a46cd4",
+  "body_tokens": 134,
+  "bucket": "type04_140",
+  "clean_output": "\n    # Check if format is in the list of skipped formats.\n    if format_ in SKIPPED_FORMATS:\n        return True\n\n    # Check if url is in the list of skipped urls.\n    if url in SKIPPED_URLS:\n        return True\n\n    # Check if format is in the list of skipped formats based on the url.\n    if format_ in SKIPPED_FORMATS_BASED_ON_URL:\n        for skipped_format_based_on_url in SKIPPED_FORMATS_BASED_ON_URL[format_]:\n            if skipped_format_based_on_url in url:\n                return True\n\n    return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 190,
+  "human_sha256": "e4fe11d09b6b83028152b525cf299371c816c63bf4d7aa3bc4e1c522e5a92a73",
+  "human_valid": true,
+  "line_no": 360257,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dff454433b3f9f6d3deb10683a31f490ff149348a0acce1848bdaa2664318fcc",
+  "raw_output": "\n    # Check if format is in the list of skipped formats.\n    if format_ in SKIPPED_FORMATS:\n        return True\n\n    # Check if url is in the list of skipped urls.\n    if url in SKIPPED_URLS:\n        return True\n\n    # Check if format is in the list of skipped formats based on the url.\n    if format_ in SKIPPED_FORMATS_BASED_ON_URL:\n        for skipped_format_based_on_url in SKIPPED_FORMATS_BASED_ON_URL[format_]:\n            if skipped_format_based_on_url in url:\n                return True\n\n    return False\n\n\ndef is_format_supported(format_):\n    \"\"\"\n    Checks whether a given format is supported.\n\n    @param format_: Filename format (extension).\n    @type format_: str (e.g. html, txt, zip, pdf)\n\n    @return: True if format is supported, False otherwise.\n    @rtype bool\n    \"\"\"\n    return format_ in SUPPORTED_FORMATS\n\n\ndef download_file(url, output_path, format_, options, overwrite=False):\n    \"\"\"\n    Downloads a file from a given url.\n\n    @param url: URL.\n    @type url: str\n\n    @param output_path: Output path.\n    @type output_path: str\n\n    @param format_: Filename format (extension).\n    @type format_: str (e.g. html, txt, zip, pdf)\n\n    @param options: Options to pass to the download function.\n    @type options: dict\n\n    @param overwrite: Whether to overwrite existing files.\n    @type overwrite: bool\n    \"\"\"\n    if skip_format_url(format_, url):\n        return\n\n    if not is_format_supported(format_):\n        raise Exception(\"Format not supported: %s\" % format_)\n\n    if not os.path.exists(output_path):\n        os.makedirs(output_path)\n\n    output_file_path = os.path.join(output_path, url",
+  "sampling_seed": 4069535651,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

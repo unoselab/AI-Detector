@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hlp_source_under(folder):\n    \"\"\"\n    this function finds all the python packages under a folder and\n    write the 'packages' and 'package_dir' entries for a python setup.py\n    script\n    \"\"\"\n    # TODO: make it work for all folder, not just 'src'\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if not root.startswith(\".\"):\n            if \"__init__.py\" in files:\n                if not root.startswith(\"src\"):\n                    packages.append(root.replace(os.path.sep, \".\"))\n                else:\n                    packages.append(root.replace(os.path.sep, \".\")[4:])\n            elif root != folder:\n                if not root.startswith(\"src\"):\n                    package_dir[root.replace(os.path.sep, \".\")] = root.replace(os.path.sep, \".\")\n                else:\n                    package_dir[root.replace(os.path.sep, \".\")[4:]] = root.replace(os.path.sep, \".\")[4:]\n\n    return packages, package_dir\n",
+  "agc_valid": true,
+  "body_sha256": "55f866c85fb82c67799550b041ad011e8040a2c0ae78864cb6818597eeca8e2a",
+  "body_tokens": 240,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: make it work for all folder, not just 'src'\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if not root.startswith(\".\"):\n            if \"__init__.py\" in files:\n                if not root.startswith(\"src\"):\n                    packages.append(root.replace(os.path.sep, \".\"))\n                else:\n                    packages.append(root.replace(os.path.sep, \".\")[4:])\n            elif root != folder:\n                if not root.startswith(\"src\"):\n                    package_dir[root.replace(os.path.sep, \".\")] = root.replace(os.path.sep, \".\")\n                else:\n                    package_dir[root.replace(os.path.sep, \".\")[4:]] = root.replace(os.path.sep, \".\")[4:]\n\n    return packages, package_dir\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "aa2ce2882c8bcf9bb7cbdd529abaa479aff2e80080b7905cf4d0a61da891a9e9",
+  "human_valid": true,
+  "line_no": 315318,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0aa6602605bddca2fdc0f499b0ef4e7c794ced4a62f46a1607284bdfb19cae19",
+  "raw_output": "\n    # TODO: make it work for all folder, not just 'src'\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if not root.startswith(\".\"):\n            if \"__init__.py\" in files:\n                if not root.startswith(\"src\"):\n                    packages.append(root.replace(os.path.sep, \".\"))\n                else:\n                    packages.append(root.replace(os.path.sep, \".\")[4:])\n            elif root != folder:\n                if not root.startswith(\"src\"):\n                    package_dir[root.replace(os.path.sep, \".\")] = root.replace(os.path.sep, \".\")\n                else:\n                    package_dir[root.replace(os.path.sep, \".\")[4:]] = root.replace(os.path.sep, \".\")[4:]\n\n    return packages, package_dir\n\n\ndef hlp_add_entry_points(entry_points, name, value):\n    \"\"\"\n    this function adds an entry point to the entry points dictionary\n    :param entry_points: dictionary of entry points\n    :param name: name of the entry point\n    :param value: value of the entry point\n    :return: updated entry points\n    \"\"\"\n    if entry_points is None:\n        entry_points = {}\n    if name not in entry_points:\n        entry_points[name] = []\n    entry_points[name].append(value)\n    return entry_points\n\n\ndef hlp_get_setup_data(setup_data, attr_name, value):\n    \"\"\"\n    this function adds an attribute to the setup data\n    :param setup_data: dictionary of setup data\n    :param attr_name: name of the attribute to add\n    :param value: value of the attribute to add\n    :return: updated setup data\n    \"\"\"\n    if setup_data is None:\n        setup_data = {}\n    setup_data[attr_name] = value\n    return setup_data\n\n\ndef hlp_get_package_data(package_data, package_name, file_pattern):\n",
+  "sampling_seed": 1955259999,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

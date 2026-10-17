@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bp_to_aap (bp):\n    \"\"\"Converts a basepol into a tuple of (ant1, ant2, pol).\"\"\"\n    ant1 = bp[0]\n    ant2 = bp[1]\n    pol = bp[2]\n    return (ant1, ant2, pol)\n",
+  "agc_valid": true,
+  "body_sha256": "29aa2441d4ee151e33b3cf10039b173e8635618dfc419a13e39a1a512e2c3c00",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n    ant1 = bp[0]\n    ant2 = bp[1]\n    pol = bp[2]\n    return (ant1, ant2, pol)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "752eca49c40480a7aab97bb3c5c5567d1b517cf09b376909f29166bab911981a",
+  "human_valid": true,
+  "line_no": 253676,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "65f776367cfd18fb37d56a682ad9019242df04f56a4753e055002f8c851de3eb",
+  "raw_output": "\n    ant1 = bp[0]\n    ant2 = bp[1]\n    pol = bp[2]\n    return (ant1, ant2, pol)\n\ndef aap_to_bp (aap):\n    \"\"\"Converts an antpairpol into a tuple of (basepol,).\"\"\"\n    ant1 = aap[0]\n    ant2 = aap[1]\n    pol = aap[2]\n    return (ant1, ant2, pol)\n\ndef bp_to_aap_str (bp):\n    \"\"\"Converts a basepol into a string of (ant1, ant2, pol).\"\"\"\n    ant1 = bp[0]\n    ant2 = bp[1]\n    pol = bp[2]\n    return \"(%d,%d,%s)\" % (ant1, ant2, pol)\n\ndef aap_to_bp_str (aap):\n    \"\"\"Converts an antpairpol into a string of (basepol,).\"\"\"\n    ant1 = aap[0]\n    ant2 = aap[1]\n    pol = aap[2]\n    return \"(%d,%d,%s)\" % (ant1, ant2, pol)\n\ndef bp_to_aap_str_no_pol (bp):\n    \"\"\"Converts a basepol into a string of (ant1, ant2).\"\"\"\n    ant1 = bp[0]\n    ant2 = bp[1]\n    return \"(%d,%d)\" % (ant1, ant2)\n\ndef aap_to_bp_str_no_pol (aap):\n    \"\"\"Converts an antpairpol into a string of (basepol,).\"\"\"\n    ant1 = aap[0]\n    ant2 = aap[1]\n    return \"(%d,%d)\" % (ant1, ant2)\n\ndef bp_to_aap_str_no_ant (bp):\n    \"\"\"Converts a basepol into a string of (pol).\"\"\"\n    pol = bp[2]\n    return \"(%s)\" % (pol)\n\ndef aap_to_bp",
+  "sampling_seed": 170572931,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

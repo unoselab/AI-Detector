@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def suspend(self):\n        \"\"\"\n        Suspends the thread execution.\n\n        @rtype:  int\n        @return: Suspend count. If zero, the thread is running.\n        \"\"\"\n        return self._native.suspend()\n",
+  "agc_valid": true,
+  "body_sha256": "e3702f883fc4a07588f2fb4b721cd1024389c7809905dd38592df3e850de606b",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._native.suspend()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "ef155150ab3f3acd1d2c3e9398988940d7036b7f321d5fc0de10dff4b136b1d8",
+  "human_valid": true,
+  "line_no": 202406,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2bb88d1673b3084b9926f517bd49309579e306480a9a2433a77c0cf18e5fcb37",
+  "raw_output": "\n        return self._native.suspend()\n\n    def",
+  "sampling_seed": 1560747779,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

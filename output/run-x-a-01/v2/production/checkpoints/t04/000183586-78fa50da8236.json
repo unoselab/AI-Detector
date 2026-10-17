@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _get_user(self, username):\n        \"\"\" get user attributes\n        @str username: user to get\n        @rtype: dict, {<attr>: <value>}\n        \"\"\"\n        # get user attributes\n        user = self.get_user_by_name(username)\n        if user is None:\n            return None\n        return {\n            'username': user['username'],\n            'name': user['name'],\n            'email': user['email'],\n            'admin': user['admin'],\n            'enabled': user['enabled'],\n            'password': user['password'],\n            'last_login': user['last_login'],\n            'created': user['created'],\n            'modified': user['modified'],\n            'groups': [g['name'] for g in user['groups']]\n        }\n",
+  "agc_valid": true,
+  "body_sha256": "97a1e6844d53b789920c63ab19ba89990d6ed03522946c6197e8ff27991310d4",
+  "body_tokens": 197,
+  "bucket": "type10_200",
+  "clean_output": "\n        # get user attributes\n        user = self.get_user_by_name(username)\n        if user is None:\n            return None\n        return {\n            'username': user['username'],\n            'name': user['name'],\n            'email': user['email'],\n            'admin': user['admin'],\n            'enabled': user['enabled'],\n            'password': user['password'],\n            'last_login': user['last_login'],\n            'created': user['created'],\n            'modified': user['modified'],\n            'groups': [g['name'] for g in user['groups']]\n        }\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "77b51e4e408ebfee94ab2ce7e66c236607c6d97549a2288b2e3d7b8245f07745",
+  "human_valid": true,
+  "line_no": 183586,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "78fa50da8236403466585e031aeafaf8499004f6ba510b0e93251dc278934a7c",
+  "raw_output": "\n        # get user attributes\n        user = self.get_user_by_name(username)\n        if user is None:\n            return None\n        return {\n            'username': user['username'],\n            'name': user['name'],\n            'email': user['email'],\n            'admin': user['admin'],\n            'enabled': user['enabled'],\n            'password': user['password'],\n            'last_login': user['last_login'],\n            'created': user['created'],\n            'modified': user['modified'],\n            'groups': [g['name'] for g in user['groups']]\n        }\n\n    def",
+  "sampling_seed": 2770361378,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

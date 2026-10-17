@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def addVariable(self, variable, domain):\n        \"\"\"\n        Add a variable to the problem\n\n        Example:\n\n        >>> problem = Problem()\n        >>> problem.addVariable(\"a\", [1, 2])\n        >>> problem.getSolution() in ({'a': 1}, {'a': 2})\n        True\n\n        @param variable: Object representing a problem variable\n        @type  variable: hashable object\n        @param domain: Set of items defining the possible values that\n                       the given variable may assume\n        @type  domain: list, tuple, or instance of C{Domain}\n        \"\"\"\n        iterable object\n                \"\"\"\n                self._variables[variable] = domain\n",
+  "agc_valid": false,
+  "body_sha256": "dcaabe9077695a62d31103c51b69a20ef268f238973e8b6bd6eae0112c914dd3",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n        iterable object\n                \"\"\"\n                self._variables[variable] = domain\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 173,
+  "human_sha256": "b3aad607def269dd96e2729e3742ea2b26446d45cdced04b6d7044c748ee3f52",
+  "human_valid": true,
+  "line_no": 279864,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c7e451f9410e24cab156d7b2abb464b9e6392dbdc61b4e6230389285f6fd58f1",
+  "raw_output": "iterable object\n        \"\"\"\n        self._variables[variable] = domain\n\n    def",
+  "sampling_seed": 1326962775,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

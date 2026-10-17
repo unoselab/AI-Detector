@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def register_callback_query_handler(self, callback, *custom_filters, state=None, run_task=None, **kwargs):\n        \"\"\"\n        Register handler for callback query\n\n        Example:\n\n        .. code-block:: python3\n\n            dp.register_callback_query_handler(some_callback_handler, lambda callback_query: True)\n\n        :param callback:\n        :param state:\n        :param custom_filters:\n        :param run_task: run callback in task (no wait results)\n        :param kwargs:\n        \"\"\"\n        :\n                :return:\n                \"\"\"\n                self.callback_query_handlers.append(\n                    CallbackQueryHandler(callback, state, run_task, custom_filters, **kwargs)\n                )\n",
+  "agc_valid": false,
+  "body_sha256": "eaa1f6f65ecb51124cce818c8b08b649362221119999b7465c2496ad6c8f88c0",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n        :\n                :return:\n                \"\"\"\n                self.callback_query_handlers.append(\n                    CallbackQueryHandler(callback, state, run_task, custom_filters, **kwargs)\n                )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "86d09768559646a4395f35d420a964a51ba788e05203c49f79a9a98fec11d0a5",
+  "human_valid": true,
+  "line_no": 158127,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2021e11e3538594105ef1f34013fc5f71cac09e7facfbc664f3b65084f446d3c",
+  "raw_output": ":\n        :return:\n        \"\"\"\n        self.callback_query_handlers.append(\n            CallbackQueryHandler(callback, state, run_task, custom_filters, **kwargs)\n        )\n\n    def",
+  "sampling_seed": 4269582914,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

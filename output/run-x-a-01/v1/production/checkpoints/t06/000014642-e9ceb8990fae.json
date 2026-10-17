@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _unlock(self):\n        \"\"\"\n        Unlocks the index\n        \"\"\"\n        if not self.locked:\n            return\n        self.locked = False\n        self._unlock_index(self.index_name)\n",
+  "agc_valid": true,
+  "body_sha256": "5a83cbbfbcf7a7beffe4dd1e1fd0813e6bf7c8a10aff27509073890ca2dc26fb",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not self.locked:\n            return\n        self.locked = False\n        self._unlock_index(self.index_name)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "79cbf1c28b6765453a0b0f7c02fa0881297a7ea8367d79f6876c9159ec30496d",
+  "human_valid": true,
+  "line_no": 14642,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e9ceb8990faef85e23ba450452e9cc8dd159cbf4dd457a14ed7a72a25f37af45",
+  "raw_output": "\n        if not self.locked:\n            return\n        self.locked = False\n        self._unlock_index(self.index_name)\n\n    def",
+  "sampling_seed": 638318516,
+  "tag": "t06",
+  "temperature": 0.6
+}

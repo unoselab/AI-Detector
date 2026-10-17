@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def applyTuple(self, tuple, right, env):\n    \"\"\"Apply a tuple to something else.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n",
+  "agc_valid": true,
+  "body_sha256": "3efdd007a77801ef2e80f7bf64a954fb5c4bea0ca34f4d2e8a054d8bb614be7e",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2d2d36918b130175779dd882de4114425d29869804fd2279cbdcff330df9a5de",
+  "human_valid": true,
+  "line_no": 18276,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3ea0347595ef6dc6c164aca14417bbb893681f1f934e719570ebaf6e6b013e2e",
+  "raw_output": "\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToTuple(self, tuple, right, env):\n    \"\"\"Apply a tuple to a tuple.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToAtom(self, tuple, right, env):\n    \"\"\"Apply a tuple to an atom.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToList(self, tuple, right, env):\n    \"\"\"Apply a tuple to a list.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToFunction(self, tuple, right, env):\n    \"\"\"Apply a tuple to a function.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToVariable(self, tuple, right, env):\n    \"\"\"Apply a tuple to a variable.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToEmptyList(self, tuple, right, env):\n    \"\"\"Apply a tuple to an empty list.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTupleToEmptyTuple(self, tuple, right, env):\n    \"\"\"Apply a tuple to an empty tuple.\"\"\"\n    if isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    else:\n        return tuple.apply(right, env)\n\ndef applyTuple",
+  "sampling_seed": 3069948197,
+  "tag": "t02",
+  "temperature": 0.2
+}

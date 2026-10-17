@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stock_image(width: Union[int, str] = 1920,\n                    height: Union[int, str] = 1080,\n                    keywords: Optional[List[str]] = None,\n                    writable: bool = False) -> Union[str, bytes]:\n        \"\"\"Generate random stock image (JPEG) hosted on Unsplash.\n\n        .. note:: This method required an active HTTP connection.\n\n        :param width: Width of the image.\n        :param height: Height of the image.\n        :param keywords: List of search keywords.\n        :param writable: Return image as sequence ob bytes.\n        :return: Link to the image.\n        \"\"\"\n        :param keywords: List of keywords to search for.\n                :param writable: Whether to return a bytes object or a string.\n                :return: A random stock image.\n                \"\"\"\n                if not isinstance(width, int) and not isinstance(width, str):\n                    raise TypeError(\"width must be an integer or a string.\")\n                if not isinstance(height, int) and not isinstance(height, str):\n                    raise TypeError(\"height must be an integer or a string.\")\n                if not isinstance(keywords, list):\n                    raise TypeError(\"keywords must be a list.\")\n                if not isinstance(writable, bool):\n                    raise TypeError(\"writable must be a boolean.\")\n\n                if isinstance(width, str):\n                    width = int(width)\n                if isinstance(height, str):\n                    height = int(height)\n\n                if width <\n",
+  "agc_valid": false,
+  "body_sha256": "3c4ff973374f451509a3663cd08c7dd667335c968468d08bcc619983f2bb1458",
+  "body_tokens": 366,
+  "bucket": "out_of_range",
+  "clean_output": "\n        :param keywords: List of keywords to search for.\n                :param writable: Whether to return a bytes object or a string.\n                :return: A random stock image.\n                \"\"\"\n                if not isinstance(width, int) and not isinstance(width, str):\n                    raise TypeError(\"width must be an integer or a string.\")\n                if not isinstance(height, int) and not isinstance(height, str):\n                    raise TypeError(\"height must be an integer or a string.\")\n                if not isinstance(keywords, list):\n                    raise TypeError(\"keywords must be a list.\")\n                if not isinstance(writable, bool):\n                    raise TypeError(\"writable must be a boolean.\")\n\n                if isinstance(width, str):\n                    width = int(width)\n                if isinstance(height, str):\n                    height = int(height)\n\n                if width <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "c7cc6cfdd2c1163f6ad5dda656d1dda1ce1b5a4c6343cc254e94a920aee8a0a4",
+  "human_valid": true,
+  "line_no": 163496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c61de7d5e99a0eba6900a1b5fcff7cbd62657f7926435f8e3d8d08bc1410e7d3",
+  "raw_output": ":param keywords: List of keywords to search for.\n        :param writable: Whether to return a bytes object or a string.\n        :return: A random stock image.\n        \"\"\"\n        if not isinstance(width, int) and not isinstance(width, str):\n            raise TypeError(\"width must be an integer or a string.\")\n        if not isinstance(height, int) and not isinstance(height, str):\n            raise TypeError(\"height must be an integer or a string.\")\n        if not isinstance(keywords, list):\n            raise TypeError(\"keywords must be a list.\")\n        if not isinstance(writable, bool):\n            raise TypeError(\"writable must be a boolean.\")\n\n        if isinstance(width, str):\n            width = int(width)\n        if isinstance(height, str):\n            height = int(height)\n\n        if width < ",
+  "sampling_seed": 817690940,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

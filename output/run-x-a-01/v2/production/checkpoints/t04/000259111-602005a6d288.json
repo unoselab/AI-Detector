@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def unpack(fmt, data, endian=None, target=None):\n    \"\"\"\n    Unpack the string (presumably packed by pack(fmt, ...)) according to the\n    given format. The actual unpacking is performed by ``struct.unpack``\n    but the byte order will be set according to the given `endian`, `target`\n    or byte order of the global target.\n\n    Args:\n        fmt(str): The format string.\n        data(bytes): The data to unpack.\n        endian(:class:`~pwnypack.target.Target.Endian`): Override the default\n            byte order. If ``None``, it will look at the byte order of\n            the ``target`` argument.\n        target(:class:`~pwnypack.target.Target`): Override the default byte\n            order. If ``None``, it will look at the byte order of\n            the global :data:`~pwnypack.target.target`.\n\n    Returns:\n        list: The unpacked values according to the format.\n    \"\"\"\n    ymmcore_python.Endian`): The endianness of the\n                unpacked data.\n            target(:class:`~pymmcore_python.Target`): The target of the unpacked\n                data.\n\n        Returns:\n            tuple: The unpacked data.\n        \"\"\"\n        if target is None:\n            target = get_target()\n        if endian is None:\n            endian = get_endian()\n        return target.unpack(endian, fmt, data)\n",
+  "agc_valid": false,
+  "body_sha256": "01646391d36b6c2d25a1a6f7a223577e8165664f6f1f9fa6dbd954ab455607ba",
+  "body_tokens": 151,
+  "bucket": "type06_160",
+  "clean_output": "\n    ymmcore_python.Endian`): The endianness of the\n                unpacked data.\n            target(:class:`~pymmcore_python.Target`): The target of the unpacked\n                data.\n\n        Returns:\n            tuple: The unpacked data.\n        \"\"\"\n        if target is None:\n            target = get_target()\n        if endian is None:\n            endian = get_endian()\n        return target.unpack(endian, fmt, data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "a14c3ebdd993bb92bef963f65b824c5329b2bfd28248e2901b15aa75b3655b7b",
+  "human_valid": true,
+  "line_no": 259111,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "602005a6d288ec3cf41f23a04828ba787ed05fd8f6aa29698ac5820f4463e52d",
+  "raw_output": "ymmcore_python.Endian`): The endianness of the\n            unpacked data.\n        target(:class:`~pymmcore_python.Target`): The target of the unpacked\n            data.\n\n    Returns:\n        tuple: The unpacked data.\n    \"\"\"\n    if target is None:\n        target = get_target()\n    if endian is None:\n        endian = get_endian()\n    return target.unpack(endian, fmt, data)\n\n\ndef pack(fmt, data, endian=None, target=None):\n    \"\"\"\n    Pack the given data according to the given format. The actual packing is\n    performed by ``struct.pack`` but the byte order will be set according to\n    the given `endian`, `target` or byte order of the global target.\n\n    Args:\n        fmt(str): The format string.\n        data(tuple): The data to pack.\n        endian(:class:`~pymmcore_python.Endian`): The endianness of the\n            packed data.\n        target(:class:`~pymmcore_python.Target`): The target of the packed\n            data.\n\n    Returns:\n        bytes: The packed data.\n    \"\"\"\n    if target is None:\n        target = get_target()\n    if endian is None:\n        endian = get_endian()\n    return target.pack(endian, fmt, data)\n\n\ndef pack_into(fmt, buffer, offset, *args, endian=None, target=None):\n    \"\"\"\n    Pack the given data according to the given format and write it into the\n    given buffer at the given offset. The actual packing is performed by\n    ``struct.pack_into`` but the byte order will be set according to the\n    given `endian`, `target` or byte order of the global target.\n\n    Args:\n        fmt(str): The format string.\n        buffer(bytes): The buffer to pack into.\n        offset(int): The offset in the buffer.\n        *args(tuple): The data to pack.\n        endian(:class:`~pymmcore_python.Endian`): The",
+  "sampling_seed": 2980695160,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

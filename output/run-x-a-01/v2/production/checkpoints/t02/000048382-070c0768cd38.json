@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def overlap_size(self,in_genomic_range):\n    \"\"\" The size of the overlap\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: count of overlapping bases\n    :rtype: int\n    \"\"\"\n    if not self.overlaps(in_genomic_range):\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "8d792505a8a07b03af832ae69a8094a599545159d7e437b942065c29ed54daf4",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not self.overlaps(in_genomic_range):\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "80b208df6d145d872ead061a10771859ede70cf94cde9254e0fbe9972d477eb7",
+  "human_valid": true,
+  "line_no": 48382,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "070c0768cd38f2a752749b7dfa3a1dd383beef11684d6e95731303b729c515da",
+  "raw_output": "\n    if not self.overlaps(in_genomic_range):\n        return ",
+  "sampling_seed": 3789378634,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read(self):\n        \"\"\"Reads data from the CSV file.\"\"\"\n        with open(self.file_name, 'r') as f:\n            reader = csv.reader(f)\n            for row in reader:\n                self.data.append(row)\n",
+  "agc_valid": true,
+  "body_sha256": "a2eefd339e80983d79a14e3e84aea728175eacd9141b8e74886b05f6181a4773",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n        with open(self.file_name, 'r') as f:\n            reader = csv.reader(f)\n            for row in reader:\n                self.data.append(row)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "cee7497c381ea1c557389753c35397758fd2dbab35bcb54e9c866e89d9233b15",
+  "human_valid": true,
+  "line_no": 60627,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f8dff52fbeb4d2aabf7f059ed90ad0e3dc80d7acc9e57f517f95ca22944c174e",
+  "raw_output": "\n        with open(self.file_name, 'r') as f:\n            reader = csv.reader(f)\n            for row in reader:\n                self.data.append(row)\n\n    def",
+  "sampling_seed": 38762256,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

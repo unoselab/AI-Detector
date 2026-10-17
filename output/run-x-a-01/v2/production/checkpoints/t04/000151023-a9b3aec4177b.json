@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_nd4j_dtype(np_dtype):\n    \"\"\"\n    Gets the equivalent nd4j data type\n    for a given numpy data type.\n    # Arguments\n        np_dtype: Numpy data type. One of\n            ['float64', 'float32', 'float16']\n    \"\"\"\n    if np_dtype == np.float64:\n        return 'DOUBLE'\n    elif np_dtype == np.float32:\n        return 'FLOAT'\n    elif np_dtype == np.float16:\n        return 'HALF'\n    else:\n        raise TypeError('Unsupported numpy dtype:', np_dtype)\n",
+  "agc_valid": true,
+  "body_sha256": "e8e161d1400a163f55fee3df69a4180d3ab0350b7439beabca9beee72597718b",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if np_dtype == np.float64:\n        return 'DOUBLE'\n    elif np_dtype == np.float32:\n        return 'FLOAT'\n    elif np_dtype == np.float16:\n        return 'HALF'\n    else:\n        raise TypeError('Unsupported numpy dtype:', np_dtype)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "8e3dcd83cd2a2cc6cf7ce297d3ea4d2e9727ad2f51d8aa529b7d055e5fab7218",
+  "human_valid": true,
+  "line_no": 151023,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a9b3aec4177b593e2341a2a600a13f20050d4a80b7c0bd4a35543082aa03058b",
+  "raw_output": "\n    if np_dtype == np.float64:\n        return 'DOUBLE'\n    elif np_dtype == np.float32:\n        return 'FLOAT'\n    elif np_dtype == np.float16:\n        return 'HALF'\n    else:\n        raise TypeError('Unsupported numpy dtype:', np_dtype)\n\n\ndef get_numpy_dtype(nd4j_dtype):\n    \"\"\"\n    Gets the equivalent numpy data type\n    for a given ",
+  "sampling_seed": 464958229,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

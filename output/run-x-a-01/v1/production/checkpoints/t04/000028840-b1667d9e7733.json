@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def update(cls, access_key: str,\n                     is_active: bool = None,\n                     is_admin: bool = None,\n                     resource_policy: str = None,\n                     rate_limit: int = None) -> dict:\n        \"\"\"\n        Creates a new keypair with the given options.\n        You need an admin privilege for this operation.\n        \"\"\"\n            return cls._update(access_key, is_active, is_admin, resource_policy, rate_limit)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "9ac5125b167e689ebea2d6013b665a45eb7959f5b491ca8a519b71d448635132",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return cls._update(access_key, is_active, is_admin, resource_policy, rate_limit)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6530bfe469d580b0fa8a268d29aeb524f452e96c804023733fe8e78d09479cb5",
+  "human_valid": true,
+  "line_no": 28840,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "b1667d9e77336e3568d3c4e3a399ffe3bab18b56a397aa8cf389f956e2423481",
+  "raw_output": "\n        return cls._update(access_key, is_active, is_admin, resource_policy, rate_limit)\n\n    @classmethod\n    def",
+  "sampling_seed": 907211932,
+  "tag": "t04",
+  "temperature": 0.4
+}

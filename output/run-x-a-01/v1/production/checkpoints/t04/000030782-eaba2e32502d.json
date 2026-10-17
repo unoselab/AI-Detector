@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _load_local_tzinfo():\n  \"\"\"Load zoneinfo from local disk.\"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a9d2734abc232e634bc21a6ea161de238e8981408fe18c405149beb1f5be57f9",
+  "human_valid": true,
+  "line_no": 30782,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "eaba2e32502d86b74b4fd22049ba13f9bc4278e481b38c7aa0a7bb57ff61dfa7",
+  "raw_output": "\n ",
+  "sampling_seed": 1811177718,
+  "tag": "t04",
+  "temperature": 0.4
+}

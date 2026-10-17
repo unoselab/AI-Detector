@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _slice_required_len(slice_obj):\n    \"\"\"\n    Calculate how many items must be in the collection to satisfy this slice\n\n    returns `None` for slices may vary based on the length of the underlying collection\n    such as `lst[-1]` or `lst[::]`\n    \"\"\"\n    if slice_obj.start is None:\n        return None\n    if slice_obj.stop is None:\n        return None\n\n    start = slice_obj.start\n    stop = slice_obj.stop\n    step = slice_obj.step\n\n    if step is None:\n        step =\n",
+  "agc_valid": false,
+  "body_sha256": "f980fff61f52f021b077b30bb6a564f1b06dac37be8c43b82aef3e773ed8f12c",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if slice_obj.start is None:\n        return None\n    if slice_obj.stop is None:\n        return None\n\n    start = slice_obj.start\n    stop = slice_obj.stop\n    step = slice_obj.step\n\n    if step is None:\n        step =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "e0f2a153c82bc7c19a0bf9aa4a95d99a931e7f1693e2bf64584a7461042aa776",
+  "human_valid": true,
+  "line_no": 20330,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9df207381f9a1aaebfbd7df863707abae78dadd0b8fd8954c3933607b2410c1c",
+  "raw_output": "\n    if slice_obj.start is None:\n        return None\n    if slice_obj.stop is None:\n        return None\n\n    start = slice_obj.start\n    stop = slice_obj.stop\n    step = slice_obj.step\n\n    if step is None:\n        step = ",
+  "sampling_seed": 206059328,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

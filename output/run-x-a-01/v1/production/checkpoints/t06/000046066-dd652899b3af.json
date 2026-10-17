@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set(parser, token):\n    \"\"\"\n        Usage:\n        {% set templ_tag var1 var2 ... key %}\n        {% set variable key %}\n        This tag save result of {% templ_tag var1 var2 ... %} to variable with name key,\n        Or will save value of variable to new variable with name key.\n    \"\"\"\n    tokens = token.split_contents()\n    if len(tokens) !=\n",
+  "agc_valid": false,
+  "body_sha256": "91837dd3432a21dfa154d8dee5273620a3604e89481e797aaf627279d5ea18dc",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n    tokens = token.split_contents()\n    if len(tokens) !=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b3e5f3f77b372a17b8de8626731f8a05216e1c4535debe220cc843014968a83c",
+  "human_valid": true,
+  "line_no": 46066,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "dd652899b3afb72a1ba334040a0f6cf44e6e1f2c1b0d3450af9836876858ef4a",
+  "raw_output": "\n    tokens = token.split_contents()\n    if len(tokens) != ",
+  "sampling_seed": 3375970726,
+  "tag": "t06",
+  "temperature": 0.6
+}

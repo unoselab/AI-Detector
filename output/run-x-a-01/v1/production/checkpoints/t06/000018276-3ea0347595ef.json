@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def applyTuple(self, tuple, right, env):\n    \"\"\"Apply a tuple to something else.\"\"\"\n    if isinstance(tuple, (Variable, Lambda, Function)):\n        return self.apply(tuple, right, env)\n    elif isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    elif isinstance(tuple, TuplePair):\n        return self.applyTuplePair(tuple, right, env)\n    elif isinstance(tuple, TupleTriple):\n        return self.applyTupleTriple(tuple, right, env)\n    else:\n        raise Exception(f\"Cannot apply a {type(tuple)} to {right}\")\n",
+  "agc_valid": true,
+  "body_sha256": "79fac3269d408188c4bb9d7939a9021322f0f661cfcdb7d77ea1a9f90987da16",
+  "body_tokens": 88,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(tuple, (Variable, Lambda, Function)):\n        return self.apply(tuple, right, env)\n    elif isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    elif isinstance(tuple, TuplePair):\n        return self.applyTuplePair(tuple, right, env)\n    elif isinstance(tuple, TupleTriple):\n        return self.applyTupleTriple(tuple, right, env)\n    else:\n        raise Exception(f\"Cannot apply a {type(tuple)} to {right}\")\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2d2d36918b130175779dd882de4114425d29869804fd2279cbdcff330df9a5de",
+  "human_valid": true,
+  "line_no": 18276,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3ea0347595ef6dc6c164aca14417bbb893681f1f934e719570ebaf6e6b013e2e",
+  "raw_output": "\n    if isinstance(tuple, (Variable, Lambda, Function)):\n        return self.apply(tuple, right, env)\n    elif isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    elif isinstance(tuple, TuplePair):\n        return self.applyTuplePair(tuple, right, env)\n    elif isinstance(tuple, TupleTriple):\n        return self.applyTupleTriple(tuple, right, env)\n    else:\n        raise Exception(f\"Cannot apply a {type(tuple)} to {right}\")\n\ndef applyTuplePair(self, tuple, right, env):\n    \"\"\"Apply a tuple pair to something else.\"\"\"\n    if isinstance(tuple, (Variable, Lambda, Function)):\n        return self.apply(tuple, right, env)\n    elif isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    elif isinstance(tuple, TuplePair):\n        return self.applyTuplePair(tuple, right, env)\n    elif isinstance(tuple, TupleTriple):\n        return self.applyTupleTriple(tuple, right, env)\n    else:\n        raise Exception(f\"Cannot apply a {type(tuple)} to {right}\")\n\ndef applyTupleTriple(self, tuple, right, env):\n    \"\"\"Apply a tuple triple to something else.\"\"\"\n    if isinstance(tuple, (Variable, Lambda, Function)):\n        return self.apply(tuple, right, env)\n    elif isinstance(tuple, Tuple):\n        return tuple.apply(right, env)\n    elif isinstance(tuple, TuplePair):\n        return self.applyTuplePair(tuple, right, env)\n    elif isinstance(tuple, TupleTriple):\n        return self.applyTupleTriple(tuple, right, env)\n    else:\n        raise Exception(f\"Cannot apply a {type(tuple)} to {right}\")\n\ndef applyTuplePair(self, tuple, right, env):\n    \"\"\"Apply a tuple pair to something else.\"\"\"\n    if isinstance(tuple, (Variable, Lambda, Function)):\n        return self.apply(tuple, right, env",
+  "sampling_seed": 3775799756,
+  "tag": "t06",
+  "temperature": 0.6
+}

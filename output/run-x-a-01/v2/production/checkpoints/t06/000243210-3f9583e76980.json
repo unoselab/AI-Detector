@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def nexec(statement, globals=None, locals=None, **kwargs):\n    \"\"\"Execute *statement* using *globals* and *locals* dictionaries as\n    *global* and *local* namespace.  *statement* is transformed using\n    :class:`.NapiTransformer`.\"\"\"\n    transformer = NapiTransformer(**kwargs)\n    statement = transformer.transform(statement)\n    if globals is None:\n        globals = {}\n    if locals is None:\n        locals = {}\n    code = compile(statement, '<string>', 'exec')\n    return exec(code, globals, locals)\n",
+  "agc_valid": true,
+  "body_sha256": "54fa1cbc7f83dd67c01c614261e398e3a340d7d71b6d6608378c1e8ad0a4d38b",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    transformer = NapiTransformer(**kwargs)\n    statement = transformer.transform(statement)\n    if globals is None:\n        globals = {}\n    if locals is None:\n        locals = {}\n    code = compile(statement, '<string>', 'exec')\n    return exec(code, globals, locals)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "ffa2f3f461933767c4f5502d5b8f0d3f2d5d567c235d40b4fd44d2270820aff5",
+  "human_valid": true,
+  "line_no": 243210,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3f9583e76980566649d7d419c5c9090635765049a5ec38cb72fc9944fd119f9c",
+  "raw_output": "\n    transformer = NapiTransformer(**kwargs)\n    statement = transformer.transform(statement)\n    if globals is None:\n        globals = {}\n    if locals is None:\n        locals = {}\n    code = compile(statement, '<string>', 'exec')\n    return exec(code, globals, locals)\n\n\nclass NapiTransformer(Transformer):\n    \"\"\"Transformer to transform Napi code.\n\n    Example::\n\n        from napi.transformers import NapiTransformer\n        from napi.nodes import *\n        from napi.visitors import Transformer\n\n        transformer = NapiTransformer()\n\n        print(transformer.visit(Module(\n            imports=[\n                Import('a', 'b'),\n                Import('c', 'd'),\n                Import('e', 'f')\n            ],\n            statements=[\n                Assign(\n                    targets=[Name('x')],\n                    value=Name('y')\n                ),\n                Assign(\n                    targets=[Name('y')],\n                    value=Call(\n                        func=Name('f'),\n                        args=[Name('x')]\n                    )\n                )\n            ]\n        )))\n\n    Output::\n\n        from __future__ import print_function\n        from b import a\n        from d import c\n        from f import e\n        x = y\n        y = f(x)\n\n    \"\"\"\n\n    def",
+  "sampling_seed": 133074589,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

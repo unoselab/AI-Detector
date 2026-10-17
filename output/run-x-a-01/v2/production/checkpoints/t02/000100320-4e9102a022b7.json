@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _parse_aot(self, first, name_first):  # type: (Table, str) -> AoT\n        \"\"\"\n        Parses all siblings of the provided table first and bundles them into\n        an AoT.\n        \"\"\"\n        if first.name == name_first:\n            return AoT(first)\n\n        siblings = [first]\n        while True:\n            next_ = first.next_sibling\n            if next_ is None:\n                break\n            siblings.append(next_)\n            first = next_\n\n        return AoT(siblings)\n",
+  "agc_valid": true,
+  "body_sha256": "c0427094d22ee38723660e1bb803776796639090191d4589818d253823dba1ab",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n        if first.name == name_first:\n            return AoT(first)\n\n        siblings = [first]\n        while True:\n            next_ = first.next_sibling\n            if next_ is None:\n                break\n            siblings.append(next_)\n            first = next_\n\n        return AoT(siblings)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "18ae11a5c576dc8fadb8cb893be843178854cba0bb5ee837f31493de80a5c1ad",
+  "human_valid": true,
+  "line_no": 100320,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4e9102a022b7630f63e28f067484bb921fc7995cf7f78f49d4956667f6acdf72",
+  "raw_output": "\n        if first.name == name_first:\n            return AoT(first)\n\n        siblings = [first]\n        while True:\n            next_ = first.next_sibling\n            if next_ is None:\n                break\n            siblings.append(next_)\n            first = next_\n\n        return AoT(siblings)\n\n    def",
+  "sampling_seed": 2702913676,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

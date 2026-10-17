@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _xml_to_dict(xml):\n    \"\"\"\n    Helper function to covert xml into a data dictionary.\n\n    xml\n        The xml data to convert.\n    \"\"\"\n    if not xml:\n        return {}\n    if not isinstance(xml, dict):\n        xml = xmltodict.parse(xml)\n    return xml\n",
+  "agc_valid": true,
+  "body_sha256": "46a1b706ee97a9830f8f838d5f0303a09db04baea21fcc311e65612e31f5cef7",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not xml:\n        return {}\n    if not isinstance(xml, dict):\n        xml = xmltodict.parse(xml)\n    return xml\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "5219544f080e5de5963cae957501cfd94138cbb2d6e138de5917266984fe40a3",
+  "human_valid": true,
+  "line_no": 114772,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a0e1963aa931ce020b83914da4825f3171a647adf648709a96c378162977f037",
+  "raw_output": "\n    if not xml:\n        return {}\n    if not isinstance(xml, dict):\n        xml = xmltodict.parse(xml)\n    return xml\n\n\ndef _dict_to_xml(data):\n    \"\"\"\n    Helper function to convert a data dictionary into xml.\n\n    data\n        The data dictionary to convert.\n    \"\"\"\n    if not data:\n        return \"\"\n    if not isinstance(data, dict):\n        data = xmltodict.parse(data)\n    return xmltodict.unparse(data)\n\n\ndef _get_xml_value(xml, key):\n    \"\"\"\n    Helper function to get the value of a key in an xml data dictionary.\n\n    xml\n        The xml data dictionary to get the value from.\n\n    key\n        The key to get the value for.\n    \"\"\"\n    if not xml:\n        return None\n    if not isinstance(xml, dict):\n        xml = xmltodict.parse(xml)\n    if key in xml:\n        return xml[key]\n    return None\n\n\ndef _set_xml_value(xml, key, value):\n    \"\"\"\n    Helper function to set the value of a key in an xml data dictionary.\n\n    xml\n        The xml data dictionary to set the value in.\n\n    key\n        The key to set the value for.\n\n    value\n        The value to set.\n    \"\"\"\n    if not xml:\n        return None\n    if not isinstance(xml, dict):\n        xml = xmltodict.parse(xml)\n    xml[key] = value\n    return xml\n\n\ndef _get_xml_values(xml, key):\n    \"\"\"\n    Helper function to get the values of a key in an xml data dictionary.\n\n    xml\n        The xml data dictionary to get the values from.\n\n    key\n        The key to get the values for.\n    \"\"\"\n    if not xml:\n        return None\n    if not isinstance(xml, dict):\n        xml = xmltodict.parse(xml)\n    if key in xml:\n        return xml[key]\n    return None\n\n\ndef _set_xml_values(xml, key, values):\n   ",
+  "sampling_seed": 3819335340,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_timedelta(value, strict=True):\n    \"\"\"\n    converts duration string to timedelta\n\n    strict=True (by default) raises StrictnessError if either hours,\n    minutes or seconds in duration string exceed allowed values\n    \"\"\"\n    value = value.lower()\n    try:\n        hours, minutes, seconds = map(float, value.split(':'))\n    except ValueError:\n        raise StrictnessError('Invalid duration string')\n\n    if strict:\n        if hours >\n",
+  "agc_valid": false,
+  "body_sha256": "83d6e77315ddb49cca5793a6e7d3d3e15d9f8d4ab02bbe454ca926de14daa814",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n    value = value.lower()\n    try:\n        hours, minutes, seconds = map(float, value.split(':'))\n    except ValueError:\n        raise StrictnessError('Invalid duration string')\n\n    if strict:\n        if hours >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 158,
+  "human_sha256": "9eb56df5e5327d732f104e14980b791cfa10a22061316a0eba13e38c292682c1",
+  "human_valid": true,
+  "line_no": 35511,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "652a8f08e9970bfbcef56207a71d327b1093b895eba55c58c2c0212eb7d7f4bc",
+  "raw_output": "\n    value = value.lower()\n    try:\n        hours, minutes, seconds = map(float, value.split(':'))\n    except ValueError:\n        raise StrictnessError('Invalid duration string')\n\n    if strict:\n        if hours > ",
+  "sampling_seed": 1092960689,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

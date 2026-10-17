@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_icohp_by_label(self, label, summed_spin_channels=True, spin=Spin.up):\n        \"\"\"\n        get an icohp value for a certain bond as indicated by the label (bond labels starting by \"1\" as in ICOHPLIST/ICOOPLIST)\n        Args:\n            label: label in str format (usually the bond number in Icohplist.lobster/Icooplist.lobster\n            summed_spin_channels: Boolean to indicate whether the ICOHPs/ICOOPs of both spin channels should be summed\n            spin: if summed_spin_channels is equal to False, this spin indicates which spin channel should be returned\n\n        Returns:\n            float describing ICOHP/ICOOP value\n        \"\"\"\n        cohplist.lobster/Icooplist.lobster contains spin channels or not\n                    spin: Spin.up or Spin.down.\n                Returns:\n                    a list of floats for the icohp values for each spin channel\n                \"\"\"\n                return self.get_icohp_by_labels([label], summed_spin_channels, spin)\n",
+  "agc_valid": false,
+  "body_sha256": "a24d9543b2f570a4721be2bf2b9266893572f1afe46fa258df72e1e92a2e89d1",
+  "body_tokens": 119,
+  "bucket": "type02_120",
+  "clean_output": "\n        cohplist.lobster/Icooplist.lobster contains spin channels or not\n                    spin: Spin.up or Spin.down.\n                Returns:\n                    a list of floats for the icohp values for each spin channel\n                \"\"\"\n                return self.get_icohp_by_labels([label], summed_spin_channels, spin)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "2c6b07cae512d8f3c7d6e48dc52ecd0c9e3eb618dc12544e9d06bd9236f0c5e0",
+  "human_valid": true,
+  "line_no": 372531,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c08e6a2d339e73e31a2e95168d217649c758925433297c1efa15b905183bc558",
+  "raw_output": "cohplist.lobster/Icooplist.lobster contains spin channels or not\n            spin: Spin.up or Spin.down.\n        Returns:\n            a list of floats for the icohp values for each spin channel\n        \"\"\"\n        return self.get_icohp_by_labels([label], summed_spin_channels, spin)\n\n    def",
+  "sampling_seed": 873212659,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

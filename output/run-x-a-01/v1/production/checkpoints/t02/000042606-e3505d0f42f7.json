@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_response_code(resp):\n    \"\"\"\n    check if query quota has been surpassed or other errors occured\n    :param resp: json response\n    :return:\n    \"\"\"\n    if resp.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "ec483343b3f86e91180369dcebedc195d39be7648ade7b15aee288430bfce62a",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if resp.status_code ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "3c361924559cd31cc0efbe1f45f9f0ce9a1cf4a1b26c0991e81c9e4dbdc58a7a",
+  "human_valid": true,
+  "line_no": 42606,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e3505d0f42f75f8bfc64f9abdd8ab1183b3c7800036942ecf9f43b68cef52168",
+  "raw_output": "\n    if resp.status_code == ",
+  "sampling_seed": 1416298828,
+  "tag": "t02",
+  "temperature": 0.2
+}

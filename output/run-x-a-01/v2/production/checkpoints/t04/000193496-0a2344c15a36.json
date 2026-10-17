@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def instance():\n        \"\"\" :returns the TrajectoryInfoCache singleton instance\"\"\"\n            if not TrajectoryInfoCache._instance:\n                TrajectoryInfoCache._instance = TrajectoryInfoCache.__TrajectoryInfoCache()\n            return TrajectoryInfoCache._instance\n\n        class __TrajectoryInfoCache(object):\n            \"\"\"\n            This class is a singleton.\n            \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "f9e924fb530045ffdea0e68556443a2c9c1a310e6a06f627f678bb8a17b45e17",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n            if not TrajectoryInfoCache._instance:\n                TrajectoryInfoCache._instance = TrajectoryInfoCache.__TrajectoryInfoCache()\n            return TrajectoryInfoCache._instance\n\n        class __TrajectoryInfoCache(object):\n            \"\"\"\n            This class is a singleton.\n            \"\"\"\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "1337820e1b553efce5739f9f18b70aaaa91c4ed9b7f72960f9f0d105528bce3a",
+  "human_valid": true,
+  "line_no": 193496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0a2344c15a36d7b026d739f9ec51c234f39be63cd36feffb5669aa903d1ec943",
+  "raw_output": "\n        if not TrajectoryInfoCache._instance:\n            TrajectoryInfoCache._instance = TrajectoryInfoCache.__TrajectoryInfoCache()\n        return TrajectoryInfoCache._instance\n\n    class __TrajectoryInfoCache(object):\n        \"\"\"\n        This class is a singleton.\n        \"\"\"\n        def",
+  "sampling_seed": 2906640246,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

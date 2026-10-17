@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_decoders_by_path(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO LIST OF DECODER ARRAYS\n\n    :param query:\n    :return:\n    \"\"\"\n    return {\n        decoder.path: decoder.get_decoders()\n        for decoder in Decoder.objects.filter(query)\n    }\n",
+  "agc_valid": true,
+  "body_sha256": "95f1478f7dd1e55a5080954e7048e051a4cc0b69976189af920e23335d6b7eab",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return {\n        decoder.path: decoder.get_decoders()\n        for decoder in Decoder.objects.filter(query)\n    }\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cbb3d175f56b0a9ec4e2f6c727343cda1a05128d4fa2ce79fb12f8cc910cc2fd",
+  "human_valid": true,
+  "line_no": 43706,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "45ba5827db6a9ba7e0410f00ab54435139cc1e89a0120a9c76573f075b37f9c8",
+  "raw_output": "\n    return {\n        decoder.path: decoder.get_decoders()\n        for decoder in Decoder.objects.filter(query)\n    }\n\n\ndef get_decoders_by_path(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO DECODER ARRAY\n\n    :param query:\n    :return:\n    \"\"\"\n    return {\n        decoder.path: decoder.get_decoders()[0]\n        for decoder in Decoder.objects.filter(query)\n    }\n\n\ndef get_decoders_by_path_and_type(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO DECODER ARRAY\n\n    :param query:\n    :return:\n    \"\"\"\n    return {\n        decoder.path: decoder.get_decoders()\n        for decoder in Decoder.objects.filter(query)\n    }\n\n\ndef get_decoders_by_type(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO DECODER ARRAY\n\n    :param query:\n    :return:\n    \"\"\"\n    return {\n        decoder.path: decoder.get_decoders()[0]\n        for decoder in Decoder.objects.filter(query)\n    }\n\n\ndef get_decoders_by_path_and_type_and_name(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO DECODER ARRAY\n\n    :param query:\n    :return:\n    \"\"\"\n    return {\n        decoder.path: decoder.get_decoders()\n        for decoder in Decoder.objects.filter(query)\n    }\n\n\ndef get_decoders_by_path_and_type_and_name_and_version(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO DECODER ARRAY\n\n    :param query:\n    :return:\n    \"\"\"\n    return {\n        decoder.path: decoder.get_decoders()\n        for decoder in Decoder.objects.filter(query)\n   ",
+  "sampling_seed": 3817965400,
+  "tag": "t06",
+  "temperature": 0.6
+}

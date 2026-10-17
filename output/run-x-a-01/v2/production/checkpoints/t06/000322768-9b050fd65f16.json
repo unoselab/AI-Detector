@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add(self):\n        \"\"\" Add a new VRF.\n        \"\"\"\n        return self.add_vrf(vrf_id=None, vrf_name=None, rd=None, route_distinguisher=None, rt=None, route_target=None,\n                             vni=None, encapsulation_mode=None, vni_type=None, vni_options=None,\n                             import_rt=None, export_rt=None, import_rt_type=None, export_rt_type=None,\n                             import_rt_options=None, export_rt_options=None, rd_options=None,\n                             rt_options=None, route_target_options=None, route_distinguisher_options=None,\n                             import_rd=None, export_rd=None, import_rd_type=None, export_rd_type=None,\n                             import_rd_options=None, export_rd_options=None, vni_options_type=None,\n                             vni_options_options=None, vni_options_import_options=None,\n                             vni_options_export_options=None)\n",
+  "agc_valid": true,
+  "body_sha256": "0aa2f2349628c479170a3b1cfcf92444c415eccd4c632f587e0ef591f5f5c6de",
+  "body_tokens": 263,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.add_vrf(vrf_id=None, vrf_name=None, rd=None, route_distinguisher=None, rt=None, route_target=None,\n                             vni=None, encapsulation_mode=None, vni_type=None, vni_options=None,\n                             import_rt=None, export_rt=None, import_rt_type=None, export_rt_type=None,\n                             import_rt_options=None, export_rt_options=None, rd_options=None,\n                             rt_options=None, route_target_options=None, route_distinguisher_options=None,\n                             import_rd=None, export_rd=None, import_rd_type=None, export_rd_type=None,\n                             import_rd_options=None, export_rd_options=None, vni_options_type=None,\n                             vni_options_options=None, vni_options_import_options=None,\n                             vni_options_export_options=None)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "77cfac042964027747778a8560188b4fad65675382827e9ffbc1048f949deb5a",
+  "human_valid": true,
+  "line_no": 322768,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9b050fd65f168ad747a622607e2a8de3a81617b57ab580fd558e3209787b5668",
+  "raw_output": "\n        return self.add_vrf(vrf_id=None, vrf_name=None, rd=None, route_distinguisher=None, rt=None, route_target=None,\n                             vni=None, encapsulation_mode=None, vni_type=None, vni_options=None,\n                             import_rt=None, export_rt=None, import_rt_type=None, export_rt_type=None,\n                             import_rt_options=None, export_rt_options=None, rd_options=None,\n                             rt_options=None, route_target_options=None, route_distinguisher_options=None,\n                             import_rd=None, export_rd=None, import_rd_type=None, export_rd_type=None,\n                             import_rd_options=None, export_rd_options=None, vni_options_type=None,\n                             vni_options_options=None, vni_options_import_options=None,\n                             vni_options_export_options=None)\n\n    def",
+  "sampling_seed": 1369622983,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

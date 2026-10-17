@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_readme():\n    \"\"\"Generate long description\"\"\"\n    with open('README.md', 'r') as f:\n        return f.read()\n",
+  "agc_valid": true,
+  "body_sha256": "278ee45af08b439ea98f1db48630ebcda1c570491118faa74ee5b54ea433caa2",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open('README.md', 'r') as f:\n        return f.read()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "f35cd2613074d8d17a4fd8254bbc84afdfec18c35cda901997851f827040d90a",
+  "human_valid": true,
+  "line_no": 38050,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8fd849a65f33aaca22a966adaf3ae13cf032a65edf93a9d9269ef0c3556ec2d1",
+  "raw_output": "\n    with open('README.md', 'r') as f:\n        return f.read()\n\n\ndef get_requirements():\n    \"\"\"Get requirements\"\"\"\n    with open('requirements.txt', 'r') as f:\n        return f.readlines()\n\n\ndef get_test_requirements():\n    \"\"\"Get test requirements\"\"\"\n    with open('test_requirements.txt', 'r') as f:\n        return f.readlines()\n\n\ndef get_version():\n    \"\"\"Get version\"\"\"\n    with open('VERSION', 'r') as f:\n        return f.read()\n\n\ndef get_long_version():\n    \"\"\"Get long version\"\"\"\n    return '{}.{}.{}'.format(*get_version().split('.'))\n\n\ndef get_author():\n    \"\"\"Get author\"\"\"\n    return 'Kirill Klenov'\n\n\ndef get_author_email():\n    \"\"\"Get author email\"\"\"\n    return 'horneds@gmail.com'\n\n\ndef get_url():\n    \"\"\"Get url\"\"\"\n    return 'https://github.com/Horneds/pytest-django-unittest'\n\n\ndef get_license():\n    \"\"\"Get license\"\"\"\n    return 'Apache License ",
+  "sampling_seed": 2959468640,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

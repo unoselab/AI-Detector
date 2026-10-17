@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def pix2canvas(self, pt):\n        \"\"\"Takes a 2-tuple of (x, y) in window coordinates and gives\n        the (cx, cy, cz) coordinates on the canvas.\n        \"\"\"\n        return self.canvas.pix2canvas(pt)\n",
+  "agc_valid": true,
+  "body_sha256": "853b6bfa168fc343b4ca47dd18820307689b9270c69ec258c97ad8ee53eb133f",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.canvas.pix2canvas(pt)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "d227b632423dc39aaa81bc51a45947e7105257102b33bcaaccf98d7c360d9c84",
+  "human_valid": true,
+  "line_no": 133256,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4ba76f49821f0855b83aac41c656d217da5a230a105b2c8c5a2c97af92001b42",
+  "raw_output": "\n        return self.canvas.pix2canvas(pt)\n\n    def",
+  "sampling_seed": 4111715502,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def default_base_dir():\n    \"\"\"Determine the default base directory path\n\n    If the OS_REFRESH_CONFIG_BASE_DIR environment variable is set,\n    use its value.\n    Otherwise, prefer the new default path, but still allow the old one for\n    backwards compatibility.\n    \"\"\"\n    base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not base_dir:\n        base_dir = CONF.base_dir\n    if not base_dir:\n        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),\n                                                '..',\n                                                '..'))\n        LOG.warning('Using default base directory: %s', base_dir)\n    return base_dir\n",
+  "agc_valid": true,
+  "body_sha256": "67776ecfc3c23870946d9fb6744fdd8a1b502bad7e569c724d1040f04795887a",
+  "body_tokens": 153,
+  "bucket": "type06_160",
+  "clean_output": "\n    base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not base_dir:\n        base_dir = CONF.base_dir\n    if not base_dir:\n        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),\n                                                '..',\n                                                '..'))\n        LOG.warning('Using default base directory: %s', base_dir)\n    return base_dir\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "1a187601c4c288a93108cd3722e729188106c539bf6447c0d06869634c93e953",
+  "human_valid": true,
+  "line_no": 211796,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "93d8677fa8135274019d32506afa9b4ff24b6352cd62007f21f3bebcca3a3de7",
+  "raw_output": "\n    base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if not base_dir:\n        base_dir = CONF.base_dir\n    if not base_dir:\n        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),\n                                                '..',\n                                                '..'))\n        LOG.warning('Using default base directory: %s', base_dir)\n    return base_dir\n\n\ndef get_root_dir(service_name):\n    return os.path.join(default_base_dir(), service_name)\n\n\ndef get_data_dir(service_name):\n    return os.path.join(get_root_dir(service_name), 'data')\n\n\ndef get_state_path():\n    return os.path.abspath(os.path.join(sys.prefix, 'var', 'lib', 'cinder'))\n\n\ndef get_lock_path():\n    return os.path.join(get_state_path(), 'locks')\n\n\ndef get_log_dir():\n    return CONF.log_dir\n\n\ndef get_log_file_path(logfile):\n    return os.path.join(get_log_dir(), logfile)\n\n\ndef get_log_dir_and_basename(logfile):\n    \"\"\"Separate the directory name and basename from a given logfile path.\n\n    :param logfile: path to a logfile\n    :returns: tuple containing the directory name and basename\n    \"\"\"\n    return os.path.split(logfile)\n\n\ndef get_log_file_name(logfile):\n    \"\"\"Get the basename of a given logfile path.\n\n    :param logfile: path to a logfile\n    :returns: basename of the logfile\n    \"\"\"\n    return os.path.basename(logfile)\n\n\ndef get_log_file_dir(logfile):\n    \"\"\"Get the directory of a given logfile path.\n\n    :param logfile: path to a logfile\n    :returns: directory of the logfile\n    \"\"\"\n",
+  "sampling_seed": 2958474351,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

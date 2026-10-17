@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _golbub_welsch(orders, coeff1, coeff2):\n    \"\"\"Recurrence coefficients to abscisas and weights.\"\"\"\n    # Golub-Welsch algorithm\n    # https://en.wikipedia.org/wiki/Golub%E2%80%93Welsch_algorithm\n    # https://www.mathworks.com/matlabcentral/fileexchange/10156-golub-welsch-algorithm\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre\n",
+  "agc_valid": false,
+  "body_sha256": "80c04391099aa749ac30b3c30c5d336b2e436fdceb414d40ff2c30d964925a82",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Golub-Welsch algorithm\n    # https://en.wikipedia.org/wiki/Golub%E2%80%93Welsch_algorithm\n    # https://www.mathworks.com/matlabcentral/fileexchange/10156-golub-welsch-algorithm\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "5f311afedfa619a9ba07a418e290a050ce0a3c9237d79a68c5e55d2ffc60001f",
+  "human_valid": true,
+  "line_no": 197744,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e7f190b6989fc2d61b6273b574f1f60789081e2c7a0cf6bae0173ae958c98e3",
+  "raw_output": "\n    # Golub-Welsch algorithm\n    # https://en.wikipedia.org/wiki/Golub%E2%80%93Welsch_algorithm\n    # https://www.mathworks.com/matlabcentral/fileexchange/10156-golub-welsch-algorithm\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre_golub_welsch.cpp\n    # https://people.sc.fsu.edu/~jburkardt/cpp_src/legendre_golub_welsch/legendre",
+  "sampling_seed": 1415890048,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

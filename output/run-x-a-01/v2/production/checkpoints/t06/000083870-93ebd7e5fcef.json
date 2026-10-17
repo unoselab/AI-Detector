@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _remove_zeros(votes, fpl, cl, ranking):\n    \"\"\"Remove zeros in IRV voting.\n    \"\"\"\n    for i in range(len(ranking)):\n        if votes[i] ==\n",
+  "agc_valid": false,
+  "body_sha256": "26ccbbdd36a42483213cf7a0f34e53c5b0b39be7b9ccbf3088c49d08cac4ba76",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    for i in range(len(ranking)):\n        if votes[i] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "2e339eb682c65886b457ccd16d2a001615c9e764de34d95e7e40e7a2202d2594",
+  "human_valid": true,
+  "line_no": 83870,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "93ebd7e5fcefd8c32a7bf939855ec229227e959c5a61325624073dd1b2a0f4ce",
+  "raw_output": "\n    for i in range(len(ranking)):\n        if votes[i] == ",
+  "sampling_seed": 1123085753,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

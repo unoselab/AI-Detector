@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def DeleteAddress(self, script_hash):\n        \"\"\"\n        Deletes an address from the wallet (includes watch-only addresses).\n\n        Args:\n            script_hash (UInt160): a bytearray (len 20) representing the public key.\n\n        Returns:\n            tuple:\n                bool: True if address removed, False otherwise.\n                list: a list of any ``neo.Wallet.Coin`` objects to be removed from the wallet.\n        \"\"\"\n        if script_hash in self.addresses:\n            coins = self.GetCoins(script_hash)\n            self.addresses.pop(script_hash)\n            return True, coins\n        return False, []\n",
+  "agc_valid": true,
+  "body_sha256": "e3783ed843d083d7ec9bc03589fd44e2d97d7da11cefd116925dfc008ec4e25e",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if script_hash in self.addresses:\n            coins = self.GetCoins(script_hash)\n            self.addresses.pop(script_hash)\n            return True, coins\n        return False, []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "193d95ccdc35ddad072547ef3c1d4e11ca52814e85fa1f0fab081c24a0e14f87",
+  "human_valid": true,
+  "line_no": 345294,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4bdb79cdbd0bfcd9c78e6f7d170648ef8257f8d01df16eb1904bf0fc08acb40e",
+  "raw_output": "\n        if script_hash in self.addresses:\n            coins = self.GetCoins(script_hash)\n            self.addresses.pop(script_hash)\n            return True, coins\n        return False, []\n\n    def",
+  "sampling_seed": 4123104901,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

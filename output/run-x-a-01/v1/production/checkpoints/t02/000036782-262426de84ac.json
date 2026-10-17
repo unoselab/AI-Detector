@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_xaxis(self, param, unit=None, label=None):\n        \"\"\" Sets the value of use on the x axis\n        :param param: value to use on the xaxis, should be a variable or function of the objects in objectList. ie 'R'\n        for the radius variable and 'calcDensity()' for the calcDensity function\n\n        :param unit: the unit to scale the values to, None will use the default\n        :type unit: quantities unit or None\n\n        :param label: axis label to use, if None \"Parameter (Unit)\" is generated here and used\n        :type label: str\n        \"\"\"\n        will use the default\n                :type label: str or None\n\n                :return: None\n                \"\"\"\n                self.xaxis = param\n                self.xaxis_unit = unit\n                self.xaxis_label = label\n",
+  "agc_valid": false,
+  "body_sha256": "930e30aa41e45fa7b2d35e8c5985aea1b4f93e6502ea6e5c2869ec1293479c43",
+  "body_tokens": 119,
+  "bucket": "type02_120",
+  "clean_output": "\n        will use the default\n                :type label: str or None\n\n                :return: None\n                \"\"\"\n                self.xaxis = param\n                self.xaxis_unit = unit\n                self.xaxis_label = label\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f903c4ddfab91b9ec49a4a5bbaad4663f1cabe967fd31c79b9af4e3eff454fcb",
+  "human_valid": true,
+  "line_no": 36782,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "262426de84ace80588bfd3f0ffc74eb02705ec5f65e47d45a326255177c4545b",
+  "raw_output": "will use the default\n        :type label: str or None\n\n        :return: None\n        \"\"\"\n        self.xaxis = param\n        self.xaxis_unit = unit\n        self.xaxis_label = label\n\n    def",
+  "sampling_seed": 2139596423,
+  "tag": "t02",
+  "temperature": 0.2
+}

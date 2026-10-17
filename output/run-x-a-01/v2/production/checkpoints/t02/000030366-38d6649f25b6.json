@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getDepth(pair, connection=None, info=None):\n    \"\"\"Retrieve the depth for the given pair.  Returns a tuple (asks, bids);\n    each of these is a list of (price, volume) tuples.\"\"\"\n    if connection is None:\n        connection = _getConnection()\n    if info is None:\n        info = _getInfo()\n    return connection.getDepth(pair, info)\n",
+  "agc_valid": true,
+  "body_sha256": "630bcea5c12fef75b26f605e4c999cfdbf33985f3119f33fe4d718cd41465d97",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if connection is None:\n        connection = _getConnection()\n    if info is None:\n        info = _getInfo()\n    return connection.getDepth(pair, info)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "6b4b6d016746edf7f8c932bbe9cb8e894b25f10d14b50471238ac1c1811a16af",
+  "human_valid": true,
+  "line_no": 30366,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "38d6649f25b6574ec7f2e5571c0cf35a030937bb0625ec18845b4d38fbe56f84",
+  "raw_output": "\n    if connection is None:\n        connection = _getConnection()\n    if info is None:\n        info = _getInfo()\n    return connection.getDepth(pair, info)\n\ndef getTicker(pair, connection=None, info=None):\n    \"\"\"Retrieve the ticker for the given pair.\"\"\"\n    if connection is None:\n        connection = _getConnection()\n    if info is None:\n        info = _getInfo()\n    return connection.getTicker(pair, info)\n\ndef getTrades(pair, connection=None, info=None):\n    \"\"\"Retrieve the trades for the given pair.\"\"\"\n    if connection is None:\n        connection = _getConnection()\n    if info is None:\n        info = _getInfo()\n    return connection.getTrades(pair, info)\n\ndef getSpread(pair, connection=None, info=None):\n    \"\"\"Retrieve the spread for the given pair.\"\"\"\n    if connection is None:\n        connection = _getConnection()\n    if info is None:\n        info = _getInfo()\n    return connection.getSpread(pair, info)\n\ndef get24hVolume(pair, connection=None, info=None):\n    \"\"\"Retrieve the ",
+  "sampling_seed": 672906595,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

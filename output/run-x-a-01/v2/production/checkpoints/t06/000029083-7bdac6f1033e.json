@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_dev_start_config(devId, auth, url):\n    \"\"\"\n    function takes the devId of a specific device and issues a RESTFUL call to get the most current startup config\n    file as known by the HP IMC Base Platform ICC module for the target device.\n    :param devId:  int or str value of the target device\n    :return: str which contains the entire content of the target device startup configuration. If the device is not\n    currently supported in the HP IMC Base Platform ICC module, this call returns a string of \"This feature is not\n    supported on this device\"\n    \"\"\"\n    Not Supported\"\n        \"\"\"\n        # define the url to be used\n        url = '{}/devmgr/devices/{}/startupconfig'.format(url, devId)\n        # define the header to be used\n        headers = {'Accept': 'application/json'}\n        # make the RESTFUL call to get the device configuration\n        response = requests.get(url, auth=auth, headers=headers, verify=False)\n        # check the status code returned in the response\n        if response.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "77d26878b86078cb2b1d9e6d8e35bcd204fab75a158b21899d5e91d8ee7aa25f",
+  "body_tokens": 120,
+  "bucket": "type02_120",
+  "clean_output": "\n    Not Supported\"\n        \"\"\"\n        # define the url to be used\n        url = '{}/devmgr/devices/{}/startupconfig'.format(url, devId)\n        # define the header to be used\n        headers = {'Accept': 'application/json'}\n        # make the RESTFUL call to get the device configuration\n        response = requests.get(url, auth=auth, headers=headers, verify=False)\n        # check the status code returned in the response\n        if response.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 181,
+  "human_sha256": "42604f3296b482a728d1c24a3304dc4ad6bccf7456d0215bcbe613dfa8662185",
+  "human_valid": true,
+  "line_no": 29083,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7bdac6f1033efde40c982df31dec61816f241b418e1ce53bef231a91e78f0eb2",
+  "raw_output": "Not Supported\"\n    \"\"\"\n    # define the url to be used\n    url = '{}/devmgr/devices/{}/startupconfig'.format(url, devId)\n    # define the header to be used\n    headers = {'Accept': 'application/json'}\n    # make the RESTFUL call to get the device configuration\n    response = requests.get(url, auth=auth, headers=headers, verify=False)\n    # check the status code returned in the response\n    if response.status_code == ",
+  "sampling_seed": 3174356695,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

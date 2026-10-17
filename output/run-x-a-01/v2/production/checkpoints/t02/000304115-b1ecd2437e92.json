@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_consumer(user, password, config_file_path, process_message, *args, **kwargs):\n    \"\"\"Create a pulse consumer. Call listen() to start listening.\"\"\"\n    config = ConfigParser.ConfigParser()\n    config.read(config_file_path)\n    consumer = Consumer(config, user, password, process_message, *args, **kwargs)\n    return consumer\n",
+  "agc_valid": true,
+  "body_sha256": "be638929a3d1715f6153c00521adc8de3d8971582f0ce7d99d727f8392c36142",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n    config = ConfigParser.ConfigParser()\n    config.read(config_file_path)\n    consumer = Consumer(config, user, password, process_message, *args, **kwargs)\n    return consumer\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "1663fdffaa8469a57604d1b5425f1792d7b71f94ceaeece46b745640bd411412",
+  "human_valid": true,
+  "line_no": 304115,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b1ecd2437e926213c51efc119efae0c8f47dee6fd6f4d7c9f57bbdfc150af6fe",
+  "raw_output": "\n    config = ConfigParser.ConfigParser()\n    config.read(config_file_path)\n    consumer = Consumer(config, user, password, process_message, *args, **kwargs)\n    return consumer\n\n\nclass Consumer(object):\n    \"\"\"\n    A consumer is a thread that listens for messages on a queue.\n    \"\"\"\n\n    def",
+  "sampling_seed": 2138318338,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

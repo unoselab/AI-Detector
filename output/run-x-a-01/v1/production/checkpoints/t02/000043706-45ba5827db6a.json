@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_decoders_by_path(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO LIST OF DECODER ARRAYS\n\n    :param query:\n    :return:\n    \"\"\"\n    decoders = {}\n    for path, decoder in query.items():\n        if path not in decoders:\n            decoders[path] = []\n        decoders[path].append(decoder)\n    return decoders\n",
+  "agc_valid": true,
+  "body_sha256": "71021f6c6752767bd634e71af3674f11509dac3c192e5df8caedc29de6bc99b7",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n    decoders = {}\n    for path, decoder in query.items():\n        if path not in decoders:\n            decoders[path] = []\n        decoders[path].append(decoder)\n    return decoders\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cbb3d175f56b0a9ec4e2f6c727343cda1a05128d4fa2ce79fb12f8cc910cc2fd",
+  "human_valid": true,
+  "line_no": 43706,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "45ba5827db6a9ba7e0410f00ab54435139cc1e89a0120a9c76573f075b37f9c8",
+  "raw_output": "\n    decoders = {}\n    for path, decoder in query.items():\n        if path not in decoders:\n            decoders[path] = []\n        decoders[path].append(decoder)\n    return decoders\n\n\ndef get_decoders_by_path_and_type(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO LIST OF DECODER ARRAYS\n\n    :param query:\n    :return:\n    \"\"\"\n    decoders = {}\n    for path, decoder in query.items():\n        if path not in decoders:\n            decoders[path] = []\n        decoders[path].append(decoder)\n    return decoders\n\n\ndef get_decoders_by_path_and_type_and_name(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO LIST OF DECODER ARRAYS\n\n    :param query:\n    :return:\n    \"\"\"\n    decoders = {}\n    for path, decoder in query.items():\n        if path not in decoders:\n            decoders[path] = []\n        decoders[path].append(decoder)\n    return decoders\n\n\ndef get_decoders_by_path_and_type_and_name_and_version(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO LIST OF DECODER ARRAYS\n\n    :param query:\n    :return:\n    \"\"\"\n    decoders = {}\n    for path, decoder in query.items():\n        if path not in decoders:\n            decoders[path] = []\n        decoders[path].append(decoder)\n    return decoders\n\n\ndef get_decoders_by_path_and_type_and_name_and_version_and_status(query):\n    \"\"\"\n    RETURN MAP FROM QUERY PATH TO LIST OF DECODER ARRAYS\n\n    :param query:\n    :return:\n    \"\"\"\n    decoders = {}\n    for path, decoder in query.items():\n",
+  "sampling_seed": 3089335674,
+  "tag": "t02",
+  "temperature": 0.2
+}

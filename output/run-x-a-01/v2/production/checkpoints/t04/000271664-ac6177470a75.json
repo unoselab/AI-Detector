@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def input_password(self, message=None):\n        \"\"\"\n        Prompt the user for a password. This is equivalent to the input() method, but does not echo inputted\n        characters to the screen.\n        :param message: the prompt message.\n        \"\"\"\n        if message is None:\n            message = 'Password: '\n        self.password = getpass.getpass(message)\n",
+  "agc_valid": true,
+  "body_sha256": "deb7788aa11cb9ff3cbc2876aeb4b84be0f792993cb0021048fa060508cb924a",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if message is None:\n            message = 'Password: '\n        self.password = getpass.getpass(message)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "e5509be5ab7311f5bbd7bdcc86355b532e7c2017e0408914b2c0598f78a5d4ce",
+  "human_valid": true,
+  "line_no": 271664,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ac6177470a755df8442d647a3ded67ef1c4ddf39e15bbdcac47eb00cc6818c17",
+  "raw_output": "\n        if message is None:\n            message = 'Password: '\n        self.password = getpass.getpass(message)\n\n    def",
+  "sampling_seed": 4217645325,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

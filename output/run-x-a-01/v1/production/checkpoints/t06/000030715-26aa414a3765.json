@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def index_bundle(self, bundle, force=False):\n        \"\"\"\n        Indexes a bundle/dataset and all of its partitions\n        :param bundle: A bundle or dataset object\n        :param force: If true, index the document even if it already exists\n        :return:\n        \"\"\"\n        # TODO: this is a placeholder, implement\n        return bundle\n",
+  "agc_valid": true,
+  "body_sha256": "209f47c90ec2187fd9e57491c733fb2ba1471b500de7521271cf1ed83e3fb289",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # TODO: this is a placeholder, implement\n        return bundle\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b851092de532b6df5b7a7fcdbdab4a7a475de84293ea4d3120df3ee90cdbc582",
+  "human_valid": true,
+  "line_no": 30715,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "26aa414a37657451b84634e5696254e374b283c3681b4b96fc31e243040f3aee",
+  "raw_output": "\n        # TODO: this is a placeholder, implement\n        return bundle\n\n    def",
+  "sampling_seed": 45859416,
+  "tag": "t06",
+  "temperature": 0.6
+}

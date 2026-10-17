@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def squared_distance(self, other):\n        \"\"\"\n        Squared distance of two Vectors.\n\n        >>> dense1 = DenseVector(array.array('d', [1., 2.]))\n        >>> dense1.squared_distance(dense1)\n        0.0\n        >>> dense2 = np.array([2., 1.])\n        >>> dense1.squared_distance(dense2)\n        2.0\n        >>> dense3 = [2., 1.]\n        >>> dense1.squared_distance(dense3)\n        2.0\n        >>> sparse1 = SparseVector(2, [0, 1], [2., 1.])\n        >>> dense1.squared_distance(sparse1)\n        2.0\n        >>> dense1.squared_distance([1.,])\n        Traceback (most recent call last):\n            ...\n        AssertionError: dimension mismatch\n        >>> dense1.squared_distance(SparseVector(1, [0,], [1.,]))\n        Traceback (most recent call last):\n            ...\n        AssertionError: dimension mismatch\n        \"\"\"\n        dense3)\n                2.0\n                >>> sparse1 = SparseVector(2, {1:\n",
+  "agc_valid": false,
+  "body_sha256": "418ee4a29606a9502da33db81c070b5745ad1ffe7f4c91760adaff6bc0681178",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        dense3)\n                2.0\n                >>> sparse1 = SparseVector(2, {1:\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "f740210c2772226070fe2414606160dc256c7aec481bc964d83fac5232e3151e",
+  "human_valid": true,
+  "line_no": 90470,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3a1b426e4077e967e65b2b55e618eb7878c8a3a475b90798453bbe450a28e351",
+  "raw_output": "dense3)\n        2.0\n        >>> sparse1 = SparseVector(2, {1: ",
+  "sampling_seed": 673087388,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

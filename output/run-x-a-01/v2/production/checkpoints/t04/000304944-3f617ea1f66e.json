@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def remove_all_cts_records_by(self, crypto_idfp):\n        \"\"\"\n        Remove all CTS records from the specified player\n        :param crypto_idfp:\n        :return:\n        \"\"\"\n        self.remove_all_cts_records_by_crypto_idfp(crypto_idfp)\n        self.remove_all_cts_records_by_crypto_name(crypto_idfp)\n",
+  "agc_valid": true,
+  "body_sha256": "8d6bf3ecad203e6d311b425b7c3638d9a27124e368103d1f07a4c60cdd36749f",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.remove_all_cts_records_by_crypto_idfp(crypto_idfp)\n        self.remove_all_cts_records_by_crypto_name(crypto_idfp)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "f42de52269fb18c7f8049e816bc63963457fd6d6ae0eb6ec53dbf0afabce6feb",
+  "human_valid": true,
+  "line_no": 304944,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3f617ea1f66e0494de67f82a1295a722baaf3acb99ff7f9e73588c92380d2389",
+  "raw_output": "\n        self.remove_all_cts_records_by_crypto_idfp(crypto_idfp)\n        self.remove_all_cts_records_by_crypto_name(crypto_idfp)\n\n    def",
+  "sampling_seed": 2243337806,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_objective(self):\n        \"\"\"Gets the related objective.\n\n        return: (osid.learning.Objective) - the related objective\n        raise:  OperationFailed - unable to complete request\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n            return self._my_map['objectiveId']\n\n        objective_id = property(fget=get_objective)\n",
+  "agc_valid": false,
+  "body_sha256": "785e2b4141fe14614be3a79fc61cc54e5a34d39f22eee1868134fc9c37c32ab2",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._my_map['objectiveId']\n\n        objective_id = property(fget=get_objective)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "3581e040287385341ab9f8926e59cbeb670353c4a31345317525c7ac68040b5a",
+  "human_valid": true,
+  "line_no": 47880,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a145b0df12d1fb1b783f1f8af72b2589d3293b1b1bd5364e31e29970b192efbe",
+  "raw_output": "\n        return self._my_map['objectiveId']\n\n    objective_id = property(fget=get_objective)\n\n    def",
+  "sampling_seed": 2655733539,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

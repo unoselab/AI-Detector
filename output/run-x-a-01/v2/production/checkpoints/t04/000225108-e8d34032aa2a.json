@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_calibration(self):\n        \"\"\"Load factory calibration data from device.\"\"\"\n        return self._send_command(self._build_command(COMMAND_LOAD_CALIBRATION))\n",
+  "agc_valid": true,
+  "body_sha256": "5d7a596ab00876b0ca098da45c4c20317a36cb4b4f00f3c1bb60d9ae9c4cf4f4",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._send_command(self._build_command(COMMAND_LOAD_CALIBRATION))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "9adc1cb5ccf240113283b1bfaa8a447fac2d3fd7614e610246ea8d4808b4dfec",
+  "human_valid": true,
+  "line_no": 225108,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e8d34032aa2a4fab44976011953e76797545505deed06fefda50198ccb7501c8",
+  "raw_output": "\n        return self._send_command(self._build_command(COMMAND_LOAD_CALIBRATION))\n\n    def",
+  "sampling_seed": 98128404,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

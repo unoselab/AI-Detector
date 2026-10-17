@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_config(self):\n        \"\"\"\n        Gets the contents of the config files\n        startup-config and private-config from NVRAM.\n\n        :returns: tuple (startup-config, private-config) base64 encoded\n        \"\"\"\n        return self.config_file_dict\n",
+  "agc_valid": true,
+  "body_sha256": "be01c7a2513e9db263925500363c41c62f37b347324e28310a5563ca0faa5cfb",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.config_file_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "129199e449702032234dcc4904e866b78e3f29f98f51c0ccb65de2efcc0adade",
+  "human_valid": true,
+  "line_no": 160678,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f144f0ceaaa727baeaa6fe17e1a3de354ced2d3d2de7f23e8b8bae50ef8629b3",
+  "raw_output": "\n        return self.config_file_dict\n\n    def",
+  "sampling_seed": 4120260554,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

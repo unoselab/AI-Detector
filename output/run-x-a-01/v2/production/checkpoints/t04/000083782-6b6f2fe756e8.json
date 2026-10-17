@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_by_auth_token(token=None):\n    \"\"\"\n    Return the AuthUser associated to the token, otherwise it will return None.\n    If token is not provided, it will pull it from the headers: Authorization\n\n    Exception:\n    Along with AuthError, it may\n    :param token:\n    :return: AuthUser\n    \"\"\"\n    if not token:\n        token = get_token_from_headers()\n    if not token:\n        return None\n    try:\n        return AuthUser.objects.get(auth_token=token)\n    except AuthUser.DoesNotExist:\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "cf77fb1f0570e66ed1d6b8bd1d206c196ebe046a01ed0ad88a432aa5c4e1bbe8",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not token:\n        token = get_token_from_headers()\n    if not token:\n        return None\n    try:\n        return AuthUser.objects.get(auth_token=token)\n    except AuthUser.DoesNotExist:\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 104,
+  "human_sha256": "63e4efec276a62d489c1c6ee0da5584c87d3be2e61081966e109ed1ae4260387",
+  "human_valid": true,
+  "line_no": 83782,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6b6f2fe756e8c09d98e4c9ada196194e50354b7001721b22c0a7fe618e85e2ef",
+  "raw_output": "\n    if not token:\n        token = get_token_from_headers()\n    if not token:\n        return None\n    try:\n        return AuthUser.objects.get(auth_token=token)\n    except AuthUser.DoesNotExist:\n        return None\n\n\ndef get_token_from_headers():\n    \"\"\"\n    Return the token from the headers: Authorization\n    :return:\n    \"\"\"\n    auth_header = request.headers.get('Authorization')\n    if not auth_header:\n        return None\n    auth_header_parts = auth_header.split()\n    if len(auth_header_parts) != ",
+  "sampling_seed": 1713536953,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

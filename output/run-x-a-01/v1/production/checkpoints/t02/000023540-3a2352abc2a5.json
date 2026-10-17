@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_perspective(self, fov, aspect, near, far):\n        \"\"\"Set the perspective\n\n        Parameters\n        ----------\n        fov : float\n            Field of view.\n        aspect : float\n            Aspect ratio.\n        near : float\n            Near location.\n        far : float\n            Far location.\n        \"\"\"\n        self.fov = fov\n        self.aspect = aspect\n        self.near = near\n        self.far = far\n        self.update_projection_matrix()\n",
+  "agc_valid": true,
+  "body_sha256": "df4904c3ec8f01d4d6bf40f5035f1c3d1371bcaff79045b3b4ca7b9c57dc6e81",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.fov = fov\n        self.aspect = aspect\n        self.near = near\n        self.far = far\n        self.update_projection_matrix()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "485147958fe77f63143c288c7c48d455c4e76841b01196af6933def617565c5d",
+  "human_valid": true,
+  "line_no": 23540,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3a2352abc2a5589ba626308d71a0276099e819a0d6449d6309bf7eb34b237347",
+  "raw_output": "\n        self.fov = fov\n        self.aspect = aspect\n        self.near = near\n        self.far = far\n        self.update_projection_matrix()\n\n    def",
+  "sampling_seed": 2554362135,
+  "tag": "t02",
+  "temperature": 0.2
+}

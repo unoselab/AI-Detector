@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def published(self, for_user=None):\n        \"\"\"\n        Return only published entries for the current site.\n        \"\"\"\n        qs = super(EntryManager, self).published(for_user)\n        return qs.filter(sites=settings.SITE_ID)\n",
+  "agc_valid": true,
+  "body_sha256": "5200780072320f64ff5029d4af2123e3156be13499f3cade5192ca2a023eee9e",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n        qs = super(EntryManager, self).published(for_user)\n        return qs.filter(sites=settings.SITE_ID)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "d8f3c8927430a0a8b61464b7f10264407d716c9082ae1bc65e255309e6d78efe",
+  "human_valid": true,
+  "line_no": 254388,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f10487ca55a2e5b9266aa536648b64e7d6bb280c45f5c1ca033cb75dba402c77",
+  "raw_output": "\n        qs = super(EntryManager, self).published(for_user)\n        return qs.filter(sites=settings.SITE_ID)\n\n\nclass Entry(models.Model):\n    \"\"\"\n    Model for blog entries.\n    \"\"\"\n    title = models.CharField(_('title'), max_length=200)\n    slug = models.SlugField(_('slug'), unique_for_date='publication_date')\n    body = models.TextField(_('body'), help_text=_('The main body of the entry.'))\n    author = models.ForeignKey(User, verbose_name=_('author'))\n    publication_date = models.DateTimeField(_('publication date'), blank=True, null=True)\n    sites = models.ManyToManyField(Site, verbose_name=_('sites'), help_text=_('The site(s) this entry should appear on.'),\n                                   default=lambda: [settings.SITE_ID])\n\n    objects = EntryManager()\n\n    class Meta:\n        verbose_name = _('entry')\n        verbose_name_plural = _('entries')\n        ordering = ['-publication_date']\n\n    def",
+  "sampling_seed": 3263713231,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

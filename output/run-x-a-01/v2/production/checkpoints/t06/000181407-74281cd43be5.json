@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def match_handle(loc, tokens):\n    \"\"\"Process match blocks.\"\"\"\n    if not tokens:\n        raise Exception(\"Invalid match block.\")\n\n    # Get the first token.\n    token = tokens.pop(0)\n    if token != \"(\":\n        raise Exception(\"Invalid match block.\")\n\n    # Get the pattern.\n    pattern = tokens.pop(0)\n    if pattern == \"(\":\n        pattern = match_handle(loc, tokens)\n\n    # Get the optional pattern modifiers.\n    modifiers = []\n    while tokens and tokens[0] in (\"?\", \"+\", \"*\", \"{\", \"}\"):\n        modifiers.append(tokens.pop(0))\n\n    # Get the closing parenthesis.\n    if tokens and tokens[0] == \")\":\n        tokens.pop(0)\n\n    # Return the result.\n    return (pattern, modifiers)\n",
+  "agc_valid": true,
+  "body_sha256": "d21aea1fc7352528d80de59f852bc6315096942cb45b782d43b419472781954d",
+  "body_tokens": 155,
+  "bucket": "type06_160",
+  "clean_output": "\n    if not tokens:\n        raise Exception(\"Invalid match block.\")\n\n    # Get the first token.\n    token = tokens.pop(0)\n    if token != \"(\":\n        raise Exception(\"Invalid match block.\")\n\n    # Get the pattern.\n    pattern = tokens.pop(0)\n    if pattern == \"(\":\n        pattern = match_handle(loc, tokens)\n\n    # Get the optional pattern modifiers.\n    modifiers = []\n    while tokens and tokens[0] in (\"?\", \"+\", \"*\", \"{\", \"}\"):\n        modifiers.append(tokens.pop(0))\n\n    # Get the closing parenthesis.\n    if tokens and tokens[0] == \")\":\n        tokens.pop(0)\n\n    # Return the result.\n    return (pattern, modifiers)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "d491685b08033d4c17e4e4b101e4d77c71116811923b6c9a0cc6b16674083164",
+  "human_valid": true,
+  "line_no": 181407,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "74281cd43be5d9d426d908d8fce7810fe80a14114c87b7728c90cf0b14f9a749",
+  "raw_output": "\n    if not tokens:\n        raise Exception(\"Invalid match block.\")\n\n    # Get the first token.\n    token = tokens.pop(0)\n    if token != \"(\":\n        raise Exception(\"Invalid match block.\")\n\n    # Get the pattern.\n    pattern = tokens.pop(0)\n    if pattern == \"(\":\n        pattern = match_handle(loc, tokens)\n\n    # Get the optional pattern modifiers.\n    modifiers = []\n    while tokens and tokens[0] in (\"?\", \"+\", \"*\", \"{\", \"}\"):\n        modifiers.append(tokens.pop(0))\n\n    # Get the closing parenthesis.\n    if tokens and tokens[0] == \")\":\n        tokens.pop(0)\n\n    # Return the result.\n    return (pattern, modifiers)\n\n\ndef match_handle_pattern(loc, tokens):\n    \"\"\"Process match patterns.\"\"\"\n    if not tokens:\n        raise Exception(\"Invalid match pattern.\")\n\n    # Get the first token.\n    token = tokens.pop(0)\n    if token == \"(\":\n        pattern = match_handle(loc, tokens)\n    else:\n        pattern = token\n\n    # Get the optional pattern modifiers.\n    modifiers = []\n    while tokens and tokens[0] in (\"?\", \"+\", \"*\", \"{\", \"}\"):\n        modifiers.append(tokens.pop(0))\n\n    # Return the result.\n    return (pattern, modifiers)\n\n\ndef match_handle_patterns(loc, tokens):\n    \"\"\"Process match patterns.\"\"\"\n    patterns = []\n    while tokens:\n        if tokens[0] == \")\":\n            tokens.pop(0)\n            break\n        patterns.append(match_handle_pattern(loc, tokens))\n    return patterns\n\n\ndef match_handle_modifiers(loc, tokens):\n    \"\"\"Process match modifiers.\"\"\"\n    modifiers = []\n    while tokens and tokens[0] in (\"?\", \"+\", \"*\", \"{\", \"}\"):\n        modifiers.append(tokens.pop(0))\n    return modifiers\n\n\ndef match_handle_block(loc, tokens):\n    \"\"\"Process a match block.\"",
+  "sampling_seed": 3715617816,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

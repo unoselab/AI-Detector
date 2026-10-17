@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_sector(self, channel, nlines, ncols):\n        \"\"\"Determine which sector was scanned\"\"\"\n        if channel ==\n",
+  "agc_valid": false,
+  "body_sha256": "1acd888f568f090d5efc9d10d622c2721acc07ba41e196d9dc7d7fa3ff76dca5",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if channel ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "e556378a195f98219609232f509d151e29cf0aa7435b092c1917b3c524909172",
+  "human_valid": true,
+  "line_no": 336418,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8faba5982326108cebbc319635ffdd52662834a51fbe0b16e0a07dff7a5275c3",
+  "raw_output": "\n        if channel == ",
+  "sampling_seed": 433988388,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_text(self, text):\n        \"\"\"Parse text (string) and return list of parsed sentences (strings).\n\n        Each sentence consists of space separated token elements and the\n        token format returned by the PatternParser is WORD/TAG/PHRASE/ROLE/(LEMMA)\n        (separated by a forward slash '/')\n\n        :param str text: A string.\n\n        \"\"\"\n        return [self._parse_sentence(sent) for sent in text.split('\\n')]\n",
+  "agc_valid": true,
+  "body_sha256": "e2073de20043d796ea4a615b7f2137ca7e86bc8254b3c1d7d23c5363c217d90f",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return [self._parse_sentence(sent) for sent in text.split('\\n')]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "987b10e55c20a651c1c8ddc5563b9cc51a5d98478b5b8e460df9c046797589b8",
+  "human_valid": true,
+  "line_no": 8585,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c27d5af97df9260b16733e8b39c729810fdafebddecd56e767a97c0e46f7f62d",
+  "raw_output": "\n        return [self._parse_sentence(sent) for sent in text.split('\\n')]\n\n    def",
+  "sampling_seed": 2216644909,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

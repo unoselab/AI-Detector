@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_namelist():\n    \"\"\"Generate namelist.\n\n    Either through set CONF.zvm.namelist, or by generate based on smt userid.\n    \"\"\"\n    namelist = None\n    if CONF.zvm.namelist:\n        namelist = CONF.zvm.namelist\n    else:\n        # If CONF.zvm.namelist is not set, we need to generate\n        # namelist.txt based on smt userid.\n        smtuserid = CONF.zvm.smtuserid\n        if not smtuserid:\n            raise exception.ZVMInvalidSMTUserid(smtuserid=smtuserid)\n        # generate namelist.txt\n        namelist = get_namelist_from_smtuserid(smtuserid)\n    return namelist\n",
+  "agc_valid": true,
+  "body_sha256": "41d9299a579128a80e76aaad28f9ba8b982dcd9093752e65b84a4aa942922290",
+  "body_tokens": 114,
+  "bucket": "type02_120",
+  "clean_output": "\n    namelist = None\n    if CONF.zvm.namelist:\n        namelist = CONF.zvm.namelist\n    else:\n        # If CONF.zvm.namelist is not set, we need to generate\n        # namelist.txt based on smt userid.\n        smtuserid = CONF.zvm.smtuserid\n        if not smtuserid:\n            raise exception.ZVMInvalidSMTUserid(smtuserid=smtuserid)\n        # generate namelist.txt\n        namelist = get_namelist_from_smtuserid(smtuserid)\n    return namelist\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "5dd47ef96b58b35b5abe7192b92d6fcf8bf6c355cd2bab416c3306ff66d9492d",
+  "human_valid": true,
+  "line_no": 223114,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c68b60f71e3af73ca61e3240fc1f02ed0a9be1431a8aec8922295543f6b1abca",
+  "raw_output": "\n    namelist = None\n    if CONF.zvm.namelist:\n        namelist = CONF.zvm.namelist\n    else:\n        # If CONF.zvm.namelist is not set, we need to generate\n        # namelist.txt based on smt userid.\n        smtuserid = CONF.zvm.smtuserid\n        if not smtuserid:\n            raise exception.ZVMInvalidSMTUserid(smtuserid=smtuserid)\n        # generate namelist.txt\n        namelist = get_namelist_from_smtuserid(smtuserid)\n    return namelist\n\n\ndef get_namelist_from_smtuserid(smtuserid):\n    \"\"\"Generate namelist.txt based on smt userid.\"\"\"\n    name_list = []\n    name_list.append(\"SMTUSERID=%s\" % smtuserid)\n    name_list.append(\"SMTPASSWORD=%s\" % CONF.zvm.smtpassword)\n    name_list.append(\"SMTUSERPASS=%s\" % CONF.zvm.smtuserpass)\n    name_list.append(\"SMTUSERNAME=%s\" % CONF.zvm.smtusername)\n    name_list.append(\"SMTUSEREMAIL=%s\" % CONF.zvm.smtuseremail)\n    name_list.append(\"SMTUSERDESC=%s\" % CONF.zvm.smtuserdesc)\n    name_list.append(\"SMTUSERPWDLEN=%s\" % CONF.zvm.smtuserpwdlen)\n    name_list.append(\"SMTUSERPASSLEN=%s\" % CONF.zvm.smtuserpasslen)\n    name_list.append(\"SMTUSERAUTH=%s\" % CONF.zvm.smtuserauth)\n    name_list.append(\"SMTUSERAUTHLEN=%s\" % CONF.zvm.smtuserauthlen)\n    name_list.append(\"SMTUSERAUTHTYPE=%s\" % CONF.zvm.sm",
+  "sampling_seed": 1687798258,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

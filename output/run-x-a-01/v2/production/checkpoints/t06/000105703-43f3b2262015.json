@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def __expand_subfeatures_aux (property_, dont_validate = False):\n    \"\"\" Helper for expand_subfeatures.\n        Given a feature and value, or just a value corresponding to an\n        implicit feature, returns a property set consisting of all component\n        subfeatures and their values. For example:\n\n          expand_subfeatures <toolset>gcc-2.95.2-linux-x86\n              -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux <toolset-cpu>x86\n          equivalent to:\n              expand_subfeatures gcc-2.95.2-linux-x86\n\n        feature:        The name of the feature, or empty if value corresponds to an implicit property\n        value:          The value of the feature.\n        dont_validate:  If True, no validation of value string will be done.\n    \"\"\"\n    6\n              expand_subfeatures <toolset>gcc-2.95.2-linux-x86 <toolset-cpu>x86-64\n                  -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux <toolset-cpu>x86-64\n              expand_subfeatures <toolset>gcc-2.95.2-linux-x86 <toolset-cpu>x86-64 <toolset-os>linux-x86-64\n                  -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux-x86-64 <toolset-cpu>x86-64\n        \"\"\"\n        if not isinstance (property_, tuple):\n            property_ = (property_,)\n        if len (property_) ==\n",
+  "agc_valid": false,
+  "body_sha256": "c62b4009c54468b1c30201ec5459318ab417a6b1eedcb5ab392ea80fb8dba8da",
+  "body_tokens": 127,
+  "bucket": "type03_130",
+  "clean_output": "\n    6\n              expand_subfeatures <toolset>gcc-2.95.2-linux-x86 <toolset-cpu>x86-64\n                  -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux <toolset-cpu>x86-64\n              expand_subfeatures <toolset>gcc-2.95.2-linux-x86 <toolset-cpu>x86-64 <toolset-os>linux-x86-64\n                  -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux-x86-64 <toolset-cpu>x86-64\n        \"\"\"\n        if not isinstance (property_, tuple):\n            property_ = (property_,)\n        if len (property_) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "3b9dce13cd0a739d01e9910d63b02169c72ad648e4f017b135a9d8f2e09acbaa",
+  "human_valid": true,
+  "line_no": 105703,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "43f3b22620152ea0ae3db7a533b06ea095b2f510489f4146d459eab8e50003ae",
+  "raw_output": "6\n          expand_subfeatures <toolset>gcc-2.95.2-linux-x86 <toolset-cpu>x86-64\n              -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux <toolset-cpu>x86-64\n          expand_subfeatures <toolset>gcc-2.95.2-linux-x86 <toolset-cpu>x86-64 <toolset-os>linux-x86-64\n              -> <toolset>gcc <toolset-version>2.95.2 <toolset-os>linux-x86-64 <toolset-cpu>x86-64\n    \"\"\"\n    if not isinstance (property_, tuple):\n        property_ = (property_,)\n    if len (property_) == ",
+  "sampling_seed": 720842609,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

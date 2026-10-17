@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_compositions(self):\n        \"\"\"Gets all ``Compositions``.\n\n        return: (osid.repository.CompositionList) - a list of\n                ``Compositions``\n        raise:  OperationFailed - unable to complete request\n        raise:  PermissionDenied - authorization failure\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "075da1329bf98305ddcc57e5c54ff9464a19fba45924fd3dcdaeec84bf84cdea",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "45ab5d53fd6df12bbf64b2c2ee12c64904cad521c642af9c9bcd1bef6774e696",
+  "human_valid": true,
+  "line_no": 50286,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c59da2846c1b7dd09657937dfe9a030a0cc974fdf5e0864c58c0e0e0d5449ed",
+  "raw_output": "\n        return ",
+  "sampling_seed": 3395845860,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

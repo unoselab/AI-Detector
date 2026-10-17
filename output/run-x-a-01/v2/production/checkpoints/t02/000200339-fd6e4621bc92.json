@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ReadAtOffset(self, offset, size=None):\n    \"\"\"Reads a byte string from the gzip member at the specified offset.\n\n    The function will read a byte string of the specified size or\n    all of the remaining data if no size was specified.\n\n    Args:\n      offset (int): offset within the uncompressed data in this member to\n        read from.\n      size (Optional[int]): maximum number of bytes to read, where None\n          represents all remaining data, to a maximum of the uncompressed\n          cache size.\n\n    Returns:\n      bytes: data read.\n\n    Raises:\n      IOError: if the read failed.\n      ValueError: if a negative read size or offset is specified.\n    \"\"\"\n    Returns:\n       bytes: byte string read from the gzip member.\n\n     Raises:\n       IOError: if the read failed.\n       OSError: if the read failed.\n       ValueError: if the offset is negative.\n     \"\"\"\n     if offset <\n",
+  "agc_valid": false,
+  "body_sha256": "892d32cb3a335617ab0807090bd68f376add92c5fe6947f33b9caa9f6edf79a4",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Returns:\n       bytes: byte string read from the gzip member.\n\n     Raises:\n       IOError: if the read failed.\n       OSError: if the read failed.\n       ValueError: if the offset is negative.\n     \"\"\"\n     if offset <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "ad6da4c4e885149d83d52856b8fdf5fd789e44f88b99267b008bed1a2147919a",
+  "human_valid": true,
+  "line_no": 200339,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fd6e4621bc92034c8617756391f42fe9a6c45bb154b4d42e0802586a2daa0954",
+  "raw_output": "   Returns:\n      bytes: byte string read from the gzip member.\n\n    Raises:\n      IOError: if the read failed.\n      OSError: if the read failed.\n      ValueError: if the offset is negative.\n    \"\"\"\n    if offset < ",
+  "sampling_seed": 3945325379,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

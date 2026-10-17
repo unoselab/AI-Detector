@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_replicaset_initialized(self):\n        \"\"\"\n        iterate on all members and check if any has joined the replica\n        \"\"\"\n        for member in self.replicaset.members:\n            if member.status == 'alive':\n                return True\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "1b133baf20483ffd9a2b4da1861b760bc949e4933b059cb0d73d115cd28f80e3",
+  "body_tokens": 53,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for member in self.replicaset.members:\n            if member.status == 'alive':\n                return True\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "a64eabce8943cd350a93506b7e484a9359ef6d05c85aa7a404a12cc49691dc1d",
+  "human_valid": true,
+  "line_no": 252310,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "41d9e322c854bb93d81e95312c08b88ed429dae456e1943a838e37dc3a905aaa",
+  "raw_output": "\n        for member in self.replicaset.members:\n            if member.status == 'alive':\n                return True\n        return False\n\n    def",
+  "sampling_seed": 152318813,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

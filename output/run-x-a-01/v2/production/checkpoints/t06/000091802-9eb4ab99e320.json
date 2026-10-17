@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def validate_metadata(self, handler):\n        \"\"\" validate that kind=category does not change the categories \"\"\"\n        if handler.content_type != 'metadata':\n            return\n\n        # check that the metadata is a category\n        if not handler.metadata.get('kind', '') == 'category':\n            return\n\n        # check that the category has not changed\n        if handler.metadata.get('categories', None) is not None:\n            raise InvalidMetadata('categories cannot be changed')\n",
+  "agc_valid": true,
+  "body_sha256": "3414b192ae0385664c8126759bd2c3c94f22ff332b8d93344a6a4f849bb37e72",
+  "body_tokens": 108,
+  "bucket": "type01_110",
+  "clean_output": "\n        if handler.content_type != 'metadata':\n            return\n\n        # check that the metadata is a category\n        if not handler.metadata.get('kind', '') == 'category':\n            return\n\n        # check that the category has not changed\n        if handler.metadata.get('categories', None) is not None:\n            raise InvalidMetadata('categories cannot be changed')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "bb75d681f6dfb9e411418eafa8c383b16d6cffd87fac59093ed698b97d4c3a5d",
+  "human_valid": true,
+  "line_no": 91802,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9eb4ab99e320913dfa7676a3c0b2f2b4608dbb18304a679f56afebbbfad617d8",
+  "raw_output": "\n        if handler.content_type != 'metadata':\n            return\n\n        # check that the metadata is a category\n        if not handler.metadata.get('kind', '') == 'category':\n            return\n\n        # check that the category has not changed\n        if handler.metadata.get('categories', None) is not None:\n            raise InvalidMetadata('categories cannot be changed')\n\n\n    def",
+  "sampling_seed": 1170156871,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

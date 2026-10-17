@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_customized_file(experiment_config, spec_key):\n    \"\"\"\n    check whether the file of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    if spec_key not in experiment_config:\n        return True\n    if 'class_args' not in experiment_config[spec_key]:\n        return True\n    if 'class_filename' not in experiment_config[spec_key]['class_args']:\n        return True\n    if not os.path.exists(experiment_config[spec_key]['class_args']['class_filename']):\n        raise ValueError('The file of customized {} does not exist.'.format(spec_key))\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "6034405c41cf86cb487c626c0914b9ddf0fbe6ee0be89bab65bdd80a9c5f1502",
+  "body_tokens": 79,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if spec_key not in experiment_config:\n        return True\n    if 'class_args' not in experiment_config[spec_key]:\n        return True\n    if 'class_filename' not in experiment_config[spec_key]['class_args']:\n        return True\n    if not os.path.exists(experiment_config[spec_key]['class_args']['class_filename']):\n        raise ValueError('The file of customized {} does not exist.'.format(spec_key))\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "f45b2163d8633e58e1a1cf6cf93e865c92cb12a1c34bb98913fe5aefe44905a3",
+  "human_valid": true,
+  "line_no": 103061,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bafbce86699dd1774a644778915602916e83ad9dae67980a9458697910187444",
+  "raw_output": "\n    if spec_key not in experiment_config:\n        return True\n    if 'class_args' not in experiment_config[spec_key]:\n        return True\n    if 'class_filename' not in experiment_config[spec_key]['class_args']:\n        return True\n    if not os.path.exists(experiment_config[spec_key]['class_args']['class_filename']):\n        raise ValueError('The file of customized {} does not exist.'.format(spec_key))\n    return True\n\n\ndef validate_customized_module(experiment_config, spec_key):\n    \"\"\"\n    check whether the module of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    if spec_key not in experiment_config:\n        return True\n    if 'class_args' not in experiment_config[spec_key]:\n        return True\n    if 'class_name' not in experiment_config[spec_key]['class_args']:\n        return True\n    if not hasattr(importlib.import_module(experiment_config[spec_key]['class_args']['class_name']),\n                   experiment_config[spec_key]['class_args']['class_name']):\n        raise ValueError('The module of customized {} does not exist.'.format(spec_key))\n    return True\n\n\ndef validate_customized_class(experiment_config, spec_key):\n    \"\"\"\n    check whether the class of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    if spec_key not in experiment_config:\n        return True\n    if 'class_args' not in experiment_config[spec_key]:\n        return True\n    if 'class_name' not in experiment_config[spec_key]['class_args']:\n        return True\n    if not hasattr(importlib.import_module(experiment_config[spec_key]['class_args']['class_name']),\n                   experiment_config[spec_key]['class_args']['class_name']):\n        raise ValueError",
+  "sampling_seed": 3215425792,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

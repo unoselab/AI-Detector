@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def verifyInputs(self):\n        \"\"\"\n        Used in propagate() to verify that the network input\n        activations have been set.\n        \"\"\"\n        if self.inputs is None:\n            raise Exception(\"Inputs have not been set.\")\n        elif len(self.inputs) != self.input_size:\n            raise Exception(f\"Input size {len(self.inputs)} does not match network input size {self.input_size}.\")\n",
+  "agc_valid": true,
+  "body_sha256": "1a2c2390c3fb428c8f3f5102fe3c38cb438ef77c4c4d8a36c2ed3d542b571cf1",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.inputs is None:\n            raise Exception(\"Inputs have not been set.\")\n        elif len(self.inputs) != self.input_size:\n            raise Exception(f\"Input size {len(self.inputs)} does not match network input size {self.input_size}.\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 155,
+  "human_sha256": "5fd82101e9e45a51a3bda8345b627d7f4868e4a3eb69504789f53f1913619168",
+  "human_valid": true,
+  "line_no": 397309,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "00c8ee57adc5333d38b525d241924cb2b79b37cac64ee957fabcc850c58c41ee",
+  "raw_output": "\n        if self.inputs is None:\n            raise Exception(\"Inputs have not been set.\")\n        elif len(self.inputs) != self.input_size:\n            raise Exception(f\"Input size {len(self.inputs)} does not match network input size {self.input_size}.\")\n\n    def",
+  "sampling_seed": 325756478,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

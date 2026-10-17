@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def rescale_data(data, data_min, data_max, out_min=0.0, out_max=100.0):\n    \"\"\"\n    Rescale your input data so that is ranges over integer values, which will perform better in the watershed.\n\n    Args:\n        data: 2D or 3D ndarray being rescaled\n        data_min: minimum value of input data for scaling purposes\n        data_max: maximum value of input data for scaling purposes\n        out_min: minimum value of scaled data\n        out_max: maximum value of scaled data\n\n    Returns:\n        Linearly scaled ndarray\n    \"\"\"\n        out_max: maximum value of scaled data\n\n    Returns:\n        rescaled data\n    \"\"\"\n    if data.ndim ==\n",
+  "agc_valid": false,
+  "body_sha256": "a9e1593e9dff4283a016a4dbdec6058dff9848148098950c81570e93f2740296",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n        out_max: maximum value of scaled data\n\n    Returns:\n        rescaled data\n    \"\"\"\n    if data.ndim ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a08d3fa6b81d49b60e0541a0e8d0c917cdb00160142370ea2728ee74c14ca14c",
+  "human_valid": true,
+  "line_no": 25684,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3050e59c17ac7d1b4c2f204759c0f4d3e441ebacc6102a3fedecd381e1164450",
+  "raw_output": "\n        out_max: maximum value of scaled data\n\n    Returns:\n        rescaled data\n    \"\"\"\n    if data.ndim == ",
+  "sampling_seed": 3733838842,
+  "tag": "t02",
+  "temperature": 0.2
+}

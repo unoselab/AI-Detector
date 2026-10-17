@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def state(self, states=None):\n        \"\"\"Filter by state.\n\n        :param  tags: States to filter.\n        :type   tags: ``list``\n\n        :return: A list of Node objects.\n        :rtype:  ``list`` of :class:`Node`\n        \"\"\"\n        if states is None:\n            states = self.node_states\n        return [node for node in self.nodes if node.state in states]\n",
+  "agc_valid": true,
+  "body_sha256": "c9d9276cfd4e365ed1d758d3bb0030eec97585b9e6638f6caa4c1b705fd6ba85",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if states is None:\n            states = self.node_states\n        return [node for node in self.nodes if node.state in states]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "bbf619a4e268c117c00b4be9dad8fc13274ecb811e4e6cb3eefd45447fd4065f",
+  "human_valid": true,
+  "line_no": 276343,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "28fdc1cc161d3aa00db2a5d4380dd9326e36595c18046c80535df591bd1cb543",
+  "raw_output": "\n        if states is None:\n            states = self.node_states\n        return [node for node in self.nodes if node.state in states]\n\n    def",
+  "sampling_seed": 2911763584,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

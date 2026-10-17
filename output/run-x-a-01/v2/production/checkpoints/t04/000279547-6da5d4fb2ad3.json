@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _check_lambda_alias(self):\n        \"\"\"Check if lambda alias exists.\n\n        Returns:\n            True if alias exists\n            False if alias does not exist\n        \"\"\"\n        try:\n            self.lambda_client.get_alias(FunctionName=self.lambda_name, Name=self.alias)\n            return True\n        except self.lambda_client.exceptions.ResourceNotFoundException:\n            return False\n",
+  "agc_valid": true,
+  "body_sha256": "b6655c99acbfd422e8ee3e59e3554d4333daeb2cc666400ec8ebb6b31b0df8e3",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n        try:\n            self.lambda_client.get_alias(FunctionName=self.lambda_name, Name=self.alias)\n            return True\n        except self.lambda_client.exceptions.ResourceNotFoundException:\n            return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "2db986b4fabfc2862f6fc71b4e77fd6f9190cf65dfad6ae9fc204dfaea9ba28f",
+  "human_valid": true,
+  "line_no": 279547,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6da5d4fb2ad3a7200b05b308f132cd5cc299bb508976c56966afe05fcc9ba014",
+  "raw_output": "\n        try:\n            self.lambda_client.get_alias(FunctionName=self.lambda_name, Name=self.alias)\n            return True\n        except self.lambda_client.exceptions.ResourceNotFoundException:\n            return False\n\n    def",
+  "sampling_seed": 979585477,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

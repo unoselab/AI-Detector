@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def pg_wait(self):\n        \"\"\"Wait for the DB to be fired up.\"\"\"\n        self.log.info(\"Waiting for PostgreSQL to be ready\")\n        while True:\n            try:\n                self.pg_conn.connect()\n                break\n            except psycopg2.OperationalError:\n                self.log.info(\"Waiting for PostgreSQL to be ready\")\n                time.sleep(1)\n",
+  "agc_valid": true,
+  "body_sha256": "b06440bebed7121af7e1f27475a05a43786000ffcd2a48312ead3f33855e2421",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n        self.log.info(\"Waiting for PostgreSQL to be ready\")\n        while True:\n            try:\n                self.pg_conn.connect()\n                break\n            except psycopg2.OperationalError:\n                self.log.info(\"Waiting for PostgreSQL to be ready\")\n                time.sleep(1)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "3ca4018112e41b9c96bec503df644a98a3f99c1d59f433352b61a555070a9417",
+  "human_valid": true,
+  "line_no": 404343,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e5203f48a6e0ca7928022fefe6091b7c87b12da4aa82b9a27263d272c5d609d5",
+  "raw_output": "\n        self.log.info(\"Waiting for PostgreSQL to be ready\")\n        while True:\n            try:\n                self.pg_conn.connect()\n                break\n            except psycopg2.OperationalError:\n                self.log.info(\"Waiting for PostgreSQL to be ready\")\n                time.sleep(1)\n\n    def",
+  "sampling_seed": 3328060063,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

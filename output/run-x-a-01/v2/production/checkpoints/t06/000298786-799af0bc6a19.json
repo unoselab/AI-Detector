@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write(graph, fileformat=None, filename=None):\n        \"\"\"\n        A basic graph writer (to stdout) for any of the sources.\n        this will write raw triples in rdfxml, unless specified.\n        to write turtle, specify format='turtle'\n        an optional file can be supplied instead of stdout\n        :return: None\n\n        \"\"\"\n        if fileformat is None:\n            fileformat = 'turtle'\n        if filename is None:\n            filename = '/dev/stdout'\n\n        graph.serialize(destination=filename, format=fileformat)\n",
+  "agc_valid": true,
+  "body_sha256": "a91a3b785f18a646a38871bf6db2d491d660b558531312409fe893ced5bf592c",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if fileformat is None:\n            fileformat = 'turtle'\n        if filename is None:\n            filename = '/dev/stdout'\n\n        graph.serialize(destination=filename, format=fileformat)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 150,
+  "human_sha256": "2bf005ca7fb9a138c92ca3f5e72a12d5e9aa7bcdca74693f5a2061fa4cac49e4",
+  "human_valid": true,
+  "line_no": 298786,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "799af0bc6a192ba4420e330c880bcd1df16e5a8f6679e0790236fe3f10774b9b",
+  "raw_output": "\n        if fileformat is None:\n            fileformat = 'turtle'\n        if filename is None:\n            filename = '/dev/stdout'\n\n        graph.serialize(destination=filename, format=fileformat)\n\n\ndef write_n3(graph, filename=None):\n    \"\"\"\n    A basic graph writer (to stdout) for any of the sources.\n    this will write raw triples in n3, unless specified.\n    an optional file can be supplied instead of stdout\n    :return: None\n\n    \"\"\"\n    if filename is None:\n        filename = '/dev/stdout'\n    graph.serialize(destination=filename, format='n3')\n\n\ndef write_turtle(graph, filename=None):\n    \"\"\"\n    A basic graph writer (to stdout) for any of the sources.\n    this will write raw triples in n3, unless specified.\n    an optional file can be supplied instead of stdout\n    :return: None\n\n    \"\"\"\n    if filename is None:\n        filename = '/dev/stdout'\n    graph.serialize(destination=filename, format='turtle')\n\n\ndef write_jsonld(graph, filename=None):\n    \"\"\"\n    A basic graph writer (to stdout) for any of the sources.\n    this will write raw triples in n3, unless specified.\n    an optional file can be supplied instead of stdout\n    :return: None\n\n    \"\"\"\n    if filename is None:\n        filename = '/dev/stdout'\n    graph.serialize(destination=filename, format='json-ld')\n\n\ndef write_nt(graph, filename=None):\n    \"\"\"\n    A basic graph writer (to stdout) for any of the sources.\n    this will write raw triples in n3, unless specified.\n    an optional file can be supplied instead of stdout\n    :return: None\n\n    \"\"\"\n    if filename is None:\n        filename = '/dev/stdout'\n    graph.serialize(destination=filename, format='nt')\n\n\ndef write_rdfxml(graph, filename=None):\n    \"\"\"\n    A basic graph writer (to stdout) for any of the sources.\n    this will write raw triples in n3, unless specified.\n   ",
+  "sampling_seed": 1117724040,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

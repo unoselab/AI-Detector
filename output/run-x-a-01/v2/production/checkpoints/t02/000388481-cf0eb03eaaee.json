@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def init(self):\n        \"\"\"\n        Initialize the device.\n        Parameters of visa.ResourceManager().open_resource()\n        \"\"\"\n        self.visa_resource = self.visa_rm.open_resource(self.visa_resource_name)\n        self.visa_resource.read_termination = '\\n'\n        self.visa_resource.write_termination = '\\n'\n        self.visa_resource.encoding = 'ascii'\n        self.visa_resource.timeout =\n",
+  "agc_valid": false,
+  "body_sha256": "12bc79f788a858a14b5f2b7c77cae56c0d4a3dbd34f64a6159950d2ac38d46b9",
+  "body_tokens": 50,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.visa_resource = self.visa_rm.open_resource(self.visa_resource_name)\n        self.visa_resource.read_termination = '\\n'\n        self.visa_resource.write_termination = '\\n'\n        self.visa_resource.encoding = 'ascii'\n        self.visa_resource.timeout =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "d718da5235d8fcf032723c152670a21a1e4418dcc2f6aff109045919c1271838",
+  "human_valid": true,
+  "line_no": 388481,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cf0eb03eaaeea2ee7c14cf7293c3d14375e9988dea6a6cee78d727c47dc585f7",
+  "raw_output": "\n        self.visa_resource = self.visa_rm.open_resource(self.visa_resource_name)\n        self.visa_resource.read_termination = '\\n'\n        self.visa_resource.write_termination = '\\n'\n        self.visa_resource.encoding = 'ascii'\n        self.visa_resource.timeout = ",
+  "sampling_seed": 3793837840,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

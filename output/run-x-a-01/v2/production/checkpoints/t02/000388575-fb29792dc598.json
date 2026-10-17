@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def makedirs_perm(path, perm=None):\n    \"\"\"\n    Recursively creates directory up to *path*. If *perm* is set, the permissions of all newly\n    created directories are set to its value.\n    \"\"\"\n    if perm is None:\n        perm =\n",
+  "agc_valid": false,
+  "body_sha256": "aef542fc2ec46e18005f58b3b76d3fc855637d1fc8262b011b54153908339b96",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if perm is None:\n        perm =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "93c8c30b191bc130f9bc0db72067ed4352f429cfaca92baf0266ec28c08f412d",
+  "human_valid": true,
+  "line_no": 388575,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fb29792dc598da57f76b1f3e43cfa2237ccb1614cbd465a848b34f9e96eaa6d3",
+  "raw_output": "\n    if perm is None:\n        perm = ",
+  "sampling_seed": 88899010,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

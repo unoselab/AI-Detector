@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def save(self, subject):\n        \"\"\"\n        Saves the subject's state to the subject's ``Session`` only\n        if session storage is enabled for the subject.  If session storage is\n        not enabled for the specific Subject, this method does nothing.\n\n        In either case, the argument Subject is returned directly (a new\n        ``Subject`` instance is not created).\n\n        :param subject: the Subject instance for which its state will be\n                        created or updated\n        :type subject:  subject_abcs.Subject\n\n        :returns: the same Subject passed in (a new Subject instance is\n                  not created).\n        \"\"\"\n        : the same Subject instance as was passed in\n                \"\"\"\n                if self._enabled:\n                    self._session.set(subject.id, subject.state)\n                return subject\n",
+  "agc_valid": false,
+  "body_sha256": "41d6977bfc84611b8708288aa327ad96bc3f02b96362864a4c17255d3cef8465",
+  "body_tokens": 88,
+  "bucket": "out_of_range",
+  "clean_output": "\n        : the same Subject instance as was passed in\n                \"\"\"\n                if self._enabled:\n                    self._session.set(subject.id, subject.state)\n                return subject\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "d4d1f38d04428b96ff8615c51917f1832ef7f148d9fe684642bd88f14b4ede7c",
+  "human_valid": true,
+  "line_no": 295016,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dc7430692f9eebacda26fc849e1c4e50a8dadd8244f05122a55133454882e3b0",
+  "raw_output": ": the same Subject instance as was passed in\n        \"\"\"\n        if self._enabled:\n            self._session.set(subject.id, subject.state)\n        return subject\n\n    def",
+  "sampling_seed": 1123294513,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

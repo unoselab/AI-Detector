@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def populateImagesFromSurveys(self, surveys=dss2 + twomass):\n        \"\"\"\n        Load images from archives.\n        \"\"\"\n        for survey in surveys:\n            if survey.name in self.images:\n                continue\n            self.images[survey.name] = survey.getImages()\n",
+  "agc_valid": true,
+  "body_sha256": "31f58442673a050322cf11fbda311844a324e5fdab485ee9c3c15c226a8d06c5",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for survey in surveys:\n            if survey.name in self.images:\n                continue\n            self.images[survey.name] = survey.getImages()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "90c4c72b3a72333305f2f522ff5dfd9d7cfd62c2b21fb6b20248de351e3cb308",
+  "human_valid": true,
+  "line_no": 301612,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8674b7a9d66a8da6a630df7337f95d1489a6763d98df641e4d8d328a881b2d59",
+  "raw_output": "\n        for survey in surveys:\n            if survey.name in self.images:\n                continue\n            self.images[survey.name] = survey.getImages()\n\n    def",
+  "sampling_seed": 4219576785,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

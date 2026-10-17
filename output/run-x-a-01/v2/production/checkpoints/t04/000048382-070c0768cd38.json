@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def overlap_size(self,in_genomic_range):\n    \"\"\" The size of the overlap\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: count of overlapping bases\n    :rtype: int\n    \"\"\"\n    return self.overlap_size(in_genomic_range)\n",
+  "agc_valid": true,
+  "body_sha256": "bae7f08907a7325c15ad045a3ceba4fb88fa5c6eccfd8e54a16e5a74b28b22f6",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return self.overlap_size(in_genomic_range)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "80b208df6d145d872ead061a10771859ede70cf94cde9254e0fbe9972d477eb7",
+  "human_valid": true,
+  "line_no": 48382,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "070c0768cd38f2a752749b7dfa3a1dd383beef11684d6e95731303b729c515da",
+  "raw_output": "\n    return self.overlap_size(in_genomic_range)\n\ndef overlap_size(self,in_genomic_range):\n    \"\"\" The size of the overlap\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: count of overlapping bases\n    :rtype: int\n    \"\"\"\n    return self.overlap_size(in_genomic_range)\n\ndef overlaps(self,in_genomic_range):\n    \"\"\" Does this range overlap with the input range?\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: True if overlapping, False otherwise\n    :rtype: bool\n    \"\"\"\n    return self.overlaps(in_genomic_range)\n\ndef overlaps(self,in_genomic_range):\n    \"\"\" Does this range overlap with the input range?\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: True if overlapping, False otherwise\n    :rtype: bool\n    \"\"\"\n    return self.overlaps(in_genomic_range)\n\ndef overlaps(self,in_genomic_range):\n    \"\"\" Does this range overlap with the input range?\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: True if overlapping, False otherwise\n    :rtype: bool\n    \"\"\"\n    return self.overlaps(in_genomic_range)\n\ndef overlaps(self,in_genomic_range):\n    \"\"\" Does this range overlap with the input range?\n\n    :param in_genomic_range: the range to intersect\n    :type in_genomic_range: GenomicRange\n\n    :return: True if overlapping, False otherwise\n    :rtype: bool\n    \"\"\"\n    return self.overlaps(in_genomic_range)\n\ndef overlaps(self,in_genomic_range):\n    \"\"\"",
+  "sampling_seed": 2734172428,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

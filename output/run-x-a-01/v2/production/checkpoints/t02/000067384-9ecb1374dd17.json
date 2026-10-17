@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_decimal(number, strip='- '):\n    \"\"\"\n    Converts a number to a string of decimals in base 10.\n\n    >>> to_decimal(123)\n    '123'\n    >>> to_decimal('o123')\n    '83'\n    >>> to_decimal('b101010')\n    '42'\n    >>> to_decimal('0x2a')\n    '42'\n    \"\"\"\n    if isinstance(number, str):\n        number = number.strip(strip)\n        if number.startswith('0x'):\n            return str(int(number,\n",
+  "agc_valid": false,
+  "body_sha256": "d7d66e4f92a4aca0051246460c4c76c9338290ace2dd4da0473f3aa34549928d",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(number, str):\n        number = number.strip(strip)\n        if number.startswith('0x'):\n            return str(int(number,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "a57514643a0f9fa01809f5cec5c642a8452ee3b24bc2830285c8243eeccb9dfc",
+  "human_valid": true,
+  "line_no": 67384,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9ecb1374dd17c5ad95106c29426fd595dbe511d0e27b44fdeca095c6d1136adc",
+  "raw_output": "\n    if isinstance(number, str):\n        number = number.strip(strip)\n        if number.startswith('0x'):\n            return str(int(number, ",
+  "sampling_seed": 1827522981,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

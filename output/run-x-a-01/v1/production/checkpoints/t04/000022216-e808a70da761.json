@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def purge_old_files(date_time, directory_path, custom_prefix=\"backup\"):\n    \"\"\" Takes a datetime object and a directory path, runs through files in the\n        directory and deletes those tagged with a date from before the provided\n        datetime.\n        If your backups have a custom_prefix that is not the default (\"backup\"),\n        provide it with the \"custom_prefix\" kwarg. \"\"\"\n        # Get all files in directory\n        files = os.listdir(directory_path)\n        # Filter out any files that do not have the custom_prefix\n        files = [f for f in files if f.startswith(custom_prefix)]\n        # Get a list of files that are older than the date provided\n        old_files = [f for f in files if datetime.strptime(f[len(custom_prefix)+1:], '%Y-%m-%d_%H-%M-%S') < date_time]\n        # Delete the files\n        for f in old_files:\n            os.remove(directory_path + \"/\" + f)\n",
+  "agc_valid": false,
+  "body_sha256": "c4b5d98b4be9d82bad03f6077f0e1ab02467f8b9a982f3be80707f5671c38f97",
+  "body_tokens": 135,
+  "bucket": "type04_140",
+  "clean_output": "\n        # Get all files in directory\n        files = os.listdir(directory_path)\n        # Filter out any files that do not have the custom_prefix\n        files = [f for f in files if f.startswith(custom_prefix)]\n        # Get a list of files that are older than the date provided\n        old_files = [f for f in files if datetime.strptime(f[len(custom_prefix)+1:], '%Y-%m-%d_%H-%M-%S') < date_time]\n        # Delete the files\n        for f in old_files:\n            os.remove(directory_path + \"/\" + f)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "91d8af7d0206367b3c24be31e3ad5e721c30b3f7caf5d9f991a840727e4d26dd",
+  "human_valid": true,
+  "line_no": 22216,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e808a70da761aa550235410008c62bbf3e14bec68a424ec1ab45de146ad38b04",
+  "raw_output": "\r\n    # Get all files in directory\r\n    files = os.listdir(directory_path)\r\n    # Filter out any files that do not have the custom_prefix\r\n    files = [f for f in files if f.startswith(custom_prefix)]\r\n    # Get a list of files that are older than the date provided\r\n    old_files = [f for f in files if datetime.strptime(f[len(custom_prefix)+1:], '%Y-%m-%d_%H-%M-%S') < date_time]\r\n    # Delete the files\r\n    for f in old_files:\r\n        os.remove(directory_path + \"/\" + f)\r\n\r\n\r\ndef backup(directory_path, custom_prefix=\"backup\"):\r\n    \"\"\" Takes a directory path and makes a backup of the contents of the directory\r\n        in a zip file. The zip file is named with the custom_prefix and the current\r\n        date and time. \"\"\"\r\n    # Get the current date and time\r\n    current_time = datetime.now()\r\n    # Get a list of files in the directory\r\n    files = os.listdir(directory_path)\r\n    # Filter out any files that do not have the custom_prefix\r\n    files = [f for f in files if f.startswith(custom_prefix)]\r\n    # Get a list of files that are older than the date provided\r\n    old_files = [f for f in files if datetime.strptime(f[len(custom_prefix)+1:], '%Y-%m-%d_%H-%M-%S') < current_time]\r\n    # Delete the files\r\n    for f in old_files:\r\n        os.remove(directory_path + \"/\" + f)\r\n    # Create a zip file with the current date and time\r\n    zip_file = zipfile.ZipFile(directory_path + \"/\" + custom_prefix + \"_\" + current_time.strftime('%Y-%m-%d_%H-%M-%S') + \".zip\", 'w')\r\n    # Add all files to the zip file\r\n    for f in files:\r\n        zip_file.write(directory_path + \"/\" + f",
+  "sampling_seed": 1781251392,
+  "tag": "t04",
+  "temperature": 0.4
+}

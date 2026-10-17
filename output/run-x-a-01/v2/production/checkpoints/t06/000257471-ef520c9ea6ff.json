@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def minor_device_class(self):\n        \"\"\"\n        Return the minor device class property decoded e.g.,\n        Scanner, Printer, Loudspeaker, Camera, etc.\n        \"\"\"\n            return self.device_class(self.minor)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "8b576de47de0468b094ed991cc39bd39bfbf6098961ebbf34c46890fcd9a2c3f",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.device_class(self.minor)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "178bc475e02abbb1cf67fe86d78e5aa1bf997855f6f7f694eb05ae9070b6b3d8",
+  "human_valid": true,
+  "line_no": 257471,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ef520c9ea6ff45d61c40fab88db4a97a40ebd05ddd46660dd08ec5cc652a4660",
+  "raw_output": "\n        return self.device_class(self.minor)\n\n    @property\n    def",
+  "sampling_seed": 3830745779,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

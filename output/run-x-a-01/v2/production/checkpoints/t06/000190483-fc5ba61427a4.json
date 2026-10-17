@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_script(zap_helper, **options):\n    \"\"\"Load a script from a file.\"\"\"\n    zap_helper.zap.script.load(options[\"path\"])\n",
+  "agc_valid": true,
+  "body_sha256": "221201eee0deca786e3650c4287057b306e53b1367dc1c77adff08b67e226d88",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    zap_helper.zap.script.load(options[\"path\"])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "9ae90c83e2c7101b8e580fe8469e35a665f9f64b4ed534fb4dcbca731f1272f4",
+  "human_valid": true,
+  "line_no": 190483,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc5ba61427a4a595bde6c03d8fa4746269f0e9d9b13736d90e2f7db3dc45c9e7",
+  "raw_output": "\n    zap_helper.zap.script.load(options[\"path\"])\n\n\ndef enable_script(zap_helper, **options):\n    \"\"\"Enable a script.\"\"\"\n    zap_helper.zap.script.enable(options[\"id\"])\n\n\ndef disable_script(zap_helper, **options):\n    \"\"\"Disable a script.\"\"\"\n    zap_helper.zap.script.disable(options[\"id\"])\n\n\ndef delete_script(zap_helper, **options):\n    \"\"\"Delete a script.\"\"\"\n    zap_helper.zap.script.delete(options[\"id\"])\n\n\ndef list_scripts(zap_helper, **options):\n    \"\"\"List all scripts.\"\"\"\n    scripts = zap_helper.zap.script.list()\n    for script in scripts:\n        print(script)\n\n\ndef run_script(zap_helper, **options):\n    \"\"\"Run a script.\"\"\"\n    zap_helper.zap.script.run(options[\"id\"])\n\n\ndef run_script_with_args(zap_helper, **options):\n    \"\"\"Run a script with arguments.\"\"\"\n    zap_helper.zap.script.run_with_args(options[\"id\"], options[\"args\"])\n\n\ndef script_help(zap_helper, **options):\n    \"\"\"Get help for a script.\"\"\"\n    zap_helper.zap.script.help(options[\"id\"])\n\n\ndef script_view(zap_helper, **options):\n    \"\"\"Get the script's source.\"\"\"\n    print(zap_helper.zap.script.view(options[\"id\"]))\n\n\ndef script_view_lines(zap_helper, **options):\n    \"\"\"Get the script's source.\"\"\"\n    print(zap_helper.zap.script.view_lines(options[\"id\"]))\n\n\ndef script_generate_token(zap_helper, **options):\n    \"\"\"Generate a token for a script.\"\"\"\n    print(zap_helper.zap.script.generate_token(options[\"id\"]))\n\n\ndef script_check_token(zap_helper, **options):\n    \"\"\"Check the token for a script",
+  "sampling_seed": 2574266333,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

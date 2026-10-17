@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def delete(self, url: str, params: dict = None):\n        \"\"\"\n        Delete a resource.\n\n        :param url: Endpoint\n        :param params: parameters\n        :return: Response body\n\n        :raises PvApiError when something is wrong.\n        \"\"\"\n        response = self.session.delete(\n            url=url,\n            headers=self.headers,\n            params=params,\n            timeout=self.timeout,\n        )\n        self._raise_error(response)\n        return response.json()\n",
+  "agc_valid": true,
+  "body_sha256": "19ffd70e44bad1d7124caf6bec5692b350941f6785570ece688f9c48c3a6bbad",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n        response = self.session.delete(\n            url=url,\n            headers=self.headers,\n            params=params,\n            timeout=self.timeout,\n        )\n        self._raise_error(response)\n        return response.json()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 154,
+  "human_sha256": "70583d674f708ceef1a880c0a5dd665dba11d0ba5de2352597a9592d3969e6f9",
+  "human_valid": true,
+  "line_no": 56327,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b926d3fbc04a8de80b4a217d54b8297c9960d971ce9a1834985e3ca57033fee9",
+  "raw_output": "\n        response = self.session.delete(\n            url=url,\n            headers=self.headers,\n            params=params,\n            timeout=self.timeout,\n        )\n        self._raise_error(response)\n        return response.json()\n\n    def",
+  "sampling_seed": 1639528014,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

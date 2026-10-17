@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def allpossibilities(self):\n        \"\"\"Returns all possible outputtemplates that may occur (recusrively applied)\"\"\"\n        if self.outputtemplate is None:\n            return []\n        else:\n            return [self.outputtemplate] + [\n                x.allpossibilities() for x in self.outputtemplates\n            ]\n",
+  "agc_valid": true,
+  "body_sha256": "5610ce7587c7ba6a268b5ec4cefa1c2d05b4f3b4c5729735bddb95f56bb0e9cc",
+  "body_tokens": 80,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.outputtemplate is None:\n            return []\n        else:\n            return [self.outputtemplate] + [\n                x.allpossibilities() for x in self.outputtemplates\n            ]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "135cbd5d038b0fe72e1102975f00525b5b043c88343e9117679fb769091a8955",
+  "human_valid": true,
+  "line_no": 236293,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aa605169d9a14e8936783971f69f196ffc3cc292fa43c70ecade477b40b6408f",
+  "raw_output": "\n        if self.outputtemplate is None:\n            return []\n        else:\n            return [self.outputtemplate] + [\n                x.allpossibilities() for x in self.outputtemplates\n            ]\n\n    def",
+  "sampling_seed": 3844440596,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def match_filtered_identities(self, fa, fb):\n        \"\"\"Determine if two filtered identities are the same.\n\n        The method compares the username of each filtered identity\n        to check if they are the same. When the given filtered identities\n        are the same object or share the same UUID, this will also\n        produce a positive match.\n\n        Identities which their username are in the blacklist will be\n        ignored and the result of the comparison will be false.\n\n        :param fa: filtered identity to match\n        :param fb: filtered identity to match\n\n        :returns: True when both filtered identities are likely to be the same.\n            Otherwise, returns False.\n\n        :raises ValueError: when any of the given filtered identities is not\n            an instance of UsernameIdentity class.\n        \"\"\"\n        b: filtered identity to match\n                :return: True if the given filtered identities are the same, False otherwise\n                \"\"\"\n                if fa is fb:\n                    return True\n                if fa.uuid == fb.uuid:\n                    return True\n                if fa.username in self.blacklist:\n                    return False\n                if fb.username in self.blacklist:\n                    return False\n                return fa.username == fb.username\n",
+  "agc_valid": false,
+  "body_sha256": "3c8bb23f362809ec33e0061223f60a310ca4281166ffbeeeab6884f3eae1e10a",
+  "body_tokens": 235,
+  "bucket": "out_of_range",
+  "clean_output": "\n        b: filtered identity to match\n                :return: True if the given filtered identities are the same, False otherwise\n                \"\"\"\n                if fa is fb:\n                    return True\n                if fa.uuid == fb.uuid:\n                    return True\n                if fa.username in self.blacklist:\n                    return False\n                if fb.username in self.blacklist:\n                    return False\n                return fa.username == fb.username\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "20745d844b3fc607ff108e3e826f002556a87a3532600c3b1b71e9c4ef9f0982",
+  "human_valid": true,
+  "line_no": 134154,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1b9aab1764c9d929690986ac145eebeb2f2e0bde80621a889eb084fc50847827",
+  "raw_output": "b: filtered identity to match\n        :return: True if the given filtered identities are the same, False otherwise\n        \"\"\"\n        if fa is fb:\n            return True\n        if fa.uuid == fb.uuid:\n            return True\n        if fa.username in self.blacklist:\n            return False\n        if fb.username in self.blacklist:\n            return False\n        return fa.username == fb.username\n\n    def",
+  "sampling_seed": 817502120,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

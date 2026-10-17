@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def rollback(self, path, pretend=False):\n        \"\"\"\n        Rollback the last migration operation.\n\n        :param path: The path\n        :type path: str\n\n        :param pretend: Whether we execute the migrations as dry-run\n        :type pretend: bool\n\n        :rtype: int\n        \"\"\"\n        return self._migrate(path, pretend, rollback=True)\n",
+  "agc_valid": true,
+  "body_sha256": "395dd211580c8e449ac20879cd69fb692a5be0cd197a4042d0af8226b374e211",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._migrate(path, pretend, rollback=True)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "3d2a49cf4981ee7fc8694b202659f5a24fa42e24c672fec447beee7c35aa4a1e",
+  "human_valid": true,
+  "line_no": 2494,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fc6f71aac34cb45f708c48d10d84e90e2cbcbda1b9cffebb03fab3ce7747fe83",
+  "raw_output": "\n        return self._migrate(path, pretend, rollback=True)\n\n    def",
+  "sampling_seed": 2518097726,
+  "tag": "t02",
+  "temperature": 0.2
+}

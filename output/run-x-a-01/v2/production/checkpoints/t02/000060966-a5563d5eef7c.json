@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def gen_otu_dict(nex_obj, nexson_version=None):\n    \"\"\"Takes a NexSON object and returns a dict of\n    otu_id -> otu_obj\n    \"\"\"\n    otu_dict = {}\n    for otu_id in nex_obj['data']['otus']:\n        otu_dict[otu_id] = nex_obj['data']['otus'][otu_id]\n    return otu_dict\n",
+  "agc_valid": true,
+  "body_sha256": "bef2f16e241e6eef9c5742a903cd412ea36cc283909ee48eaf0e0a12d982081d",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    otu_dict = {}\n    for otu_id in nex_obj['data']['otus']:\n        otu_dict[otu_id] = nex_obj['data']['otus'][otu_id]\n    return otu_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "d934dd7aec39a3efc3c1bf47dbae368af429422e5cb59ecee65feece4a6bb829",
+  "human_valid": true,
+  "line_no": 60966,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a5563d5eef7c3816f682fafe1cef52ed9cc56b0fd201032fd32e8394386b5284",
+  "raw_output": "\n    otu_dict = {}\n    for otu_id in nex_obj['data']['otus']:\n        otu_dict[otu_id] = nex_obj['data']['otus'][otu_id]\n    return otu_dict\n\n\ndef gen_otu_id_list(nex_obj, nexson_version=None):\n    \"\"\"Takes a NexSON object and returns a list of\n    otu_id\n    \"\"\"\n    otu_id_list = []\n    for otu_id in nex_obj['data']['otus']:\n        otu_id_list.append(otu_id)\n    return otu_id_list\n\n\ndef gen_otu_id_list_from_otu_dict(otu_dict, nexson_version=None):\n    \"\"\"Takes a dict of otu_id -> otu_obj and returns a list of\n    otu_id\n    \"\"\"\n    otu_id_list = []\n    for otu_id in otu_dict:\n        otu_id_list.append(otu_id)\n    return otu_id_list\n\n\ndef gen_otu_id_list_from_otu_list(otu_list, nexson_version=None):\n    \"\"\"Takes a list of otu_obj and returns a list of\n    otu_id\n    \"\"\"\n    otu_id_list = []\n    for otu in otu_list:\n        otu_id_list.append(otu['id'])\n    return otu_id_list\n\n\ndef gen_otu_list_from_otu_dict(otu_dict, nexson_version=None):\n    \"\"\"Takes a dict of otu_id -> otu_obj and returns a list of\n    otu_obj\n    \"\"\"\n    otu_list = []\n    for otu_id in otu_dict:\n        otu_list.append(otu_dict[otu_id])\n    return otu_list\n\n\ndef gen_otu_list_from_otu_list(otu",
+  "sampling_seed": 3120259707,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

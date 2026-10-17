@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "async def parse_target(self, runtime, target_str):\n        \"\"\"A target is a pipeline of a module into zero or more rules, and each\n        module and rule can itself be scoped with zero or more module names.\"\"\"\n        if not target_str:\n            return []\n        if target_str == 'all':\n            return self.all_targets(runtime)\n        if target_str.startswith('all:'):\n            return self.all_targets(runtime, target_str[4:])\n        if target_str.startswith('module:'):\n            return self.module_targets(runtime, target_str[7:])\n        if target_str.startswith('module:'):\n            return self.module_targets(runtime, target_str[7:])\n        if target_str.startswith('rule:'):\n            return self.rule_targets(runtime, target_str[5:])\n        return self.rule_targets(runtime, target_str)\n",
+  "agc_valid": true,
+  "body_sha256": "07d63dd2b8d7ce034ee172516b2730505afe4dacb5e40516fd3a9c21ede43eb9",
+  "body_tokens": 150,
+  "bucket": "type05_150",
+  "clean_output": "\n        if not target_str:\n            return []\n        if target_str == 'all':\n            return self.all_targets(runtime)\n        if target_str.startswith('all:'):\n            return self.all_targets(runtime, target_str[4:])\n        if target_str.startswith('module:'):\n            return self.module_targets(runtime, target_str[7:])\n        if target_str.startswith('module:'):\n            return self.module_targets(runtime, target_str[7:])\n        if target_str.startswith('rule:'):\n            return self.rule_targets(runtime, target_str[5:])\n        return self.rule_targets(runtime, target_str)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "ef6904144752baa43f817c720e68c1fa7b955bff725966759f28529244fb8efb",
+  "human_valid": true,
+  "line_no": 296392,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c4543adee4febf5585abe9515bf8c24ff71d77e6bee295810572b373c166a82",
+  "raw_output": "\n        if not target_str:\n            return []\n        if target_str == 'all':\n            return self.all_targets(runtime)\n        if target_str.startswith('all:'):\n            return self.all_targets(runtime, target_str[4:])\n        if target_str.startswith('module:'):\n            return self.module_targets(runtime, target_str[7:])\n        if target_str.startswith('module:'):\n            return self.module_targets(runtime, target_str[7:])\n        if target_str.startswith('rule:'):\n            return self.rule_targets(runtime, target_str[5:])\n        return self.rule_targets(runtime, target_str)\n\n    def",
+  "sampling_seed": 2593794513,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

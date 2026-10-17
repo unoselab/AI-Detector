@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def match(self, location):\n        \"\"\"\n        Check if the given location \"matches\".\n\n        :param location: The :class:`Location` object to try to match.\n        :returns: :data:`True` if the two locations are on the same system and\n                  the :attr:`directory` can be matched as a filename pattern or\n                  a literal match on the normalized pathname.\n        \"\"\"\n        return self.system == location.system and \\\n            self.directory.match(location.pathname)\n",
+  "agc_valid": true,
+  "body_sha256": "7d36472253f5002e05734f46d9b6bcb3227165ae24a0844f8e1ddc717cc660ed",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.system == location.system and \\\n            self.directory.match(location.pathname)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 150,
+  "human_sha256": "44efc2e153c3f334d862e145f2938e653723dd3d5e26767dd7ca50febd4e26be",
+  "human_valid": true,
+  "line_no": 17894,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f725bde362aa21af2e2584fe3685942ff522d6be803329c11523879463028c63",
+  "raw_output": "\n        return self.system == location.system and \\\n            self.directory.match(location.pathname)\n\n    def",
+  "sampling_seed": 4274165534,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

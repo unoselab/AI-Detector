@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _update_Frxy(self):\n        \"\"\"Update `Frxy` from `piAx_piAy_beta`, `omega`, `omega2`, and `beta`.\"\"\"\n        self.Frxy = self.piAx_piAy_beta * self.omega **\n",
+  "agc_valid": false,
+  "body_sha256": "42f2baea163cd4d0c98a474175f42e139ffbc65d1299d07097a62dbbf151571b",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.Frxy = self.piAx_piAy_beta * self.omega **\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6778421b617c3cd8f743c7024e0d611b9596db585eafe32063c442f4aa942adb",
+  "human_valid": true,
+  "line_no": 36176,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ea3c9a65f09c46f419231c884e766d8cf964dd3d42f0cd470282a3b80876841e",
+  "raw_output": "\n        self.Frxy = self.piAx_piAy_beta * self.omega ** ",
+  "sampling_seed": 3648877447,
+  "tag": "t06",
+  "temperature": 0.6
+}

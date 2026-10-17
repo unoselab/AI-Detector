@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fail_unknown_dialect(compiler: \"SQLCompiler\", task: str) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"{task} not implemented for {compiler.dialect.name} dialect.\"\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "57e35e102fc41dfed4f86efa2d58763e99b553a7974224e2658ec953fcd3dc90",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    raise NotImplementedError(\n        f\"{task} not implemented for {compiler.dialect.name} dialect.\"\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "324b40a7364cfc3b73e5c2d14ff7a8666a4215384c818356dc7aed6c76049ced",
+  "human_valid": true,
+  "line_no": 238068,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e999281ae9d045518cda342ba7ff0fd8d07e05c00ce75aae3ae9d117cf3896e1",
+  "raw_output": "\n    raise NotImplementedError(\n        f\"{task} not implemented for {compiler.dialect.name} dialect.\"\n    )\n\n\ndef fail_no_from(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``froms`` attribute.\n    \"\"\"\n    fail_unknown_dialect(compiler, \"froms\")\n\n\ndef fail_no_selects(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``selects`` attribute.\n    \"\"\"\n    fail_unknown_dialect(compiler, \"selects\")\n\n\ndef fail_no_table(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``table`` attribute.\n    \"\"\"\n    fail_unknown_dialect(compiler, \"table\")\n\n\ndef fail_no_whereclause(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``whereclause`` attribute.\n    \"\"\"\n    fail_unknown_dialect(compiler, \"whereclause\")\n\n\ndef fail_no_orderby(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``order_by`` attribute.\n    \"\"\"\n    fail_unknown_dialect(compiler, \"order_by\")\n\n\ndef fail_no_group_by(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``group_by`` attribute.\n    \"\"\"\n    fail_unknown_dialect(compiler, \"group_by\")\n\n\ndef fail_no_limit(compiler: \"SQLCompiler\") -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a compiler which has no\n    ``limit`` attribute",
+  "sampling_seed": 1140394226,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

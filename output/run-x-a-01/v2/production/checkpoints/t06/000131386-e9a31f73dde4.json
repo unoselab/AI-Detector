@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_libgfortran_dir():\n    \"\"\"\n    Helper function returning the library directory of libgfortran. Useful\n    on OSX where the C compiler oftentimes has no knowledge of the library\n    directories of the Fortran compiler. I don't think it can do any harm on\n    Linux.\n    \"\"\"\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        fc = get_config_var('FC')\n        libgfortran_dir = os.path.dirname(fc)\n    else:\n        libgfortran_dir = ''\n    return libgfortran_dir\n",
+  "agc_valid": true,
+  "body_sha256": "ea63d3391952cdb9b8806e580b17597a1fb241c75042012c885aafc716393a10",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        fc = get_config_var('FC')\n        libgfortran_dir = os.path.dirname(fc)\n    else:\n        libgfortran_dir = ''\n    return libgfortran_dir\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "9b7abe317f555f96e420214baead0409ef6b16bfcd920f2d5a17dbc741972d90",
+  "human_valid": true,
+  "line_no": 131386,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e9a31f73dde480cfba6c9f93b27da7ac20fbef2a21eb888023cdd93c034b54a6",
+  "raw_output": "\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        fc = get_config_var('FC')\n        libgfortran_dir = os.path.dirname(fc)\n    else:\n        libgfortran_dir = ''\n    return libgfortran_dir\n\n\ndef get_libgfortran_dirs():\n    \"\"\"\n    Helper function returning the library directories of libgfortran.\n    \"\"\"\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        fc = get_config_var('FC')\n        libgfortran_dir = os.path.dirname(fc)\n        libgfortran_dirs = [libgfortran_dir, libgfortran_dir + '/../lib']\n    else:\n        libgfortran_dirs = []\n    return libgfortran_dirs\n\n\ndef get_libgfortran_libs():\n    \"\"\"\n    Helper function returning the library names of libgfortran.\n    \"\"\"\n    if sys.platform == 'darwin':\n        libgfortran_libs = ['libgfortran.dylib']\n    else:\n        libgfortran_libs = ['libgfortran.a']\n    return libgfortran_libs\n\n\ndef get_libgfortran_version():\n    \"\"\"\n    Helper function returning the version number of libgfortran.\n    \"\"\"\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        fc = get_config_var('FC')\n        libgfortran_version = os.path.basename(os.path.dirname(fc))\n    else:\n        libgfortran_version = 'unknown'\n    return libgfortran_version\n\n\ndef get_gfortran_version():\n    \"\"\"\n    Helper function returning the version number of gfortran.\n    \"\"\"\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        fc = get_config_var('FC')\n        gfortran_",
+  "sampling_seed": 4202171319,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

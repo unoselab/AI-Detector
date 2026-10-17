@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def add_page(self, title=None, content=None, old_url=None,\n                 tags=None, old_id=None, old_parent_id=None):\n        \"\"\"\n        Adds a page to the list of pages to be imported - used by the\n        Wordpress importer.\n        \"\"\"\n        if old_id is None:\n            old_id = self.get_next_id()\n        if old_parent_id is None:\n            old_parent_id = self.get_next_parent_id()\n        self.pages.append({\n            'title': title,\n            'content': content,\n            'old_url': old_url,\n            'old_id': old_id,\n            'old_parent_id': old_parent_id,\n            'tags': tags,\n        })\n",
+  "agc_valid": true,
+  "body_sha256": "7b3f0b62d590465e5d9491870b04ba34ae7049a75fc40bdee1e42ad717bac6af",
+  "body_tokens": 145,
+  "bucket": "type05_150",
+  "clean_output": "\n        if old_id is None:\n            old_id = self.get_next_id()\n        if old_parent_id is None:\n            old_parent_id = self.get_next_parent_id()\n        self.pages.append({\n            'title': title,\n            'content': content,\n            'old_url': old_url,\n            'old_id': old_id,\n            'old_parent_id': old_parent_id,\n            'tags': tags,\n        })\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "8361eb0be267f3ac94af3394f3cc9beba4045411b59f82610191c8be69e9ec97",
+  "human_valid": true,
+  "line_no": 319800,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "79343278c28df3258c0e32f29245210cab5790cb06f4939a5d4998c7a2b2d347",
+  "raw_output": "\n        if old_id is None:\n            old_id = self.get_next_id()\n        if old_parent_id is None:\n            old_parent_id = self.get_next_parent_id()\n        self.pages.append({\n            'title': title,\n            'content': content,\n            'old_url': old_url,\n            'old_id': old_id,\n            'old_parent_id': old_parent_id,\n            'tags': tags,\n        })\n\n    def",
+  "sampling_seed": 1555816802,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

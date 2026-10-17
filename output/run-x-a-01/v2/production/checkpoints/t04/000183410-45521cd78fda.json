@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "async def remove(ssid: str = None, name: str = None) -> Tuple[bool, str]:\n    \"\"\" Remove a network. Depending on what is known, specify either ssid\n    (in which case this function will call ``connection_exists`` to get the\n    nmcli connection name) or the nmcli connection name directly.\n\n    Returns (True, msg) if the connection was deleted, (False, msg) otherwise.\n    \"\"\"\n    if ssid is not None:\n        connection_name = get_connection_name(ssid)\n        if connection_name is None:\n            return False, f\"Could not find network with SSID {ssid}\"\n    else:\n        connection_name = name\n\n    cmd = [\n        \"nmcli\", \"connection\", \"delete\",\n        connection_name,\n    ]\n    try:\n        subprocess.check_call(cmd)\n    except subprocess.CalledProcessError:\n        return False, f\"Could not delete connection {connection_name}\"\n\n    return True, f\"Deleted connection {connection_name}\"\n",
+  "agc_valid": true,
+  "body_sha256": "4d20eb7bbfe9191bec727ca3010a897ec744866e27fc236b10f586027ae9935d",
+  "body_tokens": 131,
+  "bucket": "type04_140",
+  "clean_output": "\n    if ssid is not None:\n        connection_name = get_connection_name(ssid)\n        if connection_name is None:\n            return False, f\"Could not find network with SSID {ssid}\"\n    else:\n        connection_name = name\n\n    cmd = [\n        \"nmcli\", \"connection\", \"delete\",\n        connection_name,\n    ]\n    try:\n        subprocess.check_call(cmd)\n    except subprocess.CalledProcessError:\n        return False, f\"Could not delete connection {connection_name}\"\n\n    return True, f\"Deleted connection {connection_name}\"\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 108,
+  "human_sha256": "b5dd44ceeceb609e62d0d9904416082d860b16e0d6f690c4aad4e7c3a52a2681",
+  "human_valid": true,
+  "line_no": 183410,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "45521cd78fdab9a37555c48d292f488f1fd10b13ef7dac57873153b4facd451b",
+  "raw_output": "\n    if ssid is not None:\n        connection_name = get_connection_name(ssid)\n        if connection_name is None:\n            return False, f\"Could not find network with SSID {ssid}\"\n    else:\n        connection_name = name\n\n    cmd = [\n        \"nmcli\", \"connection\", \"delete\",\n        connection_name,\n    ]\n    try:\n        subprocess.check_call(cmd)\n    except subprocess.CalledProcessError:\n        return False, f\"Could not delete connection {connection_name}\"\n\n    return True, f\"Deleted connection {connection_name}\"\n\n\ndef get_connection_name(ssid: str) -> Optional[str]:\n    \"\"\" Get the nmcli connection name for the given SSID.\n\n    Returns None if no such connection is found.\n    \"\"\"\n    cmd = [\n        \"nmcli\", \"connection\", \"show\",\n        \"--active\",\n        \"--no-legend\",\n        \"--no-header\",\n        \"--only\", \"UUID,SSID\",\n    ]\n    try:\n        output = subprocess.check_output(cmd)\n    except subprocess.CalledProcessError:\n        return None\n\n    for line in output.splitlines():\n        uuid, ssid = line.decode(\"utf-8\").strip().split(\":\")\n        if ssid == ssid:\n            return uuid\n\n    return None\n\n\ndef connection_exists(ssid: str) -> bool:\n    \"\"\" Check if a connection with the given SSID exists.\n\n    Returns True if it does, False if it doesn't.\n    \"\"\"\n    return get_connection_name(ssid) is not None\n\n\ndef get_ssid(connection_name: str) -> Optional[str]:\n    \"\"\" Get the SSID for the given nmcli connection name.\n\n    Returns None if no such connection is found.\n    \"\"\"\n    cmd = [\n        \"nmcli\", \"connection\", \"show\",\n        connection_name,\n        \"--no-legend\",\n        \"--no-header\",\n        \"--only\", \"SSID\",\n    ]\n    try:\n        output =",
+  "sampling_seed": 4148152360,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

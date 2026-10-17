@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def process_links(include_match, block_map, link_stack, source_path):\n    \"\"\"Process a string of content for include tags.\n\n    This function assumes there are no blocks in the content. The content is split into segments,\n    with include tags being replaced by Block objects.\n\n    PARAMETERS:\n    content     -- str; content to be converted into a Block.\n    block_map   -- BlockMap\n    link_stack  -- LinkStack\n    source_path -- str; the filepath of the file from which this content came.\n\n    RETURNS:\n    list of str; segments that the comprise the content.\n    \"\"\"\n    RETURNS:\n    A Block object.\n    \"\"\"\n    # Split the content into segments.\n    segments = content.split(include_match)\n\n    # If there is only one segment, there are no include tags.\n    if len(segments) ==\n",
+  "agc_valid": false,
+  "body_sha256": "8a6999c27981f6fa7fab09a9234ab5943204bba64dca27c4ccce497653490dd0",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n    RETURNS:\n    A Block object.\n    \"\"\"\n    # Split the content into segments.\n    segments = content.split(include_match)\n\n    # If there is only one segment, there are no include tags.\n    if len(segments) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "0bc56d912777613d7a3af9cfcfd88c440d68c6992231c1297b1aa5822acb9a7c",
+  "human_valid": true,
+  "line_no": 82540,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "31c64a2f62f87e3effcfd1ed3109a101e5d697648c80a56f14f92c7103f76562",
+  "raw_output": "\n\n    RETURNS:\n    A Block object.\n    \"\"\"\n    # Split the content into segments.\n    segments = content.split(include_match)\n\n    # If there is only one segment, there are no include tags.\n    if len(segments) == ",
+  "sampling_seed": 4102323697,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

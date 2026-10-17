@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getSensors(self):\n        \"\"\" Returns the currently visible state of the world as a numpy array\n            of doubles.\n        \"\"\"\n        return self.sensors\n",
+  "agc_valid": true,
+  "body_sha256": "5633c5748588023a332db4e2f1e42cc9e1e68c1957d97ee663ab14cb2295057f",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.sensors\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 108,
+  "human_sha256": "79fa9c4ac0828fcd0de6372f97e35f3590b4b58775849a8532b55ebd44d8ec95",
+  "human_valid": true,
+  "line_no": 61338,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a182dac19ec4ec7bb3bd8b2f9e069c758bd58ae19ee53737e84537db0d706185",
+  "raw_output": "\n        return self.sensors\n\n    def",
+  "sampling_seed": 2793289895,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

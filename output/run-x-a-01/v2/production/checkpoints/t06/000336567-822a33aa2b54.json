@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _install_eslint(self, bootstrap_dir):\n    \"\"\"Install the ESLint distribution.\n\n    :rtype: string\n    \"\"\"\n    eslint_dir = os.path.join(bootstrap_dir, 'eslint')\n    if not os.path.exists(eslint_dir):\n      os.mkdir(eslint_dir)\n    if not os.path.exists(os.path.join(eslint_dir, 'node_modules')):\n      os.system('cd %s; npm install' % eslint_dir)\n    return eslint_dir\n",
+  "agc_valid": true,
+  "body_sha256": "f185d23f7fb50bf453ea95fba6760f13ea58ee44e3aaa41066f8165d3bd75f42",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n    eslint_dir = os.path.join(bootstrap_dir, 'eslint')\n    if not os.path.exists(eslint_dir):\n      os.mkdir(eslint_dir)\n    if not os.path.exists(os.path.join(eslint_dir, 'node_modules')):\n      os.system('cd %s; npm install' % eslint_dir)\n    return eslint_dir\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "33489f642f37b7e2014d1c67cf4b2197b67def797feb228584de993daf927f30",
+  "human_valid": true,
+  "line_no": 336567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "822a33aa2b5477c432088935b154c128338a3260af3fdae6804b215ece36a85d",
+  "raw_output": "\n    eslint_dir = os.path.join(bootstrap_dir, 'eslint')\n    if not os.path.exists(eslint_dir):\n      os.mkdir(eslint_dir)\n    if not os.path.exists(os.path.join(eslint_dir, 'node_modules')):\n      os.system('cd %s; npm install' % eslint_dir)\n    return eslint_dir\n\n ",
+  "sampling_seed": 1956065536,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

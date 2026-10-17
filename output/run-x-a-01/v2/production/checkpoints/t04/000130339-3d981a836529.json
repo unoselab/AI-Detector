@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def upload_file(f):\n    \"\"\" Upload file to Telegra.ph's servers. Returns a list of links.\n        Allowed only .jpg, .jpeg, .png, .gif and .mp4 files.\n\n    :param f: filename or file-like object.\n    :type f: file, str or list\n    \"\"\"\n    if isinstance(f, list):\n        return [upload_file(x) for x in f]\n\n    if isinstance(f, str):\n        with open(f, 'rb') as file:\n            return upload_file(file)\n\n    if not hasattr(f, 'read'):\n        raise ValueError('Invalid file object')\n\n    file_data = f.read()\n    file_name = f.name\n\n    if not file_name:\n        file_name = 'file.tmp'\n\n    file_ext = os.path.splitext(file_name)[1].lower()\n\n    if file_ext not in ['.jpg', '.jpeg', '.png', '.gif', '.mp4']:\n        raise ValueError('Invalid file extension')\n\n    file_data = base64.b64encode(file_data).decode('utf-8')\n\n    url = 'https://telegra.ph/upload'\n\n    files = {\n        'file': (file_name, file_data)\n    }\n\n    r = requests.post(url, files=files)\n\n    if r.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "1094cc5434831742cffccb684ab66c47e61eb1025fa470972dca7695c2de7eb0",
+  "body_tokens": 171,
+  "bucket": "type08_180",
+  "clean_output": "\n    if isinstance(f, list):\n        return [upload_file(x) for x in f]\n\n    if isinstance(f, str):\n        with open(f, 'rb') as file:\n            return upload_file(file)\n\n    if not hasattr(f, 'read'):\n        raise ValueError('Invalid file object')\n\n    file_data = f.read()\n    file_name = f.name\n\n    if not file_name:\n        file_name = 'file.tmp'\n\n    file_ext = os.path.splitext(file_name)[1].lower()\n\n    if file_ext not in ['.jpg', '.jpeg', '.png', '.gif', '.mp4']:\n        raise ValueError('Invalid file extension')\n\n    file_data = base64.b64encode(file_data).decode('utf-8')\n\n    url = 'https://telegra.ph/upload'\n\n    files = {\n        'file': (file_name, file_data)\n    }\n\n    r = requests.post(url, files=files)\n\n    if r.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "6c852cc5196174c1081e5cce7fc4176f7a2701f7672a3de6e774297b80d06b97",
+  "human_valid": true,
+  "line_no": 130339,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3d981a836529e419e0adfaede0985761aa82797b702b3b6ea2a59c79f53dbd9a",
+  "raw_output": "\n    if isinstance(f, list):\n        return [upload_file(x) for x in f]\n\n    if isinstance(f, str):\n        with open(f, 'rb') as file:\n            return upload_file(file)\n\n    if not hasattr(f, 'read'):\n        raise ValueError('Invalid file object')\n\n    file_data = f.read()\n    file_name = f.name\n\n    if not file_name:\n        file_name = 'file.tmp'\n\n    file_ext = os.path.splitext(file_name)[1].lower()\n\n    if file_ext not in ['.jpg', '.jpeg', '.png', '.gif', '.mp4']:\n        raise ValueError('Invalid file extension')\n\n    file_data = base64.b64encode(file_data).decode('utf-8')\n\n    url = 'https://telegra.ph/upload'\n\n    files = {\n        'file': (file_name, file_data)\n    }\n\n    r = requests.post(url, files=files)\n\n    if r.status_code == ",
+  "sampling_seed": 3156275203,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

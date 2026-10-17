@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def saveSettings(self, groupName=None):\n        \"\"\" Writes the registry items into the persistent settings store.\n        \"\"\"\n        if groupName is None:\n            groupName = self.groupName\n\n        settings = Qt.QSettings(\"Bruker\", groupName)\n        settings.setValue(\"width\", self.width())\n        settings.setValue(\"height\", self.height())\n        settings.setValue(\"x\", self.x())\n        settings.setValue(\"y\", self.y())\n        settings.setValue(\"state\", self.saveState())\n",
+  "agc_valid": true,
+  "body_sha256": "e007b6e7368c23025a7e1752bdf61521a8fd89f67738ca0402089661429c6499",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if groupName is None:\n            groupName = self.groupName\n\n        settings = Qt.QSettings(\"Bruker\", groupName)\n        settings.setValue(\"width\", self.width())\n        settings.setValue(\"height\", self.height())\n        settings.setValue(\"x\", self.x())\n        settings.setValue(\"y\", self.y())\n        settings.setValue(\"state\", self.saveState())\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "1ead6e08dd08c716a3adab7b24d9f41a25279bc1647db07d96bacf29ed59d37e",
+  "human_valid": true,
+  "line_no": 391948,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5f0fc79538c9877a394d87171f169c4a197066addb79da717290566e3a5155f1",
+  "raw_output": "\n        if groupName is None:\n            groupName = self.groupName\n\n        settings = Qt.QSettings(\"Bruker\", groupName)\n        settings.setValue(\"width\", self.width())\n        settings.setValue(\"height\", self.height())\n        settings.setValue(\"x\", self.x())\n        settings.setValue(\"y\", self.y())\n        settings.setValue(\"state\", self.saveState())\n\n    def",
+  "sampling_seed": 39298841,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

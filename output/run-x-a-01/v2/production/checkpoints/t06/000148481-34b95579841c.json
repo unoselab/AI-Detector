@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_dict(self):\n        \"\"\"Return a dictionary containing Atom data.\"\"\"\n        atom_dict = {'name': self.name, 'symbol': self.symbol,\n                     'mass': self.mass, 'charge': self.charge,\n                     'coord': self.coord}\n        return atom_dict\n",
+  "agc_valid": true,
+  "body_sha256": "539905bf8a2e6993ea37ee1a71132181958685281ffd350903391e4a5f62d2a1",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n        atom_dict = {'name': self.name, 'symbol': self.symbol,\n                     'mass': self.mass, 'charge': self.charge,\n                     'coord': self.coord}\n        return atom_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "4a767a3fad116bebd36fdaa64d1339c1c0f1b9d1ef492b54dc74e59efa81ebcf",
+  "human_valid": true,
+  "line_no": 148481,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "34b95579841cb2ca20c50867544ba9e5df8771d19f7b035cddbf9c10eeec0360",
+  "raw_output": "\n\n        atom_dict = {'name': self.name, 'symbol': self.symbol,\n                     'mass': self.mass, 'charge': self.charge,\n                     'coord': self.coord}\n        return atom_dict\n\n    def",
+  "sampling_seed": 2326326529,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

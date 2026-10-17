@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_item(name, command, system_wide=False):\n\n\t\"\"\"Adds a program to startup.\n\n\tAdds a program to user startup.\n\n\tArgs:\n\t\tname        (str) : The name of the startup entry.\n\t\tcommand     (str) : The command to run.\n\t\tsystem_wide (bool): Add to system-wide startup.\n\n\tNote:\n\t\t``system_wide`` requires superuser/admin privileges.\n\n\t\"\"\"\n    if system_wide:\n        if not is_root():\n            raise PermissionError(\"Must be root to add to system-wide startup.\")\n        path = \"/etc/rc.local\"\n    else:\n        path = os.path.join(os.path.expanduser(\"~\"), \".config\", \"autostart\")\n\n    with open(path, \"a\") as f:\n        f.write(\"\\n\")\n        f.write(\"# {}\\n\".format(name))\n        f.write(\"{} &\\n\".format(command))\n",
+  "agc_valid": false,
+  "body_sha256": "df8a5f840be6220ab3807b88c2bb777580ae38cce7bdfe85a6f51355f5f58123",
+  "body_tokens": 96,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if system_wide:\n        if not is_root():\n            raise PermissionError(\"Must be root to add to system-wide startup.\")\n        path = \"/etc/rc.local\"\n    else:\n        path = os.path.join(os.path.expanduser(\"~\"), \".config\", \"autostart\")\n\n    with open(path, \"a\") as f:\n        f.write(\"\\n\")\n        f.write(\"# {}\\n\".format(name))\n        f.write(\"{} &\\n\".format(command))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "81bec63587ea30869a4f28ab7ed385a4ae2044f74ad2a15374f2fb70c1d69d36",
+  "human_valid": true,
+  "line_no": 38698,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "def2efe3e79b5faabfccced1c75c4c839f7948354d5912adb66e8b150e44b905",
+  "raw_output": "\n\n\tif system_wide:\n\t\tif not is_root():\n\t\t\traise PermissionError(\"Must be root to add to system-wide startup.\")\n\t\tpath = \"/etc/rc.local\"\n\telse:\n\t\tpath = os.path.join(os.path.expanduser(\"~\"), \".config\", \"autostart\")\n\n\twith open(path, \"a\") as f:\n\t\tf.write(\"\\n\")\n\t\tf.write(\"# {}\\n\".format(name))\n\t\tf.write(\"{} &\\n\".format(command))\n\ndef remove_item(name, system_wide=False):\n\n\t\"\"\"Removes a program from startup.\n\n\tRemoves a program from user startup.\n\n\tArgs:\n\t\tname        (str) : The name of the startup entry.\n\t\tsystem_wide (bool): Remove from system-wide startup.\n\n\tNote:\n\t\t``system_wide`` requires superuser/admin privileges.\n\n\t\"\"\"\n\n\tif system_wide:\n\t\tif not is_root():\n\t\t\traise PermissionError(\"Must be root to remove from system-wide startup.\")\n\t\tpath = \"/etc/rc.local\"\n\telse:\n\t\tpath = os.path.join(os.path.expanduser(\"~\"), \".config\", \"autostart\")\n\n\twith open(path, \"r\") as f:\n\t\tlines = f.readlines()\n\n\twith open(path, \"w\") as f:\n\t\tfor line in lines:\n\t\t\tif line.startswith(\"# {}\".format(name)):\n\t\t\t\tcontinue\n\t\t\tf.write(line)\n\ndef list_items(system_wide=False):\n\n\t\"\"\"Lists all startup items.\n\n\tLists all startup items for the user.\n\n\tArgs:\n\t\tsystem_wide (bool): List system-wide startup items.\n\n\tNote:\n\t\t``system_wide`` requires superuser/admin privileges.\n\n\t\"\"\"\n\n\tif system_wide:\n\t\tif not is_root():\n\t\t\traise PermissionError(\"Must be root to list system",
+  "sampling_seed": 3063875030,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

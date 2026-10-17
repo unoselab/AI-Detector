@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_args(cls, logging=False):\n        \"\"\"\n        Parses command line arguments.\n\n        Looks for --liveandletdie [host]\n\n        :returns:\n            A ``(str(host), int(port))`` or ``(None, None)`` tuple.\n        \"\"\"\n            parser = argparse.ArgumentParser(description='Live and Let Die')\n            parser.add_argument('--liveandletdie', action='store_true',\n                                help='Run the server')\n            parser.add_argument('--host', default='localhost',\n                                help='Host to bind to')\n            parser.add_argument('--port', type=int, default=8080,\n                                help='Port to bind to')\n            parser.add_argument('--debug', action='store_true',\n                                help='Enable debug mode')\n            parser.add_argument('--logging', action='store_true',\n                                help='Enable logging')\n            args = parser.parse_args()\n            if logging or args.logging:\n                cls.enable_logging()\n            if args.debug:\n                cls.enable_debug()\n            if args.liveandletdie:\n                return args.host, args.port\n            return None, None\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "0a1845902bfeb268ffcbe990779a9c35cec1450de7058438263a7209912867cc",
+  "body_tokens": 382,
+  "bucket": "out_of_range",
+  "clean_output": "\n            parser = argparse.ArgumentParser(description='Live and Let Die')\n            parser.add_argument('--liveandletdie', action='store_true',\n                                help='Run the server')\n            parser.add_argument('--host', default='localhost',\n                                help='Host to bind to')\n            parser.add_argument('--port', type=int, default=8080,\n                                help='Port to bind to')\n            parser.add_argument('--debug', action='store_true',\n                                help='Enable debug mode')\n            parser.add_argument('--logging', action='store_true',\n                                help='Enable logging')\n            args = parser.parse_args()\n            if logging or args.logging:\n                cls.enable_logging()\n            if args.debug:\n                cls.enable_debug()\n            if args.liveandletdie:\n                return args.host, args.port\n            return None, None\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "7fe0bf2e59a4c8e87ec8d67ad9c43c01b17cdd6c2c51e3b9a9739afb97dd273c",
+  "human_valid": true,
+  "line_no": 44676,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ebe893ac34f9b72bdaafacd963037e45c471f46ee5faaa1ce39c8099269c0f0c",
+  "raw_output": "\n        parser = argparse.ArgumentParser(description='Live and Let Die')\n        parser.add_argument('--liveandletdie', action='store_true',\n                            help='Run the server')\n        parser.add_argument('--host', default='localhost',\n                            help='Host to bind to')\n        parser.add_argument('--port', type=int, default=8080,\n                            help='Port to bind to')\n        parser.add_argument('--debug', action='store_true',\n                            help='Enable debug mode')\n        parser.add_argument('--logging', action='store_true',\n                            help='Enable logging')\n        args = parser.parse_args()\n        if logging or args.logging:\n            cls.enable_logging()\n        if args.debug:\n            cls.enable_debug()\n        if args.liveandletdie:\n            return args.host, args.port\n        return None, None\n\n    @classmethod\n    def",
+  "sampling_seed": 3059985098,
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _identity_stmt(self, stmt: Statement, sctx: SchemaContext) -> None:\n        \"\"\"Handle identity statement.\"\"\"\n        if not isinstance(stmt, Identity):\n            raise ValueError(f'Expected Identity, got {type(stmt)}')\n\n        if stmt.identity_name is None:\n            raise ValueError('identity_name is required')\n\n        if stmt.identity_name in self.identities:\n            raise ValueError(f'identity {stmt.identity_name} already exists')\n\n        self.identities[stmt.identity_name] = stmt\n",
+  "agc_valid": true,
+  "body_sha256": "1047838b649784ffd39c1ced03211084077c640f6d7640e374abd8d20d71af11",
+  "body_tokens": 91,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(stmt, Identity):\n            raise ValueError(f'Expected Identity, got {type(stmt)}')\n\n        if stmt.identity_name is None:\n            raise ValueError('identity_name is required')\n\n        if stmt.identity_name in self.identities:\n            raise ValueError(f'identity {stmt.identity_name} already exists')\n\n        self.identities[stmt.identity_name] = stmt\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "2113b3fba7ea0e0f0639f379b7a50ebec29c46f05ffaa6c522863af0658cc19a",
+  "human_valid": true,
+  "line_no": 408919,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "91b56d6cd81a679d1fd842e4c6f9f86684698660e99ca15930a8a444d0b73f3e",
+  "raw_output": "\n\n        if not isinstance(stmt, Identity):\n            raise ValueError(f'Expected Identity, got {type(stmt)}')\n\n        if stmt.identity_name is None:\n            raise ValueError('identity_name is required')\n\n        if stmt.identity_name in self.identities:\n            raise ValueError(f'identity {stmt.identity_name} already exists')\n\n        self.identities[stmt.identity_name] = stmt\n\n    def",
+  "sampling_seed": 1592486113,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

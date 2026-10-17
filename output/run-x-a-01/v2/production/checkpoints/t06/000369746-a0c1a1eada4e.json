@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def Run(self, args):\n    \"\"\"Reads a buffer on the client and sends it to the server.\"\"\"\n    try:\n      # Read the contents of the file.\n      with open(args.file, 'rb') as file_contents:\n        file_contents = file_contents.read()\n\n      # Send the contents of the file to the server.\n      self.Send(file_contents)\n\n      # Receive the contents of the file from the server.\n      file_contents = self.RecvAll()\n\n      # Write the contents of the file to the local file.\n      with open(args.file, 'wb') as file_contents:\n        file_contents.write(file_contents)\n\n    except IOError:\n      self.Log('File not found: %s' % args.file)\n",
+  "agc_valid": true,
+  "body_sha256": "be1045d784d606346c20544bd5871858482a994418be0716685df1feabf0ec33",
+  "body_tokens": 131,
+  "bucket": "type04_140",
+  "clean_output": "\n    try:\n      # Read the contents of the file.\n      with open(args.file, 'rb') as file_contents:\n        file_contents = file_contents.read()\n\n      # Send the contents of the file to the server.\n      self.Send(file_contents)\n\n      # Receive the contents of the file from the server.\n      file_contents = self.RecvAll()\n\n      # Write the contents of the file to the local file.\n      with open(args.file, 'wb') as file_contents:\n        file_contents.write(file_contents)\n\n    except IOError:\n      self.Log('File not found: %s' % args.file)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "2428a44341b78389e45fbd041c13aa262ef19db39355351f3271f5d1bb5ccb01",
+  "human_valid": true,
+  "line_no": 369746,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a0c1a1eada4ef414637e8498b1601d1ecad7b0d99944a480297391027e908b6f",
+  "raw_output": "\n    try:\n      # Read the contents of the file.\n      with open(args.file, 'rb') as file_contents:\n        file_contents = file_contents.read()\n\n      # Send the contents of the file to the server.\n      self.Send(file_contents)\n\n      # Receive the contents of the file from the server.\n      file_contents = self.RecvAll()\n\n      # Write the contents of the file to the local file.\n      with open(args.file, 'wb') as file_contents:\n        file_contents.write(file_contents)\n\n    except IOError:\n      self.Log('File not found: %s' % args.file)\n\n\ndef main(argv):\n ",
+  "sampling_seed": 662504447,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def header(self, title, level, key, width=80):\n        \"\"\"Example::\n\n            .. _header_2:\n\n            Header 2\n            -------------------------------------------------------------------\n\n        **中文文档**\n        \"\"\"\n        if level ==\n",
+  "agc_valid": false,
+  "body_sha256": "aecf03356410866d5f7732d7bccb2b44b412d7d34e1174fec105c2e8540eff72",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if level ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "4e12f4a78a791787ecfc6a7562edc99d69111c770632a77d070dfc6bd26edcf0",
+  "human_valid": true,
+  "line_no": 306883,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "038d27819d3a6a17148156e8aa1cd8cbf37de889704cdaf5a83dfbe559c3373a",
+  "raw_output": "\n        if level == ",
+  "sampling_seed": 845380879,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

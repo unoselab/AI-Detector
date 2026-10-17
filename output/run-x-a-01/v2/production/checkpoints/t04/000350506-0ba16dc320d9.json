@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def __register_types(self):\n        \"\"\"Iterates all entry points for resource types and registers a `resource_type_id` to class mapping\n\n        Returns:\n            `None`\n        \"\"\"\n        for resource_type in pkg_resources.iter_entry_points(group='py_client_server.resource_types'):\n            self.__register_resource_type(resource_type)\n",
+  "agc_valid": true,
+  "body_sha256": "d13ceb85c25c0943d414d6c27f0eae37c5e5cf8558ea6de3f0c0dc8d5cdc5c48",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for resource_type in pkg_resources.iter_entry_points(group='py_client_server.resource_types'):\n            self.__register_resource_type(resource_type)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 106,
+  "human_sha256": "53f4f04be1278cb0050a43fa921e026e1314c0f5bacf4d75397b7be5022628bc",
+  "human_valid": true,
+  "line_no": 350506,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0ba16dc320d98d0ab39cb8f827a358507843a54d0e28f000f9926a5f5b0e2251",
+  "raw_output": "\n        for resource_type in pkg_resources.iter_entry_points(group='py_client_server.resource_types'):\n            self.__register_resource_type(resource_type)\n\n    def",
+  "sampling_seed": 462144754,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

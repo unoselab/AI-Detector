@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_mmtf_header(infile):\n    \"\"\"Parse an MMTF file and return basic header-like information.\n\n    Args:\n        infile (str): Path to MMTF file\n\n    Returns:\n        dict: Dictionary of parsed header\n\n    Todo:\n        - Can this be sped up by not parsing the 3D coordinate info somehow?\n        - OR just store the sequences when this happens since it is already being parsed.\n\n    \"\"\"\n    with open(infile, 'rb') as f:\n        # Parse the header\n        header = {}\n        header['header_length'] = int.from_bytes(f.read(4), byteorder='little')\n        header['mmtf_format_version'] = int.from_bytes(f.read(4), byteorder='little')\n        header['structure_id_code'] = f.read(header['header_length'] -\n",
+  "agc_valid": false,
+  "body_sha256": "b2df3bf9fdf2ea49550c9f54268dd7b4e8a3711bb1222e253bac7cf8eb7cb1a6",
+  "body_tokens": 63,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(infile, 'rb') as f:\n        # Parse the header\n        header = {}\n        header['header_length'] = int.from_bytes(f.read(4), byteorder='little')\n        header['mmtf_format_version'] = int.from_bytes(f.read(4), byteorder='little')\n        header['structure_id_code'] = f.read(header['header_length'] -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 120,
+  "human_sha256": "8cf7e68b545f619b79bebc2c81305b7fe68dca8b0f30574a4ec8cf2fff8aad9c",
+  "human_valid": true,
+  "line_no": 140124,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1bd2b98a92570615dac080ac7100de29b30af0fd1816a1e1264b69f05c461e2e",
+  "raw_output": "\n    with open(infile, 'rb') as f:\n        # Parse the header\n        header = {}\n        header['header_length'] = int.from_bytes(f.read(4), byteorder='little')\n        header['mmtf_format_version'] = int.from_bytes(f.read(4), byteorder='little')\n        header['structure_id_code'] = f.read(header['header_length'] - ",
+  "sampling_seed": 2877047219,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

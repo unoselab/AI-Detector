@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_location(self, locations=None):\n        # type: (Optional[List[str]]) -> List[str]\n        \"\"\"Return the dataset's location\n\n        Args:\n            locations (Optional[List[str]]): Valid locations list. Defaults to list downloaded from HDX.\n\n        Returns:\n            List[str]: list of locations or [] if there are none\n        \"\"\"\n        return self.get_field('locations', locations)\n",
+  "agc_valid": true,
+  "body_sha256": "ffdbb633049dad0f784568275fff8d53d26d9a2b2502998d8872eec25a882e2d",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_field('locations', locations)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "de9ecd13273ae0f5625c1ac9d576339a5a16cb2795a2ecad3102d88a6015a72a",
+  "human_valid": true,
+  "line_no": 28641,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "992b2d25fc6be604e36fc82dc2ab2c5cff5d26c87a24d7c762a44d37b066d91b",
+  "raw_output": "\n        return self.get_field('locations', locations)\n\n    def",
+  "sampling_seed": 1548021479,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

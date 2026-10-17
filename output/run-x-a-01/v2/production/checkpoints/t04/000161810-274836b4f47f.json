@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def queue_scan_command(self, server_info: ServerConnectivityInfo, scan_command: PluginScanCommand) -> None:\n        \"\"\"Queue a scan command targeting a specific server.\n\n        Args:\n            server_info: The server's connectivity information. The test_connectivity_to_server() method must have been\n                called first to ensure that the server is online and accessible.\n            scan_command: The scan command to run against this server.\n        \"\"\"\n        self._queue_scan_command(server_info, scan_command)\n",
+  "agc_valid": true,
+  "body_sha256": "2dcc0aec15141f3aaec8a0b2f381397682a7add2795950823490188ab57e4b01",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._queue_scan_command(server_info, scan_command)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "3e5f18952b512f81065a203bcf5a5ddaaa2fa4d4964aab09710308280004f4e1",
+  "human_valid": true,
+  "line_no": 161810,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "274836b4f47faff5ed8519fe0609a99a066ee6a53a50f0d0217b2140245c4091",
+  "raw_output": "\n        self._queue_scan_command(server_info, scan_command)\n\n    def",
+  "sampling_seed": 3692248708,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

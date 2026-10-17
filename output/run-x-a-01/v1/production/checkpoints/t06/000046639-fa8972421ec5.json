@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _upcase_word(text, pos):\n    \"\"\"Uppercase the current (or following) word.\"\"\"\n    return text[:pos] + text[pos:pos +\n",
+  "agc_valid": false,
+  "body_sha256": "2b317b432066c443f06a2bd9f34373ca245a2a919564198f559754776250c89f",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return text[:pos] + text[pos:pos +\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "bbf3559c4693f51f5ac30d3de3dda88616fed48996d591c53f6c29b41f3bb664",
+  "human_valid": true,
+  "line_no": 46639,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fa8972421ec543b4248d798dee52f9b94d68c39b0a759f6de6bdceca3489981a",
+  "raw_output": "\n    return text[:pos] + text[pos:pos + ",
+  "sampling_seed": 2441992927,
+  "tag": "t06",
+  "temperature": 0.6
+}

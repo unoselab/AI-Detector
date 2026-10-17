@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _install_eslint(self, bootstrap_dir):\n    \"\"\"Install the ESLint distribution.\n\n    :rtype: string\n    \"\"\"\n    eslint_dir = os.path.join(bootstrap_dir, 'eslint')\n    if not os.path.exists(eslint_dir):\n        os.makedirs(eslint_dir)\n\n    # Download the ESLint distribution.\n    eslint_url = 'https://github.com/eslint/eslint/releases/download/v%s/eslint-%s.zip' % (\n        self.eslint_version, self.eslint_version)\n    eslint_zip = os.path.join(eslint_dir, 'eslint.zip')\n    self._download(eslint_url, eslint_zip)\n\n    # Unzip the ESLint distribution.\n    self._unzip(eslint_zip, eslint_dir)\n\n    # Install the ESLint distribution.\n    eslint_bin = os.path.join(eslint_dir, 'eslint-%s' % self.eslint_version, 'bin', 'eslint')\n    if not os.path.exists(eslint_bin):\n        raise Exception('ESLint binary not found: %s' % eslint_bin)\n\n    return eslint_bin\n",
+  "agc_valid": true,
+  "body_sha256": "f5bd9d168faf2bfc5df122773e65d335efcc5a799bce39187e0cbf6ee3320c3d",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n    eslint_dir = os.path.join(bootstrap_dir, 'eslint')\n    if not os.path.exists(eslint_dir):\n        os.makedirs(eslint_dir)\n\n    # Download the ESLint distribution.\n    eslint_url = 'https://github.com/eslint/eslint/releases/download/v%s/eslint-%s.zip' % (\n        self.eslint_version, self.eslint_version)\n    eslint_zip = os.path.join(eslint_dir, 'eslint.zip')\n    self._download(eslint_url, eslint_zip)\n\n    # Unzip the ESLint distribution.\n    self._unzip(eslint_zip, eslint_dir)\n\n    # Install the ESLint distribution.\n    eslint_bin = os.path.join(eslint_dir, 'eslint-%s' % self.eslint_version, 'bin', 'eslint')\n    if not os.path.exists(eslint_bin):\n        raise Exception('ESLint binary not found: %s' % eslint_bin)\n\n    return eslint_bin\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "33489f642f37b7e2014d1c67cf4b2197b67def797feb228584de993daf927f30",
+  "human_valid": true,
+  "line_no": 336567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "822a33aa2b5477c432088935b154c128338a3260af3fdae6804b215ece36a85d",
+  "raw_output": "\n    eslint_dir = os.path.join(bootstrap_dir, 'eslint')\n    if not os.path.exists(eslint_dir):\n        os.makedirs(eslint_dir)\n\n    # Download the ESLint distribution.\n    eslint_url = 'https://github.com/eslint/eslint/releases/download/v%s/eslint-%s.zip' % (\n        self.eslint_version, self.eslint_version)\n    eslint_zip = os.path.join(eslint_dir, 'eslint.zip')\n    self._download(eslint_url, eslint_zip)\n\n    # Unzip the ESLint distribution.\n    self._unzip(eslint_zip, eslint_dir)\n\n    # Install the ESLint distribution.\n    eslint_bin = os.path.join(eslint_dir, 'eslint-%s' % self.eslint_version, 'bin', 'eslint')\n    if not os.path.exists(eslint_bin):\n        raise Exception('ESLint binary not found: %s' % eslint_bin)\n\n    return eslint_bin\n\n\ndef _install_eslint_config(self, bootstrap_dir):\n    \"\"\"Install the ESLint configuration.\n\n    :rtype: string\n    \"\"\"\n    eslint_config_dir = os.path.join(bootstrap_dir, 'eslint_config')\n    if not os.path.exists(eslint_config_dir):\n        os.makedirs(eslint_config_dir)\n\n    # Download the ESLint configuration.\n    eslint_config_url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/tools/eslint/google-eslint-config.zip'\n    eslint_config_zip = os.path.join(eslint_config_dir, 'google-eslint-config.zip')\n    self._download(eslint_config_url, eslint_config_zip)\n\n    # Unzip the ESLint configuration.\n    self._unzip(eslint_config_zip, eslint_config_",
+  "sampling_seed": 817694253,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

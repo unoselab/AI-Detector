@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def send(self, packet_buffer):\n        \"\"\"\n        send a buffer as a packet to the network interface\n        :param packet_buffer: buffer to send (length shouldn't exceed MAX_INT)\n        \"\"\"\n        if self.socket is None:\n            raise Exception(\"Socket not initialized\")\n        self.socket.send(packet_buffer)\n",
+  "agc_valid": true,
+  "body_sha256": "4a9da9a18c0abafa2b89998a469135203c9c8030e90781d1e8ea302516e26074",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.socket is None:\n            raise Exception(\"Socket not initialized\")\n        self.socket.send(packet_buffer)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "301c89550f42bf9af2f20958aac216e10be4dd97ed1a48d077142d41e6e10442",
+  "human_valid": true,
+  "line_no": 2547,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "57e2783292cabb3a79df6e5a9eeac5dbdceeb27413f29e9103adcba11bcf85d8",
+  "raw_output": "\n        if self.socket is None:\n            raise Exception(\"Socket not initialized\")\n        self.socket.send(packet_buffer)\n\n    def",
+  "sampling_seed": 1353907392,
+  "tag": "t04",
+  "temperature": 0.4
+}

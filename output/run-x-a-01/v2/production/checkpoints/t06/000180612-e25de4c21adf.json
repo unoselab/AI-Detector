@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_online_version ():\n    \"\"\"Download update info and parse it.\"\"\"\n    try:\n        # get update info\n        r = requests.get(\"https://raw.githubusercontent.com/Hacker-Kantu/Kantu/main/update.json\")\n        r.raise_for_status()\n\n        # parse update info\n        update_info = r.json()\n        online_version = update_info['version']\n\n        return online_version\n\n    except Exception as e:\n        print(f\"[!] Error: {e}\")\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "9dc8ee3809928d29d0cabe617578ee69fe9672d978985cd4bd1b2540cedb4745",
+  "body_tokens": 100,
+  "bucket": "type01_110",
+  "clean_output": "\n    try:\n        # get update info\n        r = requests.get(\"https://raw.githubusercontent.com/Hacker-Kantu/Kantu/main/update.json\")\n        r.raise_for_status()\n\n        # parse update info\n        update_info = r.json()\n        online_version = update_info['version']\n\n        return online_version\n\n    except Exception as e:\n        print(f\"[!] Error: {e}\")\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "a3c0d9ca0a6cff548c01d2c37dd8d54e5c4cb7d24c7ae1ef6841e7a769ed1054",
+  "human_valid": true,
+  "line_no": 180612,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e25de4c21adf5eab2b7db58759f24203b3700841b8619db42582a6a27284b18f",
+  "raw_output": "\n    try:\n        # get update info\n        r = requests.get(\"https://raw.githubusercontent.com/Hacker-Kantu/Kantu/main/update.json\")\n        r.raise_for_status()\n\n        # parse update info\n        update_info = r.json()\n        online_version = update_info['version']\n\n        return online_version\n\n    except Exception as e:\n        print(f\"[!] Error: {e}\")\n        return False\n\n\ndef update_available ():\n    \"\"\"Check if an update is available.\"\"\"\n    online_version = get_online_version()\n    if online_version:\n        if __version__ != online_version:\n            return True\n        else:\n            return False\n    else:\n        return False\n\n\ndef download_update ():\n    \"\"\"Download update.\"\"\"\n    try:\n        # get update info\n        r = requests.get(\"https://raw.githubusercontent.com/Hacker-Kantu/Kantu/main/update.json\")\n        r.raise_for_status()\n\n        # parse update info\n        update_info = r.json()\n        update_file_name = update_info['update_file_name']\n        update_file_url = update_info['update_file_url']\n\n        # download update\n        update_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), update_file_name)\n        print(f\"[!] Downloading update: {update_file_name}\")\n        print(f\"[!] Downloading from: {update_file_url}\")\n        r = requests.get(update_file_url, allow_redirects=True)\n        open(update_path, 'wb').write(r.content)\n\n        return True\n\n    except Exception as e:\n        print(f\"[!] Error: {e}\")\n        return False\n\n\ndef extract_update ():\n    \"\"\"Extract update.\"\"\"\n    try:\n        # get update info\n        r = requests.get(\"https://raw.githubusercontent.com/Hacker-Kantu",
+  "sampling_seed": 2144564357,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

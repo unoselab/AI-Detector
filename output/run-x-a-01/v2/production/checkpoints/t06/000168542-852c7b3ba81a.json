@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def select_sub(self, query, as_):\n        \"\"\"\n        Add a subselect expression to the query\n\n        :param query: A QueryBuilder instance\n        :type query: QueryBuilder\n\n        :param as_: The subselect alias\n        :type as_: str\n\n        :return: The current QueryBuilder instance\n        :rtype: QueryBuilder\n        \"\"\"\n        self._query['subselect'] = {\n            'query': query,\n            'as': as_\n        }\n\n        return self\n",
+  "agc_valid": true,
+  "body_sha256": "3b068b2ffab383c5bb8f03bb792ba310725d6144cc5aa8c40596cc2e24dab99a",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._query['subselect'] = {\n            'query': query,\n            'as': as_\n        }\n\n        return self\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 120,
+  "human_sha256": "d54146706f164e3d27a2fc54ddca37433b11a744c43a4e05332d24c85fca0fb5",
+  "human_valid": true,
+  "line_no": 168542,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "852c7b3ba81a84aaa241d6c27cd92aad6263c439504e4c00cfb880fbbbeaf877",
+  "raw_output": "\n\n        self._query['subselect'] = {\n            'query': query,\n            'as': as_\n        }\n\n        return self\n\n    def",
+  "sampling_seed": 2009964896,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

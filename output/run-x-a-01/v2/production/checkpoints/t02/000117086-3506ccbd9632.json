@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _valid_ip6(ip_address):\n    \"\"\"\n    Check if the IPv6 address is valid and routable\n    Return either True or False\n    \"\"\"\n    try:\n        socket.inet_pton(socket.AF_INET6, ip_address)\n    except socket.error:\n        return False\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "56f13473541c16d2290959b74b8b2eb9176fbe7d08e3539480aa1297ccf6598e",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        socket.inet_pton(socket.AF_INET6, ip_address)\n    except socket.error:\n        return False\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "ef94efa88b3b55fcbd02af08c410cbe7a18128acddc05b54c4fd352ba643ccbc",
+  "human_valid": true,
+  "line_no": 117086,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3506ccbd96326d914d9b6a8ece384149d9f803c1b1c708d2665dc04ee9bb6bfc",
+  "raw_output": "\n    try:\n        socket.inet_pton(socket.AF_INET6, ip_address)\n    except socket.error:\n        return False\n    return True\n\n\ndef _valid_ip4(ip_address):\n    \"\"\"\n    Check if the IPv4 address is valid and routable\n    Return either True or False\n    \"\"\"\n    try:\n        socket.inet_pton(socket.AF_INET, ip_address)\n    except socket.error:\n        return False\n    return True\n\n\ndef _valid_ip(ip_address):\n    \"\"\"\n    Check if the IP address is valid and routable\n    Return either True or False\n    \"\"\"\n    if _valid_ip4(ip_address):\n        return True\n    elif _valid_ip6(ip_address):\n        return True\n    else:\n        return False\n\n\ndef _valid_port(port):\n    \"\"\"\n    Check if the port is valid\n    Return either True or False\n    \"\"\"\n    try:\n        port = int(port)\n    except ValueError:\n        return False\n    if port < ",
+  "sampling_seed": 802534792,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

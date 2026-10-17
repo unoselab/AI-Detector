@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _handle_eio_disconnect(self):\n        \"\"\"Handle the Engine.IO disconnection event.\"\"\"\n        self.logger.debug('Engine.IO disconnected')\n",
+  "agc_valid": true,
+  "body_sha256": "4aa3ca8a2037d369f439fe6d9132b9e4bc1a2e8e6e10803c1538e1ac6961c770",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.logger.debug('Engine.IO disconnected')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "c3e3e93fb300b807541f60bb89555c3662f390bbeb5c8e6b55b551009a139ede",
+  "human_valid": true,
+  "line_no": 364736,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7942fd6f6ae803f0c63e739d4825c0cae4a83f9e1c3ec9eb2c72d3c0eb50c501",
+  "raw_output": "\n        self.logger.debug('Engine.IO disconnected')\n\n    def",
+  "sampling_seed": 1712919100,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

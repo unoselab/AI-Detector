@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _download_biogrid_data(url):\n    \"\"\"Downloads zipped, tab-separated Biogrid data in .tab2 format.\n\n    Parameters:\n    -----------\n    url : str\n        URL of the BioGrid zip file.\n\n    Returns\n    -------\n    csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n    \"\"\"\n    # Download the file\n    print(\"Downloading Biogrid data...\")\n    r = requests.get(url)\n    z = zipfile.ZipFile(io.BytesIO(r.content))\n    # Extract the file\n    print(\"Extracting Biogrid data...\")\n    with z.open(\"BIOGRID-ALL-3.5.192.tab2\") as f:\n        return csv.reader(f, delimiter=\"\\t\")\n",
+  "agc_valid": true,
+  "body_sha256": "2f04c16cf0e81c44280079cccd3b3d51448a6230f1a52b174b5a5302c72a513b",
+  "body_tokens": 56,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Download the file\n    print(\"Downloading Biogrid data...\")\n    r = requests.get(url)\n    z = zipfile.ZipFile(io.BytesIO(r.content))\n    # Extract the file\n    print(\"Extracting Biogrid data...\")\n    with z.open(\"BIOGRID-ALL-3.5.192.tab2\") as f:\n        return csv.reader(f, delimiter=\"\\t\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "f53f3f7a66679ae0ce8a48ee1c8db3294ed9b1be65688ef5d88a8ecb4dc54b1f",
+  "human_valid": true,
+  "line_no": 121199,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c6379d315928dac200910acc265f2c01d21a43bd8dd1d04b39d05d97de31c431",
+  "raw_output": "\n    # Download the file\n    print(\"Downloading Biogrid data...\")\n    r = requests.get(url)\n    z = zipfile.ZipFile(io.BytesIO(r.content))\n    # Extract the file\n    print(\"Extracting Biogrid data...\")\n    with z.open(\"BIOGRID-ALL-3.5.192.tab2\") as f:\n        return csv.reader(f, delimiter=\"\\t\")\n\n\ndef _parse_biogrid_data(reader):\n    \"\"\"Parses the Biogrid data into a dictionary of dictionaries.\n\n    Parameters:\n    -----------\n    reader : csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n\n    Returns\n    -------\n    dict\n        A dictionary of dictionaries. The outer dictionary maps UniProt IDs\n        to dictionaries of BioGrid IDs and their associated scores.\n    \"\"\"\n    # Parse the data\n    print(\"Parsing Biogrid data...\")\n    data = {}\n    for row in reader:\n        # Skip header\n        if row[0] == \"UniProtKB ID\":\n            continue\n        # Parse the row\n        uniprot_id = row[0]\n        biogrid_id = row[1]\n        score = float(row[2])\n        # Add to the data\n        if uniprot_id not in data:\n            data[uniprot_id] = {}\n        data[uniprot_id][biogrid_id] = score\n    return data\n\n\ndef _download_interpro_data(url):\n    \"\"\"Downloads zipped, tab-separated InterPro data in .tab2 format.\n\n    Parameters:\n    -----------\n    url : str\n        URL of the InterPro zip file.\n\n    Returns\n    -------\n    csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n    \"\"\"\n    # Download the file\n    print(\"Downloading InterPro data...\")\n    r = requests.get(url)\n    z = zipfile.ZipFile(io",
+  "sampling_seed": 1498036034,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

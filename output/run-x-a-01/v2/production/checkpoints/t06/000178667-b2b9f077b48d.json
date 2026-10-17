@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _check_type(self):\n        \"\"\"Check that the device group type is correct.\n\n        :raises: DeviceGroupOperationNotSupported, DeviceGroupNotSupported\n        \"\"\"\n        if self.device_group_type not in (\n                self._DEVICE_GROUP_TYPES.get(self.device_group_type, []) +\n                self._DEVICE_GROUP_TYPES['all']):\n            raise DeviceGroupOperationNotSupported(\n                'Device group type %s is not supported on device %s' %\n                (self.device_group_type, self.device_name))\n",
+  "agc_valid": true,
+  "body_sha256": "9b6af6e87715422938135e715e2bacbebc16d534ce79a4edbdf01bf24cd175ee",
+  "body_tokens": 103,
+  "bucket": "type01_110",
+  "clean_output": "\n        if self.device_group_type not in (\n                self._DEVICE_GROUP_TYPES.get(self.device_group_type, []) +\n                self._DEVICE_GROUP_TYPES['all']):\n            raise DeviceGroupOperationNotSupported(\n                'Device group type %s is not supported on device %s' %\n                (self.device_group_type, self.device_name))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "4a5013e0977c112a6e0d3230b4672e228c3a01dbd3eb0d844c542d0e6a72cedb",
+  "human_valid": true,
+  "line_no": 178667,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b2b9f077b48d67901b55c4a971d212c3895e08ae48202aa6da9e7dee25aa69bf",
+  "raw_output": "\n        if self.device_group_type not in (\n                self._DEVICE_GROUP_TYPES.get(self.device_group_type, []) +\n                self._DEVICE_GROUP_TYPES['all']):\n            raise DeviceGroupOperationNotSupported(\n                'Device group type %s is not supported on device %s' %\n                (self.device_group_type, self.device_name))\n\n    def",
+  "sampling_seed": 2402017953,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

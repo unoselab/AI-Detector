@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def gtpswd(prompt, confirmPassword):\n    \"\"\"\n    Temporary wrapper for Twisted's getPassword until a version that supports\n    customizing the 'confirm' prompt is released.\n    \"\"\"\n    return getPassword(prompt)\n",
+  "agc_valid": true,
+  "body_sha256": "b9fcd0103c905066143da0e1c5d3998e51d1b7c32f82c690c9bdf2b0ec5621ad",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return getPassword(prompt)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0555a4b52370bf4a7299cfb855f08eb057092bdb31e075eba9d812f330db57c6",
+  "human_valid": true,
+  "line_no": 33336,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "92c42b7a33c676332c029d362746ee518f3b2870264c48728066c6be3bfc05af",
+  "raw_output": "\n    return getPassword(prompt)\n\n\ndef getPassword(prompt):\n    \"\"\"\n    Prompt the user for a password.\n\n    @param prompt: The prompt to display.\n\n    @return: The password the user entered.\n    \"\"\"\n    return getpass.getpass(prompt)\n\n\ndef getPasswordWithConfirmation(prompt, confirmPrompt):\n    \"\"\"\n    Prompt the user for a password, and confirm it.\n\n    @param prompt: The prompt to display for the password.\n\n    @param confirmPrompt: The prompt to display for the confirmation.\n\n    @return: The password the user entered.\n    \"\"\"\n    password = getPassword(prompt)\n    confirmPassword = gtpswd(confirmPrompt, password)\n    if password != confirmPassword:\n        raise PasswordMismatchError()\n    return password\n\n\ndef getPasswordWithConfirmationAndHistory(prompt, confirmPrompt, history):\n    \"\"\"\n    Prompt the user for a password, and confirm it.\n\n    @param prompt: The prompt to display for the password.\n\n    @param confirmPrompt: The prompt to display for the confirmation.\n\n    @param history: The L{History} to use to remember the password.\n\n    @return: The password the user entered.\n    \"\"\"\n    password = getPasswordWithConfirmation(prompt, confirmPrompt)\n    history.append(password)\n    return password\n\n\ndef getPasswordWithConfirmationAndHistoryWithDefault(\n    prompt, confirmPrompt, history, default\n):\n    \"\"\"\n    Prompt the user for a password, and confirm it.\n\n    @param prompt: The prompt to display for the password.\n\n    @param confirmPrompt: The prompt to display for the confirmation.\n\n    @param history: The L{History} to use to remember the password.\n\n    @param default: The default value to use if the user enters an empty\n        password.\n\n    @return: The password the user entered.\n    \"\"\"\n    password = getPasswordWithConfirmation(prompt, confirmPrompt)\n    if password == \"\":\n        password = default\n    history.append(password)\n    return",
+  "sampling_seed": 1984686534,
+  "tag": "t02",
+  "temperature": 0.2
+}

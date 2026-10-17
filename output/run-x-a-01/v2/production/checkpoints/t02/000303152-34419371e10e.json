@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_units(username):\n    \"\"\"\n    Return all units of user 'username'\n    \"\"\"\n    return Unit.objects.filter(user=username)\n",
+  "agc_valid": true,
+  "body_sha256": "066e1db1003ebdbe99c3c72d24905ef5856d8166ea2dd6a23a3523cd34d8f2b5",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return Unit.objects.filter(user=username)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "a0be61210f1cd6ed387b926483af56e15a3e3234daeccd733ab2b89c6df8e621",
+  "human_valid": true,
+  "line_no": 303152,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "34419371e10ecf02dd1196ce1bec9207ccb74fc87d9955e03a8553810e9670bb",
+  "raw_output": "\n    return Unit.objects.filter(user=username)\n\n\ndef get_unit(username, unit_id):\n    \"\"\"\n    Return unit with id 'unit_id' of user 'username'\n    \"\"\"\n    return Unit.objects.get(user=username, id=unit_id)\n\n\ndef get_unit_by_name(username, unit_name):\n    \"\"\"\n    Return unit with name 'unit_name' of user 'username'\n    \"\"\"\n    return Unit.objects.get(user=username, name=unit_name)\n\n\ndef get_unit_by_name_or_id(username, unit_name_or_id):\n    \"\"\"\n    Return unit with name 'unit_name_or_id' of user 'username'\n    \"\"\"\n    try:\n        return get_unit_by_name(username, unit_name_or_id)\n    except Unit.DoesNotExist:\n        return get_unit(username, unit_name_or_id)\n\n\ndef get_unit_by_id(username, unit_id):\n    \"\"\"\n    Return unit with id 'unit_id' of user 'username'\n    \"\"\"\n    return Unit.objects.get(user=username, id=unit_id)\n\n\ndef get_unit_by_id_or_name(username, unit_id_or_name):\n    \"\"\"\n    Return unit with id 'unit_id_or_name' of user 'username'\n    \"\"\"\n    try:\n        return get_unit_by_id(username, unit_id_or_name)\n    except Unit.DoesNotExist:\n        return get_unit_by_name(username, unit_id_or_name)\n\n\ndef get_unit_by_id_or_name_or_id(username, unit_id_or_name_or_id):\n    \"\"\"\n    Return unit with id 'unit_id_or_name_or_id' of user 'username'\n    \"\"\"\n    try:\n        return get_unit_by_id(username, unit_id_or_name_or_id)\n    except Unit.DoesNotExist:\n        try:\n            return get_unit_",
+  "sampling_seed": 1254123655,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def my_import(name, path=None):\n    \"\"\"Return imported module for the given name.\"\"\"\n    if path is None:\n        path = name\n    __import__(path)\n    return sys.modules[path]\n",
+  "agc_valid": true,
+  "body_sha256": "082345a44056279f3070fc3fbe429df8e9cf51b664b686715bdedb5aa48f9d69",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if path is None:\n        path = name\n    __import__(path)\n    return sys.modules[path]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "e7ca33353cbabe4929ff2afab12c7af419ac0062d53bd476783269aa1811a7ad",
+  "human_valid": true,
+  "line_no": 133023,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "871d8deada187f9003fd3e1511361469cc40769c23355f3828dcaf91241dc472",
+  "raw_output": "\n    if path is None:\n        path = name\n    __import__(path)\n    return sys.modules[path]\n\n\ndef get_module_name(module):\n    \"\"\"Return module name.\"\"\"\n    return module.__name__\n\n\ndef get_module_path(module):\n    \"\"\"Return module path.\"\"\"\n    return module.__file__\n\n\ndef get_module_dir(module):\n    \"\"\"Return module directory.\"\"\"\n    return os.path.dirname(get_module_path(module))\n\n\ndef get_module_parent(module):\n    \"\"\"Return module parent.\"\"\"\n    return module.__package__\n\n\ndef get_module_children(module):\n    \"\"\"Return module children.\"\"\"\n    return module.__path__\n\n\ndef get_module_attrs(module):\n    \"\"\"Return module attributes.\"\"\"\n    return module.__dict__\n\n\ndef get_module_doc(module):\n    \"\"\"Return module doc.\"\"\"\n    return module.__doc__\n\n\ndef get_module_file(module):\n    \"\"\"Return module file.\"\"\"\n    return module.__file__\n\n\ndef get_module_globals(module):\n    \"\"\"Return module globals.\"\"\"\n    return module.__globals__\n\n\ndef get_module_name(module):\n    \"\"\"Return module name.\"\"\"\n    return module.__name__\n\n\ndef get_module_package(module):\n    \"\"\"Return module package.\"\"\"\n    return module.__package__\n\n\ndef get_module_spec(module):\n    \"\"\"Return module spec.\"\"\"\n    return module.__spec__\n\n\ndef get_module_version(module):\n    \"\"\"Return module version.\"\"\"\n    return module.__version__\n\n\ndef get_module_all(module):\n    \"\"\"Return module all.\"\"\"\n    return module.__all__\n\n\ndef get_module_code(module):\n    \"\"\"Return module code.\"\"\"\n    return module.__code__\n\n\ndef get_module_defaults(module):\n    \"\"\"Return module defaults.\"\"\"\n    return module.__defaults__\n\n\ndef get_module_dict(module):\n    \"\"\"Return module dict.\"\"\"\n    return module.__dict__\n\n\ndef get_module_doc",
+  "sampling_seed": 3779976112,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

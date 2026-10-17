@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def index_bundle(self, bundle, force=False):\n        \"\"\"\n        Indexes a bundle/dataset and all of its partitions\n        :param bundle: A bundle or dataset object\n        :param force: If true, index the document even if it already exists\n        :return:\n        \"\"\"\n        if not isinstance(bundle, Bundle):\n            raise ValueError(\"Bundle must be a Bundle object\")\n\n        if not force and self.exists(bundle.id):\n            return\n\n        # Index the bundle\n        self.index(bundle)\n\n        # Index all of the partitions\n        for partition in bundle.partitions:\n            self.index_partition(partition, force=force)\n",
+  "agc_valid": true,
+  "body_sha256": "96cd7b545d7148ec7b1389dd981bb2501ecd5cdcb5e544343749d0627c1994f6",
+  "body_tokens": 110,
+  "bucket": "type01_110",
+  "clean_output": "\n        if not isinstance(bundle, Bundle):\n            raise ValueError(\"Bundle must be a Bundle object\")\n\n        if not force and self.exists(bundle.id):\n            return\n\n        # Index the bundle\n        self.index(bundle)\n\n        # Index all of the partitions\n        for partition in bundle.partitions:\n            self.index_partition(partition, force=force)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b851092de532b6df5b7a7fcdbdab4a7a475de84293ea4d3120df3ee90cdbc582",
+  "human_valid": true,
+  "line_no": 30715,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "26aa414a37657451b84634e5696254e374b283c3681b4b96fc31e243040f3aee",
+  "raw_output": "\n        if not isinstance(bundle, Bundle):\n            raise ValueError(\"Bundle must be a Bundle object\")\n\n        if not force and self.exists(bundle.id):\n            return\n\n        # Index the bundle\n        self.index(bundle)\n\n        # Index all of the partitions\n        for partition in bundle.partitions:\n            self.index_partition(partition, force=force)\n\n    def",
+  "sampling_seed": 3432076015,
+  "tag": "t02",
+  "temperature": 0.2
+}

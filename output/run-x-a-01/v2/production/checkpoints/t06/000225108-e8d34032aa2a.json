@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_calibration(self):\n        \"\"\"Load factory calibration data from device.\"\"\"\n        if self._dev is not None:\n            if self._dev.calibration_data is not None:\n                self._calibration_data = self._dev.calibration_data\n            else:\n                self._calibration_data = None\n        else:\n            self._calibration_data = None\n",
+  "agc_valid": true,
+  "body_sha256": "3529e546459c51bfb82c5c2bb58ab360dbd18796167c9886cc3e44b3cb3844b6",
+  "body_tokens": 99,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self._dev is not None:\n            if self._dev.calibration_data is not None:\n                self._calibration_data = self._dev.calibration_data\n            else:\n                self._calibration_data = None\n        else:\n            self._calibration_data = None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "9adc1cb5ccf240113283b1bfaa8a447fac2d3fd7614e610246ea8d4808b4dfec",
+  "human_valid": true,
+  "line_no": 225108,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e8d34032aa2a4fab44976011953e76797545505deed06fefda50198ccb7501c8",
+  "raw_output": "\n        if self._dev is not None:\n            if self._dev.calibration_data is not None:\n                self._calibration_data = self._dev.calibration_data\n            else:\n                self._calibration_data = None\n        else:\n            self._calibration_data = None\n\n    def",
+  "sampling_seed": 2513017733,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

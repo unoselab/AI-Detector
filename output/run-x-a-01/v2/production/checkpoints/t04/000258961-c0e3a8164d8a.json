@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _login(session):\n    \"\"\"Login to Fedex Delivery Manager.\"\"\"\n    session.visit(\"https://www.fedex.com/en-us/home.html\")\n    session.click_link_by_text(\"Login\")\n    session.fill_in(\"username\", with: ENV[\"FED_USER\"])\n    session.fill_in(\"password\", with: ENV[\"FED_PASS\"])\n    session.click_button(\"Log In\")\n    session.click_link_by_text(\"Delivery Manager\")\n",
+  "agc_valid": false,
+  "body_sha256": "9bd19c5f0583d2db1e0d7b15d7659b2df656770b1a00438fd6ee8bf852858d2b",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n    session.visit(\"https://www.fedex.com/en-us/home.html\")\n    session.click_link_by_text(\"Login\")\n    session.fill_in(\"username\", with: ENV[\"FED_USER\"])\n    session.fill_in(\"password\", with: ENV[\"FED_PASS\"])\n    session.click_button(\"Log In\")\n    session.click_link_by_text(\"Delivery Manager\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 101,
+  "human_sha256": "4b4d67e843bd9c39182092158404ef5479255dd2d1f34a5223bf5726a83caa86",
+  "human_valid": true,
+  "line_no": 258961,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c0e3a8164d8a30b40362bb9c0c6be28d6bc4b5543a4ef09b88ff6dff3e6104f7",
+  "raw_output": "\n    session.visit(\"https://www.fedex.com/en-us/home.html\")\n    session.click_link_by_text(\"Login\")\n    session.fill_in(\"username\", with: ENV[\"FED_USER\"])\n    session.fill_in(\"password\", with: ENV[\"FED_PASS\"])\n    session.click_button(\"Log In\")\n    session.click_link_by_text(\"Delivery Manager\")\n ",
+  "sampling_seed": 1750924377,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self, name):\n        \"\"\"Shouts hello to the world (asynchronously)!\"\"\"\n        return self.stub.SayHello(hello_pb2.HelloRequest(name=name))\n",
+  "agc_valid": true,
+  "body_sha256": "818e259d6cdbca98a762e14ef0ce979557c4488641c6d7ebc963b6ff3653de7d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.stub.SayHello(hello_pb2.HelloRequest(name=name))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "f7c544b28024d99269d566ef8d170247f7dda8555e4af4111f2298994e98cbab",
+  "human_valid": true,
+  "line_no": 249043,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1994b78f97af8da9e28bf01919f52b3a2381989d076e699ac04873a3849b5241",
+  "raw_output": "\n        return self.stub.SayHello(hello_pb2.HelloRequest(name=name))\n\n\ndef run():\n    # NOTE(gRPC Python Team): .close() is possible on a channel and should be\n    # used in circumstances in which the with statement does not fit the needs\n    # of the code.\n    with grpc.insecure_channel('localhost:50051') as channel:\n        stub = hello_pb2_grpc.GreeterStub(channel)\n        response = stub.SayHello(hello_pb2.HelloRequest(name='you'))\n        print(\"Greeter client received: \" + response.message)\n\n\nif __name__ == '__main__':\n    logging.basicConfig()\n    run()\n```\n\n### ",
+  "sampling_seed": 801638160,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def prepare(self, data_batch, sparse_row_id_fn=None):\n        \"\"\"Prepares the module for processing a data batch.\n\n        Usually involves switching bucket and reshaping.\n        For modules that contain `row_sparse` parameters in KVStore,\n        it prepares the `row_sparse` parameters based on the sparse_row_id_fn.\n\n        Parameters\n        ----------\n        data_batch : DataBatch\n            The current batch of data for forward computation.\n\n        sparse_row_id_fn : A callback function\n            The function  takes `data_batch` as an input and returns a dict of\n            str -> NDArray. The resulting dict is used for pulling row_sparse\n            parameters from the kvstore, where the str key is the name of the param,\n            and the value is the row id of the param to pull.\n        \"\"\"\n        callable or None\n                    If not None, it is used to get the row id of the `row_sparse`\n                    parameters.\n\n                Returns\n                -------\n                mod : Module\n                    The prepared module.\n                \"\"\"\n                mod = self\n                if sparse_row_id_fn is not None:\n                    mod = mod.bind(data_batch.data,\n                                   label=data_batch.label,\n                                   row_sparse_row_id_fn=sparse_row_id_fn,\n                                   row_sparse_push_handler=self._kvstore_param_push_handler)\n                else:\n                    mod = mod.bind(data_batch.data,\n                                   label=data_batch.label,\n                                   row_sparse_push_handler=self._kvstore_param_push_handler)\n                mod.forward(is_train=True)\n                return mod\n",
+  "agc_valid": false,
+  "body_sha256": "a752f043b838ff9af57f98b7ad0d0a31413458902472ff825885a0f07e883ea4",
+  "body_tokens": 458,
+  "bucket": "out_of_range",
+  "clean_output": "\n        callable or None\n                    If not None, it is used to get the row id of the `row_sparse`\n                    parameters.\n\n                Returns\n                -------\n                mod : Module\n                    The prepared module.\n                \"\"\"\n                mod = self\n                if sparse_row_id_fn is not None:\n                    mod = mod.bind(data_batch.data,\n                                   label=data_batch.label,\n                                   row_sparse_row_id_fn=sparse_row_id_fn,\n                                   row_sparse_push_handler=self._kvstore_param_push_handler)\n                else:\n                    mod = mod.bind(data_batch.data,\n                                   label=data_batch.label,\n                                   row_sparse_push_handler=self._kvstore_param_push_handler)\n                mod.forward(is_train=True)\n                return mod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "015c8a26d2311b562acfb419800ef59108266eee4faea3dc07e246242e440e03",
+  "human_valid": true,
+  "line_no": 96991,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4105e8bcec3139f83d91797c0af77569fbb3455836ea3a69572d7c11eefa0d77",
+  "raw_output": "callable or None\n            If not None, it is used to get the row id of the `row_sparse`\n            parameters.\n\n        Returns\n        -------\n        mod : Module\n            The prepared module.\n        \"\"\"\n        mod = self\n        if sparse_row_id_fn is not None:\n            mod = mod.bind(data_batch.data,\n                           label=data_batch.label,\n                           row_sparse_row_id_fn=sparse_row_id_fn,\n                           row_sparse_push_handler=self._kvstore_param_push_handler)\n        else:\n            mod = mod.bind(data_batch.data,\n                           label=data_batch.label,\n                           row_sparse_push_handler=self._kvstore_param_push_handler)\n        mod.forward(is_train=True)\n        return mod\n\n    def",
+  "sampling_seed": 2629596433,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def default_base_dir():\n    \"\"\"Determine the default base directory path\n\n    If the OS_REFRESH_CONFIG_BASE_DIR environment variable is set,\n    use its value.\n    Otherwise, prefer the new default path, but still allow the old one for\n    backwards compatibility.\n    \"\"\"\n    env_base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if env_base_dir:\n        return env_base_dir\n    else:\n        return os.path.expanduser(os.path.join('~', '.config', 'openstack'))\n",
+  "agc_valid": true,
+  "body_sha256": "b7f8fd0795df61424afdfc3df90beac70589f127f3c1c3d91321e6107acc9df5",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n    env_base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if env_base_dir:\n        return env_base_dir\n    else:\n        return os.path.expanduser(os.path.join('~', '.config', 'openstack'))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "1a187601c4c288a93108cd3722e729188106c539bf6447c0d06869634c93e953",
+  "human_valid": true,
+  "line_no": 211796,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "93d8677fa8135274019d32506afa9b4ff24b6352cd62007f21f3bebcca3a3de7",
+  "raw_output": "\n    env_base_dir = os.environ.get('OS_REFRESH_CONFIG_BASE_DIR')\n    if env_base_dir:\n        return env_base_dir\n    else:\n        return os.path.expanduser(os.path.join('~', '.config', 'openstack'))\n\n\ndef get_config_dir():\n    \"\"\"Return the directory where refresh config files are stored\n\n    This directory is determined by the OS_REFRESH_CONFIG_DIR environment\n    variable. If that variable is not set, the default base directory is\n    returned.\n    \"\"\"\n    env_config_dir = os.environ.get('OS_REFRESH_CONFIG_DIR')\n    if env_config_dir:\n        return env_config_dir\n    else:\n        return default_base_dir()\n\n\ndef get_config_file():\n    \"\"\"Return the path to the refresh config file\n\n    This file is determined by the OS_REFRESH_CONFIG_FILE environment\n    variable. If that variable is not set, the default base directory is\n    returned.\n    \"\"\"\n    env_config_file = os.environ.get('OS_REFRESH_CONFIG_FILE')\n    if env_config_file:\n        return env_config_file\n    else:\n        return os.path.join(get_config_dir(), 'refresh_config')\n\n\ndef get_config_file_path(config_file):\n    \"\"\"Return the full path to the refresh config file\n\n    This file is determined by the OS_REFRESH_CONFIG_FILE environment\n    variable. If that variable is not set, the default base directory is\n    returned.\n    \"\"\"\n    return os.path.join(get_config_dir(), config_file)\n\n\ndef get_config_file_dir(config_file):\n    \"\"\"Return the directory where the refresh config file is stored\n\n    This directory is determined by the OS_REFRESH_CONFIG_DIR environment\n    variable. If that variable is not set, the default base directory is\n    returned.\n    \"\"\"\n    return os.path.dirname(get_config_file_path(config_file))\n\n\ndef get_config_file_name(config",
+  "sampling_seed": 2074288978,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

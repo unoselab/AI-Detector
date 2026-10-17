@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_permissions_on_view(view_name):\n        \"\"\"\n            Returns all current user permissions\n             on a certain view/resource\n        :param view_name: The name of the view/resource/menu\n        :return: (list) with permissions\n        \"\"\"\n        permissions = []\n        # TODO: This should be done in a more efficient way\n        #       (e.g. using the menu system)\n        for view in get_view_menu_acl(view_name):\n            if view.permission:\n                permissions.append(view.permission)\n        return permissions\n",
+  "agc_valid": true,
+  "body_sha256": "b12d1533f623859ff49fdead3a134a4b9c5be0687aeea4e36abb4fa8ab880f04",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n        permissions = []\n        # TODO: This should be done in a more efficient way\n        #       (e.g. using the menu system)\n        for view in get_view_menu_acl(view_name):\n            if view.permission:\n                permissions.append(view.permission)\n        return permissions\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "6999000b29f622b0fb73c6ce78e96051e908af55db390b22f9568abb75cc38dc",
+  "human_valid": true,
+  "line_no": 361339,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e51637670d67b0829f76eeaf7789ba1c64f1938dbbdac2dbeeaa1d9ff59e5143",
+  "raw_output": "\n\n        permissions = []\n        # TODO: This should be done in a more efficient way\n        #       (e.g. using the menu system)\n        for view in get_view_menu_acl(view_name):\n            if view.permission:\n                permissions.append(view.permission)\n        return permissions\n\n\ndef get_user_permissions(user):\n    \"\"\"\n        Returns all current user permissions\n         on all views/resources\n    :param user: The user object\n    :return: (list) with permissions\n    \"\"\"\n    permissions = []\n    for view in get_user_views(user):\n        if view.permission:\n            permissions.append(view.permission)\n    return permissions\n\n\ndef get_user_views(user):\n    \"\"\"\n        Returns all views/resources\n         that current user has access to\n    :param user: The user object\n    :return: (list) with views\n    \"\"\"\n    if user.is_superuser:\n        return get_all_views()\n    else:\n        return get_user_permissions_on_views(user)\n\n\ndef get_user_permissions_on_views(user):\n    \"\"\"\n        Returns all views/resources\n         that current user has access to\n    :param user: The user object\n    :return: (list) with views\n    \"\"\"\n    if user.is_superuser:\n        return get_all_views()\n    else:\n        return get_user_permissions_on_views_by_role(user)\n\n\ndef get_user_permissions_on_views_by_role(user):\n    \"\"\"\n        Returns all views/resources\n         that current user has access to\n    :param user: The user object\n    :return: (list) with views\n    \"\"\"\n    permissions = []\n    for role in user.roles:\n        permissions.extend(role.permissions)\n    return permissions\n\n\ndef get_all_views():\n    \"\"\"\n        Returns all views/resources\n         that the current user has access to\n    :return: (list) with views\n    \"\"\"\n    return View.objects.all()\n\n\ndef get_user_menu_acl(user):",
+  "sampling_seed": 876529305,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

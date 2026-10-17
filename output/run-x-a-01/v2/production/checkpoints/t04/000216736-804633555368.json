@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read(self, size=64, timeout=None):\n        \"\"\"\n        Read from the hid device on its endpoint.\n\n\n        Parameters:\n            size: number of bytes to read\n            timeout: length to wait in milliseconds\n\n        Returns:\n            The HID report read from the device. The first byte in the result\n            will be the report ID if used.\n        \"\"\"\n        if timeout is None:\n            timeout = self.timeout\n        return self._read(size, timeout)\n",
+  "agc_valid": true,
+  "body_sha256": "f1e747b1e44992bc93640b6949ddcd4ae9753edc5b4b98ce17bcb8d0345775be",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if timeout is None:\n            timeout = self.timeout\n        return self._read(size, timeout)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "213632dc8b782f928566d3fbb7a187c9f6e2ffdfec7ef9d591b650cfb213ca94",
+  "human_valid": true,
+  "line_no": 216736,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "804633555368d00eee0113a2a108b57c0ae076cbc2a85debfa8769862b0200c5",
+  "raw_output": "\n        if timeout is None:\n            timeout = self.timeout\n        return self._read(size, timeout)\n\n    def",
+  "sampling_seed": 2650460999,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def monitor_resource_sync_state(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's sync state.\n\n    Calls callback(True/False) whenever the resource becomes synced or unsynced. Will\n    always do an initial callback(False) call. Exits without calling callback() if\n    exit_event is set\n    \"\"\"\n    while True:\n        if exit_event is not None and exit_event.is_set():\n            return\n        if resource.synced:\n            callback(True)\n        else:\n            callback(False)\n        yield from resource.wait_synced()\n",
+  "agc_valid": true,
+  "body_sha256": "d92003342f4c4db466a6e2ae0436e0f409c4dd8b9d63db0e4c3719c1aa28b24c",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n    while True:\n        if exit_event is not None and exit_event.is_set():\n            return\n        if resource.synced:\n            callback(True)\n        else:\n            callback(False)\n        yield from resource.wait_synced()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "fbd016b5dabec6e84a125679e27e35c42c8c2254f4790bec34208706756355f9",
+  "human_valid": true,
+  "line_no": 409308,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36576fae851de26dd84673e71751ba862c203c7ca2bbf46a7544f3234203671a",
+  "raw_output": "\n    while True:\n        if exit_event is not None and exit_event.is_set():\n            return\n        if resource.synced:\n            callback(True)\n        else:\n            callback(False)\n        yield from resource.wait_synced()\n\n\ndef monitor_resource_state(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's state.\n\n    Calls callback(True/False) whenever the resource becomes connected or disconnected.\n    Will always do an initial callback(False) call. Exits without calling callback() if\n    exit_event is set\n    \"\"\"\n    while True:\n        if exit_event is not None and exit_event.is_set():\n            return\n        if resource.connected:\n            callback(True)\n        else:\n            callback(False)\n        yield from resource.wait_connected()\n\n\ndef monitor_resource_disconnected(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's state.\n\n    Calls callback() whenever the resource becomes disconnected. Will always do an\n    initial callback() call. Exits without calling callback() if exit_event is set\n    \"\"\"\n    while True:\n        if exit_event is not None and exit_event.is_set():\n            return\n        if not resource.connected:\n            callback()\n        yield from resource.wait_connected()\n\n\ndef monitor_resource_connected(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's state.\n\n    Calls callback() whenever the resource becomes connected. Will always do an\n    initial callback() call. Exits without calling callback() if exit_event is set\n    \"\"\"\n    while True:\n        if exit_event is not None and exit_event.is_set():\n            return\n        if resource.connected:\n            callback()\n        yield from resource.wait_connected()\n\n\ndef monitor_resource_disconnected_or_error(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's state.\n\n    Calls callback() whenever the resource",
+  "sampling_seed": 3247059000,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

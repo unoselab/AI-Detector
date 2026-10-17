@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def bandicoot_code_signature():\n    \"\"\"\n    Returns a unique hash of the Python source code in the current bandicoot\n    module, using the cryptographic hash function SHA-1.\n    \"\"\"\n    import inspect\n    import hashlib\n    import sys\n    import os\n\n    # Get the source code of the current module.\n    module = sys.modules[__name__]\n    source = inspect.getsource(module)\n\n    # Get the path to the current module.\n    path = os.path.abspath(module.__file__)\n\n    # Get the hash of the source code.\n    hash = hashlib.sha1(source.encode('utf-8')).hexdigest()\n\n    # Get the hash of the path to the module.\n    path_hash = hashlib.sha1(path.encode('utf-8')).hexdigest()\n\n    # Return the concatenation of the two hashes.\n    return hash + path_hash\n",
+  "agc_valid": true,
+  "body_sha256": "572d1e3a260ad22f4ad753bc79ed9fffac3fc4bf7df4b27d311c1a8261181036",
+  "body_tokens": 116,
+  "bucket": "type02_120",
+  "clean_output": "\n    import inspect\n    import hashlib\n    import sys\n    import os\n\n    # Get the source code of the current module.\n    module = sys.modules[__name__]\n    source = inspect.getsource(module)\n\n    # Get the path to the current module.\n    path = os.path.abspath(module.__file__)\n\n    # Get the hash of the source code.\n    hash = hashlib.sha1(source.encode('utf-8')).hexdigest()\n\n    # Get the hash of the path to the module.\n    path_hash = hashlib.sha1(path.encode('utf-8')).hexdigest()\n\n    # Return the concatenation of the two hashes.\n    return hash + path_hash\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "6ca056eeb47dbf4332b0bc6cc2e0cae8764d7893424bd52b2495a5f0a390d3e3",
+  "human_valid": true,
+  "line_no": 130202,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "67e80e553f928c7a145e011fc2e782de2ea1b1e76d3b6d37ec36800984d781f3",
+  "raw_output": "\n    import inspect\n    import hashlib\n    import sys\n    import os\n\n    # Get the source code of the current module.\n    module = sys.modules[__name__]\n    source = inspect.getsource(module)\n\n    # Get the path to the current module.\n    path = os.path.abspath(module.__file__)\n\n    # Get the hash of the source code.\n    hash = hashlib.sha1(source.encode('utf-8')).hexdigest()\n\n    # Get the hash of the path to the module.\n    path_hash = hashlib.sha1(path.encode('utf-8')).hexdigest()\n\n    # Return the concatenation of the two hashes.\n    return hash + path_hash\n\n\ndef bandicoot_code_signature_changed():\n    \"\"\"\n    Returns True if the code signature of the current bandicoot module has\n    changed since the last time this function was called.\n    \"\"\"\n    import sys\n    import os\n\n    # Get the path to the current module.\n    path = os.path.abspath(sys.modules[__name__].__file__)\n\n    # Get the path to the file where the code signature is stored.\n    signature_path = path + '.signature'\n\n    # If the signature file does not exist, create it.\n    if not os.path.exists(signature_path):\n        with open(signature_path, 'w') as f:\n            f.write(bandicoot_code_signature())\n        return True\n\n    # If the signature file does exist, read it.\n    with open(signature_path, 'r') as f:\n        signature = f.read()\n\n    # If the code signature has changed, update the signature file and return\n    # True.\n    if signature != bandicoot_code_signature():\n        with open(signature_path, 'w') as f:\n            f.write(bandicoot_code_signature())\n        return True\n\n    # If the code signature has not changed, return False.\n    return False\n\n\ndef bandicoot_code_signature_changed_since_last_",
+  "sampling_seed": 440919375,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

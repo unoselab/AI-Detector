@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_sitelist(sitelist):\n    \"\"\"Return list of Site instances from retrieved sitelist data\"\"\"\n    # Remove extra spaces\n    sitelist = sitelist.replace('\n",
+  "agc_valid": false,
+  "body_sha256": "2e373c4bae7066882eed510bdd91a36f3464184c43974286d37a561a00e6f2bf",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Remove extra spaces\n    sitelist = sitelist.replace('\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "982a46555e7ef89d998cb36c9cf853779179b068df6bb222acc0f746d1fbd07f",
+  "human_valid": true,
+  "line_no": 70879,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7f1b1c85647e409ac0c8e42ffedeae1ea072eb9aa7b71a7545f0817b59478ca4",
+  "raw_output": "\n    # Remove extra spaces\n    sitelist = sitelist.replace(' ",
+  "sampling_seed": 794774353,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

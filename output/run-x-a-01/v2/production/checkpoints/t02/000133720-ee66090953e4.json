@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def ListModels(self, tag):\n        \"\"\"\n        tag : str\n        Returns -> typing.Sequence[~UserModel]\n        \"\"\"\n        return self.db.query(UserModel).filter(UserModel.tag == tag).all()\n",
+  "agc_valid": true,
+  "body_sha256": "0d725f2a2e984a49fc06b03314d4c4b66d20311f52e6ae5279ab35520f233a99",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.db.query(UserModel).filter(UserModel.tag == tag).all()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "7796a591db6965d8ecec3a41e6c3e78aae3e3d06e10f0688817ea774c7c22c8d",
+  "human_valid": true,
+  "line_no": 133720,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ee66090953e4ecc3abfe185bff074c56a3fc832fbaa55b0cd17d74cfdbcc21ab",
+  "raw_output": "\n        return self.db.query(UserModel).filter(UserModel.tag == tag).all()\n\n    def",
+  "sampling_seed": 868951945,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

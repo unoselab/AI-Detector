@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_proxy():\n    \"\"\"\n    Return True if this minion is a proxy minion.\n    Leverages the fact that is_linux() and is_windows\n    both return False for proxies.\n    TODO: Need to extend this for proxies that might run on\n    other Unices\n    \"\"\"\n    return not is_linux() and not is_windows()\n",
+  "agc_valid": true,
+  "body_sha256": "145a2da028bae589f7c755fa92d3141772b2abb22de1908d59bc519792f7c526",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return not is_linux() and not is_windows()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "b7161dfe2eed903d95532e28582e82ab3bba8ab4fae6db16663285552d6e6ef8",
+  "human_valid": true,
+  "line_no": 355434,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "118cf34b705c348c791054cbbe3a5874242e1232542579212b059fdb8e2190cb",
+  "raw_output": "\n    return not is_linux() and not is_windows()\n\n\ndef is_linux():\n    \"\"\"\n    Return True if this minion is running on a Linux OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"Linux\"\n\n\ndef is_windows():\n    \"\"\"\n    Return True if this minion is running on a Windows OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"Windows\"\n\n\ndef is_darwin():\n    \"\"\"\n    Return True if this minion is running on a Darwin OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"Darwin\"\n\n\ndef is_sunos():\n    \"\"\"\n    Return True if this minion is running on a SunOS OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"SunOS\"\n\n\ndef is_smartos():\n    \"\"\"\n    Return True if this minion is running on a SmartOS OS.\n    \"\"\"\n    return __grains__[\"os_family\"] == \"SmartOS\"\n\n\ndef is_freebsd():\n    \"\"\"\n    Return True if this minion is running on a FreeBSD OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"FreeBSD\"\n\n\ndef is_openbsd():\n    \"\"\"\n    Return True if this minion is running on a OpenBSD OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"OpenBSD\"\n\n\ndef is_netbsd():\n    \"\"\"\n    Return True if this minion is running on a NetBSD OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"NetBSD\"\n\n\ndef is_aix():\n    \"\"\"\n    Return True if this minion is running on a AIX OS.\n    \"\"\"\n    return __grains__[\"kernel\"] == \"AIX\"\n\n\ndef is_openstack():\n    \"\"\"\n    Return True if this minion is running on a OpenStack hypervisor.\n    \"\"\"\n    return __grains__[\"virtual_subtype\"] == \"OpenStack\"\n\n\ndef is_vagrant():\n    \"\"\"\n    Return True if this minion is running on a",
+  "sampling_seed": 478118527,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

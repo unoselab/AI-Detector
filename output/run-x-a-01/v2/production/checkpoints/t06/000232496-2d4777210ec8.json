@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fetch_resources(uri, rel):\n    \"\"\"\n    Retrieves embeddable resource from given ``uri``.\n\n    For now only local resources (images, fonts) are supported.\n\n    :param str uri: path or url to image or font resource\n    :returns: path to local resource file.\n    :rtype: str\n    :raises: :exc:`~easy_pdf.exceptions.UnsupportedMediaPathException`\n    \"\"\"\n    # TODO: support for remote resources\n    if uri.startswith(\"http\"):\n        raise UnsupportedMediaPathException(uri)\n\n    if not uri.startswith(\"/\"):\n        uri = \"/\" + uri\n\n    return os.path.abspath(os.path.join(os.path.dirname(__file__), \"resources\", uri))\n",
+  "agc_valid": true,
+  "body_sha256": "a97fb0e301e6d11502debbb3c3b7fc6394c6d5f31caeb3a17548275845603f40",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: support for remote resources\n    if uri.startswith(\"http\"):\n        raise UnsupportedMediaPathException(uri)\n\n    if not uri.startswith(\"/\"):\n        uri = \"/\" + uri\n\n    return os.path.abspath(os.path.join(os.path.dirname(__file__), \"resources\", uri))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "00bb984f36e9babe15c1de0ac92c1d3c6204528e1a6c58ebfe174d4aceebc273",
+  "human_valid": true,
+  "line_no": 232496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2d4777210ec8d1f2249a00d8b782ec2f6379bdb529028509a3d06f06c07b8a2e",
+  "raw_output": "\n    # TODO: support for remote resources\n    if uri.startswith(\"http\"):\n        raise UnsupportedMediaPathException(uri)\n\n    if not uri.startswith(\"/\"):\n        uri = \"/\" + uri\n\n    return os.path.abspath(os.path.join(os.path.dirname(__file__), \"resources\", uri))\n\n\ndef fetch_font(font_name):\n    \"\"\"\n    Retrieves embeddable font resource from given ``font_name``.\n\n    For now only local fonts are supported.\n\n    :param str font_name: name of font to fetch\n    :returns: path to local font file.\n    :rtype: str\n    :raises: :exc:`~easy_pdf.exceptions.UnsupportedFontException`\n    \"\"\"\n    # TODO: support for remote fonts\n    if font_name.startswith(\"http\"):\n        raise UnsupportedFontException(font_name)\n\n    if not font_name.startswith(\"/\"):\n        font_name = \"/\" + font_name\n\n    return os.path.abspath(\n        os.path.join(os.path.dirname(__file__), \"resources/fonts\", font_name)\n    )\n\n\ndef fetch_template(template_name):\n    \"\"\"\n    Retrieves template resource from given ``template_name``.\n\n    For now only local templates are supported.\n\n    :param str template_name: name of template to fetch\n    :returns: path to local template file.\n    :rtype: str\n    :raises: :exc:`~easy_pdf.exceptions.UnsupportedTemplateException`\n    \"\"\"\n    # TODO: support for remote templates\n    if template_name.startswith(\"http\"):\n        raise UnsupportedTemplateException(template_name)\n\n    if not template_name.startswith(\"/\"):\n        template_name = \"/\" + template_name\n\n    return os.path.abspath(\n        os.path.join(os.path.dirname(__file__), \"templates\", template_name)\n    )\n\n\ndef fetch_stylesheet(stylesheet_name):\n    \"\"\"\n    Retrieves stylesheet resource",
+  "sampling_seed": 4190119538,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

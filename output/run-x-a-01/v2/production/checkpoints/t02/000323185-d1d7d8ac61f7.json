@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def _send_command(self, command):\n        \"\"\"\n        This is a private utility method.\n        The method sends a non-sysex command to Firmata.\n\n        :param command:  command data\n\n        :returns: length of data sent\n        \"\"\"\n        return self._send_data(command)\n",
+  "agc_valid": true,
+  "body_sha256": "460c199fb6f0984a36c1f7e42e47fedaca529f7e07b9a686c8c4f8af022fe13f",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._send_data(command)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "d2f64b76f62811370a89f55845d6f490e997c9fc406dacf7b418bac540e7e72e",
+  "human_valid": true,
+  "line_no": 323185,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d1d7d8ac61f716839573d4368dfadd26b677f7aa08c044e5ccbf5374191e6805",
+  "raw_output": "\n        return self._send_data(command)\n\n    def",
+  "sampling_seed": 1368002328,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def do_enable(self, arg):\n        \"\"\"enable bpnumber [bpnumber ...]\n        Enables the breakpoints given as a space separated list of\n        breakpoint numbers.\n        \"\"\"\n        if not arg:\n            print(\"No breakpoint number specified.\")\n            return\n        for bp_num in arg.split():\n            try:\n                bp_num = int(bp_num)\n            except ValueError:\n                print(\"Invalid breakpoint number: %s\" % bp_num)\n                continue\n            if bp_num in self.bp_list:\n                self.bp_list[bp_num].enable()\n            else:\n                print(\"No breakpoint number %s.\" % bp_num)\n",
+  "agc_valid": true,
+  "body_sha256": "9d55e71f5162b4c7870fd63eeda32f9609b265ea61c0d77042d1cc3075426136",
+  "body_tokens": 193,
+  "bucket": "type10_200",
+  "clean_output": "\n        if not arg:\n            print(\"No breakpoint number specified.\")\n            return\n        for bp_num in arg.split():\n            try:\n                bp_num = int(bp_num)\n            except ValueError:\n                print(\"Invalid breakpoint number: %s\" % bp_num)\n                continue\n            if bp_num in self.bp_list:\n                self.bp_list[bp_num].enable()\n            else:\n                print(\"No breakpoint number %s.\" % bp_num)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "6b448a1ff4ea00389e9979732766fddb92ed1d8513bb336abf413bb1c0a6a0cb",
+  "human_valid": true,
+  "line_no": 23995,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2da9a1ea54285033aa5837725bacde72516b4a77a7280cbf849f8a54efa22991",
+  "raw_output": "\n        if not arg:\n            print(\"No breakpoint number specified.\")\n            return\n        for bp_num in arg.split():\n            try:\n                bp_num = int(bp_num)\n            except ValueError:\n                print(\"Invalid breakpoint number: %s\" % bp_num)\n                continue\n            if bp_num in self.bp_list:\n                self.bp_list[bp_num].enable()\n            else:\n                print(\"No breakpoint number %s.\" % bp_num)\n\n    def",
+  "sampling_seed": 1738998278,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

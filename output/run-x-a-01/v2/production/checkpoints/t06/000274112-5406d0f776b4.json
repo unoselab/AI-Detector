@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def as_text(self, is_pretty=False):\n        \"\"\"Return the service as a JSON string.\"\"\"\n            if is_pretty:\n                return json.dumps(self.json, indent=2)\n            return json.dumps(self.json)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "348723863b2f659df43dc2ef8f9be6bea0eac7650eb1904ae3880eb68cc15948",
+  "body_tokens": 53,
+  "bucket": "out_of_range",
+  "clean_output": "\n            if is_pretty:\n                return json.dumps(self.json, indent=2)\n            return json.dumps(self.json)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "1b20e24bb5aa4a9469e4b606194d3463767e7ee57dddfb464eb3caff053281ba",
+  "human_valid": true,
+  "line_no": 274112,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5406d0f776b4966ad1110f39b2ce586624240245c25a175d5a43634b46051e5b",
+  "raw_output": "\n        if is_pretty:\n            return json.dumps(self.json, indent=2)\n        return json.dumps(self.json)\n\n    @property\n    def",
+  "sampling_seed": 3895849962,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

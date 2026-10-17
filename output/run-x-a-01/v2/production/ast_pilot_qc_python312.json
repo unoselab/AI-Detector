@@ -1,0 +1,93 @@
+{
+  "errors": [],
+  "expected_per_temperature": 200,
+  "per_temperature": {
+    "t02": {
+      "accepted_312_by_generated_bucket": {
+        "type01_110": 4,
+        "type02_120": 3,
+        "type03_130": 0,
+        "type04_140": 3,
+        "type05_150": 1,
+        "type06_160": 3,
+        "type07_170": 2,
+        "type08_180": 0,
+        "type09_190": 2,
+        "type10_200": 0
+      },
+      "buckets_with_15_312": 0,
+      "buckets_with_any_312": 7,
+      "counts": {
+        "accepted_312": 18,
+        "checked": 200,
+        "invalid_agc_312": 77,
+        "out_of_range": 105
+      },
+      "invalid_312_but_311_valid_lines": [],
+      "ready_for_15_each_312": false,
+      "valid_312_but_311_invalid_lines": []
+    },
+    "t04": {
+      "accepted_312_by_generated_bucket": {
+        "type01_110": 3,
+        "type02_120": 2,
+        "type03_130": 2,
+        "type04_140": 5,
+        "type05_150": 2,
+        "type06_160": 1,
+        "type07_170": 0,
+        "type08_180": 1,
+        "type09_190": 0,
+        "type10_200": 0
+      },
+      "buckets_with_15_312": 0,
+      "buckets_with_any_312": 7,
+      "counts": {
+        "accepted_312": 16,
+        "checked": 200,
+        "invalid_agc_312": 81,
+        "out_of_range": 103
+      },
+      "invalid_312_but_311_valid_lines": [],
+      "ready_for_15_each_312": false,
+      "valid_312_but_311_invalid_lines": []
+    },
+    "t06": {
+      "accepted_312_by_generated_bucket": {
+        "type01_110": 7,
+        "type02_120": 5,
+        "type03_130": 2,
+        "type04_140": 0,
+        "type05_150": 2,
+        "type06_160": 3,
+        "type07_170": 2,
+        "type08_180": 2,
+        "type09_190": 0,
+        "type10_200": 3
+      },
+      "buckets_with_15_312": 0,
+      "buckets_with_any_312": 8,
+      "counts": {
+        "accepted_312": 26,
+        "checked": 200,
+        "invalid_agc_312": 83,
+        "out_of_range": 91
+      },
+      "invalid_312_but_311_valid_lines": [],
+      "ready_for_15_each_312": false,
+      "valid_312_but_311_invalid_lines": []
+    }
+  },
+  "phase": "pilot",
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "python_ast_binary": "/home/user1-system11/miniconda3/envs/agcparse312/bin/python",
+  "python_ast_version": "3.12.13",
+  "python_ast_version_info": [
+    3,
+    12,
+    13
+  ],
+  "rule": "one outer function/class/async-function with a substantive body",
+  "source_experiment": "run-x-a-01-v2",
+  "status": "PASS"
+}

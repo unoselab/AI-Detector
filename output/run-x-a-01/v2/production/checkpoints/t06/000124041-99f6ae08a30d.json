@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_flow_element_list(self, value):\n        \"\"\"\n        Setter for 'flow_element_list' field.\n        :param value - a new value of 'flow_element_list' field. Must be a list\n        \"\"\"\n        if value is not None and not isinstance(value, list):\n            raise ValueError(\"Not a list value 'flow_element_list' field\")\n\n        self._flow_element_list = value\n",
+  "agc_valid": true,
+  "body_sha256": "2fb5348a4029b989da6db2402118cd64cc3c45a3a61203e427aeeeda5c8d93a5",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if value is not None and not isinstance(value, list):\n            raise ValueError(\"Not a list value 'flow_element_list' field\")\n\n        self._flow_element_list = value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 120,
+  "human_sha256": "7a60926ca534694f890c3537510558f030ee5afc07571e35c73afc73bb4e9523",
+  "human_valid": true,
+  "line_no": 124041,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "99f6ae08a30d75da02ba8f8e48a9526ad97b9210d4a96213f76ab15e7e533942",
+  "raw_output": "\n        if value is not None and not isinstance(value, list):\n            raise ValueError(\"Not a list value 'flow_element_list' field\")\n\n        self._flow_element_list = value\n\n    def",
+  "sampling_seed": 2988932383,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

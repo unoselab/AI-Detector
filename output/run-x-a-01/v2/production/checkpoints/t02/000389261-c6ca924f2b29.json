@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse(cls, parser, token):\n        \"\"\"\n        Custom parsing for the ``{% ajax_comment_tags for ... %}`` tag.\n        \"\"\"\n        bits = token.split_contents()\n        if len(bits) !=\n",
+  "agc_valid": false,
+  "body_sha256": "9136d68b9fbebecbecd97f746a00ecb238cf47385e415cb51a46e18b8d2c8901",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n        bits = token.split_contents()\n        if len(bits) !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "d82802347ea757b5bc756284d1c503b9af0dbe75d4b01e77f07e7267a9958bf5",
+  "human_valid": true,
+  "line_no": 389261,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c6ca924f2b29300f349c3ffbcd1fbe266d1590747fa753b61d72334d2db3cc8b",
+  "raw_output": "\n        bits = token.split_contents()\n        if len(bits) != ",
+  "sampling_seed": 3228918832,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

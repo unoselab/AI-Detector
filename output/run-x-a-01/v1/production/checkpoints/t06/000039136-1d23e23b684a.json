@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def main(argv):\n    \"\"\"\n    Main function.\n    \"\"\"\n        parser = argparse.ArgumentParser()\n        parser.add_argument('-p', '--port', help='Port number to listen to', default=8080)\n        parser.add_argument('-d', '--debug', help='Enable debug', action='store_true')\n        parser.add_argument('-r', '--root', help='Root directory to serve', default='.')\n        args = parser.parse_args()\n        print('Serving directory {} on port {}'.format(args.root, args.port))\n        if args.debug:\n            print('Debug mode enabled')\n        run(host='localhost', port=args.port, debug=args.debug, root=args.root)\n\n\n    if __name__ == '__main__':\n        main(sys.argv[1:])</s>\n",
+  "agc_valid": false,
+  "body_sha256": "55e86b3277b1741eebb814dcb58a762054618ba1fe83fd2c965626320cf30660",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n        parser = argparse.ArgumentParser()\n        parser.add_argument('-p', '--port', help='Port number to listen to', default=8080)\n        parser.add_argument('-d', '--debug', help='Enable debug', action='store_true')\n        parser.add_argument('-r', '--root', help='Root directory to serve', default='.')\n        args = parser.parse_args()\n        print('Serving directory {} on port {}'.format(args.root, args.port))\n        if args.debug:\n            print('Debug mode enabled')\n        run(host='localhost', port=args.port, debug=args.debug, root=args.root)\n\n\n    if __name__ == '__main__':\n        main(sys.argv[1:])</s>\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "52c146e3dbea84c412978607c30eb0e9d09c9519340f575493b7da12b3626d26",
+  "human_valid": true,
+  "line_no": 39136,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1d23e23b684a390cbf41fbdd82227f42d498e1c51d7d2b1636e8dbc49fb3da48",
+  "raw_output": "\n    parser = argparse.ArgumentParser()\n    parser.add_argument('-p', '--port', help='Port number to listen to', default=8080)\n    parser.add_argument('-d', '--debug', help='Enable debug', action='store_true')\n    parser.add_argument('-r', '--root', help='Root directory to serve', default='.')\n    args = parser.parse_args()\n    print('Serving directory {} on port {}'.format(args.root, args.port))\n    if args.debug:\n        print('Debug mode enabled')\n    run(host='localhost', port=args.port, debug=args.debug, root=args.root)\n\n\nif __name__ == '__main__':\n    main(sys.argv[1:])</s>",
+  "sampling_seed": 524389619,
+  "tag": "t06",
+  "temperature": 0.6
+}

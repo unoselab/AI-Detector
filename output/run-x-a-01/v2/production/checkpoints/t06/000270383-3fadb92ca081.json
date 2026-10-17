@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def strictly_increasing(self):\n        \"\"\"\n        :returns:\n          a new vulnerability function that is strictly increasing.\n          It is built by removing piece of the function where the mean\n          loss ratio is constant.\n        \"\"\"\n        mlr = self.mean_loss_ratio()\n        mlr_sorted = mlr.sort_values()\n        mlr_sorted_index = mlr_sorted.index\n        mlr_sorted_values = mlr_sorted.values\n        mlr_sorted_values_new = []\n        for i in range(0, len(mlr_sorted_index)):\n            if i ==\n",
+  "agc_valid": false,
+  "body_sha256": "f595edcfc32157e470302ddad018d0441985e8fa684dc7732fe666cecc42b78c",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n        mlr = self.mean_loss_ratio()\n        mlr_sorted = mlr.sort_values()\n        mlr_sorted_index = mlr_sorted.index\n        mlr_sorted_values = mlr_sorted.values\n        mlr_sorted_values_new = []\n        for i in range(0, len(mlr_sorted_index)):\n            if i ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "ce09d9914ba6df7dced8baefe9fba48bdea3f12efd778f709034db46e8047578",
+  "human_valid": true,
+  "line_no": 270383,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3fadb92ca081b4ac88ad9003afc4526733d8474d40e308fd482b2613a9724510",
+  "raw_output": "\n        mlr = self.mean_loss_ratio()\n        mlr_sorted = mlr.sort_values()\n        mlr_sorted_index = mlr_sorted.index\n        mlr_sorted_values = mlr_sorted.values\n        mlr_sorted_values_new = []\n        for i in range(0, len(mlr_sorted_index)):\n            if i == ",
+  "sampling_seed": 4185754404,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

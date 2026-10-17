@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ensure_bytes(data: Union[str, bytes]) -> bytes:\n    \"\"\"\n    Convert data in bytes if data is a string\n\n    :param data: Data\n    :rtype bytes:\n    \"\"\"\n    if isinstance(data, str):\n        return data.encode(\"utf-8\")\n\n    return data\n",
+  "agc_valid": true,
+  "body_sha256": "8288f8575a5b808b5801e491d1ba5e16e9c2a0d83c21194af95f364f28ee6054",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(data, str):\n        return data.encode(\"utf-8\")\n\n    return data\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1d9535f645ac7206757e5446d9898146977fe1b9630a43b278a01b82c52e8fc0",
+  "human_valid": true,
+  "line_no": 42486,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "512bb529d2a4f7d037294bf061e866253fb7792dd871ee463f8ab08493e941e5",
+  "raw_output": "\n\n    if isinstance(data, str):\n        return data.encode(\"utf-8\")\n\n    return data\n\n\ndef ensure_string(data: Union[str, bytes]) -> str:\n    \"\"\"\n    Convert data in string if data is bytes\n\n    :param data: Data\n    :rtype bytes:\n    \"\"\"\n\n    if isinstance(data, bytes):\n        return data.decode(\"utf-8\")\n\n    return data\n\n\ndef ensure_int(data: Union[int, float]) -> int:\n    \"\"\"\n    Convert data in int if data is a float\n\n    :param data: Data\n    :rtype int:\n    \"\"\"\n\n    if isinstance(data, float):\n        return int(data)\n\n    return data\n\n\ndef ensure_float(data: Union[int, float]) -> float:\n    \"\"\"\n    Convert data in float if data is an int\n\n    :param data: Data\n    :rtype float:\n    \"\"\"\n\n    if isinstance(data, int):\n        return float(data)\n\n    return data\n\n\ndef ensure_dict(data: Union[dict, list]) -> dict:\n    \"\"\"\n    Convert data in dict if data is a list\n\n    :param data: Data\n    :rtype dict:\n    \"\"\"\n\n    if isinstance(data, list):\n        return dict(data)\n\n    return data\n\n\ndef ensure_list(data: Union[dict, list]) -> list:\n    \"\"\"\n    Convert data in list if data is a dict\n\n    :param data: Data\n    :rtype list:\n    \"\"\"\n\n    if isinstance(data, dict):\n        return list(data.items())\n\n    return data\n\n\ndef ensure_list_of_dict(data: Union[list, dict]) -> list:\n    \"\"\"\n    Convert data in list of dict if data is a dict\n\n    :param data: Data\n    :rtype list:\n    \"\"\"\n\n    if isinstance(data, dict):\n        return [data]\n\n    return data\n\n\ndef ensure_dict_of_dict(data: Union[dict, list]) -> dict:\n    \"\"\"\n    Convert data in",
+  "sampling_seed": 779263891,
+  "tag": "t06",
+  "temperature": 0.6
+}

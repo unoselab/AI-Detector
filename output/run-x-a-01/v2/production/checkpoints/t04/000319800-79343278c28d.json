@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_page(self, title=None, content=None, old_url=None,\n                 tags=None, old_id=None, old_parent_id=None):\n        \"\"\"\n        Adds a page to the list of pages to be imported - used by the\n        Wordpress importer.\n        \"\"\"\n        if title is None:\n            title = ''\n        if content is None:\n            content = ''\n        if tags is None:\n            tags = []\n        if old_url is None:\n            old_url = ''\n        if old_id is None:\n            old_id =\n",
+  "agc_valid": false,
+  "body_sha256": "bf386b2495ef1d263eea14fba9d6ba88224432e389cf59eb90e517aa0ec2f4b2",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n        if title is None:\n            title = ''\n        if content is None:\n            content = ''\n        if tags is None:\n            tags = []\n        if old_url is None:\n            old_url = ''\n        if old_id is None:\n            old_id =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "8361eb0be267f3ac94af3394f3cc9beba4045411b59f82610191c8be69e9ec97",
+  "human_valid": true,
+  "line_no": 319800,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "79343278c28df3258c0e32f29245210cab5790cb06f4939a5d4998c7a2b2d347",
+  "raw_output": "\n        if title is None:\n            title = ''\n        if content is None:\n            content = ''\n        if tags is None:\n            tags = []\n        if old_url is None:\n            old_url = ''\n        if old_id is None:\n            old_id = ",
+  "sampling_seed": 3914874080,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

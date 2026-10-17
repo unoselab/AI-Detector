@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate(self):\n        \"\"\" Validate filter condition (template method).\n        \"\"\"\n        if not self.condition:\n            raise ValueError('Filter condition is empty')\n        if not self.field:\n            raise ValueError('Filter field is empty')\n        if not self.operator:\n            raise ValueError('Filter operator is empty')\n",
+  "agc_valid": true,
+  "body_sha256": "0a10078b5bc13207fd7a27260c2935d07a70064543c20402f45134330d94be12",
+  "body_tokens": 79,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not self.condition:\n            raise ValueError('Filter condition is empty')\n        if not self.field:\n            raise ValueError('Filter field is empty')\n        if not self.operator:\n            raise ValueError('Filter operator is empty')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "de81545324c46123f139b14249055fb96b31dba1d686dd244d2ee76640e06aaf",
+  "human_valid": true,
+  "line_no": 281552,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "999176b612aabcc4db563321b662024f1603bde3eaf1f77b7ae93b9a25175304",
+  "raw_output": "\n        if not self.condition:\n            raise ValueError('Filter condition is empty')\n        if not self.field:\n            raise ValueError('Filter field is empty')\n        if not self.operator:\n            raise ValueError('Filter operator is empty')\n\n    def",
+  "sampling_seed": 1893089925,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

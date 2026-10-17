@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_value(value_proto, value, exclude_from_indexes=None):\n  \"\"\"Set the corresponding datastore.Value _value field for the given arg.\n\n  Args:\n    value_proto: datastore.Value proto message.\n    value: python object or datastore.Value. (unicode value will set a\n        datastore string value, str value will set a blob string value).\n        Undefined behavior if value is/contains value_proto.\n    exclude_from_indexes: if the value should be exclude from indexes. None\n        leaves indexing as is (defaults to False if value is not a Value\n        message).\n\n  Raises:\n    TypeError: if the given value type is not supported.\n  \"\"\"\n  .\n",
+  "agc_valid": false,
+  "body_sha256": "30ea9fff7fac7c64bc0f23c264eb7855548a9d77a1596a5b99876190cdf9697b",
+  "body_tokens": 3,
+  "bucket": "out_of_range",
+  "clean_output": "\n  .\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "aaf9f8a270e5694279ea0401dc779971b71cce2b83d5193f6ffa7651554e5cc7",
+  "human_valid": true,
+  "line_no": 209254,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d1c6048e9bdd3a6d3e3e280d65ffe6cd4c95f322c402dde582fff6b44bcec851",
+  "raw_output": ".\n ",
+  "sampling_seed": 1424246756,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

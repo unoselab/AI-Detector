@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def detect_console_encoding():\n    \"\"\"\n    Try to find the most capable encoding supported by the console.\n    slightly modified from the way IPython handles the same issue.\n    \"\"\"\n    # The code page is the default encoding for the console.\n    code_page = locale.getpreferredencoding(False)\n    # If the code page is not ASCII compatible, assume it's a unicode encoding\n    if not code_page.startswith('ascii'):\n        return code_page\n\n    # Try to find the console output code page.\n    try:\n        import winreg\n        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,\n                             r'Console\\%SystemRoot%_CONSOLE_%')\n        (value, type_) = winreg.QueryValueEx(key, 'OutputCodePage')\n        winreg.CloseKey(key)\n        if type_ == winreg.REG_SZ:\n            return code_page\n        else:\n            return 'cp%d' % value\n    except ImportError:\n        pass\n\n    # On non-Windows platforms, try to find the LC_CTYPE locale.\n    try:\n        import locale\n        locale.setlocale(locale.LC_CTYPE, '')\n        code_page = locale.nl_langinfo(locale.CODESET)\n        if code_page:\n            return code_page\n    except ImportError:\n        pass\n\n    # If all else fails, use UTF-8.\n    return 'utf-8'\n",
+  "agc_valid": true,
+  "body_sha256": "07b54ce862748829d184741c7d6511b5e54e497a39582cc35f0007897b189fea",
+  "body_tokens": 292,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # The code page is the default encoding for the console.\n    code_page = locale.getpreferredencoding(False)\n    # If the code page is not ASCII compatible, assume it's a unicode encoding\n    if not code_page.startswith('ascii'):\n        return code_page\n\n    # Try to find the console output code page.\n    try:\n        import winreg\n        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,\n                             r'Console\\%SystemRoot%_CONSOLE_%')\n        (value, type_) = winreg.QueryValueEx(key, 'OutputCodePage')\n        winreg.CloseKey(key)\n        if type_ == winreg.REG_SZ:\n            return code_page\n        else:\n            return 'cp%d' % value\n    except ImportError:\n        pass\n\n    # On non-Windows platforms, try to find the LC_CTYPE locale.\n    try:\n        import locale\n        locale.setlocale(locale.LC_CTYPE, '')\n        code_page = locale.nl_langinfo(locale.CODESET)\n        if code_page:\n            return code_page\n    except ImportError:\n        pass\n\n    # If all else fails, use UTF-8.\n    return 'utf-8'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "fc420fc2f5d3d5f0347f9e4d99d858b15b7c68e23b90bb5aa7963161c10aefea",
+  "human_valid": true,
+  "line_no": 91458,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7d5a26c0f21dba0205ea05ac70ef2024ac42a64c34ed11c3f3f1a3f71ccdf304",
+  "raw_output": "\n    # The code page is the default encoding for the console.\n    code_page = locale.getpreferredencoding(False)\n    # If the code page is not ASCII compatible, assume it's a unicode encoding\n    if not code_page.startswith('ascii'):\n        return code_page\n\n    # Try to find the console output code page.\n    try:\n        import winreg\n        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER,\n                             r'Console\\%SystemRoot%_CONSOLE_%')\n        (value, type_) = winreg.QueryValueEx(key, 'OutputCodePage')\n        winreg.CloseKey(key)\n        if type_ == winreg.REG_SZ:\n            return code_page\n        else:\n            return 'cp%d' % value\n    except ImportError:\n        pass\n\n    # On non-Windows platforms, try to find the LC_CTYPE locale.\n    try:\n        import locale\n        locale.setlocale(locale.LC_CTYPE, '')\n        code_page = locale.nl_langinfo(locale.CODESET)\n        if code_page:\n            return code_page\n    except ImportError:\n        pass\n\n    # If all else fails, use UTF-8.\n    return 'utf-8'\n\n\ndef convert_to_unicode(s, encoding=None):\n    \"\"\"\n    Convert a string (bytestring in Python ",
+  "sampling_seed": 3303350830,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

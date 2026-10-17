@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def decrypt_string(self, token_str, expiration_in_seconds=None):\n        \"\"\"Verify signature, verify timestamp, and decrypt a token using ``cryptography.fernet.Fernet()``.\"\"\"\n        if not token_str:\n            raise ValueError(\"token_str is empty\")\n\n        token = self.parse_token(token_str)\n        self.verify_signature(token)\n        self.verify_timestamp(token, expiration_in_seconds)\n\n        return self.decrypt(token)\n",
+  "agc_valid": true,
+  "body_sha256": "bd82c2a1de39083c5fa2193eee341a619bee4b3fa58463fed321d65841b6a50d",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not token_str:\n            raise ValueError(\"token_str is empty\")\n\n        token = self.parse_token(token_str)\n        self.verify_signature(token)\n        self.verify_timestamp(token, expiration_in_seconds)\n\n        return self.decrypt(token)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "0cb4f1a2ada98fb42ef67a39bae373398e705b3ab597a5f532ade33045cd0748",
+  "human_valid": true,
+  "line_no": 346162,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7fc9d7a994f22f95ccdc6e78d3f1b538d2b6b9a07134ba2dd9dcc29114d5e129",
+  "raw_output": "\n        if not token_str:\n            raise ValueError(\"token_str is empty\")\n\n        token = self.parse_token(token_str)\n        self.verify_signature(token)\n        self.verify_timestamp(token, expiration_in_seconds)\n\n        return self.decrypt(token)\n\n    def",
+  "sampling_seed": 942828400,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

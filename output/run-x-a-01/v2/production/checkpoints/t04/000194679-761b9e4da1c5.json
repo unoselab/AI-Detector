@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sorted_source_files(self):\n        \"\"\"Returns a list of targets in topologically sorted order.\"\"\"\n            return self.sorted_targets(self.source_files)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "5dff8c4f1fe49cc062467bfa50a33e3b808804eaa0b748da7312898247af4039",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.sorted_targets(self.source_files)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "6ea10ce8f3f8f4addec333c55578c9776452d00fa90cb88c169a505ed2217266",
+  "human_valid": true,
+  "line_no": 194679,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "761b9e4da1c5ac9750e2e47281606b8022993eda1388aabc002a7845785290dc",
+  "raw_output": "\n        return self.sorted_targets(self.source_files)\n\n    @property\n    def",
+  "sampling_seed": 561057454,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

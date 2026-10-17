@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def remove_instance(self, instance):\n        \"\"\"Request to cleanly remove the given instance.\n        If instance is external also shutdown it cleanly\n\n        :param instance: instance to remove\n        :type instance: object\n        :return: None\n        \"\"\"\n        if self.external_instance(instance):\n            self.shutdown_instance(instance)\n        self.delete_instance(instance)\n",
+  "agc_valid": true,
+  "body_sha256": "a1d5ce423b676d36d86e76d7ad0d379881629b169b492f3ac0b40e76f2088f10",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.external_instance(instance):\n            self.shutdown_instance(instance)\n        self.delete_instance(instance)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 104,
+  "human_sha256": "2f2007073fd9ccdd498ccc421008a12973e3791379ec966a4ec339af77d69a14",
+  "human_valid": true,
+  "line_no": 124785,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0d4856d7de81975a08582761fd1d24278469d8861ed702b42f8cdf9d4c61ce2d",
+  "raw_output": "\n\n        if self.external_instance(instance):\n            self.shutdown_instance(instance)\n        self.delete_instance(instance)\n\n    def",
+  "sampling_seed": 1116667879,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

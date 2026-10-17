@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def send(self, packet_buffer):\n        \"\"\"\n        send a buffer as a packet to the network interface\n        :param packet_buffer: buffer to send (length shouldn't exceed MAX_INT)\n        \"\"\"\n        packet_length = len(packet_buffer)\n        if packet_length > MAX_INT:\n            raise ValueError(\"Packet too long\")\n        self.send_packet(packet_buffer, packet_length)\n",
+  "agc_valid": true,
+  "body_sha256": "758f76e34b2f8aa33e78a56fde296b4d1d750a53af93074b57eb9cb1339c4a6c",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        packet_length = len(packet_buffer)\n        if packet_length > MAX_INT:\n            raise ValueError(\"Packet too long\")\n        self.send_packet(packet_buffer, packet_length)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "301c89550f42bf9af2f20958aac216e10be4dd97ed1a48d077142d41e6e10442",
+  "human_valid": true,
+  "line_no": 2547,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "57e2783292cabb3a79df6e5a9eeac5dbdceeb27413f29e9103adcba11bcf85d8",
+  "raw_output": "\n        packet_length = len(packet_buffer)\n        if packet_length > MAX_INT:\n            raise ValueError(\"Packet too long\")\n        self.send_packet(packet_buffer, packet_length)\n\n    def",
+  "sampling_seed": 3123820962,
+  "tag": "t06",
+  "temperature": 0.6
+}

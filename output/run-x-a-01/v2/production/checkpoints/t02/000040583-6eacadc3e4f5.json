@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def distinguish(self, id_, how=True):\n        \"\"\"Login required.  Sends POST to distinguish a submission or comment.  Returns :class:`things.Link` or :class:`things.Comment`, or raises :class:`exceptions.UnexpectedResponse` otherwise.\n\n        URL: ``http://www.reddit.com/api/distinguish/``\n\n        :param id\\_: full id of object to distinguish\n        :param how: either True, False, or 'admin'\n        \"\"\"\n        if how not in (True, False, 'admin'):\n            raise ValueError('how must be True, False, or \"admin\"')\n        return self._post('api/distinguish', {'id': id_, 'how': how})\n",
+  "agc_valid": true,
+  "body_sha256": "866292d92119f499c5df739ce419df496008e1ec0c52986ecbf647bcc20ed359",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if how not in (True, False, 'admin'):\n            raise ValueError('how must be True, False, or \"admin\"')\n        return self._post('api/distinguish', {'id': id_, 'how': how})\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "2887afa8f103305c3a953d9a4661388a3918083b0f4c177b1408dfb51a39e20f",
+  "human_valid": true,
+  "line_no": 40583,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6eacadc3e4f5738b7e6293709142294bddd4f056fcc9b234e7bf6d83f602e084",
+  "raw_output": "\n        if how not in (True, False, 'admin'):\n            raise ValueError('how must be True, False, or \"admin\"')\n        return self._post('api/distinguish', {'id': id_, 'how': how})\n\n    def",
+  "sampling_seed": 3684144464,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

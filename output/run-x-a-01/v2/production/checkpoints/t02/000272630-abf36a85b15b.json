@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cli(env, context_id):\n    \"\"\"Request configuration of a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    context = env.context.get(context_id)\n    if context is None:\n        raise ValueError(\"Context %s not found\" % context_id)\n    if context.advancedConfigurationFlag:\n        raise ValueError(\"Context %s already configured\" % context_id)\n    context.advancedConfigurationFlag = True\n    env.context.update(context)\n    return context\n",
+  "agc_valid": true,
+  "body_sha256": "769de89ffff3e4faf839337c472a8b25206140ff71d16fabf71313dae5e7f455",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    context = env.context.get(context_id)\n    if context is None:\n        raise ValueError(\"Context %s not found\" % context_id)\n    if context.advancedConfigurationFlag:\n        raise ValueError(\"Context %s already configured\" % context_id)\n    context.advancedConfigurationFlag = True\n    env.context.update(context)\n    return context\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "37511f9071f2ba2df8dd89a52f9c8b56548db2f9fd464fed2b5b47a097e6fd9b",
+  "human_valid": true,
+  "line_no": 272630,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "abf36a85b15be026e3e0c9cd3b530d00872c211e431583e12121f46d0db966be",
+  "raw_output": "\n    context = env.context.get(context_id)\n    if context is None:\n        raise ValueError(\"Context %s not found\" % context_id)\n    if context.advancedConfigurationFlag:\n        raise ValueError(\"Context %s already configured\" % context_id)\n    context.advancedConfigurationFlag = True\n    env.context.update(context)\n    return context\n\n\ndef cli_unconfigure(env, context_id):\n    \"\"\"Unconfigure a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    context = env.context.get(context_id)\n    if context is None:\n        raise ValueError(\"Context %s not found\" % context_id)\n    if not context.advancedConfigurationFlag:\n        raise ValueError(\"Context %s not configured\" % context_id)\n    context.advancedConfigurationFlag = False\n    env.context.update(context)\n    return context\n\n\ndef cli_get_contexts(env):\n    \"\"\"Get all tunnel contexts.\"\"\"\n    return env.context.get_all()\n\n\ndef cli_get_context(env, context_id):\n    \"\"\"Get a tunnel context.\"\"\"\n    context = env.context.get(context_id)\n    if context is None:\n        raise ValueError(\"Context %s not found\" % context_id)\n    return context\n\n\ndef cli_create_context(env, context_id, tunnel_type, tunnel_id,\n                       tunnel_name=None, tunnel_description=None,\n                       tunnel_source_interface=None, tunnel_destination_interface=None,\n                       tunnel_source_ip=None, tunnel_destination_ip=None,\n                       tunnel_source_mask=None, tunnel_destination_mask=None,\n                       tunnel_source_gateway=None, tunnel_destination_gateway=None,\n                       tunnel_source_gateway_ip=None, tunnel_destination_gateway_ip=None,\n                       tunnel_source_gateway_mask=None, tunnel_destination_gateway_mask",
+  "sampling_seed": 573530488,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

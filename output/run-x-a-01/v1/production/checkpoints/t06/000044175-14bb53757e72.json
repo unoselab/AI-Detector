@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def detectMobileLong(self):\n        \"\"\"Return detection of any mobile device using the more thorough method\n\n        The longer and more thorough way to detect for a mobile device.\n        Will probably detect most feature phones,\n        smartphone-class devices, Internet Tablets,\n        Internet-enabled game consoles, etc.\n        This ought to catch a lot of the more obscure and older devices, also --\n        but no promises on thoroughness!\n        \"\"\"\n        # match strings for all popular browsers on a wide variety of devices\n        # and OSes.\n        # Most of the 'special case' devices or OSes won't be detected by\n        # this method,\n        # and some of these may have false-positives (actual browsers which\n        # aren't\n        # listed will get through).\n\n        # Most of the 'special case' devices or OSes won't be detected by\n        # this method,\n        # and some of these may have false-positives (actual browsers which\n        # aren't\n        # listed will get through).\n\n        ua = self.userAgent\n\n        # First, the easy checks.\n        # These won't catch everything, but they should catch most things\n        # we're looking for.\n        if ua.find(\"iPhone\") >=\n",
+  "agc_valid": false,
+  "body_sha256": "015732c390087c6209c31090247780304aa7eb047f68eeeaab873895652b9f21",
+  "body_tokens": 230,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # match strings for all popular browsers on a wide variety of devices\n        # and OSes.\n        # Most of the 'special case' devices or OSes won't be detected by\n        # this method,\n        # and some of these may have false-positives (actual browsers which\n        # aren't\n        # listed will get through).\n\n        # Most of the 'special case' devices or OSes won't be detected by\n        # this method,\n        # and some of these may have false-positives (actual browsers which\n        # aren't\n        # listed will get through).\n\n        ua = self.userAgent\n\n        # First, the easy checks.\n        # These won't catch everything, but they should catch most things\n        # we're looking for.\n        if ua.find(\"iPhone\") >=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9e88a0b11a7f067a17f6becfa24bfd089e21438de8134a52b697a62ea565e86f",
+  "human_valid": true,
+  "line_no": 44175,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "14bb53757e72f6272f1b76720b6548f002b5047e8fa94d93fe6966e9c8dd6660",
+  "raw_output": "\n\n        # match strings for all popular browsers on a wide variety of devices\n        # and OSes.\n        # Most of the 'special case' devices or OSes won't be detected by\n        # this method,\n        # and some of these may have false-positives (actual browsers which\n        # aren't\n        # listed will get through).\n\n        # Most of the 'special case' devices or OSes won't be detected by\n        # this method,\n        # and some of these may have false-positives (actual browsers which\n        # aren't\n        # listed will get through).\n\n        ua = self.userAgent\n\n        # First, the easy checks.\n        # These won't catch everything, but they should catch most things\n        # we're looking for.\n        if ua.find(\"iPhone\") >= ",
+  "sampling_seed": 3203501869,
+  "tag": "t06",
+  "temperature": 0.6
+}

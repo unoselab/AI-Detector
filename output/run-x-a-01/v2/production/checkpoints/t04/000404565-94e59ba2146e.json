@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def eval_mus_dir(\n    dataset,\n    estimates_dir,\n    output_dir=None,\n    *args, **kwargs\n):\n    \"\"\"Run musdb.run for the purpose of evaluation of musdb estimate dir\n\n    Parameters\n    ----------\n    dataset : DB(object)\n        Musdb Database object.\n    estimates_dir : str\n        Path to estimates folder.\n    output_dir : str\n        Output folder where evaluation json files are stored.\n    *args\n        Variable length argument list for `musdb.run()`.\n    **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n    \"\"\"\n    **kwargs\n         Arbitrary keyword arguments for `musdb.run()`.\n     \"\"\"\n     if output_dir is None:\n         output_dir = estimates_dir\n\n     # Create output directory if not exists\n     if not os.path.exists(output_dir):\n         os.makedirs(output_dir)\n\n     # Run musdb.run\n     mus = musdb.DB(\n         dataset.root,\n         is_wav=False,\n         subsets=dataset.subsets,\n         *args, **kwargs\n     )\n     mus.run(estimates_dir, output_dir)\n\n     # Remove the output directory if empty\n     if not os.listdir(output_dir):\n         os.rmdir(output_dir)\n",
+  "agc_valid": false,
+  "body_sha256": "745ef584061f20f665065aac23ba4b30f59c18dca52caf15fc497e72c90ba01c",
+  "body_tokens": 158,
+  "bucket": "type06_160",
+  "clean_output": "\n    **kwargs\n         Arbitrary keyword arguments for `musdb.run()`.\n     \"\"\"\n     if output_dir is None:\n         output_dir = estimates_dir\n\n     # Create output directory if not exists\n     if not os.path.exists(output_dir):\n         os.makedirs(output_dir)\n\n     # Run musdb.run\n     mus = musdb.DB(\n         dataset.root,\n         is_wav=False,\n         subsets=dataset.subsets,\n         *args, **kwargs\n     )\n     mus.run(estimates_dir, output_dir)\n\n     # Remove the output directory if empty\n     if not os.listdir(output_dir):\n         os.rmdir(output_dir)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "adc7263de024a9d76c06c3780e139c5d036111ce365322c38104c9e9f54b1f5c",
+  "human_valid": true,
+  "line_no": 404565,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "94e59ba2146e90da526eae369ecf6a471335658db1951fd7418aadd371b9772b",
+  "raw_output": "   **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n    \"\"\"\n    if output_dir is None:\n        output_dir = estimates_dir\n\n    # Create output directory if not exists\n    if not os.path.exists(output_dir):\n        os.makedirs(output_dir)\n\n    # Run musdb.run\n    mus = musdb.DB(\n        dataset.root,\n        is_wav=False,\n        subsets=dataset.subsets,\n        *args, **kwargs\n    )\n    mus.run(estimates_dir, output_dir)\n\n    # Remove the output directory if empty\n    if not os.listdir(output_dir):\n        os.rmdir(output_dir)\n\n\ndef eval_mus_estimates(\n    dataset,\n    estimates,\n    output_dir=None,\n    *args, **kwargs\n):\n    \"\"\"Run musdb.run for the purpose of evaluation of musdb estimates\n\n    Parameters\n    ----------\n    dataset : DB(object)\n        Musdb Database object.\n    estimates : dict\n        Dictionary of estimates.\n    output_dir : str\n        Output folder where evaluation json files are stored.\n    *args\n        Variable length argument list for `musdb.run()`.\n    **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n    \"\"\"\n    if output_dir is None:\n        output_dir = estimates\n\n    # Create output directory if not exists\n    if not os.path.exists(output_dir):\n        os.makedirs(output_dir)\n\n    # Run musdb.run\n    mus = musdb.DB(\n        dataset.root,\n        is_wav=False,\n        subsets=dataset.subsets,\n        *args, **kwargs\n    )\n    mus.run(estimates, output_dir)\n\n    # Remove the output directory if empty\n    if not os.listdir(output_dir):\n        os.rmdir(output_dir)\n\n\ndef eval_mus_estimates_dir(\n    dataset,\n    estimates_dir,\n    output_dir=None,\n    *args, **",
+  "sampling_seed": 1710883723,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

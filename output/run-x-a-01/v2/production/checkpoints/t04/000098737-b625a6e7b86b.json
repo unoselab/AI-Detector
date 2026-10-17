@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_pinned_version(ireq):\n    \"\"\"Get the pinned version of an InstallRequirement.\n\n    An InstallRequirement is considered pinned if:\n\n    - Is not editable\n    - It has exactly one specifier\n    - That specifier is \"==\"\n    - The version does not contain a wildcard\n\n    Examples:\n        django==1.8   # pinned\n        django>1.8    # NOT pinned\n        django~=1.8   # NOT pinned\n        django==1.*   # NOT pinned\n\n    Raises `TypeError` if the input is not a valid InstallRequirement, or\n    `ValueError` if the InstallRequirement is not pinned.\n    \"\"\"\n    NOT pinned\n\n        \"\"\"\n        if ireq.editable or not ireq.specifier or len(ireq.specifier) !=\n",
+  "agc_valid": false,
+  "body_sha256": "b41d05515915f3ed9fbcd66dfdc06ec6449f59144e52108ce24edab1e66488d3",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    NOT pinned\n\n        \"\"\"\n        if ireq.editable or not ireq.specifier or len(ireq.specifier) !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "6c7dab415a9e2936e362c76544b9e98a31f31dcf72c67cd4caccaee4b89ee534",
+  "human_valid": true,
+  "line_no": 98737,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b625a6e7b86b67272b56aedc217080875d4a144620bfbedd45893cac77a43ced",
+  "raw_output": "NOT pinned\n\n    \"\"\"\n    if ireq.editable or not ireq.specifier or len(ireq.specifier) != ",
+  "sampling_seed": 3168913922,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

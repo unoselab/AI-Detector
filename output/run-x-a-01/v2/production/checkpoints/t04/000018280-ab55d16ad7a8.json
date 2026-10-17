@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def kl_error(self, input_data, targets, average=True,\n                 cache=None, prediction=True):\n        \"\"\" The KL divergence error\n        \"\"\"\n        if cache is None:\n            cache = {}\n\n        if prediction:\n            input_data = self.predict(input_data)\n\n        if self.log_input:\n            input_data = torch.log(input_data)\n\n        if self.log_targets:\n            targets = torch.log(targets)\n\n        if self.reduction == 'none':\n            return torch.sum(torch.sum(input_data * targets, dim=1), dim=0)\n        elif self.reduction == 'mean':\n            return torch.mean(torch.mean(input_data * targets, dim=1), dim=0)\n        elif self.reduction == 'sum':\n            return torch.sum(torch.sum(input_data * targets, dim=1), dim=0)\n        else:\n            raise ValueError('Invalid reduction mode')\n",
+  "agc_valid": true,
+  "body_sha256": "f146ecf6d37df2006f505895fd4e354bffc2e8d1443b26620f82f95c4c98840d",
+  "body_tokens": 202,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if cache is None:\n            cache = {}\n\n        if prediction:\n            input_data = self.predict(input_data)\n\n        if self.log_input:\n            input_data = torch.log(input_data)\n\n        if self.log_targets:\n            targets = torch.log(targets)\n\n        if self.reduction == 'none':\n            return torch.sum(torch.sum(input_data * targets, dim=1), dim=0)\n        elif self.reduction == 'mean':\n            return torch.mean(torch.mean(input_data * targets, dim=1), dim=0)\n        elif self.reduction == 'sum':\n            return torch.sum(torch.sum(input_data * targets, dim=1), dim=0)\n        else:\n            raise ValueError('Invalid reduction mode')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "564cd36650cc62390fa38dfd42a36dafec100b61326cdd02391861b4657c32b5",
+  "human_valid": true,
+  "line_no": 18280,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab55d16ad7a8d0c5fa4a5dbb6972cb4cabd69ef8de601a69d5a20759a5210b41",
+  "raw_output": "\n        if cache is None:\n            cache = {}\n\n        if prediction:\n            input_data = self.predict(input_data)\n\n        if self.log_input:\n            input_data = torch.log(input_data)\n\n        if self.log_targets:\n            targets = torch.log(targets)\n\n        if self.reduction == 'none':\n            return torch.sum(torch.sum(input_data * targets, dim=1), dim=0)\n        elif self.reduction == 'mean':\n            return torch.mean(torch.mean(input_data * targets, dim=1), dim=0)\n        elif self.reduction == 'sum':\n            return torch.sum(torch.sum(input_data * targets, dim=1), dim=0)\n        else:\n            raise ValueError('Invalid reduction mode')\n\n\nclass BCE(nn.Module):\n    \"\"\" The binary cross entropy loss\n    \"\"\"\n\n    def",
+  "sampling_seed": 2176818437,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

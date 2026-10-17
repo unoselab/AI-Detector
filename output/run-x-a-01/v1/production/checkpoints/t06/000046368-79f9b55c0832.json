@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def do_block(parser, token):\n    \"\"\"\n    Process several nodes inside a single block\n    Block functions take ``context``, ``nodelist`` as first arguments\n    If the second to last argument is ``as``, the rendered result is stored in the context and is named whatever the last argument is.\n\n    Syntax::\n\n        {% [block] [var args...] [name=value kwargs...] [as varname] %}\n            ... nodelist ...\n        {% end[block] %}\n\n    Examples::\n\n        {% render_block as rendered_output %}\n            {{ request.path }}/blog/{{ blog.slug }}\n        {% endrender_block %}\n\n        {% highlight_block python %}\n            import this\n        {% endhighlight_block %}\n\n    \"\"\"\n    %}\n            {% block as rendered %}\n                ... nodelist ...\n            {% endblock %}\n\n        \"\"\"\n        bits = token.split_contents()\n        args = bits[1:-1]\n        kwargs = bits[-1]\n        if not args and not kwargs:\n            raise template.TemplateSyntaxError('do_block requires at least one argument')\n        if kwargs.startswith('as'):\n            name = kwargs[2:]\n            if name:\n                raise template.TemplateSyntaxError('do_block: The last argument must be \"as varname\"')\n        else:\n            name = None\n        nodelist = parser.parse(('end' + bits[0],))\n        parser.delete_first_token()\n        return BlockNode(nodelist, args, kwargs, name)\n",
+  "agc_valid": false,
+  "body_sha256": "1f084f1ec3cb0fb10d685a7ed8bb4b406c77f3c89842c470edf9f8d5b6b8aee8",
+  "body_tokens": 236,
+  "bucket": "out_of_range",
+  "clean_output": "\n    %}\n            {% block as rendered %}\n                ... nodelist ...\n            {% endblock %}\n\n        \"\"\"\n        bits = token.split_contents()\n        args = bits[1:-1]\n        kwargs = bits[-1]\n        if not args and not kwargs:\n            raise template.TemplateSyntaxError('do_block requires at least one argument')\n        if kwargs.startswith('as'):\n            name = kwargs[2:]\n            if name:\n                raise template.TemplateSyntaxError('do_block: The last argument must be \"as varname\"')\n        else:\n            name = None\n        nodelist = parser.parse(('end' + bits[0],))\n        parser.delete_first_token()\n        return BlockNode(nodelist, args, kwargs, name)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9b9ee5eb5998247b4d20018badbfd5b7b8c58a77a38f69c83a9029043dc74185",
+  "human_valid": true,
+  "line_no": 46368,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "79f9b55c0832890814376f91f20647cfe89709ae784303e0f83e034a2c6cdcf6",
+  "raw_output": "%}\n        {% block as rendered %}\n            ... nodelist ...\n        {% endblock %}\n\n    \"\"\"\n    bits = token.split_contents()\n    args = bits[1:-1]\n    kwargs = bits[-1]\n    if not args and not kwargs:\n        raise template.TemplateSyntaxError('do_block requires at least one argument')\n    if kwargs.startswith('as'):\n        name = kwargs[2:]\n        if name:\n            raise template.TemplateSyntaxError('do_block: The last argument must be \"as varname\"')\n    else:\n        name = None\n    nodelist = parser.parse(('end' + bits[0],))\n    parser.delete_first_token()\n    return BlockNode(nodelist, args, kwargs, name)\n\n\nclass BlockNode(template.Node):\n    \"\"\"\n    Block node class.\n    \"\"\"\n    def",
+  "sampling_seed": 1033365795,
+  "tag": "t06",
+  "temperature": 0.6
+}

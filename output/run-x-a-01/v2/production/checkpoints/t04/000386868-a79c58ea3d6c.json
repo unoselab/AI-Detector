@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _load_data(path):\n    \"\"\"\n    Loads data from a directory.\n    Returns tuple (config_dict, wordlists).\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    config_dict = {}\n    wordlists = []\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            with open(os.path.join(path, filename), 'r') as f:\n                wordlists.append(f.read().splitlines())\n        else:\n            config_dict[filename[:-5]] = json.load(open(os.path.join(path, filename), 'r'))\n    return config_dict, wordlists\n",
+  "agc_valid": true,
+  "body_sha256": "c5123d521f5077aec2093a1c8d6c2ff48b77434b79ca331844b0ff7f42d3c4d7",
+  "body_tokens": 92,
+  "bucket": "out_of_range",
+  "clean_output": "\n    config_dict = {}\n    wordlists = []\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            with open(os.path.join(path, filename), 'r') as f:\n                wordlists.append(f.read().splitlines())\n        else:\n            config_dict[filename[:-5]] = json.load(open(os.path.join(path, filename), 'r'))\n    return config_dict, wordlists\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "767bd1133344db6156a52ba3c698ecb06f0cf3231098c49d3cb1a8ccd12c9888",
+  "human_valid": true,
+  "line_no": 386868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a79c58ea3d6c022b0e7312e4cb7415817cab239d8c48a39a49228f244a8317e1",
+  "raw_output": "\n    config_dict = {}\n    wordlists = []\n    for filename in os.listdir(path):\n        if filename.endswith('.txt'):\n            with open(os.path.join(path, filename), 'r') as f:\n                wordlists.append(f.read().splitlines())\n        else:\n            config_dict[filename[:-5]] = json.load(open(os.path.join(path, filename), 'r'))\n    return config_dict, wordlists\n\n\ndef _save_data(path, config_dict, wordlists):\n    \"\"\"\n    Saves data to a directory.\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    for filename in os.listdir(path):\n        os.remove(os.path.join(path, filename))\n    for filename in os.listdir(path):\n        os.remove(os.path.join(path, filename))\n    for key, value in config_dict.items():\n        with open(os.path.join(path, key + '.json'), 'w') as f:\n            json.dump(value, f)\n    for i, wordlist in enumerate(wordlists):\n        with open(os.path.join(path, 'words' + str(i) + '.txt'), 'w') as f:\n            f.write('\\n'.join(wordlist))\n\n\ndef _get_config_dict(path):\n    \"\"\"\n    Returns config_dict.\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    if not os.path.exists(path):\n        raise Exception('Path does not exist: ' + path)\n    if not os.path.isdir(path):\n        raise Exception('Path is not a directory: ' + path)\n    return _load_data(path)[0]\n\n\ndef _get_wordlists(path):\n    \"\"\"\n    Returns wordlists.\n    Raises Exception on failure (e.g. if data is corrupted).\n    \"\"\"\n    if not os.path.exists(path):\n        raise Exception('Path does not exist: ' + path)\n    if not os.",
+  "sampling_seed": 997822216,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

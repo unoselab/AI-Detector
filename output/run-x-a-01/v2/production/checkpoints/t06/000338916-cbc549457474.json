@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_declaration_expressn_memberaccess(self, lhsAST, rhsAST, es):\n        \"\"\"\n        Instead of \"Class.variablename\", use \"Class.rv('variablename')\".\n\n        :param lhsAST:\n        :param rhsAST:\n        :param es:\n        :return:\n        \"\"\"\n        if lhsAST.is_identifier() and rhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_identifiers(lhsAST, rhsAST, es)\n        elif lhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_identifier_expression(lhsAST, rhsAST, es)\n        elif rhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_expression_identifier(lhsAST, rhsAST, es)\n        else:\n            return self.parse_declaration_expressn_memberaccess_expression_expression(lhsAST, rhsAST, es)\n",
+  "agc_valid": true,
+  "body_sha256": "8d2c5678e4de50c985b4409fe9052b9f849d81f51504a99c64aed1c0c037dec2",
+  "body_tokens": 98,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if lhsAST.is_identifier() and rhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_identifiers(lhsAST, rhsAST, es)\n        elif lhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_identifier_expression(lhsAST, rhsAST, es)\n        elif rhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_expression_identifier(lhsAST, rhsAST, es)\n        else:\n            return self.parse_declaration_expressn_memberaccess_expression_expression(lhsAST, rhsAST, es)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "ac4513d1dcf756607049d549fb03e18a87910280990009e0b0593a295c1e4769",
+  "human_valid": true,
+  "line_no": 338916,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cbc549457474598cd79270c3598d06dac35e70cde360d16767fd95cd60a35c5f",
+  "raw_output": "\n        if lhsAST.is_identifier() and rhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_identifiers(lhsAST, rhsAST, es)\n        elif lhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_identifier_expression(lhsAST, rhsAST, es)\n        elif rhsAST.is_identifier():\n            return self.parse_declaration_expressn_memberaccess_expression_identifier(lhsAST, rhsAST, es)\n        else:\n            return self.parse_declaration_expressn_memberaccess_expression_expression(lhsAST, rhsAST, es)\n\n    def",
+  "sampling_seed": 1764684093,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

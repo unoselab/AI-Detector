@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def plot_time_elapsed(filename, elapsed=False, unit='s', plot_kwargs=None):\n    \"\"\"Plot series data from MonitorTimeElapsed output text file.\n\n    Args:\n        filename (str): Path to *.series.txt file produced by :obj:`~nnabla.MonitorSeries` class.\n        elapsed (bool): If ``True``, it plots the total elapsed time.\n        unit (str):\n            Time unit chosen from ``'s'``, ``'m'``, ``'h'``, or ``'d'``.\n        plot_kwags (dict, optional):\n            Keyward arguments passed to :function:`matplotlib.pyplot.plot`.\n\n    Note:\n        matplotlib package is required.\n\n    \"\"\"\n    `.\n                Default is ``'s'`` (second).\n            plot_kwargs (dict):\n                Keyword arguments for matplotlib's :func:`~matplotlib.pyplot.plot` function.\n                Default is ``None`` (i.e. use default arguments).\n\n        Returns:\n            matplotlib.figure.Figure:\n                The figure object.\n            matplotlib.axes._subplots.AxesSubplot:\n                The axes object.\n\n        \"\"\"\n        import matplotlib.pyplot as plt\n        import numpy as np\n        import re\n        import warnings\n\n        if not os.path.exists(filename):\n            warnings.warn(\"File does not exist: {}\".format(filename))\n            return\n\n        if plot_kwargs is None:\n            plot_kwargs = {}\n\n        with open(filename, 'r') as f:\n            data = f.read().splitlines()\n\n        # Extract data\n        data = [line.split() for line in data]\n        data = np.array(data, dtype=np.float)\n\n        if elapsed:\n            x = data[:,\n",
+  "agc_valid": false,
+  "body_sha256": "f15db6fb5ebfcd938dbc73b0bdcb9afd031e1468fd86ffc9aea44601d50d7d2f",
+  "body_tokens": 343,
+  "bucket": "out_of_range",
+  "clean_output": "\n    `.\n                Default is ``'s'`` (second).\n            plot_kwargs (dict):\n                Keyword arguments for matplotlib's :func:`~matplotlib.pyplot.plot` function.\n                Default is ``None`` (i.e. use default arguments).\n\n        Returns:\n            matplotlib.figure.Figure:\n                The figure object.\n            matplotlib.axes._subplots.AxesSubplot:\n                The axes object.\n\n        \"\"\"\n        import matplotlib.pyplot as plt\n        import numpy as np\n        import re\n        import warnings\n\n        if not os.path.exists(filename):\n            warnings.warn(\"File does not exist: {}\".format(filename))\n            return\n\n        if plot_kwargs is None:\n            plot_kwargs = {}\n\n        with open(filename, 'r') as f:\n            data = f.read().splitlines()\n\n        # Extract data\n        data = [line.split() for line in data]\n        data = np.array(data, dtype=np.float)\n\n        if elapsed:\n            x = data[:,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "b4883e601684220fe5108a3d85e7058e2e77cb0ec8a70aef28613b4f2b05c295",
+  "human_valid": true,
+  "line_no": 164926,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f6bfc878ddd5f881583b7111320acda1bfe00ff7e58006405897901fb90e5217",
+  "raw_output": "`.\n            Default is ``'s'`` (second).\n        plot_kwargs (dict):\n            Keyword arguments for matplotlib's :func:`~matplotlib.pyplot.plot` function.\n            Default is ``None`` (i.e. use default arguments).\n\n    Returns:\n        matplotlib.figure.Figure:\n            The figure object.\n        matplotlib.axes._subplots.AxesSubplot:\n            The axes object.\n\n    \"\"\"\n    import matplotlib.pyplot as plt\n    import numpy as np\n    import re\n    import warnings\n\n    if not os.path.exists(filename):\n        warnings.warn(\"File does not exist: {}\".format(filename))\n        return\n\n    if plot_kwargs is None:\n        plot_kwargs = {}\n\n    with open(filename, 'r') as f:\n        data = f.read().splitlines()\n\n    # Extract data\n    data = [line.split() for line in data]\n    data = np.array(data, dtype=np.float)\n\n    if elapsed:\n        x = data[:, ",
+  "sampling_seed": 804877407,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

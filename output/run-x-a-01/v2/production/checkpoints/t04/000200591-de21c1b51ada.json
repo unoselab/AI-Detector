@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def notify_widget(self, widget, message=None, clear_in=CLEAR_NOTIF_BAR_MESSAGE_IN):\n        \"\"\"\n        opens notification popup.\n\n        :param widget: instance of Widget, widget to display\n        :param message: str, message to remove from list of notifications\n        :param clear_in: int, time seconds when notification should be removed\n        \"\"\"\n        if self.notifications:\n            self.notifications.pop(0)\n\n        if message is not None:\n            self.notifications.append(message)\n\n        if self.notifications:\n            self.notifications_bar.set_text(self.notifications[0])\n            self.notifications_bar.show()\n\n            self.notifications_bar.set_timeout(clear_in)\n\n        self.notifications_bar.set_widget(widget)\n",
+  "agc_valid": true,
+  "body_sha256": "671af332b70a4936c74e3fd1e72b615ed2991f770d7225f1a4eb60ec9385fc04",
+  "body_tokens": 99,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.notifications:\n            self.notifications.pop(0)\n\n        if message is not None:\n            self.notifications.append(message)\n\n        if self.notifications:\n            self.notifications_bar.set_text(self.notifications[0])\n            self.notifications_bar.show()\n\n            self.notifications_bar.set_timeout(clear_in)\n\n        self.notifications_bar.set_widget(widget)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "77549d10f003896f5cbad62af913d346a0bea66d7bfe5f3b9204e2116b50eeed",
+  "human_valid": true,
+  "line_no": 200591,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "de21c1b51ada0a28933162821c31084388836446e554d27e0e04301d070eb14e",
+  "raw_output": "\n\n        if self.notifications:\n            self.notifications.pop(0)\n\n        if message is not None:\n            self.notifications.append(message)\n\n        if self.notifications:\n            self.notifications_bar.set_text(self.notifications[0])\n            self.notifications_bar.show()\n\n            self.notifications_bar.set_timeout(clear_in)\n\n        self.notifications_bar.set_widget(widget)\n\n    def",
+  "sampling_seed": 563711340,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

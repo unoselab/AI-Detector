@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cli_guild(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild.\"\"\"\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.json(indent=4))\n    else:\n        print(guild)\n",
+  "agc_valid": true,
+  "body_sha256": "64d4e9055f6f2af9ea278e105adcfc26b0c72adf4eb463e7c2764f0e7850dbb4",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.json(indent=4))\n    else:\n        print(guild)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0a1b35daf8223251502e9952e9aac21d26a7f9168ee860de7011da6bea036eb2",
+  "human_valid": true,
+  "line_no": 43477,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "19867c2872fd4a60f801042e23e1131ac3f65013284b78cd044dfcdd01d243bd",
+  "raw_output": "\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.json(indent=4))\n    else:\n        print(guild)\n\n\ndef cli_guild_members(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild's members.\"\"\"\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.members.json(indent=4))\n    else:\n        print(guild.members)\n\n\ndef cli_guild_ranks(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild's ranks.\"\"\"\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.ranks.json(indent=4))\n    else:\n        print(guild.ranks)\n\n\ndef cli_guild_ranks_members(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild's ranks members.\"\"\"\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.ranks_members.json(indent=4))\n    else:\n        print(guild.ranks_members)\n\n\ndef cli_guild_ranks_members_online(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild's ranks members online.\"\"\"\n    guild = tibiadata.guild(name)\n    if guild is None:\n        print(\"Guild not found.\")\n        return\n    if json:\n        print(guild.ranks_members_online.json(indent=4))\n    else:\n        print(guild.ranks_members_online)\n\n\ndef cli_gu",
+  "sampling_seed": 178291824,
+  "tag": "t02",
+  "temperature": 0.2
+}

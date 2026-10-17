@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_customized_file(experiment_config, spec_key):\n    \"\"\"\n    check whether the file of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    if spec_key not in experiment_config:\n        return True\n    if 'builtin' in experiment_config[spec_key]:\n        return True\n    if 'codeDir' not in experiment_config[spec_key]:\n        return False\n    if not os.path.exists(experiment_config[spec_key]['codeDir']):\n        return False\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "3c2fba42f75b2ddb3248bfbbd79a7bd469e41dac9ba5c351d4115c5755e5ebb3",
+  "body_tokens": 71,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if spec_key not in experiment_config:\n        return True\n    if 'builtin' in experiment_config[spec_key]:\n        return True\n    if 'codeDir' not in experiment_config[spec_key]:\n        return False\n    if not os.path.exists(experiment_config[spec_key]['codeDir']):\n        return False\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "f45b2163d8633e58e1a1cf6cf93e865c92cb12a1c34bb98913fe5aefe44905a3",
+  "human_valid": true,
+  "line_no": 103061,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bafbce86699dd1774a644778915602916e83ad9dae67980a9458697910187444",
+  "raw_output": "\n    if spec_key not in experiment_config:\n        return True\n    if 'builtin' in experiment_config[spec_key]:\n        return True\n    if 'codeDir' not in experiment_config[spec_key]:\n        return False\n    if not os.path.exists(experiment_config[spec_key]['codeDir']):\n        return False\n    return True\n\n\ndef validate_search_space(experiment_config):\n    \"\"\"\n    check whether the search space is valid\n    \"\"\"\n    if 'searchSpacePath' not in experiment_config:\n        return True\n    if not os.path.exists(experiment_config['searchSpacePath']):\n        return False\n    return True\n\n\ndef validate_trial_config(experiment_config):\n    \"\"\"\n    check whether the trial config is valid\n    \"\"\"\n    if 'trial' not in experiment_config:\n        return True\n    if 'codeDir' not in experiment_config['trial']:\n        return False\n    if not os.path.exists(experiment_config['trial']['codeDir']):\n        return False\n    return True\n\n\ndef validate_experiment(experiment_config):\n    \"\"\"\n    check whether the experiment config is valid\n    \"\"\"\n    if not validate_customized_file(experiment_config, 'tuner'):\n        return False\n    if not validate_customized_file(experiment_config, 'assessor'):\n        return False\n    if not validate_customized_file(experiment_config, 'advisor'):\n        return False\n    if not validate_search_space(experiment_config):\n        return False\n    if not validate_trial_config(experiment_config):\n        return False\n    return True\n\n\ndef validate_trial_job_spec(trial_job_spec):\n    \"\"\"\n    check whether the trial job spec is valid\n    \"\"\"\n    if 'command' not in trial_job_spec:\n        return False\n    if 'codeDir' not in trial_job_spec['command']:\n        return False\n    if not os.path.exists(trial_job_spec['command']['codeDir']):\n        return False\n",
+  "sampling_seed": 1300950577,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

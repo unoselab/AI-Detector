@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def SetPassword(self, changes):\n        \"\"\"\n        changes : typing.Sequence[~EntityPassword]\n        Returns -> typing.Sequence[~ErrorResult]\n        \"\"\"\n        pass\n",
+  "agc_valid": false,
+  "body_sha256": "0b35470fd90e318ed51e754d5837ebd51e1adb2bb11ee5c4d4fb7ce4345d7673",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        pass\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "a9b517240e64dd4106ceacbf8183d87bada7e699a8213a795d6252944f08c0a4",
+  "human_valid": true,
+  "line_no": 133616,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e130967b027f126d0ddd51418b07115621026b5bb937ebbc0a33340847fe106",
+  "raw_output": "\n        pass\n\n    def",
+  "sampling_seed": 4127048923,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

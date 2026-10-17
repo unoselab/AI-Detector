@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_docstring(thing):\n    \"\"\"Parse a Python docstring, or the docstring found on `thing`.\n\n    :return: a ``(title, body)`` tuple. As per docstring convention, title is\n        the docstring's first paragraph and body is the rest.\n    \"\"\"\n    docstring = getattr(thing, \"__doc__\", None)\n    if docstring is None:\n        return \"\", \"\"\n    docstring = docstring.strip()\n    title, body = docstring.partition(\"\\n\\n\")\n    title = title.strip()\n    body = body.strip()\n    return title, body\n",
+  "agc_valid": true,
+  "body_sha256": "a5ae13c72589444a303222ad74bac8c620055bf320562c669814bbc1ca7f8f13",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n    docstring = getattr(thing, \"__doc__\", None)\n    if docstring is None:\n        return \"\", \"\"\n    docstring = docstring.strip()\n    title, body = docstring.partition(\"\\n\\n\")\n    title = title.strip()\n    body = body.strip()\n    return title, body\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "259bc136d2d7670013456f643032a01ba78861abab503ca5100a01f120c411b8",
+  "human_valid": true,
+  "line_no": 139770,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d1797721df3977f408fd5703ed2b0d18476c6c72f6a2113a37cfedf938a6183a",
+  "raw_output": "\n    docstring = getattr(thing, \"__doc__\", None)\n    if docstring is None:\n        return \"\", \"\"\n    docstring = docstring.strip()\n    title, body = docstring.partition(\"\\n\\n\")\n    title = title.strip()\n    body = body.strip()\n    return title, body\n\n\ndef parse_docstring_into_title_and_body(docstring):\n    \"\"\"Parse a Python docstring.\n\n    :return: a ``(title, body)`` tuple. As per docstring convention, title is\n        the docstring's first paragraph and body is the rest.\n    \"\"\"\n    if docstring is None:\n        return \"\", \"\"\n    docstring = docstring.strip()\n    title, body = docstring.partition(\"\\n\\n\")\n    title = title.strip()\n    body = body.strip()\n    return title, body\n\n\ndef parse_docstring_into_title_and_list(docstring):\n    \"\"\"Parse a Python docstring.\n\n    :return: a ``(title, list)`` tuple. As per docstring convention, title is\n        the docstring's first paragraph and list is the rest.\n    \"\"\"\n    if docstring is None:\n        return \"\", []\n    docstring = docstring.strip()\n    title, body = docstring.partition(\"\\n\\n\")\n    title = title.strip()\n    body = body.strip()\n    lines = body.split(\"\\n\")\n    return title, lines\n\n\ndef parse_docstring_into_title_and_list_of_lists(docstring):\n    \"\"\"Parse a Python docstring.\n\n    :return: a ``(title, list)`` tuple. As per docstring convention, title is\n        the docstring's first paragraph and list is the rest.\n    \"\"\"\n    if docstring is None:\n        return \"\", []\n    docstring = docstring.strip()\n    title, body = docstring.partition(\"\\n\\n\")\n    title = title.strip()\n    body = body.strip()\n    lines = body.split(\"\\n\")\n    lines = [line.strip() for line in lines]\n    return title, lines\n\n\ndef",
+  "sampling_seed": 2687102919,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

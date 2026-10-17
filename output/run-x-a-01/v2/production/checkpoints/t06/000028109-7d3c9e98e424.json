@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _establish_connection(self, conn: BrokerConnection) -> None:\n        \"\"\"\n        We don't use a pool here. We only have one consumer connection per process, so\n        we get no value from a pool, and we want to use a heartbeat to keep the consumer\n        collection alive, which does not work with a pool\n        :return: the connection to the transport\n        \"\"\"\n        self._conn = conn\n",
+  "agc_valid": true,
+  "body_sha256": "3e91116a5342d4c3f5de8d3bc10224a911dfd3eb651c098b72059b3344c7aaf3",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._conn = conn\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "ed9b95d42955d650b225f3a9896113a4c126d17ef25f244e11a1ced074388a50",
+  "human_valid": true,
+  "line_no": 28109,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7d3c9e98e424e8bdbc5b13d8a11238d0b18bfe5d919bdbb2aeee767cafe65e6e",
+  "raw_output": "\n        self._conn = conn\n\n    def",
+  "sampling_seed": 1756014760,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

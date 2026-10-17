@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fit_mle(self, data, b=None):\n        \"\"\"%(super)s\n        In addition to data, requires ``b``, the upper limit of the\n        distribution.\n        \"\"\"\n        return super().fit_mle(data, b=b)\n",
+  "agc_valid": true,
+  "body_sha256": "fd1a7e21dab1f1474aff935309ca412a2bb0e5854cda1d70a55bb973a82bb5ad",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return super().fit_mle(data, b=b)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "5b9c3c53df37a58a5a4c7a881e249671a89b101e14d2a3f82ef5c2aa818a7c66",
+  "human_valid": true,
+  "line_no": 243889,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2d461aca37adfd7628a2bd7d8fe1046dcc7294b801c3097029184964b53d742a",
+  "raw_output": "\n        return super().fit_mle(data, b=b)\n\n    def",
+  "sampling_seed": 740840949,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_client(self, client_id=None, client_secret=None, uaa=None):\n        \"\"\"\n        Create a client and add it to the manifest.\n\n        :param client_id: The client id used to authenticate as a client\n            in UAA.\n\n        :param client_secret: The secret password used by a client to\n            authenticate and generate a UAA token.\n\n        :param uaa: The UAA to create client with\n        \"\"\"\n        self._client_id = client_id\n        self._client_secret = client_secret\n        self._uaa = uaa\n        self._client_info = self._uaa.create_client(client_id, client_secret)\n        self._manifest.add_client(client_id, client_secret)\n        return self._client_info\n",
+  "agc_valid": true,
+  "body_sha256": "26a0fdd93f32cdc06e1b8a33fbbe8a6bc6ab00ea64208d10d546af35cc1a4e19",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._client_id = client_id\n        self._client_secret = client_secret\n        self._uaa = uaa\n        self._client_info = self._uaa.create_client(client_id, client_secret)\n        self._manifest.add_client(client_id, client_secret)\n        return self._client_info\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "10241be728906cb94197d78266da2dd6e775ce6a5da5eb15f8d49c4c98ce3033",
+  "human_valid": true,
+  "line_no": 25430,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "48ed481797a7d68ee24d993b001e93b780c2fbe13b4c1d657e9c7bd80cbf0a99",
+  "raw_output": "\n        self._client_id = client_id\n        self._client_secret = client_secret\n        self._uaa = uaa\n        self._client_info = self._uaa.create_client(client_id, client_secret)\n        self._manifest.add_client(client_id, client_secret)\n        return self._client_info\n\n    def",
+  "sampling_seed": 3133799700,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

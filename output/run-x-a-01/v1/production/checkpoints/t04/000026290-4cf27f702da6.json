@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _pushMessages(self):\n        \"\"\" Internal callback used to make sure the msg list keeps moving. \"\"\"\n        if self.msgList.size() >\n",
+  "agc_valid": false,
+  "body_sha256": "42a0fc9e5d52bddaa5bdec6c59c91c3a429e676d7b4fa8f84d53417c3f5acfa0",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.msgList.size() >\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6f2ddeb3e7165e09bfaca2cf3e011cfa4d7f978c7c94ac521965ec746b4dee55",
+  "human_valid": true,
+  "line_no": 26290,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "4cf27f702da694952dc1a32d7ba6ec0edd92b3e1bf8864929b7ad3913e505669",
+  "raw_output": "\n        if self.msgList.size() > ",
+  "sampling_seed": 893121908,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def save(self, mode=0o600):\n        \"\"\"\n        Serialize the config data to the user home directory.\n\n        :param mode: The octal Unix mode (permissions) for the config file.\n        \"\"\"\n        if not self.data:\n            return\n\n        path = self.get_path()\n        if not path:\n            return\n\n        try:\n            with open(path, 'w') as f:\n                f.write(self.data)\n            os.chmod(path, mode)\n        except IOError:\n            pass\n",
+  "agc_valid": true,
+  "body_sha256": "7587dc78e1b6d614c69a0d1b7839bc5f405a73a253f277691be1299acde1ee2a",
+  "body_tokens": 129,
+  "bucket": "type03_130",
+  "clean_output": "\n        if not self.data:\n            return\n\n        path = self.get_path()\n        if not path:\n            return\n\n        try:\n            with open(path, 'w') as f:\n                f.write(self.data)\n            os.chmod(path, mode)\n        except IOError:\n            pass\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "fe125f2535cf8614d17449e6686952c2539cb1bfb3f34fdd8b4cfafa16e14f1a",
+  "human_valid": true,
+  "line_no": 232947,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fba19e2c85ec197e50535d15cdadc22a35ac4764b241b6b860cd5fb29435224d",
+  "raw_output": "\n        if not self.data:\n            return\n\n        path = self.get_path()\n        if not path:\n            return\n\n        try:\n            with open(path, 'w') as f:\n                f.write(self.data)\n            os.chmod(path, mode)\n        except IOError:\n            pass\n\n    def",
+  "sampling_seed": 1538385474,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _interpolate(self, factor, minInfo, maxInfo, round=True, suppressError=True):\n        \"\"\"\n        Subclasses may override this method.\n        \"\"\"\n        if factor <\n",
+  "agc_valid": false,
+  "body_sha256": "57fcfb619e8cf74700fd2d96bafb9de31791b3c3ec9837e72032797eb81b6638",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if factor <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "c81a6d548edecfaf6fab38ebcf1c6ed996c434e44f64f6e0dff6f1f167c77cd9",
+  "human_valid": true,
+  "line_no": 325237,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "910363ed8a27ed1dabdd376df241e722257eda5a8eb8b491a692a6c43582908d",
+  "raw_output": "\n        if factor < ",
+  "sampling_seed": 812912353,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

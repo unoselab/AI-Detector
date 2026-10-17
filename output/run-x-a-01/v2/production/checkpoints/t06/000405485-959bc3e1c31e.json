@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ensure_tty(file=sys.stdout):\n    \"\"\" Ensure a file object is a tty. It must have an `isatty` method that\n        returns True.\n        TypeError is raised if the method doesn't exist, or returns False.\n    \"\"\"\n    if not hasattr(file, \"isatty\"):\n        raise TypeError(\"file object has no isatty method\")\n    if not file.isatty():\n        raise TypeError(\"file object is not a tty\")\n",
+  "agc_valid": true,
+  "body_sha256": "26a2ac096f56d335fccef6c882f39516f7470d5d1ecdb6c798bd0660c6d01d45",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not hasattr(file, \"isatty\"):\n        raise TypeError(\"file object has no isatty method\")\n    if not file.isatty():\n        raise TypeError(\"file object is not a tty\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "da1a03cfcaa9d96022fd1e93d31f59e07d0df4b5acc1dcf4fb784fba3ae342b2",
+  "human_valid": true,
+  "line_no": 405485,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "959bc3e1c31ee6c9332e01d50bd333af23ae2b84f37a0758921d23254caa395b",
+  "raw_output": "\n    if not hasattr(file, \"isatty\"):\n        raise TypeError(\"file object has no isatty method\")\n    if not file.isatty():\n        raise TypeError(\"file object is not a tty\")\n\n\ndef _get_term_size(file=sys.stdout):\n    ensure_tty(file=file)\n    try:\n        import fcntl\n        import termios\n        import struct\n        import os\n        import errno\n\n        # get size of terminal\n        try:\n            h, w, hp, wp = struct.unpack('HHHH', fcntl.ioctl(file.fileno(), termios.TIOCGWINSZ, struct.pack('HHHH', ",
+  "sampling_seed": 2734997948,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

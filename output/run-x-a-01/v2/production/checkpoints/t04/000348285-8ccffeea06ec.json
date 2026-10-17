@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_client_auth(request):\n    \"\"\"\n    Get client credentials using HTTP Basic Authentication method.\n    Or try getting parameters via POST.\n    See: http://tools.ietf.org/html/rfc6750#section-2.1\n\n    Return a tuple `(client_id, client_secret)`.\n    \"\"\"\n    client_id = None\n    client_secret = None\n\n    # Try HTTP Basic Authentication\n    try:\n        client_id, client_secret = request.META.get('HTTP_AUTHORIZATION', '').split()[1].decode('base64').split(':')\n    except (IndexError, UnicodeDecodeError):\n        pass\n\n    # Try POST parameters\n    if not client_id:\n        client_id = request.POST.get('client_id')\n    if not client_secret:\n        client_secret = request.POST.get('client_secret')\n\n    return client_id, client_secret\n",
+  "agc_valid": true,
+  "body_sha256": "c5a8b29b6639fbc94d73fbaabf0c4df84e47df432c4503a2aff2a796275999de",
+  "body_tokens": 96,
+  "bucket": "out_of_range",
+  "clean_output": "\n    client_id = None\n    client_secret = None\n\n    # Try HTTP Basic Authentication\n    try:\n        client_id, client_secret = request.META.get('HTTP_AUTHORIZATION', '').split()[1].decode('base64').split(':')\n    except (IndexError, UnicodeDecodeError):\n        pass\n\n    # Try POST parameters\n    if not client_id:\n        client_id = request.POST.get('client_id')\n    if not client_secret:\n        client_secret = request.POST.get('client_secret')\n\n    return client_id, client_secret\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "a7b770e38bb7e0ed37f41ac708a2aafeddd8f67f02fa3200f3fb12d7695d40d9",
+  "human_valid": true,
+  "line_no": 348285,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ccffeea06ecc09ec3eab1272e289317c9af80d8037562dc444e89f1eb2c1c84",
+  "raw_output": "\n    client_id = None\n    client_secret = None\n\n    # Try HTTP Basic Authentication\n    try:\n        client_id, client_secret = request.META.get('HTTP_AUTHORIZATION', '').split()[1].decode('base64').split(':')\n    except (IndexError, UnicodeDecodeError):\n        pass\n\n    # Try POST parameters\n    if not client_id:\n        client_id = request.POST.get('client_id')\n    if not client_secret:\n        client_secret = request.POST.get('client_secret')\n\n    return client_id, client_secret\n\n\ndef extract_authorization_code(request):\n    \"\"\"\n    Get authorization code from the URL parameters.\n\n    Return an authorization code string.\n    \"\"\"\n    return request.GET.get('code')\n\n\ndef extract_access_token(request):\n    \"\"\"\n    Get access token from the URL parameters.\n\n    Return an access token string.\n    \"\"\"\n    return request.GET.get('access_token')\n\n\ndef extract_refresh_token(request):\n    \"\"\"\n    Get refresh token from the URL parameters.\n\n    Return a refresh token string.\n    \"\"\"\n    return request.GET.get('refresh_token')\n\n\ndef extract_token_request_parameters(request):\n    \"\"\"\n    Get token request parameters from the URL parameters.\n\n    Return a dictionary containing token request parameters.\n    \"\"\"\n    params = {}\n    for key, value in request.GET.items():\n        if key.startswith('token'):\n            params[key] = value\n    return params\n\n\ndef extract_scopes(request):\n    \"\"\"\n    Get scopes from the URL parameters.\n\n    Return a list of scopes.\n    \"\"\"\n    return request.GET.getlist('scope')\n\n\ndef extract_redirect_uri(request):\n    \"\"\"\n    Get redirect URI from the URL parameters.\n\n    Return a redirect URI string.\n    \"\"\"\n    return request.GET.get('redirect_uri')\n\n\ndef extract_response_type(request):\n    \"\"\"\n    Get response type from the URL parameters.\n\n    Return a response type string",
+  "sampling_seed": 1821146022,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

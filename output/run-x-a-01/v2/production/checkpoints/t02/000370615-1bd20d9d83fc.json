@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _from_dict(cls, _dict):\n        \"\"\"Initialize a LogQueryResponseResultDocuments object from a json dictionary.\"\"\"\n            args = {}\n            if 'id' in _dict:\n                args['id'] = _dict.get('id')\n            if 'result' in _dict:\n                args['result'] = _dict.get('result')\n            if 'highlight' in _dict:\n                args['highlight'] = _dict.get('highlight')\n            if 'score' in _dict:\n                args['score'] = _dict.get('score')\n            if 'sort' in _dict:\n                args['sort'] = _dict.get('sort')\n            if 'fields' in _dict:\n                args['fields'] = _dict.get('fields')\n            if 'project_id' in _dict:\n                args['project_id'] = _dict.get('project_id')\n            if 'query_id' in _dict:\n                args['query_id'] = _dict.get('query_id')\n            if 'collection_id' in _dict:\n                args['collection_id'] = _dict.get('collection_id')\n            if 'generated' in _dict:\n                args['generated'] = string_to_datetime(_dict.get('generated'))\n            if 'notices' in _dict:\n                args['notices'] = [notice_from_dict(x) for x in _dict.get('notices')]\n            return cls(**args)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "ac4a3428ee907b2d29f138830fa1254f1724c0971e23f2280b2b00936443d4e9",
+  "body_tokens": 403,
+  "bucket": "out_of_range",
+  "clean_output": "\n            args = {}\n            if 'id' in _dict:\n                args['id'] = _dict.get('id')\n            if 'result' in _dict:\n                args['result'] = _dict.get('result')\n            if 'highlight' in _dict:\n                args['highlight'] = _dict.get('highlight')\n            if 'score' in _dict:\n                args['score'] = _dict.get('score')\n            if 'sort' in _dict:\n                args['sort'] = _dict.get('sort')\n            if 'fields' in _dict:\n                args['fields'] = _dict.get('fields')\n            if 'project_id' in _dict:\n                args['project_id'] = _dict.get('project_id')\n            if 'query_id' in _dict:\n                args['query_id'] = _dict.get('query_id')\n            if 'collection_id' in _dict:\n                args['collection_id'] = _dict.get('collection_id')\n            if 'generated' in _dict:\n                args['generated'] = string_to_datetime(_dict.get('generated'))\n            if 'notices' in _dict:\n                args['notices'] = [notice_from_dict(x) for x in _dict.get('notices')]\n            return cls(**args)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "d4b974ea2f19b78a1080de6701f1f5829309639cd3e8643e74d0ddad8dd139b0",
+  "human_valid": true,
+  "line_no": 370615,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1bd20d9d83fcedaa0045d9c744e477c3c3eadc32e256cf3adc1031fc00cfaadc",
+  "raw_output": "\n        args = {}\n        if 'id' in _dict:\n            args['id'] = _dict.get('id')\n        if 'result' in _dict:\n            args['result'] = _dict.get('result')\n        if 'highlight' in _dict:\n            args['highlight'] = _dict.get('highlight')\n        if 'score' in _dict:\n            args['score'] = _dict.get('score')\n        if 'sort' in _dict:\n            args['sort'] = _dict.get('sort')\n        if 'fields' in _dict:\n            args['fields'] = _dict.get('fields')\n        if 'project_id' in _dict:\n            args['project_id'] = _dict.get('project_id')\n        if 'query_id' in _dict:\n            args['query_id'] = _dict.get('query_id')\n        if 'collection_id' in _dict:\n            args['collection_id'] = _dict.get('collection_id')\n        if 'generated' in _dict:\n            args['generated'] = string_to_datetime(_dict.get('generated'))\n        if 'notices' in _dict:\n            args['notices'] = [notice_from_dict(x) for x in _dict.get('notices')]\n        return cls(**args)\n\n    @classmethod\n    def",
+  "sampling_seed": 3249935917,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

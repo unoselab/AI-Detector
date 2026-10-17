@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def format_arg(value):\n    \"\"\"\n    :param value:\n        Some value in a dataset.\n    :type value:\n        varies\n    :return:\n        unicode representation of that value\n    :rtype:\n        `unicode`\n    \"\"\"\n    if value is None:\n        return 'NULL'\n    if isinstance(value, datetime.datetime):\n        return value.strftime('%Y-%m-%d %H:%M:%S')\n    if isinstance(value, datetime.date):\n        return value.strftime('%Y-%m-%d')\n    if isinstance(value, six.string_types):\n        return \"'%s'\" % value\n    return unicode(value)\n",
+  "agc_valid": true,
+  "body_sha256": "3fab9c2d80f6d65f1926aa4fe00a7e9f2515f56b31471af52005bcd49802c510",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if value is None:\n        return 'NULL'\n    if isinstance(value, datetime.datetime):\n        return value.strftime('%Y-%m-%d %H:%M:%S')\n    if isinstance(value, datetime.date):\n        return value.strftime('%Y-%m-%d')\n    if isinstance(value, six.string_types):\n        return \"'%s'\" % value\n    return unicode(value)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "413951549c33fbab04de8fd7e0e8e9845364914af158cf4a0fd36b11178fdffc",
+  "human_valid": true,
+  "line_no": 11490,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "932d7e7858262d84f109860016c2f428c94bf8fb197381c763b967326a4fe9c4",
+  "raw_output": "\n    if value is None:\n        return 'NULL'\n    if isinstance(value, datetime.datetime):\n        return value.strftime('%Y-%m-%d %H:%M:%S')\n    if isinstance(value, datetime.date):\n        return value.strftime('%Y-%m-%d')\n    if isinstance(value, six.string_types):\n        return \"'%s'\" % value\n    return unicode(value)\n\n\ndef format_args(args):\n    \"\"\"\n    :param args:\n        list of values in a dataset\n    :type args:\n        `list` of `object`\n    :return:\n        unicode representation of that value\n    :rtype:\n        `unicode`\n    \"\"\"\n    return ', '.join([format_arg(arg) for arg in args])\n\n\ndef format_sql(sql, args):\n    \"\"\"\n    :param sql:\n        SQL string\n    :type sql:\n        `unicode`\n    :param args:\n        list of values in a dataset\n    :type args:\n        `list` of `object`\n    :return:\n        unicode representation of that value\n    :rtype:\n        `unicode`\n    \"\"\"\n    return sql.replace('%s', format_args(args))\n\n\ndef format_query_error(e):\n    \"\"\"\n    :param e:\n        exception raised\n    :type e:\n        `Exception`\n    :return:\n        unicode representation of that value\n    :rtype:\n        `unicode`\n    \"\"\"\n    return (\n        '[SQL: {}]\\n'\n        '[ERROR: {}]\\n'\n        '[SQLSTATE: {}]\\n'\n        '[ORIGIN: {}]\\n'\n        '[MESSAGE: {}]\\n'\n        '[ARGS: {}]\\n'\n        '[QUERY: {}]\\n'\n    ).format(\n        e.sql,\n        e.args[0],\n        e.connection_invalidated.sqlstate,\n        e.connection_invalidated.origin,\n        e.connection_invalidated.message,\n        e.connection_invalid",
+  "sampling_seed": 3749066779,
+  "tag": "t06",
+  "temperature": 0.6
+}

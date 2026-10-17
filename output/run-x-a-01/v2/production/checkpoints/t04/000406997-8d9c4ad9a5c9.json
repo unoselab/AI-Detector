@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _add_complex_section(self, item):\n        \"\"\"Add a section that has a filter and set of constraints\n\n        :raise: ValueError if filter or constraints is missing\n        \"\"\"\n        if not item.get('filter'):\n            raise ValueError('Missing filter in complex section')\n        if not item.get('constraints'):\n            raise ValueError('Missing constraints in complex section')\n        self.add_section(item['filter'], item['constraints'])\n",
+  "agc_valid": true,
+  "body_sha256": "17c05761cb090e0cf00e954c9e5532815d702f9ae4598bbd790eb76fd05963ac",
+  "body_tokens": 64,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not item.get('filter'):\n            raise ValueError('Missing filter in complex section')\n        if not item.get('constraints'):\n            raise ValueError('Missing constraints in complex section')\n        self.add_section(item['filter'], item['constraints'])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "e77f9d570205f7e62bc75bd0d79dbe0b799828714e4d1b64b52292752fac7512",
+  "human_valid": true,
+  "line_no": 406997,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8d9c4ad9a5c9de1966698817743bc7bfbe6a596a440356133de9292ed0275cb2",
+  "raw_output": "\n        if not item.get('filter'):\n            raise ValueError('Missing filter in complex section')\n        if not item.get('constraints'):\n            raise ValueError('Missing constraints in complex section')\n        self.add_section(item['filter'], item['constraints'])\n\n    def",
+  "sampling_seed": 1751901833,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

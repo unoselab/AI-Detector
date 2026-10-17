@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def filter_slaves(selfie, slaves):\n        \"\"\"\n        Remove slaves that are in an ODOWN or SDOWN state\n        also remove slaves that do not have 'ok' master-link-status\n        \"\"\"\n        slaves = slaves.splitlines()\n        slaves = [i.split() for i in slaves]\n\n        slaves = [i for i in slaves if i[3] != 'ODOWN' and i[3] != 'SDOWN']\n        slaves = [i for i in slaves if i[2] == 'ok']\n\n        return '\\n'.join([' '.join(i) for i in slaves])\n",
+  "agc_valid": true,
+  "body_sha256": "e1308e958c8f55a42c2506e85b99e826c0ced530d720df1fecfc5997c5041a5b",
+  "body_tokens": 79,
+  "bucket": "out_of_range",
+  "clean_output": "\n        slaves = slaves.splitlines()\n        slaves = [i.split() for i in slaves]\n\n        slaves = [i for i in slaves if i[3] != 'ODOWN' and i[3] != 'SDOWN']\n        slaves = [i for i in slaves if i[2] == 'ok']\n\n        return '\\n'.join([' '.join(i) for i in slaves])\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "478a78e96875dd7c3494c6beda7a3fcf10a361480a0ca11f3a5e1d04f49f71be",
+  "human_valid": true,
+  "line_no": 45733,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "b08baf0ea2c308b4f47b18f76b43d401e9d0c243e9d84652680558d4d27db0c6",
+  "raw_output": "\n        slaves = slaves.splitlines()\n        slaves = [i.split() for i in slaves]\n\n        slaves = [i for i in slaves if i[3] != 'ODOWN' and i[3] != 'SDOWN']\n        slaves = [i for i in slaves if i[2] == 'ok']\n\n        return '\\n'.join([' '.join(i) for i in slaves])\n\n    def",
+  "sampling_seed": 3084018151,
+  "tag": "t06",
+  "temperature": 0.6
+}

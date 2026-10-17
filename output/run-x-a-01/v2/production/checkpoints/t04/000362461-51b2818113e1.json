@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_feature(self, feature):\n        # type: (Any) -> int\n        \"\"\" Add a new feature name, return it's index.\n        \"\"\"\n        if feature not in self.feature_names:\n            self.feature_names.append(feature)\n            self.feature_names_hash.update(feature)\n        return self.feature_names_hash[feature]\n",
+  "agc_valid": true,
+  "body_sha256": "e72cd9d44862f4cbf82504391d1ba08ab7d2d3e9b7454bbe7bbe6e1341537069",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if feature not in self.feature_names:\n            self.feature_names.append(feature)\n            self.feature_names_hash.update(feature)\n        return self.feature_names_hash[feature]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "03a71c4cca6ab8582d3b7f5ca4f374910a6fcbb6a9c600988c40f18169d63d27",
+  "human_valid": true,
+  "line_no": 362461,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "51b2818113e1003b5f9d9aa085f07b42b70d791ecf32142e4010a8d6820652f3",
+  "raw_output": "\n        if feature not in self.feature_names:\n            self.feature_names.append(feature)\n            self.feature_names_hash.update(feature)\n        return self.feature_names_hash[feature]\n\n    def",
+  "sampling_seed": 4172288693,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

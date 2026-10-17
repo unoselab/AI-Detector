@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cut_cross(self, x, y, radius, data):\n        \"\"\"Cut two data subarrays that have a center at (x, y) and with\n        radius (radius) from (data).  Returns the starting pixel (x0, y0)\n        of each cut and the respective arrays (xarr, yarr).\n        \"\"\"\n        xarr = []\n        yarr = []\n        x0 = []\n        y0 = []\n        for i in range(len(data)):\n            if data[i] ==\n",
+  "agc_valid": false,
+  "body_sha256": "8e67ca1177aa3144874a6f9cdf9639eb463f98c9cf09fdc61e9ba64ee4287660",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n        xarr = []\n        yarr = []\n        x0 = []\n        y0 = []\n        for i in range(len(data)):\n            if data[i] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "4e74cad702a919fc6884aca891c74d737ae6c1e63bf0c89016e5159bc6e2f588",
+  "human_valid": true,
+  "line_no": 133021,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a437b3b7f10d3e1da7f90910f64d02af5fa6b03dbab8ddc30b4f762a01cfa14f",
+  "raw_output": "\n        xarr = []\n        yarr = []\n        x0 = []\n        y0 = []\n        for i in range(len(data)):\n            if data[i] == ",
+  "sampling_seed": 124408116,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,143 @@
+{
+  "common_ast_and_100_200_triplets": 2,
+  "common_ast_valid_rate": 0.41,
+  "common_ast_valid_triplets": 82,
+  "common_by_source_stratum": {
+    "type01_110": 6,
+    "type02_120": 11,
+    "type03_130": 8,
+    "type04_140": 8,
+    "type05_150": 9,
+    "type06_160": 7,
+    "type07_170": 8,
+    "type08_180": 6,
+    "type09_190": 9,
+    "type10_200": 10
+  },
+  "complete_triplets": 200,
+  "min_common_ast_valid_rate": 0.3,
+  "min_source_stratum_common_n": 4,
+  "model_metadata": {
+    "t02": {
+      "cuda_visible_devices": "0",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    },
+    "t04": {
+      "cuda_visible_devices": "1",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    },
+    "t06": {
+      "cuda_visible_devices": "2",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    }
+  },
+  "phase": "pilot",
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "primary_machine_learning_metrics_computed": false,
+  "primary_protocol": "All three temperature outputs must be Python-3.12-AST-valid for the SAME prompt. No AGC length restriction. HWC original body selection 100-200 is retained and disclosed.",
+  "protocol": "run-x-a-01-protocol-v4",
+  "python_ast_binary": "/home/user1-system11/miniconda3/envs/agcparse312/bin/python",
+  "python_ast_version": "3.12.13",
+  "recommend_full": true,
+  "secondary_protocol": "Within each temperature, AST-valid generated-body length 100-200, unique continuation per tag. Cross-temperature prompt sets may differ; cannot be interpreted as paired.",
+  "secondary_ready_for_15_per_bucket": {
+    "t02": false,
+    "t04": false,
+    "t06": false
+  },
+  "selection_size": 200,
+  "source_experiment": "run-x-a-01-v2",
+  "source_out": "/home/user1-system11/project-workspace/ai_detector/output/run-x-a-01/v2",
+  "temperature": {
+    "t02": {
+      "ast_valid": 123,
+      "ast_valid_length_100_200": 18,
+      "checkpoints": 200,
+      "invalid_agc": 77,
+      "length_100_200_by_generated_bucket": {
+        "type01_110": 4,
+        "type02_120": 3,
+        "type03_130": 0,
+        "type04_140": 3,
+        "type05_150": 1,
+        "type06_160": 3,
+        "type07_170": 2,
+        "type08_180": 0,
+        "type09_190": 2,
+        "type10_200": 0
+      },
+      "length_100_200_unique_body": 18,
+      "over_200": 8,
+      "under_100": 97
+    },
+    "t04": {
+      "ast_valid": 119,
+      "ast_valid_length_100_200": 16,
+      "checkpoints": 200,
+      "invalid_agc": 81,
+      "length_100_200_by_generated_bucket": {
+        "type01_110": 3,
+        "type02_120": 2,
+        "type03_130": 2,
+        "type04_140": 5,
+        "type05_150": 2,
+        "type06_160": 1,
+        "type07_170": 0,
+        "type08_180": 1,
+        "type09_190": 0,
+        "type10_200": 0
+      },
+      "length_100_200_unique_body": 16,
+      "over_200": 8,
+      "under_100": 95
+    },
+    "t06": {
+      "ast_valid": 117,
+      "ast_valid_length_100_200": 26,
+      "checkpoints": 200,
+      "invalid_agc": 83,
+      "length_100_200_by_generated_bucket": {
+        "type01_110": 7,
+        "type02_120": 5,
+        "type03_130": 2,
+        "type04_140": 0,
+        "type05_150": 2,
+        "type06_160": 3,
+        "type07_170": 2,
+        "type08_180": 2,
+        "type09_190": 0,
+        "type10_200": 3
+      },
+      "length_100_200_unique_body": 26,
+      "over_200": 10,
+      "under_100": 81
+    }
+  }
+}

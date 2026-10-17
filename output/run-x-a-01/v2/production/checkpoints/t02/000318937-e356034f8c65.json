@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run(self, once=True):\n        \"\"\"\n        Run main monitor and all sub monitors\n        :param : once\n        :return:\n        \"\"\"\n        if once:\n            self.run_once()\n        else:\n            self.run_forever()\n",
+  "agc_valid": true,
+  "body_sha256": "0e83003996507736e9806d736946eca3eb624509e18228f1b90c47c67dd76d5f",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if once:\n            self.run_once()\n        else:\n            self.run_forever()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "0a383be770736c2013cebb58cf66fb355962a5deacfb73c02aa2491b5db60c80",
+  "human_valid": true,
+  "line_no": 318937,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e356034f8c6536633cf781f8bec4b05654c27c4f154ca15b15aabe7d44fdad16",
+  "raw_output": "\n        if once:\n            self.run_once()\n        else:\n            self.run_forever()\n\n    def",
+  "sampling_seed": 2409271972,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

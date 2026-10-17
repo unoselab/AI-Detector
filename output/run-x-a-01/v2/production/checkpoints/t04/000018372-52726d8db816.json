@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def linear_scheduler_up_down(init_value, target_value, final_value,\n                             duration_up, t_decrease, duration_down):\n    \"\"\" Increases linearly to target_value, stays at target_value until\n    t_decrease and then decreases linearly\n    \"\"\"\n    # TODO: check that t_decrease < duration_down\n",
+  "agc_valid": false,
+  "body_sha256": "100d63fff61616645fefd89b5fb5d351233feb9f4974712714036366182c2d71",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: check that t_decrease < duration_down\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "c556bbea8da07c4eb5497d2ba8695468aded9b4d4f6a1771c6e3b5f02d718483",
+  "human_valid": true,
+  "line_no": 18372,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52726d8db816f1cb876fbcc97ccbe7427e3fd2de3253ef83fb0c10a6446a9407",
+  "raw_output": "\n    # TODO: check that t_decrease < duration_down\n    def",
+  "sampling_seed": 1916372532,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

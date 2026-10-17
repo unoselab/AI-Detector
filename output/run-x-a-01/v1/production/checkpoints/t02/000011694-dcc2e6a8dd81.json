@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _handle_enum(self, node, scope, ctxt, stream):\n        \"\"\"Handle enum nodes\n\n        :node: TODO\n        :scope: TODO\n        :ctxt: TODO\n        :stream: TODO\n        :returns: TODO\n\n        \"\"\"\n        if node.name in scope:\n            raise NameError(\"Name '%s' already defined\" % node.name)\n        scope[node.name] = node\n        stream.write(\"typedef enum %s {\\n\" % node.name)\n        for member in node.members:\n            stream.write(\"    %s,\\n\" % member.name)\n        stream.write(\"} %s;\\n\" % node.name)\n",
+  "agc_valid": true,
+  "body_sha256": "9676bf4df68c0e65518e1669cdf336471eda3fa150811b68422602134e4a3fde",
+  "body_tokens": 93,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if node.name in scope:\n            raise NameError(\"Name '%s' already defined\" % node.name)\n        scope[node.name] = node\n        stream.write(\"typedef enum %s {\\n\" % node.name)\n        for member in node.members:\n            stream.write(\"    %s,\\n\" % member.name)\n        stream.write(\"} %s;\\n\" % node.name)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "e7cd4cca2c76c74bab1e532f729fb5a0c67f79edc2bb9ba979543a8788b531ae",
+  "human_valid": true,
+  "line_no": 11694,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "dcc2e6a8dd8152bf3e5b15050d736bd272ceddb6fdcc17b9256854fec53f2c73",
+  "raw_output": "\n        if node.name in scope:\n            raise NameError(\"Name '%s' already defined\" % node.name)\n        scope[node.name] = node\n        stream.write(\"typedef enum %s {\\n\" % node.name)\n        for member in node.members:\n            stream.write(\"    %s,\\n\" % member.name)\n        stream.write(\"} %s;\\n\" % node.name)\n\n    def",
+  "sampling_seed": 3579211617,
+  "tag": "t02",
+  "temperature": 0.2
+}

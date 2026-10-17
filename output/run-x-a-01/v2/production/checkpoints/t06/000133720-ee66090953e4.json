@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def ListModels(self, tag):\n        \"\"\"\n        tag : str\n        Returns -> typing.Sequence[~UserModel]\n        \"\"\"\n        raise NotImplementedError()\n",
+  "agc_valid": true,
+  "body_sha256": "c283d774a651340e1b3630f400fe7a4ad6a76688485b99f61a0c02437384eda9",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "7796a591db6965d8ecec3a41e6c3e78aae3e3d06e10f0688817ea774c7c22c8d",
+  "human_valid": true,
+  "line_no": 133720,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ee66090953e4ecc3abfe185bff074c56a3fc832fbaa55b0cd17d74cfdbcc21ab",
+  "raw_output": "\n        raise NotImplementedError()\n\n    def",
+  "sampling_seed": 1174785616,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

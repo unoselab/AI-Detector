@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def assign_site_properties(self, slab, height=0.9):\n        \"\"\"\n        Assigns site properties.\n        \"\"\"\n        # Get the site properties\n        site_properties = self.site_properties\n        # Assign the site properties\n        for site_property in site_properties:\n            slab.assign_site_property(site_property, height)\n",
+  "agc_valid": true,
+  "body_sha256": "138c8f25e60d439d3fd0b5f877379405b7b8e3ccf69aced50c40530a7d731696",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Get the site properties\n        site_properties = self.site_properties\n        # Assign the site properties\n        for site_property in site_properties:\n            slab.assign_site_property(site_property, height)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "a3ab83fa4f22f22a2c55e18fb86f259f0189a9805b639a8fd683a80563641f60",
+  "human_valid": true,
+  "line_no": 372273,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3dfea496076797ff2e20fecfc5060bfaa2fc06bfd398df953eb294c6e4ef5482",
+  "raw_output": "\n        # Get the site properties\n        site_properties = self.site_properties\n        # Assign the site properties\n        for site_property in site_properties:\n            slab.assign_site_property(site_property, height)\n\n    def",
+  "sampling_seed": 877020954,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

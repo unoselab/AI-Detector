@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def data(self):\n        \"\"\"\n        Returns raw data representation of the document or document segment.\n\n        Mappings are rendered as ordered dicts, sequences as lists and scalar values\n        as whatever the validator returns (int, string, etc.).\n\n        If no validators are used, scalar values are always returned as strings.\n        \"\"\"\n        return self.raw\n",
+  "agc_valid": true,
+  "body_sha256": "b9cf8f8d6dbb90f57364d735b5a580b7f55e18cd2a79e31bd638f32a26b73f7d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.raw\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 120,
+  "human_sha256": "4c951890149e6065df184c2df1503592978ec598876a785dafdc9f3ea5159ae1",
+  "human_valid": true,
+  "line_no": 196522,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a94365f8cdbfee5bc650b1eedd1d4dcb8b74433bf35042b609b1a269f9d5970d",
+  "raw_output": "\n        return self.raw\n\n    def",
+  "sampling_seed": 3849035510,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_tuple(param, low=None, bias=None):\n    \"\"\"Convert input argument to min-max tuple\n    Args:\n        param (scalar, tuple or list of 2+ elements): Input value.\n            If value is scalar, return value would be (offset - value, offset + value).\n            If value is tuple, return value would be value + offset (broadcasted).\n        low:  Second element of tuple can be passed as optional argument\n        bias: An offset factor added to each element\n    \"\"\"\n    if isinstance(param, tuple):\n        return tuple([p + bias for p in param])\n    elif isinstance(param, list):\n        return [p + bias for p in param]\n    else:\n        return (-param + bias, param + bias)\n",
+  "agc_valid": true,
+  "body_sha256": "d746861d1377d5c3a086cb4103a1b13797f6d7b70f1dab6bfd7302401c234a6b",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(param, tuple):\n        return tuple([p + bias for p in param])\n    elif isinstance(param, list):\n        return [p + bias for p in param]\n    else:\n        return (-param + bias, param + bias)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "5a302372baa17d410837a64d557bc9f02447a03740df55e4ac3912de1981a72e",
+  "human_valid": true,
+  "line_no": 102221,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "392504c1ba048f7d54cb1ecfbb89f65600980a96fe82f621aa1ec80b9c41d41b",
+  "raw_output": "\n    if isinstance(param, tuple):\n        return tuple([p + bias for p in param])\n    elif isinstance(param, list):\n        return [p + bias for p in param]\n    else:\n        return (-param + bias, param + bias)\n\n\ndef to_list(param, low=None, bias=None):\n    \"\"\"Convert input argument to list of min-max tuples\n    Args:\n        param (scalar, tuple or list of ",
+  "sampling_seed": 3362878576,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

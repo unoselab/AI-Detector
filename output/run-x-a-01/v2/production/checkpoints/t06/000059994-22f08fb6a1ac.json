@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_number_of_rows(dbcon, tablename, uuid=None):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    query = \"SELECT COUNT(*) FROM \" + tablename\n\n    if uuid is not None:\n        query += \" WHERE uuid='\" + uuid + \"'\"\n\n    cursor = dbcon.cursor()\n    cursor.execute(query)\n\n    row = cursor.fetchone()\n    return row[0]\n",
+  "agc_valid": true,
+  "body_sha256": "f078fd9bf084bf4d9f7440cd82582611aac5b8fad057051d7b016eee5b0b586d",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n    query = \"SELECT COUNT(*) FROM \" + tablename\n\n    if uuid is not None:\n        query += \" WHERE uuid='\" + uuid + \"'\"\n\n    cursor = dbcon.cursor()\n    cursor.execute(query)\n\n    row = cursor.fetchone()\n    return row[0]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "d0b9521fa3c979d579973caf89c8135fbf9a80341b1b9655cf385f837f8ddc6b",
+  "human_valid": true,
+  "line_no": 59994,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "22f08fb6a1ac3a37227a3f2389e849e89a0ce9fa3a895648129d56b71fb739ed",
+  "raw_output": "\n\n    query = \"SELECT COUNT(*) FROM \" + tablename\n\n    if uuid is not None:\n        query += \" WHERE uuid='\" + uuid + \"'\"\n\n    cursor = dbcon.cursor()\n    cursor.execute(query)\n\n    row = cursor.fetchone()\n    return row[0]\n\n\ndef get_row_with_uuid(dbcon, tablename, uuid):\n    \"\"\"\n    Return the row of a table with the given uuid\n    :param dbcon: database connection\n    :param tablename: table name\n    :param uuid: uuid of the row to be returned\n    :return: row\n    \"\"\"\n\n    cursor = dbcon.cursor()\n    cursor.execute(\"SELECT * FROM \" + tablename + \" WHERE uuid='\" + uuid + \"'\")\n\n    row = cursor.fetchone()\n    return row\n\n\ndef get_all_rows(dbcon, tablename):\n    \"\"\"\n    Return all rows of a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: rows\n    \"\"\"\n\n    cursor = dbcon.cursor()\n    cursor.execute(\"SELECT * FROM \" + tablename)\n\n    rows = cursor.fetchall()\n    return rows\n\n\ndef get_all_rows_with_condition(dbcon, tablename, condition):\n    \"\"\"\n    Return all rows of a table with the given condition\n    :param dbcon: database connection\n    :param tablename: table name\n    :param condition: condition\n    :return: rows\n    \"\"\"\n\n    cursor = dbcon.cursor()\n    cursor.execute(\"SELECT * FROM \" + tablename + \" WHERE \" + condition)\n\n    rows = cursor.fetchall()\n    return rows\n\n\ndef get_all_rows_with_order_by(dbcon, tablename, order_by):\n    \"\"\"\n    Return all rows of a table ordered by a given field\n    :param dbcon: database connection\n    :param tablename: table name\n    :param order_by: field to order by\n    :return: rows\n    \"\"\"\n\n    cursor = dbcon.",
+  "sampling_seed": 149495748,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

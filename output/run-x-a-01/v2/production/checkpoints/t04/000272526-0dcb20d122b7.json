@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def action_cancel(self):\n        \"\"\"Set a change request as cancelled.\"\"\"\n            if self.state == \"cancel\":\n                return False\n            self.write({\"state\": \"cancel\"})\n            return True\n\n        @api.multi\n",
+  "agc_valid": false,
+  "body_sha256": "262e40cb4a501e0924f587d4fc645fb5190eed0123a17a605454383a6b5b1fee",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n            if self.state == \"cancel\":\n                return False\n            self.write({\"state\": \"cancel\"})\n            return True\n\n        @api.multi\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "2bce7a5009968d09a61916874ab49752fa5874576e2fd4ccd8ab8c8543133a46",
+  "human_valid": true,
+  "line_no": 272526,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0dcb20d122b71f589809c05ba03407620bca774ed6cc1b0420caadbce149b82a",
+  "raw_output": "\n        if self.state == \"cancel\":\n            return False\n        self.write({\"state\": \"cancel\"})\n        return True\n\n    @api.multi\n    def",
+  "sampling_seed": 2202545996,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

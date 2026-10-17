@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stmt_lambda_proc(self, inputstring, **kwargs):\n        \"\"\"Add statement lambda definitions.\"\"\"\n        return self.stmt_lambda_proc_helper(inputstring, **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "9ad614861f2fd345af2b93b6ef5dc3c63bbe3461ac548b95210aa4d1347e9e84",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.stmt_lambda_proc_helper(inputstring, **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "d804e0a0e721ba9aab22ee0302177419daa9712a46a3c0806499cadf6548f572",
+  "human_valid": true,
+  "line_no": 181174,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "db5fefcc4f931a94d8e0ef83cf0ebb0fef3824f93168ec079932b9883c8dfbb9",
+  "raw_output": "\n        return self.stmt_lambda_proc_helper(inputstring, **kwargs)\n\n    def",
+  "sampling_seed": 3289390503,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

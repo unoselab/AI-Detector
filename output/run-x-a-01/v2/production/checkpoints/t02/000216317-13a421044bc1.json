@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def alreadyHasEntry(oldClassString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    for entry in og.graph.subjects(RDF.type, OWL.Class):\n        if oldClassString in str(entry):\n            return True\n    return False\n",
+  "agc_valid": true,
+  "body_sha256": "5ca48ef78f95e89b3ae93e8052c859591af29b7a016a902c290388b617207596",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n    for entry in og.graph.subjects(RDF.type, OWL.Class):\n        if oldClassString in str(entry):\n            return True\n    return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "5ed6c094526a38e1f93f1818d5d9cb324eee5f2fe7b33b84e0d95ab04091eee0",
+  "human_valid": true,
+  "line_no": 216317,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "13a421044bc16612e1598d252429b598db5b99d31b9ec0574c3b9006b9991862",
+  "raw_output": "\n    for entry in og.graph.subjects(RDF.type, OWL.Class):\n        if oldClassString in str(entry):\n            return True\n    return False\n\ndef getNewClassString(oldClassString, og):\n    \"\"\" Return the new class string\"\"\"\n    newClassString = oldClassString.replace(\"http://www.w3.org/2002/07/owl#\", \"http://www.w3.org/2002/07/owl#Class\")\n    if alreadyHasEntry(newClassString, og):\n        newClassString = newClassString + \"1\"\n    return newClassString\n\ndef getNewClass(oldClassString, og):\n    \"\"\" Return the new class\"\"\"\n    newClassString = getNewClassString(oldClassString, og)\n    newClass = URIRef(newClassString)\n    return newClass\n\ndef getNewClassStringForProperty(oldClassString, og):\n    \"\"\" Return the new class string for a property\"\"\"\n    newClassString = oldClassString.replace(\"http://www.w3.org/2002/07/owl#\", \"http://www.w3.org/2002/07/owl#ObjectProperty\")\n    if alreadyHasEntry(newClassString, og):\n        newClassString = newClassString + \"1\"\n    return newClassString\n\ndef getNewClassForProperty(oldClassString, og):\n    \"\"\" Return the new class for a property\"\"\"\n    newClassString = getNewClassStringForProperty(oldClassString, og)\n    newClass = URIRef(newClassString)\n    return newClass\n\ndef getNewClassStringForDatatype(oldClassString, og):\n    \"\"\" Return the new class string for a datatype\"\"\"\n    newClassString = oldClassString.replace(\"http://www.w3.org/2002/07/owl#\", \"http://www.w3.org/2002/07/owl#DatatypeProperty\")\n    if alreadyHasEntry(newClassString, og):\n        newClassString = newClassString + \"1\"\n    return newClassString",
+  "sampling_seed": 3984644642,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

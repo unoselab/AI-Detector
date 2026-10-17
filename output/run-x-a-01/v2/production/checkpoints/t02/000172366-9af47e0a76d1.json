@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_features(cls, feat_response):\n        # type: (Text) -> Dict[Text, Text]\n        \"\"\"Parse a dict of features from FTP feat response.\n        \"\"\"\n            features = {}\n            for feature in feat_response.split():\n                if feature.startswith('-'):\n                    features[feature[1:]] = False\n                else:\n                    features[feature] = True\n            return features\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "113386b54c9396216afdd61287aa2765f3cb3d5f892bc661307ef26fc7de527b",
+  "body_tokens": 128,
+  "bucket": "type03_130",
+  "clean_output": "\n            features = {}\n            for feature in feat_response.split():\n                if feature.startswith('-'):\n                    features[feature[1:]] = False\n                else:\n                    features[feature] = True\n            return features\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "8d3d4876f53b6df103ed0a09e850d9c40e70dc7277e16f229a76df2a19fbc670",
+  "human_valid": true,
+  "line_no": 172366,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9af47e0a76d127292ab64fc895b657f1e0e6fe139faaf87d1fa75de8c0a324c4",
+  "raw_output": "\n        features = {}\n        for feature in feat_response.split():\n            if feature.startswith('-'):\n                features[feature[1:]] = False\n            else:\n                features[feature] = True\n        return features\n\n    @classmethod\n    def",
+  "sampling_seed": 1337683782,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

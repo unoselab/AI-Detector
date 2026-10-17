@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def transform_around(matrix, point):\n    \"\"\"\n    Given a transformation matrix, apply its rotation\n    around a point in space.\n\n    Parameters\n    ----------\n    matrix: (4,4) or (3, 3) float, transformation matrix\n    point:  (3,) or (2,)  float, point in space\n\n    Returns\n    ---------\n    result: (4,4) transformation matrix\n    \"\"\"\n    if matrix.shape[0] ==\n",
+  "agc_valid": false,
+  "body_sha256": "674f2e06ad46704087d819c7efc8f7f98634500c2ceeda7393db7760b7131edc",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if matrix.shape[0] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 108,
+  "human_sha256": "70a20575855b9551683df869a56d113519c38a8feea5d43eccd4d0acbb11829f",
+  "human_valid": true,
+  "line_no": 330422,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2b3de0f27291b9f76ac78d6160480010fc5f198cdac355d6749a4312e3e71da7",
+  "raw_output": "\n    if matrix.shape[0] == ",
+  "sampling_seed": 1846727138,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

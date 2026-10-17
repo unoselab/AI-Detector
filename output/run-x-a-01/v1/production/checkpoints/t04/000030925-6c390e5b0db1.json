@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def user_playlists(self, user_id, page=1, limit=30):\n        \"\"\"\n        NOTE: 用户歌单有可能是仅自己可见\n        \"\"\"\n        params = {\n            'uid': user_id,\n            'limit': limit,\n            'offset': (page -\n",
+  "agc_valid": false,
+  "body_sha256": "94ed049d926887e01b809c2d34b2c212f194baf7edb227891a364adb29225b94",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n        params = {\n            'uid': user_id,\n            'limit': limit,\n            'offset': (page -\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5db08d07300157c27bc807f39f6ae8840cb5cb11505a4efc38c6f7279ad82acd",
+  "human_valid": true,
+  "line_no": 30925,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "6c390e5b0db1bd177cd8873a33341a114d5eee743cb8568691b07a5839f161c6",
+  "raw_output": "\n        params = {\n            'uid': user_id,\n            'limit': limit,\n            'offset': (page - ",
+  "sampling_seed": 2975000840,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_user_preferences_from_request(request):\n    \"\"\"Sets user subscription preferences using data from a request.\n\n    Expects data sent by form built with `sitemessage_prefs_table` template tag.\n\n    :param request:\n    :rtype: bool\n    :return: Flag, whether prefs were found in the request.\n    \"\"\"\n    if request.method != 'POST':\n        return False\n\n    form = request.POST\n    if not form.get('sitemessage_prefs_table'):\n        return False\n\n    prefs = form.getlist('sitemessage_prefs_table')\n    if not prefs:\n        return False\n\n    user = request.user\n    if not user.is_authenticated:\n        return False\n\n    user.sitemessage_prefs = prefs\n    user.save()\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "98a93d256c3b7c7cc68652d224096458f9e64d52421d92485c06b920b98856f3",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if request.method != 'POST':\n        return False\n\n    form = request.POST\n    if not form.get('sitemessage_prefs_table'):\n        return False\n\n    prefs = form.getlist('sitemessage_prefs_table')\n    if not prefs:\n        return False\n\n    user = request.user\n    if not user.is_authenticated:\n        return False\n\n    user.sitemessage_prefs = prefs\n    user.save()\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 110,
+  "human_sha256": "1eda564b3bac0989d100f8c3bb4723902081d694e2233575323d02fded9e510a",
+  "human_valid": true,
+  "line_no": 256537,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "48c0c6855844325a5e9188d9bbba9e73a98cb892b3c57cdb6ef3a0cd65d85828",
+  "raw_output": "\n    if request.method != 'POST':\n        return False\n\n    form = request.POST\n    if not form.get('sitemessage_prefs_table'):\n        return False\n\n    prefs = form.getlist('sitemessage_prefs_table')\n    if not prefs:\n        return False\n\n    user = request.user\n    if not user.is_authenticated:\n        return False\n\n    user.sitemessage_prefs = prefs\n    user.save()\n    return True\n\n\ndef get_user_preferences(user):\n    \"\"\"Returns user's preferences.\n\n    :param user:\n    :rtype: list\n    \"\"\"\n    if not user.is_authenticated:\n        return []\n\n    return user.sitemessage_prefs\n\n\ndef get_user_preferences_as_dict(user):\n    \"\"\"Returns user's preferences as a dict.\n\n    :param user:\n    :rtype: dict\n    \"\"\"\n    if not user.is_authenticated:\n        return {}\n\n    prefs = get_user_preferences(user)\n    return {pref: True for pref in prefs}\n\n\ndef get_user_preferences_as_list(user):\n    \"\"\"Returns user's preferences as a list.\n\n    :param user:\n    :rtype: list\n    \"\"\"\n    if not user.is_authenticated:\n        return []\n\n    prefs = get_user_preferences(user)\n    return [pref for pref in prefs]\n\n\ndef get_user_preferences_as_string(user):\n    \"\"\"Returns user's preferences as a string.\n\n    :param user:\n    :rtype: str\n    \"\"\"\n    if not user.is_authenticated:\n        return ''\n\n    prefs = get_user_preferences(user)\n    return ','.join(prefs)\n\n\ndef get_user_preferences_as_set(user):\n    \"\"\"Returns user's preferences as a set.\n\n    :param user:\n    :rtype: set\n    \"\"\"\n    if",
+  "sampling_seed": 788053092,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

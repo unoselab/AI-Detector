@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_schedule_by_regid_and_term(regid, term,\n                                   non_time_schedule_instructors=True,\n                                   per_section_prefetch_callback=None,\n                                   transcriptable_course=\"\", **kwargs):\n    \"\"\"\n    Returns a uw_sws.models.ClassSchedule object\n    for the regid and term passed in.\n    \"\"\"\n    schedule = get_schedule_by_regid(regid,\n                                     non_time_schedule_instructors,\n                                     per_section_prefetch_callback,\n                                     transcriptable_course, **kwargs)\n    if not schedule:\n        return None\n\n    for section in schedule.sections:\n        if section.term.term_id == term.term_id:\n            return section.class_schedule\n\n    return None\n",
+  "agc_valid": true,
+  "body_sha256": "695121449b0ffdb51b98bfd54c12ec0c0825f31d220dac0cd1f26f87a0f53ea9",
+  "body_tokens": 170,
+  "bucket": "type07_170",
+  "clean_output": "\n    schedule = get_schedule_by_regid(regid,\n                                     non_time_schedule_instructors,\n                                     per_section_prefetch_callback,\n                                     transcriptable_course, **kwargs)\n    if not schedule:\n        return None\n\n    for section in schedule.sections:\n        if section.term.term_id == term.term_id:\n            return section.class_schedule\n\n    return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "cfbe2592e74846c667ec390c619dbb0caae5ee85cd58ecbc13c4eb94d2ec577b",
+  "human_valid": true,
+  "line_no": 84779,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cfc65078352e5e146e8f699985601be8b4e521dc736ca7235a5a41a2accb807a",
+  "raw_output": "\n    schedule = get_schedule_by_regid(regid,\n                                     non_time_schedule_instructors,\n                                     per_section_prefetch_callback,\n                                     transcriptable_course, **kwargs)\n    if not schedule:\n        return None\n\n    for section in schedule.sections:\n        if section.term.term_id == term.term_id:\n            return section.class_schedule\n\n    return None\n\n\ndef get_schedule_by_regid(regid,\n                          non_time_schedule_instructors=True,\n                          per_section_prefetch_callback=None,\n                          transcriptable_course=\"\", **kwargs):\n    \"\"\"\n    Returns a uw_sws.models.ClassSchedule object\n    for the regid passed in.\n    \"\"\"\n    if not regid:\n        return None\n    if not is_uw_student(regid):\n        return None\n\n    schedule = None\n    try:\n        schedule = get_student_schedule(regid,\n                                        non_time_schedule_instructors,\n                                        per_section_prefetch_callback,\n                                        transcriptable_course, **kwargs)\n    except Exception as e:\n        log.error(\"Error getting schedule for %s: %s\" % (regid, e))\n    return schedule\n\n\ndef get_student_schedule(regid,\n                         non_time_schedule_instructors=True,\n                         per_section_prefetch_callback=None,\n                         transcriptable_course=\"\", **kwargs):\n    \"\"\"\n    Returns a uw_sws.models.ClassSchedule object\n    for the regid passed in.\n    \"\"\"\n    if not regid:\n        return None\n    if not is_uw_student(regid):\n        return None\n\n    schedule = None\n    try:\n        schedule = ClassSchedule.objects.get(\n            student__regid=regid,\n            non_time_schedule_instructors=non_time_schedule_instructors,\n            transcriptable_course=trans",
+  "sampling_seed": 3438891611,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

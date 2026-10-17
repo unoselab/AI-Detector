@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def migrate_data(self, data, from_state):\n        \"\"\"Migrate data objects.\n\n        :param data: Queryset containing all data objects that need\n            to be migrated\n        :param from_state: Database model state\n        \"\"\"\n        for item in data:\n            # Update the state of the data object.\n            item.state = to_state\n            # Update the state of the data object's parent object,\n            # if it has one.\n            if item.parent is not None:\n                item.parent.state = to_state\n                item.parent.save()\n            # Save the data object.\n            item.save()\n",
+  "agc_valid": true,
+  "body_sha256": "4a42f9b7217603d1e8e33768853ab4be83dc956d12ac1c4440c70aa35f11323e",
+  "body_tokens": 160,
+  "bucket": "type06_160",
+  "clean_output": "\n        for item in data:\n            # Update the state of the data object.\n            item.state = to_state\n            # Update the state of the data object's parent object,\n            # if it has one.\n            if item.parent is not None:\n                item.parent.state = to_state\n                item.parent.save()\n            # Save the data object.\n            item.save()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "50d12e9dbb5ab5081ce4ebbb51e71aaf8354713335762bd8893ff898f991d4e7",
+  "human_valid": true,
+  "line_no": 226348,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "857c74cd6b1f38643fb84f67af04d64ae616fa5fca7159f4135860c23cd3e5d5",
+  "raw_output": "\n        for item in data:\n            # Update the state of the data object.\n            item.state = to_state\n            # Update the state of the data object's parent object,\n            # if it has one.\n            if item.parent is not None:\n                item.parent.state = to_state\n                item.parent.save()\n            # Save the data object.\n            item.save()\n\n    def",
+  "sampling_seed": 4059972174,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

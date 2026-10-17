@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _build_implicit_queryset(self, model, requirements):\n        \"\"\"Build a queryset based on implicit requirements.\"\"\"\n        # First, try to build a queryset with the implicit requirement.\n        queryset = model.objects.filter(**requirements)\n        # If there are no results, then try to build a queryset with the\n        # requirements that have been explicitly provided.\n        if queryset.count() ==\n",
+  "agc_valid": false,
+  "body_sha256": "cd85ce3a1b50c8bce6c60ac9c2152fe7cc9331c2262f464dab22c9d123834c25",
+  "body_tokens": 74,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # First, try to build a queryset with the implicit requirement.\n        queryset = model.objects.filter(**requirements)\n        # If there are no results, then try to build a queryset with the\n        # requirements that have been explicitly provided.\n        if queryset.count() ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "cbac91cc026b13dc915af235e7fa2b0247754d909e4e4fb0c56a1a03769b201c",
+  "human_valid": true,
+  "line_no": 186326,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ed16039cdb99391805d3245a5be716d81b3c701c295c2f4fd215f9e51cca67fb",
+  "raw_output": "\n        # First, try to build a queryset with the implicit requirement.\n        queryset = model.objects.filter(**requirements)\n        # If there are no results, then try to build a queryset with the\n        # requirements that have been explicitly provided.\n        if queryset.count() == ",
+  "sampling_seed": 2958091635,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

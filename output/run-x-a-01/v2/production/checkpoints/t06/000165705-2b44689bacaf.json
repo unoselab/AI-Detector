@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _ident(*elements):\n        \"\"\"Return True if all sequences are equal.\n        \"\"\"\n        # Make sure all elements are sequences.\n        for element in elements:\n            if not isinstance(element, collections.Sequence):\n                return False\n\n        # Check if they are equal.\n        for i, element in enumerate(elements):\n            if element != elements[0]:\n                return False\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "39341aa793e91b483a06679c7ea0c443494af6257118ee9b4696c6af39c80a4e",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n        # Make sure all elements are sequences.\n        for element in elements:\n            if not isinstance(element, collections.Sequence):\n                return False\n\n        # Check if they are equal.\n        for i, element in enumerate(elements):\n            if element != elements[0]:\n                return False\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "3dd4cd87f34c42d7e3bfdf06cbde6d9acbb05c92abe6324bb117e39ec10a89a2",
+  "human_valid": true,
+  "line_no": 165705,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2b44689bacafd7f84a9a9df060b2012e85a74923af8169d295aceffac80fa3be",
+  "raw_output": "\n        # Make sure all elements are sequences.\n        for element in elements:\n            if not isinstance(element, collections.Sequence):\n                return False\n\n        # Check if they are equal.\n        for i, element in enumerate(elements):\n            if element != elements[0]:\n                return False\n        return True\n\n    def",
+  "sampling_seed": 2814994417,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

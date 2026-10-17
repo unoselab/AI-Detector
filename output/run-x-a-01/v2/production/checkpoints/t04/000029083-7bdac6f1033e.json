@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_dev_start_config(devId, auth, url):\n    \"\"\"\n    function takes the devId of a specific device and issues a RESTFUL call to get the most current startup config\n    file as known by the HP IMC Base Platform ICC module for the target device.\n    :param devId:  int or str value of the target device\n    :return: str which contains the entire content of the target device startup configuration. If the device is not\n    currently supported in the HP IMC Base Platform ICC module, this call returns a string of \"This feature is not\n    supported on this device\"\n    \"\"\"\n    Not Supported\".\n        \"\"\"\n        # get the device details\n        device = get_device_details(devId, auth, url)\n\n        # check if the device is supported in the HP IMC Base Platform ICC module\n        if device['isSupported'] is True:\n            # get the device's current startup config file\n            response = requests.get(url + '/imcrs/icc/device/startupconfig/' + str(devId), auth=auth, verify=False)\n            if response.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "81858fb0b5d0e96d2f54f7d20d045fa548e07cb6bb2cd739be802d795e2834c3",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n    Not Supported\".\n        \"\"\"\n        # get the device details\n        device = get_device_details(devId, auth, url)\n\n        # check if the device is supported in the HP IMC Base Platform ICC module\n        if device['isSupported'] is True:\n            # get the device's current startup config file\n            response = requests.get(url + '/imcrs/icc/device/startupconfig/' + str(devId), auth=auth, verify=False)\n            if response.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 181,
+  "human_sha256": "42604f3296b482a728d1c24a3304dc4ad6bccf7456d0215bcbe613dfa8662185",
+  "human_valid": true,
+  "line_no": 29083,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7bdac6f1033efde40c982df31dec61816f241b418e1ce53bef231a91e78f0eb2",
+  "raw_output": "Not Supported\".\n    \"\"\"\n    # get the device details\n    device = get_device_details(devId, auth, url)\n\n    # check if the device is supported in the HP IMC Base Platform ICC module\n    if device['isSupported'] is True:\n        # get the device's current startup config file\n        response = requests.get(url + '/imcrs/icc/device/startupconfig/' + str(devId), auth=auth, verify=False)\n        if response.status_code == ",
+  "sampling_seed": 66668859,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

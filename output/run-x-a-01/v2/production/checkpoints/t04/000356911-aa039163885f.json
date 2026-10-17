@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _linux_os_release():\n    \"\"\"Try to determine the name of a Linux distribution.\n\n    This function checks for the /etc/os-release file.\n    It takes the name from the 'NAME' field and the version from 'VERSION_ID'.\n    An empty string is returned if the above values cannot be determined.\n    \"\"\"\n    try:\n        with open(\"/etc/os-release\") as f:\n            for line in f:\n                if line.startswith(\"NAME=\"):\n                    name = line.split(\"=\")[1].strip('\"')\n                elif line.startswith(\"VERSION_ID=\"):\n                    version = line.split(\"=\")[1].strip('\"')\n        return name, version\n    except IOError:\n        return \"\", \"\"\n",
+  "agc_valid": true,
+  "body_sha256": "011f9c294f47f58bfb079a76d750ba5ea23a8a577e4ac929da8881d13ed30684",
+  "body_tokens": 134,
+  "bucket": "type04_140",
+  "clean_output": "\n    try:\n        with open(\"/etc/os-release\") as f:\n            for line in f:\n                if line.startswith(\"NAME=\"):\n                    name = line.split(\"=\")[1].strip('\"')\n                elif line.startswith(\"VERSION_ID=\"):\n                    version = line.split(\"=\")[1].strip('\"')\n        return name, version\n    except IOError:\n        return \"\", \"\"\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 195,
+  "human_sha256": "c927512e94f771304eaecb00e137057915736bb5783e3e49a2a4277b4199a462",
+  "human_valid": true,
+  "line_no": 356911,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aa039163885f7a768559cfaa9f9c9ff59727a7bf0f8f79225e7c51a14ce25f27",
+  "raw_output": "\n    try:\n        with open(\"/etc/os-release\") as f:\n            for line in f:\n                if line.startswith(\"NAME=\"):\n                    name = line.split(\"=\")[1].strip('\"')\n                elif line.startswith(\"VERSION_ID=\"):\n                    version = line.split(\"=\")[1].strip('\"')\n        return name, version\n    except IOError:\n        return \"\", \"\"\n\n\ndef _macos_os_release():\n    \"\"\"Try to determine the name of a Mac OS distribution.\n\n    This function checks for the /System/Library/CoreServices/SystemVersion.plist\n    file. It takes the name from the 'ProductName' field and the version from\n    'ProductVersion'. An empty string is returned if the above values cannot be\n    determined.\n    \"\"\"\n    try:\n        from Foundation import CFPreferencesCopyValue\n        plist = CFPreferencesCopyValue(\"SystemVersion\", \"com.apple.system.configuration\", ",
+  "sampling_seed": 1484517961,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

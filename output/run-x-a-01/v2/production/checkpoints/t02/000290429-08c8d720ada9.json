@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def itemComment(self, commentId):\n        \"\"\" returns details of a single comment \"\"\"\n        return self.get('item/comment/'+str(commentId))\n",
+  "agc_valid": true,
+  "body_sha256": "43b5217a61275a818cfd9e844574e0d9d65e7f6021d5b104ed6e3b6c1481df4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get('item/comment/'+str(commentId))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "d5811884d5aed268db51b8a3052f65c29088d885f74bde94a4f908cb3532ed08",
+  "human_valid": true,
+  "line_no": 290429,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "08c8d720ada9f503e6c45bd1e9f3c04f285122da5a8a5f1f3ef7860e39fa4936",
+  "raw_output": "\n        return self.get('item/comment/'+str(commentId))\n\n    def",
+  "sampling_seed": 2508656996,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

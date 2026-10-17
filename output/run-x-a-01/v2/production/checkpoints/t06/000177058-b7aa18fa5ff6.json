@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def OnToggleTool(self, event):\n        \"\"\"Tool event handler\"\"\"\n        self.ToggleTool(event.IsChecked())\n        event.Skip()\n",
+  "agc_valid": true,
+  "body_sha256": "dfbca02b56d121423728183690409e62c89e39c325f385666bd219d2bedc726d",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.ToggleTool(event.IsChecked())\n        event.Skip()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 155,
+  "human_sha256": "ec4a249bddd05b18572a44ed7f6a0d53a55bac1376c814f0716cb65022cd73b4",
+  "human_valid": true,
+  "line_no": 177058,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7aa18fa5ff6770d129da1246bd32834361516673c3b10d923efccbcf6cffeb8",
+  "raw_output": "\n        self.ToggleTool(event.IsChecked())\n        event.Skip()\n\n    def",
+  "sampling_seed": 1382760493,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

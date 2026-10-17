@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_ssh_key(self, name, ssh_pub_key):\n        \"\"\"\n        This method allows you to add a new public SSH key to your account.\n\n        Required parameters\n\n            name:\n                String, the name you want to give this SSH key.\n\n            ssh_pub_key:\n                String, the actual public SSH key.\n        \"\"\"\n        data = {\n            \"name\": name,\n            \"ssh_pub_key\": ssh_pub_key\n        }\n        return self.client.post(self.url, data)\n",
+  "agc_valid": true,
+  "body_sha256": "0b6d2d11431c96c03327d5fa9d816699461f449b234211b07df32290106dc7b8",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n        data = {\n            \"name\": name,\n            \"ssh_pub_key\": ssh_pub_key\n        }\n        return self.client.post(self.url, data)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "e5134e789764ee75c8c0929bbbc654ccb38ace499f78307c9151b8129ad824d2",
+  "human_valid": true,
+  "line_no": 34586,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8a1e3797651eca7b1222b0ef6e9e059832f09eca56557dcd564a8f8aac54a5fc",
+  "raw_output": "\n        data = {\n            \"name\": name,\n            \"ssh_pub_key\": ssh_pub_key\n        }\n        return self.client.post(self.url, data)\n\n    def",
+  "sampling_seed": 855692068,
+  "tag": "t04",
+  "temperature": 0.4
+}

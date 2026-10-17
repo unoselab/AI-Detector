@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_time_range(trange, status, msg):\n    \"\"\"\n    Check time range\n    \"\"\"\n    if trange is None:\n        status.append('No time range specified')\n    elif not isinstance(trange, list):\n        status.append('time_range must be a list')\n    elif len(trange) !=\n",
+  "agc_valid": false,
+  "body_sha256": "e8eaae7c3b98bb32ff7e543d766d56ec6c96a6b4c14e52bac75726c7014383f6",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if trange is None:\n        status.append('No time range specified')\n    elif not isinstance(trange, list):\n        status.append('time_range must be a list')\n    elif len(trange) !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "b09f9fad623751b459338a15c8a3229696dd7480e7fc165f2a805b523eeb756e",
+  "human_valid": true,
+  "line_no": 119354,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "46f3c2cc80987f5b93165b54187818c8ff8ebf8d1d87aebd317a35dfbdc6be66",
+  "raw_output": "\n    if trange is None:\n        status.append('No time range specified')\n    elif not isinstance(trange, list):\n        status.append('time_range must be a list')\n    elif len(trange) != ",
+  "sampling_seed": 1078015014,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

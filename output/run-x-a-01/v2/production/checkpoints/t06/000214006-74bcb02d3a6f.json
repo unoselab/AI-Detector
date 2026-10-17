@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _router_added(self, router_id, router):\n        \"\"\"Operations when a router is added.\n\n        Create a new RouterInfo object for this router and add it to the\n        service helpers router_info dictionary.  Then `router_added()` is\n        called on the device driver.\n\n        :param router_id: id of the router\n        :param router: router dict\n        :return: None\n        \"\"\"\n        ri = RouterInfo(self.agent_api, router_id, router,\n                        self.agent_conf,\n                        self.interface_driver,\n                        self.l3_ext_network_types)\n        self.router_info[router_id] = ri\n        self.agent_api.router_added(ri)\n        self.process_router_add(ri)\n",
+  "agc_valid": true,
+  "body_sha256": "e3031a0c20f983a839d5cc8f6de3141716d45e7837c3e646a3fa0116029602ea",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n        ri = RouterInfo(self.agent_api, router_id, router,\n                        self.agent_conf,\n                        self.interface_driver,\n                        self.l3_ext_network_types)\n        self.router_info[router_id] = ri\n        self.agent_api.router_added(ri)\n        self.process_router_add(ri)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "593b2a86445ea2af7242f9b065729498e06181d935b2f6a0ebca9506058e7bb0",
+  "human_valid": true,
+  "line_no": 214006,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "74bcb02d3a6f8b4bec9705e79e7483063c3f670fb2d0113c4a031ac6a2cfdaaa",
+  "raw_output": "\n        ri = RouterInfo(self.agent_api, router_id, router,\n                        self.agent_conf,\n                        self.interface_driver,\n                        self.l3_ext_network_types)\n        self.router_info[router_id] = ri\n        self.agent_api.router_added(ri)\n        self.process_router_add(ri)\n\n    def",
+  "sampling_seed": 2426457319,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

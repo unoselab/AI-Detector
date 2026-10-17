@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def linear_scheduler_up_down(init_value, target_value, final_value,\n                             duration_up, t_decrease, duration_down):\n    \"\"\" Increases linearly to target_value, stays at target_value until\n    t_decrease and then decreases linearly\n    \"\"\"\n    if init_value == target_value:\n        return target_value\n    if init_value < target_value:\n        duration = duration_up\n    else:\n        duration = duration_down\n    return init_value + (target_value - init_value) * (\n        duration / (duration + t_decrease))\n",
+  "agc_valid": true,
+  "body_sha256": "e6fcc51fdf4e0d1e27e70c99ac44a8f66ebc754a6a0fdafa3dc304a9af8bb1df",
+  "body_tokens": 71,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if init_value == target_value:\n        return target_value\n    if init_value < target_value:\n        duration = duration_up\n    else:\n        duration = duration_down\n    return init_value + (target_value - init_value) * (\n        duration / (duration + t_decrease))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "c556bbea8da07c4eb5497d2ba8695468aded9b4d4f6a1771c6e3b5f02d718483",
+  "human_valid": true,
+  "line_no": 18372,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52726d8db816f1cb876fbcc97ccbe7427e3fd2de3253ef83fb0c10a6446a9407",
+  "raw_output": "\n    if init_value == target_value:\n        return target_value\n    if init_value < target_value:\n        duration = duration_up\n    else:\n        duration = duration_down\n    return init_value + (target_value - init_value) * (\n        duration / (duration + t_decrease))\n\n\ndef linear_scheduler_up_down_alternating(init_value, target_value,\n                                         final_value, duration_up,\n                                         t_decrease, duration_down):\n    \"\"\" Increases linearly to target_value, stays at target_value until\n    t_decrease and then decreases linearly\n    \"\"\"\n    if init_value == target_value:\n        return target_value\n    if init_value < target_value:\n        duration = duration_up\n    else:\n        duration = duration_down\n    return init_value + (target_value - init_value) * (\n        duration / (duration + t_decrease))\n\n\ndef linear_scheduler_up(init_value, target_value, duration):\n    \"\"\" Increases linearly to target_value over duration\n    \"\"\"\n    if init_value == target_value:\n        return target_value\n    return init_value + (target_value - init_value) * (duration / duration)\n\n\ndef linear_scheduler_down(init_value, target_value, duration):\n    \"\"\" Decreases linearly to target_value over duration\n    \"\"\"\n    if init_value == target_value:\n        return target_value\n    return init_value + (target_value - init_value) * (\n        1 - duration / duration)\n\n\ndef linear_scheduler(init_value, target_value, duration):\n    \"\"\" Decreases linearly to target_value over duration\n    \"\"\"\n    if init_value == target_value:\n        return target_value\n    return init_value + (target_value - init_value) * (duration / duration)\n\n\ndef linear_scheduler_up_down_alternating_with_threshold(init_value,\n                                                        target_value,\n                                                        final",
+  "sampling_seed": 3115923934,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

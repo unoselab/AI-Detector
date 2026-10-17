@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def coarse_grain(coarse_grain):\n    \"\"\"Validate a macro coarse-graining.\"\"\"\n    return isinstance(coarse_grain, str)\n",
+  "agc_valid": true,
+  "body_sha256": "c20beb02583f28c31c755fc2daf5e87168b0c8bf6dbb6a97346845fa1fa3c93a",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return isinstance(coarse_grain, str)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "51f247cfa91eab83d2fd4a6d8ceb664bb19e60b7d9db2f425bb0a284b79233ae",
+  "human_valid": true,
+  "line_no": 294614,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6973299e1d2e4049823ef7279f231eb928638f7ca3feb95ec5314c04ee6c4170",
+  "raw_output": "\n    return isinstance(coarse_grain, str)\n\n\ndef coarse_grain_method(coarse_grain_method):\n    \"\"\"Validate a macro coarse-graining method.\"\"\"\n    return isinstance(coarse_grain_method, str)\n\n\ndef coarse_grain_order(coarse_grain_order):\n    \"\"\"Validate a macro coarse-graining order.\"\"\"\n    return isinstance(coarse_grain_order, str)\n\n\ndef coarse_grain_method_order(coarse_grain_method, coarse_grain_order):\n    \"\"\"Validate a macro coarse-graining method and order.\"\"\"\n    return isinstance(coarse_grain_method, str) and isinstance(\n        coarse_grain_order, str)\n\n\ndef coarse_grain_method_order_grain_size(coarse_grain_method, coarse_grain_order, grain_size):\n    \"\"\"Validate a macro coarse-graining method, order, and grain size.\"\"\"\n    return isinstance(coarse_grain_method, str) and isinstance(\n        coarse_grain_order, str) and isinstance(grain_size, float)\n\n\ndef coarse_grain_method_order_grain_size_coarse_grain_method(coarse_grain_method, coarse_grain_order, grain_size, coarse_grain_method_2):\n    \"\"\"Validate a macro coarse-graining method, order, grain size, and method.\"\"\"\n    return isinstance(coarse_grain_method, str) and isinstance(\n        coarse_grain_order, str) and isinstance(grain_size, float) and isinstance(coarse_grain_method_2, str)\n\n\ndef coarse_grain_method_order_grain_size_coarse_grain_method_coarse_grain_method_order(coarse_grain_method, coarse_grain_order, grain_size, coarse_grain_method_2, coarse_",
+  "sampling_seed": 2052156249,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

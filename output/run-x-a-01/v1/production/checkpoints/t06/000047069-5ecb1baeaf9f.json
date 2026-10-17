@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def push(collector, image, **kwargs):\n    \"\"\"Push an image\"\"\"\n    registry = kwargs.get('registry', None)\n    if registry:\n        image = '{}/{}'.format(registry, image)\n\n    collector.push_image(image, **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "994aa90e97007c2d5117a7c87dd49eb8a3632d1c02440c2ee47d155a591f54bf",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    registry = kwargs.get('registry', None)\n    if registry:\n        image = '{}/{}'.format(registry, image)\n\n    collector.push_image(image, **kwargs)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "efb08845499e33e809cd19d464d3bf5bf1aa3f4470b6a51d409d9adbf25c8d59",
+  "human_valid": true,
+  "line_no": 47069,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "5ecb1baeaf9f043d1f7039d8210f550251b3f626d84bfc84b80b65bdd8b971c1",
+  "raw_output": "\n    registry = kwargs.get('registry', None)\n    if registry:\n        image = '{}/{}'.format(registry, image)\n\n    collector.push_image(image, **kwargs)\n\n\ndef tag(collector, image, tag, **kwargs):\n    \"\"\"Tag an image\"\"\"\n    collector.tag_image(image, tag, **kwargs)\n\n\ndef import_image(collector, source, image, **kwargs):\n    \"\"\"Import an image\"\"\"\n    collector.import_image(source, image, **kwargs)\n\n\ndef import_images(collector, source, images, **kwargs):\n    \"\"\"Import multiple images\"\"\"\n    for image in images:\n        collector.import_image(source, image, **kwargs)\n\n\ndef build_image(collector, path, image, **kwargs):\n    \"\"\"Build an image\"\"\"\n    collector.build_image(path, image, **kwargs)\n\n\ndef build_images(collector, path, images, **kwargs):\n    \"\"\"Build multiple images\"\"\"\n    for image in images:\n        collector.build_image(path, image, **kwargs)\n\n\ndef remove_image(collector, image, **kwargs):\n    \"\"\"Remove an image\"\"\"\n    collector.remove_image(image, **kwargs)\n\n\ndef remove_images(collector, images, **kwargs):\n    \"\"\"Remove multiple images\"\"\"\n    for image in images:\n        collector.remove_image(image, **kwargs)\n\n\ndef remove_untagged_images(collector, **kwargs):\n    \"\"\"Remove all untagged images\"\"\"\n    collector.remove_untagged_images(**kwargs)\n\n\ndef remove_dangling_images(collector, **kwargs):\n    \"\"\"Remove all dangling images\"\"\"\n    collector.remove_dangling_images(**kwargs)\n\n\ndef prune_images(collector, **kwargs):\n    \"\"\"Prune all unused images\"\"\"\n    collector.prune_images(**kwargs)\n\n\ndef prune_containers(collector, **kwargs):\n    \"\"\"Prune all stopped containers\"\"\"\n   ",
+  "sampling_seed": 3622923567,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _remove_debug_handlers(self):\n        \"\"\"Remove any handlers with an attribute of debug_only that is True and\n        remove the references to said handlers from any loggers that are\n        referencing them.\n\n        \"\"\"\n        for handler in self.handlers:\n            if getattr(handler, 'debug_only', False):\n                self.removeHandler(handler)\n",
+  "agc_valid": true,
+  "body_sha256": "dfe05bc93acf61ff628f5241465ffb4f0d575bb3b005ebd6337da4eb7284951c",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for handler in self.handlers:\n            if getattr(handler, 'debug_only', False):\n                self.removeHandler(handler)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 155,
+  "human_sha256": "d8188945b5184e5622ff95610f4c47c018a55552da4569f7633aea7991e9aaa0",
+  "human_valid": true,
+  "line_no": 29575,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c5e73d7c8ff5153b46458112a077a72de36a36dc18d778f539d5aae2b6a86d1d",
+  "raw_output": "\n        for handler in self.handlers:\n            if getattr(handler, 'debug_only', False):\n                self.removeHandler(handler)\n\n    def",
+  "sampling_seed": 993092269,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

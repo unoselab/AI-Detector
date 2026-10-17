@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _build_implicit_queryset(self, model, requirements):\n        \"\"\"Build a queryset based on implicit requirements.\"\"\"\n        queryset = model.objects.all()\n        if requirements.get('exclude'):\n            queryset = queryset.exclude(**requirements['exclude'])\n        if requirements.get('filter'):\n            queryset = queryset.filter(**requirements['filter'])\n        if requirements.get('order_by'):\n            queryset = queryset.order_by(*requirements['order_by'])\n        if requirements.get('select_related'):\n            queryset = queryset.select_related(*requirements['select_related'])\n        if requirements.get('prefetch_related'):\n            queryset = queryset.prefetch_related(*requirements['prefetch_related'])\n        return queryset\n",
+  "agc_valid": true,
+  "body_sha256": "f17a724fb939717b27f34490eb00306949147eb6d890ed472f2913af70cc280b",
+  "body_tokens": 135,
+  "bucket": "type04_140",
+  "clean_output": "\n        queryset = model.objects.all()\n        if requirements.get('exclude'):\n            queryset = queryset.exclude(**requirements['exclude'])\n        if requirements.get('filter'):\n            queryset = queryset.filter(**requirements['filter'])\n        if requirements.get('order_by'):\n            queryset = queryset.order_by(*requirements['order_by'])\n        if requirements.get('select_related'):\n            queryset = queryset.select_related(*requirements['select_related'])\n        if requirements.get('prefetch_related'):\n            queryset = queryset.prefetch_related(*requirements['prefetch_related'])\n        return queryset\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "cbac91cc026b13dc915af235e7fa2b0247754d909e4e4fb0c56a1a03769b201c",
+  "human_valid": true,
+  "line_no": 186326,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ed16039cdb99391805d3245a5be716d81b3c701c295c2f4fd215f9e51cca67fb",
+  "raw_output": "\n        queryset = model.objects.all()\n        if requirements.get('exclude'):\n            queryset = queryset.exclude(**requirements['exclude'])\n        if requirements.get('filter'):\n            queryset = queryset.filter(**requirements['filter'])\n        if requirements.get('order_by'):\n            queryset = queryset.order_by(*requirements['order_by'])\n        if requirements.get('select_related'):\n            queryset = queryset.select_related(*requirements['select_related'])\n        if requirements.get('prefetch_related'):\n            queryset = queryset.prefetch_related(*requirements['prefetch_related'])\n        return queryset\n\n    def",
+  "sampling_seed": 1908790220,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def serialize_numeric(self, tag):\n        \"\"\"Return the literal representation of a numeric tag.\"\"\"\n        if tag.value is None:\n            return 'null'\n        if tag.type == 'i4':\n            return str(tag.value)\n        if tag.type == 'u4':\n            return str(tag.value)\n        if tag.type == 'double':\n            return str(tag.value)\n        return ''\n",
+  "agc_valid": true,
+  "body_sha256": "ffc97af79ed753c2f004c8ed316b070d693c947e04c74a09e42a099dd19d15da",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n        if tag.value is None:\n            return 'null'\n        if tag.type == 'i4':\n            return str(tag.value)\n        if tag.type == 'u4':\n            return str(tag.value)\n        if tag.type == 'double':\n            return str(tag.value)\n        return ''\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "951fb917e28bfdb3aa7432e99a59dcce36530965eecd2ae02d43d4f66c5e3650",
+  "human_valid": true,
+  "line_no": 22123,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "cc28d821e0ee30e4cd80880d9178d380a4d7176919bfc31806d8b3c903ea21ed",
+  "raw_output": "\n        if tag.value is None:\n            return 'null'\n        if tag.type == 'i4':\n            return str(tag.value)\n        if tag.type == 'u4':\n            return str(tag.value)\n        if tag.type == 'double':\n            return str(tag.value)\n        return ''\n\n    def",
+  "sampling_seed": 2816230058,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_or_get_from_request(request):\n        \"\"\"Returns `RequestInfo` instance.\n\n        If object was already created during ``request`` it is\n        returned. Otherwise new instance is created with details\n        populated from ``request``. New instance is then cached for reuse\n        on subsequential calls.\n        \"\"\"\n            if hasattr(request, '_request_info'):\n                return request._request_info\n            request._request_info = RequestInfo(request)\n            return request._request_info\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "ca902f9c16dcc9ae0b8542a99b7bee6ebdebb8fcc7d2c2fceadf052f6a81032a",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n            if hasattr(request, '_request_info'):\n                return request._request_info\n            request._request_info = RequestInfo(request)\n            return request._request_info\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "6dd0dcbd15b822f3ef78e1b8a03eb365e30cdb768c99367d2015794ee9026499",
+  "human_valid": true,
+  "line_no": 319089,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "35979e949c8a96704a01db1fe011033726114809cb791d0132d9e38c57aea0a5",
+  "raw_output": "\n        if hasattr(request, '_request_info'):\n            return request._request_info\n        request._request_info = RequestInfo(request)\n        return request._request_info\n\n    @classmethod\n    def",
+  "sampling_seed": 1617070182,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

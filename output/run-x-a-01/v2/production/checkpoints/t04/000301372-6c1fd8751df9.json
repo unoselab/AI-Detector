@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_site(self):\n        \"\"\"Returns the mwclient.Site for accessing and editing the wiki pages.\n        \"\"\"\n        return self.site\n",
+  "agc_valid": true,
+  "body_sha256": "b9a78d82c28d6ed7b6c8e68d07f29d404c199f6265f2a02f91e5a37c1e3910f8",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.site\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "5db8903cd135b3996c95e17fba2467a560ac0f4e57d79a952880901e7c5856ed",
+  "human_valid": true,
+  "line_no": 301372,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6c1fd8751df9aa3eb9800f7f8a9c4cafbf7fb1551a148ed69f02c96c205606bf",
+  "raw_output": "\n        return self.site\n\n    def",
+  "sampling_seed": 1727815997,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

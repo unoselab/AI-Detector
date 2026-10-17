@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def translate_char(source_char, carrier, reverse=False, encoding=False):\n    u\"\"\"translate unicode emoji character to unicode carrier emoji character (or reverse)\n\n    Attributes:\n        source_char   - emoji character. it must be unicode instance or have to set `encoding` attribute to decode\n        carrier       - the target carrier\n        reverse       - if you want to translate CARRIER => UNICODE, turn it True\n        encoding      - encoding name for decode (Default is None)\n\n    \"\"\"\n    Returns:\n         unicode emoji character\n     \"\"\"\n     if encoding:\n         source_char = source_char.decode(encoding)\n     if reverse:\n         source_char = carrier.translate(source_char)\n     else:\n         source_char = source_char.translate(carrier)\n     return source_char\n",
+  "agc_valid": false,
+  "body_sha256": "6d07affd5a075cbbaf858dac93ade1951477d7a78e696e9ef77999e9849ce99c",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Returns:\n         unicode emoji character\n     \"\"\"\n     if encoding:\n         source_char = source_char.decode(encoding)\n     if reverse:\n         source_char = carrier.translate(source_char)\n     else:\n         source_char = source_char.translate(carrier)\n     return source_char\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "168dee7c6f8c125dc2180de5291364998b783112ca6d81991a595044d588ae49",
+  "human_valid": true,
+  "line_no": 40000,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a4be4498ebb9453d5fc29e1195bf3213ec0a7b05b9ae9334b623ae943be812e4",
+  "raw_output": "   Returns:\n        unicode emoji character\n    \"\"\"\n    if encoding:\n        source_char = source_char.decode(encoding)\n    if reverse:\n        source_char = carrier.translate(source_char)\n    else:\n        source_char = source_char.translate(carrier)\n    return source_char\n\n\ndef translate_char_list(source_char_list, carrier, reverse=False, encoding=False):\n    u\"\"\"translate unicode emoji character list to unicode carrier emoji character list (or reverse)\n    \n    Attributes:\n        source_char_list   - emoji character list. it must be unicode instance or have to set `encoding` attribute to decode\n        carrier            - the target carrier\n        reverse            - if you want to translate CARRIER => UNICODE, turn it True\n        encoding           - encoding name for decode (Default is None)\n    \n    Returns:\n        unicode emoji character list\n    \"\"\"\n    if encoding:\n        source_char_list = [char.decode(encoding) for char in source_char_list]\n    if reverse:\n        source_char_list = [carrier.translate(char) for char in source_char_list]\n    else:\n        source_char_list = [char.translate(carrier) for char in source_char_list]\n    return source_char_list\n\n\ndef translate_char_str(source_char_str, carrier, reverse=False, encoding=False):\n    u\"\"\"translate unicode emoji character string to unicode carrier emoji character string (or reverse)\n    \n    Attributes:\n        source_char_str   - emoji character string. it must be unicode instance or have to set `encoding` attribute to decode\n        carrier           - the target carrier\n        reverse           - if you want to translate CARRIER => UNICODE, turn it True\n        encoding          - encoding name for decode (Default is None)\n    \n    Returns:\n        unicode emoji character string\n    \"\"\"\n    if encoding:\n        source_char_str = source_char_str.decode(encoding)\n    if reverse:\n        source_char",
+  "sampling_seed": 387154856,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

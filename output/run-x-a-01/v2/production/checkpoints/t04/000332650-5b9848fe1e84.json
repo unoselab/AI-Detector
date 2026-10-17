@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_baseline_string_from_file(filename):  # pragma: no cover\n    \"\"\"Breaking this function up for mockability.\"\"\"\n    with open(filename) as f:\n        return f.read()\n",
+  "agc_valid": true,
+  "body_sha256": "27ad29cfb74fe0f8142fb9be358be29e02087bc1b53a17d84a1734dcac462617",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(filename) as f:\n        return f.read()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "00c4e408f2d76571f0d88241cf880a672b8cfb0734e44bad45cb579523215664",
+  "human_valid": true,
+  "line_no": 332650,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5b9848fe1e849a4cb57d6e9c9cea277de04623b7b3d5e20a2ed18991016a605c",
+  "raw_output": "\n    with open(filename) as f:\n        return f.read()\n\n\ndef _get_baseline_string_from_file(filename):\n    \"\"\"Get the baseline string from a file.\n\n    Parameters\n    ----------\n    filename : str\n        The name of the file to read.\n\n    Returns\n    -------\n    baseline_string : str\n        The contents of the file.\n\n    \"\"\"\n    return _get_baseline_string_from_file(filename)\n\n\ndef _get_baseline_string_from_module(module): ",
+  "sampling_seed": 1862006426,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

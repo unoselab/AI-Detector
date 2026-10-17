@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def basic_decrypt() -> Response:\n    \"\"\"Basic decrypt handler for decrypt oracle v0.\n\n    **Request**\n\n    * **Method**: POST\n    * **Body**: Raw ciphertext bytes\n    * **Headers**:\n\n      * **Content-Type**: ``application/octet-stream``\n      * **Accept**: ``application/octet-stream``\n\n    **Response**\n\n    * 200 response code with the raw plaintext bytes as the body\n    * 400 response code with whatever error code was encountered as the body\n    \"\"\"\n    message is returned by the decrypt function\n\n        **Example**\n\n        .. code-block:: python\n\n            >>> client.post(\n            ...     '/decrypt',\n            ...     data=b'eJwFwM1LgkAQRW0OV1VjC9LgmGYC2DtWJx9cgTlD62MjYN1WsCm'\n            ... )\n            <Response [200]>\n\n        **See also**\n\n        * :meth:`decrypt`\n        \"\"\"\n        ciphertext = request.get_data()\n        plaintext = decrypt(ciphertext)\n\n        return Response(plaintext, status=200, mimetype=\"application/octet-stream\")\n",
+  "agc_valid": false,
+  "body_sha256": "0376652d48f4293c4d1618d202f12679805c6c20090066f7bbb785e0577d2a2b",
+  "body_tokens": 159,
+  "bucket": "type06_160",
+  "clean_output": "\n    message is returned by the decrypt function\n\n        **Example**\n\n        .. code-block:: python\n\n            >>> client.post(\n            ...     '/decrypt',\n            ...     data=b'eJwFwM1LgkAQRW0OV1VjC9LgmGYC2DtWJx9cgTlD62MjYN1WsCm'\n            ... )\n            <Response [200]>\n\n        **See also**\n\n        * :meth:`decrypt`\n        \"\"\"\n        ciphertext = request.get_data()\n        plaintext = decrypt(ciphertext)\n\n        return Response(plaintext, status=200, mimetype=\"application/octet-stream\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "71dd86b77dfbeddbc67ca3d8315431cce413aaf5052a711394c6422fab9bad80",
+  "human_valid": true,
+  "line_no": 294011,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "596243d06a8d360aab9ddfe168ba688d50a506dd642790b9d7a79e223d3cf8e6",
+  "raw_output": "message is returned by the decrypt function\n\n    **Example**\n\n    .. code-block:: python\n\n        >>> client.post(\n        ...     '/decrypt',\n        ...     data=b'eJwFwM1LgkAQRW0OV1VjC9LgmGYC2DtWJx9cgTlD62MjYN1WsCm'\n        ... )\n        <Response [200]>\n\n    **See also**\n\n    * :meth:`decrypt`\n    \"\"\"\n    ciphertext = request.get_data()\n    plaintext = decrypt(ciphertext)\n\n    return Response(plaintext, status=200, mimetype=\"application/octet-stream\")\n\n\ndef basic_decrypt_v1() -> Response:\n    \"\"\"Basic decrypt handler for decrypt oracle v1.\n\n    **Request**\n\n    * **Method**: POST\n    * **Body**: JSON object with a ``ciphertext`` field\n    * **Headers**:\n\n      * **Content-Type**: ``application/json``\n      * **Accept**: ``application/octet-stream``\n\n    **Response**\n\n    * ",
+  "sampling_seed": 3864957178,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

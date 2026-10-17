@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def feed(self, aBuf, aCharLen):\n        \"\"\"feed a character with known length\"\"\"\n        self._buf += aBuf\n        self._charLen += aCharLen\n        self._handle_chars()\n",
+  "agc_valid": true,
+  "body_sha256": "94ebb7029f2b745a5b02c2181952a2f83e7052e8573277fcb0fba79f5112b150",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._buf += aBuf\n        self._charLen += aCharLen\n        self._handle_chars()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "dfd1fb333bec91f7e888237389f2356197e584e53627391cc764ce7bd904ccd6",
+  "human_valid": true,
+  "line_no": 11433,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "01bfa27707a18ba746be9551b3de14edb13cc0775ed005f71d69add419397a0a",
+  "raw_output": "\n        self._buf += aBuf\n        self._charLen += aCharLen\n        self._handle_chars()\n\n    def",
+  "sampling_seed": 2714089909,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

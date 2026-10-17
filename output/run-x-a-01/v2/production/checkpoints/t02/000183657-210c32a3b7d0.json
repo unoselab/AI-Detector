@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def disconnect(self, sid=None):\n        \"\"\"Disconnect a client.\n\n        :param sid: The session id of the client to close. If this parameter\n                    is not given, then all clients are closed.\n        \"\"\"\n        if sid is None:\n            self.clients.clear()\n        else:\n            self.clients.pop(sid, None)\n",
+  "agc_valid": true,
+  "body_sha256": "10d4a00fbb87d2c7525173e4414585fe62942d4ee871917179274357a3754244",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if sid is None:\n            self.clients.clear()\n        else:\n            self.clients.pop(sid, None)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "af67d2e7fd9bb9eab27bc4b8a44b04ac4c201a891b709b7de845f0a7e36bbad3",
+  "human_valid": true,
+  "line_no": 183657,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "210c32a3b7d01c8032f05f8e404cf71d7de8896d112ae5ac08707ef5a6da693e",
+  "raw_output": "\n        if sid is None:\n            self.clients.clear()\n        else:\n            self.clients.pop(sid, None)\n\n    def",
+  "sampling_seed": 398341361,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

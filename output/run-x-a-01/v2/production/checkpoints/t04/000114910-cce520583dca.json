@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def usergroup_list(**kwargs):\n    \"\"\"\n    Retrieve all enabled user groups.\n\n    .. versionadded:: 2016.3.0\n\n    :param _connection_user: Optional - zabbix user (can also be set in opts or pillar, see module's docstring)\n    :param _connection_password: Optional - zabbix password (can also be set in opts or pillar, see module's docstring)\n    :param _connection_url: Optional - url of zabbix frontend (can also be set in opts, pillar, see module's docstring)\n\n    :return: Array with enabled user groups details, False on failure.\n\n    CLI Example:\n    .. code-block:: bash\n\n        salt '*' zabbix.usergroup_list\n    \"\"\"\n    set in opts, pillar, see module's docstring)\n\n        :return: Dictionary with usergroups\n        \"\"\"\n        return {'usergroups': __salt__['zabbix.usergroup_list'](**kwargs)}\n",
+  "agc_valid": false,
+  "body_sha256": "ce78bd3735911ed239c9a6051eb0668c575e183f81aa1c2bb3940260db8041f3",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n    set in opts, pillar, see module's docstring)\n\n        :return: Dictionary with usergroups\n        \"\"\"\n        return {'usergroups': __salt__['zabbix.usergroup_list'](**kwargs)}\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "e1a1bc5f268307851e037ce4d4fdb970e48eb0adbceb0946fa7e1daa31f17a34",
+  "human_valid": true,
+  "line_no": 114910,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cce520583dca2c76741b7eed1864db5b6ebd30863b0f124f2cc65f54f9770a9a",
+  "raw_output": "set in opts, pillar, see module's docstring)\n\n    :return: Dictionary with usergroups\n    \"\"\"\n    return {'usergroups': __salt__['zabbix.usergroup_list'](**kwargs)}\n\n\ndef usergroup_create(name, **kwargs):\n    \"\"\"\n    Create new user group.\n\n    .. versionadded:: ",
+  "sampling_seed": 4055324339,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def append(self, mode=\"a\", encoding=Constants.default_codec, errors=Constants.codec_error):\n        \"\"\"\n        Appends content to defined file.\n\n        :param mode: File write mode.\n        :type mode: unicode\n        :param encoding: File encoding codec.\n        :type encoding: unicode\n        :param errors: File encoding errors handling.\n        :type errors: unicode\n        :return: Method success.\n        :rtype: bool\n        \"\"\"\n        return self.file.append(mode=mode, encoding=encoding, errors=errors)\n",
+  "agc_valid": true,
+  "body_sha256": "f42f2b19668d08e44167ddb706e0b8172bab21ba243d38d7b19f68de1a10e974",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.file.append(mode=mode, encoding=encoding, errors=errors)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "dc5a3ba67d63baeacef9c8c66ecb8d27e2f74603ab46aa2b105db317420c0852",
+  "human_valid": true,
+  "line_no": 52012,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7f47e452c3965a6f307be0a6e1c4f5db85edc1cd04e9553336e124c6e2ca2d7b",
+  "raw_output": "\n        return self.file.append(mode=mode, encoding=encoding, errors=errors)\n\n    def",
+  "sampling_seed": 3372603865,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

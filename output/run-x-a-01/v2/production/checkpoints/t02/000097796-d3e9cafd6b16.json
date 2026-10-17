@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _at(self, idx):\n        \"\"\"Returns a view of the array sliced at `idx` in the first dim.\n        This is called through ``x[idx]``.\n\n        Parameters\n        ----------\n        idx : int\n            index for slicing the `NDArray` in the first dim.\n\n        Returns\n        -------\n        NDArray\n            `NDArray` sharing the memory with the current one sliced at `idx` in the first dim.\n\n        Examples\n        --------\n        >>> a = mx.nd.array([[1,2], [3, 4]])\n        >>> a[1].asnumpy()\n        array([ 3.,  4.], dtype=float32)\n        >>> b = mx.nd.array([1, 2, 3, 4])\n        >>> b[0].asnumpy()\n        array([ 1.], dtype=float32)\n        \"\"\"\n        x.nd.arange(0,6).reshape((2,3))\n                >>> a.asnumpy()\n                array([[0.,\n",
+  "agc_valid": false,
+  "body_sha256": "4c0dc84dbd7589a4dc490ac9d6e192f05b8375c6870f7cd8b48a406c2bd3258c",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        x.nd.arange(0,6).reshape((2,3))\n                >>> a.asnumpy()\n                array([[0.,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "a9ae959cd157312f556a516de1d9af6fce51bca2a9d16622f9fcf0af31e0b19c",
+  "human_valid": true,
+  "line_no": 97796,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d3e9cafd6b1686af273c4ea960971c9174c9df64691edc8451ff1bb9bf61d804",
+  "raw_output": "x.nd.arange(0,6).reshape((2,3))\n        >>> a.asnumpy()\n        array([[0., ",
+  "sampling_seed": 1037588295,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

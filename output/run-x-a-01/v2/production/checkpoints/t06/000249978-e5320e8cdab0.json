@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def commit_config(self, label=None, comment=None, confirmed=None):\n        \"\"\"\n        Commit the candidate config.\n\n        :param label:     Commit comment, displayed in the commit entry on the device.\n        :param comment:   Commit label, displayed instead of the commit ID on the device. (Max 60 characters)\n        :param confirmed: Commit with auto-rollback if new commit is not made in 30 to 300 sec\n        \"\"\"\n        config = self._conn.get_config(source='candidate')\n        self.commit(config=config, label=label, comment=comment, confirmed=confirmed)\n",
+  "agc_valid": true,
+  "body_sha256": "0c7403661a7a53d938197136b7e1f9babb0cdf2b8cf4d5e2abd99c735db9d73a",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n        config = self._conn.get_config(source='candidate')\n        self.commit(config=config, label=label, comment=comment, confirmed=confirmed)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "11a8c81ca36bfcffc3724fc63664fac963ef1633d9acf8c4f6149b90f8cfb009",
+  "human_valid": true,
+  "line_no": 249978,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e5320e8cdab0453417acc3234e9f907688066f51652ea62383a5e3e2a706903e",
+  "raw_output": "\n        config = self._conn.get_config(source='candidate')\n        self.commit(config=config, label=label, comment=comment, confirmed=confirmed)\n\n    def",
+  "sampling_seed": 287609502,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

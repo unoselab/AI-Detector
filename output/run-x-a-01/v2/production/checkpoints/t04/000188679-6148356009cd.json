@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_headers(lines, offset=0):\n    \"\"\"\n    Parse the headers in a STOMP response\n\n    :param list(str) lines: the lines received in the message response\n    :param int offset: the starting line number\n\n    :rtype: dict(str,str)\n    \"\"\"\n    headers = {}\n    for line in lines[offset:]:\n        if not line:\n            break\n        key, value = line.split(':',\n",
+  "agc_valid": false,
+  "body_sha256": "820a297eb98d5086dc832c94c0b174e6561cb7c2c9545ba4fbf6769e72c4cbad",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    headers = {}\n    for line in lines[offset:]:\n        if not line:\n            break\n        key, value = line.split(':',\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "778624b0f52ad42c2a465f260115e295747ffc406e2e340b2def2a91aec6a378",
+  "human_valid": true,
+  "line_no": 188679,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6148356009cdd19f03aacc1743311554b93ca1d296a5af0d7d3c4259faecddb9",
+  "raw_output": "\n    headers = {}\n    for line in lines[offset:]:\n        if not line:\n            break\n        key, value = line.split(':', ",
+  "sampling_seed": 2476418615,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def uuid1mc_from_datetime(dt):\n    \"\"\"\n    Return a UUID1 with a random multicast MAC id and with a timestamp\n    matching the given datetime object or timestamp value.\n\n    .. warning::\n        This function does not consider the timezone, and is not guaranteed to\n        return a unique UUID. Use under controlled conditions only.\n\n    >>> dt = datetime.now()\n    >>> u1 = uuid1mc()\n    >>> u2 = uuid1mc_from_datetime(dt)\n    >>> # Both timestamps should be very close to each other but not an exact match\n    >>> u1.time > u2.time\n    True\n    >>> u1.time - u2.time < 5000\n    True\n    >>> d2 = datetime.fromtimestamp((u2.time - 0x01b21dd213814000) * 100 / 1e9)\n    >>> d2 == dt\n    True\n    \"\"\"\n    be the same\n        >>> u1.time == u2.time\n        True\n        >>> # Both MAC addresses should be the same\n        >>> u1.fields[1] == u2.fields[1]\n        True\n        \"\"\"\n        return uuid1mc(fields=(dt.year, dt.month, dt.day, dt.hour, dt.minute,\n                               dt.second,\n",
+  "agc_valid": false,
+  "body_sha256": "92386a859bae7a15ea44360f31d18b67c6441afbfdc56c66d796c445e5025af4",
+  "body_tokens": 113,
+  "bucket": "type02_120",
+  "clean_output": "\n    be the same\n        >>> u1.time == u2.time\n        True\n        >>> # Both MAC addresses should be the same\n        >>> u1.fields[1] == u2.fields[1]\n        True\n        \"\"\"\n        return uuid1mc(fields=(dt.year, dt.month, dt.day, dt.hour, dt.minute,\n                               dt.second,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "c677ada98813b0e55709c689fe99f1d42fa5a34b10580817770c3952385309ed",
+  "human_valid": true,
+  "line_no": 398116,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9539f518f5e9f28caefbdef8f9944798eec557e2d167e9832f04dea430b8ecad",
+  "raw_output": "be the same\n    >>> u1.time == u2.time\n    True\n    >>> # Both MAC addresses should be the same\n    >>> u1.fields[1] == u2.fields[1]\n    True\n    \"\"\"\n    return uuid1mc(fields=(dt.year, dt.month, dt.day, dt.hour, dt.minute,\n                           dt.second, ",
+  "sampling_seed": 1544950311,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

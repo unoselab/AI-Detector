@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def on_recv_rsp(self, rsp_pb):\n        \"\"\"receive response callback function\"\"\"\n        if rsp_pb.ret != xrpc.NO_ERROR:\n            return\n        if rsp_pb.cmd_id != self.cmd_id:\n            return\n        if rsp_pb.seq_id != self.seq_id:\n            return\n        if rsp_pb.body.type != xrpc.RESPONSE_BODY:\n            return\n        if rsp_pb.body.response.ret != xrpc.NO_ERROR:\n            return\n        self.rsp_cb(rsp_pb.body.response.data)\n",
+  "agc_valid": true,
+  "body_sha256": "151a814f39d89caf9807dde80976d0e1a54762d24b7720072f8dbfbfddecb6cd",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n        if rsp_pb.ret != xrpc.NO_ERROR:\n            return\n        if rsp_pb.cmd_id != self.cmd_id:\n            return\n        if rsp_pb.seq_id != self.seq_id:\n            return\n        if rsp_pb.body.type != xrpc.RESPONSE_BODY:\n            return\n        if rsp_pb.body.response.ret != xrpc.NO_ERROR:\n            return\n        self.rsp_cb(rsp_pb.body.response.data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "5a195ed90bfff2652b0a1408409d21a8af3fbeb8dac5047a0ec01e68cbb542fd",
+  "human_valid": true,
+  "line_no": 206509,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4d5dd293af6d77897f90b9b5e365f50db552be3098f13b21c613e7af01c47ceb",
+  "raw_output": "\n        if rsp_pb.ret != xrpc.NO_ERROR:\n            return\n        if rsp_pb.cmd_id != self.cmd_id:\n            return\n        if rsp_pb.seq_id != self.seq_id:\n            return\n        if rsp_pb.body.type != xrpc.RESPONSE_BODY:\n            return\n        if rsp_pb.body.response.ret != xrpc.NO_ERROR:\n            return\n        self.rsp_cb(rsp_pb.body.response.data)\n\n    def",
+  "sampling_seed": 1387993422,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def on_failure(self, exc, task_id, args, kwargs, einfo):\n        \"\"\"\n        Increases penalty for the task and resets the counter.\n        \"\"\"\n        if isinstance(exc, self.exceptions):\n            self.task.delay(task_id, *args, **kwargs)\n            self.counter =\n",
+  "agc_valid": false,
+  "body_sha256": "063ee157fb0d0b8c10ca5cb28c0878584ea4182c493126f69f4fafa96c06c938",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(exc, self.exceptions):\n            self.task.delay(task_id, *args, **kwargs)\n            self.counter =\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "346ae8bdf4bbea4f7ec2403708a2f252ff650c79658fefd1dfb6ef4ecc889a89",
+  "human_valid": true,
+  "line_no": 27485,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "91b96e4ee480c6b588ee2ec5c805e6508e8068720b8436eaf2d37c85b8eb2514",
+  "raw_output": "\n        if isinstance(exc, self.exceptions):\n            self.task.delay(task_id, *args, **kwargs)\n            self.counter = ",
+  "sampling_seed": 2094757304,
+  "tag": "t06",
+  "temperature": 0.6
+}

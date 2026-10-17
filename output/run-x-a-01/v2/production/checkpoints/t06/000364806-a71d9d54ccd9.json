@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _make_valid_bounds(self, test_bounds):\n        \"\"\"\n        Private method: process input bounds into a form acceptable by scipy.optimize,\n        and check the validity of said bounds.\n\n        :param test_bounds: minimum and maximum weight of an asset\n        :type test_bounds: tuple\n        :raises ValueError: if ``test_bounds`` is not a tuple of length two.\n        :raises ValueError: if the lower bound is too high\n        :return: a tuple of bounds, e.g ((0, 1), (0, 1), (0, 1) ...)\n        :rtype: tuple of tuples\n        \"\"\"\n        ), (0,\n",
+  "agc_valid": false,
+  "body_sha256": "f526bd7ffd63f31c0752a7f4c214e922615c97bf3f1ecc1bcd254cbe7cb61eff",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        ), (0,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "146be976b4c6c894d7c0fd0d912a8fdfa3b0544be3146fbdba5fd821634caefd",
+  "human_valid": true,
+  "line_no": 364806,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a71d9d54ccd9abec5c42bd447dad4071d93f190b79147074b4f6e7e71b7c7cea",
+  "raw_output": "), (0, ",
+  "sampling_seed": 3211070250,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

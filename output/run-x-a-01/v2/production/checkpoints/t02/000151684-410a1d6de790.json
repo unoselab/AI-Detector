@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _run_main(main, argv):\n  \"\"\"Calls main, optionally with pdb or profiler.\"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "d362e1210f22a512510efca798108c8fc3b7f5d9bbe26f2ae3846c65cc83a1ef",
+  "human_valid": true,
+  "line_no": 151684,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "410a1d6de790d1e8b5728b8586ce9c6599bf768d7bcdc5d917324049fcd76197",
+  "raw_output": "\n ",
+  "sampling_seed": 1293094915,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

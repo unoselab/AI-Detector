@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def edit_scheme(self):\n        \"\"\"Edit current scheme.\"\"\"\n        if self.scheme is None:\n            return\n        self.scheme.edit()\n",
+  "agc_valid": true,
+  "body_sha256": "88f24d02437bef53903d6e84567b7f41613af743f668a39e9cd6ba9025f9b044",
+  "body_tokens": 32,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.scheme is None:\n            return\n        self.scheme.edit()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "cb70f08412a9bcef46cfa1dcf71b7ecf3ad63b6d934733655ac72ef2447b4c9f",
+  "human_valid": true,
+  "line_no": 109852,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "07e086a9adadf7f4ba1cfaaa3aaec6bf53d782aac74c3f4f5ccf45cc9b1c8fa6",
+  "raw_output": "\n        if self.scheme is None:\n            return\n        self.scheme.edit()\n\n    def",
+  "sampling_seed": 685151352,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

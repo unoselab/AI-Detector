@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def param_set(self, param_name, _value=None, **kwargs):\n        \"\"\"\n        Setting parameter. if _value, we inject it directly. if not, we use all extra kwargs\n        :param topic_name: name of the topic\n        :param _value: optional value\n        :param kwargs: each extra kwarg will be put in the value if structure matches\n        :return:\n        \"\"\"\n        if _value is None:\n            _value = {}\n        if isinstance(_value, dict):\n            _value.update(kwargs)\n        else:\n            _value = kwargs\n        self.parameters[param_name] = _value\n",
+  "agc_valid": true,
+  "body_sha256": "99d5ca45379cdde9e8f3305fef508c4c6328a7019a01bb24d708f10394d408b5",
+  "body_tokens": 80,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if _value is None:\n            _value = {}\n        if isinstance(_value, dict):\n            _value.update(kwargs)\n        else:\n            _value = kwargs\n        self.parameters[param_name] = _value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 175,
+  "human_sha256": "c48dc98a62ab8dd2915c95f81bf5fddac806cb28fcb1c31749b65dd376159d91",
+  "human_valid": true,
+  "line_no": 16645,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ca54a03c733da386cbb3eb5418675a2a708170a8ff88684d129f9839686f239e",
+  "raw_output": "\n        if _value is None:\n            _value = {}\n        if isinstance(_value, dict):\n            _value.update(kwargs)\n        else:\n            _value = kwargs\n        self.parameters[param_name] = _value\n\n    def",
+  "sampling_seed": 531280444,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

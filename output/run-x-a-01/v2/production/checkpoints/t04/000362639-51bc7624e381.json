@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def set_did_metadata(wallet_handle: int,\n                           did: str,\n                           metadata: str) -> None:\n    \"\"\"\n    Saves/replaces the meta information for the giving DID in the wallet.\n\n    :param wallet_handle: Wallet handle (created by open_wallet).\n    :param did: the DID to store metadata.\n    :param metadata: the meta information that will be store with the DID.\n    :return: Error code\n    \"\"\"\n    logger = logging.getLogger(__name__)\n    logger.debug(\"set_did_metadata: >>> wallet_handle: %r, did: %r, metadata: %r\",\n                 wallet_handle,\n                 did,\n                 metadata)\n\n    if not hasattr(set_did_metadata, \"cb\"):\n        logger.debug(\"set_did_metadata: Creating callback\")\n        set_did_metadata.cb = create_cb(CFUNCTYPE(None, c_int32, c_int32))\n\n    c_wallet_handle = c_int32(wallet_handle)\n    c_did = c_char_p(did.encode('utf-8'))\n    c_metadata = c_char_p(metadata.encode('utf-8'))\n\n    res = await do_call('indy_set_did_metadata',\n                        c_wallet_handle,\n                        c_did,\n                        c_metadata,\n                        set_did_metadata.cb)\n\n    logger.debug(\"set_did_metadata: <<< res: %r\", res)\n    return res\n",
+  "agc_valid": true,
+  "body_sha256": "0ba8795e0af24e027bb45fb5b2b8f100961147275abb68b5e02d266ff6ff9612",
+  "body_tokens": 232,
+  "bucket": "out_of_range",
+  "clean_output": "\n    logger = logging.getLogger(__name__)\n    logger.debug(\"set_did_metadata: >>> wallet_handle: %r, did: %r, metadata: %r\",\n                 wallet_handle,\n                 did,\n                 metadata)\n\n    if not hasattr(set_did_metadata, \"cb\"):\n        logger.debug(\"set_did_metadata: Creating callback\")\n        set_did_metadata.cb = create_cb(CFUNCTYPE(None, c_int32, c_int32))\n\n    c_wallet_handle = c_int32(wallet_handle)\n    c_did = c_char_p(did.encode('utf-8'))\n    c_metadata = c_char_p(metadata.encode('utf-8'))\n\n    res = await do_call('indy_set_did_metadata',\n                        c_wallet_handle,\n                        c_did,\n                        c_metadata,\n                        set_did_metadata.cb)\n\n    logger.debug(\"set_did_metadata: <<< res: %r\", res)\n    return res\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "25a52632fae530dac67f8112c2e358b46e556f6f14ae30bf9442e42e7009d04e",
+  "human_valid": true,
+  "line_no": 362639,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "51bc7624e3815000ca1182085aa1f2f15f3ff85e609f6393b777fd1c2110bc67",
+  "raw_output": "\n\n    logger = logging.getLogger(__name__)\n    logger.debug(\"set_did_metadata: >>> wallet_handle: %r, did: %r, metadata: %r\",\n                 wallet_handle,\n                 did,\n                 metadata)\n\n    if not hasattr(set_did_metadata, \"cb\"):\n        logger.debug(\"set_did_metadata: Creating callback\")\n        set_did_metadata.cb = create_cb(CFUNCTYPE(None, c_int32, c_int32))\n\n    c_wallet_handle = c_int32(wallet_handle)\n    c_did = c_char_p(did.encode('utf-8'))\n    c_metadata = c_char_p(metadata.encode('utf-8'))\n\n    res = await do_call('indy_set_did_metadata',\n                        c_wallet_handle,\n                        c_did,\n                        c_metadata,\n                        set_did_metadata.cb)\n\n    logger.debug(\"set_did_metadata: <<< res: %r\", res)\n    return res\n\n\nasync def",
+  "sampling_seed": 4124817827,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

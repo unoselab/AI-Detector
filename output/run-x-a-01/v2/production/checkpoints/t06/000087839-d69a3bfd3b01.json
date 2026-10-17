@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _nary_dict_update(dicts, **kwargs):\n    \"\"\"Implementation of n-argument ``dict.update``,\n    with flags controlling the exact strategy.\n    \"\"\"\n    if dicts is None:\n        dicts = ()\n    if not isinstance(dicts, (list, tuple)):\n        dicts = (dicts,)\n    for d in dicts:\n        if isinstance(d, Mapping):\n            for key, value in d.items():\n                if kwargs.get('overwrite', False):\n                    kwargs['overwrite'] = False\n                    dict.__setitem__(kwargs, key, value)\n                else:\n                    dict.__setitem__(kwargs, key, value)\n        else:\n            raise TypeError(\"expected mapping\")\n    return kwargs\n",
+  "agc_valid": true,
+  "body_sha256": "fa40063d0f5a40a24ea6c39ef4f000ee9e23754bc30b767e82d5253d6379630b",
+  "body_tokens": 196,
+  "bucket": "type10_200",
+  "clean_output": "\n    if dicts is None:\n        dicts = ()\n    if not isinstance(dicts, (list, tuple)):\n        dicts = (dicts,)\n    for d in dicts:\n        if isinstance(d, Mapping):\n            for key, value in d.items():\n                if kwargs.get('overwrite', False):\n                    kwargs['overwrite'] = False\n                    dict.__setitem__(kwargs, key, value)\n                else:\n                    dict.__setitem__(kwargs, key, value)\n        else:\n            raise TypeError(\"expected mapping\")\n    return kwargs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "547245d50a4e8d20ed9281912dcc7f0a08dafa917c3a745521d17a7706817395",
+  "human_valid": true,
+  "line_no": 87839,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d69a3bfd3b018d11eec44b5f98f5aa9a1a7a0b62d8b53635d6a59fce1d83562b",
+  "raw_output": "\n    if dicts is None:\n        dicts = ()\n    if not isinstance(dicts, (list, tuple)):\n        dicts = (dicts,)\n    for d in dicts:\n        if isinstance(d, Mapping):\n            for key, value in d.items():\n                if kwargs.get('overwrite', False):\n                    kwargs['overwrite'] = False\n                    dict.__setitem__(kwargs, key, value)\n                else:\n                    dict.__setitem__(kwargs, key, value)\n        else:\n            raise TypeError(\"expected mapping\")\n    return kwargs\n\n\ndef update(*dicts, **kwargs):\n    \"\"\"Update a dictionary with the key/value pairs from other dictionaries.\n\n    This is a convenience function for the common use case of updating a\n    dictionary multiple times.\n\n    ``update(dict1, dict2, dict3)`` is equivalent to\n    ``dict1.update(dict2); dict1.update(dict3)``.\n\n    If ``overwrite`` is False (default), the keys from ``kwargs`` will be\n    merged into the dictionary, with ``dict`` taking priority. If ``overwrite``\n    is True, the keys from ``kwargs`` will overwrite matching keys in\n    ``dict``.\n\n    If ``add`` is False (default), the keys from ``kwargs`` will be merged into\n    the dictionary, with ``dict`` taking priority. If ``add`` is True, the\n    keys from ``kwargs`` will be added to the dictionary, without affecting\n    existing keys.\n\n    If ``keep_going`` is False (default), the first dictionary that has a\n    given key will be used, and the later dictionaries will be ignored. If\n    ``keep_going`` is True, the later dictionaries will overwrite keys from\n    earlier dictionaries.\n\n    This function is similar to :func:`dict.update`, but it allows you to\n    update a dictionary multiple times, with different strategies.\n\n    Examples\n    --------\n    >>> d = dict(a=1, b=2)\n    >>> update(d, dict(a=3, c=4), dict(b=5, d=6), overwrite=True)\n    >>> d",
+  "sampling_seed": 677876646,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

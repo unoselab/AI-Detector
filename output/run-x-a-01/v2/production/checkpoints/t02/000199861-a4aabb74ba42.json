@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _GetAPFSVolumeIdentifiers(self, scan_node):\n    \"\"\"Determines the APFS volume identifiers.\n\n    Args:\n      scan_node (SourceScanNode): scan node.\n\n    Returns:\n      list[str]: APFS volume identifiers.\n\n    Raises:\n      ScannerError: if the format of or within the source is not supported\n          or the the scan node is invalid.\n      UserAbort: if the user requested to abort.\n    \"\"\"\n    if not scan_node:\n      raise errors.ScannerError(\n          'Invalid scan node, cannot determine APFS volume identifiers.')\n\n    if not scan_node.source_type == definitions.SOURCE_TYPE_APFS_CONTAINER:\n      raise errors.ScannerError(\n          'Unsupported source type: {0:s}'.format(scan_node.source_type))\n\n    if not scan_node.source_path:\n      raise errors.ScannerError(\n          'Unsupported source path: {0:s}'.format(scan_node.source_path))\n\n    volume_identifiers = []\n    for volume_identifier in self._GetAPFSVolumeIdentifiersFromSourcePath(\n        scan_node.source_path):\n      volume_identifiers.append(volume_identifier)\n\n    return volume_identifiers\n",
+  "agc_valid": true,
+  "body_sha256": "193dca2ce7bd4b5a923751e76290fe322b82aa91ca696f75a51e174240c527b3",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n    if not scan_node:\n      raise errors.ScannerError(\n          'Invalid scan node, cannot determine APFS volume identifiers.')\n\n    if not scan_node.source_type == definitions.SOURCE_TYPE_APFS_CONTAINER:\n      raise errors.ScannerError(\n          'Unsupported source type: {0:s}'.format(scan_node.source_type))\n\n    if not scan_node.source_path:\n      raise errors.ScannerError(\n          'Unsupported source path: {0:s}'.format(scan_node.source_path))\n\n    volume_identifiers = []\n    for volume_identifier in self._GetAPFSVolumeIdentifiersFromSourcePath(\n        scan_node.source_path):\n      volume_identifiers.append(volume_identifier)\n\n    return volume_identifiers\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "a79828563baae0bbe32231842e05ffe369d25372907fd7c37d0d4f0577275eb0",
+  "human_valid": true,
+  "line_no": 199861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a4aabb74ba429f877eb6d1707fe3c677633a90d1e309d8f5faac4051a94a0e50",
+  "raw_output": "\n    if not scan_node:\n      raise errors.ScannerError(\n          'Invalid scan node, cannot determine APFS volume identifiers.')\n\n    if not scan_node.source_type == definitions.SOURCE_TYPE_APFS_CONTAINER:\n      raise errors.ScannerError(\n          'Unsupported source type: {0:s}'.format(scan_node.source_type))\n\n    if not scan_node.source_path:\n      raise errors.ScannerError(\n          'Unsupported source path: {0:s}'.format(scan_node.source_path))\n\n    volume_identifiers = []\n    for volume_identifier in self._GetAPFSVolumeIdentifiersFromSourcePath(\n        scan_node.source_path):\n      volume_identifiers.append(volume_identifier)\n\n    return volume_identifiers\n\n ",
+  "sampling_seed": 989805610,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

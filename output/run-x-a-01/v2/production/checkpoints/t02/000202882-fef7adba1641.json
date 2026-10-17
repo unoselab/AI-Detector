@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def generate_tokens(self):\n        \"\"\"Tokenize the file, run physical line checks and yield tokens.\"\"\"\n        self.tokens = []\n        self.line_number =\n",
+  "agc_valid": false,
+  "body_sha256": "1e91f33e224c2b6417370ba83f335d181a920ca6e959cccec98161f8eef3e40a",
+  "body_tokens": 20,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.tokens = []\n        self.line_number =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 175,
+  "human_sha256": "658459174fed20e381956f19087ffb971f512573f91fa40f4734eb050c6ff814",
+  "human_valid": true,
+  "line_no": 202882,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fef7adba1641cf9435f180656b90d2aa77411f279f16f5b37f56e8b6c39d7d55",
+  "raw_output": "\n        self.tokens = []\n        self.line_number = ",
+  "sampling_seed": 1255092715,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def terminate_process(self, idf):\n        \"\"\" Terminate a process by id \"\"\"\n        if idf in self.processes:\n            self.processes[idf].terminate()\n            self.processes[idf].join()\n            del self.processes[idf]\n            return True\n        else:\n            return False\n",
+  "agc_valid": true,
+  "body_sha256": "7e1ec6ac4b71a02235024fb3b5b3ceca67a44f6e57f3c5fc7f20731abf1bb8d9",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if idf in self.processes:\n            self.processes[idf].terminate()\n            self.processes[idf].join()\n            del self.processes[idf]\n            return True\n        else:\n            return False\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c30cf3a5c7e38bfc8ea0e0a83a1bb2437d4214fafc6bb42b886c51440e6dbd0e",
+  "human_valid": true,
+  "line_no": 40188,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e6d49108ca2f244ad1e23b03c3a38959982812b505e49b1cf0fea1bd264552d4",
+  "raw_output": "\n        if idf in self.processes:\n            self.processes[idf].terminate()\n            self.processes[idf].join()\n            del self.processes[idf]\n            return True\n        else:\n            return False\n\n    def",
+  "sampling_seed": 1463204245,
+  "tag": "t02",
+  "temperature": 0.2
+}

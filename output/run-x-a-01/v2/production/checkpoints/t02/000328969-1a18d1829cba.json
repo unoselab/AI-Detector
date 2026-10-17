@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_params(path, *args, **dicts):\n    \"\"\"Write parameters to file, so that it's readable by read_params.\n\n    Uses INI file format.\n    \"\"\"\n    with open(path, 'w') as f:\n        for arg in args:\n            f.write(str(arg) + '\\n')\n        for key, value in dicts.items():\n            f.write(key + ' = ' + str(value) + '\\n')\n",
+  "agc_valid": true,
+  "body_sha256": "60692df732e8f5eaa2d4e6ef02080dfdd807b193df70ca2b574a92d2259f8e1e",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(path, 'w') as f:\n        for arg in args:\n            f.write(str(arg) + '\\n')\n        for key, value in dicts.items():\n            f.write(key + ' = ' + str(value) + '\\n')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "8d27e0382a901eafad135c0fb578097e6f82662b93e9c4ad25f2a2d90f7e0dec",
+  "human_valid": true,
+  "line_no": 328969,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1a18d1829cbaf57cdcd89da34548e547dff1436ebd8135fe8820a24a6fc28de1",
+  "raw_output": "\n    with open(path, 'w') as f:\n        for arg in args:\n            f.write(str(arg) + '\\n')\n        for key, value in dicts.items():\n            f.write(key + ' = ' + str(value) + '\\n')\n\n\ndef read_params(path):\n    \"\"\"Read parameters from file, so that it's readable by write_params.\n\n    Uses INI file format.\n    \"\"\"\n    with open(path, 'r') as f:\n        lines = f.readlines()\n    args = []\n    dicts = {}\n    for line in lines:\n        line = line.strip()\n        if line == '':\n            continue\n        if line[0] == '#':\n            continue\n        if line[0] == '[' and line[-1] == ']':\n            continue\n        if line.find('=') == -1:\n            args.append(line)\n        else:\n            key, value = line.split('=')\n            dicts[key] = value\n    return args, dicts\n\n\ndef write_params_to_file(path, *args, **dicts):\n    \"\"\"Write parameters to file, so that it's readable by read_params.\n\n    Uses INI file format.\n    \"\"\"\n    with open(path, 'w') as f:\n        for arg in args:\n            f.write(str(arg) + '\\n')\n        for key, value in dicts.items():\n            f.write(key + ' = ' + str(value) + '\\n')\n\n\ndef read_params_from_file(path):\n    \"\"\"Read parameters from file, so that it's readable by write_params.\n\n    Uses INI file format.\n    \"\"\"\n    with open(path, 'r') as f:\n        lines = f.readlines()\n    args = []\n    dicts = {}\n    for line in lines:\n        line = line.strip()\n        if line == '':\n            continue\n        if line[0] == '#':\n            continue\n        if line[0] == '[' and line[-1] == ']':\n            continue",
+  "sampling_seed": 3912019272,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

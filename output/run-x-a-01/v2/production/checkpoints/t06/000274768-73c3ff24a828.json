@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_epoch(t_str):\n    \"\"\"\n    Covert a timestamp string to an epoch number.\n    :param str t_str: a timestamp string.\n    :return int: epoch number of the timestamp.\n    \"\"\"\n    t_str = t_str.split('.')[0]\n    return time.mktime(time.strptime(t_str, '%Y-%m-%dT%H:%M:%S'))\n",
+  "agc_valid": true,
+  "body_sha256": "3070e2d854e58e9e87caa70959900f28185808f8038c286a1344a8258edae45f",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n    t_str = t_str.split('.')[0]\n    return time.mktime(time.strptime(t_str, '%Y-%m-%dT%H:%M:%S'))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "55212f0b2a34a778d60e44ff6fdeb8bc32986b8a0dc376fa176ecce857766565",
+  "human_valid": true,
+  "line_no": 274768,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "73c3ff24a8288f9beb008636470ed7535f1603f83fef2f33375f8162f8696233",
+  "raw_output": "\n    t_str = t_str.split('.')[0]\n    return time.mktime(time.strptime(t_str, '%Y-%m-%dT%H:%M:%S'))\n\n\ndef to_datetime(t_str):\n    \"\"\"\n    Covert a timestamp string to a datetime object.\n    :param str t_str: a timestamp string.\n    :return datetime: a datetime object of the timestamp.\n    \"\"\"\n    t_str = t_str.split('.')[0]\n    return datetime.datetime.strptime(t_str, '%Y-%m-%dT%H:%M:%S')\n\n\ndef to_timestamp(dt):\n    \"\"\"\n    Convert a datetime object to a timestamp string.\n    :param datetime dt: a datetime object.\n    :return str: a timestamp string.\n    \"\"\"\n    return dt.strftime('%Y-%m-%dT%H:%M:%S.%f')\n\n\ndef to_datetime_string(dt):\n    \"\"\"\n    Convert a datetime object to a string in the format of \"yyyy-mm-dd HH:MM:SS\".\n    :param datetime dt: a datetime object.\n    :return str: a string in the format of \"yyyy-mm-dd HH:MM:SS\".\n    \"\"\"\n    return dt.strftime('%Y-%m-%d %H:%M:%S')\n\n\ndef to_epoch_millisecond(dt):\n    \"\"\"\n    Convert a datetime object to a millisecond timestamp string.\n    :param datetime dt: a datetime object.\n    :return str: a millisecond timestamp string.\n    \"\"\"\n    return dt.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + '000'\n\n\ndef to_epoch_microsecond(dt):\n    \"\"\"\n    Convert a datetime object to a microsecond timestamp string.\n    :param datetime dt: a datetime object.\n    :return str: a microsecond timestamp string.\n    \"\"\"\n    return dt.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-6] + '000000'",
+  "sampling_seed": 2479247809,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

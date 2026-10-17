@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_blocks_overview(block_representation_list, coin_symbol='btc', txn_limit=None, api_key=None):\n    \"\"\"\n    Batch request version of get_blocks_overview\n    \"\"\"\n    if not block_representation_list:\n        return []\n\n    if len(block_representation_list) >\n",
+  "agc_valid": false,
+  "body_sha256": "c37f03496c77a2218ffcaebf9fa5071aa0514dcd74eb70941c8150893afe1423",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not block_representation_list:\n        return []\n\n    if len(block_representation_list) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 135,
+  "human_sha256": "58ea7e042481d9784075dc9d901ea881b468cc9d826e859f213c4189cf3da606",
+  "human_valid": true,
+  "line_no": 201105,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b888b76de6da8d331591b025986e8bd2000608be826d218a65e18d044c0e0578",
+  "raw_output": "\n    if not block_representation_list:\n        return []\n\n    if len(block_representation_list) > ",
+  "sampling_seed": 945690115,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

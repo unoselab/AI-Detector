@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _mul32(ins):\n    \"\"\" Multiplies two last 32bit values on top of the stack and\n    and returns the value on top of the stack\n\n    Optimizations done:\n\n        * If any operand is 1, do nothing\n        * If any operand is 0, push 0\n    \"\"\"\n    if ins.op1 ==\n",
+  "agc_valid": false,
+  "body_sha256": "cd73abbf7435871aac845860dda5781944a7a68a53a81119b67ae98c7f6ba998",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if ins.op1 ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 191,
+  "human_sha256": "804266a7fd660b1a7fcee80f5fe2be443e3264c883eb347bb9402a0271ea1a77",
+  "human_valid": true,
+  "line_no": 387925,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e0b3bb6110b1a4b68bceb528b2642431a44b9b890db6ebcdb9fb56184aade890",
+  "raw_output": "\n    if ins.op1 == ",
+  "sampling_seed": 959134335,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

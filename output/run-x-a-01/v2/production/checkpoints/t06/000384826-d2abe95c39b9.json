@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def type_str(self, short=False):\n        \"\"\"\n        Returns the type of the attribute as string.\n\n        :return: the type\n        :rtype: str\n        \"\"\"\n        if short:\n            return str(type(self.value))\n        else:\n            return str(type(self.value)).replace(\"<class '\", \"\").replace(\"'>\", \"\")\n",
+  "agc_valid": true,
+  "body_sha256": "fdedd32c20762454f986c831fe4a5e6645a5d94a8d1d9b218ed46f6486364548",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if short:\n            return str(type(self.value))\n        else:\n            return str(type(self.value)).replace(\"<class '\", \"\").replace(\"'>\", \"\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "2eca86bc3a351a75365e36a6fbca3d06dc9ba147fddf6aef2e2e580bf0f36aa1",
+  "human_valid": true,
+  "line_no": 384826,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d2abe95c39b965cf8cf53c01c327e736388348856e647782f8852b8548cf779e",
+  "raw_output": "\n        if short:\n            return str(type(self.value))\n        else:\n            return str(type(self.value)).replace(\"<class '\", \"\").replace(\"'>\", \"\")\n\n    def",
+  "sampling_seed": 322903795,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

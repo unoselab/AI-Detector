@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_values(self, profile, bitarray, status):\n        \"\"\" Get keys and values from bitarray \"\"\"\n        keys = []\n        values = []\n        for i in range(len(bitarray)):\n            if bitarray[i] ==\n",
+  "agc_valid": false,
+  "body_sha256": "be616992de404af77084c2c2eadc5fae469409acc26785222f84884b7d930439",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        keys = []\n        values = []\n        for i in range(len(bitarray)):\n            if bitarray[i] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "4edac9b75fbac3917431790f577d73f1d1174920a69fa8951c31155f9c991eba",
+  "human_valid": true,
+  "line_no": 199209,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2cbf9972227d92bd575323a5022e9ef4a0f9573ca12f513cecf2bb90243fe179",
+  "raw_output": "\n        keys = []\n        values = []\n        for i in range(len(bitarray)):\n            if bitarray[i] == ",
+  "sampling_seed": 970458048,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

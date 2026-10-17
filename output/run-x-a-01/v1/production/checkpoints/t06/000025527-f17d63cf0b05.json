@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_string(self, prompt, default_str=None) -> str:\n        \"\"\"Return a string value that the user enters. Raises exception for cancel.\"\"\"\n        return self._get_string(prompt, default_str)\n",
+  "agc_valid": true,
+  "body_sha256": "c8d322b20c3d3cd3307f1a012926615ebc0a339ab3389718dbb79bb50a0caf1c",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._get_string(prompt, default_str)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "4933cd436fd355036af789d94432114966bf58c71f4effbce0df7ed0e9bbb0af",
+  "human_valid": true,
+  "line_no": 25527,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f17d63cf0b051430dffcdc110f8bd3026e2c6094ad1562817a3fa092eccbbc75",
+  "raw_output": "\n        return self._get_string(prompt, default_str)\n\n    def",
+  "sampling_seed": 3195546007,
+  "tag": "t06",
+  "temperature": 0.6
+}

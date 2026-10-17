@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def r2z(r):\n    \"\"\"\n    Function that calculates the Fisher z-transformation\n\n    Parameters\n    ----------\n    r : int or ndarray\n        Correlation value\n\n    Returns\n    ----------\n    result : int or ndarray\n        Fishers z transformed correlation value\n\n\n    \"\"\"\n    if isinstance(r, int):\n        return (r -\n",
+  "agc_valid": false,
+  "body_sha256": "874f1621d554d363c4e1d595dcd14da879d2961f7f0c303e3bd7af9615d92016",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(r, int):\n        return (r -\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "00d3bbd580c2a7a95360a99057bb84dee164b6228a48a07829b2cfc1cdd347b5",
+  "human_valid": true,
+  "line_no": 20061,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "c3960ce68e4c40cc1ffb27ef237f04f3dd46c2e9113c0b38170cf9c88241f492",
+  "raw_output": "\n    if isinstance(r, int):\n        return (r - ",
+  "sampling_seed": 471779923,
+  "tag": "t02",
+  "temperature": 0.2
+}

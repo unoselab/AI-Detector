@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def upload_from_fs(fn, profile=None, label=None):\n    \"\"\"\n    Saves image from fn with TMP prefix and returns img_id.\n    \"\"\"\n    if profile is None:\n        profile = get_profile()\n    if label is None:\n        label = get_label()\n    return upload_from_fs_to_profile(fn, profile, label)\n",
+  "agc_valid": true,
+  "body_sha256": "dd9ec0a2be31cf192f751cfdc2631cb49addbbc6d930aeb8f85e8a30c3659ee1",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if profile is None:\n        profile = get_profile()\n    if label is None:\n        label = get_label()\n    return upload_from_fs_to_profile(fn, profile, label)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "d658bbefb4ff8f728064f92b0bebba4512a77f513ce21c02f8a08def3c078895",
+  "human_valid": true,
+  "line_no": 247814,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "400e4aab753c996a58f794bd38a1a6cc65d1d28e82bb55f603ce8f0eb50ea935",
+  "raw_output": "\n    if profile is None:\n        profile = get_profile()\n    if label is None:\n        label = get_label()\n    return upload_from_fs_to_profile(fn, profile, label)\n\n\ndef upload_from_fs_to_profile(fn, profile, label):\n    \"\"\"\n    Saves image from fn with TMP prefix and returns img_id.\n    \"\"\"\n    tmp_fn = 'TMP_' + fn\n    with open(fn, 'rb') as f:\n        with open(tmp_fn, 'wb') as g:\n            g.write(f.read())\n    img_id = upload_from_fs_to_label(tmp_fn, profile, label)\n    os.remove(tmp_fn)\n    return img_id\n\n\ndef upload_from_fs_to_label(fn, profile, label):\n    \"\"\"\n    Saves image from fn with TMP prefix and returns img_id.\n    \"\"\"\n    tmp_fn = 'TMP_' + fn\n    with open(fn, 'rb') as f:\n        with open(tmp_fn, 'wb') as g:\n            g.write(f.read())\n    img_id = upload_from_fs_to_label_file(tmp_fn, profile, label)\n    os.remove(tmp_fn)\n    return img_id\n\n\ndef upload_from_fs_to_label_file(fn, profile, label):\n    \"\"\"\n    Saves image from fn with TMP prefix and returns img_id.\n    \"\"\"\n    tmp_fn = 'TMP_' + fn\n    with open(fn, 'rb') as f:\n        with open(tmp_fn, 'wb') as g:\n            g.write(f.read())\n    img_id = upload_from_fs_to_label_file_path(tmp_fn, profile, label)\n    os.remove(tmp_fn)\n    return img_id\n\n\ndef upload_from_fs_to_label_file_path(fn, profile, label):\n    \"\"\"\n    Saves image from fn with TMP prefix and returns img_id.\n    \"\"\"\n    tmp",
+  "sampling_seed": 2490947267,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

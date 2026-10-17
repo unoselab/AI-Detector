@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _get_update_artifact_cache_work(self, vts_artifactfiles_pairs):\n    \"\"\"Create a Work instance to update an artifact cache, if we're configured to.\n\n    vts_artifactfiles_pairs - a list of pairs (vts, artifactfiles) where\n      - vts is single VersionedTargetSet.\n      - artifactfiles is a list of paths to artifacts for the VersionedTargetSet.\n    \"\"\"\n    if not self._update_artifact_cache:\n      return None\n\n    # Create a work instance to update the artifact cache.\n    # We need to create a work instance for each VersionedTargetSet, because\n    # the artifact cache is keyed by the VersionedTargetSet.\n    # We need to create a work instance for each artifact file, because\n    # the artifact cache is keyed by the artifact file.\n    # Note that we don't need to create a work instance for each VersionedTarget,\n    # because the VersionedTarget is already in the VersionedTargetSet.\n    work = []\n    for vts, artifactfiles in vts_artifactfiles_pairs:\n      for artifactfile in artifactfiles:\n        work.append(self._update_artifact_cache_work(vts, artifactfile))\n    return work\n",
+  "agc_valid": true,
+  "body_sha256": "13605d1e315242c792fd6578809d96de0e506747937ce7ff143ef7465896dc4b",
+  "body_tokens": 149,
+  "bucket": "type05_150",
+  "clean_output": "\n    if not self._update_artifact_cache:\n      return None\n\n    # Create a work instance to update the artifact cache.\n    # We need to create a work instance for each VersionedTargetSet, because\n    # the artifact cache is keyed by the VersionedTargetSet.\n    # We need to create a work instance for each artifact file, because\n    # the artifact cache is keyed by the artifact file.\n    # Note that we don't need to create a work instance for each VersionedTarget,\n    # because the VersionedTarget is already in the VersionedTargetSet.\n    work = []\n    for vts, artifactfiles in vts_artifactfiles_pairs:\n      for artifactfile in artifactfiles:\n        work.append(self._update_artifact_cache_work(vts, artifactfile))\n    return work\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "915686d243b45f00ccd197de86ce9dbd33f8f09109afbc3b84582f2d9e64d074",
+  "human_valid": true,
+  "line_no": 336483,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7b6589fbc35cc045b1399f0f3aa4bbdc8cf1dd89f1db5cb6d21b1f29b9206e4",
+  "raw_output": "\n    if not self._update_artifact_cache:\n      return None\n\n    # Create a work instance to update the artifact cache.\n    # We need to create a work instance for each VersionedTargetSet, because\n    # the artifact cache is keyed by the VersionedTargetSet.\n    # We need to create a work instance for each artifact file, because\n    # the artifact cache is keyed by the artifact file.\n    # Note that we don't need to create a work instance for each VersionedTarget,\n    # because the VersionedTarget is already in the VersionedTargetSet.\n    work = []\n    for vts, artifactfiles in vts_artifactfiles_pairs:\n      for artifactfile in artifactfiles:\n        work.append(self._update_artifact_cache_work(vts, artifactfile))\n    return work\n\n ",
+  "sampling_seed": 2592568910,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

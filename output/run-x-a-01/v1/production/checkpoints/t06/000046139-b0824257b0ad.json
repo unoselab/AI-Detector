@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def check_in(self):\n        \"\"\" Checks this participant in\n\n        |methcoro|\n\n        Warning:\n            |unstable|\n\n        Raises:\n            APIException\n\n        \"\"\"\n        return self.session.post(self.session.url + \"/checkin\", params={\"id\": self.id})\n",
+  "agc_valid": true,
+  "body_sha256": "ae2b91f76fee34055174d946a1d269237f0c714240a8b42dfeb9d8ccdc8b338c",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.session.post(self.session.url + \"/checkin\", params={\"id\": self.id})\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a3ebfd44455a21d57e8e9760de1d3d041f8bc203434b5951408cb0d863799642",
+  "human_valid": true,
+  "line_no": 46139,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "b0824257b0ad5e2402060b47068ec8f6d7ce3c6ae1df9626dee470b6d66612b7",
+  "raw_output": "\n        return self.session.post(self.session.url + \"/checkin\", params={\"id\": self.id})\n\n    async def",
+  "sampling_seed": 3242232011,
+  "tag": "t06",
+  "temperature": 0.6
+}

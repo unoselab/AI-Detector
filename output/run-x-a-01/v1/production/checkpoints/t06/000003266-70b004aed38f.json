@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def shutdown(self, connmark = -1):\n        \"\"\"\n        Can call without delegate\n        \"\"\"\n        self.logger.debug(\"Shutdown %s\" % self.name)\n        self.shutdown_flag = True\n        if self.delegate:\n            self.delegate.shutdown(self, connmark)\n        self.cleanup()\n",
+  "agc_valid": true,
+  "body_sha256": "a2f968b7607c2e37748b17c8c850ed284ccac60453c246cdba2956ec6f7c58da",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.logger.debug(\"Shutdown %s\" % self.name)\n        self.shutdown_flag = True\n        if self.delegate:\n            self.delegate.shutdown(self, connmark)\n        self.cleanup()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "25597adf2a6c558ca17b86bf1f67ed2c99764a88546abfd550c76fd043d37d44",
+  "human_valid": true,
+  "line_no": 3266,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "70b004aed38f1e1c0939d54d0dd741bd2338f928ae521a73431c3653caf77bd0",
+  "raw_output": "\n        self.logger.debug(\"Shutdown %s\" % self.name)\n        self.shutdown_flag = True\n        if self.delegate:\n            self.delegate.shutdown(self, connmark)\n        self.cleanup()\n\n    def",
+  "sampling_seed": 3372680927,
+  "tag": "t06",
+  "temperature": 0.6
+}

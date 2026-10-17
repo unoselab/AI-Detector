@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def whitespace_around_operator(logical_line):\n    r\"\"\"Avoid extraneous whitespace around an operator.\n\n    Okay: a = 12 + 3\n    E221: a = 4  + 5\n    E222: a = 4 +  5\n    E223: a = 4\\t+ 5\n    E224: a = 4 +\\t5\n    \"\"\"\n    if logical_line.startswith(' '):\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "d19d1bbf7684e61d5d71976ee845318453a351c126321d1cf9434b7d559abdfb",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if logical_line.startswith(' '):\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "da90dcf47669f7759cc02caaa0fef81bcbad5de40d09c27e74b08264bbbdc98a",
+  "human_valid": true,
+  "line_no": 202846,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a8d34c9083a6f55f3ece02e1685f630ec9466f36b9a3d3515af23c46910dbb99",
+  "raw_output": "\n    if logical_line.startswith(' '):\n        return ",
+  "sampling_seed": 1968650372,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

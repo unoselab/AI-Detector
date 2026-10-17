@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_table_definition_file(file):\n    \"\"\"\n    Read an parse the XML of a table-definition file.\n    @return: an ElementTree object for the table definition\n    \"\"\"\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n",
+  "agc_valid": true,
+  "body_sha256": "f138b8fffad07ef267abd3c684d9e7844a7ed009ced69f7b4bd80ccac8d139f5",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "6906ea0457f9600945b721235018963a893721ae7b279d8f8168082dc9f5bbbb",
+  "human_valid": true,
+  "line_no": 322441,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52b54c1bd40fa7de71b7aea83ae1a9155f497f008f5b8aa981e9c1b2c5b4e78b",
+  "raw_output": "\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n\n\ndef get_table_definition_from_xml(root):\n    \"\"\"\n    Extract the table definition from the XML of a table-definition file.\n    @return: a dictionary with the table definition\n    \"\"\"\n    table_definition = {}\n    table_definition['name'] = root.attrib['name']\n    table_definition['description'] = root.attrib['description']\n    table_definition['columns'] = []\n    for column in root.findall('column'):\n        column_definition = {}\n        column_definition['name'] = column.attrib['name']\n        column_definition['type'] = column.attrib['type']\n        column_definition['description'] = column.attrib['description']\n        table_definition['columns'].append(column_definition)\n    return table_definition\n\n\ndef get_table_definition_from_file(file):\n    \"\"\"\n    Extract the table definition from a table-definition file.\n    @return: a dictionary with the table definition\n    \"\"\"\n    root = parse_table_definition_file(file)\n    return get_table_definition_from_xml(root)\n\n\ndef get_table_definition_from_string(string):\n    \"\"\"\n    Extract the table definition from a table-definition string.\n    @return: a dictionary with the table definition\n    \"\"\"\n    root = ET.fromstring(string)\n    return get_table_definition_from_xml(root)\n\n\ndef get_table_definition_from_json(json_string):\n    \"\"\"\n    Extract the table definition from a table-definition JSON string.\n    @return: a dictionary with the table definition\n    \"\"\"\n    json_dict = json.loads(json_string)\n    table_definition = {}\n    table_definition['name'] = json_dict['name']\n    table_definition['description'] = json_dict['description']\n    table_definition['columns'] = []\n    for column in json_dict['columns']:\n        column_definition = {}\n        column_definition['name'] = column['name']\n        column_definition['type'] =",
+  "sampling_seed": 3693557296,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

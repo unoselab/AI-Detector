@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def reload(cls, args):\n        \"\"\"Reload NApps code.\"\"\"\n            cls.logger.info(\"Reloading NApps code\")\n            cls.napps.reload()\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "83885d0cb03bb1956d166235f40a86da049c290693e597812e03bede2b50d548",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n            cls.logger.info(\"Reloading NApps code\")\n            cls.napps.reload()\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "f243931cf6ff817eac51012f1c6799e62238056740462ce2380d2488f5a779a8",
+  "human_valid": true,
+  "line_no": 68200,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e31b5d7b211cce751e2de3615633311eee09350733f1643b6bd61b34f0ab22b1",
+  "raw_output": "\n        cls.logger.info(\"Reloading NApps code\")\n        cls.napps.reload()\n\n    @classmethod\n    def",
+  "sampling_seed": 240294400,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

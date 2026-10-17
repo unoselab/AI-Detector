@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_from_bin(self):\n        \"\"\"\n        Retrieves the Java library path according to the real installation of\n        the java executable\n\n        :return: The path to the JVM library, or None\n        \"\"\"\n        return _get_java_lib_path_from_bin(self.java_bin)\n",
+  "agc_valid": true,
+  "body_sha256": "31f03da936684031b3a30be64f481f5da4cb66793ff4e15ab1b75a4d5a408afa",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return _get_java_lib_path_from_bin(self.java_bin)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "498ea08707e7e6fea6bae8cd0f1924e77a28032729eabf56f51486648a51dc73",
+  "human_valid": true,
+  "line_no": 283855,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d711527e725d5d958d74c7a459a9a3638051de9af024546458fcd1656a53f5e2",
+  "raw_output": "\n        return _get_java_lib_path_from_bin(self.java_bin)\n\n    def",
+  "sampling_seed": 3991580792,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

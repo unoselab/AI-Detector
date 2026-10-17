@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def post_save_update_cache(sender, instance, created, raw, **kwargs):\n    \"\"\"Update the cache when an instance is created or modified.\"\"\"\n    if not raw:\n        if created:\n            cache_key = 'new_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        else:\n            cache_key = 'modified_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        cache.set(cache_key, instance)\n",
+  "agc_valid": true,
+  "body_sha256": "deeee55981f3b25997dd9f6cd6ad0d3d04efe25c13b9fc8010e833a3e56af050",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not raw:\n        if created:\n            cache_key = 'new_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        else:\n            cache_key = 'modified_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        cache.set(cache_key, instance)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0b3cc29bd14848935d5ba5d656dfc5b6be02c24f515ad564830f13f659dc96e9",
+  "human_valid": true,
+  "line_no": 11787,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f778b21cfb2f73b76bf5ff82ec53c57b4caf42b0f457a40f6e47c8e55a24f9a9",
+  "raw_output": "\n    if not raw:\n        if created:\n            cache_key = 'new_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        else:\n            cache_key = 'modified_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        cache.set(cache_key, instance)\n\n\ndef post_delete_update_cache(sender, instance, **kwargs):\n    \"\"\"Update the cache when an instance is deleted.\"\"\"\n    cache_key = 'deleted_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n    cache.set(cache_key, instance)\n\n\ndef post_save_update_cache_for_related(sender, instance, **kwargs):\n    \"\"\"Update the cache when an instance is created or modified.\"\"\"\n    if not kwargs.get('raw'):\n        cache_key = 'related_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        cache.set(cache_key, instance)\n\n\ndef post_delete_update_cache_for_related(sender, instance, **kwargs):\n    \"\"\"Update the cache when an instance is deleted.\"\"\"\n    cache_key = 'related_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n    cache.set(cache_key, instance)\n\n\ndef post_save_update_cache_for_related_instance(sender, instance, **kwargs):\n    \"\"\"Update the cache when an instance is created or modified.\"\"\"\n    if not kwargs.get('raw'):\n        cache_key = 'related_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n        cache.set(cache_key, instance)\n\n\ndef post_delete_update_cache_for_related_instance(sender, instance, **kwargs):\n    \"\"\"Update the cache when an instance is deleted.\"\"\"\n    cache_key = 'related_%s_%s' % (instance.__class__.__name__.lower(), instance.id)\n    cache.set(cache_key, instance)\n\n\ndef post_save",
+  "sampling_seed": 570291023,
+  "tag": "t02",
+  "temperature": 0.2
+}

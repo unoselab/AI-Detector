@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def detectMobileLong(self):\n        \"\"\"Return detection of any mobile device using the more thorough method\n\n        The longer and more thorough way to detect for a mobile device.\n        Will probably detect most feature phones,\n        smartphone-class devices, Internet Tablets,\n        Internet-enabled game consoles, etc.\n        This ought to catch a lot of the more obscure and older devices, also --\n        but no promises on thoroughness!\n        \"\"\"\n        try:\n            # First, try to get a good user agent string\n            ua = self.request.headers.get('User-Agent')\n            if not ua:\n                return False\n            # Browsers\n            if ua.find('MSIE') >\n",
+  "agc_valid": false,
+  "body_sha256": "4329d585902cdce18945b17408c5b1c40e7752267e2d1962584c44f4cf3599ed",
+  "body_tokens": 102,
+  "bucket": "type01_110",
+  "clean_output": "\n        try:\n            # First, try to get a good user agent string\n            ua = self.request.headers.get('User-Agent')\n            if not ua:\n                return False\n            # Browsers\n            if ua.find('MSIE') >\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9e88a0b11a7f067a17f6becfa24bfd089e21438de8134a52b697a62ea565e86f",
+  "human_valid": true,
+  "line_no": 44175,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "14bb53757e72f6272f1b76720b6548f002b5047e8fa94d93fe6966e9c8dd6660",
+  "raw_output": "\n        try:\n            # First, try to get a good user agent string\n            ua = self.request.headers.get('User-Agent')\n            if not ua:\n                return False\n            # Browsers\n            if ua.find('MSIE') > ",
+  "sampling_seed": 1085697821,
+  "tag": "t02",
+  "temperature": 0.2
+}

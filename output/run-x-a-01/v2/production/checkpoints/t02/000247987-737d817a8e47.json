@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_branch(self):\n        \"\"\"\n        :return:\n        \"\"\"\n        return self.branch\n",
+  "agc_valid": true,
+  "body_sha256": "d6ff0443d3b03111048f627ddb8b931c7c43cf733d5da35e21cb8a5a86100585",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.branch\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "1ed4ef043359a757771efe3eec8a5d5dff163ed4e5ee79bc0b27f3714f33ecf3",
+  "human_valid": true,
+  "line_no": 247987,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "737d817a8e47e655f460100e66d43cad7ae76fc211dd0461905dea8e51205aad",
+  "raw_output": "\n        return self.branch\n\n    def",
+  "sampling_seed": 2299102709,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

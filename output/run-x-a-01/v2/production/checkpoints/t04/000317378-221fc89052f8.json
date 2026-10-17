@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _new_sensor_reading(self, sensor_value):\n        \"\"\"\n        Call this method to signal a new sensor reading.\n        This method handles DB storage and triggers different events.\n\n        :param value:\n            New value to be stored in the system.\n        \"\"\"\n        sensor_reading = SensorReading(sensor_value)\n        self.db.add(sensor_reading)\n        self.db.commit()\n\n        self.new_reading_event.set()\n",
+  "agc_valid": true,
+  "body_sha256": "eaada2487be83184721dede9329434f6c9958f7cf08806e3353e4793eab285cb",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        sensor_reading = SensorReading(sensor_value)\n        self.db.add(sensor_reading)\n        self.db.commit()\n\n        self.new_reading_event.set()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "d3f32c56bd3b71be22fbf820d0082ab574c29c9372432b4367d5b7fb6462be24",
+  "human_valid": true,
+  "line_no": 317378,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "221fc89052f8f23b971c6b36f46583d1c2e7eecbfa40dad6bd4b12b0f2e9361a",
+  "raw_output": "\n        sensor_reading = SensorReading(sensor_value)\n        self.db.add(sensor_reading)\n        self.db.commit()\n\n        self.new_reading_event.set()\n\n    def",
+  "sampling_seed": 446592079,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

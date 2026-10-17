@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run(self):\n        \"\"\"\n        Main function for prepare and render OpenAPI specification\n        :return:\n        \"\"\"\n        self.prepare()\n        self.render()\n",
+  "agc_valid": true,
+  "body_sha256": "fd19cb01d7b692ee347ba3d8a0a7d088ce96cb9d18ced17def2f7646d7e50b8f",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.prepare()\n        self.render()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "65a0691f726f13e8527197488c8b8602d84d71db38653533fe9de3cb76a84693",
+  "human_valid": true,
+  "line_no": 389150,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b859eb0f5970354159067c2d2db36510867de36c1647f5ca752fd65d490a1cef",
+  "raw_output": "\n        self.prepare()\n        self.render()\n\n    def",
+  "sampling_seed": 3731755187,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

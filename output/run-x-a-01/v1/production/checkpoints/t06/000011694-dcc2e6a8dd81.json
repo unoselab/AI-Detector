@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _handle_enum(self, node, scope, ctxt, stream):\n        \"\"\"Handle enum nodes\n\n        :node: TODO\n        :scope: TODO\n        :ctxt: TODO\n        :stream: TODO\n        :returns: TODO\n\n        \"\"\"\n        name = node.name\n        scope = scope.get_type(name)\n        if scope is None:\n            scope = ctxt.new_type(name)\n        stream.write('typedef enum {')\n        for i in node.items:\n            self.handle_enum_item(i, scope, ctxt, stream)\n        stream.write('} %s;' % (name))\n        self.handle_comments(node.comments, stream)\n",
+  "agc_valid": true,
+  "body_sha256": "94733c38a9390be3f9927bde4667e21b851cd8a4baa447bae24d86e9cc07f9a3",
+  "body_tokens": 102,
+  "bucket": "type01_110",
+  "clean_output": "\n        name = node.name\n        scope = scope.get_type(name)\n        if scope is None:\n            scope = ctxt.new_type(name)\n        stream.write('typedef enum {')\n        for i in node.items:\n            self.handle_enum_item(i, scope, ctxt, stream)\n        stream.write('} %s;' % (name))\n        self.handle_comments(node.comments, stream)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "e7cd4cca2c76c74bab1e532f729fb5a0c67f79edc2bb9ba979543a8788b531ae",
+  "human_valid": true,
+  "line_no": 11694,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "dcc2e6a8dd8152bf3e5b15050d736bd272ceddb6fdcc17b9256854fec53f2c73",
+  "raw_output": "\n        name = node.name\n        scope = scope.get_type(name)\n        if scope is None:\n            scope = ctxt.new_type(name)\n        stream.write('typedef enum {')\n        for i in node.items:\n            self.handle_enum_item(i, scope, ctxt, stream)\n        stream.write('} %s;' % (name))\n        self.handle_comments(node.comments, stream)\n\n    def",
+  "sampling_seed": 4234347234,
+  "tag": "t06",
+  "temperature": 0.6
+}

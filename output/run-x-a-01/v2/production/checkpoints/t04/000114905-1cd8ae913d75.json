@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def user_deletemedia(mediaids, **kwargs):\n    \"\"\"\n    Delete media by id.\n\n    .. versionadded:: 2016.3.0\n\n    :param mediaids: IDs of the media to delete\n    :param _connection_user: Optional - zabbix user (can also be set in opts or pillar, see module's docstring)\n    :param _connection_password: Optional - zabbix password (can also be set in opts or pillar, see module's docstring)\n    :param _connection_url: Optional - url of zabbix frontend (can also be set in opts, pillar, see module's docstring)\n\n    :return: IDs of the deleted media, False on failure.\n\n    CLI Example:\n    .. code-block:: bash\n\n        salt '*' zabbix.user_deletemedia 27\n    \"\"\"\n    url: Optional - url of zabbix frontend (can also be set in opts, pillar, see module's docstring)\n\n        :return: IDs of the deleted media\n\n        CLI Example:\n\n        .. code-block:: bash\n\n            salt '*' zabbix.user_deletemedia\n",
+  "agc_valid": false,
+  "body_sha256": "a0d9653e6218ac8a2fe006eca5184ca1e1660eb96939cad876534e665596ec7f",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n    url: Optional - url of zabbix frontend (can also be set in opts, pillar, see module's docstring)\n\n        :return: IDs of the deleted media\n\n        CLI Example:\n\n        .. code-block:: bash\n\n            salt '*' zabbix.user_deletemedia\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "80e8345243bf8b10f03ae6da05b0b6b72244f8f32b829396fb73678825480c91",
+  "human_valid": true,
+  "line_no": 114905,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1cd8ae913d7520c9e5ec541571710471522773f6cce7f9066733d89c30be4ff1",
+  "raw_output": "url: Optional - url of zabbix frontend (can also be set in opts, pillar, see module's docstring)\n\n    :return: IDs of the deleted media\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' zabbix.user_deletemedia ",
+  "sampling_seed": 504784088,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

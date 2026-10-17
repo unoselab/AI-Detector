@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def regenerate(self):\n        \"\"\"Generate a new session id for this session.\n\n        To avoid vulnerabilities through `session fixation attacks\n        <http://en.wikipedia.org/wiki/Session_fixation>`_, this function can be\n        called after an action like a login has taken place. The session will\n        be copied over to a new session id and the old one removed.\n        \"\"\"\n        self.session_id = self._generate_session_id()\n        self.save()\n",
+  "agc_valid": true,
+  "body_sha256": "44bb98cd66ab0ce04c9a53761b778fce3951793e25203396da835b4de48e7171",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.session_id = self._generate_session_id()\n        self.save()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c4494daa8dc4529193f78ba404ac5c800810361db3bf94e91b3c15c54bfd8066",
+  "human_valid": true,
+  "line_no": 7682,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "2f0cf7b035adccb22b686cdc08363c10d9553e39f5d2fcf8a623e6686aa4f8ac",
+  "raw_output": "\n        self.session_id = self._generate_session_id()\n        self.save()\n\n    def",
+  "sampling_seed": 3869401290,
+  "tag": "t02",
+  "temperature": 0.2
+}

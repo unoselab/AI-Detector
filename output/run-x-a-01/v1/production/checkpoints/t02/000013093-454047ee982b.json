@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def convertfields(key_comm, obj, inblock=None):\n    \"\"\"convert based on float, integer, and A1, N1\"\"\"\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'A1':\n        if obj.isdigit():\n            return int(obj)\n        else:\n            return obj\n    elif inblock == 'N1':\n        return float(obj)\n    else:\n        return obj\n",
+  "agc_valid": true,
+  "body_sha256": "4361433d2da752f5b1a035769c2ac3c9326f80a9f7e9cfbe54b8326ef74fa7f6",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'A1':\n        if obj.isdigit():\n            return int(obj)\n        else:\n            return obj\n    elif inblock == 'N1':\n        return float(obj)\n    else:\n        return obj\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9c0d5ae12a89cff2ed05faa68eb2119dd3487778d39ec14bafa01639d7fb525f",
+  "human_valid": true,
+  "line_no": 13093,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "454047ee982b759584bbbe1fb431ad9d9313c82cc59cfb2e76fb3a9b7de58583",
+  "raw_output": "\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'A1':\n        if obj.isdigit():\n            return int(obj)\n        else:\n            return obj\n    elif inblock == 'N1':\n        return float(obj)\n    else:\n        return obj\n\n\ndef convert_to_int(key_comm, obj, inblock=None):\n    \"\"\"convert based on integer\"\"\"\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'N1':\n        return int(obj)\n    else:\n        return obj\n\n\ndef convert_to_float(key_comm, obj, inblock=None):\n    \"\"\"convert based on float\"\"\"\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'N1':\n        return float(obj)\n    else:\n        return obj\n\n\ndef convert_to_str(key_comm, obj, inblock=None):\n    \"\"\"convert based on string\"\"\"\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'A1':\n        return str(obj)\n    else:\n        return obj\n\n\ndef convert_to_bool(key_comm, obj, inblock=None):\n    \"\"\"convert based on boolean\"\"\"\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'L1':\n        if obj == 'Y':\n            return True\n        elif obj == 'N':\n            return False\n        else:\n            return obj\n    else:\n        return obj\n\n\ndef convert_to_date(key_comm, obj, inblock=None):\n    \"\"\"convert based on date\"\"\"\n    if inblock is None:\n        inblock = key_comm.inblock\n    if inblock == 'D1':\n        return datetime.strptime(obj, '%Y%m%d').date()\n    else:\n        return obj\n\n\ndef convert_to_datetime(key_comm, obj, inblock=None):\n    \"\"\"convert based on",
+  "sampling_seed": 197638255,
+  "tag": "t02",
+  "temperature": 0.2
+}

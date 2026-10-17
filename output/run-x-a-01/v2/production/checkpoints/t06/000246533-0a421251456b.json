@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def refs_section(doc):\n    \"\"\"\n    Generate a References section.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    list of str\n        Markdown for references section\n    \"\"\"\n    if doc['references']:\n        refs = doc['references']\n    else:\n        refs = []\n\n    refs.sort(key=lambda r: r['name'].lower())\n\n    lines = []\n\n    for ref in refs:\n        if ref['name']:\n            lines.append('%s' % ref['name'])\n\n        if ref['name'] and ref['uri']:\n            lines.append(': ')\n\n        if ref['uri']:\n            lines.append('[%s]' % ref['uri'])\n\n        if ref['email']:\n            lines.append(' <%s>' % ref['email'])\n\n        if ref['uri'] or ref['email']:\n            lines.append('')\n\n        if ref['role']:\n            lines.append('**Role:** %s' % ref['role'])\n            lines.append('')\n\n    return lines\n",
+  "agc_valid": true,
+  "body_sha256": "d461408eca5dc6a0f5a5e19c75d2b12ba9ad9b1cbbf709daf40df7a7484d7974",
+  "body_tokens": 207,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if doc['references']:\n        refs = doc['references']\n    else:\n        refs = []\n\n    refs.sort(key=lambda r: r['name'].lower())\n\n    lines = []\n\n    for ref in refs:\n        if ref['name']:\n            lines.append('%s' % ref['name'])\n\n        if ref['name'] and ref['uri']:\n            lines.append(': ')\n\n        if ref['uri']:\n            lines.append('[%s]' % ref['uri'])\n\n        if ref['email']:\n            lines.append(' <%s>' % ref['email'])\n\n        if ref['uri'] or ref['email']:\n            lines.append('')\n\n        if ref['role']:\n            lines.append('**Role:** %s' % ref['role'])\n            lines.append('')\n\n    return lines\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "e99c33a405e57cbac8582b222dc21879b51e3ccded88a8cdfce2fa715c9195f4",
+  "human_valid": true,
+  "line_no": 246533,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0a421251456b29b504d8c7c771b17c07b69b2cb4a5dd2f4c892f8e3809e940be",
+  "raw_output": "\n    if doc['references']:\n        refs = doc['references']\n    else:\n        refs = []\n\n    refs.sort(key=lambda r: r['name'].lower())\n\n    lines = []\n\n    for ref in refs:\n        if ref['name']:\n            lines.append('%s' % ref['name'])\n\n        if ref['name'] and ref['uri']:\n            lines.append(': ')\n\n        if ref['uri']:\n            lines.append('[%s]' % ref['uri'])\n\n        if ref['email']:\n            lines.append(' <%s>' % ref['email'])\n\n        if ref['uri'] or ref['email']:\n            lines.append('')\n\n        if ref['role']:\n            lines.append('**Role:** %s' % ref['role'])\n            lines.append('')\n\n    return lines\n\n\ndef _format_docstring(doc, indent=0):\n    \"\"\"\n    Format the docstring from the given doc dictionary.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n    indent : int, optional\n        Indentation to use.\n\n    Returns\n    -------\n    str\n        Markdown formatted docstring\n    \"\"\"\n    lines = []\n    for key in ['summary', 'extended_summary', 'description']:\n        if doc[key]:\n            lines.extend(doc[key])\n\n    lines.extend(args_section(doc))\n    lines.extend(attributes_section(doc))\n    lines.extend(methods_section(doc))\n    lines.extend(see_also_section(doc))\n    lines.extend(notes_section(doc))\n    lines.extend(references_section(doc))\n\n    # Remove blank lines at the beginning\n    lines = [line.strip() for line in lines if line.strip()]\n\n    # Remove blank lines at the end\n    while lines and not lines[-1]:\n        lines.pop()\n\n    # Remove blank lines at the beginning\n    while lines and not lines[0]:\n        lines.pop(0)\n\n    # Remove last line if it is",
+  "sampling_seed": 1380262755,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

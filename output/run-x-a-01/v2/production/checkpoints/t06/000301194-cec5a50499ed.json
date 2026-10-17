@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_instance(self, collection, obj_id, **kwargs):\n        \"\"\"Get a record from the database with the id field matching `obj_id`.\n        \"\"\"\n        obj = collection.find_one(obj_id, **kwargs)\n        if obj is None:\n            raise NotFoundError(obj_id)\n        return obj\n",
+  "agc_valid": true,
+  "body_sha256": "b4fc28084c06e4b7c685a56b6a1ffd678c15f3f84929f4ff82e52c1a30b74171",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        obj = collection.find_one(obj_id, **kwargs)\n        if obj is None:\n            raise NotFoundError(obj_id)\n        return obj\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 154,
+  "human_sha256": "d0edcd9bc8a104e0ec27173c6071594a7848ed4ebc8c122993bdfeebb9c4e5b2",
+  "human_valid": true,
+  "line_no": 301194,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cec5a50499ed160b5bd6973fd99fd4e31258b88ed482076694f26c1474115232",
+  "raw_output": "\n        obj = collection.find_one(obj_id, **kwargs)\n        if obj is None:\n            raise NotFoundError(obj_id)\n        return obj\n\n    def",
+  "sampling_seed": 2626159565,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

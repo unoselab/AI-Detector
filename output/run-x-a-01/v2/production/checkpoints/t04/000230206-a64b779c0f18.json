@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _compute_mjd(self, kw, val):\n        \"\"\"\n        Sometimes that MJD-OBS-CENTER keyword maps to a three component string, instead of a single value.\n        @param kw: a list of keywords\n        @param val: a list of matching values\n        @return: the MJD-OBS-CENTER as a julian date.\n        \"\"\"\n        if isinstance(val, str):\n            val = val.split()\n        if len(val) ==\n",
+  "agc_valid": false,
+  "body_sha256": "a8f45005f0da9a9683eef6a30998185e18c38b9538a5bc7299ff25125c58870b",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(val, str):\n            val = val.split()\n        if len(val) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "6b0dad6a9e6d9bfeaeb2efb1fd5b1caddea6f4f00d1391b67149bb05e752965e",
+  "human_valid": true,
+  "line_no": 230206,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a64b779c0f18a19dbfa1b5e8af805d57132b34a4f5b13f0654079373fd9f4abb",
+  "raw_output": "\n        if isinstance(val, str):\n            val = val.split()\n        if len(val) == ",
+  "sampling_seed": 3198725430,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

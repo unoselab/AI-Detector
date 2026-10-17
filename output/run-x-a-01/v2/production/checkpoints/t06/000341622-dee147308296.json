@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def xml_marshal_complete_multipart_upload(uploaded_parts):\n    \"\"\"\n    Marshal's complete multipart upload request based on *uploaded_parts*.\n\n    :param uploaded_parts: List of all uploaded parts, ordered by part number.\n    :return: Marshalled XML data.\n    \"\"\"\n    root = E.CompleteMultipartUpload(\n        E.Part(\n            E.PartNumber(str(part.part_number)),\n            E.ETag(part.etag)\n        ) for part in uploaded_parts\n    )\n    return tostring(root, encoding='utf-8')\n",
+  "agc_valid": true,
+  "body_sha256": "6dd5095faaae6e28533d7054ca4aa866f9662f46894cf81f563be95a12e8cf46",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n    root = E.CompleteMultipartUpload(\n        E.Part(\n            E.PartNumber(str(part.part_number)),\n            E.ETag(part.etag)\n        ) for part in uploaded_parts\n    )\n    return tostring(root, encoding='utf-8')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "471105f9f2325b4a44c59867d6cd66723d54419e29320f0d631b7b31377823de",
+  "human_valid": true,
+  "line_no": 341622,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dee1473082966348f7f98a57782d1e1417b6d52d000f1d9feda67fb0a470eccd",
+  "raw_output": "\n    root = E.CompleteMultipartUpload(\n        E.Part(\n            E.PartNumber(str(part.part_number)),\n            E.ETag(part.etag)\n        ) for part in uploaded_parts\n    )\n    return tostring(root, encoding='utf-8')\n\n\ndef xml_marshal_abort_multipart_upload(uploaded_parts):\n    \"\"\"\n    Marshal's abort multipart upload request based on *uploaded_parts*.\n\n    :param uploaded_parts: List of all uploaded parts, ordered by part number.\n    :return: Marshalled XML data.\n    \"\"\"\n    root = E.AbortMultipartUpload(\n        E.Part(\n            E.PartNumber(str(part.part_number)),\n            E.ETag(part.etag)\n        ) for part in uploaded_parts\n    )\n    return tostring(root, encoding='utf-8')\n\n\ndef xml_marshal_list_multipart_uploads(uploads):\n    \"\"\"\n    Marshal's list multipart uploads request based on *uploads*.\n\n    :param uploads: List of all uploads.\n    :return: Marshalled XML data.\n    \"\"\"\n    root = E.ListMultipartUploads(\n        E.Bucket(upload.bucket_name),\n        E.KeyMarker(upload.key_marker),\n        E.UploadIdMarker(upload.upload_id_marker),\n        E.NextKeyMarker(upload.next_key_marker),\n        E.NextUploadIdMarker(upload.next_upload_id_marker),\n        E.Delimiter(upload.delimiter),\n        E.Prefix(upload.prefix),\n        E.MaxUploads(upload.max_uploads),\n        E.IsTruncated(upload.is_truncated),\n        E.Upload(\n            E.Key(upload.key),\n            E.UploadId(upload.upload_id),\n            E.Initiator(\n                E.ID(upload.initiator_id),\n                E.DisplayName(upload.initiator_display_name)\n            ),\n            E.Owner(\n                E.ID",
+  "sampling_seed": 619230811,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

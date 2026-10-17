@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_consumer(user, password, config_file_path, process_message, *args, **kwargs):\n    \"\"\"Create a pulse consumer. Call listen() to start listening.\"\"\"\n    config_file_path = os.path.expanduser(config_file_path)\n    if not os.path.exists(config_file_path):\n        raise ValueError(\"Configuration file not found: {}\".format(config_file_path))\n\n    consumer = Consumer(user, password, config_file_path, *args, **kwargs)\n    consumer.process_message = process_message\n    return consumer\n",
+  "agc_valid": true,
+  "body_sha256": "f875acb61d444c89d366ae557479cf75d42e3a6abb6a64c51ce6393686ec2f1d",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    config_file_path = os.path.expanduser(config_file_path)\n    if not os.path.exists(config_file_path):\n        raise ValueError(\"Configuration file not found: {}\".format(config_file_path))\n\n    consumer = Consumer(user, password, config_file_path, *args, **kwargs)\n    consumer.process_message = process_message\n    return consumer\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "1663fdffaa8469a57604d1b5425f1792d7b71f94ceaeece46b745640bd411412",
+  "human_valid": true,
+  "line_no": 304115,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b1ecd2437e926213c51efc119efae0c8f47dee6fd6f4d7c9f57bbdfc150af6fe",
+  "raw_output": "\n\n    config_file_path = os.path.expanduser(config_file_path)\n    if not os.path.exists(config_file_path):\n        raise ValueError(\"Configuration file not found: {}\".format(config_file_path))\n\n    consumer = Consumer(user, password, config_file_path, *args, **kwargs)\n    consumer.process_message = process_message\n    return consumer\n\n\nclass Consumer(object):\n    \"\"\"\n    A class that can listen for messages from the pulse server.\n\n    This class is not thread-safe.\n    \"\"\"\n\n    def",
+  "sampling_seed": 4151827072,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

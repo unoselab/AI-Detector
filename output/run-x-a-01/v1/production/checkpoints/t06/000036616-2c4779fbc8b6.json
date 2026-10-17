@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def kitchen_get(backend, kitchen_name, recipe):\n    \"\"\"\n    Get an existing Kitchen\n    \"\"\"\n    return backend.kitchen_get(kitchen_name, recipe)\n",
+  "agc_valid": true,
+  "body_sha256": "18e15d343dfb02da13ca96543ef585b074648d200a61d73a3ac87125496e0a96",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return backend.kitchen_get(kitchen_name, recipe)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5da9a95a10e91a67f658d49c70b8afe884f6362fd22cb842486b5d6467b30239",
+  "human_valid": true,
+  "line_no": 36616,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "2c4779fbc8b6efbbec0515f8722834acfb79cdb739750b5b9cd44baea59900c2",
+  "raw_output": "\n    return backend.kitchen_get(kitchen_name, recipe)\n\n\ndef kitchen_create(backend, kitchen_name, recipe, **kwargs):\n    \"\"\"\n    Create a new Kitchen\n    \"\"\"\n    return backend.kitchen_create(kitchen_name, recipe, **kwargs)\n\n\ndef kitchen_update(backend, kitchen_name, recipe, **kwargs):\n    \"\"\"\n    Update an existing Kitchen\n    \"\"\"\n    return backend.kitchen_update(kitchen_name, recipe, **kwargs)\n\n\ndef kitchen_delete(backend, kitchen_name, recipe):\n    \"\"\"\n    Delete an existing Kitchen\n    \"\"\"\n    return backend.kitchen_delete(kitchen_name, recipe)\n\n\ndef kitchen_list(backend, recipe):\n    \"\"\"\n    List all Kitchens\n    \"\"\"\n    return backend.kitchen_list(recipe)\n\n\ndef kitchen_search(backend, recipe, search_term):\n    \"\"\"\n    Search for Kitchens\n    \"\"\"\n    return backend.kitchen_search(recipe, search_term)\n\n\ndef kitchen_search_all(backend, search_term):\n    \"\"\"\n    Search for Kitchens across all recipes\n    \"\"\"\n    return backend.kitchen_search_all(search_term)\n\n\ndef kitchen_search_by_recipe(backend, recipe, search_term):\n    \"\"\"\n    Search for Kitchens across all recipes\n    \"\"\"\n    return backend.kitchen_search_by_recipe(recipe, search_term)\n\n\ndef kitchen_search_by_recipes(backend, recipes, search_term):\n    \"\"\"\n    Search for Kitchens across all recipes\n    \"\"\"\n    return backend.kitchen_search_by_recipes(recipes, search_term)\n\n\ndef kitchen_search_by_recipe_id(backend, recipe_id, search_term):\n    \"\"\"\n    Search for Kitchens across all recipes\n    \"\"\"\n    return backend.kitchen_search_by_recipe_id(recipe_id, search_term)\n\n\ndef kitchen_search_by_recipe",
+  "sampling_seed": 3775808244,
+  "tag": "t06",
+  "temperature": 0.6
+}

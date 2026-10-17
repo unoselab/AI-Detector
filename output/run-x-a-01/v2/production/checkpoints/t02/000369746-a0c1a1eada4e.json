@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def Run(self, args):\n    \"\"\"Reads a buffer on the client and sends it to the server.\"\"\"\n    if len(args) !=\n",
+  "agc_valid": false,
+  "body_sha256": "4c7480c1e864cc8d4d88390e10ec8f7086ef227f2351b5ccd1cdbfae45fc602f",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(args) !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "2428a44341b78389e45fbd041c13aa262ef19db39355351f3271f5d1bb5ccb01",
+  "human_valid": true,
+  "line_no": 369746,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a0c1a1eada4ef414637e8498b1601d1ecad7b0d99944a480297391027e908b6f",
+  "raw_output": "\n    if len(args) != ",
+  "sampling_seed": 2113203090,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def init_model_gaussian1d(observations, nstates, reversible=True):\n    \"\"\"Generate an initial model with 1D-Gaussian output densities\n\n    Parameters\n    ----------\n    observations : list of ndarray((T_i), dtype=float)\n        list of arrays of length T_i with observation data\n    nstates : int\n        The number of states.\n\n    Examples\n    --------\n\n    Generate initial model for a gaussian output model.\n\n    >>> from bhmm import testsystems\n    >>> [model, observations, states] = testsystems.generate_synthetic_observations(output='gaussian')\n    >>> initial_model = init_model_gaussian1d(observations, model.nstates)\n\n    \"\"\"\n    s\n        >>> from bhmm.initialization import init_model_gaussian1d\n        >>> model = init_model_gaussian1d(testsystems.gaussian1d_observations,\n",
+  "agc_valid": false,
+  "body_sha256": "0f78e880aabf6358e88444688c99af7b90b3266f90b48d2b4529a1650a4e8770",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n    s\n        >>> from bhmm.initialization import init_model_gaussian1d\n        >>> model = init_model_gaussian1d(testsystems.gaussian1d_observations,\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6665e21e414432e94a1a47b4bb70fa2d45eb30d3676ad8d8a3b5cf39b8131bbe",
+  "human_valid": true,
+  "line_no": 8209,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "b9bd2bed15c3d61eeefb8bc9cbccacbcb715635a317d3069e6f192bc15965b94",
+  "raw_output": "s\n    >>> from bhmm.initialization import init_model_gaussian1d\n    >>> model = init_model_gaussian1d(testsystems.gaussian1d_observations, ",
+  "sampling_seed": 1005564949,
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def detect_console_encoding():\n    \"\"\"\n    Try to find the most capable encoding supported by the console.\n    slightly modified from the way IPython handles the same issue.\n    \"\"\"\n    # First, try to get the encoding from the environment\n    encoding = os.environ.get('PYTHONIOENCODING')\n    if encoding:\n        return encoding\n\n    # Next, try to get the encoding from the console itself\n    try:\n        import ctypes\n        import ctypes.wintypes\n        from ctypes import windll\n        from ctypes import create_unicode_buffer\n\n        # First, try the new way, which is to use the Console API\n        # (Windows\n",
+  "agc_valid": false,
+  "body_sha256": "60be8c18dcf6d7edb643ba0edacae1bb58885d6e823a326179c249feb8e584f4",
+  "body_tokens": 121,
+  "bucket": "type03_130",
+  "clean_output": "\n    # First, try to get the encoding from the environment\n    encoding = os.environ.get('PYTHONIOENCODING')\n    if encoding:\n        return encoding\n\n    # Next, try to get the encoding from the console itself\n    try:\n        import ctypes\n        import ctypes.wintypes\n        from ctypes import windll\n        from ctypes import create_unicode_buffer\n\n        # First, try the new way, which is to use the Console API\n        # (Windows\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "fc420fc2f5d3d5f0347f9e4d99d858b15b7c68e23b90bb5aa7963161c10aefea",
+  "human_valid": true,
+  "line_no": 91458,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7d5a26c0f21dba0205ea05ac70ef2024ac42a64c34ed11c3f3f1a3f71ccdf304",
+  "raw_output": "\n    # First, try to get the encoding from the environment\n    encoding = os.environ.get('PYTHONIOENCODING')\n    if encoding:\n        return encoding\n\n    # Next, try to get the encoding from the console itself\n    try:\n        import ctypes\n        import ctypes.wintypes\n        from ctypes import windll\n        from ctypes import create_unicode_buffer\n\n        # First, try the new way, which is to use the Console API\n        # (Windows ",
+  "sampling_seed": 1936352689,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def to_array(self):\n        \"\"\"\n        Serializes this InlineQueryResultCachedVoice to a dictionary.\n\n        :return: dictionary representation of this object.\n        :rtype: dict\n        \"\"\"\n        result = {\n            \"type\": InlineQueryResultCachedVoice.TYPE\n        }\n\n        if self.id is not None:\n            result[\"id\"] = self.id\n\n        if self.voice_file_id is not None:\n            result[\"voice_file_id\"] = self.voice_file_id\n\n        if self.title is not None:\n            result[\"title\"] = self.title\n\n        if self.caption is not None:\n            result[\"caption\"] = self.caption\n\n        if self.reply_markup is not None:\n            result[\"reply_markup\"] = self.reply_markup\n\n        if self.input_message_content is not None:\n            result[\"input_message_content\"] = self.input_message_content\n\n        return result\n",
+  "agc_valid": true,
+  "body_sha256": "3c1fd29811ca905e93461ddebf2b14b65e822a6ab44e7c7d428027f01c348606",
+  "body_tokens": 197,
+  "bucket": "type10_200",
+  "clean_output": "\n        result = {\n            \"type\": InlineQueryResultCachedVoice.TYPE\n        }\n\n        if self.id is not None:\n            result[\"id\"] = self.id\n\n        if self.voice_file_id is not None:\n            result[\"voice_file_id\"] = self.voice_file_id\n\n        if self.title is not None:\n            result[\"title\"] = self.title\n\n        if self.caption is not None:\n            result[\"caption\"] = self.caption\n\n        if self.reply_markup is not None:\n            result[\"reply_markup\"] = self.reply_markup\n\n        if self.input_message_content is not None:\n            result[\"input_message_content\"] = self.input_message_content\n\n        return result\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "6ba5f9e0162d14a91cb68a6ca56c6996ca2c3f0784d150fd7d8c144fab5c3416",
+  "human_valid": true,
+  "line_no": 396730,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4db82a26fc269cb1e7e377076913242e36822b4fc3ff2d932b2b6853fb3e5aa2",
+  "raw_output": "\n        result = {\n            \"type\": InlineQueryResultCachedVoice.TYPE\n        }\n\n        if self.id is not None:\n            result[\"id\"] = self.id\n\n        if self.voice_file_id is not None:\n            result[\"voice_file_id\"] = self.voice_file_id\n\n        if self.title is not None:\n            result[\"title\"] = self.title\n\n        if self.caption is not None:\n            result[\"caption\"] = self.caption\n\n        if self.reply_markup is not None:\n            result[\"reply_markup\"] = self.reply_markup\n\n        if self.input_message_content is not None:\n            result[\"input_message_content\"] = self.input_message_content\n\n        return result\n\n    def",
+  "sampling_seed": 3511460122,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

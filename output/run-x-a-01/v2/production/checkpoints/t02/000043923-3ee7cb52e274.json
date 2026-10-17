@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def process_action(self, request, queryset):\n        \"\"\"\n        Unpublishes the selected objects by calling the object's \\\n        unpublish method. The action is logged and the user is \\\n        notified with a message.\n\n        Returns a 'render redirect' to the result of the \\\n        `get_done_url` method.\n        \"\"\"\n        count = queryset.count()\n        unpublished = queryset.unpublish()\n        unpublished_count = unpublished.count()\n        if unpublished_count ==\n",
+  "agc_valid": false,
+  "body_sha256": "ef60f2cb85edaf28d780b40e0fa183bdaa7d27386e0aa56a482ca42c26779827",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n        count = queryset.count()\n        unpublished = queryset.unpublish()\n        unpublished_count = unpublished.count()\n        if unpublished_count ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "a04e644576aeede42b2d83eeb84281ff1d582ba3ed65216eae26eac8c896abd6",
+  "human_valid": true,
+  "line_no": 43923,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3ee7cb52e27482f5bd328c06d1ef84a5634454385c8a506d06b98fdb72bf91b1",
+  "raw_output": "\n        count = queryset.count()\n        unpublished = queryset.unpublish()\n        unpublished_count = unpublished.count()\n        if unpublished_count == ",
+  "sampling_seed": 2782183163,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

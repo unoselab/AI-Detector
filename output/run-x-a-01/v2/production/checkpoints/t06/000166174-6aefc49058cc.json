@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fields2jsonschema(self, fields, ordered=False, partial=None):\n        \"\"\"Return the JSON Schema Object given a mapping between field names and\n        :class:`Field <marshmallow.Field>` objects.\n\n        :param dict fields: A dictionary of field name field object pairs\n        :param bool ordered: Whether to preserve the order in which fields were declared\n        :param bool|tuple partial: Whether to override a field's required flag.\n            If `True` no fields will be set as required. If an iterable fields\n            in the iterable will not be marked as required.\n        :rtype: dict, a JSON Schema Object\n        \"\"\"\n        iterable will be set as required.\n                \"\"\"\n                schema = {}\n                for name, field in fields.items():\n                    field_schema = field.dump_schema(partial)\n                    if field_schema:\n                        schema[name] = field_schema\n\n                if ordered:\n                    return schema\n                else:\n                    return OrderedDict(sorted(schema.items(), key=lambda item: item[0]))\n",
+  "agc_valid": false,
+  "body_sha256": "18c18e5af83a7a16f01097ec4feb830fc0c998f24da5c7211632bef8efef3686",
+  "body_tokens": 215,
+  "bucket": "out_of_range",
+  "clean_output": "\n        iterable will be set as required.\n                \"\"\"\n                schema = {}\n                for name, field in fields.items():\n                    field_schema = field.dump_schema(partial)\n                    if field_schema:\n                        schema[name] = field_schema\n\n                if ordered:\n                    return schema\n                else:\n                    return OrderedDict(sorted(schema.items(), key=lambda item: item[0]))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "cc5046783e0bc61991cacad705570d178ee9ca43edd77168508194653e45a930",
+  "human_valid": true,
+  "line_no": 166174,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6aefc49058cc1e8a9dd88d91d827323c993ca857c4cef6d8d4b7baff323edbd1",
+  "raw_output": "iterable will be set as required.\n        \"\"\"\n        schema = {}\n        for name, field in fields.items():\n            field_schema = field.dump_schema(partial)\n            if field_schema:\n                schema[name] = field_schema\n\n        if ordered:\n            return schema\n        else:\n            return OrderedDict(sorted(schema.items(), key=lambda item: item[0]))\n\n    def",
+  "sampling_seed": 3723282955,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

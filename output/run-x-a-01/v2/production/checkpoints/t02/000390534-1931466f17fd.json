@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def echo_html_list_str(self, catid, infos):\n        \"\"\"\n        生成 list 后的 HTML 格式的字符串\n        \"\"\"\n        html = '<ul class=\"list-group\">'\n        for info in infos:\n            html += '<li class=\"list-group-item\">'\n            html += '<div class=\"media\">'\n            html += '<div class=\"media-left\">'\n            html += '<a href=\"%s\">' % info['url']\n            html += '<img class=\"media-object\" src=\"%s\" alt=\"%s\">' % (info['img'], info['title'])\n            html += '</a>'\n            html += '</div>'\n            html += '<div class=\"media-body\">'\n            html += '<h4 class=\"media-heading\">'\n            html += '<a href=\"%s\">%s</a>' % (info['url'], info['title'])\n            html += '</h4>'\n            html += '<p>%s</p>' % info['summary']\n            html += '</div>'\n            html += '</div>'\n            html += '</li>'\n        html += '</ul>'\n        return html\n",
+  "agc_valid": true,
+  "body_sha256": "9b8f1c105f294b08d36300f030f3ad997f670ed0a8688b0e91d7f90cd71c3cd6",
+  "body_tokens": 272,
+  "bucket": "out_of_range",
+  "clean_output": "\n        html = '<ul class=\"list-group\">'\n        for info in infos:\n            html += '<li class=\"list-group-item\">'\n            html += '<div class=\"media\">'\n            html += '<div class=\"media-left\">'\n            html += '<a href=\"%s\">' % info['url']\n            html += '<img class=\"media-object\" src=\"%s\" alt=\"%s\">' % (info['img'], info['title'])\n            html += '</a>'\n            html += '</div>'\n            html += '<div class=\"media-body\">'\n            html += '<h4 class=\"media-heading\">'\n            html += '<a href=\"%s\">%s</a>' % (info['url'], info['title'])\n            html += '</h4>'\n            html += '<p>%s</p>' % info['summary']\n            html += '</div>'\n            html += '</div>'\n            html += '</li>'\n        html += '</ul>'\n        return html\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "c263f71e5398b9b407953cb8743ac6022f00693709dbc6e7f4a9d0de83e53255",
+  "human_valid": true,
+  "line_no": 390534,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1931466f17fd92a47ca54e95ddd02635607ccb27d410f1252108de10735ab3fb",
+  "raw_output": "\n        html = '<ul class=\"list-group\">'\n        for info in infos:\n            html += '<li class=\"list-group-item\">'\n            html += '<div class=\"media\">'\n            html += '<div class=\"media-left\">'\n            html += '<a href=\"%s\">' % info['url']\n            html += '<img class=\"media-object\" src=\"%s\" alt=\"%s\">' % (info['img'], info['title'])\n            html += '</a>'\n            html += '</div>'\n            html += '<div class=\"media-body\">'\n            html += '<h4 class=\"media-heading\">'\n            html += '<a href=\"%s\">%s</a>' % (info['url'], info['title'])\n            html += '</h4>'\n            html += '<p>%s</p>' % info['summary']\n            html += '</div>'\n            html += '</div>'\n            html += '</li>'\n        html += '</ul>'\n        return html\n\n    def",
+  "sampling_seed": 1388344531,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

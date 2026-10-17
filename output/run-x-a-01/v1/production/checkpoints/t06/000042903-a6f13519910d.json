@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list_from_tibiadata(cls, content):\n        \"\"\"Builds a character object from a TibiaData character response.\n\n        Parameters\n        ----------\n        content: :class:`str`\n            A string containing the JSON response from TibiaData.\n\n        Returns\n        -------\n        :class:`list` of :class:`ListedGuild`\n            The list of guilds contained.\n\n        Raises\n        ------\n        InvalidContent\n            If content is not a JSON response of TibiaData's guild list.\n        \"\"\"\n        s.\n                \"\"\"\n                from tibiapy import ListedGuild\n\n                data = cls._parse_json(content)\n                if not data or not isinstance(data, dict):\n                    raise InvalidContent(\"Guilds\", \"guilds\", content)\n\n                guilds = []\n                for guild_data in data[\"guilds\"]:\n                    guild = ListedGuild(guild_data)\n                    guilds.append(guild)\n                return guilds\n\n            @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "3c7f813c3ce367590918ce8ef6fae6f8450582fe6de775f63c0dec638d1b654b",
+  "body_tokens": 215,
+  "bucket": "out_of_range",
+  "clean_output": "\n        s.\n                \"\"\"\n                from tibiapy import ListedGuild\n\n                data = cls._parse_json(content)\n                if not data or not isinstance(data, dict):\n                    raise InvalidContent(\"Guilds\", \"guilds\", content)\n\n                guilds = []\n                for guild_data in data[\"guilds\"]:\n                    guild = ListedGuild(guild_data)\n                    guilds.append(guild)\n                return guilds\n\n            @classmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f0e20f9bba2d17da8c10a9815b6cca7be5dec520f03edbfefcee2e9558bdd7a5",
+  "human_valid": true,
+  "line_no": 42903,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "a6f13519910d71b921bea0e55f244e1861e619eae9acf372d700501055b68114",
+  "raw_output": "s.\n        \"\"\"\n        from tibiapy import ListedGuild\n\n        data = cls._parse_json(content)\n        if not data or not isinstance(data, dict):\n            raise InvalidContent(\"Guilds\", \"guilds\", content)\n\n        guilds = []\n        for guild_data in data[\"guilds\"]:\n            guild = ListedGuild(guild_data)\n            guilds.append(guild)\n        return guilds\n\n    @classmethod\n    def",
+  "sampling_seed": 2573601795,
+  "tag": "t06",
+  "temperature": 0.6
+}

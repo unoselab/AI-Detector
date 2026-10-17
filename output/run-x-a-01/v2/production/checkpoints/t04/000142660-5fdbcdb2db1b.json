@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fitness(self, width, height):\n        \"\"\"\n        In guillotine algorithm case, returns the min of the fitness of all \n        free sections, for the given dimension, both normal and rotated\n        (if rotation enabled.)\n        \"\"\"\n        if self.rotation:\n            return min(self.get_fitness(width, height),\n                       self.get_fitness(height, width))\n        else:\n            return self.get_fitness(width, height)\n",
+  "agc_valid": true,
+  "body_sha256": "331519f11cc297099edbe4a4eb23d4ae7e97f7a41fdb17f27c29da5cf50336ad",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.rotation:\n            return min(self.get_fitness(width, height),\n                       self.get_fitness(height, width))\n        else:\n            return self.get_fitness(width, height)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "942008852f3e28221903379ea2dc505e3a2a14e716a0d8c6afcc29d71554558c",
+  "human_valid": true,
+  "line_no": 142660,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5fdbcdb2db1bc6bb48b8459fe6473c92b45cf7ebcf7a9bbde64d656ee4111d27",
+  "raw_output": "\n        if self.rotation:\n            return min(self.get_fitness(width, height),\n                       self.get_fitness(height, width))\n        else:\n            return self.get_fitness(width, height)\n\n    def",
+  "sampling_seed": 4098078085,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

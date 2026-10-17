@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hwvtep_add_ve_interface(self, **kwargs):\n        \"\"\"\n               Add virtual ethernet (ve) interface to the overlay-gateway\n\n               Args:\n                   name  (str): gateway-name\n                   int_id (int): ve id\n                   vrrp_id (int): VRPP-E group ID\n                   callback (function): A function executed upon completion of the\n                        method.\n\n               Returns:\n                  Return value of `callback`.\n\n               Raises:\n                   None\n               \"\"\"\n                      Examples:\n                          hwvtep_add_ve_interface(name='gw1', int_id=100, vrrp_id=100)\n               \"\"\"\n\n               return self._post(self._uri + '/' + kwargs['name'] + '/ve',\n                                 data=kwargs,\n                                 callback=kwargs.get('callback'))\n",
+  "agc_valid": false,
+  "body_sha256": "27db3b788ffa80f73b783e39297fe295e39d593dfb2f09fc06b6200e48a3af0b",
+  "body_tokens": 154,
+  "bucket": "type06_160",
+  "clean_output": "\n                      Examples:\n                          hwvtep_add_ve_interface(name='gw1', int_id=100, vrrp_id=100)\n               \"\"\"\n\n               return self._post(self._uri + '/' + kwargs['name'] + '/ve',\n                                 data=kwargs,\n                                 callback=kwargs.get('callback'))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 154,
+  "human_sha256": "916c062492fe716c3f2568779f84f61bcfb0c94a3879eb8ed66d8701ba902949",
+  "human_valid": true,
+  "line_no": 268943,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "10290f9e936765561ae2f8df9d1692e3374c135eada38f426687c237f0d8decd",
+  "raw_output": "\n\n               Examples:\n                   hwvtep_add_ve_interface(name='gw1', int_id=100, vrrp_id=100)\n        \"\"\"\n\n        return self._post(self._uri + '/' + kwargs['name'] + '/ve',\n                          data=kwargs,\n                          callback=kwargs.get('callback'))\n\n    def",
+  "sampling_seed": 1479343633,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

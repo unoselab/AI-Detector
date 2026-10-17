@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def evaluate(self, x):\n        \"\"\"\n        Performs the evaluation of the objective at x.\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "1ed7328b7c2e7bf0c2284c0e7e8cc84aac614193f73308095f927cbbe6670613",
+  "human_valid": true,
+  "line_no": 163889,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "477a381721dfb2ce3f4bd94176628b634ae7517e59b3f60cb2adcabb52ca4a23",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 2291494576,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

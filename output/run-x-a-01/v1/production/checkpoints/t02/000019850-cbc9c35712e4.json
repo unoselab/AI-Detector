@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_by_ext(dirname, ext):\n    \"\"\"Find all files in a directory by extension.\"\"\"\n    return [os.path.join(dirname, f)\n            for f in os.listdir(dirname)\n            if os.path.isfile(os.path.join(dirname, f))\n            and f.endswith(ext)]\n",
+  "agc_valid": true,
+  "body_sha256": "eaa2a87a80723255771a86d3a7d58faee903b13ef408a4923947c02f887f17ee",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return [os.path.join(dirname, f)\n            for f in os.listdir(dirname)\n            if os.path.isfile(os.path.join(dirname, f))\n            and f.endswith(ext)]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "46448243d494be9d9439a4e181feb18f77848cbc4ab5625185358fa97ca5e0fa",
+  "human_valid": true,
+  "line_no": 19850,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "cbc9c35712e4c5a0889f784bc8da25e673f5a64d6520c55aa975cab5554c96d5",
+  "raw_output": "\n    return [os.path.join(dirname, f)\n            for f in os.listdir(dirname)\n            if os.path.isfile(os.path.join(dirname, f))\n            and f.endswith(ext)]\n\n\ndef find_by_ext_in_dirs(dirnames, ext):\n    \"\"\"Find all files in a list of directories by extension.\"\"\"\n    return [f for d in dirnames for f in find_by_ext(d, ext)]\n\n\ndef find_by_ext_in_dir(dirname, ext):\n    \"\"\"Find all files in a directory by extension.\"\"\"\n    return find_by_ext(dirname, ext)\n\n\ndef find_by_ext_in_dirs_recursive(dirnames, ext):\n    \"\"\"Find all files in a list of directories by extension.\"\"\"\n    return [f for d in dirnames for f in find_by_ext_in_dir(d, ext)]\n\n\ndef find_by_ext_in_dir_recursive(dirname, ext):\n    \"\"\"Find all files in a directory by extension.\"\"\"\n    return find_by_ext_in_dirs_recursive([dirname], ext)\n\n\ndef find_by_ext_in_dirs_recursive_with_exclude(dirnames, ext, exclude):\n    \"\"\"Find all files in a list of directories by extension.\"\"\"\n    return [f for d in dirnames for f in find_by_ext_in_dir_recursive_with_exclude(d, ext, exclude)]\n\n\ndef find_by_ext_in_dir_recursive_with_exclude(dirname, ext, exclude):\n    \"\"\"Find all files in a directory by extension.\"\"\"\n    return find_by_ext_in_dirs_recursive_with_exclude([dirname], ext, exclude)\n\n\ndef find_by_ext_in_dirs_recursive_with_exclude_in_dir(dirnames, ext, exclude):\n    \"\"\"Find all files in a list of directories by extension.\"\"\"\n    return [f for d in dirnames for f in find_by_ext_in_dir_recursive_with_exclude_in_dir",
+  "sampling_seed": 2497774838,
+  "tag": "t02",
+  "temperature": 0.2
+}

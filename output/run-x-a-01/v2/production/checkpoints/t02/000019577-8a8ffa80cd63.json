@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _guessunit(self):\n        \"\"\"Guess the unit of the period as the largest one, which results in\n        an integer duration.\n        \"\"\"\n        if self.unit is not None:\n            return\n        for unit in self.units:\n            if unit in self.duration:\n                self.unit = unit\n                break\n",
+  "agc_valid": true,
+  "body_sha256": "03ceb3b4e78adc97de47876b24dc45147d638b6d0c2f11e0b6284a23494286da",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.unit is not None:\n            return\n        for unit in self.units:\n            if unit in self.duration:\n                self.unit = unit\n                break\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "41fb25fad71ceea9b245e54b642e7695746a847a30e238ce13920e870543da7b",
+  "human_valid": true,
+  "line_no": 19577,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8a8ffa80cd638469b159f62118a6ec57cf20ced9cb386641699a0788172543ed",
+  "raw_output": "\n        if self.unit is not None:\n            return\n        for unit in self.units:\n            if unit in self.duration:\n                self.unit = unit\n                break\n\n    def",
+  "sampling_seed": 534075764,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

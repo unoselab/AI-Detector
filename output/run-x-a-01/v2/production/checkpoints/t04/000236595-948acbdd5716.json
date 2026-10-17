@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate(self, attrs):\n        \"\"\" checks if login credentials are correct \"\"\"\n        user = authenticate(\n            username=attrs['username'], password=attrs['password'])\n        if user is None:\n            raise serializers.ValidationError(\n                'Invalid login credentials')\n        attrs['user'] = user\n        return attrs\n",
+  "agc_valid": true,
+  "body_sha256": "545df7ad94a4b14ef29c220d53c58af9d6068f6aad4a703eb397d6664d82cd6a",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n        user = authenticate(\n            username=attrs['username'], password=attrs['password'])\n        if user is None:\n            raise serializers.ValidationError(\n                'Invalid login credentials')\n        attrs['user'] = user\n        return attrs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "9341809b068628ddc7cfa1fdcff2adedfd29563ce95394e01f650468e51d7db5",
+  "human_valid": true,
+  "line_no": 236595,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "948acbdd5716d37748cf7559a520908d31227d9627810e6abccaa647bbba1488",
+  "raw_output": "\n        user = authenticate(\n            username=attrs['username'], password=attrs['password'])\n        if user is None:\n            raise serializers.ValidationError(\n                'Invalid login credentials')\n        attrs['user'] = user\n        return attrs\n\n\nclass UserSerializer(serializers.ModelSerializer):\n    \"\"\" serializer for the users object \"\"\"\n\n    class Meta:\n        model = User\n        fields = ('id', 'username', 'email', 'password')\n        extra_kwargs = {\n            'password': {\n                'write_only': True,\n                'style': {'input_type': 'password'}\n            }\n        }\n\n    def",
+  "sampling_seed": 4068121378,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

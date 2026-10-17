@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def respond(self, obj):\n        \"\"\"Gives a response JSON(P) message\"\"\"\n        if obj.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "b8e4688ef99ecb08469c2ea374a6d8dd6ccdc3c3aba493f4f4c11a78f63c72bc",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if obj.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "35ea233387f7bede32484e74e84790d3371c833f83408aacdfd4e4e72084ba51",
+  "human_valid": true,
+  "line_no": 34166,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3dd7578da32730dad68024b9e1a2c2f7a91f30518f60dff0518da106fbdecff9",
+  "raw_output": "\n        if obj.status_code == ",
+  "sampling_seed": 244906137,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

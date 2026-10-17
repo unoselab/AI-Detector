@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def observable_copy(value, name, instance):\n    \"\"\"Return an observable container for HasProperties notifications\n\n    This method creates a new container class to allow HasProperties\n    instances to :code:`observe_mutations`. It returns a copy of the\n    input value as this new class.\n\n    The output class behaves identically to the input value's original\n    class, except when it is used as a property on a HasProperties\n    instance. In that case, it notifies the HasProperties instance of\n    any mutations or operations.\n    \"\"\"\n    if isinstance(value, HasProperties):\n        return value.observe_mutations(name, instance)\n    if isinstance(value, dict):\n        return value.copy()\n    if isinstance(value, (list, tuple)):\n        return value[:]\n    return value\n",
+  "agc_valid": true,
+  "body_sha256": "d20b7cb9a01f7b96e540bd91567a1a6804d4a0e5a202039c1d020e456dccbb97",
+  "body_tokens": 53,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(value, HasProperties):\n        return value.observe_mutations(name, instance)\n    if isinstance(value, dict):\n        return value.copy()\n    if isinstance(value, (list, tuple)):\n        return value[:]\n    return value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "427f429417a6dacc3b2b95de9d5959bb02504f7e09a495be9dfe7ed677002154",
+  "human_valid": true,
+  "line_no": 408570,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7d165aa71026dec832d5e9ff0bce6f46658e3732d97e48d4028b5621993a27f7",
+  "raw_output": "\n    if isinstance(value, HasProperties):\n        return value.observe_mutations(name, instance)\n    if isinstance(value, dict):\n        return value.copy()\n    if isinstance(value, (list, tuple)):\n        return value[:]\n    return value\n\n\ndef observable_set(value, name, instance):\n    \"\"\"Return an observable container for HasProperties notifications\n\n    This method creates a new container class to allow HasProperties\n    instances to :code:`observe_mutations`. It returns a set of the\n    input value as this new class.\n\n    The output class behaves identically to the input value's original\n    class, except when it is used as a property on a HasProperties\n    instance. In that case, it notifies the HasProperties instance of\n    any mutations or operations.\n    \"\"\"\n    if isinstance(value, HasProperties):\n        return value.observe_mutations(name, instance)\n    if isinstance(value, set):\n        return value.copy()\n    return set(value)\n\n\ndef observable_list(value, name, instance):\n    \"\"\"Return an observable container for HasProperties notifications\n\n    This method creates a new container class to allow HasProperties\n    instances to :code:`observe_mutations`. It returns a list of the\n    input value as this new class.\n\n    The output class behaves identically to the input value's original\n    class, except when it is used as a property on a HasProperties\n    instance. In that case, it notifies the HasProperties instance of\n    any mutations or operations.\n    \"\"\"\n    if isinstance(value, HasProperties):\n        return value.observe_mutations(name, instance)\n    if isinstance(value, list):\n        return value[:]\n    return list(value)\n\n\ndef observable_tuple(value, name, instance):\n    \"\"\"Return an observable container for HasProperties notifications\n\n    This method creates a new container class to allow HasProperties\n    instances to :code:`observe_mutations`. It returns a tuple of the\n    input value as this new class.\n\n    The output class behaves identically to the input value's original\n    class, except when it is used",
+  "sampling_seed": 4213397988,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

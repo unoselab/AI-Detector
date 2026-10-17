@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def createSummary(self, log):\n        \"\"\"\n        Match log lines against warningPattern.\n\n        Warnings are collected into another log for this step, and the\n        build-wide 'warnings-count' is updated.\"\"\"\n        log.debug(\"Creating warnings summary\")\n        warnings = self.createLog()\n        warnings.setName(self.name + \"-warnings\")\n        warnings.setDescription(self.description + \" warnings\")\n        warnings.setDefaultView(self.defaultView)\n        warnings.setSticky(1)\n        warnings.setExpandByDefault(0)\n        warnings.setSortBy(\"time\")\n        warnings.setSortDirection(0)\n\n        warnings.addProperty(self.createTextProperty(\"warnings-count\", \"Warnings\",\n                                                    \"Number of warnings\", \"number\",\n                                                    \"warnings-count\",\n",
+  "agc_valid": false,
+  "body_sha256": "3ee982a83b229961231d176041606ad6bfcbb72077f18917d3fe2af8f9c3f3e4",
+  "body_tokens": 198,
+  "bucket": "type10_200",
+  "clean_output": "\n        log.debug(\"Creating warnings summary\")\n        warnings = self.createLog()\n        warnings.setName(self.name + \"-warnings\")\n        warnings.setDescription(self.description + \" warnings\")\n        warnings.setDefaultView(self.defaultView)\n        warnings.setSticky(1)\n        warnings.setExpandByDefault(0)\n        warnings.setSortBy(\"time\")\n        warnings.setSortDirection(0)\n\n        warnings.addProperty(self.createTextProperty(\"warnings-count\", \"Warnings\",\n                                                    \"Number of warnings\", \"number\",\n                                                    \"warnings-count\",\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "58b7ef480363adb9109cbff1bd54a08727de01eed62aaf187ac093ff04d2423b",
+  "human_valid": true,
+  "line_no": 357274,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc8f29ac78f31b0e56d6fcfa3fd184fb234693deb0938f0185bf99a580a570d0",
+  "raw_output": "\n\n        log.debug(\"Creating warnings summary\")\n        warnings = self.createLog()\n        warnings.setName(self.name + \"-warnings\")\n        warnings.setDescription(self.description + \" warnings\")\n        warnings.setDefaultView(self.defaultView)\n        warnings.setSticky(1)\n        warnings.setExpandByDefault(0)\n        warnings.setSortBy(\"time\")\n        warnings.setSortDirection(0)\n\n        warnings.addProperty(self.createTextProperty(\"warnings-count\", \"Warnings\",\n                                                    \"Number of warnings\", \"number\",\n                                                    \"warnings-count\", ",
+  "sampling_seed": 1795491745,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

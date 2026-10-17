@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def GetText(text='', entry_text='', password=False, **kwargs):\n    \"\"\"Get some text from the user.\n\n    This will raise a Zenity Text Entry Dialog.  It returns the text the user \n    entered or None if the user hit cancel.\n\n    text - A description of the text to enter.\n    entry_text - The initial value of the text entry box.\n    password - True if text entered should be hidden by stars.\n    kwargs - Optional command line parameters for Zenity such as height,\n             width, etc.\"\"\"\n             \"\"\n                 if password:\n                     command = ['zenity', '--entry', '--hide-text', '--text', text,\n                                '--entry-text', entry_text]\n                 else:\n                     command = ['zenity', '--entry', '--text', text, '--entry-text',\n                                entry_text]\n                 for key, value in kwargs.items():\n                     command.extend(['--' + key, str(value)])\n                 result = subprocess.run(command, stdout=subprocess.PIPE,\n                                         stderr=subprocess.PIPE)\n                 if result.returncode ==\n",
+  "agc_valid": false,
+  "body_sha256": "5513b52a61395a8c21bb3763c00b30c44d6c41cdd024e82750ce5e8d3afea929",
+  "body_tokens": 293,
+  "bucket": "out_of_range",
+  "clean_output": "\n             \"\"\n                 if password:\n                     command = ['zenity', '--entry', '--hide-text', '--text', text,\n                                '--entry-text', entry_text]\n                 else:\n                     command = ['zenity', '--entry', '--text', text, '--entry-text',\n                                entry_text]\n                 for key, value in kwargs.items():\n                     command.extend(['--' + key, str(value)])\n                 result = subprocess.run(command, stdout=subprocess.PIPE,\n                                         stderr=subprocess.PIPE)\n                 if result.returncode ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "72d408f697fe3ad8c4cde73e16ed2ef3c67256833ee4ce5cdf622e325958a4a0",
+  "human_valid": true,
+  "line_no": 41609,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fddcbb728cbb6f0a1aaa2e021e73a9be19e56f1348a7df3922cdf1c8697fba28",
+  "raw_output": "\"\"\n    if password:\n        command = ['zenity', '--entry', '--hide-text', '--text', text,\n                   '--entry-text', entry_text]\n    else:\n        command = ['zenity', '--entry', '--text', text, '--entry-text',\n                   entry_text]\n    for key, value in kwargs.items():\n        command.extend(['--' + key, str(value)])\n    result = subprocess.run(command, stdout=subprocess.PIPE,\n                            stderr=subprocess.PIPE)\n    if result.returncode == ",
+  "sampling_seed": 110792268,
+  "tag": "t02",
+  "temperature": 0.2
+}

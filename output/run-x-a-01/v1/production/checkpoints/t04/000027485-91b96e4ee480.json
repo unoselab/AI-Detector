@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def on_failure(self, exc, task_id, args, kwargs, einfo):\n        \"\"\"\n        Increases penalty for the task and resets the counter.\n        \"\"\"\n        task = Task.objects.get(id=task_id)\n        task.penalty +=\n",
+  "agc_valid": false,
+  "body_sha256": "f54ee6dd28799b4d18e2e29da3942c37dee3bbae3f9e9e67176729b23ca1ea8b",
+  "body_tokens": 20,
+  "bucket": "out_of_range",
+  "clean_output": "\n        task = Task.objects.get(id=task_id)\n        task.penalty +=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "346ae8bdf4bbea4f7ec2403708a2f252ff650c79658fefd1dfb6ef4ecc889a89",
+  "human_valid": true,
+  "line_no": 27485,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "91b96e4ee480c6b588ee2ec5c805e6508e8068720b8436eaf2d37c85b8eb2514",
+  "raw_output": "\n        task = Task.objects.get(id=task_id)\n        task.penalty += ",
+  "sampling_seed": 3665784029,
+  "tag": "t04",
+  "temperature": 0.4
+}

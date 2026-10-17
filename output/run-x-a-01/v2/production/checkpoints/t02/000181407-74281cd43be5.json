@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def match_handle(loc, tokens):\n    \"\"\"Process match blocks.\"\"\"\n    if len(tokens) ==\n",
+  "agc_valid": false,
+  "body_sha256": "c69239db118498a1466c3937f842f05a9290466208bf6b8b50e40e369fbb3e3e",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(tokens) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "d491685b08033d4c17e4e4b101e4d77c71116811923b6c9a0cc6b16674083164",
+  "human_valid": true,
+  "line_no": 181407,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "74281cd43be5d9d426d908d8fce7810fe80a14114c87b7728c90cf0b14f9a749",
+  "raw_output": "\n    if len(tokens) == ",
+  "sampling_seed": 3886461705,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

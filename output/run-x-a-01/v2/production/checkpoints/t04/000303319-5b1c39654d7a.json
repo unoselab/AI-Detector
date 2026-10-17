@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def mark_read(self):\n        \"\"\" Mark notifications as read.\n\n        CURRENT UNSUPPORTED:\n        https://github.com/kippt/api-documentation/blob/master/endpoints/notifications/POST_notifications.md\n\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "e274212a8903c774c4b1891c21a8eb0430e8eae7a6e0d34f26ce46c32b61a185",
+  "human_valid": true,
+  "line_no": 303319,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5b1c39654d7a89ad36427bb8e0b2abf4ff04ae01537f758588cd00971f779cdf",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 2417648558,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

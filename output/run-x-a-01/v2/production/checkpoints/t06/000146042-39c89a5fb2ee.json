@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def lru_append(kc, lru, kckey, maxsize):\n    \"\"\"Delete old data from ``kc``, then add the new ``kckey``.\n\n    :param kc: a three-layer keycache\n    :param lru: an :class:`OrderedDict` with a key for each triple that should fill out ``kc``'s three layers\n    :param kckey: a triple that indexes into ``kc``, which will be added to ``lru`` if needed\n    :param maxsize: maximum number of entries in ``lru`` and, therefore, ``kc``\n\n    \"\"\"\n    ru``\n\n        \"\"\"\n        if len(lru) >= maxsize:\n            lru.popitem(last=False)\n        lru[kckey] = None\n\n        for k in kc.keys():\n            if kckey == k:\n                continue\n            if kckey in kc[k]:\n                del kc[k][kckey]\n            if not kc[k]:\n                del kc[k]\n\n        kc[kckey] = lru\n",
+  "agc_valid": false,
+  "body_sha256": "72775e5ce6df6db342e6f406d657b0ec8eb1b1c7c56ef03683b41e602d70974b",
+  "body_tokens": 161,
+  "bucket": "type07_170",
+  "clean_output": "\n    ru``\n\n        \"\"\"\n        if len(lru) >= maxsize:\n            lru.popitem(last=False)\n        lru[kckey] = None\n\n        for k in kc.keys():\n            if kckey == k:\n                continue\n            if kckey in kc[k]:\n                del kc[k][kckey]\n            if not kc[k]:\n                del kc[k]\n\n        kc[kckey] = lru\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "c0f64bf6ebe884915e4c6313e697f601b80750a9a7ba61f90462f1d3832a8ac3",
+  "human_valid": true,
+  "line_no": 146042,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "39c89a5fb2ee880deb9f1966f37ecf86c3a67a2ba2b33102dd632cc73131f04e",
+  "raw_output": "ru``\n\n    \"\"\"\n    if len(lru) >= maxsize:\n        lru.popitem(last=False)\n    lru[kckey] = None\n\n    for k in kc.keys():\n        if kckey == k:\n            continue\n        if kckey in kc[k]:\n            del kc[k][kckey]\n        if not kc[k]:\n            del kc[k]\n\n    kc[kckey] = lru\n\n\nclass KeyCache(dict):\n    \"\"\"Three-layer keycache.\n\n    The first layer is a dict indexed by the first element of the key.\n    The second layer is a dict indexed by the second element of the key.\n    The third layer is a dict indexed by the third element of the key.\n\n    The keys are tuples, and the values are dicts.\n    Each of the three layers of the keycache is an :class:`OrderedDict`.\n    The keys in each layer are the keys in the layer below it.\n    The values in each layer are dicts that map the keys in the layer below it to the corresponding values.\n\n    The keycache is implemented as a three-layer dict.\n    The first layer is a dict indexed by the first element of the key.\n    The second layer is a dict indexed by the second element of the key.\n    The third layer is a dict indexed by the third element of the key.\n    The keys are tuples, and the values are dicts.\n    Each of the three layers of the keycache is an :class:`OrderedDict`.\n    The keys in each layer are the keys in the layer below it.\n    The values in each layer are dicts that map the keys in the layer below it to the corresponding values.\n\n    This class is not intended for direct use.\n    Use :class:`KeyCache2` instead.\n\n    \"\"\"\n    def",
+  "sampling_seed": 4096876801,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

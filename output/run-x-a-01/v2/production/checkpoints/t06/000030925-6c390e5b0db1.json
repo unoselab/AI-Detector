@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def user_playlists(self, user_id, page=1, limit=30):\n        \"\"\"\n        NOTE: 用户歌单有可能是仅自己可见\n        \"\"\"\n        return self._get(\n            '/user/playlist',\n            params={\n                'uid': user_id,\n                'limit': limit,\n                'offset': (page -\n",
+  "agc_valid": false,
+  "body_sha256": "5f04decdf2def229cf3de9626c1eb3a2d02986e1fa90f34a0c33337a5943c7f1",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._get(\n            '/user/playlist',\n            params={\n                'uid': user_id,\n                'limit': limit,\n                'offset': (page -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "5db08d07300157c27bc807f39f6ae8840cb5cb11505a4efc38c6f7279ad82acd",
+  "human_valid": true,
+  "line_no": 30925,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6c390e5b0db1bd177cd8873a33341a114d5eee743cb8568691b07a5839f161c6",
+  "raw_output": "\n        return self._get(\n            '/user/playlist',\n            params={\n                'uid': user_id,\n                'limit': limit,\n                'offset': (page - ",
+  "sampling_seed": 981684846,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

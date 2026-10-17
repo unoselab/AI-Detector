@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def query(self):\n        \"\"\"\n        Returns the full query for this widget.  This will reflect the complete\n        combined query for all containers within this widget.\n\n        :return     <orb.Query>\n        \"\"\"\n            #return self._query\n            return self._query\n\n        @query.setter\n",
+  "agc_valid": false,
+  "body_sha256": "323d2bd6f1661812840853c739c6f48ebe6df82f2e040c56a8c0613c07421129",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n            #return self._query\n            return self._query\n        \n        @query.setter\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 106,
+  "human_sha256": "16d7870488a3f05751b0633d9665cd4ca4e3f692a766b0b618dec9e2e27c5918",
+  "human_valid": true,
+  "line_no": 79954,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ec29ab39e843e9383f70f2cefc8d1f9240933d66b32c7b4f21f0d1a275aec398",
+  "raw_output": "\r\n        \r\n        #return self._query\r\n        return self._query\r\n        \r\n    @query.setter\r\n    def",
+  "sampling_seed": 3156078053,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

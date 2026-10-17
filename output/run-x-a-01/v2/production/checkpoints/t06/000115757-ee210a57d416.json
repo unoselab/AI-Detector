@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def list_():\n    \"\"\"\n    List the RAID devices.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' raid.list\n    \"\"\"\n    ret = {}\n    for line in __salt__[\"raid.list_\"]().split(\"\\n\"):\n        if line:\n            try:\n                dev, level, raid_name = line.split()\n            except ValueError:\n                continue\n            ret[dev] = {\"level\": level, \"raid_name\": raid_name}\n    return ret\n",
+  "agc_valid": true,
+  "body_sha256": "c3d80de2da041c4f3e4c62a7f143a003eb7a9df2963c8e0cba09dfcfa7c3030e",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n    ret = {}\n    for line in __salt__[\"raid.list_\"]().split(\"\\n\"):\n        if line:\n            try:\n                dev, level, raid_name = line.split()\n            except ValueError:\n                continue\n            ret[dev] = {\"level\": level, \"raid_name\": raid_name}\n    return ret\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "e64a533a47088ab79bbd66d4209f67098dc01424eb6ceaeaf0a97d22ff66d2d5",
+  "human_valid": true,
+  "line_no": 115757,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ee210a57d4167597a2464bd713661be7deef3e3f987dfb4a57bc607378ab7669",
+  "raw_output": "\n    ret = {}\n    for line in __salt__[\"raid.list_\"]().split(\"\\n\"):\n        if line:\n            try:\n                dev, level, raid_name = line.split()\n            except ValueError:\n                continue\n            ret[dev] = {\"level\": level, \"raid_name\": raid_name}\n    return ret\n\n\ndef create(dev, level, raid_name, metadata=\"0.90\", chunk_size=None):\n    \"\"\"\n    Create a RAID device.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' raid.create /dev/sda /dev/sdb /dev/sdc ",
+  "sampling_seed": 4152834468,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

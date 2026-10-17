@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_root_directory():\n    \"\"\"\n    Get user root directory (application user configuration root directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(os.path.expanduser(\"~\"), \".config\", \"pytconf\")\n",
+  "agc_valid": true,
+  "body_sha256": "3c4797b09da3064e1121784db250c77b9a96cd1b9b27c5eb211877ae580cf096",
+  "body_tokens": 8,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return os.path.join(os.path.expanduser(\"~\"), \".config\", \"pytconf\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "9b8f7aa795ded9be748334c568f0a74957ac5334a01ca0bf495b0409bb5920c8",
+  "human_valid": true,
+  "line_no": 310299,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a5a51a2f02a45e35cd9517f7c7d88cf578562d3fe65d48034500d203dac50864",
+  "raw_output": "\n    return os.path.join(os.path.expanduser(\"~\"), \".config\", \"pytconf\")\n\n\ndef get_user_config_directory():\n    \"\"\"\n    Get user configuration directory (application user configuration directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"config\")\n\n\ndef get_user_config_file_path(config_name):\n    \"\"\"\n    Get user configuration file path (application user configuration file path)\n\n    Parameters\n    ----------\n    config_name : string\n        The configuration name\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_config_directory(), config_name)\n\n\ndef get_user_config_file_path_from_config_name(config_name):\n    \"\"\"\n    Get user configuration file path (application user configuration file path)\n\n    Parameters\n    ----------\n    config_name : string\n        The configuration name\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_config_directory(), config_name)\n\n\ndef get_user_config_file_path_from_config_name_and_section(config_name, section):\n    \"\"\"\n    Get user configuration file path (application user configuration file path)\n\n    Parameters\n    ----------\n    config_name : string\n        The configuration name\n    section : string\n        The section name\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_config_directory(), config_name, section)\n\n\ndef get_user_config_file_path_from_config_name_and_section_and_key(config_name, section, key):\n    \"\"\"\n    Get user configuration file path (application user configuration file path)\n\n    Parameters\n    ----------\n    config_name : string\n        The configuration name\n    section : string\n        The section name\n    key : string\n        The key name",
+  "sampling_seed": 3519404861,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

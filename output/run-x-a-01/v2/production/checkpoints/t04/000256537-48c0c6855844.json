@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_user_preferences_from_request(request):\n    \"\"\"Sets user subscription preferences using data from a request.\n\n    Expects data sent by form built with `sitemessage_prefs_table` template tag.\n\n    :param request:\n    :rtype: bool\n    :return: Flag, whether prefs were found in the request.\n    \"\"\"\n    if not request.POST:\n        return False\n\n    for key, value in request.POST.items():\n        if key.startswith('pref_'):\n            pref_id = int(key.split('_')[1])\n            pref = SubscriptionPreference.objects.get(id=pref_id)\n            pref.set_value(value)\n\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "32c5ec462b1a1370ef13bd12cf20726ef38970fee3cfb60e55ac1157dca2deb3",
+  "body_tokens": 78,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not request.POST:\n        return False\n\n    for key, value in request.POST.items():\n        if key.startswith('pref_'):\n            pref_id = int(key.split('_')[1])\n            pref = SubscriptionPreference.objects.get(id=pref_id)\n            pref.set_value(value)\n\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 110,
+  "human_sha256": "1eda564b3bac0989d100f8c3bb4723902081d694e2233575323d02fded9e510a",
+  "human_valid": true,
+  "line_no": 256537,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "48c0c6855844325a5e9188d9bbba9e73a98cb892b3c57cdb6ef3a0cd65d85828",
+  "raw_output": "\n    if not request.POST:\n        return False\n\n    for key, value in request.POST.items():\n        if key.startswith('pref_'):\n            pref_id = int(key.split('_')[1])\n            pref = SubscriptionPreference.objects.get(id=pref_id)\n            pref.set_value(value)\n\n    return True\n\n\ndef get_user_preferences_as_dict(user):\n    \"\"\"Returns user preferences as a dict.\n\n    :param user:\n    :rtype: dict\n    :return:\n    \"\"\"\n    prefs = SubscriptionPreference.objects.all()\n    return {pref.id: pref.get_value_for_user(user) for pref in prefs}\n\n\ndef get_user_preferences_as_json(user):\n    \"\"\"Returns user preferences as JSON.\n\n    :param user:\n    :rtype: str\n    :return:\n    \"\"\"\n    return json.dumps(get_user_preferences_as_dict(user))\n\n\ndef get_user_preferences_as_html(user):\n    \"\"\"Returns user preferences as HTML.\n\n    :param user:\n    :rtype: str\n    :return:\n    \"\"\"\n    prefs = SubscriptionPreference.objects.all()\n    return render_to_string('sitemessage/prefs_table.html', {\n        'prefs': prefs,\n        'user_prefs': get_user_preferences_as_dict(user),\n    })\n\n\ndef get_user_preferences_as_form(user):\n    \"\"\"Returns user preferences as form.\n\n    :param user:\n    :rtype: django.forms.Form\n    :return:\n    \"\"\"\n    prefs = SubscriptionPreference.objects.all()\n    form_fields = [\n        forms.CharField(\n            widget=forms.HiddenInput(),\n            initial=pref.id,\n            required=False,\n            label=pref.name,\n        )\n        for pref in prefs\n    ]\n    form_fields.append(\n",
+  "sampling_seed": 3895554596,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

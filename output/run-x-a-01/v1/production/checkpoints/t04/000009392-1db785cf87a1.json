@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_site_available(self):\n        \"\"\"\n        Returns true if we can access LendingClub.com\n        This is also a simple test to see if there's a network connection\n\n        Returns\n        -------\n        boolean\n            True or False\n        \"\"\"\n        try:\n            url = \"https://www.lendingclub.com\"\n            response = requests.get(url, timeout=1)\n            return response.ok\n        except:\n            return False\n",
+  "agc_valid": true,
+  "body_sha256": "bc5359286ca3077b68158b0fba5705fd8a52ff12ff5ae13532745d1502a5be09",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n        try:\n            url = \"https://www.lendingclub.com\"\n            response = requests.get(url, timeout=1)\n            return response.ok\n        except:\n            return False\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9d7b7ffd455b636de2d1c862d320d42c07e6f9fed1f31d860d883a5f2b55375c",
+  "human_valid": true,
+  "line_no": 9392,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1db785cf87a14547df671f585f19b0d57ff451885b6453ceb8f5b9baf55b636f",
+  "raw_output": "\n        try:\n            url = \"https://www.lendingclub.com\"\n            response = requests.get(url, timeout=1)\n            return response.ok\n        except:\n            return False\n\n    def",
+  "sampling_seed": 1479079820,
+  "tag": "t04",
+  "temperature": 0.4
+}

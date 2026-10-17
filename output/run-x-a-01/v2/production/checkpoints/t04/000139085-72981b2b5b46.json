@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def imethodcall(self, methodname, namespace, response_params_rqd=False,\n                    **params):\n        \"\"\"\n        **Deprecated:** Low-level method used by the operation-specific methods\n        of this class.\n\n        *Deprecated since pywbem 0.12.*\n\n        Calling this function directly has been deprecated and will issue a\n        :term:`DeprecationWarning`.\n        Users should call the operation-specific methods (e.g. GetInstance)\n        instead of this method.\n        This method will be removed in the next pywbem release after 0.12.\n        \"\"\"\n        method will be removed in a future release.\n\n                \"\"\"\n                warnings.warn(\n                    \"Calling imethodcall directly is deprecated. \"\n                    \"Use the operation-specific methods instead.\",\n                    DeprecationWarning, stacklevel=2)\n\n                # Build the request\n                request = self.build_request(methodname, namespace, params)\n\n                # Send the request\n                response = self.send_request(request, response_params_rqd)\n\n                # Return the response\n                return response\n",
+  "agc_valid": false,
+  "body_sha256": "9dc7ff0867d7720e2a70d266ccfcfd91ac570cba099004406f7f0faa3f10a847",
+  "body_tokens": 231,
+  "bucket": "out_of_range",
+  "clean_output": "\n        method will be removed in a future release.\n\n                \"\"\"\n                warnings.warn(\n                    \"Calling imethodcall directly is deprecated. \"\n                    \"Use the operation-specific methods instead.\",\n                    DeprecationWarning, stacklevel=2)\n\n                # Build the request\n                request = self.build_request(methodname, namespace, params)\n\n                # Send the request\n                response = self.send_request(request, response_params_rqd)\n\n                # Return the response\n                return response\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "d7e5c89a9ef9a22b7c3c2002222e39b584fa8fc16219bfff4de6dd096df9857f",
+  "human_valid": true,
+  "line_no": 139085,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "72981b2b5b46427a9c2ab921dc69dad55801cc60ef42efde93d572e60effa103",
+  "raw_output": "method will be removed in a future release.\n\n        \"\"\"\n        warnings.warn(\n            \"Calling imethodcall directly is deprecated. \"\n            \"Use the operation-specific methods instead.\",\n            DeprecationWarning, stacklevel=2)\n\n        # Build the request\n        request = self.build_request(methodname, namespace, params)\n\n        # Send the request\n        response = self.send_request(request, response_params_rqd)\n\n        # Return the response\n        return response\n\n    def",
+  "sampling_seed": 160015004,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

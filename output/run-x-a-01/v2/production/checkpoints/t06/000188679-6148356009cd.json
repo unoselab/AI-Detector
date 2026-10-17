@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_headers(lines, offset=0):\n    \"\"\"\n    Parse the headers in a STOMP response\n\n    :param list(str) lines: the lines received in the message response\n    :param int offset: the starting line number\n\n    :rtype: dict(str,str)\n    \"\"\"\n    headers = {}\n    for line in lines[offset:]:\n        if line == '':\n            break\n        parts = line.split(':')\n        headers[parts[0]] = parts[1].strip()\n    return headers\n",
+  "agc_valid": true,
+  "body_sha256": "09799d33aed050440f6443b9b9efc4483f73a2b86348bd1b4bcc39b31c45e531",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    headers = {}\n    for line in lines[offset:]:\n        if line == '':\n            break\n        parts = line.split(':')\n        headers[parts[0]] = parts[1].strip()\n    return headers\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "778624b0f52ad42c2a465f260115e295747ffc406e2e340b2def2a91aec6a378",
+  "human_valid": true,
+  "line_no": 188679,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6148356009cdd19f03aacc1743311554b93ca1d296a5af0d7d3c4259faecddb9",
+  "raw_output": "\n    headers = {}\n    for line in lines[offset:]:\n        if line == '':\n            break\n        parts = line.split(':')\n        headers[parts[0]] = parts[1].strip()\n    return headers\n\n\ndef parse_message(lines, offset=0):\n    \"\"\"\n    Parse a STOMP message\n\n    :param list(str) lines: the lines received in the message response\n    :param int offset: the starting line number\n\n    :rtype: dict(str,str)\n    \"\"\"\n    headers = {}\n    body = []\n    for line in lines[offset:]:\n        if line == '':\n            break\n        if line.startswith('content-length'):\n            body = lines[offset+1:]\n            break\n        parts = line.split(':')\n        headers[parts[0]] = parts[1].strip()\n    if len(body) == ",
+  "sampling_seed": 2580042297,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

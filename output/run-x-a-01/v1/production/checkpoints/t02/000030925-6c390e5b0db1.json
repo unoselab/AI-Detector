@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def user_playlists(self, user_id, page=1, limit=30):\n        \"\"\"\n        NOTE: 用户歌单有可能是仅自己可见\n        \"\"\"\n        url = 'https://music.163.com/weapi/user/playlist'\n        params = {\n            'uid': user_id,\n            'limit': limit,\n            'offset': (page -\n",
+  "agc_valid": false,
+  "body_sha256": "3bd262f1f41a3521dbc155b5a23779b8f8930ae4e3f9c268597a40dce9181c76",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n        url = 'https://music.163.com/weapi/user/playlist'\n        params = {\n            'uid': user_id,\n            'limit': limit,\n            'offset': (page -\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5db08d07300157c27bc807f39f6ae8840cb5cb11505a4efc38c6f7279ad82acd",
+  "human_valid": true,
+  "line_no": 30925,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "6c390e5b0db1bd177cd8873a33341a114d5eee743cb8568691b07a5839f161c6",
+  "raw_output": "\n        url = 'https://music.163.com/weapi/user/playlist'\n        params = {\n            'uid': user_id,\n            'limit': limit,\n            'offset': (page - ",
+  "sampling_seed": 4091086388,
+  "tag": "t02",
+  "temperature": 0.2
+}

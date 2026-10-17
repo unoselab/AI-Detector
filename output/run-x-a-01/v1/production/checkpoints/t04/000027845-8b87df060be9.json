@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def name_without_zeroes(name):\n    \"\"\"\n    Return a human-readable name without LSDJ's trailing zeroes.\n\n    :param name: the name from which to strip zeroes\n    :rtype: the name, without trailing zeroes\n    \"\"\"\n    return name.rstrip('0')\n",
+  "agc_valid": true,
+  "body_sha256": "9e45002bfbc8cad4e16cbda5cfda4b863cc530251789b8bda071796b07185116",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return name.rstrip('0')\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "28c009c48c377b14eab4089ca9865e440b119447132ef37feffd16cfdded6658",
+  "human_valid": true,
+  "line_no": 27845,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8b87df060be93da8a670249b5ee8ee570c290730cb875aff41ff0096fd701663",
+  "raw_output": "\n    return name.rstrip('0')\n\n\ndef name_with_zeroes(name):\n    \"\"\"\n    Return a name with LSDJ's trailing zeroes.\n\n    :param name: the name to which to add zeroes\n    :rtype: the name, with trailing zeroes\n    \"\"\"\n    return name + '0' * (8 - len(name))\n\n\ndef name_to_int(name):\n    \"\"\"\n    Convert a name to its integer representation.\n\n    :param name: the name to convert\n    :rtype: the name's integer representation\n    \"\"\"\n    return int(name_without_zeroes(name), ",
+  "sampling_seed": 481203693,
+  "tag": "t04",
+  "temperature": 0.4
+}

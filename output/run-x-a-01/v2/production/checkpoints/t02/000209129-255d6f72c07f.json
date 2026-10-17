@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def valid_ipv4(ip):\n    \"\"\" check if ip is a valid ipv4 \"\"\"\n    try:\n        socket.inet_aton(ip)\n        return True\n    except socket.error:\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "6827ae080aa413bfa34de41374dfc7f4ea21faa7a4ad1981c2c890ccea7be5a2",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        socket.inet_aton(ip)\n        return True\n    except socket.error:\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "a528631d079b0654d5a5b19efd0da173502fb2795d41b35f7369c375b9fadb20",
+  "human_valid": true,
+  "line_no": 209129,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "255d6f72c07f717f6d3d12696e27b9c66dbaf12c47818640a92060ead60f3802",
+  "raw_output": "\n    try:\n        socket.inet_aton(ip)\n        return True\n    except socket.error:\n        return False\n\n\ndef valid_ipv6(ip):\n    \"\"\" check if ip is a valid ipv6 \"\"\"\n    try:\n        socket.inet_pton(socket.AF_INET6, ip)\n        return True\n    except socket.error:\n        return False\n\n\ndef valid_ip(ip):\n    \"\"\" check if ip is a valid ipv4 or ipv6 \"\"\"\n    return valid_ipv4(ip) or valid_ipv6(ip)\n\n\ndef valid_port(port):\n    \"\"\" check if port is a valid port \"\"\"\n    try:\n        port = int(port)\n        if port < ",
+  "sampling_seed": 2945746453,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

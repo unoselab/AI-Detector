@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ensure_bytes(data: Union[str, bytes]) -> bytes:\n    \"\"\"\n    Convert data in bytes if data is a string\n\n    :param data: Data\n    :rtype bytes:\n    \"\"\"\n    if isinstance(data, str):\n        return data.encode()\n    return data\n",
+  "agc_valid": true,
+  "body_sha256": "531d92aaa88fd72d040da6fed1ee694a3d7f339ca6de4a751060bed076ab29a6",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(data, str):\n        return data.encode()\n    return data\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1d9535f645ac7206757e5446d9898146977fe1b9630a43b278a01b82c52e8fc0",
+  "human_valid": true,
+  "line_no": 42486,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "512bb529d2a4f7d037294bf061e866253fb7792dd871ee463f8ab08493e941e5",
+  "raw_output": "\n    if isinstance(data, str):\n        return data.encode()\n    return data\n\n\ndef ensure_str(data: Union[str, bytes]) -> str:\n    \"\"\"\n    Convert data in string if data is bytes\n\n    :param data: Data\n    :rtype str:\n    \"\"\"\n    if isinstance(data, bytes):\n        return data.decode()\n    return data\n\n\ndef ensure_int(data: Union[str, int]) -> int:\n    \"\"\"\n    Convert data in int if data is a string\n\n    :param data: Data\n    :rtype int:\n    \"\"\"\n    if isinstance(data, str):\n        return int(data)\n    return data\n\n\ndef ensure_float(data: Union[str, float]) -> float:\n    \"\"\"\n    Convert data in float if data is a string\n\n    :param data: Data\n    :rtype float:\n    \"\"\"\n    if isinstance(data, str):\n        return float(data)\n    return data\n\n\ndef ensure_bool(data: Union[str, bool]) -> bool:\n    \"\"\"\n    Convert data in bool if data is a string\n\n    :param data: Data\n    :rtype bool:\n    \"\"\"\n    if isinstance(data, str):\n        return data.lower() in ['true', '1']\n    return data\n\n\ndef ensure_list(data: Union[str, List]) -> List:\n    \"\"\"\n    Convert data in list if data is a string\n\n    :param data: Data\n    :rtype list:\n    \"\"\"\n    if isinstance(data, str):\n        return data.split(',')\n    return data\n\n\ndef ensure_dict(data: Union[str, Dict]) -> Dict:\n    \"\"\"\n    Convert data in dict if data is a string\n\n    :param data: Data\n    :rtype dict:\n    \"\"\"\n    if isinstance(data, str):\n        return json.loads(data)\n    return data\n\n\ndef ensure_tuple(data: Union[str, Tuple]) -> Tuple:\n    \"\"\"\n    Convert data in tuple if data is a string\n\n    :param data: Data\n    :rtype",
+  "sampling_seed": 2733044328,
+  "tag": "t02",
+  "temperature": 0.2
+}

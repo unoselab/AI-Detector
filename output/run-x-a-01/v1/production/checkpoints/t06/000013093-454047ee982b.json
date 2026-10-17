@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def convertfields(key_comm, obj, inblock=None):\n    \"\"\"convert based on float, integer, and A1, N1\"\"\"\n    if key_comm.startswith('float'):\n        key_comm = key_comm[5:]\n        if not inblock:\n            obj.append(float(key_comm))\n        else:\n            obj.append(float(key_comm))\n    elif key_comm.startswith('int'):\n        key_comm = key_comm[3:]\n        if not inblock:\n            obj.append(int(key_comm))\n        else:\n            obj.append(int(key_comm))\n    elif key_comm.startswith('A'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n    elif key_comm.startswith('N'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n",
+  "agc_valid": true,
+  "body_sha256": "a19edfc5988918a59cf7ecdfb958cc28df66cb72f5b72ec47854c7425fbd57ac",
+  "body_tokens": 229,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if key_comm.startswith('float'):\n        key_comm = key_comm[5:]\n        if not inblock:\n            obj.append(float(key_comm))\n        else:\n            obj.append(float(key_comm))\n    elif key_comm.startswith('int'):\n        key_comm = key_comm[3:]\n        if not inblock:\n            obj.append(int(key_comm))\n        else:\n            obj.append(int(key_comm))\n    elif key_comm.startswith('A'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n    elif key_comm.startswith('N'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9c0d5ae12a89cff2ed05faa68eb2119dd3487778d39ec14bafa01639d7fb525f",
+  "human_valid": true,
+  "line_no": 13093,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "454047ee982b759584bbbe1fb431ad9d9313c82cc59cfb2e76fb3a9b7de58583",
+  "raw_output": "\n\n    if key_comm.startswith('float'):\n        key_comm = key_comm[5:]\n        if not inblock:\n            obj.append(float(key_comm))\n        else:\n            obj.append(float(key_comm))\n    elif key_comm.startswith('int'):\n        key_comm = key_comm[3:]\n        if not inblock:\n            obj.append(int(key_comm))\n        else:\n            obj.append(int(key_comm))\n    elif key_comm.startswith('A'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n    elif key_comm.startswith('N'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n\n\ndef convert_block(key_comm, obj, inblock=None):\n    \"\"\"convert based on float, integer, and A1, N1\"\"\"\n\n    if key_comm.startswith('float'):\n        key_comm = key_comm[5:]\n        if not inblock:\n            obj.append(float(key_comm))\n        else:\n            obj.append(float(key_comm))\n    elif key_comm.startswith('int'):\n        key_comm = key_comm[3:]\n        if not inblock:\n            obj.append(int(key_comm))\n        else:\n            obj.append(int(key_comm))\n    elif key_comm.startswith('A'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n    elif key_comm.startswith('N'):\n        key_comm = key_comm[1:]\n        if not inblock:\n            obj.append(str(key_comm))\n        else:\n            obj.append(str(key_comm))\n",
+  "sampling_seed": 855099520,
+  "tag": "t06",
+  "temperature": 0.6
+}

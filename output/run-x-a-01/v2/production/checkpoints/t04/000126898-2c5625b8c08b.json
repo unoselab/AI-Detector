@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def from_file(self, file, store=current_store,\n                  extra_args=None, extra_kwargs=None):\n        \"\"\"Stores the ``file`` for the image into the ``store``.\n\n        :param file: the readable file of the image\n        :type file: file-like object, :class:`file`\n        :param store: the storage to store the file.\n                      :data:`~sqlalchemy_imageattach.context.current_store`\n                      by default\n        :type store: :class:`~sqlalchemy_imageattach.store.Store`\n        :param extra_args: additional arguments to pass to the model's\n                           constructor.\n        :type extra_args: :class:`collections.abc.Sequence`\n        :param extra_kwargs: additional keyword arguments to pass to the\n                             model's constructor.\n        :type extra_kwargs: :class:`typing.Mapping`\\ [:class:`str`,\n                                                      :class:`object`]\n        :returns: the created image instance\n        :rtype: :class:`Image`\n\n        .. versionadded:: 1.0.0\n           The ``extra_args`` and ``extra_kwargs`` options.\n\n        \"\"\"\n        alchemy_imageattach.store.Store`\n                :param extra_args: extra positional arguments for the store\n                :type extra_args: list\n                :param extra_kwargs: extra keyword arguments for the store\n                :type extra_kwargs: dict\n                :return: the stored file\n                :rtype: :class:`~sqlalchemy_imageattach.store.StoredFile`\n                \"\"\"\n                return store.store(self, file, extra_args, extra_kwargs)\n",
+  "agc_valid": false,
+  "body_sha256": "89a6c09b94f8843cce1c7d7c009869d6f9c6c47b5ee9adac8548bc9d51a4b8ed",
+  "body_tokens": 163,
+  "bucket": "type07_170",
+  "clean_output": "\n        alchemy_imageattach.store.Store`\n                :param extra_args: extra positional arguments for the store\n                :type extra_args: list\n                :param extra_kwargs: extra keyword arguments for the store\n                :type extra_kwargs: dict\n                :return: the stored file\n                :rtype: :class:`~sqlalchemy_imageattach.store.StoredFile`\n                \"\"\"\n                return store.store(self, file, extra_args, extra_kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "87322ab6fa6680a6fa88618a47600ba36f143939159fdde813502edd91eb45fa",
+  "human_valid": true,
+  "line_no": 126898,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2c5625b8c08bd56f487d985946f35d30c047c2ed388eacf76fac1e13747f2e68",
+  "raw_output": "alchemy_imageattach.store.Store`\n        :param extra_args: extra positional arguments for the store\n        :type extra_args: list\n        :param extra_kwargs: extra keyword arguments for the store\n        :type extra_kwargs: dict\n        :return: the stored file\n        :rtype: :class:`~sqlalchemy_imageattach.store.StoredFile`\n        \"\"\"\n        return store.store(self, file, extra_args, extra_kwargs)\n\n    def",
+  "sampling_seed": 2833549090,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

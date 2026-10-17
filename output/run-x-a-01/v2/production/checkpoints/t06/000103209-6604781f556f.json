@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def log_deprecated(name=\"\", text=\"\", eos=\"\"):\n    \"\"\"\n    Log deprecation warning.\n\n    Args:\n        name (str): name of the deprecated item.\n        text (str, optional): information about the deprecation.\n        eos (str, optional): end of service date such as \"YYYY-MM-DD\".\n    \"\"\"\n    text = text if text else \"\"\n    eos = eos if eos else \"\"\n\n    if name:\n        text = f\"{name} \" + text\n\n    if eos:\n        text = f\"{text} is deprecated and will be removed on {eos}.\"\n    else:\n        text = f\"{text} is deprecated.\"\n\n    warnings.warn(text, DeprecationWarning, stacklevel=2)\n",
+  "agc_valid": true,
+  "body_sha256": "d38549a1d7a8af745ba9768a85602abb638d66ef89ba6c954ac499725faa086e",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n    text = text if text else \"\"\n    eos = eos if eos else \"\"\n\n    if name:\n        text = f\"{name} \" + text\n\n    if eos:\n        text = f\"{text} is deprecated and will be removed on {eos}.\"\n    else:\n        text = f\"{text} is deprecated.\"\n\n    warnings.warn(text, DeprecationWarning, stacklevel=2)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "d853a2670e4d64000af8f2978aa017f532db2ec8c32005135d5f81251f6d4bc8",
+  "human_valid": true,
+  "line_no": 103209,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6604781f556fee50e99813bb2b9902df123430848668f57cc750c030b1c519be",
+  "raw_output": "\n    text = text if text else \"\"\n    eos = eos if eos else \"\"\n\n    if name:\n        text = f\"{name} \" + text\n\n    if eos:\n        text = f\"{text} is deprecated and will be removed on {eos}.\"\n    else:\n        text = f\"{text} is deprecated.\"\n\n    warnings.warn(text, DeprecationWarning, stacklevel=2)\n\n\ndef deprecated(name=\"\", text=\"\", eos=\"\"):\n    \"\"\"\n    Deprecate a function.\n\n    Args:\n        name (str): name of the deprecated item.\n        text (str, optional): information about the deprecation.\n        eos (str, optional): end of service date such as \"YYYY-MM-DD\".\n    \"\"\"\n\n    def",
+  "sampling_seed": 2018451726,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

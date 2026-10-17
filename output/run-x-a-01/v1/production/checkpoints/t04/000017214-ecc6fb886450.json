@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_public_member(self, login):\n        \"\"\"Check if the user with login ``login`` is a public member.\n\n        :returns: bool\n        \"\"\"\n        return self.is_public_member_by_login(login)\n",
+  "agc_valid": true,
+  "body_sha256": "84698a2cfbc9058406c2ce1ac11122c9daaa32bb1589f68319d0cb6f13e28b47",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.is_public_member_by_login(login)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b72732423271781fa7d1608e937241023ee97d07043dd626a33561ad07e1e853",
+  "human_valid": true,
+  "line_no": 17214,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ecc6fb886450c64863aaa1630280105180d0be63a92351afba592b4443a58795",
+  "raw_output": "\n        return self.is_public_member_by_login(login)\n\n    def",
+  "sampling_seed": 2671092846,
+  "tag": "t04",
+  "temperature": 0.4
+}

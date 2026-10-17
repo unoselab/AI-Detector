@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def checkconfig():\n    \"\"\"\n    returns the output of lxc-checkconfig\n    \"\"\"\n    command = \"lxc-checkconfig\"\n    return command\n",
+  "agc_valid": true,
+  "body_sha256": "56c8c0267d657ea49c0620e2fb68a1e188145e02e8456516db480808e17f2bfe",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n    command = \"lxc-checkconfig\"\n    return command\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "4449085a77fa7cc6b3af6e456bbf872969d840729f715b7fbd40d704b4dbc078",
+  "human_valid": true,
+  "line_no": 48664,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "aa1dd227940659fa342e833e3674e1580a1a5745cd33a1437ef6f2cb994599c0",
+  "raw_output": "\r\n    command = \"lxc-checkconfig\"\r\n    return command\r\n\r\n\r\ndef lxc_create(name, template=None):\r\n    \"\"\"\r\n    creates a new container\r\n    \"\"\"\r\n    command = \"lxc-create -n {} -t {}\".format(name, template)\r\n    return command\r\n\r\n\r\ndef lxc_attach(name):\r\n    \"\"\"\r\n    attach to a container\r\n    \"\"\"\r\n    command = \"lxc-attach -n {}\".format(name)\r\n    return command\r\n\r\n\r\ndef lxc_destroy(name):\r\n    \"\"\"\r\n    destroy a container\r\n    \"\"\"\r\n    command = \"lxc-destroy -n {}\".format(name)\r\n    return command\r\n\r\n\r\ndef lxc_stop(name):\r\n    \"\"\"\r\n    stop a container\r\n    \"\"\"\r\n    command = \"lxc-stop -n {}\".format(name)\r\n    return command\r\n\r\n\r\ndef lxc_start(name):\r\n    \"\"\"\r\n    start a container\r\n    \"\"\"\r\n    command = \"lxc-start -n {}\".format(name)\r\n    return command\r\n\r\n\r\ndef lxc_copy(name, source, destination):\r\n    \"\"\"\r\n    copy a file from a container\r\n    \"\"\"\r\n    command = \"lxc-copy -n {} -s {} {}\".format(name, source, destination)\r\n    return command\r\n\r\n\r\ndef lxc_execute(name, command):\r\n    \"\"\"\r\n    execute a command in a container\r\n    \"\"\"\r\n    command = \"lxc-execute -n {} {}\".format(name, command)\r\n    return command\r\n\r\n\r\ndef lxc_info(name):\r\n    \"\"\"\r\n    get information about a container\r\n    \"\"\"\r\n    command = \"lxc-info -n {}\".format(name)\r\n    return command\r\n\r\n\r\ndef lxc_list():\r\n    \"\"\"\r\n    list the containers\r\n    \"\"\"\r\n    command = \"lxc-list\"\r\n    return command\r\n\r\n\r\ndef lxc_cgroup_ls():\r\n    \"\"\"",
+  "sampling_seed": 149080846,
+  "tag": "t06",
+  "temperature": 0.6
+}

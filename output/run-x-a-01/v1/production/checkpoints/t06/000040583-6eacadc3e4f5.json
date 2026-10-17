@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def distinguish(self, id_, how=True):\n        \"\"\"Login required.  Sends POST to distinguish a submission or comment.  Returns :class:`things.Link` or :class:`things.Comment`, or raises :class:`exceptions.UnexpectedResponse` otherwise.\n\n        URL: ``http://www.reddit.com/api/distinguish/``\n\n        :param id\\_: full id of object to distinguish\n        :param how: either True, False, or 'admin'\n        \"\"\"\n        params = {'id': id_, 'how': how}\n        r = self._post(self._apiurl('distinguish'), params)\n        if r.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "7726ef01b45fb317bda87f06efa6961dff8877fda9120ef1c1324a7c57eb7205",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        params = {'id': id_, 'how': how}\n        r = self._post(self._apiurl('distinguish'), params)\n        if r.status_code ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2887afa8f103305c3a953d9a4661388a3918083b0f4c177b1408dfb51a39e20f",
+  "human_valid": true,
+  "line_no": 40583,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "6eacadc3e4f5738b7e6293709142294bddd4f056fcc9b234e7bf6d83f602e084",
+  "raw_output": "\n        params = {'id': id_, 'how': how}\n        r = self._post(self._apiurl('distinguish'), params)\n        if r.status_code == ",
+  "sampling_seed": 131859177,
+  "tag": "t06",
+  "temperature": 0.6
+}

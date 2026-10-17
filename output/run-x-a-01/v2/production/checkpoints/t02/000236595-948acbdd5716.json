@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def validate(self, attrs):\n        \"\"\" checks if login credentials are correct \"\"\"\n        username = attrs.get('username')\n        password = attrs.get('password')\n        user = authenticate(username=username, password=password)\n        if user is None:\n            raise serializers.ValidationError(\n                'A user with this username and password is not found.'\n            )\n        attrs['user'] = user\n        return attrs\n",
+  "agc_valid": true,
+  "body_sha256": "8913609dd18ead375ede12f8a458690d03e513f8224dc7008b5d8da0c2275a38",
+  "body_tokens": 112,
+  "bucket": "type02_120",
+  "clean_output": "\n        username = attrs.get('username')\n        password = attrs.get('password')\n        user = authenticate(username=username, password=password)\n        if user is None:\n            raise serializers.ValidationError(\n                'A user with this username and password is not found.'\n            )\n        attrs['user'] = user\n        return attrs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "9341809b068628ddc7cfa1fdcff2adedfd29563ce95394e01f650468e51d7db5",
+  "human_valid": true,
+  "line_no": 236595,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "948acbdd5716d37748cf7559a520908d31227d9627810e6abccaa647bbba1488",
+  "raw_output": "\n        username = attrs.get('username')\n        password = attrs.get('password')\n        user = authenticate(username=username, password=password)\n        if user is None:\n            raise serializers.ValidationError(\n                'A user with this username and password is not found.'\n            )\n        attrs['user'] = user\n        return attrs\n\n\nclass UserSerializer(serializers.ModelSerializer):\n    \"\"\" Serializes a user \"\"\"\n\n    class Meta:\n        model = User\n        fields = ('id', 'username', 'email', 'name')\n        read_only_fields = ('id',)\n\n\nclass ProfileFeedItemSerializer(serializers.ModelSerializer):\n    \"\"\" Serializes profile feed items \"\"\"\n\n    class Meta:\n        model = ProfileFeedItem\n        fields = ('id', 'user_profile', 'status_text', 'created_on')\n        extra_kwargs = {'user_profile': {'read_only': True}}\n\n\nclass UserProfileSerializer(serializers.ModelSerializer):\n    \"\"\" Serializes a user profile \"\"\"\n\n    class Meta:\n        model = UserProfile\n        fields = ('id', 'user', 'name', 'email', 'profile_image')\n        extra_kwargs = {'user': {'read_only': True}}\n\n    def",
+  "sampling_seed": 3730318021,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

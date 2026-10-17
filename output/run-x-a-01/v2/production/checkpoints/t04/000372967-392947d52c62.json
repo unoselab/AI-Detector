@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_garbage_collector(self, exts=None, policy=\"task\"):\n        \"\"\"\n        Enable the garbage collector that will remove the big output files that are not needed.\n\n        Args:\n            exts: string or list with the Abinit file extensions to be removed. A default is\n                provided if exts is None\n            policy: Either `flow` or `task`. If policy is set to 'task', we remove the output\n                files as soon as the task reaches S_OK. If 'flow', the files are removed\n                only when the flow is finalized. This option should be used when we are dealing\n                with a dynamic flow with callbacks generating other tasks since a :class:`Task`\n                might not be aware of its children when it reached S_OK.\n        \"\"\"\n        after the flow is finished.\n\n                \"\"\"\n                if exts is None:\n                    exts = ['abo', 'abg', 'abd', 'abj', 'abk', 'abo2', 'abg2', 'abd2', 'abj2', 'abk2',\n                            'abo3', 'abg3', 'abd3', 'abj3', 'abk3', 'abo4', 'abg4', 'abd4', 'abj4', 'abk4']\n                elif not isinstance(exts, (list, tuple)):\n                    exts = [exts]\n\n                self.garbage_collector = GarbageCollector(exts, policy)\n",
+  "agc_valid": false,
+  "body_sha256": "7b66bc3feb473415c8053a4a9f9f80611e5a6492d3b6a0fb0aab0c46e4044033",
+  "body_tokens": 177,
+  "bucket": "type08_180",
+  "clean_output": "\n        after the flow is finished.\n\n                \"\"\"\n                if exts is None:\n                    exts = ['abo', 'abg', 'abd', 'abj', 'abk', 'abo2', 'abg2', 'abd2', 'abj2', 'abk2',\n                            'abo3', 'abg3', 'abd3', 'abj3', 'abk3', 'abo4', 'abg4', 'abd4', 'abj4', 'abk4']\n                elif not isinstance(exts, (list, tuple)):\n                    exts = [exts]\n\n                self.garbage_collector = GarbageCollector(exts, policy)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "39adb83115f965dec3592f32caf96f0ae8d9bd096a2d9c10d4a1899da2b584c5",
+  "human_valid": true,
+  "line_no": 372967,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "392947d52c6274cd420a967d876d15a16c1cd58ff7768a857c07f0e41ff1fd2c",
+  "raw_output": "after the flow is finished.\n\n        \"\"\"\n        if exts is None:\n            exts = ['abo', 'abg', 'abd', 'abj', 'abk', 'abo2', 'abg2', 'abd2', 'abj2', 'abk2',\n                    'abo3', 'abg3', 'abd3', 'abj3', 'abk3', 'abo4', 'abg4', 'abd4', 'abj4', 'abk4']\n        elif not isinstance(exts, (list, tuple)):\n            exts = [exts]\n\n        self.garbage_collector = GarbageCollector(exts, policy)\n\n    def",
+  "sampling_seed": 3429638471,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def augknt(knots, order):\n    \"\"\"Augment a knot vector.\n\nParameters:\n    knots:\n        Python list or rank-1 array, the original knot vector (without endpoint repeats)\n    order:\n        int, >= 0, order of spline\n\nReturns:\n    list_of_knots:\n        rank-1 array that has (`order` + 1) copies of ``knots[0]``, then ``knots[1:-1]``, and finally (`order` + 1) copies of ``knots[-1]``.\n\nCaveats:\n    `order` is the spline order `p`, not `p` + 1, and existing knots are never deleted.\n    The knot vector always becomes longer by calling this function.\n\"\"\"\n) copies of ``knots[-1]``\n\n    \"\"\"\n    if isinstance(knots, list):\n        knots = np.array(knots)\n    if knots.ndim !=\n",
+  "agc_valid": false,
+  "body_sha256": "f38fc204e735b2b765f3c97e421c0716a9828fb9d33ee5eea217725c9ada495d",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n) copies of ``knots[-1]``\n\n    \"\"\"\n    if isinstance(knots, list):\n        knots = np.array(knots)\n    if knots.ndim !=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "74395287720871a66ad768d8bd75fdada599f580a88fb42e1fb4d366d53652db",
+  "human_valid": true,
+  "line_no": 8172,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "6b8ec9410f41592b33fbe37539046ec205c2aefe0411574b006bb5e10d844090",
+  "raw_output": ") copies of ``knots[-1]``\n\n    \"\"\"\n    if isinstance(knots, list):\n        knots = np.array(knots)\n    if knots.ndim != ",
+  "sampling_seed": 1727369849,
+  "tag": "t04",
+  "temperature": 0.4
+}

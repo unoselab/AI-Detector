@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def above(self, objects: Set[Object]) -> Set[Object]:\n        \"\"\"\n        Returns the set of objects in the same boxes that are above the given objects. That is, if\n        the input is a set of two objects, one in each box, we will return a union of the objects\n        above the first object in the first box, and those above the second object in the second box.\n        \"\"\"\n        result = set()\n        for obj in objects:\n            if obj not in self.boxes:\n                raise ValueError(\"Object not in box\")\n            result |= self.boxes[obj]\n        return result\n",
+  "agc_valid": true,
+  "body_sha256": "6e7d7a116714fe9508289e931a4cffa3f0345e4dd8f945c231ae21d2449f25ff",
+  "body_tokens": 81,
+  "bucket": "out_of_range",
+  "clean_output": "\n        result = set()\n        for obj in objects:\n            if obj not in self.boxes:\n                raise ValueError(\"Object not in box\")\n            result |= self.boxes[obj]\n        return result\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "278e7b904aac892a217e50e433b58506cb171ca0a76019953a19543c2e4952d1",
+  "human_valid": true,
+  "line_no": 96228,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "54fa6e58c5986881d6d6e37c560230f7f2b235e5687b4536903d490329d0d34f",
+  "raw_output": "\n        result = set()\n        for obj in objects:\n            if obj not in self.boxes:\n                raise ValueError(\"Object not in box\")\n            result |= self.boxes[obj]\n        return result\n\n    def",
+  "sampling_seed": 2134459758,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

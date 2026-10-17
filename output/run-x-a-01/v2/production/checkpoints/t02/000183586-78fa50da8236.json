@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_user(self, username):\n        \"\"\" get user attributes\n        @str username: user to get\n        @rtype: dict, {<attr>: <value>}\n        \"\"\"\n        return self.get_user_attributes(username)\n",
+  "agc_valid": true,
+  "body_sha256": "4ccc6e5bac01a7b28f8bbbfeab346632839c24a6b8417aa3a02d4afebe772905",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_user_attributes(username)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "77b51e4e408ebfee94ab2ce7e66c236607c6d97549a2288b2e3d7b8245f07745",
+  "human_valid": true,
+  "line_no": 183586,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "78fa50da8236403466585e031aeafaf8499004f6ba510b0e93251dc278934a7c",
+  "raw_output": "\n        return self.get_user_attributes(username)\n\n    def",
+  "sampling_seed": 2015862053,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def put_annotation(self, key, value):\n        \"\"\"\n        Annotate segment or subsegment with a key-value pair.\n        Annotations will be indexed for later search query.\n\n        :param str key: annotation key\n        :param object value: annotation value. Any type other than\n            string/number/bool will be dropped\n        \"\"\"\n        self._annotations[key] = value\n",
+  "agc_valid": true,
+  "body_sha256": "c7d6b814d5a4cbad4f708983a0f19a235f5d88cd34b3f8e4fb50a2f02650f98b",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._annotations[key] = value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "eecff0d6ecbc675c4bc536ecd1fa6a9cdfd78ac4d3bf5b1f050baed3c04ee464",
+  "human_valid": true,
+  "line_no": 209167,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "31ffbb84dff5171e3fb39affafadf06686572e9fa3011eb93557e32d699d8159",
+  "raw_output": "\n        self._annotations[key] = value\n\n    def",
+  "sampling_seed": 176649806,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

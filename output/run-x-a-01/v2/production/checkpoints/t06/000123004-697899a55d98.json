@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def linexand (listoflists,columnlist,valuelist):\n    \"\"\"\nReturns the rows of a list of lists where col (from columnlist) = val\n(from valuelist) for EVERY pair of values (columnlist[i],valuelists[i]).\nlen(columnlist) must equal len(valuelist).\n\nUsage:   linexand (listoflists,columnlist,valuelist)\nReturns: the rows of listoflists where columnlist[i]=valuelist[i] for ALL i\n\"\"\"\n    if len(columnlist) != len(valuelist):\n        raise ValueError('len(columnlist) must equal len(valuelist)')\n\n    # create a list of lists of rows\n    listofrows = []\n    for i in range(len(listoflists)):\n        listofrows.append([])\n        for j in range(len(listoflists[i])):\n            listofrows[i].append(listoflists[i][j])\n\n    # create a list of lists of lists of rows\n    listofrows2 = []\n    for i in range(len(columnlist)):\n        listofrows2.append([])\n        for j in range(len(listofrows)):\n            listofrows2[i].append([])\n            for k in range(len(listofrows[j])):\n                if listofrows[j][columnlist[i]] == valuelist[i]:\n                    listofrows2[i][j].append(listofrows[j][k])\n\n    # create a list of lists of lists of lists of rows\n    listofrows3 = []\n    for i in range(len(listofrows2)):\n        listofrows3.append([])\n        for j in range(len(listofrows2[i])):\n            listofrows3[i].append([])\n            for k in range(len(listofrows2[i][j])):\n                if len(listofrows2[i][j][k]) ==\n",
+  "agc_valid": false,
+  "body_sha256": "b143e42f7685549a644d8f8ee9359d11a12fc6dc353511c78a85b9494023cb12",
+  "body_tokens": 278,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(columnlist) != len(valuelist):\n        raise ValueError('len(columnlist) must equal len(valuelist)')\n\n    # create a list of lists of rows\n    listofrows = []\n    for i in range(len(listoflists)):\n        listofrows.append([])\n        for j in range(len(listoflists[i])):\n            listofrows[i].append(listoflists[i][j])\n\n    # create a list of lists of lists of rows\n    listofrows2 = []\n    for i in range(len(columnlist)):\n        listofrows2.append([])\n        for j in range(len(listofrows)):\n            listofrows2[i].append([])\n            for k in range(len(listofrows[j])):\n                if listofrows[j][columnlist[i]] == valuelist[i]:\n                    listofrows2[i][j].append(listofrows[j][k])\n\n    # create a list of lists of lists of lists of rows\n    listofrows3 = []\n    for i in range(len(listofrows2)):\n        listofrows3.append([])\n        for j in range(len(listofrows2[i])):\n            listofrows3[i].append([])\n            for k in range(len(listofrows2[i][j])):\n                if len(listofrows2[i][j][k]) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 154,
+  "human_sha256": "0c84fbe0462e9d3d4263fb380fac2977487abc34400dce4d369f4b9c5edd3d75",
+  "human_valid": true,
+  "line_no": 123004,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "697899a55d989ada52505d0ff03161e4575761341b80afe1ff6574c887e45f16",
+  "raw_output": "\n\n    if len(columnlist) != len(valuelist):\n        raise ValueError('len(columnlist) must equal len(valuelist)')\n\n    # create a list of lists of rows\n    listofrows = []\n    for i in range(len(listoflists)):\n        listofrows.append([])\n        for j in range(len(listoflists[i])):\n            listofrows[i].append(listoflists[i][j])\n\n    # create a list of lists of lists of rows\n    listofrows2 = []\n    for i in range(len(columnlist)):\n        listofrows2.append([])\n        for j in range(len(listofrows)):\n            listofrows2[i].append([])\n            for k in range(len(listofrows[j])):\n                if listofrows[j][columnlist[i]] == valuelist[i]:\n                    listofrows2[i][j].append(listofrows[j][k])\n\n    # create a list of lists of lists of lists of rows\n    listofrows3 = []\n    for i in range(len(listofrows2)):\n        listofrows3.append([])\n        for j in range(len(listofrows2[i])):\n            listofrows3[i].append([])\n            for k in range(len(listofrows2[i][j])):\n                if len(listofrows2[i][j][k]) == ",
+  "sampling_seed": 4265546577,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

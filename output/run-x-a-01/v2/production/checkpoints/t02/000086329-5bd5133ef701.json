@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def download(remote_location, remotes=None, prefix=\"\", dry_run=False):\n    \"\"\"\n    Download resources from a stage server.\n    \"\"\"\n    if remotes is None:\n        remotes = []\n    remotes = [prefix + remote_location] + remotes\n    for remote in remotes:\n        if not dry_run:\n            print(\"Downloading %s\" % remote)\n            urllib.request.urlretrieve(remote, remote)\n        else:\n            print(\"Would download %s\" % remote)\n",
+  "agc_valid": true,
+  "body_sha256": "0132158cfb83b4fff7975b8e3a452b28c406bf76905f7b589d555e8bd59afc68",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if remotes is None:\n        remotes = []\n    remotes = [prefix + remote_location] + remotes\n    for remote in remotes:\n        if not dry_run:\n            print(\"Downloading %s\" % remote)\n            urllib.request.urlretrieve(remote, remote)\n        else:\n            print(\"Would download %s\" % remote)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "7a3bf4c17519c90a49eec317e9d43519b7609e6d249f031bbf952deb172feb76",
+  "human_valid": true,
+  "line_no": 86329,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5bd5133ef70100a912880f3a72de2ebcdc0692822d082f5cd5dddc03208450ab",
+  "raw_output": "\n    if remotes is None:\n        remotes = []\n    remotes = [prefix + remote_location] + remotes\n    for remote in remotes:\n        if not dry_run:\n            print(\"Downloading %s\" % remote)\n            urllib.request.urlretrieve(remote, remote)\n        else:\n            print(\"Would download %s\" % remote)\n\n\ndef upload(local_location, remotes=None, prefix=\"\", dry_run=False):\n    \"\"\"\n    Upload resources to a stage server.\n    \"\"\"\n    if remotes is None:\n        remotes = []\n    remotes = [prefix + local_location] + remotes\n    for remote in remotes:\n        if not dry_run:\n            print(\"Uploading %s\" % remote)\n            urllib.request.urlretrieve(remote, remote)\n        else:\n            print(\"Would upload %s\" % remote)\n\n\ndef upload_file(local_location, remotes=None, prefix=\"\", dry_run=False):\n    \"\"\"\n    Upload a file to a stage server.\n    \"\"\"\n    if remotes is None:\n        remotes = []\n    remotes = [prefix + local_location] + remotes\n    for remote in remotes:\n        if not dry_run:\n            print(\"Uploading %s\" % remote)\n            urllib.request.urlretrieve(remote, remote)\n        else:\n            print(\"Would upload %s\" % remote)\n\n\ndef upload_dir(local_location, remotes=None, prefix=\"\", dry_run=False):\n    \"\"\"\n    Upload a directory to a stage server.\n    \"\"\"\n    if remotes is None:\n        remotes = []\n    remotes = [prefix + local_location] + remotes\n    for remote in remotes:\n        if not dry_run:\n            print(\"Uploading %s\" % remote)\n            urllib.request.urlretrieve(remote, remote)\n        else:\n            print(\"Would upload %s\" % remote)\n\n\ndef upload_files(local_location, remotes=None, prefix=\"\", dry_run=False):",
+  "sampling_seed": 3656851018,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

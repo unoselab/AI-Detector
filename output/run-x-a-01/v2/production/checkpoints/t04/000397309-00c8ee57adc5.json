@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def verifyInputs(self):\n        \"\"\"\n        Used in propagate() to verify that the network input\n        activations have been set.\n        \"\"\"\n        if self.inputs is None:\n            raise ValueError('Inputs have not been set.')\n",
+  "agc_valid": true,
+  "body_sha256": "3835bfd63171ffc37fb6d99299dd2dc0a76ac55e76220c86f6ac6f46e1d0a1bf",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.inputs is None:\n            raise ValueError('Inputs have not been set.')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 155,
+  "human_sha256": "5fd82101e9e45a51a3bda8345b627d7f4868e4a3eb69504789f53f1913619168",
+  "human_valid": true,
+  "line_no": 397309,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "00c8ee57adc5333d38b525d241924cb2b79b37cac64ee957fabcc850c58c41ee",
+  "raw_output": "\n        if self.inputs is None:\n            raise ValueError('Inputs have not been set.')\n\n    def",
+  "sampling_seed": 2393167182,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

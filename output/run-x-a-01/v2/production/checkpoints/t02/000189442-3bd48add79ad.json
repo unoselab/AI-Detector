@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getShocks(self):\n        \"\"\"\n        Gets permanent and transitory income shocks for this period as well as preference shocks.\n\n        Parameters\n        ----------\n        None\n\n        Returns\n        -------\n        None\n        \"\"\"\n        self.shocks['PermInc'] = self.getPermInc()\n        self.shocks['TransInc'] = self.getTransInc()\n        self.shocks['PrefShk'] = self.getPrefShk()\n",
+  "agc_valid": true,
+  "body_sha256": "55e354300a3d457f11c7be64500a938f1c3518afb9fcd3d61b061f1a9004565d",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.shocks['PermInc'] = self.getPermInc()\n        self.shocks['TransInc'] = self.getTransInc()\n        self.shocks['PrefShk'] = self.getPrefShk()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 114,
+  "human_sha256": "2783d5abf4b3159dc534003bab9f6fcbb7b9fff6d0799a33780e4dda51e0c539",
+  "human_valid": true,
+  "line_no": 189442,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3bd48add79ada09644f690c8c7382cb96ef02854c34a7819a8092b3a59fd4b52",
+  "raw_output": "\n        self.shocks['PermInc'] = self.getPermInc()\n        self.shocks['TransInc'] = self.getTransInc()\n        self.shocks['PrefShk'] = self.getPrefShk()\n\n    def",
+  "sampling_seed": 412726953,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

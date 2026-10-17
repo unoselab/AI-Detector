@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def comments(self, value):\n        \"\"\"\n        Setter for **self.__comments** attribute.\n\n        :param value: Attribute value.\n        :type value: OrderedDict or dict\n        \"\"\"\n            if value is None:\n                self.__comments = OrderedDict()\n            elif isinstance(value, dict):\n                self.__comments = OrderedDict(value)\n            else:\n                raise TypeError('Comments must be a dictionary or OrderedDict.')\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "f9aeec9e63ed30ef18dd447ddd1125fb3feb53040d2a6b1b2950b9dbe0b6c4c6",
+  "body_tokens": 109,
+  "bucket": "type01_110",
+  "clean_output": "\n            if value is None:\n                self.__comments = OrderedDict()\n            elif isinstance(value, dict):\n                self.__comments = OrderedDict(value)\n            else:\n                raise TypeError('Comments must be a dictionary or OrderedDict.')\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "7671606bb74d491f343878c3abef1b146b6cf7e4b55a2bc4f7f121de53842f32",
+  "human_valid": true,
+  "line_no": 53255,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a7dd6832ef493947c53e6870edd5d7442832a05ce4f423dbeb01c016ca1dc538",
+  "raw_output": "\n\n        if value is None:\n            self.__comments = OrderedDict()\n        elif isinstance(value, dict):\n            self.__comments = OrderedDict(value)\n        else:\n            raise TypeError('Comments must be a dictionary or OrderedDict.')\n\n    @property\n    def",
+  "sampling_seed": 2117734468,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

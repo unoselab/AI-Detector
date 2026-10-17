@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def dependency_of_fetches(fetches, op):\n    \"\"\"\n    Check that op is in the subgraph induced by the dependencies of fetches.\n    fetches may have more general structure.\n\n    Args:\n        fetches: An argument to `sess.run`. Nested structure will affect performance.\n        op (tf.Operation or tf.Tensor):\n\n    Returns:\n        bool: True if any of `fetches` depend on `op`.\n    \"\"\"\n    if isinstance(fetches, (list, tuple)):\n        return any(dependency_of_fetches(f, op) for f in fetches)\n    elif isinstance(fetches, dict):\n        return any(dependency_of_fetches(v, op) for v in fetches.values())\n    else:\n        return dependency_of_fetches_single(fetches, op)\n",
+  "agc_valid": true,
+  "body_sha256": "a2811a546100a1f7c5ced2e72f3d058035d8857f78d00e4f8de2d307fedce964",
+  "body_tokens": 56,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(fetches, (list, tuple)):\n        return any(dependency_of_fetches(f, op) for f in fetches)\n    elif isinstance(fetches, dict):\n        return any(dependency_of_fetches(v, op) for v in fetches.values())\n    else:\n        return dependency_of_fetches_single(fetches, op)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "4cb9051a82ae2a8803a40268d4a275c5d960130bd36932d96cfb0fef3ea3131a",
+  "human_valid": true,
+  "line_no": 103155,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d066ed82d82aa79e1955d413c5b0f8379db2bb5a3f63021792d2a22ee70d373d",
+  "raw_output": "\n    if isinstance(fetches, (list, tuple)):\n        return any(dependency_of_fetches(f, op) for f in fetches)\n    elif isinstance(fetches, dict):\n        return any(dependency_of_fetches(v, op) for v in fetches.values())\n    else:\n        return dependency_of_fetches_single(fetches, op)\n\n\ndef dependency_of_fetches_single(fetches, op):\n    \"\"\"\n    Check that op is in the subgraph induced by the dependencies of fetches.\n\n    Args:\n        fetches: An argument to `sess.run`.\n        op (tf.Operation or tf.Tensor):\n\n    Returns:\n        bool: True if `fetches` depends on `op`.\n    \"\"\"\n    if isinstance(fetches, tf.Operation):\n        return fetches.name in op.inputs\n    elif isinstance(fetches, tf.Tensor):\n        return fetches.name in op.inputs\n    elif isinstance(fetches, tf.Variable):\n        return fetches.name in op.inputs\n    else:\n        return False\n\n\ndef dependency_of_fetches_single_op(fetches, op):\n    \"\"\"\n    Check that op is in the subgraph induced by the dependencies of fetches.\n\n    Args:\n        fetches: An argument to `sess.run`.\n        op (tf.Operation):\n\n    Returns:\n        bool: True if `fetches` depends on `op`.\n    \"\"\"\n    if isinstance(fetches, tf.Operation):\n        return fetches.name in op.inputs\n    elif isinstance(fetches, tf.Tensor):\n        return fetches.op.name in op.inputs\n    elif isinstance(fetches, tf.Variable):\n        return fetches.op.name in op.inputs\n    else:\n        return False\n\n\ndef dependency_of_fetches_single_tensor(fetches, op):\n    \"\"\"\n    Check that op is in the subgraph induced by the dependencies of fetches.\n\n    Args:\n        fetches: An argument to `sess.run`.",
+  "sampling_seed": 2629340019,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

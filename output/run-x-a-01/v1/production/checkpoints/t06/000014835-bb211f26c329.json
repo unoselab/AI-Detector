@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def download(self, file_name, save_as=None):\n        \"\"\"Download the specified file from the server.\n\n        Arguments:\n        file_name -- Name of file resource to save.\n        save_as   -- Optional path name to write file to.  If not specified,\n                     then file named by the last part of the resource path is\n                     downloaded to current directory.\n\n        Return: (save_path, bytes)\n        save_path -- Path where downloaded file was saved.\n        bytes     -- Bytes downloaded.\n        \"\"\"\n        if save_as is None:\n            save_as = file_name\n        self.log.debug(\"download: %s\" % save_as)\n        url = self.get_url(file_name)\n        if not url:\n            raise FileNotFoundError(file_name)\n        bytes_ = self.session.get(url).content\n        if not save_as:\n            save_as = os.path.basename(file_name)\n        if not os.path.isdir(save_as):\n            save_as = os.path.join(os.getcwd(), save_as)\n        save_path = save_as\n        if os.path.exists(save_path):\n            raise FileExistsError(save_path)\n        with open(save_path, 'wb') as fd:\n            fd.write(bytes_)\n        return save_path, bytes_\n",
+  "agc_valid": true,
+  "body_sha256": "16875056967215899c7efdef94e10dc18b3196ae61027af5a51c924837756ce4",
+  "body_tokens": 195,
+  "bucket": "type10_200",
+  "clean_output": "\n        if save_as is None:\n            save_as = file_name\n        self.log.debug(\"download: %s\" % save_as)\n        url = self.get_url(file_name)\n        if not url:\n            raise FileNotFoundError(file_name)\n        bytes_ = self.session.get(url).content\n        if not save_as:\n            save_as = os.path.basename(file_name)\n        if not os.path.isdir(save_as):\n            save_as = os.path.join(os.getcwd(), save_as)\n        save_path = save_as\n        if os.path.exists(save_path):\n            raise FileExistsError(save_path)\n        with open(save_path, 'wb') as fd:\n            fd.write(bytes_)\n        return save_path, bytes_\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0c48af6c1e7e7b9f0e0f6e523697b1a1b01ee51d115da8f9de8491e74a77fa53",
+  "human_valid": true,
+  "line_no": 14835,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "bb211f26c32961ac065713ba59061180501775f0547275bd8833d1c28299628c",
+  "raw_output": "\n        if save_as is None:\n            save_as = file_name\n        self.log.debug(\"download: %s\" % save_as)\n        url = self.get_url(file_name)\n        if not url:\n            raise FileNotFoundError(file_name)\n        bytes_ = self.session.get(url).content\n        if not save_as:\n            save_as = os.path.basename(file_name)\n        if not os.path.isdir(save_as):\n            save_as = os.path.join(os.getcwd(), save_as)\n        save_path = save_as\n        if os.path.exists(save_path):\n            raise FileExistsError(save_path)\n        with open(save_path, 'wb') as fd:\n            fd.write(bytes_)\n        return save_path, bytes_\n\n    def",
+  "sampling_seed": 1725151794,
+  "tag": "t06",
+  "temperature": 0.6
+}

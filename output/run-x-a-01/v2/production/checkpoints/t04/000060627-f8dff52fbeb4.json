@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read(self):\n        \"\"\"Reads data from the CSV file.\"\"\"\n        with open(self.filename, 'r') as csvfile:\n            reader = csv.reader(csvfile, delimiter=',')\n            for row in reader:\n                self.data.append(row)\n",
+  "agc_valid": true,
+  "body_sha256": "f4436a8c468a61daa622fc530cf06303479bbc7e8540645a52ee8d7048b0e7d8",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n        with open(self.filename, 'r') as csvfile:\n            reader = csv.reader(csvfile, delimiter=',')\n            for row in reader:\n                self.data.append(row)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "cee7497c381ea1c557389753c35397758fd2dbab35bcb54e9c866e89d9233b15",
+  "human_valid": true,
+  "line_no": 60627,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f8dff52fbeb4d2aabf7f059ed90ad0e3dc80d7acc9e57f517f95ca22944c174e",
+  "raw_output": "\n        with open(self.filename, 'r') as csvfile:\n            reader = csv.reader(csvfile, delimiter=',')\n            for row in reader:\n                self.data.append(row)\n\n    def",
+  "sampling_seed": 2225398033,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

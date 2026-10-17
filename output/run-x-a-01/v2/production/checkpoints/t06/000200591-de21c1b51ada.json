@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def notify_widget(self, widget, message=None, clear_in=CLEAR_NOTIF_BAR_MESSAGE_IN):\n        \"\"\"\n        opens notification popup.\n\n        :param widget: instance of Widget, widget to display\n        :param message: str, message to remove from list of notifications\n        :param clear_in: int, time seconds when notification should be removed\n        \"\"\"\n        if not isinstance(widget, Widget):\n            raise ValueError('`widget` must be instance of Widget.')\n\n        if message:\n            if message in self.notifications:\n                self.notifications.remove(message)\n                self.notifications.insert(0, message)\n            else:\n                self.notifications.insert(0, message)\n\n        self.clear_in = clear_in\n        self.set_widget(widget)\n        self.show_popup()\n",
+  "agc_valid": true,
+  "body_sha256": "19dd3fb206d8c11137e6c2b6b694527ee4826231057f0dfb0453c19b4d533f4e",
+  "body_tokens": 142,
+  "bucket": "type05_150",
+  "clean_output": "\n        if not isinstance(widget, Widget):\n            raise ValueError('`widget` must be instance of Widget.')\n\n        if message:\n            if message in self.notifications:\n                self.notifications.remove(message)\n                self.notifications.insert(0, message)\n            else:\n                self.notifications.insert(0, message)\n\n        self.clear_in = clear_in\n        self.set_widget(widget)\n        self.show_popup()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "77549d10f003896f5cbad62af913d346a0bea66d7bfe5f3b9204e2116b50eeed",
+  "human_valid": true,
+  "line_no": 200591,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "de21c1b51ada0a28933162821c31084388836446e554d27e0e04301d070eb14e",
+  "raw_output": "\n\n        if not isinstance(widget, Widget):\n            raise ValueError('`widget` must be instance of Widget.')\n\n        if message:\n            if message in self.notifications:\n                self.notifications.remove(message)\n                self.notifications.insert(0, message)\n            else:\n                self.notifications.insert(0, message)\n\n        self.clear_in = clear_in\n        self.set_widget(widget)\n        self.show_popup()\n\n    def",
+  "sampling_seed": 3432945785,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

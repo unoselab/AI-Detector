@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def log_deprecated(name=\"\", text=\"\", eos=\"\"):\n    \"\"\"\n    Log deprecation warning.\n\n    Args:\n        name (str): name of the deprecated item.\n        text (str, optional): information about the deprecation.\n        eos (str, optional): end of service date such as \"YYYY-MM-DD\".\n    \"\"\"\n    if name:\n        name = f\"{name} \"\n    if text:\n        text = f\"{text} \"\n    if eos:\n        eos = f\"{eos} \"\n    warnings.warn(f\"{name}is deprecated and will be removed {eos}.\",\n",
+  "agc_valid": false,
+  "body_sha256": "7b2a1bc7473fcf3970026a3ceb88d9b3640aeea8c1f9b45eedf4a619417b5959",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if name:\n        name = f\"{name} \"\n    if text:\n        text = f\"{text} \"\n    if eos:\n        eos = f\"{eos} \"\n    warnings.warn(f\"{name}is deprecated and will be removed {eos}.\",\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "d853a2670e4d64000af8f2978aa017f532db2ec8c32005135d5f81251f6d4bc8",
+  "human_valid": true,
+  "line_no": 103209,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6604781f556fee50e99813bb2b9902df123430848668f57cc750c030b1c519be",
+  "raw_output": "\n    if name:\n        name = f\"{name} \"\n    if text:\n        text = f\"{text} \"\n    if eos:\n        eos = f\"{eos} \"\n    warnings.warn(f\"{name}is deprecated and will be removed {eos}.\",\n                 ",
+  "sampling_seed": 3574642277,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

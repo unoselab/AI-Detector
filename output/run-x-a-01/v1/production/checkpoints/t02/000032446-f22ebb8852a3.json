@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_result(self, client, check):\n        \"\"\"\n        Returns an event for a given client & result name.\n        \"\"\"\n        return self.get_results(client, check)[0]\n",
+  "agc_valid": true,
+  "body_sha256": "1df70269b95be0ac88c7f025bbcf2bdbf805ca43d85baee29b939fb776af02f2",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_results(client, check)[0]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "507d5851efd4fbfed5d2d8e9fe8b13789a027b1a92a94743f862700ccc391033",
+  "human_valid": true,
+  "line_no": 32446,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f22ebb8852a3d651dec385574c657bde6a5a0fab420461110a62a3014e7da6a5",
+  "raw_output": "\n        return self.get_results(client, check)[0]\n\n    def",
+  "sampling_seed": 1523680313,
+  "tag": "t02",
+  "temperature": 0.2
+}

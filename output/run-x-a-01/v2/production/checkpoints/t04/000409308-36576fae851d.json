@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def monitor_resource_sync_state(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's sync state.\n\n    Calls callback(True/False) whenever the resource becomes synced or unsynced. Will\n    always do an initial callback(False) call. Exits without calling callback() if\n    exit_event is set\n    \"\"\"\n    resource.req.sync()\n    while not exit_event.is_set():\n        if resource.req.sync_state == resource.RESOURCE_SYNC_STATE_SYNCED:\n            callback(True)\n        elif resource.req.sync_state == resource.RESOURCE_SYNC_STATE_UNSYNCED:\n            callback(False)\n        yield from asyncio.sleep(0.5)\n",
+  "agc_valid": true,
+  "body_sha256": "b20a282c9312d9bd0b68629dbec790befd7e83d1f9e2300c95c0c5843dd57e84",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n    resource.req.sync()\n    while not exit_event.is_set():\n        if resource.req.sync_state == resource.RESOURCE_SYNC_STATE_SYNCED:\n            callback(True)\n        elif resource.req.sync_state == resource.RESOURCE_SYNC_STATE_UNSYNCED:\n            callback(False)\n        yield from asyncio.sleep(0.5)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "fbd016b5dabec6e84a125679e27e35c42c8c2254f4790bec34208706756355f9",
+  "human_valid": true,
+  "line_no": 409308,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36576fae851de26dd84673e71751ba862c203c7ca2bbf46a7544f3234203671a",
+  "raw_output": "\n    resource.req.sync()\n    while not exit_event.is_set():\n        if resource.req.sync_state == resource.RESOURCE_SYNC_STATE_SYNCED:\n            callback(True)\n        elif resource.req.sync_state == resource.RESOURCE_SYNC_STATE_UNSYNCED:\n            callback(False)\n        yield from asyncio.sleep(0.5)\n\n\ndef monitor_resource_connection_state(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's connection state.\n\n    Calls callback(True/False) whenever the resource becomes connected or disconnected. Will\n    always do an initial callback(False) call. Exits without calling callback() if\n    exit_event is set\n    \"\"\"\n    while not exit_event.is_set():\n        if resource.req.connected:\n            callback(True)\n        elif not resource.req.connected:\n            callback(False)\n        yield from asyncio.sleep(0.5)\n\n\ndef monitor_resource_connection_and_sync_state(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's connection and sync state.\n\n    Calls callback(True/False) whenever the resource becomes connected, synced or disconnected.\n    Will always do an initial callback(False) call. Exits without calling callback() if\n    exit_event is set\n    \"\"\"\n    while not exit_event.is_set():\n        if resource.req.connected and resource.req.sync_state == resource.RESOURCE_SYNC_STATE_SYNCED:\n            callback(True)\n        elif not resource.req.connected or resource.req.sync_state == resource.RESOURCE_SYNC_STATE_UNSYNCED:\n            callback(False)\n        yield from asyncio.sleep(0.5)\n\n\ndef monitor_resource_connection_and_sync_state_with_reconnect(resource, callback, exit_event=None):\n    \"\"\"Coroutine that monitors a KATCPResource's connection and sync state.\n\n    Calls callback(",
+  "sampling_seed": 3049632929,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

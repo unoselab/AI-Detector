@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def put_annotation(self, key, value):\n        \"\"\"\n        Annotate segment or subsegment with a key-value pair.\n        Annotations will be indexed for later search query.\n\n        :param str key: annotation key\n        :param object value: annotation value. Any type other than\n            string/number/bool will be dropped\n        \"\"\"\n        if key is None or key == '':\n            raise ValueError('Annotation key cannot be None or empty')\n\n        if value is None:\n            raise ValueError('Annotation value cannot be None')\n\n        if not isinstance(key, str):\n            raise TypeError('Annotation key must be a string')\n\n        if not isinstance(value, (str, int, float, bool)):\n            raise TypeError('Annotation value must be a string, number, '\n                            'boolean, or None')\n\n        if self.is_subsegment:\n            self.subsegment.annotations[key] = value\n        else:\n            self.segment.annotations[key] = value\n",
+  "agc_valid": true,
+  "body_sha256": "8df82b34c80daec57c854b85bc55306b84cbd456de863eecc0c2ae64c281117f",
+  "body_tokens": 201,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if key is None or key == '':\n            raise ValueError('Annotation key cannot be None or empty')\n\n        if value is None:\n            raise ValueError('Annotation value cannot be None')\n\n        if not isinstance(key, str):\n            raise TypeError('Annotation key must be a string')\n\n        if not isinstance(value, (str, int, float, bool)):\n            raise TypeError('Annotation value must be a string, number, '\n                            'boolean, or None')\n\n        if self.is_subsegment:\n            self.subsegment.annotations[key] = value\n        else:\n            self.segment.annotations[key] = value\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "eecff0d6ecbc675c4bc536ecd1fa6a9cdfd78ac4d3bf5b1f050baed3c04ee464",
+  "human_valid": true,
+  "line_no": 209167,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "31ffbb84dff5171e3fb39affafadf06686572e9fa3011eb93557e32d699d8159",
+  "raw_output": "\n        if key is None or key == '':\n            raise ValueError('Annotation key cannot be None or empty')\n\n        if value is None:\n            raise ValueError('Annotation value cannot be None')\n\n        if not isinstance(key, str):\n            raise TypeError('Annotation key must be a string')\n\n        if not isinstance(value, (str, int, float, bool)):\n            raise TypeError('Annotation value must be a string, number, '\n                            'boolean, or None')\n\n        if self.is_subsegment:\n            self.subsegment.annotations[key] = value\n        else:\n            self.segment.annotations[key] = value\n\n    def",
+  "sampling_seed": 1370041176,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

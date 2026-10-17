@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_fcp_data(raw_data, status):\n    \"\"\"\n    extract data from smcli System_WWPN_Query output.\n    Input:\n        raw data returned from smcli\n    Output:\n        data extracted would be like:\n    'status:Free \\n\n     fcp_dev_no:1D2F\\n\n     physical_wwpn:C05076E9928051D1\\n\n     channel_path_id:8B\\n\n     npiv_wwpn': 'NONE'\\n\n\n     status:Free\\n\n     fcp_dev_no:1D29\\n\n     physical_wwpn:C05076E9928051D1\\n\n     channel_path_id:8B\\n\n     npiv_wwpn:NONE\n    \"\"\"\n    PIV_WWPN:C05076E9928051D1\\n\n         npiv_state:Disabled\\n\n         npiv_login_state:Logged Out\\n\n         npiv_vlan_id:0\\n\n         npiv_priority:0\\n\n         npiv_local_port_id:0000000000000000\\n\n         npiv_remote_port_id:0000000000000000\\n\n         npiv_remote_port_wwn:0000000000000000\\n\n         npiv_remote_node_wwn:0000000000000000\\n\n         npiv_remote_port_state:0\\n\n         npiv_remote_port_type:0\\n\n         npiv_remote_port_speed:0\\n\n         npiv_remote_port_fabric_name:0000000000000000\\n\n         npiv_remote_port_symbolic_name:0000000000000000\\n\n         npiv_remote_port_fabric_wwn:0000000000000000\\n\n         npiv_remote_port_node_wwn:0000000000000000\\n\n         npiv_remote_port_port_wwn:0000000000000000\\n\n         npiv_remote_port_port_id:0000000000000000\\n\n         npiv_remote_port_port_type:0\\n\n         npiv_remote_port_port_speed:0\\n\n         npiv_remote_port_fabric_name:0000000000000000\\n\n         npiv_remote_port_symbolic_name:00000000\n",
+  "agc_valid": false,
+  "body_sha256": "493b65d64f3c9ec31737c4229ef04aadc3d7e74c4d2c405386d8f6c37854b52e",
+  "body_tokens": 195,
+  "bucket": "type10_200",
+  "clean_output": "\n    PIV_WWPN:C05076E9928051D1\\n\n         npiv_state:Disabled\\n\n         npiv_login_state:Logged Out\\n\n         npiv_vlan_id:0\\n\n         npiv_priority:0\\n\n         npiv_local_port_id:0000000000000000\\n\n         npiv_remote_port_id:0000000000000000\\n\n         npiv_remote_port_wwn:0000000000000000\\n\n         npiv_remote_node_wwn:0000000000000000\\n\n         npiv_remote_port_state:0\\n\n         npiv_remote_port_type:0\\n\n         npiv_remote_port_speed:0\\n\n         npiv_remote_port_fabric_name:0000000000000000\\n\n         npiv_remote_port_symbolic_name:0000000000000000\\n\n         npiv_remote_port_fabric_wwn:0000000000000000\\n\n         npiv_remote_port_node_wwn:0000000000000000\\n\n         npiv_remote_port_port_wwn:0000000000000000\\n\n         npiv_remote_port_port_id:0000000000000000\\n\n         npiv_remote_port_port_type:0\\n\n         npiv_remote_port_port_speed:0\\n\n         npiv_remote_port_fabric_name:0000000000000000\\n\n         npiv_remote_port_symbolic_name:00000000\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "6208323302a427bcf7103b61e5066a433d9b703c6960db35b6c7a3ab6cec4d3c",
+  "human_valid": true,
+  "line_no": 222975,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "175365c652a8fa5b68eca72a8ec5d4634e726c8b5a05cf9410f25d5b605074c9",
+  "raw_output": "PIV_WWPN:C05076E9928051D1\\n\n     npiv_state:Disabled\\n\n     npiv_login_state:Logged Out\\n\n     npiv_vlan_id:0\\n\n     npiv_priority:0\\n\n     npiv_local_port_id:0000000000000000\\n\n     npiv_remote_port_id:0000000000000000\\n\n     npiv_remote_port_wwn:0000000000000000\\n\n     npiv_remote_node_wwn:0000000000000000\\n\n     npiv_remote_port_state:0\\n\n     npiv_remote_port_type:0\\n\n     npiv_remote_port_speed:0\\n\n     npiv_remote_port_fabric_name:0000000000000000\\n\n     npiv_remote_port_symbolic_name:0000000000000000\\n\n     npiv_remote_port_fabric_wwn:0000000000000000\\n\n     npiv_remote_port_node_wwn:0000000000000000\\n\n     npiv_remote_port_port_wwn:0000000000000000\\n\n     npiv_remote_port_port_id:0000000000000000\\n\n     npiv_remote_port_port_type:0\\n\n     npiv_remote_port_port_speed:0\\n\n     npiv_remote_port_fabric_name:0000000000000000\\n\n     npiv_remote_port_symbolic_name:00000000",
+  "sampling_seed": 902425209,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

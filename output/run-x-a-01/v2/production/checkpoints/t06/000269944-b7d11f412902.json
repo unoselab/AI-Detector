@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_stp_mst_detail_output_msti_port_link_type(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        return self._request_and_return(\n            \"get_stp_mst_detail_output_msti_port_link_type\",\n            \"get_stp_mst_detail_output_msti_port_link_type\", **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "aa23dec93cabc921febaac2e7941b1ef0279ffb51502f58f7687c7ce699117dd",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._request_and_return(\n            \"get_stp_mst_detail_output_msti_port_link_type\",\n            \"get_stp_mst_detail_output_msti_port_link_type\", **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "72871dc05ec4ca90a29e989cd516198ffabfbf9ebfa0fadcb359dbc26a1befe0",
+  "human_valid": true,
+  "line_no": 269944,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7d11f4129026c3ccce6f29666414623b8e0b2f40db5fe728534b6cae137d541",
+  "raw_output": "\n        return self._request_and_return(\n            \"get_stp_mst_detail_output_msti_port_link_type\",\n            \"get_stp_mst_detail_output_msti_port_link_type\", **kwargs)\n\n    def",
+  "sampling_seed": 4246972252,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

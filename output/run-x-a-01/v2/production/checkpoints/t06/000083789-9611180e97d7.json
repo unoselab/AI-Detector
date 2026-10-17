@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def update_info(self, _action=None, **kwargs):\n        \"\"\"\n        UPdate info\n        :param user:\n        :param email:\n        :return:\n        \"\"\"\n        if not self.get_access_rights():\n            return\n        self.user_id = kwargs.get('user_id')\n        self.email = kwargs.get('email')\n        self.phone = kwargs.get('phone')\n        self.address = kwargs.get('address')\n        self.city = kwargs.get('city')\n        self.zip = kwargs.get('zip')\n        self.country = kwargs.get('country')\n        self.save()\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "8a27768053b4abfbec5ebf4cc08cb7955677fc77541a2e8961758ce2e737ad17",
+  "body_tokens": 110,
+  "bucket": "type01_110",
+  "clean_output": "\n        if not self.get_access_rights():\n            return\n        self.user_id = kwargs.get('user_id')\n        self.email = kwargs.get('email')\n        self.phone = kwargs.get('phone')\n        self.address = kwargs.get('address')\n        self.city = kwargs.get('city')\n        self.zip = kwargs.get('zip')\n        self.country = kwargs.get('country')\n        self.save()\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "35753aebf76fa71df6200309e0e25515c55a2797999ec2049dd9f2a41e11af51",
+  "human_valid": true,
+  "line_no": 83789,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9611180e97d7ec48fc8794a3fbbb389d64cd922b11b5ed5f648160e29d53e3ad",
+  "raw_output": "\n        if not self.get_access_rights():\n            return\n        self.user_id = kwargs.get('user_id')\n        self.email = kwargs.get('email')\n        self.phone = kwargs.get('phone')\n        self.address = kwargs.get('address')\n        self.city = kwargs.get('city')\n        self.zip = kwargs.get('zip')\n        self.country = kwargs.get('country')\n        self.save()\n        return True\n\n    def",
+  "sampling_seed": 425145961,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

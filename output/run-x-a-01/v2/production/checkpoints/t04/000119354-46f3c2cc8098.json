@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_time_range(trange, status, msg):\n    \"\"\"\n    Check time range\n    \"\"\"\n    if trange is None:\n        status = False\n        msg = 'Time range is not defined'\n    elif not isinstance(trange, tuple):\n        status = False\n        msg = 'Time range is not a tuple'\n    elif len(trange) !=\n",
+  "agc_valid": false,
+  "body_sha256": "602065004fb53800f3c7c19dd9fe2d444b35ae85483032bd14c2ac314c4bfcfd",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if trange is None:\n        status = False\n        msg = 'Time range is not defined'\n    elif not isinstance(trange, tuple):\n        status = False\n        msg = 'Time range is not a tuple'\n    elif len(trange) !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "b09f9fad623751b459338a15c8a3229696dd7480e7fc165f2a805b523eeb756e",
+  "human_valid": true,
+  "line_no": 119354,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "46f3c2cc80987f5b93165b54187818c8ff8ebf8d1d87aebd317a35dfbdc6be66",
+  "raw_output": "\n    if trange is None:\n        status = False\n        msg = 'Time range is not defined'\n    elif not isinstance(trange, tuple):\n        status = False\n        msg = 'Time range is not a tuple'\n    elif len(trange) != ",
+  "sampling_seed": 618463954,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _noise(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    if len(seq) < size:\n        return seq\n    start = random.randint(0, len(seq) - size)\n    end = start + size\n    return seq[:start] + c * (total - len(seq)) + seq[end:]\n",
+  "agc_valid": true,
+  "body_sha256": "183975466bdb2f03a9b3c950f80515cf6e4b439a335ecb572a36fafc471b7241",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(seq) < size:\n        return seq\n    start = random.randint(0, len(seq) - size)\n    end = start + size\n    return seq[:start] + c * (total - len(seq)) + seq[end:]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "dec8e27569231af4170c4dc3b35bc12f9ba97efad415a175a36aaad4d28231c6",
+  "human_valid": true,
+  "line_no": 405137,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bad03f1de6e2b851818f4f968f5543d4870b6ff41d8a3f47604b4d0cdedf1b6b",
+  "raw_output": "\n    if len(seq) < size:\n        return seq\n    start = random.randint(0, len(seq) - size)\n    end = start + size\n    return seq[:start] + c * (total - len(seq)) + seq[end:]\n\n\ndef _random_seq(size=33, total=1000):\n    \"\"\"Generate random sequence\"\"\"\n    return ''.join([random.choice(DNA_ALPHABET) for _ in range(size)])\n\n\ndef _random_seq_with_noise(size=33, total=1000):\n    \"\"\"Generate random sequence with noise\"\"\"\n    return _noise(_random_seq(size, total), 'N', size, total)\n\n\ndef _random_seq_with_noise_and_gaps(size=33, total=1000):\n    \"\"\"Generate random sequence with noise and gaps\"\"\"\n    return _noise(_random_seq(size, total), '-', size, total)\n\n\ndef _random_seq_with_noise_and_gaps_and_n(size=33, total=1000):\n    \"\"\"Generate random sequence with noise, gaps, and N\"\"\"\n    return _noise(_random_seq(size, total), 'N', size, total)\n\n\ndef _random_seq_with_noise_and_gaps_and_n_and_mismatches(size=33, total=1000):\n    \"\"\"Generate random sequence with noise, gaps, N, and mismatches\"\"\"\n    return _noise(_random_seq(size, total), 'N', size, total)\n\n\ndef _random_seq_with_noise_and_gaps_and_n_and_mismatches_and_deletions(size=33, total=1000):\n    \"\"\"Generate random sequence with noise, gaps, N, mismatches, and deletions\"\"\"\n    return _noise(_random_seq(size, total), 'N', size, total)\n\n\ndef _random_seq_with_noise_and_gaps",
+  "sampling_seed": 4235327817,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

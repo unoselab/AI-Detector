@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def unpack(fmt, data, endian=None, target=None):\n    \"\"\"\n    Unpack the string (presumably packed by pack(fmt, ...)) according to the\n    given format. The actual unpacking is performed by ``struct.unpack``\n    but the byte order will be set according to the given `endian`, `target`\n    or byte order of the global target.\n\n    Args:\n        fmt(str): The format string.\n        data(bytes): The data to unpack.\n        endian(:class:`~pwnypack.target.Target.Endian`): Override the default\n            byte order. If ``None``, it will look at the byte order of\n            the ``target`` argument.\n        target(:class:`~pwnypack.target.Target`): Override the default byte\n            order. If ``None``, it will look at the byte order of\n            the global :data:`~pwnypack.target.target`.\n\n    Returns:\n        list: The unpacked values according to the format.\n    \"\"\"\n    ynetworking.Protocol.Endian`): The byte order.\n            target(:class:`~pynetworking.Protocol.Target`): The target.\n\n        Returns:\n            tuple: The unpacked data.\n\n        \"\"\"\n        if endian is None:\n            endian = target.endian\n        if target is None:\n            target = get_target()\n        return struct.unpack(endian + fmt, data)\n",
+  "agc_valid": false,
+  "body_sha256": "ea0a85cbdf70ad35951ee1f9abfdb5758156074dd8c08408664d65546fe35856",
+  "body_tokens": 115,
+  "bucket": "type02_120",
+  "clean_output": "\n    ynetworking.Protocol.Endian`): The byte order.\n            target(:class:`~pynetworking.Protocol.Target`): The target.\n\n        Returns:\n            tuple: The unpacked data.\n\n        \"\"\"\n        if endian is None:\n            endian = target.endian\n        if target is None:\n            target = get_target()\n        return struct.unpack(endian + fmt, data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "a14c3ebdd993bb92bef963f65b824c5329b2bfd28248e2901b15aa75b3655b7b",
+  "human_valid": true,
+  "line_no": 259111,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "602005a6d288ec3cf41f23a04828ba787ed05fd8f6aa29698ac5820f4463e52d",
+  "raw_output": "ynetworking.Protocol.Endian`): The byte order.\n        target(:class:`~pynetworking.Protocol.Target`): The target.\n\n    Returns:\n        tuple: The unpacked data.\n\n    \"\"\"\n    if endian is None:\n        endian = target.endian\n    if target is None:\n        target = get_target()\n    return struct.unpack(endian + fmt, data)\n\n\ndef pack(fmt, *args, endian=None, target=None):\n    \"\"\"\n    Pack the given arguments according to the given format. The actual\n    packing is performed by ``struct.pack`` but the byte order will be\n    set according to the given `endian`, `target` or byte order of the\n    global target.\n\n    Args:\n        fmt(str): The format string.\n        *args: The arguments to pack.\n        endian(:class:`~pynetworking.Protocol.Endian`): The byte order.\n        target(:class:`~pynetworking.Protocol.Target`): The target.\n\n    Returns:\n        bytes: The packed data.\n\n    \"\"\"\n    if endian is None:\n        endian = target.endian\n    if target is None:\n        target = get_target()\n    return struct.pack(endian + fmt, *args)\n\n\ndef unpack_from(fmt, data, offset=0, endian=None, target=None):\n    \"\"\"\n    Unpack the string (presumably packed by pack(fmt, ...)) according to the\n    given format. The actual unpacking is performed by ``struct.unpack_from``\n    but the byte order will be set according to the given `endian`, `target`\n    or byte order of the global target.\n\n    Args:\n        fmt(str): The format string.\n        data(bytes): The data to unpack.\n        offset(int): The offset at which to start unpacking.\n        endian(:class:`~pynetworking.Protocol.Endian`): The byte order.\n        target(:class:`~pynetworking.Protocol.Target`): The target.\n\n    Returns:\n        tuple: The un",
+  "sampling_seed": 4155099321,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def refs_section(doc):\n    \"\"\"\n    Generate a References section.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    list of str\n        Markdown for references section\n    \"\"\"\n    refs = doc['references']\n    if not refs:\n        return []\n    return [\n        '## References',\n        '',\n        'The following references were used to create this document.',\n        '',\n    ] + [\n        '* [{0}]({1})'.format(ref['name'], ref['url'])\n        for ref in refs\n    ]\n",
+  "agc_valid": true,
+  "body_sha256": "2f152c3364f702283ae9dfd83483eb9aa6250c5aade91f8f7652a6f1a529c855",
+  "body_tokens": 99,
+  "bucket": "out_of_range",
+  "clean_output": "\n    refs = doc['references']\n    if not refs:\n        return []\n    return [\n        '## References',\n        '',\n        'The following references were used to create this document.',\n        '',\n    ] + [\n        '* [{0}]({1})'.format(ref['name'], ref['url'])\n        for ref in refs\n    ]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "e99c33a405e57cbac8582b222dc21879b51e3ccded88a8cdfce2fa715c9195f4",
+  "human_valid": true,
+  "line_no": 246533,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0a421251456b29b504d8c7c771b17c07b69b2cb4a5dd2f4c892f8e3809e940be",
+  "raw_output": "\n    refs = doc['references']\n    if not refs:\n        return []\n    return [\n        '## References',\n        '',\n        'The following references were used to create this document.',\n        '',\n    ] + [\n        '* [{0}]({1})'.format(ref['name'], ref['url'])\n        for ref in refs\n    ]\n\n\ndef generate_markdown(doc):\n    \"\"\"\n    Generate a Markdown document from a numpydoc dictionary.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    str\n        Markdown document\n    \"\"\"\n    return '\\n'.join([\n        generate_title(doc),\n        generate_description(doc),\n        generate_parameters(doc),\n        generate_returns(doc),\n        generate_examples(doc),\n        generate_references(doc),\n    ])\n\n\ndef generate_title(doc):\n    \"\"\"\n    Generate a title for a Markdown document.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    str\n        Markdown title\n    \"\"\"\n    return '## {0}'.format(doc['name'])\n\n\ndef generate_description(doc):\n    \"\"\"\n    Generate a description for a Markdown document.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    str\n        Markdown description\n    \"\"\"\n    return doc['summary']\n\n\ndef generate_parameters(doc):\n    \"\"\"\n    Generate a Parameters section for a Markdown document.\n\n    Parameters\n    ----------\n    doc : dict\n        Dictionary produced by numpydoc\n\n    Returns\n    -------\n    list of str\n        Markdown for parameters section\n    \"\"\"\n    params = doc['params']\n    if not params:\n        return []\n    return [\n        '## Parameters',\n        '',\n        'The following parameters were used to create this document.',\n        '',\n    ] + [\n        '* **{0}** ({1})'.format(param",
+  "sampling_seed": 1776986077,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _read_at(self, d,\n                 interpolation='linear',\n                 index=False,\n                 return_basis=False):\n        \"\"\"\n        Private function. Implements read_at() for a single depth.\n\n        Args:\n            d (float)\n            interpolation (str)\n            index(bool)\n            return_basis (bool)\n\n        Returns:\n            float\n        \"\"\"\n        if d in self.depths:\n            if index:\n                return self.depths.index(d)\n            else:\n                return self.depths[self.depths.index(d)]\n        else:\n            if interpolation == 'linear':\n                if d > self.depths[-1]:\n                    return self.depths[-1]\n                elif d < self.depths[0]:\n                    return self.depths[0]\n                else:\n                    return np.interp(d, self.depths, self.depths)\n            elif interpolation == 'nearest':\n                if d > self.depths[-1]:\n                    return self.depths[-1]\n                elif d < self.depths[0]:\n                    return self.depths[0]\n                else:\n                    return np.interp(d, self.depths, self.depths,\n                                     left=self.depths[0], right=self.depths[-1])\n            else:\n                raise ValueError('interpolation must be either linear or nearest')\n",
+  "agc_valid": true,
+  "body_sha256": "17757f963826bf882c85fd7cee2905720aa4cbdb6f4664617eaf5d10385939ca",
+  "body_tokens": 420,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if d in self.depths:\n            if index:\n                return self.depths.index(d)\n            else:\n                return self.depths[self.depths.index(d)]\n        else:\n            if interpolation == 'linear':\n                if d > self.depths[-1]:\n                    return self.depths[-1]\n                elif d < self.depths[0]:\n                    return self.depths[0]\n                else:\n                    return np.interp(d, self.depths, self.depths)\n            elif interpolation == 'nearest':\n                if d > self.depths[-1]:\n                    return self.depths[-1]\n                elif d < self.depths[0]:\n                    return self.depths[0]\n                else:\n                    return np.interp(d, self.depths, self.depths,\n                                     left=self.depths[0], right=self.depths[-1])\n            else:\n                raise ValueError('interpolation must be either linear or nearest')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "c300c1b2add4f950378b1cd8c1a735230b632904e814fe60dd4a329d89882550",
+  "human_valid": true,
+  "line_no": 328227,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "051906c913949fe8f60cc8a1a3268e6c0b7ee4b0b6410822e5fda4a45c6589d2",
+  "raw_output": "\n        if d in self.depths:\n            if index:\n                return self.depths.index(d)\n            else:\n                return self.depths[self.depths.index(d)]\n        else:\n            if interpolation == 'linear':\n                if d > self.depths[-1]:\n                    return self.depths[-1]\n                elif d < self.depths[0]:\n                    return self.depths[0]\n                else:\n                    return np.interp(d, self.depths, self.depths)\n            elif interpolation == 'nearest':\n                if d > self.depths[-1]:\n                    return self.depths[-1]\n                elif d < self.depths[0]:\n                    return self.depths[0]\n                else:\n                    return np.interp(d, self.depths, self.depths,\n                                     left=self.depths[0], right=self.depths[-1])\n            else:\n                raise ValueError('interpolation must be either linear or nearest')\n\n    def",
+  "sampling_seed": 813896460,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

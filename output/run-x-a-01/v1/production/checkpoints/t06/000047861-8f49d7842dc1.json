@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_composition_lookup_session_for_repository(self, repository_id, proxy):\n        \"\"\"Gets the ``OsidSession`` associated with the composition lookup service for the given repository.\n\n        arg:    repository_id (osid.id.Id): the ``Id`` of the repository\n        arg:    proxy (osid.proxy.Proxy): a proxy\n        return: (osid.repository.CompositionLookupSession) - the new\n                ``CompositionLookupSession``\n        raise:  NotFound - ``repository_id`` not found\n        raise:  NullArgument - ``repository_id`` or ``proxy`` is\n                ``null``\n        raise:  OperationFailed - ``unable to complete request``\n        raise:  Unimplemented - ``supports_composition_lookup()`` or\n                ``supports_visible_federation()`` is ``false``\n        *compliance: optional -- This method must be implemented if\n        ``supports_composition_lookup()`` and\n        ``supports_visible_federation()`` are ``true``.*\n\n        \"\"\"\n        raise:\n",
+  "agc_valid": false,
+  "body_sha256": "c4551573edde0b92e3dd37b8d3f16151f0f6b4693e0a3753bda11ae6fe5eb9c0",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise:\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "459cdff1d35d7d61ffe7fc147f59e5e0a4065cf9a8c70eb0afa6b080c55fb3a4",
+  "human_valid": true,
+  "line_no": 47861,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8f49d7842dc1d98c4f1fa924317f9aa0b247abad8582436fc1e7f7a1a0ccded2",
+  "raw_output": "\n        raise: ",
+  "sampling_seed": 2626289167,
+  "tag": "t06",
+  "temperature": 0.6
+}

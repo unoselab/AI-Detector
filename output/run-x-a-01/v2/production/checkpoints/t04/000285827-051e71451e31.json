@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_fields(self):\n        \"\"\"\n        This returns a dictionary containing the top most fields,\n        ``dates``, ``fields`` and ``queries``.\n        \"\"\"\n        return self.fields\n",
+  "agc_valid": true,
+  "body_sha256": "9581aad15646ae2992f5595a5f1feeebfa026fb707dad712cf49a4395c5562e4",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.fields\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "d3ec4c913a18e06150cd711f159432f3ec5da079907961de9fa7f4b5a9aa7c73",
+  "human_valid": true,
+  "line_no": 285827,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "051e71451e31936435313644622708dfc8675c88b7020d8c77700dd1106fd320",
+  "raw_output": "\n        return self.fields\n\n    def",
+  "sampling_seed": 496831649,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

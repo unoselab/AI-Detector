@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def notify_widget(self, widget, message=None, clear_in=CLEAR_NOTIF_BAR_MESSAGE_IN):\n        \"\"\"\n        opens notification popup.\n\n        :param widget: instance of Widget, widget to display\n        :param message: str, message to remove from list of notifications\n        :param clear_in: int, time seconds when notification should be removed\n        \"\"\"\n        if message is not None:\n            self.remove_notification(message)\n\n        self.notifications.append(widget)\n        self.notifications_clear_in.append(clear_in)\n\n        self.notifications_clear_in_timer.start(1000)\n",
+  "agc_valid": true,
+  "body_sha256": "8b4fa153803f3d70dcd173a5b6f67cc1966e793d5a2802559fba6d54e2f35404",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if message is not None:\n            self.remove_notification(message)\n\n        self.notifications.append(widget)\n        self.notifications_clear_in.append(clear_in)\n\n        self.notifications_clear_in_timer.start(1000)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "77549d10f003896f5cbad62af913d346a0bea66d7bfe5f3b9204e2116b50eeed",
+  "human_valid": true,
+  "line_no": 200591,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "de21c1b51ada0a28933162821c31084388836446e554d27e0e04301d070eb14e",
+  "raw_output": "\n\n        if message is not None:\n            self.remove_notification(message)\n\n        self.notifications.append(widget)\n        self.notifications_clear_in.append(clear_in)\n\n        self.notifications_clear_in_timer.start(1000)\n\n    def",
+  "sampling_seed": 2087188863,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def store_data(self, data, encoding='utf-8'):\n        \"\"\"Put the given content into a file, possibly encoding it as UTF-8\n        in the process.\"\"\"\n        if isinstance(data, unicode):\n            data = data.encode(encoding)\n        self.file.write(data)\n",
+  "agc_valid": true,
+  "body_sha256": "cad254e079542db1b27a8c0e732358e75c2afc6d0af8694b79ac50e5903214d2",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(data, unicode):\n            data = data.encode(encoding)\n        self.file.write(data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "fb931546623484b895ef6062ec4467da8e21ff7000eddd32f199c9e2e04fdedd",
+  "human_valid": true,
+  "line_no": 296250,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cb6927ccd1be7a226217347fdfc418397bfdc42f993d34f1346a9c1ea008c7cd",
+  "raw_output": "\n        if isinstance(data, unicode):\n            data = data.encode(encoding)\n        self.file.write(data)\n\n    def",
+  "sampling_seed": 168969862,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

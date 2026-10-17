@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_midpoint_outgroup(self):\n        \"\"\"\n        Returns the node that divides the current tree into two \n        distance-balanced partitions.\n        \"\"\"\n        return self.get_midpoint_outgroup(self.tree)\n",
+  "agc_valid": true,
+  "body_sha256": "28aa5d35255b8eb5cbdce796d0e95055b502adfdcbd229a4eb62e6860145c4e2",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_midpoint_outgroup(self.tree)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "8af666d2411f57e691934e90c8ed5e7222c6d6d9d9a372241d030582f684d409",
+  "human_valid": true,
+  "line_no": 17475,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "01e2631d88636b9482e1718b17f3d4f6925606ce5848d8f9b2d57eccdfdc4fb8",
+  "raw_output": "\n        return self.get_midpoint_outgroup(self.tree)\n\n    def",
+  "sampling_seed": 1522081560,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

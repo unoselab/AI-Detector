@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cli(ctx):\n    \"\"\"Check the latest Apio version.\"\"\"\n    import requests\n    import semver\n    from apio.core.utils import get_version\n    from apio.core.config import get_config\n\n    config = get_config()\n    version = get_version()\n    latest_version = requests.get(\n        'https://pypi.python.org/pypi/apio/json'\n    ).json()['info']['version']\n\n    if semver.compare(version, latest_version) == -1:\n        ctx.log(\n            'A new version of Apio is available: {}'.format(latest_version)\n        )\n        ctx.log(\n            'You are currently using: {}'.format(version)\n        )\n        ctx.log(\n            'You can update Apio by running: {}'.format(\n                config.get('update_command')\n            )\n        )\n    else:\n        ctx.log(\n            'You are using the latest version of Apio: {}'.format(version)\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "3de571d312aace6732f7641f2d8f13ee822ae624cfe6b585ba90fe12d5bfb8ed",
+  "body_tokens": 232,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import requests\n    import semver\n    from apio.core.utils import get_version\n    from apio.core.config import get_config\n\n    config = get_config()\n    version = get_version()\n    latest_version = requests.get(\n        'https://pypi.python.org/pypi/apio/json'\n    ).json()['info']['version']\n\n    if semver.compare(version, latest_version) == -1:\n        ctx.log(\n            'A new version of Apio is available: {}'.format(latest_version)\n        )\n        ctx.log(\n            'You are currently using: {}'.format(version)\n        )\n        ctx.log(\n            'You can update Apio by running: {}'.format(\n                config.get('update_command')\n            )\n        )\n    else:\n        ctx.log(\n            'You are using the latest version of Apio: {}'.format(version)\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "e01388f1e4e76ffa435b6f0e308a5c4e0497e1f65dc6b4bb6affe936250c755c",
+  "human_valid": true,
+  "line_no": 349409,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8e68cddbda6dab2932966b8b209c9224b833e5356471a152119e6c983cdc337c",
+  "raw_output": "\n    import requests\n    import semver\n    from apio.core.utils import get_version\n    from apio.core.config import get_config\n\n    config = get_config()\n    version = get_version()\n    latest_version = requests.get(\n        'https://pypi.python.org/pypi/apio/json'\n    ).json()['info']['version']\n\n    if semver.compare(version, latest_version) == -1:\n        ctx.log(\n            'A new version of Apio is available: {}'.format(latest_version)\n        )\n        ctx.log(\n            'You are currently using: {}'.format(version)\n        )\n        ctx.log(\n            'You can update Apio by running: {}'.format(\n                config.get('update_command')\n            )\n        )\n    else:\n        ctx.log(\n            'You are using the latest version of Apio: {}'.format(version)\n        )\n\n\ndef cli_update(ctx):\n    \"\"\"Update Apio.\"\"\"\n    import requests\n    import semver\n    from apio.core.utils import get_version\n    from apio.core.config import get_config\n\n    config = get_config()\n    version = get_version()\n    latest_version = requests.get(\n        'https://pypi.python.org/pypi/apio/json'\n    ).json()['info']['version']\n\n    if semver.compare(version, latest_version) == -1:\n        ctx.log(\n            'Updating Apio from {} to {}'.format(version, latest_version)\n        )\n        ctx.run(config.get('update_command'))\n    else:\n        ctx.log(\n            'You are using the latest version of Apio: {}'.format(version)\n        )\n\n\ndef cli_init(ctx):\n    \"\"\"Initialize a new Apio project.\"\"\"\n    from apio.core.utils import get_version\n    from apio.core.config import get_config\n\n    config = get_config()\n    version = get_version()\n\n    ctx.run(",
+  "sampling_seed": 2080425625,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

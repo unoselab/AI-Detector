@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_blocks_overview(block_representation_list, coin_symbol='btc', txn_limit=None, api_key=None):\n    \"\"\"\n    Batch request version of get_blocks_overview\n    \"\"\"\n    from pycoinmon.lib.common import BLOCK_OVERVIEW_URL\n    from pycoinmon.lib.common import BLOCK_OVERVIEW_QUERY_PARAMS\n    from pycoinmon.lib.common import build_block_overview_query\n    from pycoinmon.lib.common import build_block_overview_result\n    from pycoinmon.lib.common import build_url\n    from pycoinmon.lib.common import make_batch_request\n\n    if not isinstance(block_representation_list, list):\n        raise ValueError(\"block_representation_list must be a list\")\n\n    if len(block_representation_list) ==\n",
+  "agc_valid": false,
+  "body_sha256": "f1cf23fe7c62c9017d6f7ee395e9a626bc18b7d43e206462b0a9cfb6729ca3cb",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n    from pycoinmon.lib.common import BLOCK_OVERVIEW_URL\n    from pycoinmon.lib.common import BLOCK_OVERVIEW_QUERY_PARAMS\n    from pycoinmon.lib.common import build_block_overview_query\n    from pycoinmon.lib.common import build_block_overview_result\n    from pycoinmon.lib.common import build_url\n    from pycoinmon.lib.common import make_batch_request\n\n    if not isinstance(block_representation_list, list):\n        raise ValueError(\"block_representation_list must be a list\")\n\n    if len(block_representation_list) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 135,
+  "human_sha256": "58ea7e042481d9784075dc9d901ea881b468cc9d826e859f213c4189cf3da606",
+  "human_valid": true,
+  "line_no": 201105,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b888b76de6da8d331591b025986e8bd2000608be826d218a65e18d044c0e0578",
+  "raw_output": "\n    from pycoinmon.lib.common import BLOCK_OVERVIEW_URL\n    from pycoinmon.lib.common import BLOCK_OVERVIEW_QUERY_PARAMS\n    from pycoinmon.lib.common import build_block_overview_query\n    from pycoinmon.lib.common import build_block_overview_result\n    from pycoinmon.lib.common import build_url\n    from pycoinmon.lib.common import make_batch_request\n\n    if not isinstance(block_representation_list, list):\n        raise ValueError(\"block_representation_list must be a list\")\n\n    if len(block_representation_list) == ",
+  "sampling_seed": 2909034292,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

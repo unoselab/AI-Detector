@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def slave_for(self, service):\n        \"\"\"Returns wrapper to slave's pool for requested service.\"\"\"\n        return self._slaves[service]\n",
+  "agc_valid": true,
+  "body_sha256": "d8ce9073fc9d48b5de06c66298748dd1907989cf62dfd579cb0dcdc98ded2851",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._slaves[service]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "e8c7197cc35e1363efd120f2539c39c3b0b1f6087e07e746f22fa27fc5677889",
+  "human_valid": true,
+  "line_no": 330030,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "57029fd130932b593f37b9a2e177ace81b13dcfbb166be1109428a08c70844a4",
+  "raw_output": "\n        return self._slaves[service]\n\n    def",
+  "sampling_seed": 2393850593,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

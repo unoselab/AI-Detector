@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def preview(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n",
+  "agc_valid": true,
+  "body_sha256": "c713d1127812eaba6014107a07e0aa3b42731e4ce2f9ee6d87dc731f6778d94c",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return render(request, 'preview.html')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "1e6b8015a40a8e648a6e2236532a5210c246d821211093fde769d5cc3aeb9d3d",
+  "human_valid": true,
+  "line_no": 217397,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3129d83feccb961a03c72ee3df5ade684fe4581ce60f6a1be99f7d5198489821",
+  "raw_output": "\n    return render(request, 'preview.html')\n\n\ndef index(request):\n    \"\"\" Render index page.\n\n    :returns: A rendered index\n\n    \"\"\"\n    return render(request, 'index.html')\n\n\ndef contact(request):\n    \"\"\" Render contact page.\n\n    :returns: A rendered contact\n\n    \"\"\"\n    return render(request, 'contact.html')\n\n\ndef about(request):\n    \"\"\" Render about page.\n\n    :returns: A rendered about\n\n    \"\"\"\n    return render(request, 'about.html')\n\n\ndef projects(request):\n    \"\"\" Render projects page.\n\n    :returns: A rendered projects\n\n    \"\"\"\n    return render(request, 'projects.html')\n\n\ndef project(request, project_id):\n    \"\"\" Render project page.\n\n    :returns: A rendered project\n\n    \"\"\"\n    project = Project.objects.get(pk=project_id)\n    return render(request, 'project.html', {'project': project})\n\n\ndef resume(request):\n    \"\"\" Render resume page.\n\n    :returns: A rendered resume\n\n    \"\"\"\n    return render(request, 'resume.html')\n\n\ndef blog(request):\n    \"\"\" Render blog page.\n\n    :returns: A rendered blog\n\n    \"\"\"\n    return render(request, 'blog.html')\n\n\ndef blog_post(request, blog_post_id):\n    \"\"\" Render blog post page.\n\n    :returns: A rendered blog post\n\n    \"\"\"\n    blog_post = BlogPost.objects.get(pk=blog_post_id)\n    return render(request, 'blog_post.html', {'blog_post': blog_post})\n\n\ndef blog_category(request, blog_category_id):\n    \"\"\" Render blog category page.\n\n    :returns: A rendered blog category\n\n    \"\"\"\n    blog_category = BlogCategory.objects.get(pk=blog_category_id)\n    return render(request, 'blog_category.html', {'blog_category': blog_category})\n\n\ndef blog_categories(request):\n    \"\"\" Render blog categories page.\n\n    :returns: A",
+  "sampling_seed": 3125605968,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

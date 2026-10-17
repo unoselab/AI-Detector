@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def resources_dynamic(self):\n        \"\"\" Returns all resources directly owned by group, can be used to assign\n        ownership of new resources::\n\n            user.resources.append(resource) \"\"\"\n                return self._resources_dynamic\n\n            @property\n",
+  "agc_valid": false,
+  "body_sha256": "6434ce04025a24910e55a4064e70066f471a70148d4d10557076da954db9b8bd",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n                return self._resources_dynamic\n\n            @property\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "62f04f1e47210d226d9a48e2404696e7b563e1edeef30f95895f1c7a714c3cd1",
+  "human_valid": true,
+  "line_no": 27428,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e3c86279db088008652335fb7f9df4ca7b1af96a7e5f7756529ed54018fced13",
+  "raw_output": "\n        return self._resources_dynamic\n\n    @property\n    def",
+  "sampling_seed": 258070970,
+  "tag": "t06",
+  "temperature": 0.6
+}

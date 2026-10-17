@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hybrid_forward(self, F, *states): # pylint: disable=arguments-differ\n        \"\"\"\n        Parameters\n        ----------\n        states : list\n            the stack outputs from RNN, which consists of output from each time step (TNC).\n\n        Returns\n        --------\n        loss : NDArray\n            loss tensor with shape (batch_size,). Dimensions other than batch_axis are averaged out.\n        \"\"\"\n        states = [F.contrib.AdaptiveAvgPooling2D(state, output_size=(1,\n",
+  "agc_valid": false,
+  "body_sha256": "2bf2a66ee33e731826202ebd6b76f3c8f3b9c55607281d4a182cd2c32a0a2064",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        states = [F.contrib.AdaptiveAvgPooling2D(state, output_size=(1,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "6a087d82a37aaa5bdf5ac86b14facaf2c8e0331fe39ddc601ac4b7ec65338b06",
+  "human_valid": true,
+  "line_no": 112080,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d6bff324519ea9dfcf94a5e21f94ebdd83ee5a0526f8b64abe4fe29ba16f957e",
+  "raw_output": "\n        states = [F.contrib.AdaptiveAvgPooling2D(state, output_size=(1, ",
+  "sampling_seed": 1283988592,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

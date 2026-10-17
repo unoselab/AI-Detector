@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _encode_key(self, obj):\n        \"\"\"Encodes a dictionary key - a key can only be a string in std JSON\"\"\"\n        if not isinstance(obj, basestring):\n            raise TypeError(\n                \"dict keys must be strings: %r\" % obj)\n        return '\"%s\"' % obj.replace('\\\\', '\\\\\\\\').replace('\"', r'\\\"')\n",
+  "agc_valid": true,
+  "body_sha256": "7aa0b2acb9294437118a09d9143e8b684e3b2fd085ab8b672cf4e57b9dafccaa",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(obj, basestring):\n            raise TypeError(\n                \"dict keys must be strings: %r\" % obj)\n        return '\"%s\"' % obj.replace('\\\\', '\\\\\\\\').replace('\"', r'\\\"')\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c909cd148377211160cd31563c0d885589441f7c3eaba3a0f1963442f17a24db",
+  "human_valid": true,
+  "line_no": 45813,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "33886bbc36d29236e4f2eb494756209082060689bd7fce0e947de442506c816f",
+  "raw_output": "\n        if not isinstance(obj, basestring):\n            raise TypeError(\n                \"dict keys must be strings: %r\" % obj)\n        return '\"%s\"' % obj.replace('\\\\', '\\\\\\\\').replace('\"', r'\\\"')\n\n    def",
+  "sampling_seed": 867099581,
+  "tag": "t06",
+  "temperature": 0.6
+}

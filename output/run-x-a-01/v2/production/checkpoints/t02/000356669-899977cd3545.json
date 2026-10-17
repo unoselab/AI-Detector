@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def occupied_by_sort(self, address):\n        \"\"\"\n        Check if an address belongs to any segment, and if yes, returns the sort of the segment\n\n        :param int address: The address to check\n        :return: Sort of the segment that occupies this address\n        :rtype: str\n        \"\"\"\n        for segment in self.segments:\n            if segment.occupies(address):\n                return segment.sort\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "726af61f31031697ab1e17c75d5c7a2e608594f4b0a5038571dadc6bf6e361a0",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for segment in self.segments:\n            if segment.occupies(address):\n                return segment.sort\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "de5126cba6330a338567baa114337009421eab6b4fcc4c89b75f8b0d8d3bbe05",
+  "human_valid": true,
+  "line_no": 356669,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "899977cd3545e0dbf68c045b4acd5cd123da1c96cd09e13ccbc1bcf97b20e5b9",
+  "raw_output": "\n        for segment in self.segments:\n            if segment.occupies(address):\n                return segment.sort\n        return None\n\n    def",
+  "sampling_seed": 4030038353,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

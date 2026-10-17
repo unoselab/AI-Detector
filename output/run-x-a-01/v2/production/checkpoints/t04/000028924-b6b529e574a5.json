@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_excel_workbook(api_data, result_info_key, identifier_keys):\n    \"\"\"Generates an Excel workbook object given api_data returned by the Analytics API\n\n    Args:\n        api_data: Analytics API data as a list of dicts (one per identifier)\n        result_info_key: the key in api_data dicts that contains the data results\n        identifier_keys: the list of keys used as requested identifiers\n                         (address, zipcode, block_id, etc)\n\n    Returns:\n        raw excel file data\n    \"\"\"\n    An Excel workbook object\n        \"\"\"\n        from xlwt import Workbook\n\n        # Create an Excel workbook object\n        wb = Workbook()\n\n        # Create a sheet for each identifier\n        for identifier in identifier_keys:\n            sheet = wb.add_sheet(identifier)\n\n            # Create a row for each result\n            for index, result in enumerate(api_data):\n                row = index +\n",
+  "agc_valid": false,
+  "body_sha256": "9e05831ec436313f3d83d0e7ac5043a34e5fe5342ce34bd6673ad236288934ff",
+  "body_tokens": 142,
+  "bucket": "type05_150",
+  "clean_output": "\n    An Excel workbook object\n        \"\"\"\n        from xlwt import Workbook\n\n        # Create an Excel workbook object\n        wb = Workbook()\n\n        # Create a sheet for each identifier\n        for identifier in identifier_keys:\n            sheet = wb.add_sheet(identifier)\n\n            # Create a row for each result\n            for index, result in enumerate(api_data):\n                row = index +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "f9341f98013da116a29a00d1a5af9c88e775a086fa7bd430849e67165e7969c8",
+  "human_valid": true,
+  "line_no": 28924,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b6b529e574a5d8ab521f7a1376638338846998362b879dddef2c0b5d57ba759f",
+  "raw_output": "An Excel workbook object\n    \"\"\"\n    from xlwt import Workbook\n\n    # Create an Excel workbook object\n    wb = Workbook()\n\n    # Create a sheet for each identifier\n    for identifier in identifier_keys:\n        sheet = wb.add_sheet(identifier)\n\n        # Create a row for each result\n        for index, result in enumerate(api_data):\n            row = index + ",
+  "sampling_seed": 792073086,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def resize(image, target_size, **kwargs):\n    \"\"\"Resize an ndarray image of rank 3 or 4.\n    target_size can be a tuple `(width, height)` or scalar `width`.\"\"\"\n    if isinstance(target_size, int):\n        target_size = (target_size, target_size)\n    if len(image.shape) ==\n",
+  "agc_valid": false,
+  "body_sha256": "6f05ab6e4596f5650eb06e6380397c35952fa66349c5ebf2c037ecadaa610dac",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(target_size, int):\n        target_size = (target_size, target_size)\n    if len(image.shape) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "cc935944fb806becf8e0f60949adc9c56a176d48c10960579db517cc6c08f214",
+  "human_valid": true,
+  "line_no": 101828,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fe28a2b2d10d3ed6a478dbff6c62d21b636d427de946f8498f3d64ff09bfdbc7",
+  "raw_output": "\n    if isinstance(target_size, int):\n        target_size = (target_size, target_size)\n    if len(image.shape) == ",
+  "sampling_seed": 3879820450,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

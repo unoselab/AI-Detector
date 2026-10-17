@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read(self, data, offset=0):\n        \"\"\" Read data structure and return (nested) named tuple(s). \"\"\"\n        if isinstance(data, bytes):\n            data = io.BytesIO(data)\n        elif not isinstance(data, io.BytesIO):\n            raise TypeError('data must be bytes or io.BytesIO')\n        if offset:\n            data.seek(offset)\n        return self.read_data(data)\n",
+  "agc_valid": true,
+  "body_sha256": "a4d3268cbececc4668a7aaafe0b3f27be3396d2c3166c2efc0430a628ff8fcdc",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(data, bytes):\n            data = io.BytesIO(data)\n        elif not isinstance(data, io.BytesIO):\n            raise TypeError('data must be bytes or io.BytesIO')\n        if offset:\n            data.seek(offset)\n        return self.read_data(data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "6324221a859b7844529c413c59dec2f2b49fbd1e92dc724ac75464cbdd87c768",
+  "human_valid": true,
+  "line_no": 252256,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0d7c97f59fa06b012544c8f6cd29763e568191295c0c5d9cc2ebeed200594aff",
+  "raw_output": "\n        if isinstance(data, bytes):\n            data = io.BytesIO(data)\n        elif not isinstance(data, io.BytesIO):\n            raise TypeError('data must be bytes or io.BytesIO')\n        if offset:\n            data.seek(offset)\n        return self.read_data(data)\n\n    def",
+  "sampling_seed": 2784380383,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

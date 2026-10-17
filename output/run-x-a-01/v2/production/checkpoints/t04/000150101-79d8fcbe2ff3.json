@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def print_summary(self):\n        \"\"\"Print a summary of the form.\n\n        May help finding which fields need to be filled-in.\n        \"\"\"\n        for field in self.fields:\n            if field.name in self.initial:\n                print(f\"{field.name}: {self.initial[field.name]}\")\n            else:\n                print(f\"{field.name}: {field.value}\")\n",
+  "agc_valid": true,
+  "body_sha256": "6e4591d19cbcdb8eebbd6b243b7e89e33b2a1b1e949ea41bcb6a3102e7a62563",
+  "body_tokens": 73,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for field in self.fields:\n            if field.name in self.initial:\n                print(f\"{field.name}: {self.initial[field.name]}\")\n            else:\n                print(f\"{field.name}: {field.value}\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "4e76e97502f25bb1e39b6578cf14344735ba765618486d3260895c22d1bccc03",
+  "human_valid": true,
+  "line_no": 150101,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "79d8fcbe2ff327e48fbdde45f15fad8fb69e8b4f33a6c29a3d312e178c4ee6d1",
+  "raw_output": "\n        for field in self.fields:\n            if field.name in self.initial:\n                print(f\"{field.name}: {self.initial[field.name]}\")\n            else:\n                print(f\"{field.name}: {field.value}\")\n\n    def",
+  "sampling_seed": 2768522446,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

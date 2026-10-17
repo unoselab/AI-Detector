@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def Managed(cls, manager, field, items):\n        \"\"\"Create a custom `ObjectSet` that is managed by a related `Object.`\n\n        :param manager: The manager of the `ObjectSet`. This is the `Object`\n            that manages this set of objects.\n        :param field: The field on the `manager` that created this managed\n            `ObjectSet`.\n        :param items: The items in the `ObjectSet`.\n        \"\"\"\n        set = cls(items)\n        set._manager = manager\n        set._field = field\n        return set\n",
+  "agc_valid": true,
+  "body_sha256": "c6da644e9e38b697dc7d6551ce913f2879969ed6ef68a1f746726cc0bab6bf9e",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n        set = cls(items)\n        set._manager = manager\n        set._field = field\n        return set\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "063f4cffb4da73c2f072a5a6519453045c5eb85e3f714e8efd412fc7bd195b09",
+  "human_valid": true,
+  "line_no": 139746,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5daea66dfb1b7c9aa34721512d6b482f4165dbce277e91da412f833f486c9664",
+  "raw_output": "\n        set = cls(items)\n        set._manager = manager\n        set._field = field\n        return set\n\n    def",
+  "sampling_seed": 3619553859,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

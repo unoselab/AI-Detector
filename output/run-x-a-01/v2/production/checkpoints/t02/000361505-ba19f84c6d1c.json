@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def onStart(self, *args, **kwarg):\n        \"\"\"\n        Verify user input and kick off the client's program if valid\n        \"\"\"\n        if self.verifyInput():\n            self.client.start()\n",
+  "agc_valid": true,
+  "body_sha256": "9e45efbb645627521c3e7e8a04e9e1dd34b98c71a860cad7a9dc7be44b0990b1",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.verifyInput():\n            self.client.start()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "f91a92cb5363e4b4c2eee88112c6aa4726083bdf13bd6509d6fb2936d517016a",
+  "human_valid": true,
+  "line_no": 361505,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ba19f84c6d1cbd9296962053fa76d4c2d1528b271bdce070fe90a5e99e324f4a",
+  "raw_output": "\r\n        if self.verifyInput():\r\n            self.client.start()\r\n\r\n    def",
+  "sampling_seed": 3696035641,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def main(name, output, font):\n    \"\"\" Easily bootstrap an OS project to fool HR departments and pad your resume. \"\"\"\n        if name:\n            print(\"Hello, {}!\".format(name))\n        else:\n            print(\"Hello, world!\")\n        print(\"I'm writing to {}.\".format(output))\n        print(\"I'm {}.\".format(font))\n\n\n    if __name__ == '__main__':\n        import argparse\n        parser = argparse.ArgumentParser(description=__doc__)\n        parser.add_argument('--name', help='name to greet')\n        parser.add_argument('--output', help='output file')\n        parser.add_argument('--font', help='font to use')\n        args = parser.parse_args()\n        main(args.name, args.output, args.font)\n",
+  "agc_valid": false,
+  "body_sha256": "6cd40cc0aa42b082e4750d595f12ebe27fe295ba983c801cdbfa792835e7f8e3",
+  "body_tokens": 142,
+  "bucket": "type05_150",
+  "clean_output": "\n        if name:\n            print(\"Hello, {}!\".format(name))\n        else:\n            print(\"Hello, world!\")\n        print(\"I'm writing to {}.\".format(output))\n        print(\"I'm {}.\".format(font))\n\n\n    if __name__ == '__main__':\n        import argparse\n        parser = argparse.ArgumentParser(description=__doc__)\n        parser.add_argument('--name', help='name to greet')\n        parser.add_argument('--output', help='output file')\n        parser.add_argument('--font', help='font to use')\n        args = parser.parse_args()\n        main(args.name, args.output, args.font)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "d8238a662a71f0435ec64a149795755f8a30a7eedc2738090327060c620abbd8",
+  "human_valid": true,
+  "line_no": 319594,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8a059eae0139f4d1fb4bd207ea6c5a5697414989b4ee8aa3a551ad1be7242abd",
+  "raw_output": "\n    if name:\n        print(\"Hello, {}!\".format(name))\n    else:\n        print(\"Hello, world!\")\n    print(\"I'm writing to {}.\".format(output))\n    print(\"I'm {}.\".format(font))\n\n\nif __name__ == '__main__':\n    import argparse\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument('--name', help='name to greet')\n    parser.add_argument('--output', help='output file')\n    parser.add_argument('--font', help='font to use')\n    args = parser.parse_args()\n    main(args.name, args.output, args.font)\n\n\ndef main(name, output, font):\n    \"\"\" Easily bootstrap an OS project to fool HR departments and pad your resume. \"\"\"\n    if name:\n        print(\"Hello, {}!\".format(name))\n    else:\n        print(\"Hello, world!\")\n    print(\"I'm writing to {}.\".format(output))\n    print(\"I'm {}.\".format(font))\n\n\nif __name__ == '__main__':\n    import argparse\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument('--name', help='name to greet')\n    parser.add_argument('--output', help='output file')\n    parser.add_argument('--font', help='font to use')\n    args = parser.parse_args()\n    main(args.name, args.output, args.font)\n\n\ndef main(name, output, font):\n    \"\"\" Easily bootstrap an OS project to fool HR departments and pad your resume. \"\"\"\n    if name:\n        print(\"Hello, {}!\".format(name))\n    else:\n        print(\"Hello, world!\")\n    print(\"I'm writing to {}.\".format(output))\n    print(\"I'm {}.\".format(font))\n\n\nif __name__ == '__main__':\n    import argparse\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser",
+  "sampling_seed": 3190711972,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

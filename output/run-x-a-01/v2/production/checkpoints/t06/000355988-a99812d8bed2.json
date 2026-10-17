@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def chunk_from_mem(self, ptr):\n        \"\"\"\n        Given a pointer to a user payload, return the base of the chunk associated with that payload (i.e. the chunk\n        pointer). Returns None if ptr is null.\n\n        :param ptr: a pointer to the base of a user payload in the heap\n        :returns: a pointer to the base of the associated heap chunk, or None if ptr is null\n        \"\"\"\n        if ptr is None:\n            return None\n        return ptr - (self.chunksize + self.pre_pad)\n",
+  "agc_valid": true,
+  "body_sha256": "8cf4f1fe435402e01eecb9cd297520f10cf312a3b6fe1da23b6c16c97205183b",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if ptr is None:\n            return None\n        return ptr - (self.chunksize + self.pre_pad)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "b7fb6866fcad1669fea54ae434b3fdeb2037bd26cf6b905b1e6adcb183284c07",
+  "human_valid": true,
+  "line_no": 355988,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a99812d8bed2701ee14a472df04964242611900f6d8cc49e683361971ceb75c7",
+  "raw_output": "\n        if ptr is None:\n            return None\n        return ptr - (self.chunksize + self.pre_pad)\n\n    def",
+  "sampling_seed": 1805860778,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

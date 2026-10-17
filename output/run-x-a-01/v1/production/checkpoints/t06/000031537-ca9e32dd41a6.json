@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _get_or_load_domain(self, domain):\n        \"\"\" Return a domain if one already exists, or create a new one if not.\n\n        Args:\n            domain (str, dict): Can be one of:\n                - The name of the Domain to return (fails if none exists)\n                - A path to the Domain configuration file\n                - A dictionary containing configuration information\n        \"\"\"\n        if isinstance(domain, str):\n            domain_name = domain\n            domain = self.domain_manager.get_domain(domain_name)\n            if domain is None:\n                domain = self.domain_manager.create_domain(domain_name)\n        elif isinstance(domain, dict):\n            domain = Domain.from_dict(domain)\n        else:\n            raise TypeError(\"domain must be str or dict\")\n        return domain\n",
+  "agc_valid": true,
+  "body_sha256": "6d1dc773f0cb65563ab78518a18bfe3ef5b1a8a1567b95a41c5416b2893fae12",
+  "body_tokens": 131,
+  "bucket": "type04_140",
+  "clean_output": "\n        if isinstance(domain, str):\n            domain_name = domain\n            domain = self.domain_manager.get_domain(domain_name)\n            if domain is None:\n                domain = self.domain_manager.create_domain(domain_name)\n        elif isinstance(domain, dict):\n            domain = Domain.from_dict(domain)\n        else:\n            raise TypeError(\"domain must be str or dict\")\n        return domain\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "991fdfe0dccd8939600a3bc9f4ee555a82dd98970452ee7710cfc10937a821f1",
+  "human_valid": true,
+  "line_no": 31537,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ca9e32dd41a683e4630ad62dc5eb2882f2f6bae86a3f27a3f91ffcbc0823f998",
+  "raw_output": "\n        if isinstance(domain, str):\n            domain_name = domain\n            domain = self.domain_manager.get_domain(domain_name)\n            if domain is None:\n                domain = self.domain_manager.create_domain(domain_name)\n        elif isinstance(domain, dict):\n            domain = Domain.from_dict(domain)\n        else:\n            raise TypeError(\"domain must be str or dict\")\n        return domain\n\n    def",
+  "sampling_seed": 2927231654,
+  "tag": "t06",
+  "temperature": 0.6
+}

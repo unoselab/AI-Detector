@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def skip_format_url(format_, url):\n    \"\"\"\n    Checks whether a give format/url should be skipped and not downloaded.\n\n    @param format_: Filename format (extension).\n    @type format_: str (e.g. html, txt, zip, pdf)\n\n    @param url: URL.\n    @type url: str\n\n    @return: True if format/url should be skipped, False otherwise.\n    @rtype bool\n    \"\"\"\n    # Skip PDFs\n    if format_ == \"pdf\":\n        return True\n\n    # Skip URLs with certain words\n    skip_words = [\"/login\", \"/register\", \"/account\", \"/signup\"]\n    for word in skip_words:\n        if word in url:\n            return True\n\n    # Skip URLs with certain extensions\n    skip_extensions = [\"/edit\", \"/delete\", \"/view\", \"/edit/\", \"/delete/\", \"/view/\"]\n    for extension in skip_extensions:\n        if extension in url:\n            return True\n\n    return False\n",
+  "agc_valid": true,
+  "body_sha256": "7672420dae801d7a960d8996f70ef2f5b0b51ee12e2b48e1fc4c8fac3380af8b",
+  "body_tokens": 128,
+  "bucket": "type03_130",
+  "clean_output": "\n    # Skip PDFs\n    if format_ == \"pdf\":\n        return True\n\n    # Skip URLs with certain words\n    skip_words = [\"/login\", \"/register\", \"/account\", \"/signup\"]\n    for word in skip_words:\n        if word in url:\n            return True\n\n    # Skip URLs with certain extensions\n    skip_extensions = [\"/edit\", \"/delete\", \"/view\", \"/edit/\", \"/delete/\", \"/view/\"]\n    for extension in skip_extensions:\n        if extension in url:\n            return True\n\n    return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 190,
+  "human_sha256": "e4fe11d09b6b83028152b525cf299371c816c63bf4d7aa3bc4e1c522e5a92a73",
+  "human_valid": true,
+  "line_no": 360257,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dff454433b3f9f6d3deb10683a31f490ff149348a0acce1848bdaa2664318fcc",
+  "raw_output": "\n    # Skip PDFs\n    if format_ == \"pdf\":\n        return True\n\n    # Skip URLs with certain words\n    skip_words = [\"/login\", \"/register\", \"/account\", \"/signup\"]\n    for word in skip_words:\n        if word in url:\n            return True\n\n    # Skip URLs with certain extensions\n    skip_extensions = [\"/edit\", \"/delete\", \"/view\", \"/edit/\", \"/delete/\", \"/view/\"]\n    for extension in skip_extensions:\n        if extension in url:\n            return True\n\n    return False\n\n\ndef get_url_format(url):\n    \"\"\"\n    Gets the format of a given URL.\n\n    @param url: URL.\n    @type url: str\n\n    @return: Format of the URL (extension).\n    @rtype str\n    \"\"\"\n    return url.split(\".\")[-1]\n\n\ndef get_url_domain(url):\n    \"\"\"\n    Gets the domain of a given URL.\n\n    @param url: URL.\n    @type url: str\n\n    @return: Domain of the URL.\n    @rtype str\n    \"\"\"\n    return url.split(\"/\")[2]\n\n\ndef get_url_filename(url):\n    \"\"\"\n    Gets the filename of a given URL.\n\n    @param url: URL.\n    @type url: str\n\n    @return: Filename of the URL.\n    @rtype str\n    \"\"\"\n    return url.split(\"/\")[-1]\n\n\ndef get_url_path(url):\n    \"\"\"\n    Gets the path of a given URL.\n\n    @param url: URL.\n    @type url: str\n\n    @return: Path of the URL.\n    @rtype str\n    \"\"\"\n    return \"/\".join(url.split(\"/\")[3:-1])\n\n\ndef get_url_filepath(url):\n    \"\"\"\n    Gets the filepath of a given URL.\n\n    @param url: URL.\n    @type url: str\n\n    @return: Filepath of the URL.\n    @rtype str\n    \"\"\"\n    return \"/\".join(url.split(\"/\")[",
+  "sampling_seed": 45153264,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run(self):\n        \"\"\"Process events such as incoming data.\n\n        This method blocks indefinitely. It will only return after the\n        connection to the server is closed.\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b7e9b55012345cc0b2a5a67e7166d5e1a288046dcc3d9ef870daf0d7d69d315d",
+  "human_valid": true,
+  "line_no": 47365,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "61957ab90a4779366bfac873d852d712225ba2a3ecf46979909e8842c2a920b3",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 2021899095,
+  "tag": "t06",
+  "temperature": 0.6
+}

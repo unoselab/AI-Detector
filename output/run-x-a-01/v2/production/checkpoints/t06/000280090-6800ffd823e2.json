@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def clean_html(self, html):\n        \"\"\"Apply ``Cleaner`` to HTML string or document and return a cleaned string or document.\"\"\"\n        if not isinstance(html, str):\n            raise TypeError(\"`html` must be a string.\")\n\n        return self.cleaner.clean_html(html)\n",
+  "agc_valid": true,
+  "body_sha256": "77110953b586fc5e7274f2a6c0215fbf4c92639d34354052defc7f8f1dd8ebc5",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(html, str):\n            raise TypeError(\"`html` must be a string.\")\n\n        return self.cleaner.clean_html(html)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "08172ec165071d781704bccd60016091dc570164d79bd0908f344e6bef13a09e",
+  "human_valid": true,
+  "line_no": 280090,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6800ffd823e2ad918c4ef51d1d6c58e757493075b1cd4b81711e5815d1f5cb16",
+  "raw_output": "\n        if not isinstance(html, str):\n            raise TypeError(\"`html` must be a string.\")\n\n        return self.cleaner.clean_html(html)\n\n    def",
+  "sampling_seed": 3305021379,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _convert_token(self, token):\n        \"\"\"Convert token fields from camel case.\n\n        :param dict token: An authentication token.\n        :rtype: dict\n        \"\"\"\n        return {\n            'id': token['id'],\n            'expires': token['expires'],\n            'expires_at': token['expires_at'],\n            'issued_at': token['issued_at'],\n            'project': {\n                'id': token['project']['id'],\n                'name': token['project']['name'],\n                'domain': {\n                    'id': token['project']['domain']['id'],\n                    'name': token['project']['domain']['name'],\n                },\n            },\n            'user': {\n                'id': token['user']['id'],\n                'name': token['user']['name'],\n                'domain': {\n                    'id': token['user']['domain']['id'],\n                    'name': token['user']['domain']['name'],\n                },\n            },\n            'roles': [\n                {\n                    'id': role['id'],\n                    'name': role['name'],\n                } for role in token['roles']\n            ],\n        }\n",
+  "agc_valid": true,
+  "body_sha256": "5cdf844882a56fd5cac9a2d0b01a3f2d72e1049ab0b98ec18ff11090219542ca",
+  "body_tokens": 441,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return {\n            'id': token['id'],\n            'expires': token['expires'],\n            'expires_at': token['expires_at'],\n            'issued_at': token['issued_at'],\n            'project': {\n                'id': token['project']['id'],\n                'name': token['project']['name'],\n                'domain': {\n                    'id': token['project']['domain']['id'],\n                    'name': token['project']['domain']['name'],\n                },\n            },\n            'user': {\n                'id': token['user']['id'],\n                'name': token['user']['name'],\n                'domain': {\n                    'id': token['user']['domain']['id'],\n                    'name': token['user']['domain']['name'],\n                },\n            },\n            'roles': [\n                {\n                    'id': role['id'],\n                    'name': role['name'],\n                } for role in token['roles']\n            ],\n        }\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "7fd730e0387576cdf4c650473044dccc4e858e146c7424820030932b18f35ff9",
+  "human_valid": true,
+  "line_no": 124181,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e110159b270f932ab992e4d81ae5ecaa615d41ce2d34f0c22d9a7e71e4dc38c",
+  "raw_output": "\n        return {\n            'id': token['id'],\n            'expires': token['expires'],\n            'expires_at': token['expires_at'],\n            'issued_at': token['issued_at'],\n            'project': {\n                'id': token['project']['id'],\n                'name': token['project']['name'],\n                'domain': {\n                    'id': token['project']['domain']['id'],\n                    'name': token['project']['domain']['name'],\n                },\n            },\n            'user': {\n                'id': token['user']['id'],\n                'name': token['user']['name'],\n                'domain': {\n                    'id': token['user']['domain']['id'],\n                    'name': token['user']['domain']['name'],\n                },\n            },\n            'roles': [\n                {\n                    'id': role['id'],\n                    'name': role['name'],\n                } for role in token['roles']\n            ],\n        }\n\n    def",
+  "sampling_seed": 412043638,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

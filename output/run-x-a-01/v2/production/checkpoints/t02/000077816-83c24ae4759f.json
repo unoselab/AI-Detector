@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def purge_stream(self, stream_id, remove_definition=False, sandbox=None):\n        \"\"\"\n        Purge the stream\n\n        :param stream_id: The stream identifier\n        :param remove_definition: Whether to remove the stream definition as well\n        :param sandbox: The sandbox for this stream\n        :return: None\n        :raises: NotImplementedError\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "32fed56fd038df5068e377366d93ac21ad7302bd07b31553a5674e3bffca71ab",
+  "human_valid": true,
+  "line_no": 77816,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "83c24ae4759fd6ab07ad9a7602fb50efbc31c08964f9347df33842d1851d2227",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 525695337,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

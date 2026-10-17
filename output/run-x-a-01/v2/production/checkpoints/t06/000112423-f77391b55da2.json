@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def contains_regex(path, regex, lchar=''):\n    \"\"\"\n    .. deprecated:: 0.17.0\n       Use :func:`search` instead.\n\n    Return True if the given regular expression matches on any line in the text\n    of a given file.\n\n    If the lchar argument (leading char) is specified, it\n    will strip `lchar` from the left side of each line before trying to match\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' file.contains_regex /etc/crontab\n    \"\"\"\n    passwd /etc/passwd\n            salt '*' file.contains_regex /etc/passwd /etc/passwd '#'\n        \"\"\"\n        return search(path, regex, lchar)\n",
+  "agc_valid": false,
+  "body_sha256": "d99af23a3868325db95abe0d383b22be497702ccfa44d28c19f808b06b0e5989",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    passwd /etc/passwd\n            salt '*' file.contains_regex /etc/passwd /etc/passwd '#'\n        \"\"\"\n        return search(path, regex, lchar)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "fd7eb9296adfa484f9f6cd0b6395887a4da30e8bc62d120aaebed8f8449a838e",
+  "human_valid": true,
+  "line_no": 112423,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f77391b55da2410c5be502a50213f79ddaf652a0f6dee6cf68d4fc467da740d3",
+  "raw_output": "passwd /etc/passwd\n        salt '*' file.contains_regex /etc/passwd /etc/passwd '#'\n    \"\"\"\n    return search(path, regex, lchar)\n\n\ndef contains_regex_multiline(path, regex, lchar=''):\n    \"\"\"\n    .. deprecated:: ",
+  "sampling_seed": 1146565868,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

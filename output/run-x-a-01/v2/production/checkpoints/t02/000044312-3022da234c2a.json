@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def export_data(self):\n        \"\"\"\n        Get the results with the modified_data\n        \"\"\"\n        return self.modified_data\n",
+  "agc_valid": true,
+  "body_sha256": "a1acdc2a8607622e976991d3d534462541d49a5370012d099e1105be68115fff",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.modified_data\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "c9f1df7df0933b9dd9d651403d685c7ade3a64dde28e10903c721b91add77b07",
+  "human_valid": true,
+  "line_no": 44312,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3022da234c2a16e874a6331bbdfbd72756c8e8fc1ec01e875bd7850eea9b34af",
+  "raw_output": "\n        return self.modified_data\n\n    def",
+  "sampling_seed": 1629468660,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

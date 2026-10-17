@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _find_travis_job(self, build, toxenv):\n        \"\"\"Given a build object, find the acceptance36 job\"\"\"\n        for job in build[\"jobs\"]:\n            if job[\"config\"][\"env\"][\"TOXENV\"] == toxenv:\n                return job\n        raise RuntimeError(\"Could not find job for %s\" % toxenv)\n",
+  "agc_valid": true,
+  "body_sha256": "c687160b86551ddf2a22a6e9ae71ea0c9b750977a537fdeeae78dac1d8341675",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for job in build[\"jobs\"]:\n            if job[\"config\"][\"env\"][\"TOXENV\"] == toxenv:\n                return job\n        raise RuntimeError(\"Could not find job for %s\" % toxenv)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "89fd5bc89853cfdf621397483a483af4b09f3abf6f76354ea92d821a48b14ad9",
+  "human_valid": true,
+  "line_no": 381038,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4dd42c3aed7363360cdf35150aa4a0b815c43430f7217c08b95050b41eaf6ccd",
+  "raw_output": "\n        for job in build[\"jobs\"]:\n            if job[\"config\"][\"env\"][\"TOXENV\"] == toxenv:\n                return job\n        raise RuntimeError(\"Could not find job for %s\" % toxenv)\n\n    def",
+  "sampling_seed": 59316583,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

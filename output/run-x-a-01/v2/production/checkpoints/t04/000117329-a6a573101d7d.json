@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def launchctl(sub_cmd, *args, **kwargs):\n    \"\"\"\n    Run a launchctl command and raise an error if it fails\n\n    Args: additional args are passed to launchctl\n        sub_cmd (str): Sub command supplied to launchctl\n\n    Kwargs: passed to ``cmd.run_all``\n        return_stdout (bool): A keyword argument. If true return the stdout of\n            the launchctl command\n\n    Returns:\n        bool: ``True`` if successful\n        str: The stdout of the launchctl command if requested\n\n    Raises:\n        CommandExecutionError: If command fails\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        import salt.utils.mac_service\n        salt.utils.mac_service.launchctl('debug', 'org.cups.cupsd')\n    \"\"\"\n    Raises:\n         ``CommandExecutionError`` if the launchctl command fails\n\n     Example:\n\n     .. code-block:: python\n\n         # Enable the com.apple.coreservices.appleid_authd service\n         launchctl('enable', 'com.apple.coreservices.appleid_authd')\n     \"\"\"\n     cmd = ['launchctl', sub_cmd]\n     cmd.extend(args)\n     ret = __salt__['cmd.run_all'](cmd, **kwargs)\n     if ret['retcode'] !=\n",
+  "agc_valid": false,
+  "body_sha256": "837f791592b1b905368524b576a8a5aadc1d8a7264b86504db845108d0c0d661",
+  "body_tokens": 87,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Raises:\n         ``CommandExecutionError`` if the launchctl command fails\n\n     Example:\n\n     .. code-block:: python\n\n         # Enable the com.apple.coreservices.appleid_authd service\n         launchctl('enable', 'com.apple.coreservices.appleid_authd')\n     \"\"\"\n     cmd = ['launchctl', sub_cmd]\n     cmd.extend(args)\n     ret = __salt__['cmd.run_all'](cmd, **kwargs)\n     if ret['retcode'] !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "97537c4e09216fba1500fc7d5d528d625b6cfb84539e64f04b1d82b4a0f81a75",
+  "human_valid": true,
+  "line_no": 117329,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a6a573101d7d4053b4225d5e0170505a7abdf6cdf14df3cde6410d528467e395",
+  "raw_output": "   Raises:\n        ``CommandExecutionError`` if the launchctl command fails\n\n    Example:\n\n    .. code-block:: python\n\n        # Enable the com.apple.coreservices.appleid_authd service\n        launchctl('enable', 'com.apple.coreservices.appleid_authd')\n    \"\"\"\n    cmd = ['launchctl', sub_cmd]\n    cmd.extend(args)\n    ret = __salt__['cmd.run_all'](cmd, **kwargs)\n    if ret['retcode'] != ",
+  "sampling_seed": 2417420113,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

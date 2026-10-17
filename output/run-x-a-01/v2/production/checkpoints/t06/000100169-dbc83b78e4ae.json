@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _generate_cache(self):\n        \"\"\"\n        Scan the path for distributions and populate the cache with\n        those that are found.\n        \"\"\"\n        # NOTE: We don't need to check whether the cache is up-to-date\n        #       because the cache is populated at construction time.\n        for path in self._paths:\n            for dist in self._get_candidate_distributions(path):\n                self._cache[dist.key] = dist\n",
+  "agc_valid": true,
+  "body_sha256": "51b97b84f62463c6a1b62a7ee77114a70aeed4f118019247c877632be32fe106",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # NOTE: We don't need to check whether the cache is up-to-date\n        #       because the cache is populated at construction time.\n        for path in self._paths:\n            for dist in self._get_candidate_distributions(path):\n                self._cache[dist.key] = dist\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "9cb5465eb23a76ac06458885fefcb07f66442e74cdfcd3d0242eb3ddb9eef64c",
+  "human_valid": true,
+  "line_no": 100169,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dbc83b78e4ae0124367ededdbb331a1cd370e16b80c88ecc91fb5064aca6eaee",
+  "raw_output": "\n        # NOTE: We don't need to check whether the cache is up-to-date\n        #       because the cache is populated at construction time.\n        for path in self._paths:\n            for dist in self._get_candidate_distributions(path):\n                self._cache[dist.key] = dist\n\n    def",
+  "sampling_seed": 2320483663,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

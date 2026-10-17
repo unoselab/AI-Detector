@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_certificate_info():\n    \"\"\"\n    checks app certificate expiry status\n    \"\"\"\n    try:\n        cert_info = ssl.get_server_certificate((HOST, PORT))\n        cert = x509.load_pem_x509_certificate(cert_info.encode())\n        not_after = cert.not_valid_after\n        not_before = cert.not_valid_before\n        now = datetime.datetime.now()\n        if now < not_before:\n            return \"Certificate is not valid yet\"\n        elif now > not_after:\n            return \"Certificate is expired\"\n        else:\n            return \"Certificate is valid\"\n    except Exception as e:\n        return str(e)\n",
+  "agc_valid": true,
+  "body_sha256": "b3b7df1b636cc5b350d0f84f17869154f1c93ccd13227a80e310d443c458ce89",
+  "body_tokens": 149,
+  "bucket": "type05_150",
+  "clean_output": "\n    try:\n        cert_info = ssl.get_server_certificate((HOST, PORT))\n        cert = x509.load_pem_x509_certificate(cert_info.encode())\n        not_after = cert.not_valid_after\n        not_before = cert.not_valid_before\n        now = datetime.datetime.now()\n        if now < not_before:\n            return \"Certificate is not valid yet\"\n        elif now > not_after:\n            return \"Certificate is expired\"\n        else:\n            return \"Certificate is valid\"\n    except Exception as e:\n        return str(e)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "9874ed791db1c4f5fa5530ac4fea4d505d0a0de8a8420d042fe19663d2352270",
+  "human_valid": true,
+  "line_no": 295969,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1820011eb4846f5da60f43c79b0f684c5f76f8eefca22ac6667bcc8c60d5824a",
+  "raw_output": "\n    try:\n        cert_info = ssl.get_server_certificate((HOST, PORT))\n        cert = x509.load_pem_x509_certificate(cert_info.encode())\n        not_after = cert.not_valid_after\n        not_before = cert.not_valid_before\n        now = datetime.datetime.now()\n        if now < not_before:\n            return \"Certificate is not valid yet\"\n        elif now > not_after:\n            return \"Certificate is expired\"\n        else:\n            return \"Certificate is valid\"\n    except Exception as e:\n        return str(e)\n\n\ndef get_certificate_info_json():\n    \"\"\"\n    checks app certificate expiry status\n    \"\"\"\n    try:\n        cert_info = ssl.get_server_certificate((HOST, PORT))\n        cert = x509.load_pem_x509_certificate(cert_info.encode())\n        not_after = cert.not_valid_after\n        not_before = cert.not_valid_before\n        now = datetime.datetime.now()\n        if now < not_before:\n            return {\"status\": \"Certificate is not valid yet\"}\n        elif now > not_after:\n            return {\"status\": \"Certificate is expired\"}\n        else:\n            return {\"status\": \"Certificate is valid\"}\n    except Exception as e:\n        return {\"status\": str(e)}\n\n\ndef get_certificate_info_xml():\n    \"\"\"\n    checks app certificate expiry status\n    \"\"\"\n    try:\n        cert_info = ssl.get_server_certificate((HOST, PORT))\n        cert = x509.load_pem_x509_certificate(cert_info.encode())\n        not_after = cert.not_valid_after\n        not_before = cert.not_valid_before\n        now = datetime.datetime.now()\n        if now < not_before:\n            return \"<status>Certificate is not valid yet</status>\"\n        elif now > not_after:\n            return \"<status>Certificate is expired</status>\"\n        else",
+  "sampling_seed": 1827889538,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

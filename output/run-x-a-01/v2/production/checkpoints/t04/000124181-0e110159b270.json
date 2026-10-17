@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _convert_token(self, token):\n        \"\"\"Convert token fields from camel case.\n\n        :param dict token: An authentication token.\n        :rtype: dict\n        \"\"\"\n        token['expires_at'] = _convert_timestamp(token['expires_at'])\n        token['created_at'] = _convert_timestamp(token['created_at'])\n        token['updated_at'] = _convert_timestamp(token['updated_at'])\n        return token\n",
+  "agc_valid": true,
+  "body_sha256": "6e291b4e04436aef5bd401c4e59303ccad8c8599a27a02c9fe7b00b20e391e11",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n        token['expires_at'] = _convert_timestamp(token['expires_at'])\n        token['created_at'] = _convert_timestamp(token['created_at'])\n        token['updated_at'] = _convert_timestamp(token['updated_at'])\n        return token\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "7fd730e0387576cdf4c650473044dccc4e858e146c7424820030932b18f35ff9",
+  "human_valid": true,
+  "line_no": 124181,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e110159b270f932ab992e4d81ae5ecaa615d41ce2d34f0c22d9a7e71e4dc38c",
+  "raw_output": "\n        token['expires_at'] = _convert_timestamp(token['expires_at'])\n        token['created_at'] = _convert_timestamp(token['created_at'])\n        token['updated_at'] = _convert_timestamp(token['updated_at'])\n        return token\n\n    def",
+  "sampling_seed": 466437325,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

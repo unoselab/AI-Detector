@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def download(remote_location, remotes=None, prefix=\"\", dry_run=False):\n    \"\"\"\n    Download resources from a stage server.\n    \"\"\"\n    if remotes is None:\n        remotes = get_remotes()\n    if not remote_location.startswith(\"http\"):\n        remote_location = \"http://\" + remote_location\n    if not remote_location.endswith(\"/\"):\n        remote_location += \"/\"\n    for remote in remotes:\n        if remote_location.startswith(remote):\n            local_location = remote_location.replace(remote, prefix)\n            if not local_location.endswith(\"/\"):\n                local_location += \"/\"\n            if not dry_run:\n                os.makedirs(os.path.dirname(local_location), exist_ok=True)\n                if not os.path.exists(local_location):\n                    print(\"Downloading %s\" % remote_location)\n                    urllib.request.urlretrieve(remote_location, local_location)\n",
+  "agc_valid": true,
+  "body_sha256": "b5e6d8522adca38c702ff98b936fc06efbcdc89a9fb468572a406c785991109a",
+  "body_tokens": 208,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if remotes is None:\n        remotes = get_remotes()\n    if not remote_location.startswith(\"http\"):\n        remote_location = \"http://\" + remote_location\n    if not remote_location.endswith(\"/\"):\n        remote_location += \"/\"\n    for remote in remotes:\n        if remote_location.startswith(remote):\n            local_location = remote_location.replace(remote, prefix)\n            if not local_location.endswith(\"/\"):\n                local_location += \"/\"\n            if not dry_run:\n                os.makedirs(os.path.dirname(local_location), exist_ok=True)\n                if not os.path.exists(local_location):\n                    print(\"Downloading %s\" % remote_location)\n                    urllib.request.urlretrieve(remote_location, local_location)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "7a3bf4c17519c90a49eec317e9d43519b7609e6d249f031bbf952deb172feb76",
+  "human_valid": true,
+  "line_no": 86329,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5bd5133ef70100a912880f3a72de2ebcdc0692822d082f5cd5dddc03208450ab",
+  "raw_output": "\n    if remotes is None:\n        remotes = get_remotes()\n    if not remote_location.startswith(\"http\"):\n        remote_location = \"http://\" + remote_location\n    if not remote_location.endswith(\"/\"):\n        remote_location += \"/\"\n    for remote in remotes:\n        if remote_location.startswith(remote):\n            local_location = remote_location.replace(remote, prefix)\n            if not local_location.endswith(\"/\"):\n                local_location += \"/\"\n            if not dry_run:\n                os.makedirs(os.path.dirname(local_location), exist_ok=True)\n                if not os.path.exists(local_location):\n                    print(\"Downloading %s\" % remote_location)\n                    urllib.request.urlretrieve(remote_location, local_location)\n\n\ndef get_remotes():\n    \"\"\"\n    Get the list of remote locations.\n    \"\"\"\n    remotes = []\n    for line in open(\"remotes\"):\n        line = line.strip()\n        if line and not line.startswith(\"#\"):\n            remotes.append(line)\n    return remotes\n\n\ndef get_remote_location():\n    \"\"\"\n    Get the remote location.\n    \"\"\"\n    for line in open(\"remotes\"):\n        line = line.strip()\n        if line and not line.startswith(\"#\") and line.startswith(\"http\"):\n            return line\n\n\ndef get_remote_location_from_url(url):\n    \"\"\"\n    Get the remote location from a URL.\n    \"\"\"\n    for line in open(\"remotes\"):\n        line = line.strip()\n        if line and not line.startswith(\"#\") and line.startswith(url):\n            return line\n\n\ndef get_remote_location_from_file(file):\n    \"\"\"\n    Get the remote location from a file.\n    \"\"\"\n    for line in open(\"remotes\"):\n        line = line.strip()\n        if line and not line.startswith(\"#\") and line.startswith(file):\n            return line\n\n\ndef get_remote_location_from_name",
+  "sampling_seed": 2378686855,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

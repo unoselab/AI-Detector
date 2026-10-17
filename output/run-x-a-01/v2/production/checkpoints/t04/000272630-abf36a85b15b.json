@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cli(env, context_id):\n    \"\"\"Request configuration of a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    context = env.context\n    if context.get('id') != context_id:\n        raise ValueError(\"Context ID mismatch\")\n    if context['advancedConfigurationFlag']:\n        raise ValueError(\"Context already configured\")\n    context['advancedConfigurationFlag'] = True\n    context.save()\n    return context\n",
+  "agc_valid": true,
+  "body_sha256": "a3d1acc84f7468e0e089f80e3bfa767d1113ef22efa7cd95ecefb19cc4592074",
+  "body_tokens": 56,
+  "bucket": "out_of_range",
+  "clean_output": "\n    context = env.context\n    if context.get('id') != context_id:\n        raise ValueError(\"Context ID mismatch\")\n    if context['advancedConfigurationFlag']:\n        raise ValueError(\"Context already configured\")\n    context['advancedConfigurationFlag'] = True\n    context.save()\n    return context\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "37511f9071f2ba2df8dd89a52f9c8b56548db2f9fd464fed2b5b47a097e6fd9b",
+  "human_valid": true,
+  "line_no": 272630,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "abf36a85b15be026e3e0c9cd3b530d00872c211e431583e12121f46d0db966be",
+  "raw_output": "\n    context = env.context\n    if context.get('id') != context_id:\n        raise ValueError(\"Context ID mismatch\")\n    if context['advancedConfigurationFlag']:\n        raise ValueError(\"Context already configured\")\n    context['advancedConfigurationFlag'] = True\n    context.save()\n    return context\n\n\ndef cli_context_id(env):\n    \"\"\"Request configuration of a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    return cli(env, env.context_id)\n\n\ndef cli_context_name(env):\n    \"\"\"Request configuration of a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    context = env.context\n    if context['advancedConfigurationFlag']:\n        raise ValueError(\"Context already configured\")\n    context['advancedConfigurationFlag'] = True\n    context.save()\n    return context\n\n\ndef cli_context_name_id(env, context_id):\n    \"\"\"Request configuration of a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    context = env.context\n    if context['advancedConfigurationFlag']:\n        raise ValueError(\"Context already configured\")\n    context['advancedConfigurationFlag'] = True\n    context.save()\n    return context\n\n\ndef cli_context_name_name(env, context_name):\n    \"\"\"Request configuration of a tunnel context.\n\n    This action will update the advancedConfigurationFlag on the context\n    instance and further modifications against the context will be prevented\n    until all changes can be propgated to network devices.\n    \"\"\"\n    context = env.context\n    if context['advancedConfigurationFlag']:\n        raise ValueError(\"Context already configured\")\n    context['advancedConfigurationFlag'] = True\n    context.save()\n    return context\n\n\n",
+  "sampling_seed": 404805363,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

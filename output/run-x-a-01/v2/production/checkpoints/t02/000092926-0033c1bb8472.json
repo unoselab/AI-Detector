@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read_dirs(path, folder):\n    \"\"\"\n    Fetches name of all files in path in long form, and labels associated by extrapolation of directory names. \n    \"\"\"\n    files = os.listdir(path)\n    dirs = [f for f in files if os.path.isdir(os.path.join(path, f))]\n    dirs = [f for f in dirs if f.startswith(folder)]\n    dirs = [f for f in dirs if f != folder]\n    dirs = [f for f in dirs if f != '__pycache__']\n    return dirs\n",
+  "agc_valid": true,
+  "body_sha256": "8551ab774c459afefe9eff189144293883386baf40b9a39fbced6ff927e4bce9",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    files = os.listdir(path)\n    dirs = [f for f in files if os.path.isdir(os.path.join(path, f))]\n    dirs = [f for f in dirs if f.startswith(folder)]\n    dirs = [f for f in dirs if f != folder]\n    dirs = [f for f in dirs if f != '__pycache__']\n    return dirs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "fbde56125df14ff787e5dc31364f62e414981528949b4b6aee0aa5130a81f2f9",
+  "human_valid": true,
+  "line_no": 92926,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0033c1bb84723c006d23ff8bacfec699dc740bd30abe15f4d61e3a9c5cc7c6dd",
+  "raw_output": "\n    files = os.listdir(path)\n    dirs = [f for f in files if os.path.isdir(os.path.join(path, f))]\n    dirs = [f for f in dirs if f.startswith(folder)]\n    dirs = [f for f in dirs if f != folder]\n    dirs = [f for f in dirs if f != '__pycache__']\n    return dirs\n\ndef read_files(path, folder):\n    \"\"\"\n    Fetches name of all files in path in long form, and labels associated by extrapolation of directory names. ",
+  "sampling_seed": 1437207177,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

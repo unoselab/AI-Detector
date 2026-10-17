@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _cmdline(argv=None):\n    \"\"\" Parse command line arguments.\n\n    \"\"\"\n    import argparse\n    parser = argparse.ArgumentParser(description=\"Run a command on a remote host\")\n    parser.add_argument('--host', required=True, help='Hostname or IP address')\n    parser.add_argument('--port', type=int, default=22, help='SSH port')\n    parser.add_argument('--user', default='root', help='SSH username')\n    parser.add_argument('--password', default='', help='SSH password')\n    parser.add_argument('--key', default='', help='SSH private key')\n    parser.add_argument('--command', required=True, help='Command to run')\n    parser.add_argument('--timeout', type=int, default=30, help='Timeout in seconds')\n    parser.add_argument('--verbose', '-v', action='store_true', help='Verbose output')\n    args = parser.parse_args(argv)\n    return args\n",
+  "agc_valid": true,
+  "body_sha256": "1623bae8f585f68b3b486c8951509e0792211facf5979c3dcee2d3d02c633f51",
+  "body_tokens": 93,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import argparse\n    parser = argparse.ArgumentParser(description=\"Run a command on a remote host\")\n    parser.add_argument('--host', required=True, help='Hostname or IP address')\n    parser.add_argument('--port', type=int, default=22, help='SSH port')\n    parser.add_argument('--user', default='root', help='SSH username')\n    parser.add_argument('--password', default='', help='SSH password')\n    parser.add_argument('--key', default='', help='SSH private key')\n    parser.add_argument('--command', required=True, help='Command to run')\n    parser.add_argument('--timeout', type=int, default=30, help='Timeout in seconds')\n    parser.add_argument('--verbose', '-v', action='store_true', help='Verbose output')\n    args = parser.parse_args(argv)\n    return args\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "796ea1861354d3484d939a193da7767f222d8006956ca69bbcb86c631b3cf016",
+  "human_valid": true,
+  "line_no": 303246,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b71345af5bbc7af52eb9281b0622c73b92c4e31f8f8e5093919c98f1e870a72e",
+  "raw_output": "\n    import argparse\n    parser = argparse.ArgumentParser(description=\"Run a command on a remote host\")\n    parser.add_argument('--host', required=True, help='Hostname or IP address')\n    parser.add_argument('--port', type=int, default=22, help='SSH port')\n    parser.add_argument('--user', default='root', help='SSH username')\n    parser.add_argument('--password', default='', help='SSH password')\n    parser.add_argument('--key', default='', help='SSH private key')\n    parser.add_argument('--command', required=True, help='Command to run')\n    parser.add_argument('--timeout', type=int, default=30, help='Timeout in seconds')\n    parser.add_argument('--verbose', '-v', action='store_true', help='Verbose output')\n    args = parser.parse_args(argv)\n    return args\n\n\ndef _ssh_connect(host, port, user, password, key):\n    \"\"\" Connect to a remote host.\n\n    \"\"\"\n    import paramiko\n    ssh = paramiko.SSHClient()\n    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())\n    ssh.connect(host, port, user, password, key)\n    return ssh\n\n\ndef _ssh_exec(ssh, command, timeout):\n    \"\"\" Execute a command on a remote host.\n\n    \"\"\"\n    import paramiko\n    stdin, stdout, stderr = ssh.exec_command(command, timeout=timeout)\n    return stdout.readlines()\n\n\ndef _ssh_close(ssh):\n    \"\"\" Close a connection to a remote host.\n\n    \"\"\"\n    import paramiko\n    ssh.close()\n\n\ndef main(argv=None):\n    \"\"\" Main entry point.\n\n    \"\"\"\n    args = _cmdline(argv)\n    ssh = _ssh_connect(args.host, args.port, args.user, args.password, args.key)\n    output = _ssh_exec(ssh, args.command, args.timeout)\n    _ssh_close(ssh)\n    if args.ver",
+  "sampling_seed": 1916789891,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

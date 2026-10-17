@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def tokenized(self, delimiter=' ', overlap_threshold=0.1):\n        \"\"\"\n        Return a ordered list of tokens based on all labels.\n        Joins all token from all labels (``label.tokenized()```).\n        If the overlapping between two labels is greater than ``overlap_threshold``,\n        an Exception is thrown.\n\n        Args:\n            delimiter (str): The delimiter used to split labels into tokens. (default: space)\n            overlap_threshold (float): Maximum overlap between two consecutive labels.\n\n        Returns:\n            str: A list containing tokens of all labels ordered according to the label order.\n\n        Example:\n            >>> ll = LabelList(idx='some', labels=[\n            >>>     Label('a d q', start=0, end=4),\n            >>>     Label('b', start=3.95, end=6.0),\n            >>>     Label('c a', start=7.0, end=10.2),\n            >>>     Label('f g', start=10.3, end=14.0)\n            >>> ])\n            >>> ll.tokenized(delimiter=' ', overlap_threshold=0.1)\n            ['a', 'd', 'q', 'b', 'c', 'a', 'f', 'g']\n        \"\"\"\n        :\n                    list: List of tokens.\n\n                Raises:\n                    ValueError: If the overlap between two consecutive labels is greater than ``overlap_threshold``.\n                \"\"\"\n                tokenized_labels = [label.tokenized() for label in self]\n                tokens = []\n                for tokenized_label in tokenized_labels:\n                    if not tokenized_label:\n                        continue\n                    if tokens and tokens[-1] and (\n                        tokens[-1][-1] in tokenized_label or tokenized_label[0] in tokens[-1]\n                    ):\n                        raise ValueError('Overlapping labels')\n                    tokens.extend(tokenized_label)\n                return delimiter.join(tokens)\n",
+  "agc_valid": false,
+  "body_sha256": "fb2421d1c6287f237d32badf670221d5233acaea5a6c6d3a8620523febecd7c2",
+  "body_tokens": 338,
+  "bucket": "out_of_range",
+  "clean_output": "\n        :\n                    list: List of tokens.\n\n                Raises:\n                    ValueError: If the overlap between two consecutive labels is greater than ``overlap_threshold``.\n                \"\"\"\n                tokenized_labels = [label.tokenized() for label in self]\n                tokens = []\n                for tokenized_label in tokenized_labels:\n                    if not tokenized_label:\n                        continue\n                    if tokens and tokens[-1] and (\n                        tokens[-1][-1] in tokenized_label or tokenized_label[0] in tokens[-1]\n                    ):\n                        raise ValueError('Overlapping labels')\n                    tokens.extend(tokenized_label)\n                return delimiter.join(tokens)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "51ba3b66ce207a203896723b550612f98362f73e3016cde3717757e6e51fa4be",
+  "human_valid": true,
+  "line_no": 145752,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4a6927dbe6e9e28851427670d26937b552ab3d34bf5a75c241a19722c1bd015d",
+  "raw_output": ":\n            list: List of tokens.\n\n        Raises:\n            ValueError: If the overlap between two consecutive labels is greater than ``overlap_threshold``.\n        \"\"\"\n        tokenized_labels = [label.tokenized() for label in self]\n        tokens = []\n        for tokenized_label in tokenized_labels:\n            if not tokenized_label:\n                continue\n            if tokens and tokens[-1] and (\n                tokens[-1][-1] in tokenized_label or tokenized_label[0] in tokens[-1]\n            ):\n                raise ValueError('Overlapping labels')\n            tokens.extend(tokenized_label)\n        return delimiter.join(tokens)\n\n    def",
+  "sampling_seed": 3488013842,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

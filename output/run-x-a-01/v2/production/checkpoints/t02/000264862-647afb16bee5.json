@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update(self, e=None, **f):\n        \"\"\"Override dict.update() to title-case keys.\"\"\"\n        for k in f:\n            f[k.title()] = f[k]\n            del f[k]\n        super().update(**f)\n",
+  "agc_valid": true,
+  "body_sha256": "bd29734f1f237c4da9b1d9f5b04274f1bc9957c9fc458f538925850c4d379b7f",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for k in f:\n            f[k.title()] = f[k]\n            del f[k]\n        super().update(**f)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "fdea701fd563d320484c8fab21356b540d83a744629bb24d15808a35f13ce954",
+  "human_valid": true,
+  "line_no": 264862,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "647afb16bee54cdd81535e511805c009c3a1827463980690ffd29aac96d832aa",
+  "raw_output": "\n        for k in f:\n            f[k.title()] = f[k]\n            del f[k]\n        super().update(**f)\n\n    def",
+  "sampling_seed": 2943834035,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

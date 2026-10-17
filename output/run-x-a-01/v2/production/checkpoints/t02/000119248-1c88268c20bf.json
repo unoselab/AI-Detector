@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_capability_definitions(profile_manager):\n    \"\"\"\n    Returns a list of all capability definitions.\n\n    profile_manager\n        Reference to the profile manager.\n    \"\"\"\n    return profile_manager.capability_definitions\n",
+  "agc_valid": true,
+  "body_sha256": "930d3469d7e17ce33d02862f53392e5a8b2399d4d49223be817732d0a51984ad",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return profile_manager.capability_definitions\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "f35e49ef558bc62005f5822ee71ac70796abe81d6cb04f571ced580c987b7217",
+  "human_valid": true,
+  "line_no": 119248,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1c88268c20bf7763cad717b00e07bbcdc0b6ff07be3ddc272e00cbbb267dfa55",
+  "raw_output": "\n    return profile_manager.capability_definitions\n\n\ndef get_capability_definition(profile_manager, capability_name):\n    \"\"\"\n    Returns the capability definition for the given capability name.\n\n    profile_manager\n        Reference to the profile manager.\n\n    capability_name\n        Name of the capability.\n    \"\"\"\n    return profile_manager.capability_definitions[capability_name]\n\n\ndef get_capability_definition_names(profile_manager):\n    \"\"\"\n    Returns a list of all capability definition names.\n\n    profile_manager\n        Reference to the profile manager.\n    \"\"\"\n    return profile_manager.capability_definition_names\n\n\ndef get_capability_definition_name(profile_manager, capability_definition):\n    \"\"\"\n    Returns the capability definition name for the given capability definition.\n\n    profile_manager\n        Reference to the profile manager.\n\n    capability_definition\n        Capability definition.\n    \"\"\"\n    return profile_manager.capability_definition_names[capability_definition]\n\n\ndef get_capability_definition_names_by_profile(profile_manager, profile_name):\n    \"\"\"\n    Returns a list of all capability definition names for the given profile.\n\n    profile_manager\n        Reference to the profile manager.\n\n    profile_name\n        Name of the profile.\n    \"\"\"\n    return profile_manager.capability_definition_names_by_profile[profile_name]\n\n\ndef get_capability_definition_names_by_profile_name(profile_manager, profile_name):\n    \"\"\"\n    Returns a list of all capability definition names for the given profile name.\n\n    profile_manager\n        Reference to the profile manager.\n\n    profile_name\n        Name of the profile.\n    \"\"\"\n    return profile_manager.capability_definition_names_by_profile_name[profile_name]\n\n\ndef get_capability_definitions_by_profile(profile_manager, profile_name):\n    \"\"\"\n    Returns a list of all capability definitions for the given profile.\n\n    profile_manager\n        Reference to the profile manager.\n\n    profile_name\n        Name",
+  "sampling_seed": 1655509237,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

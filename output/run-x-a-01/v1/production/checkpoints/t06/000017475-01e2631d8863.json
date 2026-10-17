@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_midpoint_outgroup(self):\n        \"\"\"\n        Returns the node that divides the current tree into two \n        distance-balanced partitions.\n        \"\"\"\n        if self.is_root():\n            return None\n\n        if self.outgroup:\n            return self.outgroup\n\n        # This is the midpoint outgroup algorithm from Garrity and Swofford\n        # (2010), which is the most accurate algorithm available.\n        #\n        # The main idea is that we want to divide the tree into two distance\n        # balanced partitions.\n",
+  "agc_valid": true,
+  "body_sha256": "a70f835d9559b0fdee50b692f2415659cb4861e7539f3c6490a1c1d25246b4b9",
+  "body_tokens": 119,
+  "bucket": "type02_120",
+  "clean_output": "\n        if self.is_root():\n            return None\n\n        if self.outgroup:\n            return self.outgroup\n\n        # This is the midpoint outgroup algorithm from Garrity and Swofford\n        # (2010), which is the most accurate algorithm available.\n        #\n        # The main idea is that we want to divide the tree into two distance\n        # balanced partitions.\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "8af666d2411f57e691934e90c8ed5e7222c6d6d9d9a372241d030582f684d409",
+  "human_valid": true,
+  "line_no": 17475,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "01e2631d88636b9482e1718b17f3d4f6925606ce5848d8f9b2d57eccdfdc4fb8",
+  "raw_output": "\n        if self.is_root():\n            return None\n\n        if self.outgroup:\n            return self.outgroup\n\n        # This is the midpoint outgroup algorithm from Garrity and Swofford\n        # (2010), which is the most accurate algorithm available.\n        #\n        # The main idea is that we want to divide the tree into two distance\n        # balanced partitions. ",
+  "sampling_seed": 322338749,
+  "tag": "t06",
+  "temperature": 0.6
+}

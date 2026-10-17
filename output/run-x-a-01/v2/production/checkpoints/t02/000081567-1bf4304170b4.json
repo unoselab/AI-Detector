@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def disconnect(self, abandon_session=False):\n        \"\"\" Disconnects from the Responsys soap service\n\n        Calls the service logout method and destroys the client's session information. Returns\n        True on success, False otherwise.\n        \"\"\"\n        if self.session_id is None:\n            return False\n\n        try:\n            self.client.service.logout(self.session_id)\n        except Exception as e:\n            self.logger.error(e)\n            return False\n\n        self.session_id = None\n        self.client = None\n        if abandon_session:\n            self.logger.info(\"Abandoning session\")\n            self.session_id = None\n            self.client = None\n\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "41c280ef8a797f44377e2f270d3aed1ebc397d8d7a8efb1a0a612b0c4fd320ca",
+  "body_tokens": 160,
+  "bucket": "type06_160",
+  "clean_output": "\n        if self.session_id is None:\n            return False\n\n        try:\n            self.client.service.logout(self.session_id)\n        except Exception as e:\n            self.logger.error(e)\n            return False\n\n        self.session_id = None\n        self.client = None\n        if abandon_session:\n            self.logger.info(\"Abandoning session\")\n            self.session_id = None\n            self.client = None\n\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "7cbdf41509e54bcf5dd0662a7c8c0aa502cd91d4df3289063502826174fec4e3",
+  "human_valid": true,
+  "line_no": 81567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1bf4304170b4d810fc551409378c552ec9c7e7cbf0f9c23a04b8bd963ce2c34f",
+  "raw_output": "\n        if self.session_id is None:\n            return False\n\n        try:\n            self.client.service.logout(self.session_id)\n        except Exception as e:\n            self.logger.error(e)\n            return False\n\n        self.session_id = None\n        self.client = None\n        if abandon_session:\n            self.logger.info(\"Abandoning session\")\n            self.session_id = None\n            self.client = None\n\n        return True\n\n    def",
+  "sampling_seed": 310196773,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

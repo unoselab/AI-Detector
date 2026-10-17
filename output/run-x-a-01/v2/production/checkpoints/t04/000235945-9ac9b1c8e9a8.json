@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_signal_models(self):\n        \"\"\"Return all signal types in a list.\n\n        :rtype: list(`signal-model`)\n\n        \"\"\"\n        return self._signal_models\n",
+  "agc_valid": true,
+  "body_sha256": "f430f1150e66dbab38e3c0e0dfb8605f99c3205e15886821798d321fd461740a",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._signal_models\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "b3a86f9c398677548ce9f41e9cf75450a3dcf84a6023fd22d61a3fd2f94614d4",
+  "human_valid": true,
+  "line_no": 235945,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9ac9b1c8e9a8a38d8eda52f0ed1bdc462b244849acab64f6774320e4d1036ee7",
+  "raw_output": "\n        return self._signal_models\n\n    def",
+  "sampling_seed": 1361442300,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_seeded_answers_simple(answers, options, algo):\n    \"\"\"\n    This validator checks if the answers includes all possible options\n\n    Args:\n        answers (str): the answers to be checked\n        options (dict): all options that should exist in the answers\n        algo (str): selection algorithm\n\n    Returns:\n        None if everything is good. Otherwise, the missing option error message.\n    \"\"\"\n    # The algorithm is either 'random' or 'simple'\n    if algo == 'random':\n        if len(answers) != len(options):\n            return 'Invalid number of answers, expected %s, got %s' % (len(options), len(answers))\n\n    # The algorithm is 'simple'\n    else:\n        if len(answers) != len(options) -\n",
+  "agc_valid": false,
+  "body_sha256": "6f86c1f2a9e9cd2ee34fcca2f02c3043c14c55c75e810d3e404c15acf1d456e4",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # The algorithm is either 'random' or 'simple'\n    if algo == 'random':\n        if len(answers) != len(options):\n            return 'Invalid number of answers, expected %s, got %s' % (len(options), len(answers))\n\n    # The algorithm is 'simple'\n    else:\n        if len(answers) != len(options) -\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "ce11da2bfc8a76116cf2ef63a59686c2d56f3fff5911d3de2ac3b801c3518f54",
+  "human_valid": true,
+  "line_no": 28181,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "4bbc1a92cdff58b4d537231aab614c8bb6f98ce945ff6a8d3f515887f15dca37",
+  "raw_output": "\n    # The algorithm is either 'random' or 'simple'\n    if algo == 'random':\n        if len(answers) != len(options):\n            return 'Invalid number of answers, expected %s, got %s' % (len(options), len(answers))\n\n    # The algorithm is 'simple'\n    else:\n        if len(answers) != len(options) - ",
+  "sampling_seed": 2556935504,
+  "tag": "t06",
+  "temperature": 0.6
+}

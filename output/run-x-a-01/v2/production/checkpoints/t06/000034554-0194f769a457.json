@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_dn(self,dn):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n\n    dn = dn to be added\n    \"\"\"\n    self.dn = dn\n    self.domain = self.dn.split('=')[0]\n    self.hostname = self.dn.split(',')[0].split('=')[1]\n",
+  "agc_valid": true,
+  "body_sha256": "08716a633538eb38c4be6ba95a4c05abe16ecee4de7e5ea73f4f240d46b32693",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n    self.dn = dn\n    self.domain = self.dn.split('=')[0]\n    self.hostname = self.dn.split(',')[0].split('=')[1]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 108,
+  "human_sha256": "f520910ec7de3e2deb9de88a01d54e1b76dff3197f24aee8ca8059c60573fab3",
+  "human_valid": true,
+  "line_no": 34554,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0194f769a457fbbaa13b92e58b95780733a1d3009033d8b177eb509b9854b31c",
+  "raw_output": "\n    self.dn = dn\n    self.domain = self.dn.split('=')[0]\n    self.hostname = self.dn.split(',')[0].split('=')[1]\n\ndef get_dn(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.dn\n\ndef get_domain(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.domain\n\ndef get_hostname(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.hostname\n\ndef get_host_ip(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.host_ip\n\ndef get_process_name(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.process_name\n\ndef get_process_path(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.process_path\n\ndef get_process_pid(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.process_pid\n\ndef get_user_name(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.user_name\n\ndef get_user_sid(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.user_sid\n\ndef get_process_id(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.process_id\n\ndef get_event_id(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.event_id\n\ndef get_event_type(self):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n    \"\"\"\n    return self.",
+  "sampling_seed": 1709847833,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

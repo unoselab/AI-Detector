@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def published(self, for_user=None):\n        \"\"\"\n        Return only published entries for the current site.\n        \"\"\"\n        if for_user is None:\n            for_user = self.request.user\n        return self.filter(\n            models.Q(sites__in=[self.request.site]) |\n            models.Q(sites__isnull=True)\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "57def9783ed03d940922615e1eb3ddf850e684690d5d16e16d00d678ae109776",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if for_user is None:\n            for_user = self.request.user\n        return self.filter(\n            models.Q(sites__in=[self.request.site]) |\n            models.Q(sites__isnull=True)\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "d8f3c8927430a0a8b61464b7f10264407d716c9082ae1bc65e255309e6d78efe",
+  "human_valid": true,
+  "line_no": 254388,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f10487ca55a2e5b9266aa536648b64e7d6bb280c45f5c1ca033cb75dba402c77",
+  "raw_output": "\n        if for_user is None:\n            for_user = self.request.user\n        return self.filter(\n            models.Q(sites__in=[self.request.site]) |\n            models.Q(sites__isnull=True)\n        )\n\n    def",
+  "sampling_seed": 2408217332,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

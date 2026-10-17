@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_or_update(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Create or update a django model instance.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    instance, created = model.objects.get_or_create(**kwargs, defaults=defaults)\n    if not created and save:\n        instance.save()\n    return instance, created\n",
+  "agc_valid": true,
+  "body_sha256": "5e6881947ce9dc1becc989f6889ce0e6b786d19ab25be60957452a82179502dc",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n    instance, created = model.objects.get_or_create(**kwargs, defaults=defaults)\n    if not created and save:\n        instance.save()\n    return instance, created\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "0d2a2a8b57c4fcc92a783db83bb386efecbfc9b3c9cb8a5d067a54e3f0ca73f9",
+  "human_valid": true,
+  "line_no": 326184,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "526d2c18174aa729c5c768e8dac07815ad6c26ea821475364e9468ef8915ebd2",
+  "raw_output": "\n    instance, created = model.objects.get_or_create(**kwargs, defaults=defaults)\n    if not created and save:\n        instance.save()\n    return instance, created\n\n\ndef get_or_create(model, *, defaults=None, **kwargs):\n    \"\"\"\n    Get or create a django model instance.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created\n\n    \"\"\"\n    instance, created = model.objects.get_or_create(**kwargs, defaults=defaults)\n    return instance, created\n\n\ndef get_or_none(model, *, defaults=None, **kwargs):\n    \"\"\"\n    Get a django model instance or return None.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created\n\n    \"\"\"\n    try:\n        return model.objects.get(**kwargs)\n    except model.DoesNotExist:\n        return None\n\n\ndef get_or_update(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Get or update a django model instance.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    instance, created = model.objects.get_or_create(**kwargs, defaults=defaults)\n    if not created and save:\n        instance.save()\n    return instance, created\n\n\ndef get_or_update_or_create(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Get or update or create a django model instance.\n\n    :param model:\n    :param defaults:\n    :param kwargs:\n    :return: object, created, updated\n\n    \"\"\"\n    instance, created = model.objects.get_or_create(**kwargs, defaults=defaults)\n    if not created and save:\n        instance.save()\n    return instance, created\n\n\ndef update_or_create(model, *, defaults=None, save=True, **kwargs):\n    \"\"\"\n    Update or create a django model instance",
+  "sampling_seed": 1355130817,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

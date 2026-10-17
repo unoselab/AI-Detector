@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_gtf_db(gtf, in_memory=False):\n    \"\"\"\n    create a gffutils DB\n    \"\"\"\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n",
+  "agc_valid": true,
+  "body_sha256": "59c05dcf3a6ddcae3e3d72bd1c1212ce4ffe14eb342392148ec77aaf6f392068",
+  "body_tokens": 32,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "0cd710d73f554c3a5a3319da599d1552e054c18b995e00c5a3fe494727d592cb",
+  "human_valid": true,
+  "line_no": 227469,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b65e48adf5c2620f9738c9b352d73e2a366e994f4d6f09707ced15962226e0a8",
+  "raw_output": "\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n\n\ndef get_gtf_db_from_file(gtf, in_memory=False):\n    \"\"\"\n    create a gffutils DB\n    \"\"\"\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n\n\ndef get_gtf_db_from_string(gtf, in_memory=False):\n    \"\"\"\n    create a gffutils DB\n    \"\"\"\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n\n\ndef get_gtf_db_from_url(gtf, in_memory=False):\n    \"\"\"\n    create a gffutils DB\n    \"\"\"\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n\n\ndef get_gtf_db_from_handle(gtf, in_memory=False):\n    \"\"\"\n    create a gffutils DB\n    \"\"\"\n    if in_memory:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n    else:\n        return gffutils.create_db(gtf, ':memory:', merge_strategy='create_unique')\n\n\ndef get_gtf_db_from_dict(gtf, in_memory=False):\n",
+  "sampling_seed": 2626631809,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

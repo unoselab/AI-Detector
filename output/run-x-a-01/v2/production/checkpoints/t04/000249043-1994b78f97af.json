@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self, name):\n        \"\"\"Shouts hello to the world (asynchronously)!\"\"\"\n        return self.client.call(\n            'hello',\n            name=name\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "9ce82e74e86b0abbbd348315508d8028f5c1f532371631251bcb57deb9a9f188",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.client.call(\n            'hello',\n            name=name\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "f7c544b28024d99269d566ef8d170247f7dda8555e4af4111f2298994e98cbab",
+  "human_valid": true,
+  "line_no": 249043,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1994b78f97af8da9e28bf01919f52b3a2381989d076e699ac04873a3849b5241",
+  "raw_output": "\n        return self.client.call(\n            'hello',\n            name=name\n        )\n\n    def",
+  "sampling_seed": 2777044633,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

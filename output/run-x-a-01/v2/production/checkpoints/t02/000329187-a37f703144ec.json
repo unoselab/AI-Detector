@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def GetVmodlType(name):\n   \"\"\" Get type from vmodl name \"\"\"\n   return vim.get_type(name)\n",
+  "agc_valid": true,
+  "body_sha256": "c229672905c6941e1c0bb9d36be626c83dbdc2f96c00dc71f9c74ed70c5c8c5b",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n   return vim.get_type(name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "ad903f57a14590c4d6d08ee11bb88f91b30d1413a2378592b65d49621a1f32b9",
+  "human_valid": true,
+  "line_no": 329187,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a37f703144ec968eef4136b5a43a5c0211f49f720f1a34edb7edde80b22618d6",
+  "raw_output": "\n   return vim.get_type(name)\n\ndef GetVmodlTypeName(type):\n   \"\"\" Get vmodl name from type \"\"\"\n   return type.__name__\n\ndef GetVmodlTypeNameFromObject(obj):\n   \"\"\" Get vmodl name from object \"\"\"\n   return GetVmodlTypeName(type(obj))\n\ndef GetVmodlTypeNameFromObjectName(objname):\n   \"\"\" Get vmodl name from object name \"\"\"\n   return GetVmodlTypeName(GetVmodlType(objname))\n\ndef GetVmodlTypeFromObject(obj):\n   \"\"\" Get vmodl type from object \"\"\"\n   return type(obj)\n\ndef GetVmodlTypeFromObjectName(objname):\n   \"\"\" Get vmodl type from object name \"\"\"\n   return GetVmodlType(objname)\n\ndef GetVmodlTypeFromObjectNameList(objnamelist):\n   \"\"\" Get vmodl type from object name list \"\"\"\n   return [GetVmodlType(objname) for objname in objnamelist]\n\ndef GetVmodlTypeFromObjectNameListList(objnamelistlist):\n   \"\"\" Get vmodl type from object name list list \"\"\"\n   return [GetVmodlTypeFromObjectNameList(objnamelist) for objnamelist in objnamelistlist]\n\ndef GetVmodlTypeFromObjectNameListListList(objnamelistlistlist):\n   \"\"\" Get vmodl type from object name list list list \"\"\"\n   return [GetVmodlTypeFromObjectNameListList(objnamelistlist) for objnamelistlist in objnamelistlistlist]\n\ndef GetVmodlTypeFromObjectNameListListListList(objnamelistlistlistlist):\n   \"\"\" Get vmodl type from object name list list list list \"\"\"\n   return [GetVmodlTypeFromObjectNameListListList(objnamelistlistlist) for objnamelistlistlist in objnamelistlistlistlist]\n\ndef GetVmodlTypeFromObjectNameListListListListList(objnamelistlistlistlistlist):\n   \"\"\" Get vmodl type from object name list list list list list \"\"\"\n  ",
+  "sampling_seed": 599164449,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

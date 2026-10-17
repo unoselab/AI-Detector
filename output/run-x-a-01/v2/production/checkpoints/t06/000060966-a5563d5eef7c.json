@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def gen_otu_dict(nex_obj, nexson_version=None):\n    \"\"\"Takes a NexSON object and returns a dict of\n    otu_id -> otu_obj\n    \"\"\"\n    otu_dict = {}\n    for nx_obj in nex_obj:\n        if 'otus' in nx_obj:\n            for otu in nx_obj['otus']:\n                if 'id' in otu:\n                    otu_dict[otu['id']] = otu\n                else:\n                    if nexson_version == '1.1':\n                        otu_dict[otu['otu_id']] = otu\n                    else:\n                        otu_dict[otu['otu_id']] = otu\n    return otu_dict\n",
+  "agc_valid": true,
+  "body_sha256": "ba89146945b6a077736b10c6eef5c149e6d3df46cef94a89a3e804f9b2e819e9",
+  "body_tokens": 197,
+  "bucket": "type10_200",
+  "clean_output": "\n    otu_dict = {}\n    for nx_obj in nex_obj:\n        if 'otus' in nx_obj:\n            for otu in nx_obj['otus']:\n                if 'id' in otu:\n                    otu_dict[otu['id']] = otu\n                else:\n                    if nexson_version == '1.1':\n                        otu_dict[otu['otu_id']] = otu\n                    else:\n                        otu_dict[otu['otu_id']] = otu\n    return otu_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "d934dd7aec39a3efc3c1bf47dbae368af429422e5cb59ecee65feece4a6bb829",
+  "human_valid": true,
+  "line_no": 60966,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a5563d5eef7c3816f682fafe1cef52ed9cc56b0fd201032fd32e8394386b5284",
+  "raw_output": "\n    otu_dict = {}\n    for nx_obj in nex_obj:\n        if 'otus' in nx_obj:\n            for otu in nx_obj['otus']:\n                if 'id' in otu:\n                    otu_dict[otu['id']] = otu\n                else:\n                    if nexson_version == '1.1':\n                        otu_dict[otu['otu_id']] = otu\n                    else:\n                        otu_dict[otu['otu_id']] = otu\n    return otu_dict\n\n\ndef gen_taxon_dict(nex_obj, nexson_version=None):\n    \"\"\"Takes a NexSON object and returns a dict of\n    taxon_id -> taxon_obj\n    \"\"\"\n    taxon_dict = {}\n    for nx_obj in nex_obj:\n        if 'taxonomy' in nx_obj:\n            for taxon in nx_obj['taxonomy']:\n                if 'id' in taxon:\n                    taxon_dict[taxon['id']] = taxon\n                else:\n                    if nexson_version == '1.1':\n                        taxon_dict[taxon['taxon_id']] = taxon\n                    else:\n                        taxon_dict[taxon['taxon_id']] = taxon\n    return taxon_dict\n\n\ndef gen_taxon_set_dict(nex_obj, nexson_version=None):\n    \"\"\"Takes a NexSON object and returns a dict of\n    taxon_set_id -> taxon_set_obj\n    \"\"\"\n    taxon_set_dict = {}\n    for nx_obj in nex_obj:\n        if 'taxon_sets' in nx_obj:\n            for taxon_set in nx_obj['taxon_sets']:\n                if 'id' in taxon_set:\n                    taxon_set_dict[taxon_set['id']] = taxon_set\n                else:\n                    if nexson_version == '1",
+  "sampling_seed": 2976105081,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

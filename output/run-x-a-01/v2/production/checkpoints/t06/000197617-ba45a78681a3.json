@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_antithetic_variates(samples, axes=()):\n    \"\"\"\n    Generate antithetic variables.\n\n    Args:\n        samples (numpy.ndarray):\n            The samples, assumed to be on the [0, 1]^D hyper-cube, to be\n            reflected.\n        axes (tuple):\n            Boolean array of which axes to reflect. If This to limit the number\n            of points created in higher dimensions by reflecting all axes at\n            once.\n\n    Returns (numpy.ndarray):\n        Same as ``samples``, but with samples internally reflected. roughly\n        equivalent to ``numpy.vstack([samples, 1-samples])`` in one dimensions.\n    \"\"\"\n    samples`` with the antithetic points reflected to the other\n            side of the hyper-cube.\n        \"\"\"\n        # Create a boolean array of which axes to reflect\n        reflect_axes = np.zeros(samples.shape[1], dtype=bool)\n        reflect_axes[axes] = True\n\n        # Reflect the samples\n        return np.concatenate([samples,\n",
+  "agc_valid": false,
+  "body_sha256": "7cd147fcb13ee5243a23c894ddf67d089c8b429915c9b3c00a01a4c38f10186e",
+  "body_tokens": 94,
+  "bucket": "out_of_range",
+  "clean_output": "\n    samples`` with the antithetic points reflected to the other\n            side of the hyper-cube.\n        \"\"\"\n        # Create a boolean array of which axes to reflect\n        reflect_axes = np.zeros(samples.shape[1], dtype=bool)\n        reflect_axes[axes] = True\n\n        # Reflect the samples\n        return np.concatenate([samples,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 136,
+  "human_sha256": "7102a9945d44d5e829a0649ae49ca2e096ece91e41ac0fd526327b160f7ecd4a",
+  "human_valid": true,
+  "line_no": 197617,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ba45a78681a3eab148f13e7b2049b9a84a21ed0790d9e9559b3e52dcd51d7b1b",
+  "raw_output": "samples`` with the antithetic points reflected to the other\n        side of the hyper-cube.\n    \"\"\"\n    # Create a boolean array of which axes to reflect\n    reflect_axes = np.zeros(samples.shape[1], dtype=bool)\n    reflect_axes[axes] = True\n\n    # Reflect the samples\n    return np.concatenate([samples, ",
+  "sampling_seed": 1210552982,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def parse_mmtf_header(infile):\n    \"\"\"Parse an MMTF file and return basic header-like information.\n\n    Args:\n        infile (str): Path to MMTF file\n\n    Returns:\n        dict: Dictionary of parsed header\n\n    Todo:\n        - Can this be sped up by not parsing the 3D coordinate info somehow?\n        - OR just store the sequences when this happens since it is already being parsed.\n\n    \"\"\"\n    # Read the header\n    with open(infile, \"rb\") as f:\n        header = f.read(8)\n        # Check if it is a valid MMTF file\n        if header != b\"MMTF\\x00\\x00\":\n            raise ValueError(\"Not a valid MMTF file\")\n        # Read the header size\n        header_size = struct.unpack(\">I\", f.read(4))[0]\n        # Read the header\n        header = f.read(header_size)\n        # Parse the header\n        header = json.loads(header.decode(\"utf-8\"))\n        # Read the\n",
+  "agc_valid": true,
+  "body_sha256": "e37889463c90cba7be202e6d3457e4e92dc347b5e2752737bc8c5778d4c651a4",
+  "body_tokens": 145,
+  "bucket": "type05_150",
+  "clean_output": "\n    # Read the header\n    with open(infile, \"rb\") as f:\n        header = f.read(8)\n        # Check if it is a valid MMTF file\n        if header != b\"MMTF\\x00\\x00\":\n            raise ValueError(\"Not a valid MMTF file\")\n        # Read the header size\n        header_size = struct.unpack(\">I\", f.read(4))[0]\n        # Read the header\n        header = f.read(header_size)\n        # Parse the header\n        header = json.loads(header.decode(\"utf-8\"))\n        # Read the\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 120,
+  "human_sha256": "8cf7e68b545f619b79bebc2c81305b7fe68dca8b0f30574a4ec8cf2fff8aad9c",
+  "human_valid": true,
+  "line_no": 140124,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1bd2b98a92570615dac080ac7100de29b30af0fd1816a1e1264b69f05c461e2e",
+  "raw_output": "\n    # Read the header\n    with open(infile, \"rb\") as f:\n        header = f.read(8)\n        # Check if it is a valid MMTF file\n        if header != b\"MMTF\\x00\\x00\":\n            raise ValueError(\"Not a valid MMTF file\")\n        # Read the header size\n        header_size = struct.unpack(\">I\", f.read(4))[0]\n        # Read the header\n        header = f.read(header_size)\n        # Parse the header\n        header = json.loads(header.decode(\"utf-8\"))\n        # Read the ",
+  "sampling_seed": 3725106492,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def showOptionsMenu(self):\n        \"\"\"\n        Displays the options menu.  If the option menu policy is set to \n        CustomContextMenu, then the optionMenuRequested signal will be emitted,\n        otherwise the default context menu will be displayed.\n        \"\"\"\n        if self.optionMenuPolicy() == self.CustomContextMenu:\n            self.emit(QtCore.SIGNAL(\"optionMenuRequested()\"))\n        else:\n            QtGui.QWidget.contextMenuEvent(self, event)\n",
+  "agc_valid": true,
+  "body_sha256": "078f032ca64d4065a9374823310ef5eb2ea3f435a96eff79243431b96cfa37d7",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.optionMenuPolicy() == self.CustomContextMenu:\n            self.emit(QtCore.SIGNAL(\"optionMenuRequested()\"))\n        else:\n            QtGui.QWidget.contextMenuEvent(self, event)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "6d850aaf6ad2d104433160dc1de67c9ae0ea38caeaf5cc6c8824882fc2914cb9",
+  "human_valid": true,
+  "line_no": 80955,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "51904bb02dd51489404d9be3bc4200129cc9d68439704db58f97a61b85fb2a0e",
+  "raw_output": "\n        if self.optionMenuPolicy() == self.CustomContextMenu:\n            self.emit(QtCore.SIGNAL(\"optionMenuRequested()\"))\n        else:\n            QtGui.QWidget.contextMenuEvent(self, event)\n\n    def",
+  "sampling_seed": 1454813519,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

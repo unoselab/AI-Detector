@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def access_token(self):\n        \"\"\"\n        Retrieve and cache an access token to authenticate API calls.\n        :return: An access token string.\n        \"\"\"\n        if self.access_token is None:\n            self.access_token = self.get_access_token()\n        return self.access_token\n",
+  "agc_valid": true,
+  "body_sha256": "a19f27d8f3fdf04d7eb8b0c9acf1f7e502e6ff15f5688c7416f55b2940569d43",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.access_token is None:\n            self.access_token = self.get_access_token()\n        return self.access_token\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "bd533a7495bcbfa519e6fd00dd4f54a04ea8f9920973973b4cdfe0361e285db8",
+  "human_valid": true,
+  "line_no": 41790,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "689312f30686fca19762073461c5c53db33db040cf109e9349835c89eedbac9e",
+  "raw_output": "\n        if self.access_token is None:\n            self.access_token = self.get_access_token()\n        return self.access_token\n\n    def",
+  "sampling_seed": 82210002,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def format_arg(value):\n    \"\"\"\n    :param value:\n        Some value in a dataset.\n    :type value:\n        varies\n    :return:\n        unicode representation of that value\n    :rtype:\n        `unicode`\n    \"\"\"\n    if isinstance(value, (int, float)):\n        return unicode(value)\n    elif isinstance(value, (list, tuple)):\n        return u', '.join(format_arg(v) for v in value)\n    elif isinstance(value, basestring):\n        return unicode(value)\n    else:\n        return unicode(value)\n",
+  "agc_valid": true,
+  "body_sha256": "88565d8952acee8d5732ae2466b261b529cc07246480ef9697e5f7d951e63fc5",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(value, (int, float)):\n        return unicode(value)\n    elif isinstance(value, (list, tuple)):\n        return u', '.join(format_arg(v) for v in value)\n    elif isinstance(value, basestring):\n        return unicode(value)\n    else:\n        return unicode(value)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "413951549c33fbab04de8fd7e0e8e9845364914af158cf4a0fd36b11178fdffc",
+  "human_valid": true,
+  "line_no": 11490,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "932d7e7858262d84f109860016c2f428c94bf8fb197381c763b967326a4fe9c4",
+  "raw_output": "\n    if isinstance(value, (int, float)):\n        return unicode(value)\n    elif isinstance(value, (list, tuple)):\n        return u', '.join(format_arg(v) for v in value)\n    elif isinstance(value, basestring):\n        return unicode(value)\n    else:\n        return unicode(value)\n\n\ndef format_args(args):\n    \"\"\"\n    :param args:\n        A list of arguments to format.\n    :type args:\n        list of `unicode`\n    :return:\n        A unicode string containing all the arguments.\n    :rtype:\n        `unicode`\n    \"\"\"\n    return u', '.join(args)\n\n\ndef format_args_with_types(args):\n    \"\"\"\n    :param args:\n        A list of arguments to format.\n    :type args:\n        list of `unicode`\n    :return:\n        A unicode string containing all the arguments and their types.\n    :rtype:\n        `unicode`\n    \"\"\"\n    return u', '.join(u'%s: %s' % (format_arg(arg), format_arg(type(arg))) for arg in args)\n\n\ndef format_call(call):\n    \"\"\"\n    :param call:\n        A call to format.\n    :type call:\n        `Call`\n    :return:\n        A unicode string containing the call.\n    :rtype:\n        `unicode`\n    \"\"\"\n    return u'%s(%s)' % (call.name, format_args(call.args))\n\n\ndef format_call_with_types(call):\n    \"\"\"\n    :param call:\n        A call to format.\n    :type call:\n        `Call`\n    :return:\n        A unicode string containing the call and its types.\n    :rtype:\n        `unicode`\n    \"\"\"\n    return u'%s(%s)' % (call.name, format_args_with_types(call.args))\n\n\ndef format_calls(calls):\n    \"\"\"\n    :param calls:\n        A list of calls to format.\n    :type calls:\n        list of `",
+  "sampling_seed": 563500971,
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_pool_size(usr_config_value, num_tasks):\n    \"\"\" Determine size of thread/process-pool for parallel processing.\n    This examines the cpu_count to decide and return the right pool\n    size to use.  Also take into account the user's wishes via the config\n    object value, if specified.  On top of that, don't allow the pool size\n    returned to be any higher than the number of parallel tasks, if specified.\n    Only use what we need (mp.Pool starts pool_size processes, needed or not).\n    If number of tasks is unknown, call this with \"num_tasks\" set to None.\n    Returns 1 when indicating that parallel processing should not be used.\n    Consolidate all such logic here, not in the caller. \"\"\"\n    ).\n\n        Args:\n            usr_config_value (int): Number of processes or threads to run in parallel\n            num_tasks (int): Number of tasks to run in parallel\n\n        Returns:\n            int: The pool size to use.\n        \"\"\"\n        # Determine number of cpus and number of processes/threads to run in parallel\n        cpu_count = mp.cpu_count()\n        if usr_config_value is not None:\n            if usr_config_value <\n",
+  "agc_valid": false,
+  "body_sha256": "bb0a6fbfd35341b1427e2176f0c64037ef153aa279aa48ae76dc8b7cd716bdc1",
+  "body_tokens": 144,
+  "bucket": "type05_150",
+  "clean_output": "\n    ).\n\n        Args:\n            usr_config_value (int): Number of processes or threads to run in parallel\n            num_tasks (int): Number of tasks to run in parallel\n\n        Returns:\n            int: The pool size to use.\n        \"\"\"\n        # Determine number of cpus and number of processes/threads to run in parallel\n        cpu_count = mp.cpu_count()\n        if usr_config_value is not None:\n            if usr_config_value <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "e270a00b62da772568b5de3d7e80084debbaaf3794ae970f83da49077fe6267a",
+  "human_valid": true,
+  "line_no": 210433,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b72f91d5ce63033a5302c49547d432fff46e1c6ec93b346f6d959bc2020c08f8",
+  "raw_output": ").\n\n    Args:\n        usr_config_value (int): Number of processes or threads to run in parallel\n        num_tasks (int): Number of tasks to run in parallel\n\n    Returns:\n        int: The pool size to use.\n    \"\"\"\n    # Determine number of cpus and number of processes/threads to run in parallel\n    cpu_count = mp.cpu_count()\n    if usr_config_value is not None:\n        if usr_config_value < ",
+  "sampling_seed": 1615251310,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

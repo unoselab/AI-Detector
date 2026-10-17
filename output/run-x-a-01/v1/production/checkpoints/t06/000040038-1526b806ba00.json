@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fetch_all(self, org):\n        \"\"\"\n        Fetches all local objects\n        :param org: the org\n        :return: the queryset\n        \"\"\"\n        return self.get_queryset().filter(org=org)\n",
+  "agc_valid": true,
+  "body_sha256": "df9452577c4e8138d03da60d57e3070132fae89630b912bd8623604ffd0d83a0",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_queryset().filter(org=org)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9aa8dadd7812ae4c0c69355dec005a075bb83c9a6cbd91c24a7c204c93ae63f1",
+  "human_valid": true,
+  "line_no": 40038,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1526b806ba006401e74ff17b11b1269f90ac94559e4f3229e5747b38745a349e",
+  "raw_output": "\n        return self.get_queryset().filter(org=org)\n\n    def",
+  "sampling_seed": 2469112320,
+  "tag": "t06",
+  "temperature": 0.6
+}

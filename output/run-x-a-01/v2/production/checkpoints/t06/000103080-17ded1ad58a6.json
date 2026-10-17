@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def selection_r(acquisition_function,\n                samples_y_aggregation,\n                x_bounds,\n                x_types,\n                regressor_gp,\n                num_starting_points=100,\n                minimize_constraints_fun=None):\n    \"\"\"\n    Selecte R value\n    \"\"\"\n    acquisition_function.reset()\n    if minimize_constraints_fun is None:\n        minimize_constraints_fun = lambda x:\n",
+  "agc_valid": false,
+  "body_sha256": "624ab3b36e50ba5ba28e6d79ae3d51fdf63037c9fcc7fd40dceab1e6007edf7b",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    acquisition_function.reset()\n    if minimize_constraints_fun is None:\n        minimize_constraints_fun = lambda x:\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 135,
+  "human_sha256": "b17ec95aa600974da44034f69c95c3ec934320168019654c06775a2516a5c0e1",
+  "human_valid": true,
+  "line_no": 103080,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "17ded1ad58a60487dec2d7e89b2a024361a10f5f7451f533429ecc1ed85b8ee4",
+  "raw_output": "\n    acquisition_function.reset()\n    if minimize_constraints_fun is None:\n        minimize_constraints_fun = lambda x: ",
+  "sampling_seed": 226510744,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

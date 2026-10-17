@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_site_available(self):\n        \"\"\"\n        Returns true if we can access LendingClub.com\n        This is also a simple test to see if there's a network connection\n\n        Returns\n        -------\n        boolean\n            True or False\n        \"\"\"\n            return self._is_site_available()\n\n        @retry(wait_random_min=500, wait_random_max=1000, stop_max_attempt_number=5)\n",
+  "agc_valid": false,
+  "body_sha256": "5962c875ec29892ed546bc5a51dc5b5cb9a0cc5e67a59689dd456dcbf20d69d3",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._is_site_available()\n\n        @retry(wait_random_min=500, wait_random_max=1000, stop_max_attempt_number=5)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9d7b7ffd455b636de2d1c862d320d42c07e6f9fed1f31d860d883a5f2b55375c",
+  "human_valid": true,
+  "line_no": 9392,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1db785cf87a14547df671f585f19b0d57ff451885b6453ceb8f5b9baf55b636f",
+  "raw_output": "\n        return self._is_site_available()\n\n    @retry(wait_random_min=500, wait_random_max=1000, stop_max_attempt_number=5)\n    def",
+  "sampling_seed": 2307012635,
+  "tag": "t06",
+  "temperature": 0.6
+}

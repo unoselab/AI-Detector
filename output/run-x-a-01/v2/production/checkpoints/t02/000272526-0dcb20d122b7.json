@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def action_cancel(self):\n        \"\"\"Set a change request as cancelled.\"\"\"\n        self.ensure_one()\n        self.write({'state': 'cancel'})\n",
+  "agc_valid": true,
+  "body_sha256": "df25bcc6e1194bc0f1e9023573ef3ee1e7fc2426720f16c1918a06b8a5316a2c",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.ensure_one()\n        self.write({'state': 'cancel'})\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "2bce7a5009968d09a61916874ab49752fa5874576e2fd4ccd8ab8c8543133a46",
+  "human_valid": true,
+  "line_no": 272526,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0dcb20d122b71f589809c05ba03407620bca774ed6cc1b0420caadbce149b82a",
+  "raw_output": "\n        self.ensure_one()\n        self.write({'state': 'cancel'})\n\n    def",
+  "sampling_seed": 2480151453,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def process_action(self, request, queryset):\n        \"\"\"\n        Unpublishes the selected objects by calling the object's \\\n        unpublish method. The action is logged and the user is \\\n        notified with a message.\n\n        Returns a 'render redirect' to the result of the \\\n        `get_done_url` method.\n        \"\"\"\n        if request.user.has_perm('publish.change_publishing') or \\\n                request.user.has_perm('publish.change_publishing_by_others'):\n            if not self.model.objects.filter(id__in=queryset).update(\n                    publishing_is_draft=True):\n                self.message_user(request,\n",
+  "agc_valid": false,
+  "body_sha256": "2aaef0d3c9c04bfb0752116e5b14ab5162ecb96c5c39b7b415cb80eb52ba57cd",
+  "body_tokens": 78,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if request.user.has_perm('publish.change_publishing') or \\\n                request.user.has_perm('publish.change_publishing_by_others'):\n            if not self.model.objects.filter(id__in=queryset).update(\n                    publishing_is_draft=True):\n                self.message_user(request,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "a04e644576aeede42b2d83eeb84281ff1d582ba3ed65216eae26eac8c896abd6",
+  "human_valid": true,
+  "line_no": 43923,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3ee7cb52e27482f5bd328c06d1ef84a5634454385c8a506d06b98fdb72bf91b1",
+  "raw_output": "\n        if request.user.has_perm('publish.change_publishing') or \\\n                request.user.has_perm('publish.change_publishing_by_others'):\n            if not self.model.objects.filter(id__in=queryset).update(\n                    publishing_is_draft=True):\n                self.message_user(request,\n                                 ",
+  "sampling_seed": 3078782679,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

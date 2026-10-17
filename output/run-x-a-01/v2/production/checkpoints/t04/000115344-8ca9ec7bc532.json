@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_advanced_configs(vm_name, datacenter, service_instance=None):\n    \"\"\"\n    Returns extra config parameters from a virtual machine advanced config list\n\n    vm_name\n        Virtual machine name\n\n    datacenter\n        Datacenter name where the virtual machine is available\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__)\n    advanced_configs = {}\n    vm_obj = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_obj:\n        return advanced_configs\n    for advanced_config in vm_obj.config.extraConfig:\n        advanced_configs[advanced_config.key] = advanced_config.value\n    return advanced_configs\n",
+  "agc_valid": true,
+  "body_sha256": "c3ee133dce817664d74a716bd7622b0bd0ced829549f78d394dae883ece4de14",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__)\n    advanced_configs = {}\n    vm_obj = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_obj:\n        return advanced_configs\n    for advanced_config in vm_obj.config.extraConfig:\n        advanced_configs[advanced_config.key] = advanced_config.value\n    return advanced_configs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "1f54df7cc6745125b244300e14107345bcb3a76b6f5d47ba352d6df78bff9192",
+  "human_valid": true,
+  "line_no": 115344,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ca9ec7bc5324d57ba9caf9a57587b85f46efcf8a4abd74aa33d55f2b2e7e810",
+  "raw_output": "\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__)\n    advanced_configs = {}\n    vm_obj = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_obj:\n        return advanced_configs\n    for advanced_config in vm_obj.config.extraConfig:\n        advanced_configs[advanced_config.key] = advanced_config.value\n    return advanced_configs\n\n\ndef get_vm_ref(vm_name, datacenter, service_instance=None):\n    \"\"\"\n    Returns a VM object reference from a virtual machine name\n\n    vm_name\n        Virtual machine name\n\n    datacenter\n        Datacenter name where the virtual machine is available\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__)\n    vm_ref = None\n    for dc in service_instance.content.rootFolder.childEntity:\n        if dc.name == datacenter:\n            for vm in dc.vmFolder.childEntity:\n                if vm.name == vm_name:\n                    vm_ref = vm\n    return vm_ref\n\n\ndef get_vm_summary(vm_name, datacenter, service_instance=None):\n    \"\"\"\n    Returns a VM object summary from a virtual machine name\n\n    vm_name\n        Virtual machine name\n\n    datacenter\n        Datacenter name where the virtual machine is available\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__)\n    vm_ref = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_ref:\n        return {}\n    return vm_ref.summary\n\n\ndef get_vm_power_state(vm_name, datacenter, service_instance=None):\n    \"\"\"\n    Returns a VM object power state from a virtual machine name",
+  "sampling_seed": 2172773224,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

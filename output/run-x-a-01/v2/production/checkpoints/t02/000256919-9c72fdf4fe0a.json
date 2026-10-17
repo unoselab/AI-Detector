@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_primitive_name(schema):\n    \"\"\" Get a human-friendly name for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('name'):\n        return schema['name']\n    elif schema.get('type'):\n        return schema['type']\n    else:\n        return 'unknown'\n",
+  "agc_valid": true,
+  "body_sha256": "9aa9e8cdfd4189cb66eec250cbbb62be317147e7e752e28b932d5b3a44d1c1a7",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if schema.get('name'):\n        return schema['name']\n    elif schema.get('type'):\n        return schema['type']\n    else:\n        return 'unknown'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "c9219620135caf13686b253b31426ce48b010574cbc73ff405514c91a2b07d31",
+  "human_valid": true,
+  "line_no": 256919,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c72fdf4fe0a7123d7c31402cf816bbac39116b13eb73838c194ec510f827528",
+  "raw_output": "\n    if schema.get('name'):\n        return schema['name']\n    elif schema.get('type'):\n        return schema['type']\n    else:\n        return 'unknown'\n\n\ndef get_primitive_type(schema):\n    \"\"\" Get the type of the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('type'):\n        return schema['type']\n    elif schema.get('name'):\n        return schema['name']\n    else:\n        return 'unknown'\n\n\ndef get_primitive_description(schema):\n    \"\"\" Get the description of the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('description'):\n        return schema['description']\n    else:\n        return 'unknown'\n\n\ndef get_primitive_default(schema):\n    \"\"\" Get the default value of the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('default'):\n        return schema['default']\n    else:\n        return 'unknown'\n\n\ndef get_primitive_required(schema):\n    \"\"\" Get the required status of the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('required'):\n        return schema['required']\n    else:\n        return 'unknown'\n\n\ndef get_primitive_properties(schema):\n    \"\"\" Get the properties of the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('properties'):\n        return schema['properties']\n    else:\n        return 'unknown'\n\n\ndef get_primitive_items(schema):\n    \"\"\" Get the items of the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    if schema.get('items'):\n        return schema['items']\n    else:\n       ",
+  "sampling_seed": 3879864195,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

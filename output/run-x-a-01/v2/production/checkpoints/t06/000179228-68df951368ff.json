@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def forward(self, observations, input_actions=None):\n        \"\"\" Calculate model outputs \"\"\"\n        if input_actions is None:\n            input_actions = self.actions\n        with torch.no_grad():\n            return self.model.forward(observations, input_actions)\n",
+  "agc_valid": true,
+  "body_sha256": "dfed16790c1ff0f629d1e7817f18471dd29932ab01fa98bed8cea6f2a68492f6",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if input_actions is None:\n            input_actions = self.actions\n        with torch.no_grad():\n            return self.model.forward(observations, input_actions)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "a5160cbe7dac46be458348a18db9e60188daae0fe221df72c3858033e5f6e0a4",
+  "human_valid": true,
+  "line_no": 179228,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "68df951368ff4462f68d3b3bdb806e621fbacffae20f2669b2a7ee024453395c",
+  "raw_output": "\n        if input_actions is None:\n            input_actions = self.actions\n        with torch.no_grad():\n            return self.model.forward(observations, input_actions)\n\n    def",
+  "sampling_seed": 575518763,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

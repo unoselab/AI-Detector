@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update(self, e=None, **f):\n        \"\"\"Override dict.update() to title-case keys.\"\"\"\n        if e is not None:\n            if isinstance(e, dict):\n                e = e.copy()\n                for k in e:\n                    if isinstance(e[k], dict):\n                        e[k] = e[k].copy()\n                        e[k] = self.__class__(e[k], title=True)\n                    elif isinstance(e[k], list):\n                        e[k] = self.__class__(e[k], title=True)\n            elif isinstance(e, list):\n                e = e.copy()\n                for i, v in enumerate(e):\n                    if isinstance(v, dict):\n                        e[i] = e[i].copy()\n                        e[i] = self.__class__(e[i], title=True)\n                    elif isinstance(v, list):\n                        e[i] = self.__class__(e[i], title=True)\n            elif isinstance(e, (str, int)):\n                e = e.copy()\n            else:\n                raise ValueError(f'Cannot update {type(e)}')\n\n            return super(Dict, self).update(e)\n        else:\n            return super(Dict, self).update(**f)\n",
+  "agc_valid": true,
+  "body_sha256": "b24141035ffd49430af727068884c07924ec6be8a0ec5cc25c045dd95014cca7",
+  "body_tokens": 464,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if e is not None:\n            if isinstance(e, dict):\n                e = e.copy()\n                for k in e:\n                    if isinstance(e[k], dict):\n                        e[k] = e[k].copy()\n                        e[k] = self.__class__(e[k], title=True)\n                    elif isinstance(e[k], list):\n                        e[k] = self.__class__(e[k], title=True)\n            elif isinstance(e, list):\n                e = e.copy()\n                for i, v in enumerate(e):\n                    if isinstance(v, dict):\n                        e[i] = e[i].copy()\n                        e[i] = self.__class__(e[i], title=True)\n                    elif isinstance(v, list):\n                        e[i] = self.__class__(e[i], title=True)\n            elif isinstance(e, (str, int)):\n                e = e.copy()\n            else:\n                raise ValueError(f'Cannot update {type(e)}')\n\n            return super(Dict, self).update(e)\n        else:\n            return super(Dict, self).update(**f)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "fdea701fd563d320484c8fab21356b540d83a744629bb24d15808a35f13ce954",
+  "human_valid": true,
+  "line_no": 264862,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "647afb16bee54cdd81535e511805c009c3a1827463980690ffd29aac96d832aa",
+  "raw_output": "\n        if e is not None:\n            if isinstance(e, dict):\n                e = e.copy()\n                for k in e:\n                    if isinstance(e[k], dict):\n                        e[k] = e[k].copy()\n                        e[k] = self.__class__(e[k], title=True)\n                    elif isinstance(e[k], list):\n                        e[k] = self.__class__(e[k], title=True)\n            elif isinstance(e, list):\n                e = e.copy()\n                for i, v in enumerate(e):\n                    if isinstance(v, dict):\n                        e[i] = e[i].copy()\n                        e[i] = self.__class__(e[i], title=True)\n                    elif isinstance(v, list):\n                        e[i] = self.__class__(e[i], title=True)\n            elif isinstance(e, (str, int)):\n                e = e.copy()\n            else:\n                raise ValueError(f'Cannot update {type(e)}')\n\n            return super(Dict, self).update(e)\n        else:\n            return super(Dict, self).update(**f)\n\n    def",
+  "sampling_seed": 1508110468,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

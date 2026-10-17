@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def cli_guild(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild.\"\"\"\n    guild = tibiadata.guilds.get_guild(name)\n    if guild is None:\n        return tibiapy_common.tibia_em(f\"I don't know about a guild named {name}.\")\n    if json:\n        return tibiapy_common.tibia_em(guild.json(indent=4))\n    embed = discord.Embed(title=f\"{guild.name} ({guild.world} - {guild.rank})\",\n                          description=guild.description, color=tibiapy_common.COLOR_MAIN)\n    embed.set_thumbnail(url=guild.emblem.url)\n    embed.add_field(name=\"Level\", value=guild.level)\n    embed.add_field(name=\"Members\", value=guild.members)\n    embed.add_field(name=\"Rank\", value=guild.rank)\n    embed.add_field(name=\"Location\", value=guild.location)\n    embed.add_field(name=\"Last Activity\", value=guild.last_activity)\n    return tibiapy_common.tibia_em(embed)\n",
+  "agc_valid": true,
+  "body_sha256": "6fa618242f4a5565729722527196e6d646fafd56c726fb19f22fb61c4c297ac2",
+  "body_tokens": 115,
+  "bucket": "type02_120",
+  "clean_output": "\n    guild = tibiadata.guilds.get_guild(name)\n    if guild is None:\n        return tibiapy_common.tibia_em(f\"I don't know about a guild named {name}.\")\n    if json:\n        return tibiapy_common.tibia_em(guild.json(indent=4))\n    embed = discord.Embed(title=f\"{guild.name} ({guild.world} - {guild.rank})\",\n                          description=guild.description, color=tibiapy_common.COLOR_MAIN)\n    embed.set_thumbnail(url=guild.emblem.url)\n    embed.add_field(name=\"Level\", value=guild.level)\n    embed.add_field(name=\"Members\", value=guild.members)\n    embed.add_field(name=\"Rank\", value=guild.rank)\n    embed.add_field(name=\"Location\", value=guild.location)\n    embed.add_field(name=\"Last Activity\", value=guild.last_activity)\n    return tibiapy_common.tibia_em(embed)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0a1b35daf8223251502e9952e9aac21d26a7f9168ee860de7011da6bea036eb2",
+  "human_valid": true,
+  "line_no": 43477,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "19867c2872fd4a60f801042e23e1131ac3f65013284b78cd044dfcdd01d243bd",
+  "raw_output": "\n    guild = tibiadata.guilds.get_guild(name)\n    if guild is None:\n        return tibiapy_common.tibia_em(f\"I don't know about a guild named {name}.\")\n    if json:\n        return tibiapy_common.tibia_em(guild.json(indent=4))\n    embed = discord.Embed(title=f\"{guild.name} ({guild.world} - {guild.rank})\",\n                          description=guild.description, color=tibiapy_common.COLOR_MAIN)\n    embed.set_thumbnail(url=guild.emblem.url)\n    embed.add_field(name=\"Level\", value=guild.level)\n    embed.add_field(name=\"Members\", value=guild.members)\n    embed.add_field(name=\"Rank\", value=guild.rank)\n    embed.add_field(name=\"Location\", value=guild.location)\n    embed.add_field(name=\"Last Activity\", value=guild.last_activity)\n    return tibiapy_common.tibia_em(embed)\n\n\ndef cli_guild_members(name, tibiadata, json):\n    \"\"\"Displays information about a Tibia guild members.\"\"\"\n    guild = tibiadata.guilds.get_guild(name)\n    if guild is None:\n        return tibiapy_common.tibia_em(f\"I don't know about a guild named {name}.\")\n    if json:\n        return tibiapy_common.tibia_em(guild.members_json(indent=4))\n    embed = discord.Embed(title=f\"{guild.name} Members\", color=tibiapy_common.COLOR_MAIN)\n    for member in guild.members:\n        embed.add_field(name=member.name, value=member.level, inline=True)\n    return tibiapy_common.tibia_em(embed)\n\n\ndef cli_guild_ranks(name, tibiadata,",
+  "sampling_seed": 3599668616,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_resource(self, parent_id=\"\"):\n        \"\"\"Create the specified resource.\n\n        Args:\n            parent_id (str): The resource ID of the parent resource in API Gateway\n        \"\"\"\n        self.resource_id = self.client.create_resource(\n            restApiId=self.api_id, parentId=parent_id, pathPart=self.path_part\n        ).get(\"id\")\n",
+  "agc_valid": true,
+  "body_sha256": "bae26aa4e982d6a597c1b8b1497d2b0fb460f6c776ea98e62aec5e2c6124c59c",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.resource_id = self.client.create_resource(\n            restApiId=self.api_id, parentId=parent_id, pathPart=self.path_part\n        ).get(\"id\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "8088f21df22c3e9710ba7a39c575d4d97c05a8c60008d8e58cc979fd9e39254f",
+  "human_valid": true,
+  "line_no": 279589,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2412af90f94e948c616c5b90b582a98ebad90c75caed051b1419acd28745e693",
+  "raw_output": "\n        self.resource_id = self.client.create_resource(\n            restApiId=self.api_id, parentId=parent_id, pathPart=self.path_part\n        ).get(\"id\")\n\n    def",
+  "sampling_seed": 3529322738,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

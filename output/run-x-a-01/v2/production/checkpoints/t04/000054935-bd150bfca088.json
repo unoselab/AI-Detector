@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def no_overlap(multienum):\n    \"\"\"Class decorator for MultiValueEnum ensuring non overlapping elements\n    in member values. Other words: ensure no element in any member value is\n    present in any other member value.\n    \"\"\"\n    class NoOverlapMultiValueEnum(multienum):\n        \"\"\"NoOverlapMultiValueEnum class.\"\"\"\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "bc4ea18aa81e7c52116aac7346d74cdd7f7874a05219306cb7ff374105d774e6",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    class NoOverlapMultiValueEnum(multienum):\n        \"\"\"NoOverlapMultiValueEnum class.\"\"\"\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "59e150fb3448e36d3428a3c95df3e6511f554d008715ce5f7317501318603765",
+  "human_valid": true,
+  "line_no": 54935,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bd150bfca08873e29892673e3765636054ecfc44b3c3b5964f751da630eb2feb",
+  "raw_output": "\n\n    class NoOverlapMultiValueEnum(multienum):\n        \"\"\"NoOverlapMultiValueEnum class.\"\"\"\n\n        @classmethod\n        def",
+  "sampling_seed": 2928328918,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

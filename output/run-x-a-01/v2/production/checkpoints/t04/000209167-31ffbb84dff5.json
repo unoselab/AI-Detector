@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def put_annotation(self, key, value):\n        \"\"\"\n        Annotate segment or subsegment with a key-value pair.\n        Annotations will be indexed for later search query.\n\n        :param str key: annotation key\n        :param object value: annotation value. Any type other than\n            string/number/bool will be dropped\n        \"\"\"\n        if key is None:\n            raise ValueError(\"key cannot be None\")\n        if key.startswith(\"_\"):\n            raise ValueError(\"key cannot start with '_'\")\n        if isinstance(value, (str, int, float, bool)):\n            self.annotations[key] = value\n        else:\n            logger.warning(\n                \"Dropped annotation %s: value %s is not a string, number, bool or None\",\n                key,\n                value,\n            )\n",
+  "agc_valid": true,
+  "body_sha256": "0aec9a48b1f88ffc6a107215f6744a8b24f7c1d400b6fa692644d1d1f67c7cc5",
+  "body_tokens": 173,
+  "bucket": "type08_180",
+  "clean_output": "\n        if key is None:\n            raise ValueError(\"key cannot be None\")\n        if key.startswith(\"_\"):\n            raise ValueError(\"key cannot start with '_'\")\n        if isinstance(value, (str, int, float, bool)):\n            self.annotations[key] = value\n        else:\n            logger.warning(\n                \"Dropped annotation %s: value %s is not a string, number, bool or None\",\n                key,\n                value,\n            )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "eecff0d6ecbc675c4bc536ecd1fa6a9cdfd78ac4d3bf5b1f050baed3c04ee464",
+  "human_valid": true,
+  "line_no": 209167,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "31ffbb84dff5171e3fb39affafadf06686572e9fa3011eb93557e32d699d8159",
+  "raw_output": "\n        if key is None:\n            raise ValueError(\"key cannot be None\")\n        if key.startswith(\"_\"):\n            raise ValueError(\"key cannot start with '_'\")\n        if isinstance(value, (str, int, float, bool)):\n            self.annotations[key] = value\n        else:\n            logger.warning(\n                \"Dropped annotation %s: value %s is not a string, number, bool or None\",\n                key,\n                value,\n            )\n\n    def",
+  "sampling_seed": 399198419,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_aot(self, first, name_first):  # type: (Table, str) -> AoT\n        \"\"\"\n        Parses all siblings of the provided table first and bundles them into\n        an AoT.\n        \"\"\"\n        aot = AoT(first.name, first.description)\n        for t in self._get_siblings(first, name_first):\n            aot.add_table(t)\n        return aot\n",
+  "agc_valid": true,
+  "body_sha256": "c17a09436b54efd78315a1b243547f3d18ddae58cd9a713ba0ca2bf3440260c4",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        aot = AoT(first.name, first.description)\n        for t in self._get_siblings(first, name_first):\n            aot.add_table(t)\n        return aot\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "18ae11a5c576dc8fadb8cb893be843178854cba0bb5ee837f31493de80a5c1ad",
+  "human_valid": true,
+  "line_no": 100320,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4e9102a022b7630f63e28f067484bb921fc7995cf7f78f49d4956667f6acdf72",
+  "raw_output": "\n        aot = AoT(first.name, first.description)\n        for t in self._get_siblings(first, name_first):\n            aot.add_table(t)\n        return aot\n\n    def",
+  "sampling_seed": 3563776593,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

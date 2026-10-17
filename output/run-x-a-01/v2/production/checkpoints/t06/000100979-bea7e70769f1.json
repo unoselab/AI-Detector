@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def __hosting_wechat_img(self, content_info, hosting_callback):\n        \"\"\"将微信明细中图片托管到云端，同时将html页面中的对应图片替换\n\n        Parameters\n        ----------\n        content_info : dict 微信文章明细字典\n            {\n                'content_img_list': [], # 从微信文章解析出的原始图片列表\n                'content_html': '', # 从微信文章解析出文章的内容\n            }\n        hosting_callback : callable\n            托管回调函数，传入单个图片链接，返回托管后的图片链接\n\n        Returns\n        -------\n        dict\n            {\n                'content_img_list': '', # 托管后的图片列表\n                'content_html': '',  # 图片链接为托管后的图片链接内容\n            }\n        \"\"\"\n        #\n",
+  "agc_valid": false,
+  "body_sha256": "901f51c6cd68dd3da6c040e4810e3137faad8abac54e5c73ca84b6019bb4cb47",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        #\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "21e4ef9f3c10e213ffbe6ebd11a7ae168ed6705d4896279e8e4f7d12d44e49af",
+  "human_valid": true,
+  "line_no": 100979,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bea7e70769f19ec203ec8d892b72a0b49c9fc020f5f65f793ef2d9d7eaffea46",
+  "raw_output": "   # ",
+  "sampling_seed": 2584956495,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

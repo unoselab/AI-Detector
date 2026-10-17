@@ -1,0 +1,11 @@
+source_stratum,total,common_ast_valid,common_rate
+type01_110,20,6,0.3
+type02_120,20,11,0.55
+type03_130,20,8,0.4
+type04_140,20,8,0.4
+type05_150,20,9,0.45
+type06_160,20,7,0.35
+type07_170,20,8,0.4
+type08_180,20,6,0.3
+type09_190,20,9,0.45
+type10_200,20,10,0.5

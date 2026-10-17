@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def squared_distance(self, other):\n        \"\"\"\n        Squared distance of two Vectors.\n\n        >>> dense1 = DenseVector(array.array('d', [1., 2.]))\n        >>> dense1.squared_distance(dense1)\n        0.0\n        >>> dense2 = np.array([2., 1.])\n        >>> dense1.squared_distance(dense2)\n        2.0\n        >>> dense3 = [2., 1.]\n        >>> dense1.squared_distance(dense3)\n        2.0\n        >>> sparse1 = SparseVector(2, [0, 1], [2., 1.])\n        >>> dense1.squared_distance(sparse1)\n        2.0\n        >>> dense1.squared_distance([1.,])\n        Traceback (most recent call last):\n            ...\n        AssertionError: dimension mismatch\n        >>> dense1.squared_distance(SparseVector(1, [0,], [1.,]))\n        Traceback (most recent call last):\n            ...\n        AssertionError: dimension mismatch\n        \"\"\"\n        dense3)\n                2.0\n                \"\"\"\n                if isinstance(other, DenseVector):\n                    return self.dot(other)\n                else:\n                    return self.squared_distance(DenseVector(other))\n",
+  "agc_valid": false,
+  "body_sha256": "7059c0db1188b5353c39de9b17273e2032d533cb139247f410cbd7ffa0ea2306",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n        dense3)\n                2.0\n                \"\"\"\n                if isinstance(other, DenseVector):\n                    return self.dot(other)\n                else:\n                    return self.squared_distance(DenseVector(other))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "f740210c2772226070fe2414606160dc256c7aec481bc964d83fac5232e3151e",
+  "human_valid": true,
+  "line_no": 90470,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3a1b426e4077e967e65b2b55e618eb7878c8a3a475b90798453bbe450a28e351",
+  "raw_output": "dense3)\n        2.0\n        \"\"\"\n        if isinstance(other, DenseVector):\n            return self.dot(other)\n        else:\n            return self.squared_distance(DenseVector(other))\n\n    def",
+  "sampling_seed": 740285358,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

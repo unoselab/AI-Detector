@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def export_roles(self):\n        \"\"\"\n        Export the roles to one of the export types.\n        \"\"\"\n        if self.export_type == 'csv':\n            self.export_roles_csv()\n        elif self.export_type == 'json':\n            self.export_roles_json()\n        elif self.export_type == 'xml':\n            self.export_roles_xml()\n",
+  "agc_valid": true,
+  "body_sha256": "d6a541ecc300fc6ed121b0382b1a6f268edd5ce6770e511b7255bd79f4c45e9d",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.export_type == 'csv':\n            self.export_roles_csv()\n        elif self.export_type == 'json':\n            self.export_roles_json()\n        elif self.export_type == 'xml':\n            self.export_roles_xml()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "0cc270511583ee4368c2054910230c99c50be83a703829cd771184cf1be67a5c",
+  "human_valid": true,
+  "line_no": 149131,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3fe44caef37d5d621024a2579a109b32fb39ca81d0d30d4ebe589b654754dff1",
+  "raw_output": "\n        if self.export_type == 'csv':\n            self.export_roles_csv()\n        elif self.export_type == 'json':\n            self.export_roles_json()\n        elif self.export_type == 'xml':\n            self.export_roles_xml()\n\n    def",
+  "sampling_seed": 3691769723,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

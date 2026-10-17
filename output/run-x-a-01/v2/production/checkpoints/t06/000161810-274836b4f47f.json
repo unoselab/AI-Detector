@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def queue_scan_command(self, server_info: ServerConnectivityInfo, scan_command: PluginScanCommand) -> None:\n        \"\"\"Queue a scan command targeting a specific server.\n\n        Args:\n            server_info: The server's connectivity information. The test_connectivity_to_server() method must have been\n                called first to ensure that the server is online and accessible.\n            scan_command: The scan command to run against this server.\n        \"\"\"\n        if not scan_command.is_ready_to_queue():\n            raise ValueError(\"Scan command is not ready to be queued\")\n\n        if not self.is_server_online(server_info):\n            raise ValueError(\"Server is not online\")\n\n        self._scan_commands.put(PluginScanCommandWrapper(server_info, scan_command))\n",
+  "agc_valid": true,
+  "body_sha256": "178c5858c4c49318a793263fb6f4ab79cab8885294e43dfc1ac8f453e147bc07",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not scan_command.is_ready_to_queue():\n            raise ValueError(\"Scan command is not ready to be queued\")\n\n        if not self.is_server_online(server_info):\n            raise ValueError(\"Server is not online\")\n\n        self._scan_commands.put(PluginScanCommandWrapper(server_info, scan_command))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "3e5f18952b512f81065a203bcf5a5ddaaa2fa4d4964aab09710308280004f4e1",
+  "human_valid": true,
+  "line_no": 161810,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "274836b4f47faff5ed8519fe0609a99a066ee6a53a50f0d0217b2140245c4091",
+  "raw_output": "\n        if not scan_command.is_ready_to_queue():\n            raise ValueError(\"Scan command is not ready to be queued\")\n\n        if not self.is_server_online(server_info):\n            raise ValueError(\"Server is not online\")\n\n        self._scan_commands.put(PluginScanCommandWrapper(server_info, scan_command))\n\n    def",
+  "sampling_seed": 4040802933,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

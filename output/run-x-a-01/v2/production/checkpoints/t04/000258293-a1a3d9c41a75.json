@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _check_id(entity, entity_type):\n    \"\"\"Check whether the ID is valid.\n\n    First check if the ID is missing, and then check if it is a qualified\n    string type, finally check if the string is empty. For all checks, it\n    would raise a ParseError with the corresponding message.\n\n    Args:\n        entity: a string type object to be checked.\n        entity_type: a string that shows the type of entities to check, usually\n            `Compound` or 'Reaction'.\n    \"\"\"\n    if entity is None:\n        raise ParseError(f'{entity_type} ID is missing.')\n    if not isinstance(entity, str):\n        raise ParseError(f'{entity_type} ID should be a string.')\n    if not entity:\n        raise ParseError(f'{entity_type} ID should not be empty.')\n",
+  "agc_valid": true,
+  "body_sha256": "397b55fe058001f4957e9913b5a6d3c9088115232496292ed76a115ca602cdad",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if entity is None:\n        raise ParseError(f'{entity_type} ID is missing.')\n    if not isinstance(entity, str):\n        raise ParseError(f'{entity_type} ID should be a string.')\n    if not entity:\n        raise ParseError(f'{entity_type} ID should not be empty.')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "7e559e16dc0c6bfc78472ea7c031dccacdcbdf6b9f5bc25e9a27ee55198f1513",
+  "human_valid": true,
+  "line_no": 258293,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a1a3d9c41a752cbd8dfa6b6420a8921d133ee6fac147508ef525bae5dbf752fd",
+  "raw_output": "\n    if entity is None:\n        raise ParseError(f'{entity_type} ID is missing.')\n    if not isinstance(entity, str):\n        raise ParseError(f'{entity_type} ID should be a string.')\n    if not entity:\n        raise ParseError(f'{entity_type} ID should not be empty.')\n\n\ndef _check_stoichiometry(stoichiometry):\n    \"\"\"Check whether the stoichiometry is valid.\n\n    First check if the stoichiometry is missing, and then check if it is a\n    qualified string type, finally check if the string is empty. For all checks,\n    it would raise a ParseError with the corresponding message.\n\n    Args:\n        stoichiometry: a string type object to be checked.\n    \"\"\"\n    if stoichiometry is None:\n        raise ParseError('Stoichiometry is missing.')\n    if not isinstance(stoichiometry, str):\n        raise ParseError('Stoichiometry should be a string.')\n    if not stoichiometry:\n        raise ParseError('Stoichiometry should not be empty.')\n\n\ndef _check_coefficient(coefficient):\n    \"\"\"Check whether the coefficient is valid.\n\n    First check if the coefficient is missing, and then check if it is a\n    qualified string type, finally check if the string is empty. For all checks,\n    it would raise a ParseError with the corresponding message.\n\n    Args:\n        coefficient: a string type object to be checked.\n    \"\"\"\n    if coefficient is None:\n        raise ParseError('Coefficient is missing.')\n    if not isinstance(coefficient, str):\n        raise ParseError('Coefficient should be a string.')\n    if not coefficient:\n        raise ParseError('Coefficient should not be empty.')\n\n\ndef _check_stoichiometry_coefficient(stoichiometry, coefficient):\n    \"\"\"Check whether the stoichiometry and coefficient are valid.\n\n    First check if the stoichiometry is missing, and then check if it is a\n    qualified string type, finally check if the string is empty. For all checks,\n    it would raise a ParseError with the corresponding message.\n\n    Args:\n        stoichi",
+  "sampling_seed": 1347482452,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

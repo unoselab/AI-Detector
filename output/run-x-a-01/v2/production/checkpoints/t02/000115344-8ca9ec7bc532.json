@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_advanced_configs(vm_name, datacenter, service_instance=None):\n    \"\"\"\n    Returns extra config parameters from a virtual machine advanced config list\n\n    vm_name\n        Virtual machine name\n\n    datacenter\n        Datacenter name where the virtual machine is available\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__['esxi.get_conn']())\n    vm_obj = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError(\n            'Unable to locate VM \\'{0}\\''.format(vm_name)\n        )\n    advanced_configs = get_advanced_configs_from_vm(vm_obj, service_instance)\n    return advanced_configs\n",
+  "agc_valid": true,
+  "body_sha256": "355eeb073b03371f91549500f767745abfa616bb06bb7d319a8fba40a45510c8",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__['esxi.get_conn']())\n    vm_obj = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError(\n            'Unable to locate VM \\'{0}\\''.format(vm_name)\n        )\n    advanced_configs = get_advanced_configs_from_vm(vm_obj, service_instance)\n    return advanced_configs\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "1f54df7cc6745125b244300e14107345bcb3a76b6f5d47ba352d6df78bff9192",
+  "human_valid": true,
+  "line_no": 115344,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ca9ec7bc5324d57ba9caf9a57587b85f46efcf8a4abd74aa33d55f2b2e7e810",
+  "raw_output": "\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__['esxi.get_conn']())\n    vm_obj = get_vm_ref(vm_name, datacenter, service_instance)\n    if not vm_obj:\n        raise VMwareObjectRetrievalError(\n            'Unable to locate VM \\'{0}\\''.format(vm_name)\n        )\n    advanced_configs = get_advanced_configs_from_vm(vm_obj, service_instance)\n    return advanced_configs\n\n\ndef get_advanced_configs_from_vm(vm_obj, service_instance=None):\n    \"\"\"\n    Returns extra config parameters from a virtual machine advanced config list\n\n    vm_obj\n        VM object\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__['esxi.get_conn']())\n    advanced_configs = {}\n    if not vm_obj:\n        raise VMwareObjectRetrievalError(\n            'Unable to locate VM \\'{0}\\''.format(vm_obj)\n        )\n    advanced_config_list = get_advanced_config_list(vm_obj, service_instance)\n    if advanced_config_list:\n        for advanced_config in advanced_config_list:\n            advanced_configs[advanced_config.key] = advanced_config.value\n    return advanced_configs\n\n\ndef get_advanced_config_list(vm_obj, service_instance=None):\n    \"\"\"\n    Returns advanced config list from a virtual machine\n\n    vm_obj\n        VM object\n\n    service_instance\n        vCenter service instance for connection and configuration\n    \"\"\"\n    if not service_instance:\n        service_instance = get_service_instance(opts=__opts__, conn=__proxy__['esxi.get_conn']())\n    advanced_config_list = None\n    if not vm_obj:\n        raise VMwareObjectRetrievalError(\n            '",
+  "sampling_seed": 328743022,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

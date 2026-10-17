@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_top_referrers(self):\n        \"\"\"\n        :calls: `GET /repos/:owner/:repo/traffic/popular/referrers <https://developer.github.com/v3/repos/traffic/>`_\n        :rtype: :class:`list` of :class:`github.Referrer.Referrer`\n        \"\"\"\n        headers, data = self._requester.requestJsonAndCheck(\n            \"GET\",\n            self.url + \"/traffic/popular/referrers\"\n        )\n\n        return [Referrer(self._requester, headers, data, self.url)\n                for data in data]\n",
+  "agc_valid": true,
+  "body_sha256": "0ee5707b6353eafd02e4a99caec7f9577d34cd24bb7ff83f710208aadf9d9b46",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n        headers, data = self._requester.requestJsonAndCheck(\n            \"GET\",\n            self.url + \"/traffic/popular/referrers\"\n        )\n\n        return [Referrer(self._requester, headers, data, self.url)\n                for data in data]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "b795dc60876379c10914df622abaf4566282c87d27e12f75e391180029043c71",
+  "human_valid": true,
+  "line_no": 366718,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a00e952fa079f84f03af1c25a141f07ce0fd2b138ab844bda2b94ccf83c4debb",
+  "raw_output": "\n        headers, data = self._requester.requestJsonAndCheck(\n            \"GET\",\n            self.url + \"/traffic/popular/referrers\"\n        )\n\n        return [Referrer(self._requester, headers, data, self.url)\n                for data in data]\n\n    def",
+  "sampling_seed": 3905431785,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def d2logpdf_dlink2(self, link_f, y, Y_metadata=None):\n        \"\"\"\n        Hessian at y, given link(f), w.r.t link(f)\n        i.e. second derivative logpdf at y given link(f_i) and link(f_j)  w.r.t link(f_i) and link(f_j)\n        The hessian will be 0 unless i == j\n\n        .. math::\n            \\\\frac{d^{2} \\\\ln p(y_{i}|\\lambda(f_{i}))}{d^{2}\\\\lambda(f)} = -\\\\beta^{2}\\\\frac{d\\\\Psi(\\\\alpha_{i})}{d\\\\alpha_{i}}\\\\\\\\\n            \\\\alpha_{i} = \\\\beta y_{i}\n\n        :param link_f: latent variables link(f)\n        :type link_f: Nx1 array\n        :param y: data\n        :type y: Nx1 array\n        :param Y_metadata: Y_metadata which is not used in gamma distribution\n        :returns: Diagonal of hessian matrix (second derivative of likelihood evaluated at points f)\n        :rtype: Nx1 array\n\n        .. Note::\n            Will return diagonal of hessian, since every where else it is 0, as the likelihood factorizes over cases\n            (the distribution for y_i depends only on link(f_i) not on link(f_(j!=i))\n        \"\"\"\n        y_{i}|f_{i})}{d link(f_{i})^{2}} = \\\\frac{d^{2} \\\\ln p(y_{i}|f_{i})}{d f_{i}^{2}} \\\\frac{d f_{i}}{d link(f_{i})}\n\n                :param link_f: link(f)\n                :type link_f: numpy.ndarray\n                :param y: y\n                :type y: numpy.ndarray\n                :param Y_metadata: Y_metadata\n                :type Y_metadata: dict\n                :return: Hessian at y, given link(f), w.r.t link(f)\n                :rtype: numpy.ndarray\n                \"\"\"\n                return self.d2logpdf_df2(link_f, y, Y_metadata) * self.dlink_df(link_f, y, Y_metadata)\n",
+  "agc_valid": false,
+  "body_sha256": "ea9c653fee75fc86a00bb60a7d16d903bee926b8452cd8c04959f04dbcaafd5e",
+  "body_tokens": 205,
+  "bucket": "out_of_range",
+  "clean_output": "\n        y_{i}|f_{i})}{d link(f_{i})^{2}} = \\\\frac{d^{2} \\\\ln p(y_{i}|f_{i})}{d f_{i}^{2}} \\\\frac{d f_{i}}{d link(f_{i})}\n\n                :param link_f: link(f)\n                :type link_f: numpy.ndarray\n                :param y: y\n                :type y: numpy.ndarray\n                :param Y_metadata: Y_metadata\n                :type Y_metadata: dict\n                :return: Hessian at y, given link(f), w.r.t link(f)\n                :rtype: numpy.ndarray\n                \"\"\"\n                return self.d2logpdf_df2(link_f, y, Y_metadata) * self.dlink_df(link_f, y, Y_metadata)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "67c4a94b183a6a398d927691da5db14e37f4bf4e49bb1320ac2d63005ffc4a3a",
+  "human_valid": true,
+  "line_no": 377404,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bfee04da913a9a10fa320c2ef0a1cb2a50215cba2513b84a119256daacdada3d",
+  "raw_output": "y_{i}|f_{i})}{d link(f_{i})^{2}} = \\\\frac{d^{2} \\\\ln p(y_{i}|f_{i})}{d f_{i}^{2}} \\\\frac{d f_{i}}{d link(f_{i})}\n\n        :param link_f: link(f)\n        :type link_f: numpy.ndarray\n        :param y: y\n        :type y: numpy.ndarray\n        :param Y_metadata: Y_metadata\n        :type Y_metadata: dict\n        :return: Hessian at y, given link(f), w.r.t link(f)\n        :rtype: numpy.ndarray\n        \"\"\"\n        return self.d2logpdf_df2(link_f, y, Y_metadata) * self.dlink_df(link_f, y, Y_metadata)\n\n    def",
+  "sampling_seed": 1390159193,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

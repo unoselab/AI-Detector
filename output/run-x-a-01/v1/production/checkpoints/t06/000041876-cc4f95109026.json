@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def git_day():\n    \"\"\"Constructs a version string of the form:\n\n           day[.<commit-number-in-day>][+<branch-name-if-not-master>]\n\n       Master is understood to be always buildable and thus untagged\n       versions are treated as patch levels. Branches not master are treated\n       as PEP-440 \"local version identifiers\".\n    \"\"\"\n    branch = run_output(\"git\", \"rev-parse\", \"--abbrev-ref\", \"HEAD\")\n    if branch == \"master\":\n        # Treat master as untagged.\n        return \"day\"\n    else:\n        # Treat branches as PEP-440 \"local version identifiers\".\n        return \"day+%s\" % branch\n",
+  "agc_valid": true,
+  "body_sha256": "7490cea32775000433314a5ccd8f450440ade459c93ccda66499e44e3b7bd8b7",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n    branch = run_output(\"git\", \"rev-parse\", \"--abbrev-ref\", \"HEAD\")\n    if branch == \"master\":\n        # Treat master as untagged.\n        return \"day\"\n    else:\n        # Treat branches as PEP-440 \"local version identifiers\".\n        return \"day+%s\" % branch\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "3324e0d585a9fb27d439f8dc331106d0ed01ee961303621d379c0649c9b9ff0a",
+  "human_valid": true,
+  "line_no": 41876,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "cc4f95109026b5a97a3fa6908b29e8c67c97be15d5ecc749c991c1e1b2b9fc27",
+  "raw_output": "\n    branch = run_output(\"git\", \"rev-parse\", \"--abbrev-ref\", \"HEAD\")\n    if branch == \"master\":\n        # Treat master as untagged.\n        return \"day\"\n    else:\n        # Treat branches as PEP-440 \"local version identifiers\".\n        return \"day+%s\" % branch\n\n\ndef git_date():\n    \"\"\"Constructs a version string of the form:\n\n           YYYY.MM.DD[.HHMMSS][+<branch-name-if-not-master>]\n\n       Master is understood to be always buildable and thus untagged\n       versions are treated as patch levels. Branches not master are treated\n       as PEP-440 \"local version identifiers\".\n    \"\"\"\n    branch = run_output(\"git\", \"rev-parse\", \"--abbrev-ref\", \"HEAD\")\n    if branch == \"master\":\n        # Treat master as untagged.\n        return \"YYYY.MM.DD\"\n    else:\n        # Treat branches as PEP-440 \"local version identifiers\".\n        return \"YYYY.MM.DD+%s\" % branch\n\n\ndef git_hash():\n    \"\"\"Constructs a version string of the form:\n\n           <hash>[+<branch-name-if-not-master>]\n\n       Master is understood to be always buildable and thus untagged\n       versions are treated as patch levels. Branches not master are treated\n       as PEP-440 \"local version identifiers\".\n    \"\"\"\n    branch = run_output(\"git\", \"rev-parse\", \"--abbrev-ref\", \"HEAD\")\n    if branch == \"master\":\n        # Treat master as untagged.\n        return \"git-hash\"\n    else:\n        # Treat branches as PEP-440 \"local version identifiers\".\n        return \"git-hash+%s\" % branch\n\n\ndef git_version():\n    \"\"\"Constructs a version string of the form:\n\n           <tag>[+<branch-name-if-not-master>]\n\n       Master is understood to be always buildable and thus untag",
+  "sampling_seed": 4110893601,
+  "tag": "t06",
+  "temperature": 0.6
+}

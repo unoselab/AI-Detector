@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def material_to_texture(material):\n    \"\"\"\n    Convert a trimesh.visual.texture.Material object into\n    a pyglet- compatible texture object.\n\n    Parameters\n    --------------\n    material : trimesh.visual.texture.Material\n      Material to be converted\n\n    Returns\n    ---------------\n    texture : pyglet.image.Texture\n      Texture loaded into pyglet form\n    \"\"\"\n    # create a texture from a numpy array\n    # this is a little hacky, because we have to\n    # use the pyglet image loader\n    from pyglet.image import ImageData\n    from pyglet.gl import GL_RGB\n\n    # get a numpy array of the image\n    if material.image.shape[2] ==\n",
+  "agc_valid": false,
+  "body_sha256": "dc5aa0ad2e1aba421e51c4ca0c2410339606c2c7d459d47318c29806c5792438",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # create a texture from a numpy array\n    # this is a little hacky, because we have to\n    # use the pyglet image loader\n    from pyglet.image import ImageData\n    from pyglet.gl import GL_RGB\n\n    # get a numpy array of the image\n    if material.image.shape[2] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "3a3af29ed486d982650376812f96b9cdcd24f7ef6caabccdd63ef7b72d529bb8",
+  "human_valid": true,
+  "line_no": 330526,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8c6551041d3a71301e7780c7f3ef3aa70a3049600403835fc00fb3a76b0be79b",
+  "raw_output": "\n    # create a texture from a numpy array\n    # this is a little hacky, because we have to\n    # use the pyglet image loader\n    from pyglet.image import ImageData\n    from pyglet.gl import GL_RGB\n\n    # get a numpy array of the image\n    if material.image.shape[2] == ",
+  "sampling_seed": 2120989195,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

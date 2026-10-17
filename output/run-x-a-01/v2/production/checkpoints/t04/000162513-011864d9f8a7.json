@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_policy_type(self, project, type_id):\n        \"\"\"GetPolicyType.\n        Retrieve a specific policy type by ID.\n        :param str project: Project ID or project name\n        :param str type_id: The policy ID.\n        :rtype: :class:`<PolicyType> <azure.devops.v5_0.policy.models.PolicyType>`\n        \"\"\"\n        route_values = {}\n        if project is not None:\n            route_values['project'] = self._serialize.url('project', project, 'str')\n        if type_id is not None:\n            route_values['typeId'] = self._serialize.url('type_id', type_id, 'str')\n        response = self._send(http_method='GET',\n                              location_id='7f295d39-29f5-4d40-9f9e-cfda24250594',\n                              version='5.0',\n                              route_values=route_values)\n        return self._deserialize('PolicyType', response)\n",
+  "agc_valid": true,
+  "body_sha256": "3f39c7ede1df5f64c790bf674b92417dc2b5b1ef398d1a71bdd767c9a31eb8d3",
+  "body_tokens": 177,
+  "bucket": "type08_180",
+  "clean_output": "\n        route_values = {}\n        if project is not None:\n            route_values['project'] = self._serialize.url('project', project, 'str')\n        if type_id is not None:\n            route_values['typeId'] = self._serialize.url('type_id', type_id, 'str')\n        response = self._send(http_method='GET',\n                              location_id='7f295d39-29f5-4d40-9f9e-cfda24250594',\n                              version='5.0',\n                              route_values=route_values)\n        return self._deserialize('PolicyType', response)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "47074a7111201bd0edd3823e125af3caba936ad0af6c921c739e139fc5546d56",
+  "human_valid": true,
+  "line_no": 162513,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "011864d9f8a7a46bd6422d6fd5ac5f88cb1b129b100e329fadc837bf0a773352",
+  "raw_output": "\n        route_values = {}\n        if project is not None:\n            route_values['project'] = self._serialize.url('project', project, 'str')\n        if type_id is not None:\n            route_values['typeId'] = self._serialize.url('type_id', type_id, 'str')\n        response = self._send(http_method='GET',\n                              location_id='7f295d39-29f5-4d40-9f9e-cfda24250594',\n                              version='5.0',\n                              route_values=route_values)\n        return self._deserialize('PolicyType', response)\n\n    def",
+  "sampling_seed": 3330608691,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

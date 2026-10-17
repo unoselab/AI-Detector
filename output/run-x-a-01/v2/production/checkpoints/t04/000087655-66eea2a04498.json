@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def shutdown_mp(self, clean=True):\n        \"\"\"Shutdown all the multiprocessing.\n\n        :param bool clean: Whether to shutdown things cleanly, or force a quick and dirty shutdown.\n\n        \"\"\"\n        self.logger.debug('Shutting down multiprocessing')\n        if clean:\n            self.logger.debug('Shutting down multiprocessing cleanly')\n            self.mp_manager.shutdown()\n        else:\n            self.logger.debug('Shutting down multiprocessing forcefully')\n            self.mp_manager.shutdown(wait=False)\n",
+  "agc_valid": true,
+  "body_sha256": "752cdf659f128f1060e0d936734e0390dc7e673802f31123ebf25b57834e7dce",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.logger.debug('Shutting down multiprocessing')\n        if clean:\n            self.logger.debug('Shutting down multiprocessing cleanly')\n            self.mp_manager.shutdown()\n        else:\n            self.logger.debug('Shutting down multiprocessing forcefully')\n            self.mp_manager.shutdown(wait=False)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "bf786adb08d14e927782581c6be64846650aa8c30873b8de3f553ed4a686251f",
+  "human_valid": true,
+  "line_no": 87655,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "66eea2a04498ff871a6844f5e061055725c47968759e059be551671411c8cf0b",
+  "raw_output": "\n        self.logger.debug('Shutting down multiprocessing')\n        if clean:\n            self.logger.debug('Shutting down multiprocessing cleanly')\n            self.mp_manager.shutdown()\n        else:\n            self.logger.debug('Shutting down multiprocessing forcefully')\n            self.mp_manager.shutdown(wait=False)\n\n    def",
+  "sampling_seed": 2765871449,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

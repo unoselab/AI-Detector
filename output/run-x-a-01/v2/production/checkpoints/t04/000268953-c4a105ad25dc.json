@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def start_transaction_input_target_target_running_running(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        self.input_target_target_running_running = self.driver.find_element(\n            By.ID, \"input_target_target_running_running\")\n        self.input_target_target_running_running.click()\n        self.input_target_target_running_running.clear()\n        self.input_target_target_running_running.send_keys(\"\")\n",
+  "agc_valid": true,
+  "body_sha256": "2bd5b321739c9a9e05faf69c48b091c0269e3d371967eb4e4aa3c60a94780c65",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.input_target_target_running_running = self.driver.find_element(\n            By.ID, \"input_target_target_running_running\")\n        self.input_target_target_running_running.click()\n        self.input_target_target_running_running.clear()\n        self.input_target_target_running_running.send_keys(\"\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 106,
+  "human_sha256": "102f6f2ff54067ee266fd98426f1a733e42e8272d3934863d61d964259f0109c",
+  "human_valid": true,
+  "line_no": 268953,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c4a105ad25dca754bccdda96158d501cc4c5dcb955997999c22018807b7e8861",
+  "raw_output": "\n        self.input_target_target_running_running = self.driver.find_element(\n            By.ID, \"input_target_target_running_running\")\n        self.input_target_target_running_running.click()\n        self.input_target_target_running_running.clear()\n        self.input_target_target_running_running.send_keys(\"\")\n\n    def",
+  "sampling_seed": 1342160752,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

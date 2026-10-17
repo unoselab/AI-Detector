@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_version_list(path=None, module=None):\n    \"\"\"Return the version information as a tuple.\n\n    This uses get_version and breaks the string up. Would make more sense if\n    the version was a tuple throughout katversion.\n\n    \"\"\"\n    version = get_version(path, module)\n    version_list = version.split('.')\n    return tuple(version_list)\n",
+  "agc_valid": true,
+  "body_sha256": "52e1a2a9e570959362bfcf9b68e72a4059611c3548bbd422cf49fadfa6aa54af",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n    version = get_version(path, module)\n    version_list = version.split('.')\n    return tuple(version_list)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "6e611460d0bbf87f5fe1269ce826410b04219b3bee3720f928d3a596965a43ab",
+  "human_valid": true,
+  "line_no": 234861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7b48a5ad7cb9721459dbb07844a880f89cf36dfe82c3e406abe670d62670f1b2",
+  "raw_output": "\n    version = get_version(path, module)\n    version_list = version.split('.')\n    return tuple(version_list)\n\n\ndef get_version(path=None, module=None):\n    \"\"\"Return the version string.\n\n    This uses the __version__ attribute of the module.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = 'katversion'\n    return get_module_attribute(path, module, '__version__')\n\n\ndef get_module_attribute(path, module, attribute):\n    \"\"\"Return the value of an attribute in a module.\n\n    This is a helper function for get_version.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    module_path = os.path.join(path, module + '.py')\n    with open(module_path, 'r') as f:\n        for line in f:\n            if line.startswith(attribute):\n                return line.split()[-1].strip(\"'\")\n    raise AttributeError('Attribute %s not found in %s' % (attribute, module))\n\n\ndef get_git_revision(path=None, module=None):\n    \"\"\"Return the git revision string.\n\n    This uses the __git_revision__ attribute of the module.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = 'katversion'\n    return get_module_attribute(path, module, '__git_revision__')\n\n\ndef get_git_revision_timestamp(path=None, module=None):\n    \"\"\"Return the git revision timestamp string.\n\n    This uses the __git_revision_timestamp__ attribute of the module.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = 'katversion'\n    return get",
+  "sampling_seed": 2459542521,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def run(self):\n        \"\"\"\n        Main function for prepare and render OpenAPI specification\n        :return:\n        \"\"\"\n        self.spec = self.parse_spec()\n        self.spec = self.parse_security_definitions(self.spec)\n        self.spec = self.parse_security_requirements(self.spec)\n        self.spec = self.parse_parameters(self.spec)\n        self.spec = self.parse_request_bodies(self.spec)\n        self.spec = self.parse_responses(self.spec)\n        self.spec = self.parse_examples(self.spec)\n        self.spec = self.parse_headers(self.spec)\n        self.spec = self.parse_callbacks(self.spec)\n        self.spec = self.parse_links(self.spec)\n        self.spec = self.parse_extensions(self.spec)\n        self.spec = self.parse_servers(self.spec)\n        self.spec = self.parse_external_docs(self.spec)\n\n        if self.config.render_to_file:\n            self.render_to_file()\n        else:\n            return self.spec\n",
+  "agc_valid": true,
+  "body_sha256": "118d18d0c8fddf1c1af187d7521c6d3dd7b861b98da0f885bd0310a9bd39221f",
+  "body_tokens": 173,
+  "bucket": "type08_180",
+  "clean_output": "\n        self.spec = self.parse_spec()\n        self.spec = self.parse_security_definitions(self.spec)\n        self.spec = self.parse_security_requirements(self.spec)\n        self.spec = self.parse_parameters(self.spec)\n        self.spec = self.parse_request_bodies(self.spec)\n        self.spec = self.parse_responses(self.spec)\n        self.spec = self.parse_examples(self.spec)\n        self.spec = self.parse_headers(self.spec)\n        self.spec = self.parse_callbacks(self.spec)\n        self.spec = self.parse_links(self.spec)\n        self.spec = self.parse_extensions(self.spec)\n        self.spec = self.parse_servers(self.spec)\n        self.spec = self.parse_external_docs(self.spec)\n\n        if self.config.render_to_file:\n            self.render_to_file()\n        else:\n            return self.spec\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "65a0691f726f13e8527197488c8b8602d84d71db38653533fe9de3cb76a84693",
+  "human_valid": true,
+  "line_no": 389150,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b859eb0f5970354159067c2d2db36510867de36c1647f5ca752fd65d490a1cef",
+  "raw_output": "\n        self.spec = self.parse_spec()\n        self.spec = self.parse_security_definitions(self.spec)\n        self.spec = self.parse_security_requirements(self.spec)\n        self.spec = self.parse_parameters(self.spec)\n        self.spec = self.parse_request_bodies(self.spec)\n        self.spec = self.parse_responses(self.spec)\n        self.spec = self.parse_examples(self.spec)\n        self.spec = self.parse_headers(self.spec)\n        self.spec = self.parse_callbacks(self.spec)\n        self.spec = self.parse_links(self.spec)\n        self.spec = self.parse_extensions(self.spec)\n        self.spec = self.parse_servers(self.spec)\n        self.spec = self.parse_external_docs(self.spec)\n\n        if self.config.render_to_file:\n            self.render_to_file()\n        else:\n            return self.spec\n\n    def",
+  "sampling_seed": 2475535522,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _clone(self):\n        \"\"\"\n        Return a clone of the current search request. Performs a shallow copy\n        of all the underlying objects. Used internally by most state modifying\n        APIs.\n        \"\"\"\n        clone = self.__class__()\n        clone._clone(self)\n        return clone\n",
+  "agc_valid": true,
+  "body_sha256": "18024bef22846c3810a00a2f6f83ffb57e127a7c5203e2e88910a8b29e624492",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n        clone = self.__class__()\n        clone._clone(self)\n        return clone\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "3acd4989d6376d3b2d4dd5ad890c4637a8835250f381b183ce9d02e02d879aaf",
+  "human_valid": true,
+  "line_no": 111743,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "37e693e27c03e92b687cd2bfd5b08762856e154071e200dd367a437380407db6",
+  "raw_output": "\n        clone = self.__class__()\n        clone._clone(self)\n        return clone\n\n    def",
+  "sampling_seed": 1830546306,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

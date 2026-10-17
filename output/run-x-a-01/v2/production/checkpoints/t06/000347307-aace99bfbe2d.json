@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _OnRspQryPositionDetail(self, pInvestorPositionDetail: CThostFtdcInvestorPositionDetailField, pRspInfo: CThostFtdcRspInfoField, nRequestID: int, bIsLast: bool):\n        \"\"\"持仓明细\"\"\"\n        print(pInvestorPositionDetail)\n",
+  "agc_valid": true,
+  "body_sha256": "7017e4c2f1b438aea63dd74a0547870c7002a697be694069f35a88177320290e",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        print(pInvestorPositionDetail)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "d6f404df76e0c2b31bef8b71ce4ab993858a32153ebe1eaf3923d26ce1967b98",
+  "human_valid": true,
+  "line_no": 347307,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aace99bfbe2d21c2966b88ccc5f627da5b46ad251abbba3bf8ce67a112263654",
+  "raw_output": "\n        print(pInvestorPositionDetail)\n\n    def",
+  "sampling_seed": 1277887860,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

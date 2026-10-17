@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _try_to_get_extension(obj):\n    \"\"\"\n    Try to get file extension from given path or file object.\n\n    :param obj: a file, file-like object or something\n    :return: File extension or None\n\n    >>> _try_to_get_extension(\"a.py\")\n    'py'\n    \"\"\"\n    if hasattr(obj, \"name\"):\n        return os.path.splitext(obj.name)[1][1:]\n    elif isinstance(obj, str):\n        return os.path.splitext(obj)[1][1:]\n    else:\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "7e97aa8978b458107de81ff59eb1cbb8d9b5c002bacc2a5a6fd866188159555a",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if hasattr(obj, \"name\"):\n        return os.path.splitext(obj.name)[1][1:]\n    elif isinstance(obj, str):\n        return os.path.splitext(obj)[1][1:]\n    else:\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "219cff439d124ce4f8c1be59e441cbb26a77e8cae1a02364caecd8803efe8327",
+  "human_valid": true,
+  "line_no": 386553,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e179cf91c5e876428087b0f7a8e56bfe44a1e2702928d6ef9b63ccd4e699ab59",
+  "raw_output": "\n    if hasattr(obj, \"name\"):\n        return os.path.splitext(obj.name)[1][1:]\n    elif isinstance(obj, str):\n        return os.path.splitext(obj)[1][1:]\n    else:\n        return None\n\n\ndef _try_to_get_filename(obj):\n    \"\"\"\n    Try to get file name from given path or file object.\n\n    :param obj: a file, file-like object or something\n    :return: File name or None\n\n    >>> _try_to_get_filename(\"a.py\")\n    'a'\n    \"\"\"\n    if hasattr(obj, \"name\"):\n        return os.path.basename(obj.name)\n    elif isinstance(obj, str):\n        return os.path.basename(obj)\n    else:\n        return None\n\n\ndef _try_to_get_path(obj):\n    \"\"\"\n    Try to get path from given path or file object.\n\n    :param obj: a file, file-like object or something\n    :return: File path or None\n\n    >>> _try_to_get_path(\"a.py\")\n    'a.py'\n    \"\"\"\n    if hasattr(obj, \"name\"):\n        return obj.name\n    elif isinstance(obj, str):\n        return obj\n    else:\n        return None\n\n\ndef _try_to_get_encoding(obj):\n    \"\"\"\n    Try to get encoding from given path or file object.\n\n    :param obj: a file, file-like object or something\n    :return: File encoding or None\n\n    >>> _try_to_get_encoding(\"a.py\")\n    'utf-8'\n    \"\"\"\n    if hasattr(obj, \"encoding\"):\n        return obj.encoding\n    elif isinstance(obj, str):\n        return None\n    else:\n        return None\n\n\ndef _try_to_get_mimetype(obj):\n    \"\"\"\n    Try to get mimetype from given path or file object.\n\n    :param obj: a file, file-like object or something\n    :return: File mimetype or None",
+  "sampling_seed": 3049453450,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

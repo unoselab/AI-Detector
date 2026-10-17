@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_allowed_view(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "ca67fdb06d5bea3445cd6a0af6a380da8e9b62c6fae5fc702cb90b743dbb41ad",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "33c5724546a2228d9df24404488c034f978bb1ece82b3b87e935dcae5185f77a",
+  "human_valid": true,
+  "line_no": 303249,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "44e7ff24d9ee3c378bb7953394eacdcff1b4c301613c6c42639cf0d9cbb1b061",
+  "raw_output": "\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_create(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_edit(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_delete(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_list(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_add_user(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_delete_user(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_change_password(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_list_users(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    if current_app.acl:\n        return perm in current_app.acl\n    return True\n\ndef is_allowed_list_permissions(perm):\n",
+  "sampling_seed": 1560710612,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

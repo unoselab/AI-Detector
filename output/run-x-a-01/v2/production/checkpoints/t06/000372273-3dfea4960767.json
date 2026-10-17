@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def assign_site_properties(self, slab, height=0.9):\n        \"\"\"\n        Assigns site properties.\n        \"\"\"\n        sites = slab.sites\n        for site in sites:\n            site.properties = {'height': height,\n                               'type': 'slab'}\n",
+  "agc_valid": true,
+  "body_sha256": "e26937ef788339c3c3db3ff49a9059367e47a8cbe5c69d4d3ce69a8e54c446ca",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n        sites = slab.sites\n        for site in sites:\n            site.properties = {'height': height,\n                               'type': 'slab'}\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "a3ab83fa4f22f22a2c55e18fb86f259f0189a9805b639a8fd683a80563641f60",
+  "human_valid": true,
+  "line_no": 372273,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3dfea496076797ff2e20fecfc5060bfaa2fc06bfd398df953eb294c6e4ef5482",
+  "raw_output": "\n        sites = slab.sites\n        for site in sites:\n            site.properties = {'height': height,\n                               'type': 'slab'}\n\n    def",
+  "sampling_seed": 3152056373,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_model(app_dot_model):\n    \"\"\"\n    Returns Django model class corresponding to passed-in `app_dot_model`\n    string. This is helpful for preventing circular-import errors in a Django\n    project.\n\n    Positional Arguments:\n    =====================\n    - `app_dot_model`: Django's `<app_name>.<model_name>` syntax. For example,\n                       the default Django User model would be `auth.User`,\n                       where `auth` is the app and `User` is the model.\n    \"\"\"\n    \"\"\"\n    app_name, model_name = app_dot_model.split('.')\n    return getattr(importlib.import_module(app_name), model_name)\n",
+  "agc_valid": false,
+  "body_sha256": "4fa33a7acf20b86fa2a81ede89a8e3fca8341a0b068f5502a85cd63afe09f2ba",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    \"\"\"\n    app_name, model_name = app_dot_model.split('.')\n    return getattr(importlib.import_module(app_name), model_name)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f2f7dc3c23586e34cba701b039fb66046bb9717e8fe63f7de97fc1df8c6ed9d4",
+  "human_valid": true,
+  "line_no": 40924,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fb15b979328fccd53a6de9e9731423fa1ab0ddd8bc928bdc56f923464852a117",
+  "raw_output": "\n    \"\"\"\n    app_name, model_name = app_dot_model.split('.')\n    return getattr(importlib.import_module(app_name), model_name)\n\n\ndef get_user_model():\n    \"\"\"\n    Returns the default Django user model.\n    \"\"\"\n    return get_model(settings.AUTH_USER_MODEL)\n\n\ndef get_user_model_field_name():\n    \"\"\"\n    Returns the name of the field in the default Django user model that is\n    used to identify the user.\n    \"\"\"\n    return get_user_model().USERNAME_FIELD\n\n\ndef get_user_model_field_value(user):\n    \"\"\"\n    Returns the value of the field in the default Django user model that is\n    used to identify the user.\n    \"\"\"\n    return getattr(user, get_user_model_field_name())\n\n\ndef get_user_model_field_label():\n    \"\"\"\n    Returns the label of the field in the default Django user model that is\n    used to identify the user.\n    \"\"\"\n    return get_user_model()._meta.get_field(get_user_model_field_name()).verbose_name\n\n\ndef get_user_model_field_help_text():\n    \"\"\"\n    Returns the help text of the field in the default Django user model that is\n    used to identify the user.\n    \"\"\"\n    return get_user_model()._meta.get_field(get_user_model_field_name()).help_text\n\n\ndef get_user_model_username_field_name():\n    \"\"\"\n    Returns the name of the field in the default Django user model that is\n    used to identify the user.\n    \"\"\"\n    return get_user_model().USERNAME_FIELD\n\n\ndef get_user_model_username_field_value(user):\n    \"\"\"\n    Returns the value of the field in the default Django user model that is\n    used to identify the user.\n    \"\"\"\n    return getattr(user, get_user_model_username_field_name())\n\n\ndef get_user_model_username_field_label():\n    \"\"\"\n    Returns the label of the field",
+  "sampling_seed": 575836061,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_hazard_curves(self, root, metadata, data):\n        \"\"\"\n        Add hazard curves stored into `data` as child of the `root`\n        element with `metadata`. See the documentation of the method\n        `serialize` and the constructor for a description of `data`\n        and `metadata`, respectively.\n        \"\"\"\n        # Create the root element\n        root.append(etree.Element('hazard_curves'))\n        root = root[0]\n\n        # Add the metadata\n        self.add_metadata(root, metadata)\n\n        # Add the data\n        for curve in data:\n            self.add_hazard_curve(root, curve)\n",
+  "agc_valid": true,
+  "body_sha256": "6c0059ac4e10312670df8c577377bf040dfe8f13f970629aa251dbde16a17b1e",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Create the root element\n        root.append(etree.Element('hazard_curves'))\n        root = root[0]\n\n        # Add the metadata\n        self.add_metadata(root, metadata)\n\n        # Add the data\n        for curve in data:\n            self.add_hazard_curve(root, curve)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "6c005c7a6cd207c2004663c752ca1d7cbad870f17cc9c24c40b6e5860d8b043e",
+  "human_valid": true,
+  "line_no": 270430,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ae09856d6329e38f5d7556fcebef84c3eda48d4c314355c4fdf9323532bab21c",
+  "raw_output": "\n        # Create the root element\n        root.append(etree.Element('hazard_curves'))\n        root = root[0]\n\n        # Add the metadata\n        self.add_metadata(root, metadata)\n\n        # Add the data\n        for curve in data:\n            self.add_hazard_curve(root, curve)\n\n    def",
+  "sampling_seed": 1575002988,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def validate_customized_file(experiment_config, spec_key):\n    \"\"\"\n    check whether the file of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    customized_file = experiment_config[spec_key]\n    if customized_file is None:\n        return\n    if customized_file.get('builtin', None) is None:\n        if customized_file.get('class_name', None) is None:\n            raise ValueError('Please specify the class_name of %s' % spec_key)\n        if customized_file.get('code_directory', None) is None:\n            raise ValueError('Please specify the code_directory of %s' % spec_key)\n        if not os.path.isfile(customized_file['code_directory']):\n            raise ValueError('The code_directory of %s is not exist' % spec_key)\n",
+  "agc_valid": true,
+  "body_sha256": "113e85c08299ee19a09f458bc4966fb09edd119793045a5823a39afaf34a472e",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n    customized_file = experiment_config[spec_key]\n    if customized_file is None:\n        return\n    if customized_file.get('builtin', None) is None:\n        if customized_file.get('class_name', None) is None:\n            raise ValueError('Please specify the class_name of %s' % spec_key)\n        if customized_file.get('code_directory', None) is None:\n            raise ValueError('Please specify the code_directory of %s' % spec_key)\n        if not os.path.isfile(customized_file['code_directory']):\n            raise ValueError('The code_directory of %s is not exist' % spec_key)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "f45b2163d8633e58e1a1cf6cf93e865c92cb12a1c34bb98913fe5aefe44905a3",
+  "human_valid": true,
+  "line_no": 103061,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bafbce86699dd1774a644778915602916e83ad9dae67980a9458697910187444",
+  "raw_output": "\n    customized_file = experiment_config[spec_key]\n    if customized_file is None:\n        return\n    if customized_file.get('builtin', None) is None:\n        if customized_file.get('class_name', None) is None:\n            raise ValueError('Please specify the class_name of %s' % spec_key)\n        if customized_file.get('code_directory', None) is None:\n            raise ValueError('Please specify the code_directory of %s' % spec_key)\n        if not os.path.isfile(customized_file['code_directory']):\n            raise ValueError('The code_directory of %s is not exist' % spec_key)\n\n\ndef validate_customized_module(experiment_config, spec_key):\n    \"\"\"\n    check whether the file of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    customized_module = experiment_config[spec_key]\n    if customized_module is None:\n        return\n    if customized_module.get('builtin', None) is None:\n        if customized_module.get('class_name', None) is None:\n            raise ValueError('Please specify the class_name of %s' % spec_key)\n        if customized_module.get('module', None) is None:\n            raise ValueError('Please specify the module of %s' % spec_key)\n        if not os.path.isfile(customized_module['module']):\n            raise ValueError('The module of %s is not exist' % spec_key)\n\n\ndef validate_customized_class(experiment_config, spec_key):\n    \"\"\"\n    check whether the file of customized tuner/assessor/advisor exists\n    spec_key: 'tuner', 'assessor', 'advisor'\n    \"\"\"\n    customized_class = experiment_config[spec_key]\n    if customized_class is None:\n        return\n    if customized_class.get('builtin', None) is None:\n        if customized_class.get('",
+  "sampling_seed": 2210257780,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

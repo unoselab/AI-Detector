@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_categories(element):\n    \"\"\"\n    Returns a list with categories with relations.\n    \"\"\"\n    result = []\n    for cat in element.findall('category'):\n        if cat.get('name'):\n            result.append(cat.get('name'))\n        else:\n            result.append(cat.text)\n    return result\n",
+  "agc_valid": true,
+  "body_sha256": "99cc40e93d19073f1f3543b487fedf9c3934d75130c8165b37a4f1962b54af51",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n    result = []\n    for cat in element.findall('category'):\n        if cat.get('name'):\n            result.append(cat.get('name'))\n        else:\n            result.append(cat.text)\n    return result\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "48a85de64473cc112e20fddbdfa4391e5aafaa0febaec9833126bbf920106396",
+  "human_valid": true,
+  "line_no": 35361,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cd47f289ada3bdbcf098c8c12660a3a7bec081efbd75c86d1ff446f8d181d243",
+  "raw_output": "\n    result = []\n    for cat in element.findall('category'):\n        if cat.get('name'):\n            result.append(cat.get('name'))\n        else:\n            result.append(cat.text)\n    return result\n\n\ndef _parse_keywords(element):\n    \"\"\"\n    Returns a list with keywords with relations.\n    \"\"\"\n    result = []\n    for cat in element.findall('keywords'):\n        if cat.get('name'):\n            result.append(cat.get('name'))\n        else:\n            result.append(cat.text)\n    return result\n\n\ndef _parse_contact(element):\n    \"\"\"\n    Returns a list with contact information.\n    \"\"\"\n    result = []\n    for contact in element.findall('contact'):\n        result.append({\n            'type': contact.get('type'),\n            'value': contact.text,\n        })\n    return result\n\n\ndef _parse_description(element):\n    \"\"\"\n    Returns a list with descriptions.\n    \"\"\"\n    result = []\n    for desc in element.findall('description'):\n        result.append({\n            'lang': desc.get('lang'),\n            'value': desc.text,\n        })\n    return result\n\n\ndef _parse_geo(element):\n    \"\"\"\n    Returns a list with geo information.\n    \"\"\"\n    result = []\n    for geo in element.findall('geo'):\n        result.append({\n            'name': geo.get('name'),\n            'value': geo.text,\n        })\n    return result\n\n\ndef _parse_date(element):\n    \"\"\"\n    Returns a list with dates.\n    \"\"\"\n    result = []\n    for date in element.findall('date'):\n        result.append({\n            'type': date.get('type'),\n            'value': date.text,\n        })\n    return result\n\n\ndef _parse_media(element):\n    \"\"\"\n    Returns a list with media information.\n    \"\"\"\n    result = []\n    for media in element.findall('media'):\n        result.append({\n            'type': media.get('type'),\n            'url",
+  "sampling_seed": 1452124524,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_polygon(self, radius):\n        \"\"\"\n        Create a circular polygon with specified radius centered in the point.\n\n        :param radius:\n            Required radius of a new polygon, in km.\n        :returns:\n            Instance of :class:`~openquake.hazardlib.geo.polygon.Polygon` that\n            approximates a circle around the point with specified radius.\n        \"\"\"\n        return Polygon.create_circle(self, radius)\n",
+  "agc_valid": true,
+  "body_sha256": "a09eea59d1c2ba984c49ef923e8d40a95f819da066c2778962268922f2c6bf32",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return Polygon.create_circle(self, radius)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "3f7b5a5dd060bab676fb0fe1e3fa4b08fd2025db05e8450ecc8f5cadf5c2e12c",
+  "human_valid": true,
+  "line_no": 270295,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cd78e6660399f141dc496042b1a30d1578072737fb91029660a5018c51480453",
+  "raw_output": "\n        return Polygon.create_circle(self, radius)\n\n    def",
+  "sampling_seed": 3728650189,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

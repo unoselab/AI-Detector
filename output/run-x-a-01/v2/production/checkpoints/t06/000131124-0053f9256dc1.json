@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def _connect(self, hostname, port, reconnect=False, password=None, encoding=pydle.protocol.DEFAULT_ENCODING, channels=[], tls=False, tls_verify=False, source_address=None):\n        \"\"\" Connect to IRC server, optionally over TLS. \"\"\"\n        self.hostname = hostname\n        self.port = port\n        self.password = password\n        self.encoding = encoding\n        self.channels = channels\n        self.tls = tls\n        self.tls_verify = tls_verify\n        self.source_address = source_address\n\n        if self.tls:\n            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,\n",
+  "agc_valid": false,
+  "body_sha256": "d670de3dbe462d488a10dabcd650f8365335b45701a13fe7d09a63a83a119bda",
+  "body_tokens": 118,
+  "bucket": "type02_120",
+  "clean_output": "\n        self.hostname = hostname\n        self.port = port\n        self.password = password\n        self.encoding = encoding\n        self.channels = channels\n        self.tls = tls\n        self.tls_verify = tls_verify\n        self.source_address = source_address\n\n        if self.tls:\n            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "6b0a7a12ea4af71e27d04613d8ffcc8016b5134161bb3a58cbe1b5bd87b67c80",
+  "human_valid": true,
+  "line_no": 131124,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0053f9256dc101bdde874dcce34e42152f83654e38cd08a4f80fc3d69f6ffca3",
+  "raw_output": "\n        self.hostname = hostname\n        self.port = port\n        self.password = password\n        self.encoding = encoding\n        self.channels = channels\n        self.tls = tls\n        self.tls_verify = tls_verify\n        self.source_address = source_address\n\n        if self.tls:\n            self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, ",
+  "sampling_seed": 1985015102,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

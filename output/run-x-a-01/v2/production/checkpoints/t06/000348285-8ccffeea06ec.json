@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_client_auth(request):\n    \"\"\"\n    Get client credentials using HTTP Basic Authentication method.\n    Or try getting parameters via POST.\n    See: http://tools.ietf.org/html/rfc6750#section-2.1\n\n    Return a tuple `(client_id, client_secret)`.\n    \"\"\"\n    client_id = None\n    client_secret = None\n\n    # Try HTTP Basic authentication\n    if 'HTTP_AUTHORIZATION' in request.META:\n        authmeth, auth = request.META['HTTP_AUTHORIZATION'].split(' ',\n",
+  "agc_valid": false,
+  "body_sha256": "6cb7c82a7aa0e4ea341b06109459a0ee4762ed293b07d1430520be0ac2de2679",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n    client_id = None\n    client_secret = None\n\n    # Try HTTP Basic authentication\n    if 'HTTP_AUTHORIZATION' in request.META:\n        authmeth, auth = request.META['HTTP_AUTHORIZATION'].split(' ',\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "a7b770e38bb7e0ed37f41ac708a2aafeddd8f67f02fa3200f3fb12d7695d40d9",
+  "human_valid": true,
+  "line_no": 348285,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ccffeea06ecc09ec3eab1272e289317c9af80d8037562dc444e89f1eb2c1c84",
+  "raw_output": "\n    client_id = None\n    client_secret = None\n\n    # Try HTTP Basic authentication\n    if 'HTTP_AUTHORIZATION' in request.META:\n        authmeth, auth = request.META['HTTP_AUTHORIZATION'].split(' ', ",
+  "sampling_seed": 2119452838,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

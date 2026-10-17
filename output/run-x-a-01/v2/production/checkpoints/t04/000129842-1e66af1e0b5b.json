@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def maketabdesc(descs=[]):\n    \"\"\"Create a table description.\n\n    Creates a table description from a set of column descriptions. The\n    resulting table description can be used in the :class:`table` constructor.\n\n    For example::\n\n      scd1 = makescacoldesc(\"col2\", \"aa\")\n      scd2 = makescacoldesc(\"col1\", 1, \"IncrementalStMan\")\n      scd3 = makescacoldesc(\"colrec1\", {})\n      acd1 = makearrcoldesc(\"arr1\", 1, 0, [2,3,4])\n      acd2 = makearrcoldesc(\"arr2\", 0.+0j)\n      td = maketabdesc([scd1, scd2, scd3, acd1, acd2])\n      t = table(\"mytable\", td, nrow=100)\n\n    | This creates a table description `td` from five column descriptions\n      and then creates a 100-row table called `mytable` from the table\n      description.\n    | The columns contain respectivily strings, integer scalars, records,\n      3D integer arrays with fixed shape [2,3,4], and complex arrays with\n      variable shape.\n\n    \"\"\"\n    makeacoldesc(\"col1\",\n",
+  "agc_valid": false,
+  "body_sha256": "79606433a4c94f149bab5024d41d83a9fcb5f0ef6c73b6fcfd570c939e144e29",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    makeacoldesc(\"col1\",\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "510a37b34025a7fe40760fd401c827d5b896576b047e589571df50dce0175b67",
+  "human_valid": true,
+  "line_no": 129842,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1e66af1e0b5b09cb4ce5d6983b47edbe800c63f1ea0a2a632bae04a1718fd615",
+  "raw_output": "makeacoldesc(\"col1\", ",
+  "sampling_seed": 856608586,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def visit_classdef(self, node):\n        \"\"\"Class visitor.\"\"\"\n        self.visit(node.body)\n",
+  "agc_valid": true,
+  "body_sha256": "a6a29f1a578006ea95d033a4e475c0eda65cd6912fabf58611be7a8cf53d6d5f",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.visit(node.body)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "2f832077810fd55630a344e7234a47c916960721f1f588e8e831b48fb4a27fa7",
+  "human_valid": true,
+  "line_no": 283793,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "69c55110be88e7699a568076d3eec964f593cb408dae4adebbe0a9728dd4a0d8",
+  "raw_output": "\n        self.visit(node.body)\n\n    def",
+  "sampling_seed": 2789599079,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

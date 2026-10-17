@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _markup(self, entry):\n        \"\"\"\n        Recursively generates HTML for the current entry.\n\n        Parameters\n        ----------\n        entry : object\n            Object to convert to HTML. Maybe be a single entity or contain multiple and/or nested objects.\n\n        Returns\n        -------\n        str\n            String of HTML formatted json.\n        \"\"\"\n        if isinstance(entry, dict):\n            return self._markup_dict(entry)\n        elif isinstance(entry, list):\n            return self._markup_list(entry)\n        elif isinstance(entry, str):\n            return self._markup_str(entry)\n        elif isinstance(entry, int):\n            return self._markup_int(entry)\n        elif isinstance(entry, float):\n            return self._markup_float(entry)\n        elif isinstance(entry, bool):\n            return self._markup_bool(entry)\n        elif entry is None:\n            return self._markup_none()\n        else:\n            raise TypeError(\"Unknown type: {}\".format(type(entry)))\n",
+  "agc_valid": true,
+  "body_sha256": "c82268801866cd0ceea0b7078c53c43b65dd66a54fe827eb76b0b74cf0ce2728",
+  "body_tokens": 186,
+  "bucket": "type09_190",
+  "clean_output": "\n        if isinstance(entry, dict):\n            return self._markup_dict(entry)\n        elif isinstance(entry, list):\n            return self._markup_list(entry)\n        elif isinstance(entry, str):\n            return self._markup_str(entry)\n        elif isinstance(entry, int):\n            return self._markup_int(entry)\n        elif isinstance(entry, float):\n            return self._markup_float(entry)\n        elif isinstance(entry, bool):\n            return self._markup_bool(entry)\n        elif entry is None:\n            return self._markup_none()\n        else:\n            raise TypeError(\"Unknown type: {}\".format(type(entry)))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "57a5833e653b94751390483e46bd6e00a5f9bfacc7da8eb59508ac10f26a50b4",
+  "human_valid": true,
+  "line_no": 14378,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bd5256f7c581d1ed9ea82c713906117e1d6ce57a1ec46739c6ff16428663fdea",
+  "raw_output": "\n        if isinstance(entry, dict):\n            return self._markup_dict(entry)\n        elif isinstance(entry, list):\n            return self._markup_list(entry)\n        elif isinstance(entry, str):\n            return self._markup_str(entry)\n        elif isinstance(entry, int):\n            return self._markup_int(entry)\n        elif isinstance(entry, float):\n            return self._markup_float(entry)\n        elif isinstance(entry, bool):\n            return self._markup_bool(entry)\n        elif entry is None:\n            return self._markup_none()\n        else:\n            raise TypeError(\"Unknown type: {}\".format(type(entry)))\n\n    def",
+  "sampling_seed": 935579638,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

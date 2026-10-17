@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _handle_enum(self, node, scope, ctxt, stream):\n        \"\"\"Handle enum nodes\n\n        :node: TODO\n        :scope: TODO\n        :ctxt: TODO\n        :stream: TODO\n        :returns: TODO\n\n        \"\"\"\n        if node.get('name') in scope:\n            self._error(node, 'enum redefined')\n        scope[node.get('name')] = node\n        self._write('typedef enum {')\n        self._write_indent()\n        for enum in node.get('enums'):\n            self._write('%s,' % enum.get('name'))\n        self._write_dedent()\n        self._write('} %s;' % node.get('name'))\n        self._write_newline()\n",
+  "agc_valid": true,
+  "body_sha256": "e8ecdccd958090fe27d1d92b3a48d1264183dfd5d54eeb4f59767435977acf32",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n        if node.get('name') in scope:\n            self._error(node, 'enum redefined')\n        scope[node.get('name')] = node\n        self._write('typedef enum {')\n        self._write_indent()\n        for enum in node.get('enums'):\n            self._write('%s,' % enum.get('name'))\n        self._write_dedent()\n        self._write('} %s;' % node.get('name'))\n        self._write_newline()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "e7cd4cca2c76c74bab1e532f729fb5a0c67f79edc2bb9ba979543a8788b531ae",
+  "human_valid": true,
+  "line_no": 11694,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "dcc2e6a8dd8152bf3e5b15050d736bd272ceddb6fdcc17b9256854fec53f2c73",
+  "raw_output": "\n        if node.get('name') in scope:\n            self._error(node, 'enum redefined')\n        scope[node.get('name')] = node\n        self._write('typedef enum {')\n        self._write_indent()\n        for enum in node.get('enums'):\n            self._write('%s,' % enum.get('name'))\n        self._write_dedent()\n        self._write('} %s;' % node.get('name'))\n        self._write_newline()\n\n    def",
+  "sampling_seed": 2951016327,
+  "tag": "t04",
+  "temperature": 0.4
+}

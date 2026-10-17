@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def token_load(self, line_number, tokens):\n        self.line_number = line_number\n        assert tokens[-1] == 0x00, \"line code %s doesn't ends with \\\\x00: %s\" % (\n            repr(tokens), repr(tokens[-1])\n        )\n\n        \"\"\"\n        NOTE: The BASIC interpreter changed REM shortcut and ELSE\n        internaly:\n           \"'\" <-> \":'\"\n        \"ELSE\" <-> \":ELSE\"\n\n        See also:\n        http://archive.worldofdragon.org/phpBB3/viewtopic.php?f=8&t=4310&p=11632#p11630\n        \"\"\"\n        https://www.qb64.net/wiki/ELSE_statement\n        https://www.qb64.net/wiki/REM_statement\n        \"\"\"\n        if tokens[0] ==\n",
+  "agc_valid": false,
+  "body_sha256": "648807d7f0553ffae0df3ac153dbae35813fb6b8da958bfeb3544f3322028685",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        https://www.qb64.net/wiki/ELSE_statement\n        https://www.qb64.net/wiki/REM_statement\n        \"\"\"\n        if tokens[0] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "0ad2dffb813ade65490b5712a70c81aa2a70332dea3ae70fc7a98076b4e1cc47",
+  "human_valid": true,
+  "line_no": 302138,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "28827513c946daf2ffcaaf4c54beecfcb6b5fecb4e9c610d3bb393db4aef60e7",
+  "raw_output": "\n        https://www.qb64.net/wiki/ELSE_statement\n        https://www.qb64.net/wiki/REM_statement\n        \"\"\"\n        if tokens[0] == ",
+  "sampling_seed": 3397727991,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

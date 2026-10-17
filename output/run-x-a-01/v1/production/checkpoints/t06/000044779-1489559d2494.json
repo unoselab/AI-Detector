@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def serialize_search(self, pid_fetcher, search_result,\n                         item_links_factory=None, **kwargs):\n        \"\"\"Serialize a search result.\n\n        :param pid_fetcher: Persistent identifier fetcher.\n        :param search_result: Elasticsearch search result.\n        :param item_links_factory: Factory function for the items in result.\n            (Default: ``None``)\n        :returns: The objects serialized.\n        \"\"\"\n            records = []\n            for res in search_result.to_dict().get('hits', {}).get('hits', []):\n                record = res.get('_source', {})\n                record['links'] = item_links_factory(record)\n                records.append(record)\n            return records\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "50c96223094daf014c1ee65a5349b8d324ffcf4dddc89711301a26bca388a955",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n            records = []\n            for res in search_result.to_dict().get('hits', {}).get('hits', []):\n                record = res.get('_source', {})\n                record['links'] = item_links_factory(record)\n                records.append(record)\n            return records\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b9d2581013b9dd6a352c8abc982cb913d3fce229ea8e9a46b04a49a77d0b9b04",
+  "human_valid": true,
+  "line_no": 44779,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1489559d249401898b9045cd161ddd1a1fc91d78cf714987355fa619214f38a8",
+  "raw_output": "\n        records = []\n        for res in search_result.to_dict().get('hits', {}).get('hits', []):\n            record = res.get('_source', {})\n            record['links'] = item_links_factory(record)\n            records.append(record)\n        return records\n\n    @classmethod\n    def",
+  "sampling_seed": 4268731349,
+  "tag": "t06",
+  "temperature": 0.6
+}

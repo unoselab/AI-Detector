@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _write_packed_data(self, data_out, table):\n        \"\"\"This is kind of legacy function - this functionality may be useful for some people, so even though\n        now the default of writing CSV is writing unpacked data (divided by independent variable) this method is\n        still available and accessible if ```pack``` flag is specified in Writer's options\n\n        :param output: output file like object to which data will be written\n        :param table: input table\n        :type table: hepdata_converter.parsers.Table\n        \"\"\"\n        if self.options.pack:\n            self._write_packed_data_packed(data_out, table)\n        else:\n            self._write_packed_data_unpacked(data_out, table)\n",
+  "agc_valid": true,
+  "body_sha256": "640f0284552181a02688e7712015b23bea65da8d5bb28ef010ef5b92391ee3fb",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.options.pack:\n            self._write_packed_data_packed(data_out, table)\n        else:\n            self._write_packed_data_unpacked(data_out, table)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d30eb3248b1ac6daaea8a974f868d587e2055ccf751086e6dcde785191bd4777",
+  "human_valid": true,
+  "line_no": 29202,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f67d84c6020aa8a384ee4cfa5b8e756e38a5f1dccf6058f0d9b2259e4c0dc9c2",
+  "raw_output": "\n        if self.options.pack:\n            self._write_packed_data_packed(data_out, table)\n        else:\n            self._write_packed_data_unpacked(data_out, table)\n\n    def",
+  "sampling_seed": 1929649121,
+  "tag": "t02",
+  "temperature": 0.2
+}

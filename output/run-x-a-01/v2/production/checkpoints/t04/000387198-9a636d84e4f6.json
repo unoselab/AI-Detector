@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def slerp(q1, q2, u):\n    \"\"\"SLERP: Spherical linear interpolation between two unit quaternions.\n\n    Parameters\n    ------------\n    q1 : (4, ) ndarray\n            Unit quaternion (first element scalar)\n    q2 : (4, ) ndarray\n            Unit quaternion (first element scalar)\n    u : float\n            Interpolation factor in range [0,1] where 0 is first quaternion \n            and 1 is second quaternion.\n\n    Returns\n    -----------\n    q : (4,) ndarray\n            The interpolated unit quaternion\n    \"\"\"\n    Returns\n    ---------\n    q : (4, )\n",
+  "agc_valid": false,
+  "body_sha256": "6e6368f56404b4e7f0ce3d95b0bfd1db18f2061ebc94c7a061d228d183aac613",
+  "body_tokens": 16,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Returns\n    ---------\n    q : (4, )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "3b24723d79227f312215eb07d4d2fcefa309e7e3ab8787056137e28c14e5edce",
+  "human_valid": true,
+  "line_no": 387198,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9a636d84e4f6342330595b779f27d7ca832fe0564241e2630afb7a40430b8b9a",
+  "raw_output": "\n    \n    Returns\n    ---------\n    q : (4, ) ",
+  "sampling_seed": 1268404516,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

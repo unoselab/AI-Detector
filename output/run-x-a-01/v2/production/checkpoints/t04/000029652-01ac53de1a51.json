@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_arguments(self, **kwargs):\n        \"\"\"\n        Determine if the parameters meet the specifications\n        kwargs contains lists grouped by their parameter\n        rules are defined by methods starting with 'rule_'\n        :param kwargs:\n        :return:\n        \"\"\"\n        for key, value in kwargs.items():\n            if not hasattr(self, 'rule_' + key):\n                raise ValueError('Rule {} not defined'.format(key))\n            method = getattr(self, 'rule_' + key)\n            method(value)\n",
+  "agc_valid": true,
+  "body_sha256": "5eb4c834233f81555e60c9b2261f86c8a730e439ea8e09ef74f8b99dd4f9eda1",
+  "body_tokens": 79,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for key, value in kwargs.items():\n            if not hasattr(self, 'rule_' + key):\n                raise ValueError('Rule {} not defined'.format(key))\n            method = getattr(self, 'rule_' + key)\n            method(value)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "8f9d989f01e25a84607b81a1e1b928331eeb362f341ffbe3c796f53b66deb11d",
+  "human_valid": true,
+  "line_no": 29652,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "01ac53de1a51b7545fcadc0ef4d7017a1149b53b17de8d61b4e50fe98d1a31ef",
+  "raw_output": "\n        for key, value in kwargs.items():\n            if not hasattr(self, 'rule_' + key):\n                raise ValueError('Rule {} not defined'.format(key))\n            method = getattr(self, 'rule_' + key)\n            method(value)\n\n    def",
+  "sampling_seed": 44560057,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

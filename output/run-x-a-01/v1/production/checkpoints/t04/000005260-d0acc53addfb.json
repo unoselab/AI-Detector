@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def commit_branches(sha1):\n    # type: (str) -> List[str]\n    \"\"\" Get the name of the branches that this commit belongs to. \"\"\"\n    cmd = [\"git\", \"branch\", \"--contains\", sha1]\n    result = subprocess.check_output(cmd)\n    return [x.strip() for x in result.splitlines()]\n",
+  "agc_valid": true,
+  "body_sha256": "accfde2e68bd7975cd75277564ec706ff77716cc6c028d0a2d22ecbafd775785",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n    cmd = [\"git\", \"branch\", \"--contains\", sha1]\n    result = subprocess.check_output(cmd)\n    return [x.strip() for x in result.splitlines()]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cb083b556dfcf2cea5b05dfdc5e04ce097ffc8632f9712c97f68cbff81716389",
+  "human_valid": true,
+  "line_no": 5260,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "d0acc53addfb191883581ce8abf30aa3fc5894a96af0a894fe1731101e669917",
+  "raw_output": "\n    cmd = [\"git\", \"branch\", \"--contains\", sha1]\n    result = subprocess.check_output(cmd)\n    return [x.strip() for x in result.splitlines()]\n\n\ndef commit_tags(sha1):\n    # type: (str) -> List[str]\n    \"\"\" Get the name of the tags that this commit belongs to. \"\"\"\n    cmd = [\"git\", \"tag\", \"--contains\", sha1]\n    result = subprocess.check_output(cmd)\n    return [x.strip() for x in result.splitlines()]\n\n\ndef commit_message(sha1):\n    # type: (str) -> str\n    \"\"\" Get the message of the commit with the given sha1. \"\"\"\n    cmd = [\"git\", \"log\", \"--format=%B\", \"-n\", \"1\", sha1]\n    result = subprocess.check_output(cmd)\n    return result.strip()\n\n\ndef commit_date(sha1):\n    # type: (str) -> str\n    \"\"\" Get the date of the commit with the given sha1. \"\"\"\n    cmd = [\"git\", \"log\", \"--format=%aD\", \"-n\", \"1\", sha1]\n    result = subprocess.check_output(cmd)\n    return result.strip()\n\n\ndef commit_author(sha1):\n    # type: (str) -> str\n    \"\"\" Get the author of the commit with the given sha1. \"\"\"\n    cmd = [\"git\", \"log\", \"--format=%an\", \"-n\", \"1\", sha1]\n    result = subprocess.check_output(cmd)\n    return result.strip()\n\n\ndef commit_email(sha1):\n    # type: (str) -> str\n    \"\"\" Get the email of the author of the commit with the given sha1. \"\"\"\n    cmd = [\"git\", \"log\", \"--format=%ae\", \"-n\", \"1\", sha1]\n    result = subprocess.check_output(cmd)\n    return result.strip()\n\n\ndef commit_author_date(sha1):\n    # type: (str) -> str\n    \"\"\" Get the author date of the commit with the given",
+  "sampling_seed": 150584695,
+  "tag": "t04",
+  "temperature": 0.4
+}

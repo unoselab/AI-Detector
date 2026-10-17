@@ -1,0 +1,29 @@
+{
+  "checked": 2000,
+  "human_invalid_line_numbers": [],
+  "human_valid_python312": 2000,
+  "phase": "plan",
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "python_ast_binary": "/home/user1-system11/miniconda3/envs/agcparse312/bin/python",
+  "python_ast_version": "3.12.13",
+  "python_ast_version_info": [
+    3,
+    12,
+    13
+  ],
+  "rule": "one outer function/class/async-function with a substantive body",
+  "source_experiment": "run-x-a-01-v2",
+  "source_strata": {
+    "type01_110": 200,
+    "type02_120": 200,
+    "type03_130": 200,
+    "type04_140": 200,
+    "type05_150": 200,
+    "type06_160": 200,
+    "type07_170": 200,
+    "type08_180": 200,
+    "type09_190": 200,
+    "type10_200": 200
+  },
+  "status": "PASS"
+}

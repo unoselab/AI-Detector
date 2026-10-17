@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_single_weather(df, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n    # Create the weather object\n    weather = Weather.from_epwfile(\n        df,\n        country=rename_dc['country'],\n        city=rename_dc['city'],\n        latitude=rename_dc['latitude'],\n        longitude=rename_dc['longitude'],\n    )\n\n    return weather\n",
+  "agc_valid": true,
+  "body_sha256": "9e49e49df629ee58743b09b7d4a999c81c6cc0d23fff1a7be85b69f19fcb866c",
+  "body_tokens": 64,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Create the weather object\n    weather = Weather.from_epwfile(\n        df,\n        country=rename_dc['country'],\n        city=rename_dc['city'],\n        latitude=rename_dc['latitude'],\n        longitude=rename_dc['longitude'],\n    )\n\n    return weather\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "e8a0b4b221896ce76ae9e3ee70bed2386a9d36b8df5aa150b6bb74363aa8e7cd",
+  "human_valid": true,
+  "line_no": 86048,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "579a868301632399b84f580067ac65a9c5c2a7a73a3cc20af9c99f58a448ab2a",
+  "raw_output": "\n    # Create the weather object\n    weather = Weather.from_epwfile(\n        df,\n        country=rename_dc['country'],\n        city=rename_dc['city'],\n        latitude=rename_dc['latitude'],\n        longitude=rename_dc['longitude'],\n    )\n\n    return weather\n\n\ndef create_weather_from_weather_data(weather_data, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n    # Create the weather object\n    weather = Weather.from_dataframe(\n        weather_data,\n        country=rename_dc['country'],\n        city=rename_dc['city'],\n        latitude=rename_dc['latitude'],\n        longitude=rename_dc['longitude'],\n    )\n\n    return weather\n\n\ndef create_weather_from_weather_file(weather_file, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n    # Create the weather object\n    weather = Weather.from_epwfile(\n        weather_file,\n        country=rename_dc['country'],\n        city=rename_dc['city'],\n        latitude=rename_dc['latitude'],\n        longitude=rename_dc['longitude'],\n    )\n\n    return weather\n\n\ndef create_weather_from_weather_file_with_year(weather_file, year, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n    # Create the weather object\n    weather = Weather.from_epwfile(\n        weather_file,\n        year=year,\n        country=rename_dc['country'],\n        city=rename_dc['city'],\n        latitude=rename_dc['latitude'],\n        longitude=rename_dc['longitude'],\n    )\n\n    return weather\n\n\ndef create_weather_from_weather_file_with_month(weather_file, month, rename_dc):\n    \"\"\"Create an oemof weather object for the given geometry\"\"\"\n    # Create the weather object\n    weather = Weather",
+  "sampling_seed": 2532655437,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

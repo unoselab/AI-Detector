@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read_collection(self, filename):\n        \"\"\"\n        Reads and returns a collection of stop words into a file.\n        \"\"\"\n        return read_file(filename)\n",
+  "agc_valid": true,
+  "body_sha256": "b70cee30c8cc3e27107896b3e4877630d72ccebebe6e05bf86f5d50daee5d0e7",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return read_file(filename)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2662092859b9ed71736f70aca22b16534d78fcad45b2226d88c886da81a68321",
+  "human_valid": true,
+  "line_no": 45477,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "927ee608e5c35cda872c6425384fd673d3647962831753c45c1941fcab6900f6",
+  "raw_output": "\n        return read_file(filename)\n\n    def",
+  "sampling_seed": 3852454137,
+  "tag": "t06",
+  "temperature": 0.6
+}

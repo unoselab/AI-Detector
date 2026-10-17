@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def iexpand(string, keep_escapes=False):\n    \"\"\"Expand braces and return an iterator.\"\"\"\n    return expand(string, keep_escapes)\n",
+  "agc_valid": true,
+  "body_sha256": "51e9ed94b7ca410d7f7cd7de53663df35436e4f7eeb6216a7a134df461fcfabd",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return expand(string, keep_escapes)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "71da67acbc341de5c2d4371b9ecc4208d0da78fdc146f942bbf0f8a312d17c97",
+  "human_valid": true,
+  "line_no": 1838,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "11c1b43cec46ac05f1f6cab5e4f3ca7264b11e4f409f63b9def7154eef3d9508",
+  "raw_output": "\n    return expand(string, keep_escapes)\n\n\ndef expand(string, keep_escapes=False):\n    \"\"\"Expand braces and return an iterator.\"\"\"\n    # The implementation is a bit tricky. ",
+  "sampling_seed": 1526522858,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def upload_verify(self, file_location, dataset=None):\n        \"\"\"This method is verifiing posted file on server\"\"\"\n        # Check if file exists\n        if not os.path.exists(file_location):\n            raise Exception('File does not exist.')\n        # Check if file is empty\n        if os.path.getsize(file_location) ==\n",
+  "agc_valid": false,
+  "body_sha256": "6a04753e900f6cd03246cb3d070407d15e39f97819f3e854f1bd352a5a40d92e",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Check if file exists\n        if not os.path.exists(file_location):\n            raise Exception('File does not exist.')\n        # Check if file is empty\n        if os.path.getsize(file_location) ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9c02e452ac1a04147feef9a21079649246bbeda03d7aef91f24388f95d64c03d",
+  "human_valid": true,
+  "line_no": 36872,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "6388cf69b7b42974dfff665bf8362ab5129fb7de48e19cdc18ee498197254ea0",
+  "raw_output": "\r\n        # Check if file exists\r\n        if not os.path.exists(file_location):\r\n            raise Exception('File does not exist.')\r\n        # Check if file is empty\r\n        if os.path.getsize(file_location) == ",
+  "sampling_seed": 1499727624,
+  "tag": "t06",
+  "temperature": 0.6
+}

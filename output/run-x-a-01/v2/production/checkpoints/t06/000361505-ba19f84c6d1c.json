@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def onStart(self, *args, **kwarg):\n        \"\"\"\n        Verify user input and kick off the client's program if valid\n        \"\"\"\n        self.show_frame(\"StartPage\")\n\n        # Get the user's inputs\n        username = self.username_entry.get()\n        password = self.password_entry.get()\n\n        # Verify the inputs\n        if not username:\n            messagebox.showwarning(title=\"Warning\", message=\"Username cannot be blank.\")\n            return\n\n        if not password:\n            messagebox.showwarning(title=\"Warning\", message=\"Password cannot be blank.\")\n            return\n\n        # Kick off the client's program\n        self.client = Client(username, password)\n        self.client.start()\n\n        # Update the user interface\n        self.username_entry.delete(0, tk.END)\n        self.password_entry.delete(0, tk.END)\n        self.logged_in_label.config(text=\"Logged in as: {}\".format(username))\n        self.logged_in_label.grid(row=0, column=0)\n        self.start_button.grid_forget()\n        self.quit_button.grid(row=0, column=1)\n\n        # Create the chatroom\n        self.create_chatroom()\n",
+  "agc_valid": true,
+  "body_sha256": "13e894e6c76164c4aba74af2ed186dc2fae3f87daa238716374e5d47c1321de7",
+  "body_tokens": 294,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.show_frame(\"StartPage\")\n        \n        # Get the user's inputs\n        username = self.username_entry.get()\n        password = self.password_entry.get()\n        \n        # Verify the inputs\n        if not username:\n            messagebox.showwarning(title=\"Warning\", message=\"Username cannot be blank.\")\n            return\n        \n        if not password:\n            messagebox.showwarning(title=\"Warning\", message=\"Password cannot be blank.\")\n            return\n        \n        # Kick off the client's program\n        self.client = Client(username, password)\n        self.client.start()\n        \n        # Update the user interface\n        self.username_entry.delete(0, tk.END)\n        self.password_entry.delete(0, tk.END)\n        self.logged_in_label.config(text=\"Logged in as: {}\".format(username))\n        self.logged_in_label.grid(row=0, column=0)\n        self.start_button.grid_forget()\n        self.quit_button.grid(row=0, column=1)\n        \n        # Create the chatroom\n        self.create_chatroom()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "f91a92cb5363e4b4c2eee88112c6aa4726083bdf13bd6509d6fb2936d517016a",
+  "human_valid": true,
+  "line_no": 361505,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ba19f84c6d1cbd9296962053fa76d4c2d1528b271bdce070fe90a5e99e324f4a",
+  "raw_output": "\r\n        self.show_frame(\"StartPage\")\r\n        \r\n        # Get the user's inputs\r\n        username = self.username_entry.get()\r\n        password = self.password_entry.get()\r\n        \r\n        # Verify the inputs\r\n        if not username:\r\n            messagebox.showwarning(title=\"Warning\", message=\"Username cannot be blank.\")\r\n            return\r\n        \r\n        if not password:\r\n            messagebox.showwarning(title=\"Warning\", message=\"Password cannot be blank.\")\r\n            return\r\n        \r\n        # Kick off the client's program\r\n        self.client = Client(username, password)\r\n        self.client.start()\r\n        \r\n        # Update the user interface\r\n        self.username_entry.delete(0, tk.END)\r\n        self.password_entry.delete(0, tk.END)\r\n        self.logged_in_label.config(text=\"Logged in as: {}\".format(username))\r\n        self.logged_in_label.grid(row=0, column=0)\r\n        self.start_button.grid_forget()\r\n        self.quit_button.grid(row=0, column=1)\r\n        \r\n        # Create the chatroom\r\n        self.create_chatroom()\r\n        \r\n    def",
+  "sampling_seed": 301721068,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

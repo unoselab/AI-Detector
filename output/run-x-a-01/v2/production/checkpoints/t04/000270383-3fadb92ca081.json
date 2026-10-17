@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def strictly_increasing(self):\n        \"\"\"\n        :returns:\n          a new vulnerability function that is strictly increasing.\n          It is built by removing piece of the function where the mean\n          loss ratio is constant.\n        \"\"\"\n        # find the points where the mean loss ratio is constant\n        mean_loss_ratios = self.mean_loss_ratio()\n        mean_loss_ratios_diff = np.diff(mean_loss_ratios)\n        mean_loss_ratios_diff_sign = np.sign(mean_loss_ratios_diff)\n        mean_loss_ratios_diff_sign[0] =\n",
+  "agc_valid": false,
+  "body_sha256": "d2f7617755cad5ae812a56d008195148cbb6315b508f36261ad175188fd0be15",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # find the points where the mean loss ratio is constant\n        mean_loss_ratios = self.mean_loss_ratio()\n        mean_loss_ratios_diff = np.diff(mean_loss_ratios)\n        mean_loss_ratios_diff_sign = np.sign(mean_loss_ratios_diff)\n        mean_loss_ratios_diff_sign[0] =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "ce09d9914ba6df7dced8baefe9fba48bdea3f12efd778f709034db46e8047578",
+  "human_valid": true,
+  "line_no": 270383,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3fadb92ca081b4ac88ad9003afc4526733d8474d40e308fd482b2613a9724510",
+  "raw_output": "\n        # find the points where the mean loss ratio is constant\n        mean_loss_ratios = self.mean_loss_ratio()\n        mean_loss_ratios_diff = np.diff(mean_loss_ratios)\n        mean_loss_ratios_diff_sign = np.sign(mean_loss_ratios_diff)\n        mean_loss_ratios_diff_sign[0] = ",
+  "sampling_seed": 1297531920,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

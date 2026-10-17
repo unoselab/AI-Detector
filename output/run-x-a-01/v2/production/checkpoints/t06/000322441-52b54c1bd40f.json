@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_table_definition_file(file):\n    \"\"\"\n    Read an parse the XML of a table-definition file.\n    @return: an ElementTree object for the table definition\n    \"\"\"\n    tree = ET.parse(file)\n    return tree.getroot()\n",
+  "agc_valid": true,
+  "body_sha256": "68f9cb25cac747f98bba0edf49f8db36f0d003225a921f7531aa0326a82231f0",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n    tree = ET.parse(file)\n    return tree.getroot()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "6906ea0457f9600945b721235018963a893721ae7b279d8f8168082dc9f5bbbb",
+  "human_valid": true,
+  "line_no": 322441,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52b54c1bd40fa7de71b7aea83ae1a9155f497f008f5b8aa981e9c1b2c5b4e78b",
+  "raw_output": "\n    tree = ET.parse(file)\n    return tree.getroot()\n\n\ndef get_table_definition(tree):\n    \"\"\"\n    Get the table definition from the parsed table definition file.\n    @param tree: the ElementTree of a table definition file\n    @return: the table definition\n    \"\"\"\n    return tree.find(\"table-definition\")\n\n\ndef get_table_name(table_definition):\n    \"\"\"\n    Get the name of the table from the parsed table definition.\n    @param table_definition: the table definition from the parsed table definition file\n    @return: the name of the table\n    \"\"\"\n    return table_definition.get(\"name\")\n\n\ndef get_table_schema(table_definition):\n    \"\"\"\n    Get the schema of the table from the parsed table definition.\n    @param table_definition: the table definition from the parsed table definition file\n    @return: the schema of the table\n    \"\"\"\n    return table_definition.get(\"schema\")\n\n\ndef get_table_columns(table_definition):\n    \"\"\"\n    Get the columns of the table from the parsed table definition.\n    @param table_definition: the table definition from the parsed table definition file\n    @return: the columns of the table\n    \"\"\"\n    return table_definition.findall(\"column\")\n\n\ndef get_column_name(column):\n    \"\"\"\n    Get the name of the column from the parsed column definition.\n    @param column: the column definition from the parsed table definition file\n    @return: the name of the column\n    \"\"\"\n    return column.get(\"name\")\n\n\ndef get_column_type(column):\n    \"\"\"\n    Get the type of the column from the parsed column definition.\n    @param column: the column definition from the parsed table definition file\n    @return: the type of the column\n    \"\"\"\n    return column.get(\"type\")\n\n\ndef get_column_length(column):\n    \"\"\"\n    Get the length of the column from the parsed column definition.\n    @param column: the column definition from the parsed table definition file\n    @return: the length of the column\n    \"\"\"\n    return column.get(\"length\")\n\n\ndef get_column_precision(column):\n",
+  "sampling_seed": 3581000200,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

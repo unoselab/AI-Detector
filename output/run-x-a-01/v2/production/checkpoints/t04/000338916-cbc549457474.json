@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def parse_declaration_expressn_memberaccess(self, lhsAST, rhsAST, es):\n        \"\"\"\n        Instead of \"Class.variablename\", use \"Class.rv('variablename')\".\n\n        :param lhsAST:\n        :param rhsAST:\n        :param es:\n        :return:\n        \"\"\"\n        if lhsAST.type == \"memberaccess\":\n            if lhsAST.value == \"self\":\n                return self.parse_declaration_expressn_memberaccess_self(lhsAST, rhsAST, es)\n            else:\n                return self.parse_declaration_expressn_memberaccess_class(lhsAST, rhsAST, es)\n        else:\n            return self.parse_declaration_expressn_memberaccess_var(lhsAST, rhsAST, es)\n",
+  "agc_valid": true,
+  "body_sha256": "4fd65596c013e54db011ca248bb8db31cfee98e5c20154207e27a31104e86042",
+  "body_tokens": 100,
+  "bucket": "type01_110",
+  "clean_output": "\n        if lhsAST.type == \"memberaccess\":\n            if lhsAST.value == \"self\":\n                return self.parse_declaration_expressn_memberaccess_self(lhsAST, rhsAST, es)\n            else:\n                return self.parse_declaration_expressn_memberaccess_class(lhsAST, rhsAST, es)\n        else:\n            return self.parse_declaration_expressn_memberaccess_var(lhsAST, rhsAST, es)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "ac4513d1dcf756607049d549fb03e18a87910280990009e0b0593a295c1e4769",
+  "human_valid": true,
+  "line_no": 338916,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cbc549457474598cd79270c3598d06dac35e70cde360d16767fd95cd60a35c5f",
+  "raw_output": "\n        if lhsAST.type == \"memberaccess\":\n            if lhsAST.value == \"self\":\n                return self.parse_declaration_expressn_memberaccess_self(lhsAST, rhsAST, es)\n            else:\n                return self.parse_declaration_expressn_memberaccess_class(lhsAST, rhsAST, es)\n        else:\n            return self.parse_declaration_expressn_memberaccess_var(lhsAST, rhsAST, es)\n\n    def",
+  "sampling_seed": 2776600736,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

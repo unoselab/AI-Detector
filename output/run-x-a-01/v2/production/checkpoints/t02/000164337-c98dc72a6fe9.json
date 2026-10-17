@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def prt_results(self, goea_results):\n        \"\"\"Print GOEA results to the screen or to a file.\"\"\"\n        # Print results to screen\n        if self.outfile is None:\n            self.prt_results_to_screen(goea_results)\n        # Print results to file\n        else:\n            self.prt_results_to_file(goea_results)\n",
+  "agc_valid": true,
+  "body_sha256": "32a31a2e9b563061e59ddbf0c769f7b839e218ef860219be2bd499db9e00c7bc",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Print results to screen\n        if self.outfile is None:\n            self.prt_results_to_screen(goea_results)\n        # Print results to file\n        else:\n            self.prt_results_to_file(goea_results)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "472ffabccd56ce29c243be19abf43238b57bea8903840ea57bf3844bf4597f12",
+  "human_valid": true,
+  "line_no": 164337,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c98dc72a6fe9bba6a5f8d4dd51a581e1ff86060bd540664f8906c52a54e132a4",
+  "raw_output": "\n        # Print results to screen\n        if self.outfile is None:\n            self.prt_results_to_screen(goea_results)\n        # Print results to file\n        else:\n            self.prt_results_to_file(goea_results)\n\n    def",
+  "sampling_seed": 2647954932,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

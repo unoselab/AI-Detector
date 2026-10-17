@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def __remove_dir(self, ftp, remote_path):\n        \"\"\"\n        Helper function to perform delete operation on the remote server\n\n        :param ftp: SFTP handle to perform delete operation(s)\n        :param remote_path: Remote path to remove\n        \"\"\"\n        try:\n            ftp.rmdir(remote_path)\n            self.logger.info(\"Directory deleted successfully\")\n        except IOError as e:\n            self.logger.error(\"Directory deletion failed with error: %s\", e)\n",
+  "agc_valid": true,
+  "body_sha256": "a5887407a41b6cb65f7242b9aeed548e7dff0f579a81a3fa7a2522a833451917",
+  "body_tokens": 64,
+  "bucket": "out_of_range",
+  "clean_output": "\n        try:\n            ftp.rmdir(remote_path)\n            self.logger.info(\"Directory deleted successfully\")\n        except IOError as e:\n            self.logger.error(\"Directory deletion failed with error: %s\", e)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "d459719c75a763fce98d3efc63b5b17340dc340aca5da233cb7b3fb1f0640b19",
+  "human_valid": true,
+  "line_no": 286172,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4a7a2620c5ce2ca9c5d4359400855c5f95f9a4b835846368a26950c6458aa3d2",
+  "raw_output": "\n        try:\n            ftp.rmdir(remote_path)\n            self.logger.info(\"Directory deleted successfully\")\n        except IOError as e:\n            self.logger.error(\"Directory deletion failed with error: %s\", e)\n\n    def",
+  "sampling_seed": 1975012082,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

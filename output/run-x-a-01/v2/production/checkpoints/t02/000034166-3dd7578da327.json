@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def respond(self, obj):\n        \"\"\"Gives a response JSON(P) message\"\"\"\n        if isinstance(obj, dict):\n            return json.dumps(obj)\n        elif isinstance(obj, list):\n            return json.dumps(obj)\n        elif isinstance(obj, str):\n            return obj\n        elif isinstance(obj, bytes):\n            return obj\n        else:\n            return json.dumps(obj)\n",
+  "agc_valid": true,
+  "body_sha256": "e3bb0f0e811d25df97a572ba48cd2706eb9c7195eedd405e25a78c9aaca1343d",
+  "body_tokens": 114,
+  "bucket": "type02_120",
+  "clean_output": "\n        if isinstance(obj, dict):\n            return json.dumps(obj)\n        elif isinstance(obj, list):\n            return json.dumps(obj)\n        elif isinstance(obj, str):\n            return obj\n        elif isinstance(obj, bytes):\n            return obj\n        else:\n            return json.dumps(obj)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "35ea233387f7bede32484e74e84790d3371c833f83408aacdfd4e4e72084ba51",
+  "human_valid": true,
+  "line_no": 34166,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3dd7578da32730dad68024b9e1a2c2f7a91f30518f60dff0518da106fbdecff9",
+  "raw_output": "\n        if isinstance(obj, dict):\n            return json.dumps(obj)\n        elif isinstance(obj, list):\n            return json.dumps(obj)\n        elif isinstance(obj, str):\n            return obj\n        elif isinstance(obj, bytes):\n            return obj\n        else:\n            return json.dumps(obj)\n\n    def",
+  "sampling_seed": 4082188347,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

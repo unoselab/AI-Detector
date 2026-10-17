@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def shareItem(self, sharedItem, shareID=None, interfaces=ALL_IMPLEMENTED):\n        \"\"\"\n        Share an item with this role.  This provides a way to expose items to\n        users for later retrieval with L{Role.getShare}.\n\n        @param sharedItem: an item to be shared.\n\n        @param shareID: a unicode string.  If provided, specify the ID under which\n        the shared item will be shared.\n\n        @param interfaces: a list of Interface objects which specify the methods\n        and attributes accessible to C{toRole} on C{sharedItem}.\n\n        @return: a L{Share} which records the ability of the given role to\n        access the given item.\n        \"\"\"\n        the user.\n",
+  "agc_valid": false,
+  "body_sha256": "9bf11ef95df8ff11f2d9b21e8930f22e781eb739b2cda6934e561508b7247955",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        the user.\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "22b7b289f49996b379342fb329284c663db95ecf46412b051391c3a469b24c94",
+  "human_valid": true,
+  "line_no": 33364,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e3e71493194513ec6a5a02b72e133a54313135d1ecbb1021b8adc55675efb1a7",
+  "raw_output": "the user. ",
+  "sampling_seed": 3039825936,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

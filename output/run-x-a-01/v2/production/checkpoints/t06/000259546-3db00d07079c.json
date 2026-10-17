@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def expression_ddcq(sample_frame, ref_target, ref_sample):\n    \"\"\"Calculates expression of samples in a sample data frame relative to a\n    single reference gene and reference sample using the ∆∆Cq method.\n\n    For best results, the ref_sample should be defined for all targets and the\n    ref_target should be defined for all samples, or else the series you get\n    back will have lots of NaNs.\n\n    :param DataFrame sample_frame: A sample data frame.\n    :param string ref_target: A string matching an entry of the Target column;\n        the target to use as the reference target (e.g. 'Gapdh')\n    :param string ref_sample: A string matching an entry of the Sample column.\n    :return: a Series of expression values for each row of the sample data\n        frame.\n    :rtype: Series\n    \"\"\"\n    representing the name of the reference\n            target.\n        :param string ref_sample: A string representing the name of the reference\n            sample.\n        :returns: A Series of the expression of each sample relative to the\n            reference sample.\n        :rtype: Series\n        \"\"\"\n\n        # First, filter out the reference sample and reference target.\n        sample_frame = sample_frame.loc[sample_frame.index != ref_sample]\n        sample_frame = sample_frame.loc[sample_frame.columns != ref_target]\n\n        # Then, calculate the expression of each sample relative to the reference\n        # sample.\n        sample_frame = sample_frame.sub(sample_frame[ref_sample], axis=0)\n\n        # Then, calculate the expression of each sample relative to the reference\n        # target.\n        sample_frame = sample_frame.div(sample_frame[ref_target], axis=0)\n\n        # Then, calculate the\n",
+  "agc_valid": false,
+  "body_sha256": "6056c49dde024e143c808ca1fa5f0c4a7acbe9b8441595c5a3e61b1ff3e9abe9",
+  "body_tokens": 231,
+  "bucket": "out_of_range",
+  "clean_output": "\n    representing the name of the reference\n            target.\n        :param string ref_sample: A string representing the name of the reference\n            sample.\n        :returns: A Series of the expression of each sample relative to the\n            reference sample.\n        :rtype: Series\n        \"\"\"\n\n        # First, filter out the reference sample and reference target.\n        sample_frame = sample_frame.loc[sample_frame.index != ref_sample]\n        sample_frame = sample_frame.loc[sample_frame.columns != ref_target]\n\n        # Then, calculate the expression of each sample relative to the reference\n        # sample.\n        sample_frame = sample_frame.sub(sample_frame[ref_sample], axis=0)\n\n        # Then, calculate the expression of each sample relative to the reference\n        # target.\n        sample_frame = sample_frame.div(sample_frame[ref_target], axis=0)\n\n        # Then, calculate the\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "0ba8575ff5150e47b126bf7931650366544bedb7578e9d0fd452529b91aa558a",
+  "human_valid": true,
+  "line_no": 259546,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3db00d07079c08557727f73b5f56572cd4d858c11824cb14310480723f836d2f",
+  "raw_output": "representing the name of the reference\n        target.\n    :param string ref_sample: A string representing the name of the reference\n        sample.\n    :returns: A Series of the expression of each sample relative to the\n        reference sample.\n    :rtype: Series\n    \"\"\"\n\n    # First, filter out the reference sample and reference target.\n    sample_frame = sample_frame.loc[sample_frame.index != ref_sample]\n    sample_frame = sample_frame.loc[sample_frame.columns != ref_target]\n\n    # Then, calculate the expression of each sample relative to the reference\n    # sample.\n    sample_frame = sample_frame.sub(sample_frame[ref_sample], axis=0)\n\n    # Then, calculate the expression of each sample relative to the reference\n    # target.\n    sample_frame = sample_frame.div(sample_frame[ref_target], axis=0)\n\n    # Then, calculate the ",
+  "sampling_seed": 1610844660,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

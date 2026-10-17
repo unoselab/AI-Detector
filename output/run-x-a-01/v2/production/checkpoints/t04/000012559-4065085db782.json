@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_dummy_thread(nsamples, **kwargs):\n    \"\"\"Generate dummy data for a single nested sampling thread.\n\n    Log-likelihood values of points are generated from a uniform distribution\n    in (0, 1), sorted, scaled by logl_range and shifted by logl_start (if it is\n    not -np.inf). Theta values of each point are each generated from a uniform\n    distribution in (0, 1).\n\n    Parameters\n    ----------\n    nsamples: int\n        Number of samples in thread.\n    ndim: int, optional\n        Number of dimensions.\n    seed: int, optional\n        If not False, the seed is set with np.random.seed(seed).\n    logl_start: float, optional\n        logl at which thread starts.\n    logl_range: float, optional\n        Scale factor applied to logl values.\n    \"\"\"\n    .\n        logl_start: float, optional\n            Lower bound for log-likelihood values. Defaults to -np.inf.\n        logl_range: float, optional\n            Range of log-likelihood values. Defaults to\n",
+  "agc_valid": false,
+  "body_sha256": "3204ff0e4c616b189a0a2bfe6f3669c4b25401b1838d89efb263495aafbff1c5",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n    .\n        logl_start: float, optional\n            Lower bound for log-likelihood values. Defaults to -np.inf.\n        logl_range: float, optional\n            Range of log-likelihood values. Defaults to\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "1e6240f2680ac2a0fc23974ddcfb3af6af74e47de2b1a5a15583ec71ebd7bb6a",
+  "human_valid": true,
+  "line_no": 12559,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4065085db782e33d389e6ff57ac17e5ac639d38935597627763c9621c1575f6e",
+  "raw_output": ".\n    logl_start: float, optional\n        Lower bound for log-likelihood values. Defaults to -np.inf.\n    logl_range: float, optional\n        Range of log-likelihood values. Defaults to ",
+  "sampling_seed": 2445507014,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _search(self, searchstring):\n        \"\"\" search users\n        @str searchstring: search string\n        @rtype: dict, {<user>: {<attr>: <value>}}\n        \"\"\"\n        if not searchstring:\n            return {}\n        searchstring = searchstring.lower()\n        users = {}\n        for user in self.users:\n            if searchstring in user.lower():\n                users[user] = self.users[user]\n        return users\n",
+  "agc_valid": true,
+  "body_sha256": "5ba28c5040dda303fa9148cfc8ded5ec62abcf97da161067e7dbece17001f114",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not searchstring:\n            return {}\n        searchstring = searchstring.lower()\n        users = {}\n        for user in self.users:\n            if searchstring in user.lower():\n                users[user] = self.users[user]\n        return users\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "ba61ab2260ef2566e518688d32e1284aea5f38cad2e91ca96f953617b7bc9b64",
+  "human_valid": true,
+  "line_no": 183585,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "104531babd8a21b89425d575bd4ca7a3c3068eaa211c6ab18cb63cab8b488d79",
+  "raw_output": "\n        if not searchstring:\n            return {}\n        searchstring = searchstring.lower()\n        users = {}\n        for user in self.users:\n            if searchstring in user.lower():\n                users[user] = self.users[user]\n        return users\n\n    def",
+  "sampling_seed": 1781455235,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

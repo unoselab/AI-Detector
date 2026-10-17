@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def display_window(self):\n        \"\"\"Read the channel name from QComboBox and plot its spectrum.\n\n        This function is necessary it reads the data and it sends it to\n        self.display. When the user selects a smaller chunk of data from the\n        visible traces, then we don't need to call this function.\n        \"\"\"\n        channel = self.channel_combo.currentText()\n        self.display.set_channel(channel)\n        self.display.plot_spectrum()\n",
+  "agc_valid": true,
+  "body_sha256": "86fdefc8e00dd06830a1e212cb563e04f6bf8e28a63a66c7f5e1bf72e6a2dde7",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n        channel = self.channel_combo.currentText()\n        self.display.set_channel(channel)\n        self.display.plot_spectrum()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "f9b9829c00e6daa28a8a78eff9e3ae63e039cd8411b1fe5ee3009defa9b3f3cb",
+  "human_valid": true,
+  "line_no": 130494,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "494b21e244f731cb4827415e7c54893d2751dff52fdacf4209d15c5cfbe61558",
+  "raw_output": "\n        channel = self.channel_combo.currentText()\n        self.display.set_channel(channel)\n        self.display.plot_spectrum()\n\n    def",
+  "sampling_seed": 90787449,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

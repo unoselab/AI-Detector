@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def check_arg_compatibility(args: argparse.Namespace):\n    \"\"\"\n    Check if some arguments are incompatible with each other.\n\n    :param args: Arguments as returned by argparse.\n    \"\"\"\n    if args.local_rank != -1 and args.local_rank !=\n",
+  "agc_valid": false,
+  "body_sha256": "b0aebbf095e5908a52ff3fb65241526ff79d9c43aacb8bf7597b747c7eac7943",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if args.local_rank != -1 and args.local_rank !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "476d6f8799f695d86ca52881a1591dcb0476487583463af6e2c51ce976de7c5f",
+  "human_valid": true,
+  "line_no": 334870,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "18b6e04c2ff6a90c83bfcad51fcb34efac5a7a539c027bd34132b8690494c87d",
+  "raw_output": "\n    if args.local_rank != -1 and args.local_rank != ",
+  "sampling_seed": 1281932574,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

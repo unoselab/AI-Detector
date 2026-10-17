@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_scope_ip(ipaddress, name, description, scopeid, auth, url):\n    \"\"\"\n    Function to add new host IP address allocation to existing scope ID\n\n    :param ipaddress:\n\n    :param name: name of the owner of this host\n\n    :param description: Description of the host\n\n    :param auth: requests auth object #usually auth.creds from auth pyhpeimc.auth.class\n\n    :param url: base url of IMC RS interface #usually auth.url from pyhpeimc.auth.authclass\n\n    :return:\n\n    :rtype:\n\n    >>> from pyhpeimc.auth import *\n\n    >>> from pyhpeimc.plat.termaccess import *\n\n    >>> auth = IMCAuth(\"http://\", \"10.101.0.203\", \"8080\", \"admin\", \"admin\")\n\n    >>> add_scope_ip('10.50.0.5', 'cyoung', 'New Test Host','175', auth.creds, auth.url)\n\n    \"\"\"\n    auth.authclass\n\n        :param scopeid: Scope ID for the host\n\n        :return:\n\n        \"\"\"\n        ipaddress = str(ipaddress)\n        scopeid = str(scopeid)\n        # adding host\n        payload = {'ipaddress': ipaddress, 'name': name, 'description': description, 'scopeid': scopeid}\n        url = '{}/scopes/ip/add'.format(url)\n        response = requests.post(url, data=payload, auth=auth, verify=False)\n        if response.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "ea1260f667c45cd508065276f9b57039a4c3c0b22c2210433bccc5c94aacb9f5",
+  "body_tokens": 115,
+  "bucket": "type02_120",
+  "clean_output": "\n    auth.authclass\n\n        :param scopeid: Scope ID for the host\n\n        :return:\n\n        \"\"\"\n        ipaddress = str(ipaddress)\n        scopeid = str(scopeid)\n        # adding host\n        payload = {'ipaddress': ipaddress, 'name': name, 'description': description, 'scopeid': scopeid}\n        url = '{}/scopes/ip/add'.format(url)\n        response = requests.post(url, data=payload, auth=auth, verify=False)\n        if response.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "7040179371037d9752b30f3beec5d5be75bc89a1e1ea0cda03ca955976602566",
+  "human_valid": true,
+  "line_no": 28730,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "277f5218096cb1c4ec89485ea904e05ff73114d4f4add0437b0bf38fa1cf1602",
+  "raw_output": "auth.authclass\n\n    :param scopeid: Scope ID for the host\n\n    :return:\n\n    \"\"\"\n    ipaddress = str(ipaddress)\n    scopeid = str(scopeid)\n    # adding host\n    payload = {'ipaddress': ipaddress, 'name': name, 'description': description, 'scopeid': scopeid}\n    url = '{}/scopes/ip/add'.format(url)\n    response = requests.post(url, data=payload, auth=auth, verify=False)\n    if response.status_code == ",
+  "sampling_seed": 228519470,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

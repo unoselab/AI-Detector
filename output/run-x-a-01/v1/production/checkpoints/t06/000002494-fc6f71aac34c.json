@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def rollback(self, path, pretend=False):\n        \"\"\"\n        Rollback the last migration operation.\n\n        :param path: The path\n        :type path: str\n\n        :param pretend: Whether we execute the migrations as dry-run\n        :type pretend: bool\n\n        :rtype: int\n        \"\"\"\n        return self._migration_runner.rollback(\n            self._connection_resolver.get_connection(path),\n            self._get_migration_files(path),\n            pretend=pretend\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "622b63e8206edc78c270bcf21f94612203454279c3477b48e6f899fcbb7b1a5c",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._migration_runner.rollback(\n            self._connection_resolver.get_connection(path),\n            self._get_migration_files(path),\n            pretend=pretend\n        )\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "3d2a49cf4981ee7fc8694b202659f5a24fa42e24c672fec447beee7c35aa4a1e",
+  "human_valid": true,
+  "line_no": 2494,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fc6f71aac34cb45f708c48d10d84e90e2cbcbda1b9cffebb03fab3ce7747fe83",
+  "raw_output": "\n        return self._migration_runner.rollback(\n            self._connection_resolver.get_connection(path),\n            self._get_migration_files(path),\n            pretend=pretend\n        )\n\n    def",
+  "sampling_seed": 2262161959,
+  "tag": "t06",
+  "temperature": 0.6
+}

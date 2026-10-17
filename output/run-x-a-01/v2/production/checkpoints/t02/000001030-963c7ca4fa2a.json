@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _create_random_layer(self):\n        \"\"\"Pass init params to RandomLayer\"\"\"\n        return RandomLayer(self.init_params)\n",
+  "agc_valid": true,
+  "body_sha256": "c608dd3b5afeaf75106deb03c11a26ce94e0d062902fc1474028a90fdb09610b",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return RandomLayer(self.init_params)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "e53adb23731cb0f6636ba7870ed2b2a71281a09e722902519c8383eab81946f8",
+  "human_valid": true,
+  "line_no": 1030,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "963c7ca4fa2a5d92db053ecb9c53516202e674efca195146c7de8a4ff452f0a3",
+  "raw_output": "\n        return RandomLayer(self.init_params)\n\n    def",
+  "sampling_seed": 795739506,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

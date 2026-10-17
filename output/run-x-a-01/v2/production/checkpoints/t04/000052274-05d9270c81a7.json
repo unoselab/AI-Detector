@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def apply(self):\n        \"\"\"\n        Make the pending config become the running config for this task\n        by triggering any necessary changes in the running task.\n\n        Returns True to request a shorter period before the next call,\n        False if nothing special is needed.\n    \"\"\"\n    raise NotImplementedError()\n",
+  "agc_valid": false,
+  "body_sha256": "0b39e456f4ff515a71a8221c68678689d78fc6052cd3de75448171567b5f3282",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    raise NotImplementedError()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "857454cd6ac494f80cfdcce5f0fd6fce59810ff2f84fc9d0f77261ba9c842077",
+  "human_valid": true,
+  "line_no": 52274,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "05d9270c81a72632fd1294b0487ddd0fa5da4ac0a469a39c8d442f3241fa4b53",
+  "raw_output": "\n    raise NotImplementedError()\n\n\nclass ConfigTask(object):\n    \"\"\"\n    A task to be run on the config.\n\n    :param config: The config to be run.\n    :param task: The task to be run.\n    :param task_type: The type of task.\n    :param task_id: The ID of the task.\n    :param config_id: The ID of the config.\n    :param task_priority: The priority of the task.\n    :param task_timeout: The timeout of the task.\n    :param task_retry: The retry of the task.\n    \"\"\"\n    def",
+  "sampling_seed": 2321529413,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

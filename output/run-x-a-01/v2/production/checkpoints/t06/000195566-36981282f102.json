@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def failure_line_summary(formatter, failure_line):\n    \"\"\"\n    Create a mozlog formatted error summary string from the given failure_line.\n\n    Create a string which can be compared to a TextLogError.line string to see\n    if they match.\n    \"\"\"\n    line = failure_line.line\n    line_summary = []\n    line_summary.append(line.file_name)\n    line_summary.append(str(line.line_number))\n    line_summary.append(line.line)\n    line_summary.append(line.message)\n    line_summary.append(line.test)\n    line_summary.append(line.stack)\n    return '|'.join(line_summary)\n",
+  "agc_valid": true,
+  "body_sha256": "a3f23f6f8d0f4525ed8b4a3d84afa4a269d98f7ea975c41bae8abbec4779f619",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    line = failure_line.line\n    line_summary = []\n    line_summary.append(line.file_name)\n    line_summary.append(str(line.line_number))\n    line_summary.append(line.line)\n    line_summary.append(line.message)\n    line_summary.append(line.test)\n    line_summary.append(line.stack)\n    return '|'.join(line_summary)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "01c7d06c6403922aec0f416577f52990ab9f9748101e9441e9013f0bf435fb46",
+  "human_valid": true,
+  "line_no": 195566,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36981282f1026c9845a8529300de74c162ac1de828e064858481914014c26da1",
+  "raw_output": "\n    line = failure_line.line\n    line_summary = []\n    line_summary.append(line.file_name)\n    line_summary.append(str(line.line_number))\n    line_summary.append(line.line)\n    line_summary.append(line.message)\n    line_summary.append(line.test)\n    line_summary.append(line.stack)\n    return '|'.join(line_summary)\n\n\ndef failure_line_to_textlog_error(formatter, failure_line):\n    \"\"\"\n    Convert the given failure_line to a TextLogError.\n\n    This function is used to convert failure_line objects to TextLogError objects\n    in order to compare them to TextLogError objects that are already in the\n    database.\n    \"\"\"\n    line = failure_line.line\n    return TextLogError(\n        file_name=line.file_name,\n        line_number=line.line_number,\n        line=line.line,\n        message=line.message,\n        test=line.test,\n        stack=line.stack)\n\n\ndef failure_line_to_test_result(formatter, failure_line):\n    \"\"\"\n    Convert the given failure_line to a TestResult.\n\n    This function is used to convert failure_line objects to TestResult objects\n    in order to compare them to TestResult objects that are already in the\n    database.\n    \"\"\"\n    line = failure_line.line\n    return TestResult(\n        file_name=line.file_name,\n        line_number=line.line_number,\n        line=line.line,\n        message=line.message,\n        test=line.test,\n        stack=line.stack)\n\n\ndef failure_line_to_textlog_error_summary(formatter, failure_line):\n    \"\"\"\n    Create a mozlog formatted error summary string from the given failure_line.\n\n    Create a string which can be compared to a TextLogError.line string to see\n    if they match.\n    \"\"\"\n    line = failure_line.line\n    line_summary = []\n    line_summary.append(line.file_name)\n",
+  "sampling_seed": 3205445619,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def calc_acceleration_bca(jackknife_replicates):\n    \"\"\"\n    Calculate the acceleration constant for the Bias Corrected and Accelerated\n    (BCa) bootstrap confidence intervals.\n\n    Parameters\n    ----------\n    jackknife_replicates : 2D ndarray.\n        Each row should correspond to a different jackknife parameter sample,\n        formed by deleting a particular observation and then re-estimating the\n        desired model. Each column should correspond to an element of the\n        parameter vector being estimated.\n\n    Returns\n    -------\n    acceleration : 1D ndarray.\n        There will be one element for each element in `mle_estimate`. Elements\n        denote the acceleration factors for each component of the parameter\n        vector.\n\n    References\n    ----------\n    Efron, Bradley, and Robert J. Tibshirani. An Introduction to the Bootstrap.\n        CRC press, 1994. Section 14.3, Equation 14.15.\n    \"\"\"\n    Returns\n    -------\n    acceleration_constant : float.\n        The acceleration constant for the Bias Corrected and Accelerated\n        (BCa) bootstrap confidence intervals.\n    \"\"\"\n\n    # Calculate the mean and variance of the jackknife replicates.\n    jackknife_replicates_mean = np.mean(jackknife_replicates, axis=0)\n    jackknife_replicates_variance = np.var(jackknife_replicates, axis=0)\n\n    # Calculate the acceleration constant.\n    acceleration_constant = jackknife_replicates_variance / (\n        jackknife_replicates_mean **\n",
+  "agc_valid": false,
+  "body_sha256": "e84313a19860be6ab60c01ababc546fff9e42432fc8944e5646429389e2d87d7",
+  "body_tokens": 98,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Returns\n    -------\n    acceleration_constant : float.\n        The acceleration constant for the Bias Corrected and Accelerated\n        (BCa) bootstrap confidence intervals.\n    \"\"\"\n\n    # Calculate the mean and variance of the jackknife replicates.\n    jackknife_replicates_mean = np.mean(jackknife_replicates, axis=0)\n    jackknife_replicates_variance = np.var(jackknife_replicates, axis=0)\n\n    # Calculate the acceleration constant.\n    acceleration_constant = jackknife_replicates_variance / (\n        jackknife_replicates_mean **\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "7c5550e63355f388a45cf537b3004c9cd07a2c22d96d3dd1a730ae010d17a048",
+  "human_valid": true,
+  "line_no": 271829,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2266079b7fea71b42529fe75adef5480c02e50e05283e5c11de6e867631c4fe0",
+  "raw_output": "\n    Returns\n    -------\n    acceleration_constant : float.\n        The acceleration constant for the Bias Corrected and Accelerated\n        (BCa) bootstrap confidence intervals.\n    \"\"\"\n\n    # Calculate the mean and variance of the jackknife replicates.\n    jackknife_replicates_mean = np.mean(jackknife_replicates, axis=0)\n    jackknife_replicates_variance = np.var(jackknife_replicates, axis=0)\n\n    # Calculate the acceleration constant.\n    acceleration_constant = jackknife_replicates_variance / (\n        jackknife_replicates_mean ** ",
+  "sampling_seed": 1240699339,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

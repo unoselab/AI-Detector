@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_pairs(abed, bbed, groups):\n    \"\"\"\n    Called by fromgroups(), extract pairs specific to a pair of species.\n    \"\"\"\n    # get the group numbers for the two species\n    a_group = groups[abed.species]\n    b_group = groups[bbed.species]\n\n    # get the indices of the two species\n    a_idx = np.where(abed.group == a_group)[0]\n    b_idx = np.where(bbed.group == b_group)[0]\n\n    # get the indices of the pairs\n    pairs = np.intersect1d(a_idx, b_idx)\n\n    # get the data for the pairs\n    return abed.iloc[pairs], bbed.iloc[pairs]\n",
+  "agc_valid": true,
+  "body_sha256": "bf7eba22839e7625a7ecb0ea09877a2f7636299cdd8a0d6f7585c114b91b5013",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # get the group numbers for the two species\n    a_group = groups[abed.species]\n    b_group = groups[bbed.species]\n\n    # get the indices of the two species\n    a_idx = np.where(abed.group == a_group)[0]\n    b_idx = np.where(bbed.group == b_group)[0]\n\n    # get the indices of the pairs\n    pairs = np.intersect1d(a_idx, b_idx)\n\n    # get the data for the pairs\n    return abed.iloc[pairs], bbed.iloc[pairs]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "0589290947240df4a1945e7bd2ecce69f248b8b872edf9e8e4b846c5dbb89aa4",
+  "human_valid": true,
+  "line_no": 188204,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "93f33d3957e6b0a74d458f5cc5020b26251f41730154838e0c93dea15f209177",
+  "raw_output": "\n    # get the group numbers for the two species\n    a_group = groups[abed.species]\n    b_group = groups[bbed.species]\n\n    # get the indices of the two species\n    a_idx = np.where(abed.group == a_group)[0]\n    b_idx = np.where(bbed.group == b_group)[0]\n\n    # get the indices of the pairs\n    pairs = np.intersect1d(a_idx, b_idx)\n\n    # get the data for the pairs\n    return abed.iloc[pairs], bbed.iloc[pairs]\n\n\ndef fromgroups(abed, bbed, groups):\n    \"\"\"\n    Extract the data for all pairs of species.\n    \"\"\"\n    # get the group numbers for the two species\n    a_group = groups[abed.species]\n    b_group = groups[bbed.species]\n\n    # get the indices of the two species\n    a_idx = np.where(abed.group == a_group)[0]\n    b_idx = np.where(bbed.group == b_group)[0]\n\n    # get the indices of the pairs\n    pairs = np.intersect1d(a_idx, b_idx)\n\n    # get the data for the pairs\n    pairs_abed = abed.iloc[pairs]\n    pairs_bbed = bbed.iloc[pairs]\n\n    # get the species names\n    species = [abed.species[i] for i in pairs_abed.index]\n\n    # get the group numbers\n    groups = [abed.group[i] for i in pairs_abed.index]\n\n    # get the pair indices\n    pair_idx = [i for i in pairs_abed.index]\n\n    # get the data for the pairs\n    pairs_abed = pairs_abed.drop(columns=[\"species\", \"group\"])\n    pairs_bbed = pairs_bbed.drop(columns=[\"species\", \"group\"])\n\n    # get the data for the pairs\n    pairs_abed = pairs_abed.rename(columns={\"",
+  "sampling_seed": 3234389900,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

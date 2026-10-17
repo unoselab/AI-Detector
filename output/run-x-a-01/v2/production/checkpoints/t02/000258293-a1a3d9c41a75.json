@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _check_id(entity, entity_type):\n    \"\"\"Check whether the ID is valid.\n\n    First check if the ID is missing, and then check if it is a qualified\n    string type, finally check if the string is empty. For all checks, it\n    would raise a ParseError with the corresponding message.\n\n    Args:\n        entity: a string type object to be checked.\n        entity_type: a string that shows the type of entities to check, usually\n            `Compound` or 'Reaction'.\n    \"\"\"\n    if not entity:\n        raise ParseError('{} ID is missing.'.format(entity_type))\n    if not isinstance(entity, str):\n        raise ParseError('{} ID is not a string.'.format(entity_type))\n    if not entity.strip():\n        raise ParseError('{} ID is empty.'.format(entity_type))\n",
+  "agc_valid": true,
+  "body_sha256": "0fa861a6252795fa503de7e153d7a2fede66a2455a8b20861a54e8aa70fc9a8f",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not entity:\n        raise ParseError('{} ID is missing.'.format(entity_type))\n    if not isinstance(entity, str):\n        raise ParseError('{} ID is not a string.'.format(entity_type))\n    if not entity.strip():\n        raise ParseError('{} ID is empty.'.format(entity_type))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "7e559e16dc0c6bfc78472ea7c031dccacdcbdf6b9f5bc25e9a27ee55198f1513",
+  "human_valid": true,
+  "line_no": 258293,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a1a3d9c41a752cbd8dfa6b6420a8921d133ee6fac147508ef525bae5dbf752fd",
+  "raw_output": "\n    if not entity:\n        raise ParseError('{} ID is missing.'.format(entity_type))\n    if not isinstance(entity, str):\n        raise ParseError('{} ID is not a string.'.format(entity_type))\n    if not entity.strip():\n        raise ParseError('{} ID is empty.'.format(entity_type))\n\n\ndef _check_name(entity, entity_type):\n    \"\"\"Check whether the name is valid.\n\n    First check if the name is missing, and then check if it is a qualified\n    string type, finally check if the string is empty. For all checks, it\n    would raise a ParseError with the corresponding message.\n\n    Args:\n        entity: a string type object to be checked.\n        entity_type: a string that shows the type of entities to check, usually\n            `Compound` or 'Reaction'.\n    \"\"\"\n    if not entity:\n        raise ParseError('{} name is missing.'.format(entity_type))\n    if not isinstance(entity, str):\n        raise ParseError('{} name is not a string.'.format(entity_type))\n    if not entity.strip():\n        raise ParseError('{} name is empty.'.format(entity_type))\n\n\ndef _check_smiles(entity, entity_type):\n    \"\"\"Check whether the SMILES is valid.\n\n    First check if the SMILES is missing, and then check if it is a qualified\n    string type, finally check if the string is empty. For all checks, it\n    would raise a ParseError with the corresponding message.\n\n    Args:\n        entity: a string type object to be checked.\n        entity_type: a string that shows the type of entities to check, usually\n            `Compound` or 'Reaction'.\n    \"\"\"\n    if not entity:\n        raise ParseError('{} SMILES is missing.'.format(entity_type))\n    if not isinstance(entity, str):\n        raise ParseError('{} SMILES is not a string.'.format(entity_type))\n    if not entity.strip():\n        raise ParseError('{} SMILES is empty.'.format(entity_type))\n\n\ndef _check_inchi(",
+  "sampling_seed": 3518935616,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

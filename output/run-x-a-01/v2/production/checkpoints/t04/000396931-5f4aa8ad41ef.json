@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def normalize(self):\n        \"\"\"\n        Rearrange the conjunction to a conventional form.\n\n        This puts any coreference(s) first, followed by type terms,\n        then followed by AVM(s) (including lists). AVMs are\n        normalized via :meth:`AVM.normalize`.\n        \"\"\"\n        # first, normalize coreferences\n        for c in self.coref:\n            c.normalize()\n\n        # next, normalize type terms\n        for t in self.type:\n            t.normalize()\n\n        # next, normalize AVMs\n        for a in self.avm:\n            a.normalize()\n\n        return self\n",
+  "agc_valid": true,
+  "body_sha256": "9e9d325db1c431aa805fbd89b7833f5817481e7131702c36b9dc99291254457f",
+  "body_tokens": 113,
+  "bucket": "type02_120",
+  "clean_output": "\n        # first, normalize coreferences\n        for c in self.coref:\n            c.normalize()\n\n        # next, normalize type terms\n        for t in self.type:\n            t.normalize()\n\n        # next, normalize AVMs\n        for a in self.avm:\n            a.normalize()\n\n        return self\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "6bb28f23bad3276f820f0f29734f85537f9ff14cb0c69407d8c95c021adfb227",
+  "human_valid": true,
+  "line_no": 396931,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5f4aa8ad41ef3ba01e8e488249fe34b95bd812a03623778bd80cd605cadcd7fb",
+  "raw_output": "\n        # first, normalize coreferences\n        for c in self.coref:\n            c.normalize()\n\n        # next, normalize type terms\n        for t in self.type:\n            t.normalize()\n\n        # next, normalize AVMs\n        for a in self.avm:\n            a.normalize()\n\n        return self\n\n    def",
+  "sampling_seed": 3134384537,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

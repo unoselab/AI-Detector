@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def viewbox_mouse_event(self, event):\n        \"\"\"ViewBox mouse event handler\n\n        Parameters\n        ----------\n        event : instance of Event\n            The mouse event.\n        \"\"\"\n        if event.button() == QtCore.Qt.LeftButton:\n            self.mouse_drag_start = event.pos()\n        elif event.button() == QtCore.Qt.RightButton:\n            self.mouse_drag_start = event.pos()\n        elif event.button() == QtCore.Qt.MidButton:\n            self.mouse_drag_start = event.pos()\n        else:\n            pass\n",
+  "agc_valid": true,
+  "body_sha256": "3400848f96b709b8f352b6e68edb9f8551e8683538e923e6e35cb6a582ab680c",
+  "body_tokens": 96,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if event.button() == QtCore.Qt.LeftButton:\n            self.mouse_drag_start = event.pos()\n        elif event.button() == QtCore.Qt.RightButton:\n            self.mouse_drag_start = event.pos()\n        elif event.button() == QtCore.Qt.MidButton:\n            self.mouse_drag_start = event.pos()\n        else:\n            pass\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "160c777a866f90d1177bb1220b22602e99f8ac9b37b0993bdb941432c4e79f23",
+  "human_valid": true,
+  "line_no": 23660,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fecd0f856603dee7fa8f013b0fe828751af132f2c83cdd5cdb3e4f6cc28bced4",
+  "raw_output": "\n        if event.button() == QtCore.Qt.LeftButton:\n            self.mouse_drag_start = event.pos()\n        elif event.button() == QtCore.Qt.RightButton:\n            self.mouse_drag_start = event.pos()\n        elif event.button() == QtCore.Qt.MidButton:\n            self.mouse_drag_start = event.pos()\n        else:\n            pass\n\n    def",
+  "sampling_seed": 3179901579,
+  "tag": "t04",
+  "temperature": 0.4
+}

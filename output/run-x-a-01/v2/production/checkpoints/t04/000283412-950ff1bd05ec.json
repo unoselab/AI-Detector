@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def remove(self,\n\t           package,\n\t           shutit_pexpect_child=None,\n\t           options=None,\n\t           echo=None,\n\t           timeout=shutit_global.shutit_global_object.default_timeout,\n\t           note=None):\n\t\t\"\"\"Distro-independent remove function.\n\t\tTakes a package name and runs relevant remove function.\n\n\t\t@param package:  Package to remove, which is run through package_map.\n\t\t@param shutit_pexpect_child:    See send()\n\t\t@param options:  Dict of options to pass to the remove command,\n\t\t                 mapped by install_type.\n\t\t@param timeout:  See send(). Default: 3600\n\t\t@param note:     See send()\n\n\t\t@return: True if all ok (i.e. the package was successfully removed),\n\t\t         False otherwise.\n\t\t@rtype: boolean\n\t\t\"\"\"\n        _child:\n",
+  "agc_valid": false,
+  "body_sha256": "529a7e949cb4ad673a58188d56c1de7d3679210e8c2416c910c93cc68d0bfd0e",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        _child:\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "9e23a8c8ec4b7f61ec2751beec95ff491c63fc2de3d9c0108ee98392cdfff51b",
+  "human_valid": true,
+  "line_no": 283412,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "950ff1bd05ec8dd6d2974626820949cf5a756e6cb9243b9cd4027afaf509aefa",
+  "raw_output": "_child: ",
+  "sampling_seed": 3423786748,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

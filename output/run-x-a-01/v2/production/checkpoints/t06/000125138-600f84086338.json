@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def last_time_non_ok_or_up(self):\n        \"\"\"Get the last time the service was in a non-OK state\n\n        :return: the nearest last time the service was not ok\n        :rtype: int\n        \"\"\"\n            return self.last_time_non_ok() or self.last_time_up()\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "5c24b6b3d624fbb77972d79a1b57597a5aa5a3b3fd8e6039b8e17f89f24499b4",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.last_time_non_ok() or self.last_time_up()\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "2ae3fbd172476316d1a33bf8bf8d1ebc63eaa65c1b94b11ac9613661071efcae",
+  "human_valid": true,
+  "line_no": 125138,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "600f84086338e3d9c3d51ec0e24d3a5ee701f66a5b9c54e91fd215ad9a58a893",
+  "raw_output": "\n        return self.last_time_non_ok() or self.last_time_up()\n\n    @property\n    def",
+  "sampling_seed": 761793624,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

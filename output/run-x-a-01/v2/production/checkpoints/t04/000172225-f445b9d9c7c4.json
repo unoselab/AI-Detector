@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def refresh_toc(self, refresh_done_callback, toc_cache):\n        \"\"\"\n        Initiate a refresh of the parameter TOC.\n        \"\"\"\n        self.refresh_done_callback = refresh_done_callback\n        self.toc_cache = toc_cache\n        self.refresh_thread = threading.Thread(target=self.refresh_toc_thread)\n        self.refresh_thread.start()\n",
+  "agc_valid": true,
+  "body_sha256": "2a547eb537f1eaa144b3864c0aed0504de7a90ba44747e3d94dbb60169b95047",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.refresh_done_callback = refresh_done_callback\n        self.toc_cache = toc_cache\n        self.refresh_thread = threading.Thread(target=self.refresh_toc_thread)\n        self.refresh_thread.start()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "c2d189074f80bbb13d690a6f0c131a42919c8081329e17b8195bfd2dab2e57d3",
+  "human_valid": true,
+  "line_no": 172225,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f445b9d9c7c47ffa6356ceb0e6d2fc3494c74cc4d1da488e7a216f81a81439bf",
+  "raw_output": "\n        self.refresh_done_callback = refresh_done_callback\n        self.toc_cache = toc_cache\n        self.refresh_thread = threading.Thread(target=self.refresh_toc_thread)\n        self.refresh_thread.start()\n\n    def",
+  "sampling_seed": 1948792023,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

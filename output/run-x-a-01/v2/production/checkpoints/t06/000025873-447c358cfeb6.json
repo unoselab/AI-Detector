@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def update(self, forecasts, observations):\n        \"\"\"\n        Update the statistics with forecasts and observations.\n\n        Args:\n            forecasts: The discrete Cumulative Distribution Functions of\n            observations:\n        \"\"\"\n        if not isinstance(forecasts, list):\n            raise ValueError(\n                \"Expecting a list of forecasts, but got %s\" % type(forecasts))\n        if not isinstance(observations, list):\n            raise ValueError(\n                \"Expecting a list of observations, but got %s\" % type(observations))\n        if len(forecasts) != len(observations):\n            raise ValueError(\n                \"Expecting the forecasts and observations to have the same length\")\n\n        for forecast, observation in zip(forecasts, observations):\n            self.update_single(forecast, observation)\n",
+  "agc_valid": true,
+  "body_sha256": "f8ff7efc93c171ab85a4a7c26e84a14a0934d470d0c0050bbf0ae7e5089e5808",
+  "body_tokens": 174,
+  "bucket": "type08_180",
+  "clean_output": "\n        if not isinstance(forecasts, list):\n            raise ValueError(\n                \"Expecting a list of forecasts, but got %s\" % type(forecasts))\n        if not isinstance(observations, list):\n            raise ValueError(\n                \"Expecting a list of observations, but got %s\" % type(observations))\n        if len(forecasts) != len(observations):\n            raise ValueError(\n                \"Expecting the forecasts and observations to have the same length\")\n\n        for forecast, observation in zip(forecasts, observations):\n            self.update_single(forecast, observation)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "ec9153451d6d9d4ea92834ad7f36040809bd4a557d4363670ad990050428a30d",
+  "human_valid": true,
+  "line_no": 25873,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "447c358cfeb60670145f6f8b1f3e89c7038164834efa6cca22906b2fbdf657e6",
+  "raw_output": "\n        if not isinstance(forecasts, list):\n            raise ValueError(\n                \"Expecting a list of forecasts, but got %s\" % type(forecasts))\n        if not isinstance(observations, list):\n            raise ValueError(\n                \"Expecting a list of observations, but got %s\" % type(observations))\n        if len(forecasts) != len(observations):\n            raise ValueError(\n                \"Expecting the forecasts and observations to have the same length\")\n\n        for forecast, observation in zip(forecasts, observations):\n            self.update_single(forecast, observation)\n\n    def",
+  "sampling_seed": 173306797,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def initialize(cls):\n        \"\"\"\n        Initialize Axes logging and show version information.\n\n        This method is re-entrant and can be called multiple times.\n        It displays version information exactly once at application startup.\n        \"\"\"\n        if cls._initialized:\n            return\n        cls._initialized = True\n\n        # Initialize logging\n        import logging\n        logging.getLogger('axes').addHandler(logging.NullHandler())\n\n        # Show version information\n        from axes.conf import settings\n        from axes.utils import get_version\n        from django.conf import settings as django_settings\n        from django.core.management import call_command\n        from django.utils.translation import ugettext_lazy as _\n        from django.utils.version import get_version as get_django_version\n\n        if settings.AXES_LOGIN_FAILURE_LIMIT <=\n",
+  "agc_valid": false,
+  "body_sha256": "58dd6827c0f2852563bc6804b0fc60aeb063424a39bd6d5fabc24ce90f3fe0ee",
+  "body_tokens": 152,
+  "bucket": "type06_160",
+  "clean_output": "\n        if cls._initialized:\n            return\n        cls._initialized = True\n\n        # Initialize logging\n        import logging\n        logging.getLogger('axes').addHandler(logging.NullHandler())\n\n        # Show version information\n        from axes.conf import settings\n        from axes.utils import get_version\n        from django.conf import settings as django_settings\n        from django.core.management import call_command\n        from django.utils.translation import ugettext_lazy as _\n        from django.utils.version import get_version as get_django_version\n\n        if settings.AXES_LOGIN_FAILURE_LIMIT <=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "7927e71fc82b6b3ec036aaa4f3df73c2f938ae0170717750b8c7ec48e9b91099",
+  "human_valid": true,
+  "line_no": 346014,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "50e52559a2a8e587b465717fd923e9f986789b26c72ac293d8a49194a53b5315",
+  "raw_output": "\n        if cls._initialized:\n            return\n        cls._initialized = True\n\n        # Initialize logging\n        import logging\n        logging.getLogger('axes').addHandler(logging.NullHandler())\n\n        # Show version information\n        from axes.conf import settings\n        from axes.utils import get_version\n        from django.conf import settings as django_settings\n        from django.core.management import call_command\n        from django.utils.translation import ugettext_lazy as _\n        from django.utils.version import get_version as get_django_version\n\n        if settings.AXES_LOGIN_FAILURE_LIMIT <= ",
+  "sampling_seed": 3297381139,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

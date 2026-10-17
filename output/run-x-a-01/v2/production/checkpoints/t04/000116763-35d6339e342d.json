@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list_sets(family='ipv4'):\n    \"\"\"\n    .. versionadded:: 2014.7.0\n\n    List all ipset sets.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' ipset.list_sets\n\n    \"\"\"\n    cmd = \"ipset list\"\n    if family:\n        cmd += \" -{0}\".format(family)\n    return __salt__[\"cmd.run\"](cmd).splitlines()\n",
+  "agc_valid": true,
+  "body_sha256": "3e085888c43c2896e07207a1db062a53e2cc14a6dfa4b9cf2a1a3666fcce6546",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    cmd = \"ipset list\"\n    if family:\n        cmd += \" -{0}\".format(family)\n    return __salt__[\"cmd.run\"](cmd).splitlines()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "5cdc1bfcfc1a2df5c073ec7924d43fd5404eeba6c83e211231c5f436968662ce",
+  "human_valid": true,
+  "line_no": 116763,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "35d6339e342d2117075c88a39cf7b7ea4c9b90b758cfcd8719e26088bc04c4bc",
+  "raw_output": "\n    cmd = \"ipset list\"\n    if family:\n        cmd += \" -{0}\".format(family)\n    return __salt__[\"cmd.run\"](cmd).splitlines()\n\n\ndef list_set(name, family='ipv4'):\n    \"\"\"\n    .. versionadded:: ",
+  "sampling_seed": 1811008574,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

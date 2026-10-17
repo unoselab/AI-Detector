@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_env_list(obj, env):\n    \"\"\"Creates the list of environments to read\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a list of working environments\n    \"\"\"\n    if isinstance(env, str):\n        env = [env]\n    elif isinstance(env, list):\n        pass\n    elif isinstance(env, dict):\n        env = list(env.keys())\n    else:\n        raise TypeError(\"env must be a string or a list\")\n    return env\n",
+  "agc_valid": true,
+  "body_sha256": "7d0626214fb34e7c4c01178a4feb0e2cd685b8886dc45ebfd3b0f9170f6b474d",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(env, str):\n        env = [env]\n    elif isinstance(env, list):\n        pass\n    elif isinstance(env, dict):\n        env = list(env.keys())\n    else:\n        raise TypeError(\"env must be a string or a list\")\n    return env\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "3ced4858980d192057e7fdfe18177356993b16926fb557606a518f64d06e364e",
+  "human_valid": true,
+  "line_no": 166264,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0183289bbd729887c0f0e269528432abc97d839014430b4cdb6f0516bf5a16ab",
+  "raw_output": "\n    if isinstance(env, str):\n        env = [env]\n    elif isinstance(env, list):\n        pass\n    elif isinstance(env, dict):\n        env = list(env.keys())\n    else:\n        raise TypeError(\"env must be a string or a list\")\n    return env\n\n\ndef _get_env_value(obj, env):\n    \"\"\"Returns the value of the environment\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: the value of the environment\n    \"\"\"\n    if isinstance(env, str):\n        env = [env]\n    elif isinstance(env, list):\n        pass\n    elif isinstance(env, dict):\n        env = list(env.keys())\n    else:\n        raise TypeError(\"env must be a string or a list\")\n\n    for e in env:\n        if e in obj.environments:\n            return obj.environments[e]\n\n    return None\n\n\ndef _get_env_files(obj, env):\n    \"\"\"Returns the list of files to read\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a list of files to read\n    \"\"\"\n    if isinstance(env, str):\n        env = [env]\n    elif isinstance(env, list):\n        pass\n    elif isinstance(env, dict):\n        env = list(env.keys())\n    else:\n        raise TypeError(\"env must be a string or a list\")\n\n    files = []\n    for e in env:\n        if e in obj.environments:\n            files.extend(obj.environments[e])\n\n    return files\n\n\ndef _get_env_files_from_env(obj, env):\n    \"\"\"Returns the list of files to read\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a list of files to read\n    \"\"\"\n    if isinstance(env, str):\n        env = [env]\n    elif isinstance(env, list):",
+  "sampling_seed": 1144881824,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

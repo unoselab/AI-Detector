@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def shutdown_mp(self, clean=True):\n        \"\"\"Shutdown all the multiprocessing.\n\n        :param bool clean: Whether to shutdown things cleanly, or force a quick and dirty shutdown.\n\n        \"\"\"\n        if clean:\n            for p in self.processes:\n                p.terminate()\n        else:\n            for p in self.processes:\n                p.kill()\n",
+  "agc_valid": true,
+  "body_sha256": "ab3a737e66b8ed693cd0e2577d5132d8fa06dad6cc6603f9ed01391ce7039aaa",
+  "body_tokens": 80,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if clean:\n            for p in self.processes:\n                p.terminate()\n        else:\n            for p in self.processes:\n                p.kill()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 179,
+  "human_sha256": "bf786adb08d14e927782581c6be64846650aa8c30873b8de3f553ed4a686251f",
+  "human_valid": true,
+  "line_no": 87655,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "66eea2a04498ff871a6844f5e061055725c47968759e059be551671411c8cf0b",
+  "raw_output": "\n        if clean:\n            for p in self.processes:\n                p.terminate()\n        else:\n            for p in self.processes:\n                p.kill()\n\n    def",
+  "sampling_seed": 3235238158,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

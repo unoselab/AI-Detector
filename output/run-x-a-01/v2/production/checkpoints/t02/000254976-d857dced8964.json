@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def golden_section_search(fn, a, b, tolerance=1e-5):\n    \"\"\"\n    WIKIPEDIA IMPLEMENTATION\n    golden section search\n    to find the minimum of f on [a,b]\n    f: a strictly unimodal function on [a,b]\n\n    example:\n    >>> f=lambda x:(x-2)**2\n    >>> x=gss(f,1,5)\n    >>> x\n    2.000009644875678\n    \"\"\"\n    8\n        >>> f(x)\n        0.0\n        \"\"\"\n        # golden ratio\n        phi = (1 +\n",
+  "agc_valid": false,
+  "body_sha256": "dc9d0a17493740bbe638d02cbf562071c112997387332247a27b35318ca9d6b8",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n    8\n        >>> f(x)\n        0.0\n        \"\"\"\n        # golden ratio\n        phi = (1 +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "ae66cf722c0191e79f7bb8bfc883ccedeb086c1ed225d94393db0c11ca4dc70e",
+  "human_valid": true,
+  "line_no": 254976,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d857dced89647d6996086b01184a6e4908aee9517eb17343456a2b9ddc3c3f0f",
+  "raw_output": "8\n    >>> f(x)\n    0.0\n    \"\"\"\n    # golden ratio\n    phi = (1 + ",
+  "sampling_seed": 245208513,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

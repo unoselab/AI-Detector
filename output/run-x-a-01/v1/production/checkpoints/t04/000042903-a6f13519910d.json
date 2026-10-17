@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list_from_tibiadata(cls, content):\n        \"\"\"Builds a character object from a TibiaData character response.\n\n        Parameters\n        ----------\n        content: :class:`str`\n            A string containing the JSON response from TibiaData.\n\n        Returns\n        -------\n        :class:`list` of :class:`ListedGuild`\n            The list of guilds contained.\n\n        Raises\n        ------\n        InvalidContent\n            If content is not a JSON response of TibiaData's guild list.\n        \"\"\"\n        s.\n                \"\"\"\n                try:\n                    data = json.loads(content)\n                except json.JSONDecodeError:\n                    raise InvalidContent(\"content is not a JSON response of TibiaData's guilds\")\n                if not isinstance(data, list):\n                    raise InvalidContent(\"content is not a JSON response of TibiaData's guilds\")\n\n                guilds = []\n                for guild in data:\n                    guilds.append(cls.from_tibiadata(guild))\n                return guilds\n\n            @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "907cb20d2c248075a0b3c8c3a8573ca1fe911a47b0a8f0bf08fe2edbe09e76ae",
+  "body_tokens": 243,
+  "bucket": "out_of_range",
+  "clean_output": "\n        s.\n                \"\"\"\n                try:\n                    data = json.loads(content)\n                except json.JSONDecodeError:\n                    raise InvalidContent(\"content is not a JSON response of TibiaData's guilds\")\n                if not isinstance(data, list):\n                    raise InvalidContent(\"content is not a JSON response of TibiaData's guilds\")\n\n                guilds = []\n                for guild in data:\n                    guilds.append(cls.from_tibiadata(guild))\n                return guilds\n\n            @classmethod\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f0e20f9bba2d17da8c10a9815b6cca7be5dec520f03edbfefcee2e9558bdd7a5",
+  "human_valid": true,
+  "line_no": 42903,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "a6f13519910d71b921bea0e55f244e1861e619eae9acf372d700501055b68114",
+  "raw_output": "s.\n        \"\"\"\n        try:\n            data = json.loads(content)\n        except json.JSONDecodeError:\n            raise InvalidContent(\"content is not a JSON response of TibiaData's guilds\")\n        if not isinstance(data, list):\n            raise InvalidContent(\"content is not a JSON response of TibiaData's guilds\")\n\n        guilds = []\n        for guild in data:\n            guilds.append(cls.from_tibiadata(guild))\n        return guilds\n\n    @classmethod\n    def",
+  "sampling_seed": 2522151428,
+  "tag": "t04",
+  "temperature": 0.4
+}

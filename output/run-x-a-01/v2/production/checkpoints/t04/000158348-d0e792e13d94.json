@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_python(self, value):\n        \"\"\"Convert our string value to JSON after we load it from the DB\"\"\"\n        if value is None:\n            return None\n        return json.loads(value)\n",
+  "agc_valid": true,
+  "body_sha256": "81f6f41326892bc4d9c4b0b20589d27cb272fd7812b9e1a1908851b835656129",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if value is None:\n            return None\n        return json.loads(value)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "6208e42b0863859d41f5ff354a92588533f448c05d91e6a0c51d85dc00d1078e",
+  "human_valid": true,
+  "line_no": 158348,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d0e792e13d948c9f32e2e7cc33f26fda731fec9d40588322c314eca8a05a71d3",
+  "raw_output": "\n        if value is None:\n            return None\n        return json.loads(value)\n\n    def",
+  "sampling_seed": 3349348269,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

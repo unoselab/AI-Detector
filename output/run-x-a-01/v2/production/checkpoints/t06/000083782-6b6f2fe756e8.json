@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_user_by_auth_token(token=None):\n    \"\"\"\n    Return the AuthUser associated to the token, otherwise it will return None.\n    If token is not provided, it will pull it from the headers: Authorization\n\n    Exception:\n    Along with AuthError, it may\n    :param token:\n    :return: AuthUser\n    \"\"\"\n    if token is None:\n        token = request.headers.get('Authorization')\n\n    if not token:\n        return None\n\n    if not token.startswith('Bearer '):\n        raise AuthError(\"Token does not start with 'Bearer '\")\n\n    token = token.replace('Bearer ', '')\n    try:\n        auth_user = AuthUser.objects.get(token=token)\n        return auth_user\n    except ObjectDoesNotExist:\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "12d384f2d09523d6666c7b0644ed0fb1400dfc611717dfe8240732532329dd24",
+  "body_tokens": 100,
+  "bucket": "type01_110",
+  "clean_output": "\n    if token is None:\n        token = request.headers.get('Authorization')\n\n    if not token:\n        return None\n\n    if not token.startswith('Bearer '):\n        raise AuthError(\"Token does not start with 'Bearer '\")\n\n    token = token.replace('Bearer ', '')\n    try:\n        auth_user = AuthUser.objects.get(token=token)\n        return auth_user\n    except ObjectDoesNotExist:\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 104,
+  "human_sha256": "63e4efec276a62d489c1c6ee0da5584c87d3be2e61081966e109ed1ae4260387",
+  "human_valid": true,
+  "line_no": 83782,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6b6f2fe756e8c09d98e4c9ada196194e50354b7001721b22c0a7fe618e85e2ef",
+  "raw_output": "\n    if token is None:\n        token = request.headers.get('Authorization')\n\n    if not token:\n        return None\n\n    if not token.startswith('Bearer '):\n        raise AuthError(\"Token does not start with 'Bearer '\")\n\n    token = token.replace('Bearer ', '')\n    try:\n        auth_user = AuthUser.objects.get(token=token)\n        return auth_user\n    except ObjectDoesNotExist:\n        return None\n\n\ndef get_user_by_email(email=None):\n    \"\"\"\n    Return the AuthUser associated to the email, otherwise it will return None.\n    If email is not provided, it will pull it from the headers: Authorization\n\n    Exception:\n    Along with AuthError, it may\n    :param email:\n    :return: AuthUser\n    \"\"\"\n    if email is None:\n        email = request.headers.get('Email')\n\n    if not email:\n        return None\n\n    try:\n        auth_user = AuthUser.objects.get(email=email)\n        return auth_user\n    except ObjectDoesNotExist:\n        return None\n\n\ndef get_user_by_email_or_token(email=None, token=None):\n    \"\"\"\n    Return the AuthUser associated to the email or token, otherwise it will return None.\n    If email is not provided, it will pull it from the headers: Email\n    If token is not provided, it will pull it from the headers: Authorization\n\n    Exception:\n    Along with AuthError, it may\n    :param email:\n    :param token:\n    :return: AuthUser\n    \"\"\"\n    if email is None:\n        email = request.headers.get('Email')\n\n    if token is None:\n        token = request.headers.get('Authorization')\n\n    if not email and not token:\n        return None\n\n    if token:\n        auth_user = get_user_by_auth_token(token)\n        if auth_user:\n            return auth_user\n\n    if email:\n        auth_user = get_user_by_email(email)\n        if auth_user:\n            return",
+  "sampling_seed": 4139245705,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

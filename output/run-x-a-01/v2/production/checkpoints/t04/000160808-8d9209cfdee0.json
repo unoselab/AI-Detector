@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def subprocess_check_output(*args, cwd=None, env=None, stderr=False):\n    \"\"\"\n    Run a command and capture output\n\n    :param *args: List of command arguments\n    :param cwd: Current working directory\n    :param env: Command environment\n    :param stderr: Read on stderr\n    :returns: Command output\n    \"\"\"\n    if not env:\n        env = os.environ\n    if not cwd:\n        cwd = os.getcwd()\n    if stderr:\n        stderr = subprocess.STDOUT\n    try:\n        output = subprocess.check_output(\n            args, cwd=cwd, stderr=stderr, env=env)\n    except subprocess.CalledProcessError as e:\n        raise CommandError(e)\n    return output\n",
+  "agc_valid": true,
+  "body_sha256": "9b58d2d0fdeac7789ac7bea14787a76bc266ff6d36a2f899a794841fb6305a2b",
+  "body_tokens": 98,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not env:\n        env = os.environ\n    if not cwd:\n        cwd = os.getcwd()\n    if stderr:\n        stderr = subprocess.STDOUT\n    try:\n        output = subprocess.check_output(\n            args, cwd=cwd, stderr=stderr, env=env)\n    except subprocess.CalledProcessError as e:\n        raise CommandError(e)\n    return output\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "600c1532b193b8b9c133623b4e3d1a58553af6c4a9a23855b1835093e98fdf92",
+  "human_valid": true,
+  "line_no": 160808,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8d9209cfdee09148b36cdecd8a11c3cad42e42b991137c292760b7545b6c2510",
+  "raw_output": "\n    if not env:\n        env = os.environ\n    if not cwd:\n        cwd = os.getcwd()\n    if stderr:\n        stderr = subprocess.STDOUT\n    try:\n        output = subprocess.check_output(\n            args, cwd=cwd, stderr=stderr, env=env)\n    except subprocess.CalledProcessError as e:\n        raise CommandError(e)\n    return output\n\n\ndef subprocess_check_call(*args, cwd=None, env=None):\n    \"\"\"\n    Run a command and check if it returns a non-zero exit code\n\n    :param *args: List of command arguments\n    :param cwd: Current working directory\n    :param env: Command environment\n    \"\"\"\n    if not env:\n        env = os.environ\n    if not cwd:\n        cwd = os.getcwd()\n    try:\n        subprocess.check_call(args, cwd=cwd, env=env)\n    except subprocess.CalledProcessError as e:\n        raise CommandError(e)\n\n\ndef subprocess_run(*args, cwd=None, env=None):\n    \"\"\"\n    Run a command and check if it returns a non-zero exit code\n\n    :param *args: List of command arguments\n    :param cwd: Current working directory\n    :param env: Command environment\n    \"\"\"\n    if not env:\n        env = os.environ\n    if not cwd:\n        cwd = os.getcwd()\n    try:\n        subprocess.run(args, cwd=cwd, env=env)\n    except subprocess.CalledProcessError as e:\n        raise CommandError(e)\n\n\ndef subprocess_call(*args, cwd=None, env=None):\n    \"\"\"\n    Run a command and check if it returns a non-zero exit code\n\n    :param *args: List of command arguments\n    :param cwd: Current working directory\n    :param env: Command environment\n    \"\"\"\n    if not env:\n        env = os.environ\n    if not cwd:\n        cwd = os.getcwd()\n    try",
+  "sampling_seed": 1043729661,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

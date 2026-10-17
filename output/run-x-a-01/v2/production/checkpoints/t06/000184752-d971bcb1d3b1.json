@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def write_config_file(self, params, path):\n        \"\"\" write a config file for this single exp in the folder path.\n        \"\"\"\n        # get the experiment name and the name of the config file\n        exp_name = self.get_exp_name(params)\n        # create the folder if necessary\n        if not os.path.exists(path):\n            os.makedirs(path)\n        config_path = os.path.join(path, exp_name)\n        # write the config file\n        with open(config_path, 'w') as f:\n            for k, v in params.items():\n                if k != 'num_seeds':\n                    f.write(f'{k} = {v}\\n')\n",
+  "agc_valid": true,
+  "body_sha256": "a3eed870feb397b9df155fde4bf7f3a06679f0408274a15918ef6147145ce815",
+  "body_tokens": 157,
+  "bucket": "type06_160",
+  "clean_output": "\n        # get the experiment name and the name of the config file\n        exp_name = self.get_exp_name(params)\n        # create the folder if necessary\n        if not os.path.exists(path):\n            os.makedirs(path)\n        config_path = os.path.join(path, exp_name)\n        # write the config file\n        with open(config_path, 'w') as f:\n            for k, v in params.items():\n                if k != 'num_seeds':\n                    f.write(f'{k} = {v}\\n')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "97d1a90002c811300e0326ab3b619d8f1fbd7d59636265a81ad01678d5ab2cb3",
+  "human_valid": true,
+  "line_no": 184752,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d971bcb1d3b14bd4ff953c3f0c24c5dce649934a6d6b6678041c988929161c90",
+  "raw_output": "\n        # get the experiment name and the name of the config file\n        exp_name = self.get_exp_name(params)\n        # create the folder if necessary\n        if not os.path.exists(path):\n            os.makedirs(path)\n        config_path = os.path.join(path, exp_name)\n        # write the config file\n        with open(config_path, 'w') as f:\n            for k, v in params.items():\n                if k != 'num_seeds':\n                    f.write(f'{k} = {v}\\n')\n\n    def",
+  "sampling_seed": 598175858,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _create_binary_trigger(trigger):\n    \"\"\"Create an 8-bit binary trigger from an InputTrigger, TrueTrigger, FalseTrigger.\"\"\"\n    if isinstance(trigger, InputTrigger):\n        return trigger.value\n    elif isinstance(trigger, TrueTrigger):\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "7bbcc3dc0026de89bca7717aecb973102938733852c15ff2c6fcccf32394bf5c",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(trigger, InputTrigger):\n        return trigger.value\n    elif isinstance(trigger, TrueTrigger):\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "2453a3ae692f058335221ea90b150d578fd1ccc48d7bf6b111aa6eabe52dd21c",
+  "human_valid": true,
+  "line_no": 128426,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cf509da37344d4b5f0162a2b35a9215736d2a0288e7b10b6324a1142b1be6f38",
+  "raw_output": "\n    if isinstance(trigger, InputTrigger):\n        return trigger.value\n    elif isinstance(trigger, TrueTrigger):\n        return ",
+  "sampling_seed": 1231433705,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

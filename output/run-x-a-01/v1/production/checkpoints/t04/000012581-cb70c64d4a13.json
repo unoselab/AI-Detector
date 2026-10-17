@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sample_less_than_condition(choices_in, condition):\n    \"\"\"Creates a random sample from choices without replacement, subject to the\n    condition that each element of the output is greater than the corresponding\n    element of the condition array.\n\n    condition should be in ascending order.\n    \"\"\"\n    choices_in = np.asarray(choices_in)\n    condition = np.asarray(condition)\n\n    if condition.shape != choices_in.shape:\n        raise ValueError(\n            \"condition and choices must have the same shape. \"\n            \"condition has shape {} and choices has shape {}\".format(\n                condition.shape, choices_in.shape\n            )\n        )\n\n    if condition.ndim !=\n",
+  "agc_valid": false,
+  "body_sha256": "6910462727f8361e4bc7163704b9809fd0b586fa6869df349444915092f800b6",
+  "body_tokens": 112,
+  "bucket": "type02_120",
+  "clean_output": "\n    choices_in = np.asarray(choices_in)\n    condition = np.asarray(condition)\n\n    if condition.shape != choices_in.shape:\n        raise ValueError(\n            \"condition and choices must have the same shape. \"\n            \"condition has shape {} and choices has shape {}\".format(\n                condition.shape, choices_in.shape\n            )\n        )\n\n    if condition.ndim !=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "7af47ba22598197c807ed3f4e8d7be59b53faf743ce0c87cfa777584cf1b1017",
+  "human_valid": true,
+  "line_no": 12581,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "cb70c64d4a130e3dd2e080695f688894d23ccd32c3aa868f079c5c43352fcbe8",
+  "raw_output": "\n    choices_in = np.asarray(choices_in)\n    condition = np.asarray(condition)\n\n    if condition.shape != choices_in.shape:\n        raise ValueError(\n            \"condition and choices must have the same shape. \"\n            \"condition has shape {} and choices has shape {}\".format(\n                condition.shape, choices_in.shape\n            )\n        )\n\n    if condition.ndim != ",
+  "sampling_seed": 689089708,
+  "tag": "t04",
+  "temperature": 0.4
+}

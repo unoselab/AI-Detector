@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_root_directory():\n    \"\"\"\n    Get user root directory (application user configuration root directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return str(Path.home())\n",
+  "agc_valid": true,
+  "body_sha256": "9f6ed13e4ece8e660509bcbb63eb67d4d125191e6523a823237807e212fd9b80",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return str(Path.home())\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "9b8f7aa795ded9be748334c568f0a74957ac5334a01ca0bf495b0409bb5920c8",
+  "human_valid": true,
+  "line_no": 310299,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a5a51a2f02a45e35cd9517f7c7d88cf578562d3fe65d48034500d203dac50864",
+  "raw_output": "\n    return str(Path.home())\n\n\ndef get_user_config_directory():\n    \"\"\"\n    Get user config directory (application user configuration directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"config\")\n\n\ndef get_user_data_directory():\n    \"\"\"\n    Get user data directory (application user data directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"data\")\n\n\ndef get_user_logs_directory():\n    \"\"\"\n    Get user logs directory (application user logs directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"logs\")\n\n\ndef get_user_db_directory():\n    \"\"\"\n    Get user database directory (application user database directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"db\")\n\n\ndef get_user_cache_directory():\n    \"\"\"\n    Get user cache directory (application user cache directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"cache\")\n\n\ndef get_user_bin_directory():\n    \"\"\"\n    Get user bin directory (application user bin directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"bin\")\n\n\ndef get_user_lib_directory():\n    \"\"\"\n    Get user lib directory (application user lib directory)\n\n    Returns\n    -------\n    string\n        A full path\n\n    \"\"\"\n    return os.path.join(get_user_root_directory(), \"lib\")\n\n\ndef get_user_temp_directory():\n    \"\"\"\n    Get user temp directory (application user temp directory)\n\n    Returns\n    -",
+  "sampling_seed": 1125039393,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

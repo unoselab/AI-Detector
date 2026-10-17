@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def applicable_models(self):\n        \"\"\"\n        Returns a list of model classes that subclass Page\n        and include a \"tags\" field.\n\n        :rtype: list.\n        \"\"\"\n        return [\n            model\n            for model in apps.get_models()\n            if issubclass(model, Page) and model._meta.get_field('tags')\n        ]\n",
+  "agc_valid": true,
+  "body_sha256": "4510240728f8afe3fc0ce158acd995780b606bbcf13e64e2b301676c425896a0",
+  "body_tokens": 61,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return [\n            model\n            for model in apps.get_models()\n            if issubclass(model, Page) and model._meta.get_field('tags')\n        ]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "5ca01cce447373004c638da792d0365ffefecf5549b88309967aef91b76321e9",
+  "human_valid": true,
+  "line_no": 16057,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "394d271f54be1c69d9bd05db337c966d424547d9dd477f914470590315ef5a1f",
+  "raw_output": "\r\n        return [\r\n            model\r\n            for model in apps.get_models()\r\n            if issubclass(model, Page) and model._meta.get_field('tags')\r\n        ]\r\n\r\n    def",
+  "sampling_seed": 3537329829,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

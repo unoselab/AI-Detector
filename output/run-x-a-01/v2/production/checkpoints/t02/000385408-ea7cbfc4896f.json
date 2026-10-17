@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ndcg(truth, recommend, k=None):\n    \"\"\"Normalized Discounted Cumulative Grain (NDCG).\n\n    Args:\n        truth (numpy 1d array): Set of truth samples.\n        recommend (numpy 1d array): Ordered set of recommended samples.\n        k (int): Top-k items in `recommend` will be recommended.\n\n    Returns:\n        float: NDCG.\n\n    \"\"\"\n    if k is None:\n        k = len(recommend)\n\n    dcg =\n",
+  "agc_valid": false,
+  "body_sha256": "41f43eda7e0cac11648ae41878bac600abfb2aa6478845bc3eef786ac4234e38",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if k is None:\n        k = len(recommend)\n\n    dcg =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "3046732ec8de241462628eb8c010106a283eb68a0c73b49beebc175ec0fd3cb4",
+  "human_valid": true,
+  "line_no": 385408,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ea7cbfc4896f8b92a4a89eb5d3fa9d6b0e7eab8ab3dcc2b0bc6f3966321c97b2",
+  "raw_output": "\n    if k is None:\n        k = len(recommend)\n\n    dcg = ",
+  "sampling_seed": 2279911125,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

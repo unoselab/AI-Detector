@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def fromdict(self, dikt):\n        \"\"\"Load data from dictionary. Dictionary should contain int keys\n        representing addresses. Values should be the data to be stored in\n        those addresses in unsigned char form (i.e. not strings).\n        The dictionary may contain the key, ``start_addr``\n        to indicate the starting address of the data as described in README.\n\n        The contents of the dict will be merged with this object and will\n        overwrite any conflicts. This function is not necessary if the\n        object was initialized with source specified.\n        \"\"\"\n        if isinstance(dikt, dict):\n            if \"start_addr\" in dikt:\n                self.start_addr = dikt[\"start_addr\"]\n            for key in dikt:\n                if key in self.data:\n                    self.data[key] = dikt[key]\n                else:\n                    raise ValueError(\"Invalid key: %s\" % key)\n        else:\n            raise ValueError(\"Data must be a dictionary.\")\n",
+  "agc_valid": true,
+  "body_sha256": "5386fb67435abc7ff3be43de025fd2ee97ab091340791c501ab5e2a42cf381f0",
+  "body_tokens": 166,
+  "bucket": "type07_170",
+  "clean_output": "\n        if isinstance(dikt, dict):\n            if \"start_addr\" in dikt:\n                self.start_addr = dikt[\"start_addr\"]\n            for key in dikt:\n                if key in self.data:\n                    self.data[key] = dikt[key]\n                else:\n                    raise ValueError(\"Invalid key: %s\" % key)\n        else:\n            raise ValueError(\"Data must be a dictionary.\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "b37316477c9ede2aed343d6290f2c0eb1821232bb46bb7eaaa70475cdf6e722f",
+  "human_valid": true,
+  "line_no": 127672,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f2a7b077bfe253aef9f3732027f04f2cd8ce948b78831ac76bad04abd8c44d51",
+  "raw_output": "\n        if isinstance(dikt, dict):\n            if \"start_addr\" in dikt:\n                self.start_addr = dikt[\"start_addr\"]\n            for key in dikt:\n                if key in self.data:\n                    self.data[key] = dikt[key]\n                else:\n                    raise ValueError(\"Invalid key: %s\" % key)\n        else:\n            raise ValueError(\"Data must be a dictionary.\")\n\n\ndef todict(self):\n    \"\"\"Convert to a dictionary of data.\n    \"\"\"\n    data = {}\n    for key in self.data:\n        data[key] = self.data[key]\n    return data\n\n\ndef fromfile(self, file_path, start_addr=0):\n    \"\"\"Load data from a file.\n\n    The file is assumed to be a binary file of data.\n    The first byte of the file will be interpreted as the starting address.\n    \"\"\"\n    with open(file_path, 'rb') as f:\n        data = f.read()\n        self.frombytes(data, start_addr)\n\n\ndef tofile(self, file_path):\n    \"\"\"Save data to a file.\n\n    The file is assumed to be a binary file of data.\n    \"\"\"\n    with open(file_path, 'wb') as f:\n        f.write(self.tobytes())\n\n\ndef frombytes(self, bytes, start_addr=0):\n    \"\"\"Load data from bytes.\n\n    The bytes are assumed to be in the order of memory, starting at\n    ``start_addr``.\n    \"\"\"\n    if isinstance(bytes, bytes):\n        self.start_addr = start_addr\n        for i in range(0, len(bytes)):\n            self.data[start_addr + i] = bytes[i]\n    else:\n        raise ValueError(\"Data must be a bytes.\")\n\n\ndef tobytes(self):\n    \"\"\"Convert to bytes.\n    \"\"\"\n    bytes = []\n    for key in self.data:\n        bytes.append(self.data[key])\n    return bytes\n\n\ndef fromstring(self, string, start_addr=0):\n   ",
+  "sampling_seed": 2172397791,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

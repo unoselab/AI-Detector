@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def merge_range_pairs(prs):\n    \"\"\"Takes in a list of pairs specifying ranges and returns a sorted list of merged, sorted ranges.\"\"\"\n    prs = sorted(prs)\n    merged = []\n    for pr in prs:\n        if not merged or merged[-1][1] < pr[0]:\n            merged.append(pr)\n        else:\n            merged[-1][1] = max(merged[-1][1], pr[1])\n    return merged\n",
+  "agc_valid": true,
+  "body_sha256": "a3d5c9d6c3f36f76eaa463ad826936d919f3c74f78a986e422a8605540d1734a",
+  "body_tokens": 74,
+  "bucket": "out_of_range",
+  "clean_output": "\n    prs = sorted(prs)\n    merged = []\n    for pr in prs:\n        if not merged or merged[-1][1] < pr[0]:\n            merged.append(pr)\n        else:\n            merged[-1][1] = max(merged[-1][1], pr[1])\n    return merged\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "1fed882eafa039790bf6839095c11212234bd09656e7bef0548a908ed200be77",
+  "human_valid": true,
+  "line_no": 84308,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "45af4b39a5ffa50ff237c35c7ee63c60e6f5f0ace89759fd00880cc70d85a5b6",
+  "raw_output": "\n    prs = sorted(prs)\n    merged = []\n    for pr in prs:\n        if not merged or merged[-1][1] < pr[0]:\n            merged.append(pr)\n        else:\n            merged[-1][1] = max(merged[-1][1], pr[1])\n    return merged\n\n\ndef merge_range_pairs_with_overlap(prs):\n    \"\"\"Takes in a list of pairs specifying ranges and returns a sorted list of merged, sorted ranges.\n    Ranges are allowed to overlap.\"\"\"\n    prs = sorted(prs)\n    merged = []\n    for pr in prs:\n        if not merged or merged[-1][1] < pr[0]:\n            merged.append(pr)\n        else:\n            merged[-1][1] = max(merged[-1][1], pr[1])\n    return merged\n\n\ndef merge_range_pairs_with_overlap_and_gaps(prs):\n    \"\"\"Takes in a list of pairs specifying ranges and returns a sorted list of merged, sorted ranges.\n    Ranges are allowed to overlap and there can be gaps between ranges.\"\"\"\n    prs = sorted(prs)\n    merged = []\n    for pr in prs:\n        if not merged or merged[-1][1] < pr[0]:\n            merged.append(pr)\n        else:\n            merged[-1][1] = max(merged[-1][1], pr[1])\n    return merged\n\n\ndef merge_range_pairs_with_overlap_and_gaps_and_adjacent(prs):\n    \"\"\"Takes in a list of pairs specifying ranges and returns a sorted list of merged, sorted ranges.\n    Ranges are allowed to overlap and there can be gaps between ranges.\n    Adjacent ranges are merged.\"\"\"\n    prs = sorted(prs)\n    merged = []\n    for pr in prs:\n        if not merged or merged[-1][1] < pr[0]:\n            merged.append(pr)\n        else:\n            merged[-1][1] = max(merged[-1][1], pr[1])\n    return merged\n\n\ndef",
+  "sampling_seed": 4243423952,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

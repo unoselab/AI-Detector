@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _check_type(self):\n        \"\"\"Check that the device group type is correct.\n\n        :raises: DeviceGroupOperationNotSupported, DeviceGroupNotSupported\n        \"\"\"\n        if self.type not in self.supported_types:\n            raise DeviceGroupOperationNotSupported(\n                \"Device group type {} is not supported\".format(self.type))\n        if self.type not in self.supported_device_types:\n            raise DeviceGroupNotSupported(\n                \"Device group type {} is not supported for this device\".format(\n                    self.type))\n",
+  "agc_valid": true,
+  "body_sha256": "5234aaa9070ff9a3d1dee7b7142bba7fc13b2cc65d5acb1633f0c086b6c9534c",
+  "body_tokens": 118,
+  "bucket": "type02_120",
+  "clean_output": "\n        if self.type not in self.supported_types:\n            raise DeviceGroupOperationNotSupported(\n                \"Device group type {} is not supported\".format(self.type))\n        if self.type not in self.supported_device_types:\n            raise DeviceGroupNotSupported(\n                \"Device group type {} is not supported for this device\".format(\n                    self.type))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "4a5013e0977c112a6e0d3230b4672e228c3a01dbd3eb0d844c542d0e6a72cedb",
+  "human_valid": true,
+  "line_no": 178667,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b2b9f077b48d67901b55c4a971d212c3895e08ae48202aa6da9e7dee25aa69bf",
+  "raw_output": "\n        if self.type not in self.supported_types:\n            raise DeviceGroupOperationNotSupported(\n                \"Device group type {} is not supported\".format(self.type))\n        if self.type not in self.supported_device_types:\n            raise DeviceGroupNotSupported(\n                \"Device group type {} is not supported for this device\".format(\n                    self.type))\n\n    def",
+  "sampling_seed": 2645970083,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

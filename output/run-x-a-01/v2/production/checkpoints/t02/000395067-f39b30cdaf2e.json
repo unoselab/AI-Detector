@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_channel(self):\n        \"\"\"\n        Fetch a channel from the pool. Will return a new one if necessary. If\n        a channel in the free pool is closed, will remove it. Will return None\n        if we hit the cap. Will clean up any channels that were published to\n        but closed due to error.\n        \"\"\"\n        if self._channel_pool:\n            channel = self._channel_pool.pop()\n            if channel.is_closed:\n                self._channel_pool.append(channel)\n                channel = None\n        else:\n            channel = None\n\n        if channel is None:\n            if self._channel_pool_size < self._channel_pool_cap:\n                channel = self._create_channel()\n                self._channel_pool_size +=\n",
+  "agc_valid": false,
+  "body_sha256": "b76c4eaaf163ab43e4c2331a5260b2db819ed5670f6b93b76c0bd316de51841b",
+  "body_tokens": 154,
+  "bucket": "type06_160",
+  "clean_output": "\n        if self._channel_pool:\n            channel = self._channel_pool.pop()\n            if channel.is_closed:\n                self._channel_pool.append(channel)\n                channel = None\n        else:\n            channel = None\n\n        if channel is None:\n            if self._channel_pool_size < self._channel_pool_cap:\n                channel = self._create_channel()\n                self._channel_pool_size +=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "e85e53afa4026f98e80c24f23dd972b0f49b91f188dab902ace93e728e5083b0",
+  "human_valid": true,
+  "line_no": 395067,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f39b30cdaf2eed25058a79f8d3018474dc837d992d84e49ca73f9879110e9d34",
+  "raw_output": "\n        if self._channel_pool:\n            channel = self._channel_pool.pop()\n            if channel.is_closed:\n                self._channel_pool.append(channel)\n                channel = None\n        else:\n            channel = None\n\n        if channel is None:\n            if self._channel_pool_size < self._channel_pool_cap:\n                channel = self._create_channel()\n                self._channel_pool_size += ",
+  "sampling_seed": 3374073140,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

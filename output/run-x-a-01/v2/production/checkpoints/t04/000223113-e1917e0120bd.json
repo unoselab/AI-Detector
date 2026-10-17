@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_smt_userid():\n    \"\"\"Get the userid of smt server\"\"\"\n    userid = os.getenv('SMT_USERID')\n    if not userid:\n        raise Exception('SMT_USERID is not set.')\n    return userid\n",
+  "agc_valid": true,
+  "body_sha256": "a4e507dec3c2e366872d4082332057c38ba0d0c919dd0d2889f02bff2337a9e5",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    userid = os.getenv('SMT_USERID')\n    if not userid:\n        raise Exception('SMT_USERID is not set.')\n    return userid\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "90f9beff140ea36ea50acdff31e0a3640bf1841af381abc088cd568f29ba6999",
+  "human_valid": true,
+  "line_no": 223113,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e1917e0120bded292146c08c278d77213401885cf1e0198258cc3574ddacaf40",
+  "raw_output": "\n    userid = os.getenv('SMT_USERID')\n    if not userid:\n        raise Exception('SMT_USERID is not set.')\n    return userid\n\n\ndef get_smt_password():\n    \"\"\"Get the password of smt server\"\"\"\n    password = os.getenv('SMT_PASSWORD')\n    if not password:\n        raise Exception('SMT_PASSWORD is not set.')\n    return password\n\n\ndef get_smt_host():\n    \"\"\"Get the host of smt server\"\"\"\n    host = os.getenv('SMT_HOST')\n    if not host:\n        raise Exception('SMT_HOST is not set.')\n    return host\n\n\ndef get_smt_port():\n    \"\"\"Get the port of smt server\"\"\"\n    port = os.getenv('SMT_PORT')\n    if not port:\n        raise Exception('SMT_PORT is not set.')\n    return port\n\n\ndef get_smt_protocol():\n    \"\"\"Get the protocol of smt server\"\"\"\n    protocol = os.getenv('SMT_PROTOCOL')\n    if not protocol:\n        raise Exception('SMT_PROTOCOL is not set.')\n    return protocol\n\n\ndef get_smt_ssl_verify():\n    \"\"\"Get the ssl_verify of smt server\"\"\"\n    ssl_verify = os.getenv('SMT_SSL_VERIFY')\n    if not ssl_verify:\n        raise Exception('SMT_SSL_VERIFY is not set.')\n    return ssl_verify\n\n\ndef get_smt_timeout():\n    \"\"\"Get the timeout of smt server\"\"\"\n    timeout = os.getenv('SMT_TIMEOUT')\n    if not timeout:\n        raise Exception('SMT_TIMEOUT is not set.')\n    return timeout\n\n\ndef get_smt_ssl_verify_false():\n    \"\"\"Get the ssl_verify_false of smt server\"\"\"\n    ssl_verify_false = os.getenv('SMT_SSL_VERIFY_FALSE')\n    if not ssl_verify_false:\n        raise Exception('SMT_SSL_VERIF",
+  "sampling_seed": 1945471153,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

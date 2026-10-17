@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_case_template(self, name):\n\n        \"\"\"\n        :param name: Case template name\n        :return: TheHive case template\n        :rtype: json\n\n        \"\"\"\n        url = \"{}/caseTemplate/{}\".format(self.api, name)\n        return self.execute_call(\"get\", url, None)\n",
+  "agc_valid": true,
+  "body_sha256": "3a532066d732c33517dbb6f5a28cc86c068514928bd555c3d86002d3e8dd53fe",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n        url = \"{}/caseTemplate/{}\".format(self.api, name)\n        return self.execute_call(\"get\", url, None)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "7552fe3158d41d5a9302d753316fca765ff7676f84618c98cb8cef74ea06cc80",
+  "human_valid": true,
+  "line_no": 192332,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5d3391d4260c034d71e156b504b82c2959ef606165cc8dbc3b7dd862c1ef2c82",
+  "raw_output": "\n\n        url = \"{}/caseTemplate/{}\".format(self.api, name)\n        return self.execute_call(\"get\", url, None)\n\n    def",
+  "sampling_seed": 3756595395,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self):\n        \"\"\"Get the first public IP address returned by one of the online services.\"\"\"\n        for service in self.services:\n            try:\n                return service.get_ip()\n            except Exception:\n                continue\n        raise Exception(\"No IP address found\")\n",
+  "agc_valid": true,
+  "body_sha256": "8f67d367a1be41b104eb529fe175abc24eb2549b8aca9fc6c72505953368fd4c",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for service in self.services:\n            try:\n                return service.get_ip()\n            except Exception:\n                continue\n        raise Exception(\"No IP address found\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "657bf1ba4bac607f8b93cb138cfb7e599d592178927417ee5cdf8dd4f2f81cf9",
+  "human_valid": true,
+  "line_no": 356957,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a105aecedaed0e9f463dcdc803bd8248255c999ca723d5e772569af2f3e2a27f",
+  "raw_output": "\n        for service in self.services:\n            try:\n                return service.get_ip()\n            except Exception:\n                continue\n        raise Exception(\"No IP address found\")\n\n    def",
+  "sampling_seed": 1464184590,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

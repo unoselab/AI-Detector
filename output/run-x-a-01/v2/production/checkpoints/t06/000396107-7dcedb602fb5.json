@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def rename_sectors(self, sectors):\n        \"\"\" Sets new names for the sectors\n\n        Parameters\n        ----------\n        sectors : list or dict\n            In case of dict: {'old_name' :  'new_name'} with an\n                entry for each old_name which should be renamed\n            In case of list: List of new names in order and\n                complete without repetition\n\n        \"\"\"\n        if isinstance(sectors, dict):\n            self._sectors = [sectors[s] for s in self._sectors]\n        elif isinstance(sectors, list):\n            self._sectors = sectors\n        else:\n            raise ValueError(\"Sectors should be a list or a dict\")\n        self.update_sector_dict()\n",
+  "agc_valid": true,
+  "body_sha256": "59e67f567cec6c43cdd2ce14780a8087fb9c52d204c85df8054dd9173f0b6c94",
+  "body_tokens": 89,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(sectors, dict):\n            self._sectors = [sectors[s] for s in self._sectors]\n        elif isinstance(sectors, list):\n            self._sectors = sectors\n        else:\n            raise ValueError(\"Sectors should be a list or a dict\")\n        self.update_sector_dict()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "96cec5a6e701651b3ac1fe8ffae0bb28299d126318481b4df32775ebe9109834",
+  "human_valid": true,
+  "line_no": 396107,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7dcedb602fb526afc712b516d5426340f3bcf969f5702156e541ce08f6b966ce",
+  "raw_output": "\n        if isinstance(sectors, dict):\n            self._sectors = [sectors[s] for s in self._sectors]\n        elif isinstance(sectors, list):\n            self._sectors = sectors\n        else:\n            raise ValueError(\"Sectors should be a list or a dict\")\n        self.update_sector_dict()\n\n    def",
+  "sampling_seed": 938653901,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

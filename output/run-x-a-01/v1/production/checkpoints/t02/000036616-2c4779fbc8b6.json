@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def kitchen_get(backend, kitchen_name, recipe):\n    \"\"\"\n    Get an existing Kitchen\n    \"\"\"\n    return backend.kitchen_get(kitchen_name, recipe)\n",
+  "agc_valid": true,
+  "body_sha256": "18e15d343dfb02da13ca96543ef585b074648d200a61d73a3ac87125496e0a96",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return backend.kitchen_get(kitchen_name, recipe)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5da9a95a10e91a67f658d49c70b8afe884f6362fd22cb842486b5d6467b30239",
+  "human_valid": true,
+  "line_no": 36616,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "2c4779fbc8b6efbbec0515f8722834acfb79cdb739750b5b9cd44baea59900c2",
+  "raw_output": "\n    return backend.kitchen_get(kitchen_name, recipe)\n\n\ndef kitchen_create(backend, kitchen_name, recipe):\n    \"\"\"\n    Create a new Kitchen\n    \"\"\"\n    return backend.kitchen_create(kitchen_name, recipe)\n\n\ndef kitchen_delete(backend, kitchen_name):\n    \"\"\"\n    Delete an existing Kitchen\n    \"\"\"\n    return backend.kitchen_delete(kitchen_name)\n\n\ndef kitchen_list(backend):\n    \"\"\"\n    List all Kitchens\n    \"\"\"\n    return backend.kitchen_list()\n\n\ndef kitchen_update(backend, kitchen_name, recipe):\n    \"\"\"\n    Update an existing Kitchen\n    \"\"\"\n    return backend.kitchen_update(kitchen_name, recipe)\n\n\ndef kitchen_get_recipe(backend, kitchen_name):\n    \"\"\"\n    Get the recipe of an existing Kitchen\n    \"\"\"\n    return backend.kitchen_get_recipe(kitchen_name)\n\n\ndef kitchen_update_recipe(backend, kitchen_name, recipe):\n    \"\"\"\n    Update the recipe of an existing Kitchen\n    \"\"\"\n    return backend.kitchen_update_recipe(kitchen_name, recipe)\n\n\ndef kitchen_get_state(backend, kitchen_name):\n    \"\"\"\n    Get the state of an existing Kitchen\n    \"\"\"\n    return backend.kitchen_get_state(kitchen_name)\n\n\ndef kitchen_update_state(backend, kitchen_name, state):\n    \"\"\"\n    Update the state of an existing Kitchen\n    \"\"\"\n    return backend.kitchen_update_state(kitchen_name, state)\n\n\ndef kitchen_get_status(backend, kitchen_name):\n    \"\"\"\n    Get the status of an existing Kitchen\n    \"\"\"\n    return backend.kitchen_get_status(kitchen_name)\n\n\ndef kitchen_update_status(backend, kitchen_name, status):\n    \"\"\"\n    Update the status of an existing Kitchen\n    \"\"\"\n    return backend.kitchen_update_status(kitchen_name, status)\n\n\ndef kitchen_get_log",
+  "sampling_seed": 4097532928,
+  "tag": "t02",
+  "temperature": 0.2
+}

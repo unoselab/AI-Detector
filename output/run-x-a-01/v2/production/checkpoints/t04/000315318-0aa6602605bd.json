@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hlp_source_under(folder):\n    \"\"\"\n    this function finds all the python packages under a folder and\n    write the 'packages' and 'package_dir' entries for a python setup.py\n    script\n    \"\"\"\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if \"__init__.py\" in files:\n            packages.append(root.replace(\"/\", \".\").replace(\"\\\\\", \".\"))\n            package_dir[root.replace(\"/\", \".\").replace(\"\\\\\", \".\")] = root\n    return packages, package_dir\n",
+  "agc_valid": true,
+  "body_sha256": "4e10fb15b182bbdc463bc137e1b77bee4220810d23fcc89859f246ac4fc6d880",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if \"__init__.py\" in files:\n            packages.append(root.replace(\"/\", \".\").replace(\"\\\\\", \".\"))\n            package_dir[root.replace(\"/\", \".\").replace(\"\\\\\", \".\")] = root\n    return packages, package_dir\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "aa2ce2882c8bcf9bb7cbdd529abaa479aff2e80080b7905cf4d0a61da891a9e9",
+  "human_valid": true,
+  "line_no": 315318,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0aa6602605bddca2fdc0f499b0ef4e7c794ced4a62f46a1607284bdfb19cae19",
+  "raw_output": "\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if \"__init__.py\" in files:\n            packages.append(root.replace(\"/\", \".\").replace(\"\\\\\", \".\"))\n            package_dir[root.replace(\"/\", \".\").replace(\"\\\\\", \".\")] = root\n    return packages, package_dir\n\n\ndef hlp_source_under_package(folder):\n    \"\"\"\n    this function finds all the python packages under a folder and\n    write the 'packages' and 'package_dir' entries for a python setup.py\n    script\n    \"\"\"\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if \"__init__.py\" in files:\n            packages.append(root.replace(\"/\", \".\").replace(\"\\\\\", \".\"))\n            package_dir[root.replace(\"/\", \".\").replace(\"\\\\\", \".\")] = root\n    return packages, package_dir\n\n\ndef hlp_source_under_package_exclude(folder, exclude):\n    \"\"\"\n    this function finds all the python packages under a folder and\n    write the 'packages' and 'package_dir' entries for a python setup.py\n    script\n    \"\"\"\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if \"__init__.py\" in files:\n            if root.replace(\"/\", \".\").replace(\"\\\\\", \".\") not in exclude:\n                packages.append(root.replace(\"/\", \".\").replace(\"\\\\\", \".\"))\n                package_dir[root.replace(\"/\", \".\").replace(\"\\\\\", \".\")] = root\n    return packages, package_dir\n\n\ndef hlp_source_under_package_exclude_dir(folder, exclude):\n    \"\"\"\n    this function finds all the python packages under a folder and\n    write the 'packages' and 'package_dir' entries for a python setup.py\n    script\n    \"\"\"\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if \"__init__.",
+  "sampling_seed": 4041866661,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _format_src_url(self, path, caller_system):\n        \"\"\"\n        Ensure path is absolute and use the correct URL format for use with\n        cross Azure storage account copy function.\n\n        Args:\n            path (str): Path or URL.\n            caller_system (pycosio.storage.azure._AzureBaseSystem subclass):\n                System calling this method (Can be another Azure system).\n\n        Returns:\n            str: URL.\n        \"\"\"\n        if not path:\n            return None\n        if not os.path.isabs(path):\n            path = os.path.abspath(path)\n        if '://' not in path:\n            path = 'file://' + path\n        if caller_system.account_name != self.account_name:\n            path = path.replace(self.account_name, caller_system.account_name)\n        return path\n",
+  "agc_valid": true,
+  "body_sha256": "2c176e3a54fb02ae0b6fcff572f85fff784185516909235fb3023dd17860634a",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n        if not path:\n            return None\n        if not os.path.isabs(path):\n            path = os.path.abspath(path)\n        if '://' not in path:\n            path = 'file://' + path\n        if caller_system.account_name != self.account_name:\n            path = path.replace(self.account_name, caller_system.account_name)\n        return path\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "d1db7513be73694497b19ed0faebedbf796a0260bfa097f4de5e0762e5045a2a",
+  "human_valid": true,
+  "line_no": 230283,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6b0faed4728de9030c073ecc63ef16a5da8f4c2592ddb8c62be6d24c8b02eb85",
+  "raw_output": "\n        if not path:\n            return None\n        if not os.path.isabs(path):\n            path = os.path.abspath(path)\n        if '://' not in path:\n            path = 'file://' + path\n        if caller_system.account_name != self.account_name:\n            path = path.replace(self.account_name, caller_system.account_name)\n        return path\n\n    def",
+  "sampling_seed": 643345136,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

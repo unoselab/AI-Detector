@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_event_and_context(self, event, arg_type):\n        \"\"\"Return an INDRA Event based on an event entry.\"\"\"\n        if arg_type == 'event':\n            return event\n        elif arg_type == 'context':\n            return event.context\n",
+  "agc_valid": true,
+  "body_sha256": "09b92b252aa8d189c339c424745447226fcdec8564eb826ac964cb9f9308a675",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if arg_type == 'event':\n            return event\n        elif arg_type == 'context':\n            return event.context\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "63fab5d335cb50eb09c8300a6bb4c3e34072fb205722248dc50d86674e133286",
+  "human_valid": true,
+  "line_no": 121476,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d5a5becb1a2d230a93424512ad76db7779515c80e4190b17b9cf9a05f28a0bae",
+  "raw_output": "\n        if arg_type == 'event':\n            return event\n        elif arg_type == 'context':\n            return event.context\n\n    def",
+  "sampling_seed": 728107079,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

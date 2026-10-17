@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def next(self, day_of_week=None, keep_time=False):\n        \"\"\"\n        Modify to the next occurrence of a given day of the week.\n        If no day_of_week is provided, modify to the next occurrence\n        of the current day of the week.  Use the supplied consts\n        to indicate the desired day_of_week, ex. DateTime.MONDAY.\n\n        :param day_of_week: The next day of week to reset to.\n        :type day_of_week: int or None\n\n        :param keep_time: Whether to keep the time information or not.\n        :type keep_time: bool\n\n        :rtype: DateTime\n        \"\"\"\n        param keep_time: If True, keep the time of day, if False, set it to\n",
+  "agc_valid": false,
+  "body_sha256": "0579ba14c8206de9cc9997fedfb449d1e74bb3ff383b92ccfd2c0c32e229fe8a",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n        param keep_time: If True, keep the time of day, if False, set it to\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "3d61b02462268205de8129428e4bac97bcd4f7ea7384b64fb8a1160159c575dc",
+  "human_valid": true,
+  "line_no": 335568,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "912d1840cbf8508a05fe7b7864a4750223dc1358c5b894db6dc3d0a77b2d073c",
+  "raw_output": "param keep_time: If True, keep the time of day, if False, set it to ",
+  "sampling_seed": 203266530,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

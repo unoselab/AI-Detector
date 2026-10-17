@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _lock(self):\n        \"\"\"Lock the config DB.\"\"\"\n        self.db.lock()\n",
+  "agc_valid": true,
+  "body_sha256": "399aafda6cf08a5affb30571a8e8ad58f0697e283de72f79ae5c7c7f5415c9b6",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.db.lock()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "984744898f421a9ae4d5284bdc6b408429d06acbd151b9d30b4457da34d908e4",
+  "human_valid": true,
+  "line_no": 14304,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0bda701176d2c5d62b8d784eae47b04a8f6fbf1addb92427e41670f575561146",
+  "raw_output": "\n        self.db.lock()\n\n    def",
+  "sampling_seed": 3905962802,
+  "tag": "t04",
+  "temperature": 0.4
+}

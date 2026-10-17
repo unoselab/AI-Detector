@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def register_custom_colormaps():\n    \"\"\"\n    registers custom color maps\n    \"\"\"\n    from matplotlib import cm\n    from matplotlib.colors import LinearSegmentedColormap\n\n    # custom colormaps\n    # -----------------\n\n    # custom colormaps\n    # -----------------\n\n    # define colors\n    colors = [(0.121569,\n",
+  "agc_valid": false,
+  "body_sha256": "8179eac11d6023e4c9fcb9cf449e5ec44f178bf4dead91b179e83c2227cadf21",
+  "body_tokens": 49,
+  "bucket": "out_of_range",
+  "clean_output": "\n    from matplotlib import cm\n    from matplotlib.colors import LinearSegmentedColormap\n\n    # custom colormaps\n    # -----------------\n\n    # custom colormaps\n    # -----------------\n\n    # define colors\n    colors = [(0.121569,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "097818f7b9962035f7046ccd82d06459c17726f2ae2f364d6e596766a9009074",
+  "human_valid": true,
+  "line_no": 251653,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f7f1630e7a86a0a7b54274f5e6eb51373e44c7d7839f3e8854367d5980676219",
+  "raw_output": "\n    from matplotlib import cm\n    from matplotlib.colors import LinearSegmentedColormap\n\n    # custom colormaps\n    # -----------------\n\n    # custom colormaps\n    # -----------------\n\n    # define colors\n    colors = [(0.121569, ",
+  "sampling_seed": 904413591,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

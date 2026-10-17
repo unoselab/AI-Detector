@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _golbub_welsch(orders, coeff1, coeff2):\n    \"\"\"Recurrence coefficients to abscisas and weights.\"\"\"\n    n = len(orders)\n    n2 = n //\n",
+  "agc_valid": false,
+  "body_sha256": "e24121dbb495004663778a4a579fdc2af2b26eafc473a860d674c76084a05db5",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n    n = len(orders)\n    n2 = n //\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "5f311afedfa619a9ba07a418e290a050ce0a3c9237d79a68c5e55d2ffc60001f",
+  "human_valid": true,
+  "line_no": 197744,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e7f190b6989fc2d61b6273b574f1f60789081e2c7a0cf6bae0173ae958c98e3",
+  "raw_output": "\n    n = len(orders)\n    n2 = n // ",
+  "sampling_seed": 3529341691,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

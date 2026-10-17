@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def batch_update(self, command, rows):\n        \"\"\"\n        Для массовой вставки умеренных объемов 1-5к записей за вызов\n\n        :param command: SQL insert or updtae\n        :param rows: list of dict\n        :return: dict\n        \"\"\"\n        self.execute(command, rows)\n        return self.connection.commit()\n",
+  "agc_valid": true,
+  "body_sha256": "bd5dac192bdb0bf1bd4f78fc069fdb394cabf3ef72297c4c21f0b4b1a5841010",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.execute(command, rows)\n        return self.connection.commit()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "fdd840591b945653d981f7d744f72b280cc7b2760d495d489c2a0f2358535a7b",
+  "human_valid": true,
+  "line_no": 245870,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f4bb286aaf1880560726075388009ccb3b5942050562736c578a7ce6161afaa5",
+  "raw_output": "\n        self.execute(command, rows)\n        return self.connection.commit()\n\n    def",
+  "sampling_seed": 1005764728,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

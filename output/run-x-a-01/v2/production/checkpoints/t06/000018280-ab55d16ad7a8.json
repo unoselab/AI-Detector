@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def kl_error(self, input_data, targets, average=True,\n                 cache=None, prediction=True):\n        \"\"\" The KL divergence error\n        \"\"\"\n        if cache is None:\n            # Predict\n            y_pred = self.predict(input_data)\n\n            # Calculate KL divergence\n            kl_divergence = (\n                y_pred * (\n                    torch.log(y_pred) - torch.log(targets)\n                ).exp()\n            ).sum()\n\n            # Average\n            if average:\n                kl_divergence = kl_divergence.mean()\n\n        else:\n            # Predict\n            y_pred = cache\n\n            # Calculate KL divergence\n            kl_divergence = (\n                y_pred * (\n                    torch.log(y_pred) - torch.log(targets)\n                ).exp()\n            ).sum()\n\n            # Average\n            if average:\n                kl_divergence = kl_divergence.mean()\n\n        if prediction:\n            return y_pred, kl_divergence\n\n        return kl_divergence\n",
+  "agc_valid": true,
+  "body_sha256": "332b978bddf725f7c3a22c04e8acc3c1aeb7f15fd937042dd353c11683724957",
+  "body_tokens": 388,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if cache is None:\n            # Predict\n            y_pred = self.predict(input_data)\n\n            # Calculate KL divergence\n            kl_divergence = (\n                y_pred * (\n                    torch.log(y_pred) - torch.log(targets)\n                ).exp()\n            ).sum()\n\n            # Average\n            if average:\n                kl_divergence = kl_divergence.mean()\n\n        else:\n            # Predict\n            y_pred = cache\n\n            # Calculate KL divergence\n            kl_divergence = (\n                y_pred * (\n                    torch.log(y_pred) - torch.log(targets)\n                ).exp()\n            ).sum()\n\n            # Average\n            if average:\n                kl_divergence = kl_divergence.mean()\n\n        if prediction:\n            return y_pred, kl_divergence\n\n        return kl_divergence\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "564cd36650cc62390fa38dfd42a36dafec100b61326cdd02391861b4657c32b5",
+  "human_valid": true,
+  "line_no": 18280,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab55d16ad7a8d0c5fa4a5dbb6972cb4cabd69ef8de601a69d5a20759a5210b41",
+  "raw_output": "\n        if cache is None:\n            # Predict\n            y_pred = self.predict(input_data)\n\n            # Calculate KL divergence\n            kl_divergence = (\n                y_pred * (\n                    torch.log(y_pred) - torch.log(targets)\n                ).exp()\n            ).sum()\n\n            # Average\n            if average:\n                kl_divergence = kl_divergence.mean()\n\n        else:\n            # Predict\n            y_pred = cache\n\n            # Calculate KL divergence\n            kl_divergence = (\n                y_pred * (\n                    torch.log(y_pred) - torch.log(targets)\n                ).exp()\n            ).sum()\n\n            # Average\n            if average:\n                kl_divergence = kl_divergence.mean()\n\n        if prediction:\n            return y_pred, kl_divergence\n\n        return kl_divergence\n\n    def",
+  "sampling_seed": 3294791681,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

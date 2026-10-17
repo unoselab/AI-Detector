@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def labelAxes(self, numLines=(5,5)):\n        \"\"\"Put labels on axes\n\n        Note: I should do better than this by picking round numbers\n        as the places to put the labels.\n\n        Note: If I ever do rotated projections, this simple approach\n        will fail.\n        \"\"\"\n        # Get the limits of the axes\n        xmin, xmax = self.axes.get_xlim()\n        ymin, ymax = self.axes.get_ylim()\n        # Get the range of the axes\n        xrange = xmax - xmin\n        yrange = ymax - ymin\n        # Get the number of lines\n        xlines, ylines = numLines\n        # Get the step size\n        xstep = xrange / (xlines -\n",
+  "agc_valid": false,
+  "body_sha256": "b39ea2df5685ee57bd8ec686d6415a0b83db55fa892ac3be719b1656f734af7c",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n        # Get the limits of the axes\n        xmin, xmax = self.axes.get_xlim()\n        ymin, ymax = self.axes.get_ylim()\n        # Get the range of the axes\n        xrange = xmax - xmin\n        yrange = ymax - ymin\n        # Get the number of lines\n        xlines, ylines = numLines\n        # Get the step size\n        xstep = xrange / (xlines -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "2e1f18c671e1dd3869452fe170c3b32f73e33b4b396a9418f286155815e3460c",
+  "human_valid": true,
+  "line_no": 33213,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "514f24dc68b849cef8c2ccc193c602d0310028b7ed6cf72bcd529992bef95c87",
+  "raw_output": "\n        # Get the limits of the axes\n        xmin, xmax = self.axes.get_xlim()\n        ymin, ymax = self.axes.get_ylim()\n        # Get the range of the axes\n        xrange = xmax - xmin\n        yrange = ymax - ymin\n        # Get the number of lines\n        xlines, ylines = numLines\n        # Get the step size\n        xstep = xrange / (xlines - ",
+  "sampling_seed": 864137336,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

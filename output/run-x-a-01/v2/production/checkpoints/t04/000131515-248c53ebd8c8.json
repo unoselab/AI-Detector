@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _bounds(component, glyph_set):\n    \"\"\"Return the (xmin, ymin) of the bounds of `component`.\"\"\"\n    return (\n        min(component.x for component in component.components),\n        min(component.y for component in component.components),\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "b336543d2eee91beb16f74409313e0424e838d24d6affb149a21657fd3c0255c",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return (\n        min(component.x for component in component.components),\n        min(component.y for component in component.components),\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "42dcde6474fbe3482efa371b54336b867baf54dc9fbc3e3102f98e063e3f39bd",
+  "human_valid": true,
+  "line_no": 131515,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "248c53ebd8c84732fa9d2413157e54f19d1cc065b8486fcaa5aab038739eff50",
+  "raw_output": "\n    return (\n        min(component.x for component in component.components),\n        min(component.y for component in component.components),\n    )\n\n\ndef _bounds_for_glyphs(glyph_set):\n    \"\"\"Return the (xmin, ymin) of the bounds of `glyph_set`.\"\"\"\n    return min(\n        _bounds(component, glyph_set) for component in glyph_set.components\n    )\n\n\ndef _glyph_set_for_glyphs(glyphs):\n    \"\"\"Return a glyph set for `glyphs`.\"\"\"\n    glyph_set = GlyphSet()\n    for glyph in glyphs:\n        glyph_set.add(glyph)\n    return glyph_set\n\n\ndef _glyph_set_for_components(components):\n    \"\"\"Return a glyph set for `components`.\"\"\"\n    glyph_set = GlyphSet()\n    for component in components:\n        glyph_set.add(component.glyph)\n    return glyph_set\n\n\ndef _glyph_set_for_anchors(anchors):\n    \"\"\"Return a glyph set for `anchors`.\"\"\"\n    glyph_set = GlyphSet()\n    for anchor in anchors:\n        glyph_set.add(anchor.glyph)\n    return glyph_set\n\n\ndef _glyph_set_for_guidelines(guidelines):\n    \"\"\"Return a glyph set for `guidelines`.\"\"\"\n    glyph_set = GlyphSet()\n    for guideline in guidelines:\n        glyph_set.add(guideline.glyph)\n    return glyph_set\n\n\ndef _glyph_set_for_lib(lib):\n    \"\"\"Return a glyph set for `lib`.\"\"\"\n    glyph_set = GlyphSet()\n    for key, value in lib.items():\n        if isinstance(value, Glyph):\n            glyph_set.add(value)\n    return glyph_set\n\n\ndef _glyph_set_for_features(features):\n    \"\"\"Return a glyph set for `features",
+  "sampling_seed": 1776438855,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

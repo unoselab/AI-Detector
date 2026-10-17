@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_model(app_dot_model):\n    \"\"\"\n    Returns Django model class corresponding to passed-in `app_dot_model`\n    string. This is helpful for preventing circular-import errors in a Django\n    project.\n\n    Positional Arguments:\n    =====================\n    - `app_dot_model`: Django's `<app_name>.<model_name>` syntax. For example,\n                       the default Django User model would be `auth.User`,\n                       where `auth` is the app and `User` is the model.\n    \"\"\"\n    Returns:\n    ========\n    - `model`: The Django model class corresponding to the passed-in\n               `app_dot_model` string.\n    \"\"\"\n    app, model = app_dot_model.split('.')\n    return getattr(importlib.import_module(app), model)\n",
+  "agc_valid": false,
+  "body_sha256": "03c58ddc378e465abce389f25d253c33b82e4bfc8ec0ea5e2ed03b89ea79f61f",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Returns:\n    ========\n    - `model`: The Django model class corresponding to the passed-in\n               `app_dot_model` string.\n    \"\"\"\n    app, model = app_dot_model.split('.')\n    return getattr(importlib.import_module(app), model)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f2f7dc3c23586e34cba701b039fb66046bb9717e8fe63f7de97fc1df8c6ed9d4",
+  "human_valid": true,
+  "line_no": 40924,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fb15b979328fccd53a6de9e9731423fa1ab0ddd8bc928bdc56f923464852a117",
+  "raw_output": "\n\n    Returns:\n    ========\n    - `model`: The Django model class corresponding to the passed-in\n               `app_dot_model` string.\n    \"\"\"\n    app, model = app_dot_model.split('.')\n    return getattr(importlib.import_module(app), model)\n\n\ndef get_model_field_names(model):\n    \"\"\"\n    Returns a list of the field names for the passed-in model.\n\n    Positional Arguments:\n    =====================\n    - `model`: The Django model class for which to return the field names.\n\n    Returns:\n    ========\n    - `field_names`: A list of field names for the passed-in model.\n    \"\"\"\n    field_names = []\n    for field in model._meta.fields:\n        field_names.append(field.name)\n    return field_names\n\n\ndef get_model_field_values(model, field_names):\n    \"\"\"\n    Returns a list of the field values for the passed-in model.\n\n    Positional Arguments:\n    =====================\n    - `model`: The Django model class for which to return the field values.\n    - `field_names`: A list of field names for which to return the field\n                     values.\n\n    Returns:\n    ========\n    - `field_values`: A list of field values for the passed-in model.\n    \"\"\"\n    field_values = []\n    for field in model._meta.fields:\n        if field.name in field_names:\n            field_values.append(field.value_from_object(model))\n    return field_values\n\n\ndef get_model_field_values_as_dict(model, field_names):\n    \"\"\"\n    Returns a dictionary of the field values for the passed-in model.\n\n    Positional Arguments:\n    =====================\n    - `model`: The Django model class for which to return the field values.\n    - `field_names`: A list of field names for which to return the field\n                     values.\n\n    Returns:\n    ========\n    - `field_values`: A dictionary of field values for the passed-in model.\n    \"\"\"",
+  "sampling_seed": 3766474516,
+  "tag": "t04",
+  "temperature": 0.4
+}

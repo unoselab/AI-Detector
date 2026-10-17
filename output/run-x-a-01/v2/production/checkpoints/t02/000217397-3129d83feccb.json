@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def preview(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n",
+  "agc_valid": true,
+  "body_sha256": "c713d1127812eaba6014107a07e0aa3b42731e4ce2f9ee6d87dc731f6778d94c",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return render(request, 'preview.html')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "1e6b8015a40a8e648a6e2236532a5210c246d821211093fde769d5cc3aeb9d3d",
+  "human_valid": true,
+  "line_no": 217397,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3129d83feccb961a03c72ee3df5ade684fe4581ce60f6a1be99f7d5198489821",
+  "raw_output": "\n    return render(request, 'preview.html')\n\n\ndef preview_post(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_put(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_delete(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_patch(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_head(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_options(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_trace(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_connect(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_copy(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_link(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_unlink(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request, 'preview.html')\n\n\ndef preview_purge(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render(request",
+  "sampling_seed": 2966411281,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

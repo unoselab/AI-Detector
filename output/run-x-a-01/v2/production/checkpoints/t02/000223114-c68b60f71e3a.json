@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_namelist():\n    \"\"\"Generate namelist.\n\n    Either through set CONF.zvm.namelist, or by generate based on smt userid.\n    \"\"\"\n    if CONF.zvm.namelist:\n        return CONF.zvm.namelist\n    else:\n        return get_smtuserid()\n",
+  "agc_valid": true,
+  "body_sha256": "a51b14e415c20209945b077cc2aa2d8b718d67b1cbc177e432f211b6c730ddc3",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if CONF.zvm.namelist:\n        return CONF.zvm.namelist\n    else:\n        return get_smtuserid()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 100,
+  "human_sha256": "5dd47ef96b58b35b5abe7192b92d6fcf8bf6c355cd2bab416c3306ff66d9492d",
+  "human_valid": true,
+  "line_no": 223114,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c68b60f71e3af73ca61e3240fc1f02ed0a9be1431a8aec8922295543f6b1abca",
+  "raw_output": "\n    if CONF.zvm.namelist:\n        return CONF.zvm.namelist\n    else:\n        return get_smtuserid()\n\n\ndef get_smtuserid():\n    \"\"\"Get smt userid.\n\n    If CONF.zvm.smtuserid is set, return it.\n    Otherwise, return the first userid in the smt userid list.\n    \"\"\"\n    if CONF.zvm.smtuserid:\n        return CONF.zvm.smtuserid\n    else:\n        return CONF.zvm.smtuserid_list[0]\n\n\ndef get_smtuserid_list():\n    \"\"\"Get smt userid list.\n\n    If CONF.zvm.smtuserid_list is set, return it.\n    Otherwise, return the default smt userid list.\n    \"\"\"\n    if CONF.zvm.smtuserid_list:\n        return CONF.zvm.smtuserid_list\n    else:\n        return CONF.zvm.default_smtuserid_list\n\n\ndef get_smtuserid_list_from_conf():\n    \"\"\"Get smt userid list from conf.\n\n    If CONF.zvm.smtuserid_list is set, return it.\n    Otherwise, return the default smt userid list.\n    \"\"\"\n    if CONF.zvm.smtuserid_list:\n        return CONF.zvm.smtuserid_list\n    else:\n        return CONF.zvm.default_smtuserid_list\n\n\ndef get_smtuserid_list_from_db():\n    \"\"\"Get smt userid list from db.\n\n    If CONF.zvm.smtuserid_list is set, return it.\n    Otherwise, return the default smt userid list.\n    \"\"\"\n    if CONF.zvm.smtuserid_list:\n        return CONF.zvm.smtuserid_list\n    else:\n        return CONF.zvm.default_smtuserid_list\n\n\ndef get_smtuserid_list_",
+  "sampling_seed": 2373123224,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

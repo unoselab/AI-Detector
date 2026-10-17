@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def move_temp_file(src, dest):\n    \"\"\"Move src to dest. Delete src if something goes wrong.\n\n    Overwrites dest.\n\n    Args:\n        src: str or path-like. source file\n        dest: str or path-like. destination file\n\n    Returns:\n        None.\n\n    Raises:\n        FileNotFoundError: out path parent doesn't exist.\n        OSError: if any IO operations go wrong. Does its best to clean up after\n                 itself and remove temp files.\n\n    \"\"\"\n    out_dir = os.path.dirname(dest)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError(\n            'Parent directory of {} does not exist'.format(dest))\n    try:\n        shutil.move(src, dest)\n    except Exception:\n        # Clean up\n        os.remove(src)\n        raise\n",
+  "agc_valid": true,
+  "body_sha256": "cb2e2321e1478e5b570abd5150882b1947cd33e7354d60072d1a3dc7edba70d8",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n    out_dir = os.path.dirname(dest)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError(\n            'Parent directory of {} does not exist'.format(dest))\n    try:\n        shutil.move(src, dest)\n    except Exception:\n        # Clean up\n        os.remove(src)\n        raise\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "03938d9e54231ce5d5356ad2a08f470061adf3c309f3ac0ad7b9017bc7fa0ba3",
+  "human_valid": true,
+  "line_no": 382434,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "59caa82050f465b3a67ee3b15c5c3e714ef42f602d82f1bb93d5f443fd889f11",
+  "raw_output": "\n    out_dir = os.path.dirname(dest)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError(\n            'Parent directory of {} does not exist'.format(dest))\n    try:\n        shutil.move(src, dest)\n    except Exception:\n        # Clean up\n        os.remove(src)\n        raise\n\n\ndef clean_up(files):\n    \"\"\"Delete files in files if they exist.\n\n    Args:\n        files: list of str or path-like.\n\n    Returns:\n        None.\n\n    Raises:\n        OSError: if any IO operations go wrong.\n\n    \"\"\"\n    for file in files:\n        if os.path.exists(file):\n            try:\n                os.remove(file)\n            except Exception:\n                raise\n\n\ndef run_command(command, out_dir, verbose=False):\n    \"\"\"Run command and print output.\n\n    Args:\n        command: list of str. Command to run.\n        out_dir: str or path-like. Directory to write stdout to.\n        verbose: bool. Print command if True.\n\n    Returns:\n        None.\n\n    Raises:\n        OSError: if any IO operations go wrong.\n\n    \"\"\"\n    if verbose:\n        print(command)\n    if not os.path.isdir(out_dir):\n        raise FileNotFoundError('Parent directory of {} does not exist'.format(\n            out_dir))\n    stdout = open(os.path.join(out_dir, 'stdout.txt'), 'w')\n    stderr = open(os.path.join(out_dir, 'stderr.txt'), 'w')\n    try:\n        subprocess.run(command, stdout=stdout, stderr=stderr)\n    except Exception:\n        # Clean up\n        stdout.close()\n        stderr.close()\n        raise\n    stdout.close()\n    stderr.close()\n\n\ndef run_command_output(command, out_dir):\n    \"\"\"Run command and return stdout and stderr.\n\n    Args:\n        command: list of str. Command to run.\n",
+  "sampling_seed": 2414792353,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

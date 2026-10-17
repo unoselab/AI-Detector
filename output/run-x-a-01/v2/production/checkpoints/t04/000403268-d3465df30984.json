@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sql(self, dataset_key, query, desired_mimetype='application/json',\n            **kwargs):\n        \"\"\"Executes SQL queries against a dataset via POST\n\n        :param dataset_key: Dataset identifier, in the form of owner/id\n        :type dataset_key: str\n        :param query: SQL query\n        :type query: str\n        :param include_table_schema: Flags indicating to include table schema\n            in the response\n        :type include_table_schema: bool\n        :returns: file object that can be used in file parsers and\n            data handling modules.\n        :rtype: file-like object\n        :raises RestApiException: If a server error occurs\n\n        Examples\n        --------\n        >>> import datadotworld as dw\n        >>> api_client = dw.api_client()\n        >>> api_client.sql('username/test-dataset', 'query') # doctest: +SKIP\n        \"\"\"\n        a file download\n                :rtype: file\n                \"\"\"\n                if 'include_table_schema' not in kwargs:\n                    kwargs['include_table_schema'] = False\n                return self._post(\n                    '/datasets/{dataset_key}/sql'.format(dataset_key=dataset_key),\n                    data=query,\n                    desired_mimetype=desired_mimetype,\n                    **kwargs)\n",
+  "agc_valid": false,
+  "body_sha256": "90fe9ad4d6a355c022ca14c3d4bb7099352cadf236b44c5c493dded96777cc5f",
+  "body_tokens": 183,
+  "bucket": "type09_190",
+  "clean_output": "\n        a file download\n                :rtype: file\n                \"\"\"\n                if 'include_table_schema' not in kwargs:\n                    kwargs['include_table_schema'] = False\n                return self._post(\n                    '/datasets/{dataset_key}/sql'.format(dataset_key=dataset_key),\n                    data=query,\n                    desired_mimetype=desired_mimetype,\n                    **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "e32ba0b9a2685b24a9e53cfab511da55dd486dd3ce9b6b6ce772a6d70834d2f6",
+  "human_valid": true,
+  "line_no": 403268,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d3465df30984b67cd8ca0a06556e6dfd6a4e11baaffbdab22774a51cc28611f2",
+  "raw_output": "a file download\n        :rtype: file\n        \"\"\"\n        if 'include_table_schema' not in kwargs:\n            kwargs['include_table_schema'] = False\n        return self._post(\n            '/datasets/{dataset_key}/sql'.format(dataset_key=dataset_key),\n            data=query,\n            desired_mimetype=desired_mimetype,\n            **kwargs)\n\n    def",
+  "sampling_seed": 1835366868,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

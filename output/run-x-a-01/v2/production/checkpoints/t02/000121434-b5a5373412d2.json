@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_network(cx_str, ndex_cred=None, private=True):\n    \"\"\"Creates a new NDEx network of the assembled CX model.\n\n    To upload the assembled CX model to NDEx, you need to have\n    a registered account on NDEx (http://ndexbio.org/) and have\n    the `ndex` python package installed. The uploaded network\n    is private by default.\n\n    Parameters\n    ----------\n    ndex_cred : dict\n        A dictionary with the following entries:\n        'user': NDEx user name\n        'password': NDEx password\n\n    Returns\n    -------\n    network_id :  str\n        The UUID of the NDEx network that was created by uploading\n        the assembled CX model.\n    \"\"\"\n    :\n\n            * `username` : str\n                The username for the NDEx account.\n            * `password` : str\n                The password for the NDEx account.\n            * `server` : str\n                The NDEx server to upload to.\n\n        private : bool\n            Whether the network should be private or not.\n\n        Returns\n        -------\n        network : Ndex\n            The NDEx network object.\n        \"\"\"\n        from\n",
+  "agc_valid": false,
+  "body_sha256": "7948faf5a78b49e4b078f3ccc2d293d8acfa8462e274e75b8e1a29c8a5084e21",
+  "body_tokens": 199,
+  "bucket": "type10_200",
+  "clean_output": "\n    :\n\n            * `username` : str\n                The username for the NDEx account.\n            * `password` : str\n                The password for the NDEx account.\n            * `server` : str\n                The NDEx server to upload to.\n\n        private : bool\n            Whether the network should be private or not.\n\n        Returns\n        -------\n        network : Ndex\n            The NDEx network object.\n        \"\"\"\n        from\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "1ddca4edac27e49cb77613a89c945f5998a7d776cac575843d3e0d4058f37275",
+  "human_valid": true,
+  "line_no": 121434,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b5a5373412d20db8145173e8ed9fa6dedaaee7559300d78e387de8d622e61431",
+  "raw_output": ":\n\n        * `username` : str\n            The username for the NDEx account.\n        * `password` : str\n            The password for the NDEx account.\n        * `server` : str\n            The NDEx server to upload to.\n\n    private : bool\n        Whether the network should be private or not.\n\n    Returns\n    -------\n    network : Ndex\n        The NDEx network object.\n    \"\"\"\n    from ",
+  "sampling_seed": 707571584,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

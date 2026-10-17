@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_day():\n    \"\"\"Function for retrieving the wanted day\"\"\"\n    day = input(\"Enter the day you want to retrieve: \")\n    return day\n",
+  "agc_valid": true,
+  "body_sha256": "979a683c421fb68ce8a96cc9527c025d602af280efb9665b8d1ab7d5debe3362",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n    day = input(\"Enter the day you want to retrieve: \")\n    return day\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "9bbba84ec3ae0027e5bdc3d36c761112eead9bcf881c0f03ea9a740fe1297003",
+  "human_valid": true,
+  "line_no": 316652,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a29f26b1514479f93e363689005d327a4e1887bf1be0d4702386016c67503d15",
+  "raw_output": "\n    day = input(\"Enter the day you want to retrieve: \")\n    return day\n\n\ndef get_month():\n    \"\"\"Function for retrieving the wanted month\"\"\"\n    month = input(\"Enter the month you want to retrieve: \")\n    return month\n\n\ndef get_year():\n    \"\"\"Function for retrieving the wanted year\"\"\"\n    year = input(\"Enter the year you want to retrieve: \")\n    return year\n\n\ndef get_date():\n    \"\"\"Function for retrieving the wanted date\"\"\"\n    date = input(\"Enter the date you want to retrieve: \")\n    return date\n\n\ndef get_time():\n    \"\"\"Function for retrieving the wanted time\"\"\"\n    time = input(\"Enter the time you want to retrieve: \")\n    return time\n\n\ndef get_event():\n    \"\"\"Function for retrieving the wanted event\"\"\"\n    event = input(\"Enter the event you want to retrieve: \")\n    return event\n\n\ndef get_location():\n    \"\"\"Function for retrieving the wanted location\"\"\"\n    location = input(\"Enter the location you want to retrieve: \")\n    return location\n\n\ndef get_reminder():\n    \"\"\"Function for retrieving the wanted reminder\"\"\"\n    reminder = input(\"Enter the reminder you want to retrieve: \")\n    return reminder\n\n\ndef get_note():\n    \"\"\"Function for retrieving the wanted note\"\"\"\n    note = input(\"Enter the note you want to retrieve: \")\n    return note\n\n\ndef get_task():\n    \"\"\"Function for retrieving the wanted task\"\"\"\n    task = input(\"Enter the task you want to retrieve: \")\n    return task\n\n\ndef get_list():\n    \"\"\"Function for retrieving the wanted list\"\"\"\n    list = input(\"Enter the list you want to retrieve: \")\n    return list\n\n\ndef get_item():\n    \"\"\"Function for retrieving the wanted item\"\"\"\n    item = input(\"Enter the item you want to retrieve: \")\n    return item\n\n\ndef get_name():\n    \"\"\"Function for retrieving the wanted name\"\"\"\n    name = input(\"Enter the name you want to retrieve: \")\n    return name\n\n\ndef get_password():\n    \"\"\"Function for retrieving the wanted password\"\"\"",
+  "sampling_seed": 4273284587,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

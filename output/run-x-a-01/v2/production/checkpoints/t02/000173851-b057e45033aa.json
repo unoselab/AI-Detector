@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def all_minutes(self):\n        \"\"\"\n        Returns a DatetimeIndex representing all the minutes in this calendar.\n        \"\"\"\n            return self._minutes_in_range(self.first_minute, self.last_minute)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "48490485f1a009550233f60db3fc993b9ef70935dd535416f6446edb4b643ab5",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._minutes_in_range(self.first_minute, self.last_minute)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "90606788be40e711b852d63a49bcfc64515b0f1205943fe29e61d54ce5f00857",
+  "human_valid": true,
+  "line_no": 173851,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b057e45033aaa10637887344ffbe01bf9d7a0281e8a519a51b2974e86cdb85d2",
+  "raw_output": "\n        return self._minutes_in_range(self.first_minute, self.last_minute)\n\n    @property\n    def",
+  "sampling_seed": 3894709816,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

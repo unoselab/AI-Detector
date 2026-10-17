@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hardware_custom_profile_kap_custom_profile_xstp_xstp_hello_interval(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        self.name = 'Hello Interval'\n        self.general_config = ['General Configuration', 'Hello Interval']\n        self.profiles = ['Custom Profiles', 'KAP Custom Profile', 'XSTP XSTP Hello Interval']\n        self.profiles_index =\n",
+  "agc_valid": false,
+  "body_sha256": "3c3c8661c96975e88434c2b171405ce4bc4d83762d0e602a0575a055a5c32fd3",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.name = 'Hello Interval'\n        self.general_config = ['General Configuration', 'Hello Interval']\n        self.profiles = ['Custom Profiles', 'KAP Custom Profile', 'XSTP XSTP Hello Interval']\n        self.profiles_index =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "dd0689be2ec426d746c531ff203f4865047bf6ba96a3580de9dca72c9d66d154",
+  "human_valid": true,
+  "line_no": 269631,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52c18fc09daabf3d0194c01eeb86556dd64d979f415c4f68a0cf0721e44c799f",
+  "raw_output": "\n        self.name = 'Hello Interval'\n        self.general_config = ['General Configuration', 'Hello Interval']\n        self.profiles = ['Custom Profiles', 'KAP Custom Profile', 'XSTP XSTP Hello Interval']\n        self.profiles_index = ",
+  "sampling_seed": 2064832093,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

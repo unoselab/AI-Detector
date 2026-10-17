@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def config_schema(self):\n        \"\"\"Returns the merged configuration data schema for this plugin\n        type.\"\"\"\n        return self.plugin_type_schema\n",
+  "agc_valid": true,
+  "body_sha256": "9133b9137018f9d6b92d86a3093b284d2b98727bf86e1f55ed0afc443f21b42a",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.plugin_type_schema\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 118,
+  "human_sha256": "86cdb6ab7a939fd6bd34dba4546d09b37d48f095b00e3e835d34b7753491793a",
+  "human_valid": true,
+  "line_no": 170814,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ef040b2e3b9ce7ae678ac111b39a3bb417f9651f45f090a0c20954267f05e376",
+  "raw_output": "\n        return self.plugin_type_schema\n\n    def",
+  "sampling_seed": 2867320081,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sendoff_current_user(self):\n        \"\"\"\n        Tell current user that s/he finished it's job for now.\n        We'll notify if workflow arrives again to his/her WF Lane.\n        \"\"\"\n        if self.current_user:\n            self.current_user.sendoff()\n",
+  "agc_valid": true,
+  "body_sha256": "760b4ecccb942f64ae7c6f8a2de6273bb723af18c74dd2141b673bb095d8ab35",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.current_user:\n            self.current_user.sendoff()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "7019ffdae6e52fcf4b3857bd806c1f0c352d6eda0dfdc77cd5efac1152b8e6f1",
+  "human_valid": true,
+  "line_no": 24909,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ba5b94c96f41d2a0c30c0a639b91c39976c731acdd40ea88c23d5039f50c1685",
+  "raw_output": "\n        if self.current_user:\n            self.current_user.sendoff()\n\n    def",
+  "sampling_seed": 3062380478,
+  "tag": "t04",
+  "temperature": 0.4
+}

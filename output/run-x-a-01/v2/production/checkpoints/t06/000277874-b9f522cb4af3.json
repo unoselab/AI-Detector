@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def execute_dry_run(self, dialect=None, billing_tier=None):\n    \"\"\"Dry run a query, to check the validity of the query and return some useful statistics.\n\n    Args:\n      dialect : {'legacy', 'standard'}, default 'legacy'\n          'legacy' : Use BigQuery's legacy SQL dialect.\n          'standard' : Use BigQuery's standard SQL (beta), which is\n          compliant with the SQL 2011 standard.\n      billing_tier: Limits the billing tier for this job. Queries that have resource\n          usage beyond this tier will fail (without incurring a charge). If unspecified, this\n          will be set to your project default. This can also be used to override your\n          project-wide default billing tier on a per-query basis.\n    Returns:\n      A dict with 'cacheHit' and 'totalBytesProcessed' fields.\n    Raises:\n      An exception if the query was malformed.\n    \"\"\"\n    billing tier for this query.\n\n        Returns:\n          A `QueryJob` instance that can be used to poll the query's status\n          and fetch results.\n        \"\"\"\n        return self._query_job_from_sql(\n            self.dry_run_sql(),\n            dialect=dialect,\n            billing_tier=billing_tier,\n        )\n",
+  "agc_valid": false,
+  "body_sha256": "a51eb48cd6988fda02e6ec963c64001498f7a758bcf62ebfac3ffdeccdeebc04",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n    billing tier for this query.\n\n        Returns:\n          A `QueryJob` instance that can be used to poll the query's status\n          and fetch results.\n        \"\"\"\n        return self._query_job_from_sql(\n            self.dry_run_sql(),\n            dialect=dialect,\n            billing_tier=billing_tier,\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "973123c77d86a676eda8981ade7b732fa41a349299fb8d2711a490be8ba30f7e",
+  "human_valid": true,
+  "line_no": 277874,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b9f522cb4af38ec2018c3d94316baa3479e61b7bb7fc6136561f33bb45b96972",
+  "raw_output": "billing tier for this query.\n\n    Returns:\n      A `QueryJob` instance that can be used to poll the query's status\n      and fetch results.\n    \"\"\"\n    return self._query_job_from_sql(\n        self.dry_run_sql(),\n        dialect=dialect,\n        billing_tier=billing_tier,\n    )\n\n ",
+  "sampling_seed": 1529518458,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

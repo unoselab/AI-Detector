@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _handle_result(self):\n        \"\"\"Process one result. Block untill one is available\n        \"\"\"\n        result = self.results.get()\n        if result is None:\n            return\n        if result.get('error'):\n            self.logger.error(result['error'])\n            return\n        if result.get('result'):\n            self.logger.info(result['result'])\n",
+  "agc_valid": true,
+  "body_sha256": "cf4b172d741415e3e561c041cbbeb57b85243285e7c496da7e523f3f63492b7d",
+  "body_tokens": 88,
+  "bucket": "out_of_range",
+  "clean_output": "\n        result = self.results.get()\n        if result is None:\n            return\n        if result.get('error'):\n            self.logger.error(result['error'])\n            return\n        if result.get('result'):\n            self.logger.info(result['result'])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "f15674847d22cdfc2daccaa168c8045c1e1e48911341d06e489e6744017ea6c0",
+  "human_valid": true,
+  "line_no": 281934,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "70cceeabea1f748c07b8070a4caee60df9fc1355c158c4cea1a5b758441dd9d8",
+  "raw_output": "\n        result = self.results.get()\n        if result is None:\n            return\n        if result.get('error'):\n            self.logger.error(result['error'])\n            return\n        if result.get('result'):\n            self.logger.info(result['result'])\n\n    def",
+  "sampling_seed": 2694501001,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

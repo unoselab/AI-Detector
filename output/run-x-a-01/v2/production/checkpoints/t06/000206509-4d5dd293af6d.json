@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def on_recv_rsp(self, rsp_pb):\n        \"\"\"receive response callback function\"\"\"\n        if rsp_pb.errCode != grpc.GRPC_ERR_OK:\n            print(\"recv rsp err, errMsg:{}\".format(rsp_pb.errMsg))\n            return\n\n        print(\"recv rsp, reqId:{}\".format(rsp_pb.reqId))\n        print(\"recv rsp, errCode:{}\".format(rsp_pb.errCode))\n        print(\"recv rsp, errMsg:{}\".format(rsp_pb.errMsg))\n        print(\"recv rsp, data:{}\".format(rsp_pb.data))\n        print(\"recv rsp, rspId:{}\".format(rsp_pb.rspId))\n",
+  "agc_valid": true,
+  "body_sha256": "88495a1b43acb759f79cdb92a36ef83c25fbc19a76d880bcaeb425a0a1d33ee5",
+  "body_tokens": 89,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if rsp_pb.errCode != grpc.GRPC_ERR_OK:\n            print(\"recv rsp err, errMsg:{}\".format(rsp_pb.errMsg))\n            return\n\n        print(\"recv rsp, reqId:{}\".format(rsp_pb.reqId))\n        print(\"recv rsp, errCode:{}\".format(rsp_pb.errCode))\n        print(\"recv rsp, errMsg:{}\".format(rsp_pb.errMsg))\n        print(\"recv rsp, data:{}\".format(rsp_pb.data))\n        print(\"recv rsp, rspId:{}\".format(rsp_pb.rspId))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "5a195ed90bfff2652b0a1408409d21a8af3fbeb8dac5047a0ec01e68cbb542fd",
+  "human_valid": true,
+  "line_no": 206509,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4d5dd293af6d77897f90b9b5e365f50db552be3098f13b21c613e7af01c47ceb",
+  "raw_output": "\n        if rsp_pb.errCode != grpc.GRPC_ERR_OK:\n            print(\"recv rsp err, errMsg:{}\".format(rsp_pb.errMsg))\n            return\n\n        print(\"recv rsp, reqId:{}\".format(rsp_pb.reqId))\n        print(\"recv rsp, errCode:{}\".format(rsp_pb.errCode))\n        print(\"recv rsp, errMsg:{}\".format(rsp_pb.errMsg))\n        print(\"recv rsp, data:{}\".format(rsp_pb.data))\n        print(\"recv rsp, rspId:{}\".format(rsp_pb.rspId))\n\n    def",
+  "sampling_seed": 1192709832,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

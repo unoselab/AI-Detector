@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read_message_type(file):\n    \"\"\"Read the message type from a file.\"\"\"\n    with open(file, \"r\") as f:\n        return f.read().strip()\n",
+  "agc_valid": true,
+  "body_sha256": "59bfb907d986ed97c5291900f156c36d646cd371c616ea378af477dd498c3a84",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(file, \"r\") as f:\n        return f.read().strip()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "33b3c8e90c4de009cd3eb52f8b0d8fb1d7291193c525bf1ced6a623021a158a7",
+  "human_valid": true,
+  "line_no": 3581,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0a1d8b0aa9444a92642b249a3ba090346a5453d65902ce19e146a7d1c0101c1e",
+  "raw_output": "\n    with open(file, \"r\") as f:\n        return f.read().strip()\n\n\ndef read_message_content(file):\n    \"\"\"Read the message content from a file.\"\"\"\n    with open(file, \"r\") as f:\n        return f.read()\n\n\ndef write_message_type(file, message_type):\n    \"\"\"Write the message type to a file.\"\"\"\n    with open(file, \"w\") as f:\n        f.write(message_type)\n\n\ndef write_message_content(file, message_content):\n    \"\"\"Write the message content to a file.\"\"\"\n    with open(file, \"w\") as f:\n        f.write(message_content)\n\n\ndef read_message_type_and_content(file):\n    \"\"\"Read the message type and content from a file.\"\"\"\n    with open(file, \"r\") as f:\n        return f.read().strip().split(\"\\n\")\n\n\ndef write_message_type_and_content(file, message_type, message_content):\n    \"\"\"Write the message type and content to a file.\"\"\"\n    with open(file, \"w\") as f:\n        f.write(message_type + \"\\n\" + message_content)\n\n\ndef read_message_type_and_content_from_directory(directory):\n    \"\"\"Read the message type and content from a directory.\"\"\"\n    message_type = read_message_type(directory + \"/message_type\")\n    message_content = read_message_content(directory + \"/message_content\")\n    return message_type, message_content\n\n\ndef write_message_type_and_content_to_directory(directory, message_type, message_content):\n    \"\"\"Write the message type and content to a directory.\"\"\"\n    write_message_type(directory + \"/message_type\", message_type)\n    write_message_content(directory + \"/message_content\", message_content)\n\n\ndef read_message_type_and_content_from_directory_list(directory_list):\n    \"\"\"Read the message type and content from a list of directories.\"\"\"\n    message_type_list = []\n    message_content_list =",
+  "sampling_seed": 1545508771,
+  "tag": "t02",
+  "temperature": 0.2
+}

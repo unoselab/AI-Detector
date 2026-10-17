@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_features(cls, feat_response):\n        # type: (Text) -> Dict[Text, Text]\n        \"\"\"Parse a dict of features from FTP feat response.\n        \"\"\"\n        feats = {}\n        for line in feat_response.splitlines():\n            if line.startswith(' '):\n                feats[feats.keys()[-1]] += ' ' + line.strip()\n            else:\n                feats[line.strip()] = ''\n        return feats\n",
+  "agc_valid": true,
+  "body_sha256": "d46f7a4ecef88f735c4cc1cbd7f4b072a6b3eefd557bf1d925c5ba7cccf9b6be",
+  "body_tokens": 96,
+  "bucket": "out_of_range",
+  "clean_output": "\n        feats = {}\n        for line in feat_response.splitlines():\n            if line.startswith(' '):\n                feats[feats.keys()[-1]] += ' ' + line.strip()\n            else:\n                feats[line.strip()] = ''\n        return feats\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "8d3d4876f53b6df103ed0a09e850d9c40e70dc7277e16f229a76df2a19fbc670",
+  "human_valid": true,
+  "line_no": 172366,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9af47e0a76d127292ab64fc895b657f1e0e6fe139faaf87d1fa75de8c0a324c4",
+  "raw_output": "\n        feats = {}\n        for line in feat_response.splitlines():\n            if line.startswith(' '):\n                feats[feats.keys()[-1]] += ' ' + line.strip()\n            else:\n                feats[line.strip()] = ''\n        return feats\n\n    def",
+  "sampling_seed": 3842871118,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

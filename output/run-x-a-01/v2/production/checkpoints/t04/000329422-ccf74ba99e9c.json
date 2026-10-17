@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_session(self, client, session):\n        \"\"\"Validate this session before use with client.\n\n        Raises error if this session is logged in as a different user or\n        the client is not the one that created the session.\n        \"\"\"\n        if session.user_id != client.user_id:\n            raise Exception(\"Session is logged in as a different user\")\n        if session.client_id != client.client_id:\n            raise Exception(\"Session was not created by this client\")\n",
+  "agc_valid": true,
+  "body_sha256": "dbe5349509f2a6f2e36574812b03f7f7046ca21328cd961fa754739082a242ef",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if session.user_id != client.user_id:\n            raise Exception(\"Session is logged in as a different user\")\n        if session.client_id != client.client_id:\n            raise Exception(\"Session was not created by this client\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "6ca4c93897666bb288e58d2c48c2eeee0bad910862b09dfaa0f28c490e24e905",
+  "human_valid": true,
+  "line_no": 329422,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ccf74ba99e9c1a6f2b87baa572645af2abc72019326618ee648c6cacaf6c7c66",
+  "raw_output": "\n        if session.user_id != client.user_id:\n            raise Exception(\"Session is logged in as a different user\")\n        if session.client_id != client.client_id:\n            raise Exception(\"Session was not created by this client\")\n\n    def",
+  "sampling_seed": 1165402709,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

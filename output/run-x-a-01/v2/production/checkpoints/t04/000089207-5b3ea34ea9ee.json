@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_task_comments(self, patient_id, task_id):\n        \"\"\"\n        invokes TouchWorksMagicConstants.ACTION_GET_ENCOUNTER_LIST_FOR_PATIENT action\n        :return: JSON response\n        \"\"\"\n        return self.invoke_action(TouchWorksMagicConstants.ACTION_GET_TASK_COMMENTS,\n",
+  "agc_valid": false,
+  "body_sha256": "b2f17fca7f78bd6c840e8714de61d4b0c8216ec8a8c98a21beffd2fdb7c24417",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.invoke_action(TouchWorksMagicConstants.ACTION_GET_TASK_COMMENTS,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "479a23db99d3ea604b0dae21f6d000c91d58d3e9065e002f15862203ea8fe9ca",
+  "human_valid": true,
+  "line_no": 89207,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5b3ea34ea9eef86295dd7b52e52b12a01e2eee39c274cbcd82d8d3391832d640",
+  "raw_output": "\n        return self.invoke_action(TouchWorksMagicConstants.ACTION_GET_TASK_COMMENTS,\n                                 ",
+  "sampling_seed": 784093560,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

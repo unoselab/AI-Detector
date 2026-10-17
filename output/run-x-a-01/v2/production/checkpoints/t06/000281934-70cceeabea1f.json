@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _handle_result(self):\n        \"\"\"Process one result. Block untill one is available\n        \"\"\"\n        # Wait for one result\n        result = self._result_queue.get()\n        # If we have a result, process it\n        if result:\n            if result.is_success:\n                self.logger.debug(\n                    'Successfully executed %s %s',\n                    result.method,\n                    result.url,\n                )\n                self.success_count +=\n",
+  "agc_valid": false,
+  "body_sha256": "af887e9535acbac4fd492b66420e6f6966eefadb7a28629547649fdbbccf36fe",
+  "body_tokens": 172,
+  "bucket": "type08_180",
+  "clean_output": "\n        # Wait for one result\n        result = self._result_queue.get()\n        # If we have a result, process it\n        if result:\n            if result.is_success:\n                self.logger.debug(\n                    'Successfully executed %s %s',\n                    result.method,\n                    result.url,\n                )\n                self.success_count +=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "f15674847d22cdfc2daccaa168c8045c1e1e48911341d06e489e6744017ea6c0",
+  "human_valid": true,
+  "line_no": 281934,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "70cceeabea1f748c07b8070a4caee60df9fc1355c158c4cea1a5b758441dd9d8",
+  "raw_output": "\n        # Wait for one result\n        result = self._result_queue.get()\n        # If we have a result, process it\n        if result:\n            if result.is_success:\n                self.logger.debug(\n                    'Successfully executed %s %s',\n                    result.method,\n                    result.url,\n                )\n                self.success_count += ",
+  "sampling_seed": 1370784700,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

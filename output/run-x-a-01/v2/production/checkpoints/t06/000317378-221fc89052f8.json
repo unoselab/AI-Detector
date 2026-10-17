@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _new_sensor_reading(self, sensor_value):\n        \"\"\"\n        Call this method to signal a new sensor reading.\n        This method handles DB storage and triggers different events.\n\n        :param value:\n            New value to be stored in the system.\n        \"\"\"\n        self.logger.debug(\"New reading: {}\".format(sensor_value))\n        self._store_reading(sensor_value)\n\n        if self._last_reading is None:\n            self._last_reading = sensor_value\n        else:\n            if sensor_value < self._last_reading:\n                self._last_reading = sensor_value\n                self._low_reading_count +=\n",
+  "agc_valid": false,
+  "body_sha256": "0e63234d6b9ace59c0fb3d31537108b6de92bca36f9724342f6eba8436a620e4",
+  "body_tokens": 102,
+  "bucket": "type01_110",
+  "clean_output": "\n        self.logger.debug(\"New reading: {}\".format(sensor_value))\n        self._store_reading(sensor_value)\n\n        if self._last_reading is None:\n            self._last_reading = sensor_value\n        else:\n            if sensor_value < self._last_reading:\n                self._last_reading = sensor_value\n                self._low_reading_count +=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "d3f32c56bd3b71be22fbf820d0082ab574c29c9372432b4367d5b7fb6462be24",
+  "human_valid": true,
+  "line_no": 317378,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "221fc89052f8f23b971c6b36f46583d1c2e7eecbfa40dad6bd4b12b0f2e9361a",
+  "raw_output": "\n        self.logger.debug(\"New reading: {}\".format(sensor_value))\n        self._store_reading(sensor_value)\n\n        if self._last_reading is None:\n            self._last_reading = sensor_value\n        else:\n            if sensor_value < self._last_reading:\n                self._last_reading = sensor_value\n                self._low_reading_count += ",
+  "sampling_seed": 2639869388,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

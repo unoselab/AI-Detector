@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_params(path, *args, **dicts):\n    \"\"\"Write parameters to file, so that it's readable by read_params.\n\n    Uses INI file format.\n    \"\"\"\n    f = open(path, 'w')\n    for key, val in dicts.items():\n        f.write('[%s]\\n' % key)\n        for k, v in val.items():\n            f.write('%s=%s\\n' % (k, v))\n    f.close()\n",
+  "agc_valid": true,
+  "body_sha256": "72400a7265a3af4d4a41151086d7fd4c00af11dd27f5274d6c3cbbcd5993edf0",
+  "body_tokens": 57,
+  "bucket": "out_of_range",
+  "clean_output": "\n    f = open(path, 'w')\n    for key, val in dicts.items():\n        f.write('[%s]\\n' % key)\n        for k, v in val.items():\n            f.write('%s=%s\\n' % (k, v))\n    f.close()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "8d27e0382a901eafad135c0fb578097e6f82662b93e9c4ad25f2a2d90f7e0dec",
+  "human_valid": true,
+  "line_no": 328969,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1a18d1829cbaf57cdcd89da34548e547dff1436ebd8135fe8820a24a6fc28de1",
+  "raw_output": "\n    f = open(path, 'w')\n    for key, val in dicts.items():\n        f.write('[%s]\\n' % key)\n        for k, v in val.items():\n            f.write('%s=%s\\n' % (k, v))\n    f.close()\n\ndef read_params(path, *args):\n    \"\"\"Read parameters from file, so that it's readable by write_params.\n\n    Uses INI file format.\n    \"\"\"\n    result = {}\n    for key, val in args:\n        result[key] = {}\n    with open(path, 'r') as f:\n        for line in f:\n            if line[0] == '[' and line[-1] == ']':\n                section = line[1:-1]\n                continue\n            if line.strip() == '':\n                continue\n            key, val = line.split('=')\n            result[section][key] = val\n    return result\n\ndef read_params_from_commandline(args):\n    \"\"\"Read parameters from command line, so that it's readable by write_params.\n\n    Uses INI file format.\n    \"\"\"\n    result = {}\n    for arg in args:\n        result[arg] = {}\n    for key, val in args:\n        result[key] = val\n    return result\n\n\ndef save_params(path, *args, **dicts):\n    \"\"\"Save parameters to file, so that it's readable by read_params.\n\n    Uses INI file format.\n    \"\"\"\n    f = open(path, 'w')\n    for key, val in dicts.items():\n        f.write('[%s]\\n' % key)\n        for k, v in val.items():\n            f.write('%s=%s\\n' % (k, v))\n    f.close()\n\ndef load_params(path, *args):\n    \"\"\"Load parameters from file, so that it's readable by write_params.\n\n    Uses INI file format.\n    \"\"\"\n    result = {}\n    for key, val in args:\n        result[key] = {}\n    with open",
+  "sampling_seed": 17444538,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

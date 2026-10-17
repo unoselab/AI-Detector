@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def has_tsm(self):\n        \"\"\"True if this particular server have a TSM based service processor\n        \"\"\"\n        return self.has_service_processor(self.tsm_service_processor_name)\n",
+  "agc_valid": true,
+  "body_sha256": "3684f440fc0fb704b0f38b1e7c72a1255a194bc57a79cef04410d3470e543321",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.has_service_processor(self.tsm_service_processor_name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "adbae5d3102d40740d5f6897a4e5565ab14cd93aee1cf3b4e73dde58c246bb1c",
+  "human_valid": true,
+  "line_no": 294779,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8c0b575d3555e2b9c218439dd4a719d936fa3d944710336d8325bc8547bf78c6",
+  "raw_output": "\n        return self.has_service_processor(self.tsm_service_processor_name)\n\n    def",
+  "sampling_seed": 2617655822,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

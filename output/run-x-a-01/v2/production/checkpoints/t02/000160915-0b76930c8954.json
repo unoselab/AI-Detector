@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_vm_info(self):\n        \"\"\"\n        Returns this VM info.\n\n        :returns: dict of info\n        \"\"\"\n        return self.vm_info\n",
+  "agc_valid": true,
+  "body_sha256": "1afb57e4b6f81110c527ee60fc152a9d8b31fa150385a20608c9a223b6d5fcbb",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.vm_info\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 120,
+  "human_sha256": "92734bc00fa16b6efaf446e86f334de9174ef36ee194fe1085f21d83a338eb56",
+  "human_valid": true,
+  "line_no": 160915,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0b76930c8954e69f48c16ace66e94e3adb1a6be16d2f03b24e67d47e9b8c7004",
+  "raw_output": "\n        return self.vm_info\n\n    def",
+  "sampling_seed": 1411579711,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

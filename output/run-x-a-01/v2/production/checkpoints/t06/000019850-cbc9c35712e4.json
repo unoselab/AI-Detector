@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_by_ext(dirname, ext):\n    \"\"\"Find all files in a directory by extension.\"\"\"\n    result = []\n    for root, dirs, files in os.walk(dirname):\n        for file in files:\n            if file.endswith(ext):\n                result.append(os.path.join(root, file))\n    return result\n",
+  "agc_valid": true,
+  "body_sha256": "94bd90429b2e9682a12df7290c4bbac178ce244acefed3374413d47636311c29",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    result = []\n    for root, dirs, files in os.walk(dirname):\n        for file in files:\n            if file.endswith(ext):\n                result.append(os.path.join(root, file))\n    return result\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "46448243d494be9d9439a4e181feb18f77848cbc4ab5625185358fa97ca5e0fa",
+  "human_valid": true,
+  "line_no": 19850,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cbc9c35712e4c5a0889f784bc8da25e673f5a64d6520c55aa975cab5554c96d5",
+  "raw_output": "\n    result = []\n    for root, dirs, files in os.walk(dirname):\n        for file in files:\n            if file.endswith(ext):\n                result.append(os.path.join(root, file))\n    return result\n\n\ndef get_file_name(file_path):\n    \"\"\"Get the file name of a given file path.\"\"\"\n    return os.path.basename(file_path)\n\n\ndef get_file_ext(file_path):\n    \"\"\"Get the extension of a given file path.\"\"\"\n    return os.path.splitext(file_path)[1]\n\n\ndef get_file_size(file_path):\n    \"\"\"Get the size of a given file path.\"\"\"\n    return os.path.getsize(file_path)\n\n\ndef get_file_mtime(file_path):\n    \"\"\"Get the mtime of a given file path.\"\"\"\n    return os.path.getmtime(file_path)\n\n\ndef get_file_ctime(file_path):\n    \"\"\"Get the ctime of a given file path.\"\"\"\n    return os.path.getctime(file_path)\n\n\ndef get_file_atime(file_path):\n    \"\"\"Get the atime of a given file path.\"\"\"\n    return os.path.getatime(file_path)\n\n\ndef get_file_type(file_path):\n    \"\"\"Get the type of a given file path.\"\"\"\n    return os.path.getctime(file_path)\n\n\ndef get_file_mode(file_path):\n    \"\"\"Get the mode of a given file path.\"\"\"\n    return os.path.getmode(file_path)\n\n\ndef get_file_uid(file_path):\n    \"\"\"Get the uid of a given file path.\"\"\"\n    return os.path.getuid(file_path)\n\n\ndef get_file_gid(file_path):\n    \"\"\"Get the gid of a given file path.\"\"\"\n    return os.path.getgid(file_path)\n\n\ndef get_file_inode(file_path):\n    \"\"\"Get the inode of a given file",
+  "sampling_seed": 3269664334,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

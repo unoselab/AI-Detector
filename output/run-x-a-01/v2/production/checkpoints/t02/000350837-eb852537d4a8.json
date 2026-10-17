@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_offset(cls, info):\n        \"\"\"Calculate the offset to the Xing header from the start of the\n        MPEG header including sync based on the MPEG header's content.\n        \"\"\"\n        if info.version ==\n",
+  "agc_valid": false,
+  "body_sha256": "bd6cb4f6d63d4e89042b0b98c6b9635ec78751c2a93add3789bfc3bdc89cd395",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if info.version ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "f93c240782754e3a17ff97555ddbdb9fe399b4fcf824a24b179ee98669f39127",
+  "human_valid": true,
+  "line_no": 350837,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "eb852537d4a8e3e55a2db37ab82806e37d05f0bd2208c42d9a17238eb513facd",
+  "raw_output": "\n        if info.version == ",
+  "sampling_seed": 3669910353,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_image(self, instance_id, name,\n                     description=None, no_reboot=False):\n        \"\"\"\n        Will create an AMI from the instance in the running or stopped\n        state.\n\n        :type instance_id: string\n        :param instance_id: the ID of the instance to image.\n\n        :type name: string\n        :param name: The name of the new image\n\n        :type description: string\n        :param description: An optional human-readable string describing\n                            the contents and purpose of the AMI.\n\n        :type no_reboot: bool\n        :param no_reboot: An optional flag indicating that the bundling process\n                          should not attempt to shutdown the instance before\n                          bundling.  If this flag is True, the responsibility\n                          of maintaining file system integrity is left to the\n                          owner of the instance.\n\n        :rtype: string\n        :return: The new image id\n        \"\"\"\n        MI.\n\n                :type no_reboot: boolean\n                :param no_reboot: True if you do not want to reboot the\n                                  instance before image creation.\n\n                :rtype: list\n                :return: A list of dictionaries describing the new images.\n                \"\"\"\n                params = {'ImageId': instance_id,\n",
+  "agc_valid": false,
+  "body_sha256": "9145e811e03449703432e7a9d9aa4469f1f2c00c8a3c7a08d45f14010ad25a97",
+  "body_tokens": 166,
+  "bucket": "type07_170",
+  "clean_output": "\n        MI.\n\n                :type no_reboot: boolean\n                :param no_reboot: True if you do not want to reboot the\n                                  instance before image creation.\n\n                :rtype: list\n                :return: A list of dictionaries describing the new images.\n                \"\"\"\n                params = {'ImageId': instance_id,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 101,
+  "human_sha256": "40e8d8b229176fbedf5cdbc552b39ca179de1b48809880503379de112eb5b22f",
+  "human_valid": true,
+  "line_no": 262924,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "26f43d70a673643c7a3f5ee6265eb3d108abcd5d171206644d5a2b4c085592bd",
+  "raw_output": "MI.\n\n        :type no_reboot: boolean\n        :param no_reboot: True if you do not want to reboot the\n                          instance before image creation.\n\n        :rtype: list\n        :return: A list of dictionaries describing the new images.\n        \"\"\"\n        params = {'ImageId': instance_id,\n                 ",
+  "sampling_seed": 284943910,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

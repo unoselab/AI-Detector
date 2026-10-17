@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _create_batch_message(self):\n        \"\"\"Create a ~uamqp.message.Message for a value supplied by the data\n        generator. Applies all properties and annotations to the message.\n\n        :rtype: ~uamqp.message.Message\n        \"\"\"\n        message = Message()\n        message.body = self._data_gen.next()\n        if self._data_gen.annotations:\n            message.application_properties = self._data_gen.annotations\n        message.properties = self._data_gen.properties\n        message.annotations = self._data_gen.annotations\n        return message\n",
+  "agc_valid": true,
+  "body_sha256": "61d35c54f4d32cb7badff738758a72087e25d96a513649f1cdfbf999faf82910",
+  "body_tokens": 73,
+  "bucket": "out_of_range",
+  "clean_output": "\n        message = Message()\n        message.body = self._data_gen.next()\n        if self._data_gen.annotations:\n            message.application_properties = self._data_gen.annotations\n        message.properties = self._data_gen.properties\n        message.annotations = self._data_gen.annotations\n        return message\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "3f89aae9aaf04c24931ff80542852c5c6aa938d2ca203ca91989d6e481ca1ea1",
+  "human_valid": true,
+  "line_no": 325885,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f76e296bd018a74e755877f839f429cd15d742c6d0f2b7327e3615589ffef02f",
+  "raw_output": "\n        message = Message()\n        message.body = self._data_gen.next()\n        if self._data_gen.annotations:\n            message.application_properties = self._data_gen.annotations\n        message.properties = self._data_gen.properties\n        message.annotations = self._data_gen.annotations\n        return message\n\n    def",
+  "sampling_seed": 3114882017,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

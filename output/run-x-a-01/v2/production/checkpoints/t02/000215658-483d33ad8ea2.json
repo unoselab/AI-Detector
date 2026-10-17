@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def delete(self, **kw):\n        \"\"\"\n        Delete a policy route from the engine. You can delete using a\n        single field or multiple fields for a more exact match.\n        Use a keyword argument to delete a route by any valid attribute.\n\n        :param kw: use valid Route keyword values to delete by exact match\n        \"\"\"\n        return self.delete_by_values(**kw)\n",
+  "agc_valid": true,
+  "body_sha256": "499fa6649157daa12db1db948b4e9f63d156a1adfae8023c6e75b4ebd8e5f1c8",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.delete_by_values(**kw)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "703d33e8ecfe4236c7dca6ac8383e56adbbec43a7a7cab4d125b7ce2a8f02105",
+  "human_valid": true,
+  "line_no": 215658,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "483d33ad8ea260f5c8f1d50e69688fd23ddd1f4b354f012aa2619c9cd6d00f52",
+  "raw_output": "\n        return self.delete_by_values(**kw)\n\n    def",
+  "sampling_seed": 517749246,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

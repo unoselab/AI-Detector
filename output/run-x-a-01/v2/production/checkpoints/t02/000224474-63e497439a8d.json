@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_sort_method(self, sort_method, label2_mask=None):\n        \"\"\"A wrapper for `xbmcplugin.addSortMethod()\n        <http://mirrors.xbmc.org/docs/python-docs/xbmcplugin.html#-addSortMethod>`_.\n        You can use ``dir(xbmcswift2.SortMethod)`` to list all available sort\n        methods.\n\n        :param sort_method: A valid sort method. You can provided the constant\n                            from xbmcplugin, an attribute of SortMethod, or a\n                            string name. For instance, the following method\n                            calls are all equivalent:\n\n                            * ``plugin.add_sort_method(xbmcplugin.SORT_METHOD_TITLE)``\n                            * ``plugin.add_sort_metohd(SortMethod.TITLE)``\n                            * ``plugin.add_sort_method('title')``\n        :param label2_mask: A mask pattern for label2. See the `XBMC\n                            documentation\n                            <http://mirrors.xbmc.org/docs/python-docs/xbmcplugin.html#-addSortMethod>`_\n                            for more information.\n        \"\"\"\n        integer or a string.\n                :type sort_method: int or str\n                :param label2_mask: The label2 mask to use.\n                :type label2_mask: int\n                \"\"\"\n                if isinstance(sort_method, str):\n                    sort_method = getattr(xbmcswift2.SortMethod, sort_method)\n                if label2_mask is not None:\n                    self._plugin.addSortMethod(sort_method, label2_mask)\n                else:\n                    self._plugin.addSortMethod(sort_method)\n",
+  "agc_valid": false,
+  "body_sha256": "243c9119d360a2dcd31faa3980d89f1867c05b509044c5539d50f33da72d4ea7",
+  "body_tokens": 206,
+  "bucket": "out_of_range",
+  "clean_output": "\n        integer or a string.\n                :type sort_method: int or str\n                :param label2_mask: The label2 mask to use.\n                :type label2_mask: int\n                \"\"\"\n                if isinstance(sort_method, str):\n                    sort_method = getattr(xbmcswift2.SortMethod, sort_method)\n                if label2_mask is not None:\n                    self._plugin.addSortMethod(sort_method, label2_mask)\n                else:\n                    self._plugin.addSortMethod(sort_method)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "e141a230fb15a5b9984adde5010dc3340d021585952f6429e4bba7f5ae4c6e98",
+  "human_valid": true,
+  "line_no": 224474,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "63e497439a8d8f8a2206563866102565b794d42d1656cc3fcfde12efda41d811",
+  "raw_output": "integer or a string.\n        :type sort_method: int or str\n        :param label2_mask: The label2 mask to use.\n        :type label2_mask: int\n        \"\"\"\n        if isinstance(sort_method, str):\n            sort_method = getattr(xbmcswift2.SortMethod, sort_method)\n        if label2_mask is not None:\n            self._plugin.addSortMethod(sort_method, label2_mask)\n        else:\n            self._plugin.addSortMethod(sort_method)\n\n    def",
+  "sampling_seed": 764094010,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

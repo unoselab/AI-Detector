@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _init_subtokens_from_list(self, subtoken_strings, reserved_tokens=None):\n    \"\"\"Initialize token information from a list of subtoken strings.\n\n    Args:\n      subtoken_strings: a list of subtokens\n      reserved_tokens: List of reserved tokens. We must have `reserved_tokens`\n        as None or the empty list, or else the global variable `RESERVED_TOKENS`\n        must be a prefix of `reserved_tokens`.\n\n    Raises:\n      ValueError: if reserved is not 0 or len(RESERVED_TOKENS). In this case, it\n        is not clear what the space is being reserved for, or when it will be\n        filled in.\n    \"\"\"\n    :\n          ValueError: if `reserved_tokens` is not None or the empty list, or if it\n            does not start with `RESERVED_TOKENS`.\n        \"\"\"\n        if reserved_tokens is not None and reserved_tokens:\n          if RESERVED_TOKENS not in reserved_tokens:\n            raise ValueError('reserved_tokens must be None or the empty list, or '\n                             'must be a prefix of RESERVED_TOKENS.')\n          reserved_tokens = [t for t in RESERVED_TOKENS if t in reserved_tokens]\n\n        for token in subtoken_strings:\n          if token in self.token_to_id:\n            raise ValueError('Duplicate token in subtoken list: %s' % token)\n          self.token_to_id[token] = self.next_id\n          self.id_to_token[self.next_id] = token\n          self.next_id +=\n",
+  "agc_valid": false,
+  "body_sha256": "51b6acfc56860cbd47bf25c10f2dc6aee478fb9b7308b2c75a3c6d1527843087",
+  "body_tokens": 234,
+  "bucket": "out_of_range",
+  "clean_output": "\n    :\n          ValueError: if `reserved_tokens` is not None or the empty list, or if it\n            does not start with `RESERVED_TOKENS`.\n        \"\"\"\n        if reserved_tokens is not None and reserved_tokens:\n          if RESERVED_TOKENS not in reserved_tokens:\n            raise ValueError('reserved_tokens must be None or the empty list, or '\n                             'must be a prefix of RESERVED_TOKENS.')\n          reserved_tokens = [t for t in RESERVED_TOKENS if t in reserved_tokens]\n\n        for token in subtoken_strings:\n          if token in self.token_to_id:\n            raise ValueError('Duplicate token in subtoken list: %s' % token)\n          self.token_to_id[token] = self.next_id\n          self.id_to_token[self.next_id] = token\n          self.next_id +=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "9a0940ea7e79945f4bd1a5c162cbbcf39f9e651c1e82823a770f6eef26b38b2a",
+  "human_valid": true,
+  "line_no": 95185,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab41b7759d76471af392756225e122b1dc1b8d347c4b67cd365e1c3154fc6e1c",
+  "raw_output": ":\n      ValueError: if `reserved_tokens` is not None or the empty list, or if it\n        does not start with `RESERVED_TOKENS`.\n    \"\"\"\n    if reserved_tokens is not None and reserved_tokens:\n      if RESERVED_TOKENS not in reserved_tokens:\n        raise ValueError('reserved_tokens must be None or the empty list, or '\n                         'must be a prefix of RESERVED_TOKENS.')\n      reserved_tokens = [t for t in RESERVED_TOKENS if t in reserved_tokens]\n\n    for token in subtoken_strings:\n      if token in self.token_to_id:\n        raise ValueError('Duplicate token in subtoken list: %s' % token)\n      self.token_to_id[token] = self.next_id\n      self.id_to_token[self.next_id] = token\n      self.next_id += ",
+  "sampling_seed": 3495666844,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

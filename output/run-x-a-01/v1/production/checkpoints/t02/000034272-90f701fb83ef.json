@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _spawn(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    return t\n",
+  "agc_valid": true,
+  "body_sha256": "acaae4bbbbb1990ddbdee65cae0706c97eceaaafa6010fe283eaf67a1dd5f075",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    return t\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0ba5eb7e0fbd1d6f3dde98c89a7d48d2a15cdb9b674fdc6eb599735e6d404f23",
+  "human_valid": true,
+  "line_no": 34272,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "90f701fb83ef3574e4ac421e0c02d0d19a8a03935431877d4a1914dab369d619",
+  "raw_output": "\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    return t\n\n\ndef _spawn_and_wait(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    complete.\n    \"\"\"\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    t.join()\n\n\ndef _spawn_and_wait_for_exit(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    complete.\n    \"\"\"\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    t.join()\n\n\ndef _spawn_and_wait_for_exit_with_timeout(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    complete.\n    \"\"\"\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    t.join(timeout=1)\n\n\ndef _spawn_and_wait_for_exit_with_timeout_and_signal(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    complete.\n    \"\"\"\n    t = threading.Thread(target=func, args=args, kwargs=kwargs)\n    t.daemon = True\n    t.start()\n    t.join(timeout=1)\n    t.kill()\n\n\ndef _spawn_and_wait_with_timeout(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it",
+  "sampling_seed": 3323537000,
+  "tag": "t02",
+  "temperature": 0.2
+}

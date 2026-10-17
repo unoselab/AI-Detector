@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def page(self, beta=values.unset, friendly_name=values.unset,\n             phone_number=values.unset, origin=values.unset,\n             page_token=values.unset, page_number=values.unset,\n             page_size=values.unset):\n        \"\"\"\n        Retrieve a single page of LocalInstance records from the API.\n        Request is executed immediately\n\n        :param bool beta: Whether to include new phone numbers\n        :param unicode friendly_name: A string that identifies the resources to read\n        :param unicode phone_number: The phone numbers of the resources to read\n        :param unicode origin: Include phone numbers based on their origin. By default, phone numbers of all origin are included.\n        :param str page_token: PageToken provided by the API\n        :param int page_number: Page Number, this value is simply for client state\n        :param int page_size: Number of records to return, defaults to 50\n\n        :returns: Page of LocalInstance\n        :rtype: twilio.rest.api.v2010.account.incoming_phone_number.local.LocalPage\n        \"\"\"\n        :param unicode phone_number: A string that identifies the resources to read\n        :param unicode origin: The origin\n        :param unicode page_token: PageToken provided by the API\n        :param int page_number: Page Number, this value is simply for client state\n        :param int page_size: Number of records to return, defaults to\n",
+  "agc_valid": false,
+  "body_sha256": "7c7401201e84ea92c1fd24ee5f7f54ba9108a371279a352a72dfb769f3fd3db8",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n        :param unicode phone_number: A string that identifies the resources to read\n        :param unicode origin: The origin\n        :param unicode page_token: PageToken provided by the API\n        :param int page_number: Page Number, this value is simply for client state\n        :param int page_size: Number of records to return, defaults to\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 175,
+  "human_sha256": "2676b5039b5dbf027e8de8a3eda50660f9f907d90780cfb46342341c40df2ebe",
+  "human_valid": true,
+  "line_no": 339768,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "db087150a6858069f9305385e8f6a6b34ead582494d0b0801be48ecaa601ee90",
+  "raw_output": "\n        :param unicode phone_number: A string that identifies the resources to read\n        :param unicode origin: The origin\n        :param unicode page_token: PageToken provided by the API\n        :param int page_number: Page Number, this value is simply for client state\n        :param int page_size: Number of records to return, defaults to ",
+  "sampling_seed": 2992656007,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

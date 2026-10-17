@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _guessunit(self):\n        \"\"\"Guess the unit of the period as the largest one, which results in\n        an integer duration.\n        \"\"\"\n        if self.duration is None:\n            return\n        if self.duration.microseconds:\n            self.unit = 'us'\n        elif self.duration.seconds:\n            self.unit = 's'\n        elif self.duration.days:\n            self.unit = 'd'\n",
+  "agc_valid": true,
+  "body_sha256": "80364e4ed67826705e6e264b6d7c4b17e9b191554b46a524089208000e7692e7",
+  "body_tokens": 93,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.duration is None:\n            return\n        if self.duration.microseconds:\n            self.unit = 'us'\n        elif self.duration.seconds:\n            self.unit = 's'\n        elif self.duration.days:\n            self.unit = 'd'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "41fb25fad71ceea9b245e54b642e7695746a847a30e238ce13920e870543da7b",
+  "human_valid": true,
+  "line_no": 19577,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8a8ffa80cd638469b159f62118a6ec57cf20ced9cb386641699a0788172543ed",
+  "raw_output": "\n        if self.duration is None:\n            return\n        if self.duration.microseconds:\n            self.unit = 'us'\n        elif self.duration.seconds:\n            self.unit = 's'\n        elif self.duration.days:\n            self.unit = 'd'\n\n    def",
+  "sampling_seed": 2304441459,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

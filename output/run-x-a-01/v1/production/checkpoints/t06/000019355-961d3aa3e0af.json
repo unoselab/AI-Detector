@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def calc_ag_v1(self):\n    \"\"\"Sum the through flown area of the total cross section.\n\n    Required flux sequences:\n      |AM|\n      |AV|\n      |AVR|\n\n    Calculated flux sequence:\n      |AG|\n\n    Example:\n\n        >>> from hydpy.models.lstream import *\n        >>> parameterstep()\n        >>> fluxes.am = 1.0\n        >>> fluxes.av= 2.0, 3.0\n        >>> fluxes.avr = 4.0, 5.0\n        >>> model.calc_ag_v1()\n        >>> fluxes.ag\n        ag(15.0)\n    \"\"\"\n    .0,\n",
+  "agc_valid": true,
+  "body_sha256": "7a1f4c0b353368b965036bb3a95621466c959284b585ce5c67a0bb8bfceb3e6c",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    .0,\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "dc8f02df9c1e6db887f20b045e8907f4a69a3ee680d2bcc1b6b49732adf3c39e",
+  "human_valid": true,
+  "line_no": 19355,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "961d3aa3e0af2db7c8b530db88f32d6dc9e26a778c05050012e80730bd370d6d",
+  "raw_output": ".0, ",
+  "sampling_seed": 903352327,
+  "tag": "t06",
+  "temperature": 0.6
+}

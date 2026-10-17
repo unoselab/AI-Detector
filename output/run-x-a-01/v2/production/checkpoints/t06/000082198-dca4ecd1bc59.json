@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def dict_diff(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.intersection(d.keys())\n    return [d.get(key, None) for key in keys]\n",
+  "agc_valid": true,
+  "body_sha256": "7a88214760cae186120d77e51a75ff240e879206bc49921b952cddc3d28c9d06",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.intersection(d.keys())\n    return [d.get(key, None) for key in keys]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "1ce194473a8c8051560b4b7845cccd28d2bd0f44f6f145662246dc92488eef63",
+  "human_valid": true,
+  "line_no": 82198,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dca4ecd1bc5945426cd056e0419cbc9e96b4dde049c823c0c09af967edcae7f1",
+  "raw_output": "\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.intersection(d.keys())\n    return [d.get(key, None) for key in keys]\n\n\ndef dict_merge(dicts):\n    \"\"\"\n    Combine dictionaries to keys which map to multiple values\n    \"\"\"\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.union(d.keys())\n    return [d.get(key, None) for key in keys]\n\n\ndef dict_merge_dicts(dicts):\n    \"\"\"\n    Combine dictionaries to keys which map to multiple values\n    \"\"\"\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.union(d.keys())\n    return {key: dict_merge([d.get(key, None) for d in dicts]) for key in keys}\n\n\ndef dict_diff_dicts(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.intersection(d.keys())\n    return {key: dict_diff([d.get(key, None) for d in dicts]) for key in keys}\n\n\ndef dict_merge_lists(dicts):\n    \"\"\"\n    Combine dictionaries to keys which map to multiple values\n    \"\"\"\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.union(d.keys())\n    return {key: dict_merge([d.get(key, None) for d in dicts]) for key in keys}\n\n\ndef dict_diff_lists(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    keys = set(dicts[0].keys())\n    for d in dicts[1:]:\n        keys = keys.intersection(d.keys())\n    return {key: dict_diff([d.",
+  "sampling_seed": 1223018784,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def imread(path, grayscale=False, size=None, interpolate=\"bilinear\",\n           channel_first=False, as_uint16=False, num_channels=-1):\n    \"\"\"\n    Read image by cv2 module.\n\n    Args:\n        path (str or 'file object'): File path or object to read.\n        grayscale (bool):\n        size (tupple of int):\n            (width, height).\n            If None, output img shape depends on the files to read.\n        channel_first (bool):\n            This argument specifies the shape of img is whether (height, width, channel) or (channel, height, width).\n            Default value is False, which means the img shape is (height, width, channel).\n        interpolate (str):\n            must be one of [\"nearest\", \"box\", \"bilinear\", \"hamming\", \"bicubic\", \"lanczos\"].\n        as_uint16 (bool):\n            If True, this function reads image as uint16.\n        num_channels (int):\n            channel size of output array.\n            Default is -1 which preserves raw image shape.\n\n    Returns:\n         numpy.ndarray\n    \"\"\"\n        as_uint16 (bool):\n            If True, read image as uint16.\n            If False, read image as uint8.\n        num_channels (int):\n            If -1, output img shape depends on the files to read.\n            If\n",
+  "agc_valid": false,
+  "body_sha256": "d9c3029e393ac648353cd2913d12bfe09ada6fc2f1d6d283b80399d6801ad949",
+  "body_tokens": 87,
+  "bucket": "out_of_range",
+  "clean_output": "\n        as_uint16 (bool):\n            If True, read image as uint16.\n            If False, read image as uint8.\n        num_channels (int):\n            If -1, output img shape depends on the files to read.\n            If\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "6c49ef05dfb9e39c7d1b7fc19485649bbb9869771c41abbc7505c87995475618",
+  "human_valid": true,
+  "line_no": 164877,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9f2a2d85bbc20ad769072cb3c182113de3a9a09db0e967c7a6c6ea0b11841e0a",
+  "raw_output": "\n        as_uint16 (bool):\n            If True, read image as uint16.\n            If False, read image as uint8.\n        num_channels (int):\n            If -1, output img shape depends on the files to read.\n            If ",
+  "sampling_seed": 1150639249,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

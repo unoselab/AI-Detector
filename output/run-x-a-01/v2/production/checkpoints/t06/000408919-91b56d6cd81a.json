@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _identity_stmt(self, stmt: Statement, sctx: SchemaContext) -> None:\n        \"\"\"Handle identity statement.\"\"\"\n        if stmt.token_normalized in (\"not\", \"not null\"):\n            # NOT NULL is default\n            return\n\n        sctx.current().add_column_constraint(\n            ColumnConstraint.identity(stmt.token_normalized)\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "3e672ff121e7d94a6404153035537cccf0b324739bb6662bff6e8b856008e69d",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if stmt.token_normalized in (\"not\", \"not null\"):\n            # NOT NULL is default\n            return\n\n        sctx.current().add_column_constraint(\n            ColumnConstraint.identity(stmt.token_normalized)\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "2113b3fba7ea0e0f0639f379b7a50ebec29c46f05ffaa6c522863af0658cc19a",
+  "human_valid": true,
+  "line_no": 408919,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "91b56d6cd81a679d1fd842e4c6f9f86684698660e99ca15930a8a444d0b73f3e",
+  "raw_output": "\n\n        if stmt.token_normalized in (\"not\", \"not null\"):\n            # NOT NULL is default\n            return\n\n        sctx.current().add_column_constraint(\n            ColumnConstraint.identity(stmt.token_normalized)\n        )\n\n    def",
+  "sampling_seed": 770066738,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

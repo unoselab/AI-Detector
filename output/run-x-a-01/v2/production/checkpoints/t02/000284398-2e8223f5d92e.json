@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_pin_retries(ctx, management_key, pin, pin_retries, puk_retries, force):\n    \"\"\"\n    Set the number of PIN and PUK retries.\n    NOTE: This will reset the PIN and PUK to their factory defaults.\n    \"\"\"\n    if not force:\n        click.confirm(\n            \"This will reset the PIN and PUK to their factory defaults. \"\n            \"Are you sure you want to continue?\",\n            abort=True,\n        )\n\n    pin_retries = int(pin_retries)\n    puk_retries = int(puk_retries)\n\n    if pin_retries <\n",
+  "agc_valid": false,
+  "body_sha256": "e3e2014ae900a19e6c17eea3720f98a3a096bdc69bf1fba69edb4eb9caaf62c5",
+  "body_tokens": 94,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not force:\n        click.confirm(\n            \"This will reset the PIN and PUK to their factory defaults. \"\n            \"Are you sure you want to continue?\",\n            abort=True,\n        )\n\n    pin_retries = int(pin_retries)\n    puk_retries = int(puk_retries)\n\n    if pin_retries <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "ca06555c4199d90fc11fb865394092ab909a3d3c8989e1bacaee7e87af2d7a2b",
+  "human_valid": true,
+  "line_no": 284398,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2e8223f5d92eadfe027c994bf2eb350bdbf37389b02069d17e0275bbc4470015",
+  "raw_output": "\n    if not force:\n        click.confirm(\n            \"This will reset the PIN and PUK to their factory defaults. \"\n            \"Are you sure you want to continue?\",\n            abort=True,\n        )\n\n    pin_retries = int(pin_retries)\n    puk_retries = int(puk_retries)\n\n    if pin_retries < ",
+  "sampling_seed": 1469581631,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

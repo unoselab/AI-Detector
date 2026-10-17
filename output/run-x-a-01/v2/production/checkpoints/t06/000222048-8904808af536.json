@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def decode(self, bytes, raw=False):\n        \"\"\"decode(bytearray, raw=False) -> value\n\n        Decodes the given bytearray and returns the corresponding\n        Command Definition (:class:`CmdDefn`) for the underlying\n        'MSB_U16' command opcode.\n\n        If the optional parameter ``raw`` is ``True``, the command\n        opcode itself will be returned instead of the Command\n        Definition (:class:`CmdDefn`).\n        \"\"\"\n        # Decode the raw bytearray\n        data = bytes\n        opcode = (data[0] <<\n",
+  "agc_valid": false,
+  "body_sha256": "c675b49315df26f6016f08c986b4e146b45253d823fff74abad66c865b509654",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Decode the raw bytearray\n        data = bytes\n        opcode = (data[0] <<\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "a64fc87b6916ac5836b512d40ff20c74d9bc11e3140458a4b51f426c812c174f",
+  "human_valid": true,
+  "line_no": 222048,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8904808af5363ab11083d12e505d40955cc8e8ffc5ad7dadd34001b782f2cb4d",
+  "raw_output": "\n        # Decode the raw bytearray\n        data = bytes\n        opcode = (data[0] << ",
+  "sampling_seed": 2948462236,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

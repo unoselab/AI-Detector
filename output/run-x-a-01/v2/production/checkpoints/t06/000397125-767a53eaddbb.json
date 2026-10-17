@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def replace_subject(rdf, fromuri, touri):\n    \"\"\"Replace occurrences of fromuri as subject with touri in given model.\n\n    If touri=None, will delete all occurrences of fromuri instead.\n    If touri is a list or tuple of URIRefs, all values will be inserted.\n\n    \"\"\"\n    for s, p, o in rdf.triples((fromuri, None, None)):\n        if touri is None:\n            rdf.remove((s, p, o))\n        else:\n            for t in touri:\n                rdf.add((t, p, o))\n",
+  "agc_valid": true,
+  "body_sha256": "11f61a9ddd21ea944ec37046ca31a653e4b301f140c3fa94f504d3897ffca3fb",
+  "body_tokens": 78,
+  "bucket": "out_of_range",
+  "clean_output": "\n    for s, p, o in rdf.triples((fromuri, None, None)):\n        if touri is None:\n            rdf.remove((s, p, o))\n        else:\n            for t in touri:\n                rdf.add((t, p, o))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "be760200d1705ec202a6fa9efc2f3c3eea00bffc613134b7f5e0c429e270f109",
+  "human_valid": true,
+  "line_no": 397125,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "767a53eaddbb8dbc72ae574953b7fef910a548f67ae00a8bfcff8f873cdda261",
+  "raw_output": "\n    for s, p, o in rdf.triples((fromuri, None, None)):\n        if touri is None:\n            rdf.remove((s, p, o))\n        else:\n            for t in touri:\n                rdf.add((t, p, o))\n\n\ndef replace_object(rdf, fromuri, touri):\n    \"\"\"Replace occurrences of fromuri as object with touri in given model.\n\n    If touri=None, will delete all occurrences of fromuri instead.\n    If touri is a list or tuple of URIRefs, all values will be inserted.\n\n    \"\"\"\n    for s, p, o in rdf.triples((None, None, fromuri)):\n        if touri is None:\n            rdf.remove((s, p, o))\n        else:\n            for t in touri:\n                rdf.add((s, p, t))\n\n\ndef replace_predicate(rdf, fromuri, touri):\n    \"\"\"Replace occurrences of fromuri as predicate with touri in given model.\n\n    If touri=None, will delete all occurrences of fromuri instead.\n    If touri is a list or tuple of URIRefs, all values will be inserted.\n\n    \"\"\"\n    for s, p, o in rdf.triples((None, fromuri, None)):\n        if touri is None:\n            rdf.remove((s, p, o))\n        else:\n            for t in touri:\n                rdf.add((s, t, o))\n\n\ndef replace_value(rdf, fromuri, touri):\n    \"\"\"Replace occurrences of fromuri as object with touri in given model.\n\n    If touri=None, will delete all occurrences of fromuri instead.\n    If touri is a list or tuple of URIRefs, all values will be inserted.\n\n    \"\"\"\n    for s, p, o in rdf.triples((None, None, fromuri)):\n        if touri is None:\n            rdf.remove((s, p, o))\n        else:\n            for t in touri:\n                rdf.add((s, p, t))\n\n",
+  "sampling_seed": 3973970875,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def gtpswd(prompt, confirmPassword):\n    \"\"\"\n    Temporary wrapper for Twisted's getPassword until a version that supports\n    customizing the 'confirm' prompt is released.\n    \"\"\"\n    return getPassword(prompt, confirmPassword)\n",
+  "agc_valid": true,
+  "body_sha256": "8329035e35e0b783d91ebc4f3a417dd17637c66c7537ad1e7951c2dc3e74f34d",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return getPassword(prompt, confirmPassword)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0555a4b52370bf4a7299cfb855f08eb057092bdb31e075eba9d812f330db57c6",
+  "human_valid": true,
+  "line_no": 33336,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "92c42b7a33c676332c029d362746ee518f3b2870264c48728066c6be3bfc05af",
+  "raw_output": "\n    return getPassword(prompt, confirmPassword)\n\n\ndef getPassword(prompt, confirmPassword=None):\n    \"\"\"\n    Prompt for a password.\n\n    @param prompt: The prompt to display.\n\n    @param confirmPassword: If C{None}, the password is returned as is.\n        Otherwise, the user is prompted to confirm the password.\n\n    @return: The password.\n    \"\"\"\n    password = getpass.getpass(prompt)\n    if confirmPassword is None:\n        return password\n    while True:\n        confirm = getpass.getpass('Confirm %s: ' % (prompt,))\n        if confirm == password:\n            return password\n        print \"Passwords do not match.\"\n\n\ndef get_password_from_config(config, section, option):\n    \"\"\"\n    Get a password from a config file.\n\n    @param config: The config file.\n\n    @param section: The section in the config file.\n\n    @param option: The option in the config file.\n\n    @return: The password.\n    \"\"\"\n    if config.has_option(section, option):\n        return config.get(section, option)\n    password = gtpswd('%s password: ' % (section,), confirmPassword=True)\n    config.set(section, option, password)\n    return password\n\n\ndef get_password_from_config_file(configFile):\n    \"\"\"\n    Get a password from a config file.\n\n    @param configFile: The config file.\n\n    @return: The password.\n    \"\"\"\n    config = ConfigParser.ConfigParser()\n    config.read(configFile)\n    return get_password_from_config(config, 'user', 'password')\n\n\ndef get_password_from_config_file_or_prompt(configFile):\n    \"\"\"\n    Get a password from a config file or prompt for it.\n\n    @param configFile: The config file.\n\n    @return: The password.\n    \"\"\"\n    config = ConfigParser.ConfigParser()\n    config.read(configFile)\n    if config.has_option('user', 'password'):\n        return config.get('user',",
+  "sampling_seed": 3398948383,
+  "tag": "t04",
+  "temperature": 0.4
+}

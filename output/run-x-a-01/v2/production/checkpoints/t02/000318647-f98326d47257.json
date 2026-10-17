@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add(self, *files):\n        \"\"\"Add one or more files to the index running git-add.\"\"\"\n        return self._call_process([\"git\", \"add\"] + list(files))\n",
+  "agc_valid": true,
+  "body_sha256": "ba081feda247cc11389d13a224aa9d046062403e09e67f4f67cc2fdb0462eb96",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._call_process([\"git\", \"add\"] + list(files))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "4755a73ebf612d68f77f910742c9807ec84d7ee71b60d8007eb071bb0591c512",
+  "human_valid": true,
+  "line_no": 318647,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f98326d472570f76ba48c846f6432a822fb65433954d781e4f91bddc2c104353",
+  "raw_output": "\n        return self._call_process([\"git\", \"add\"] + list(files))\n\n    def",
+  "sampling_seed": 3888745018,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

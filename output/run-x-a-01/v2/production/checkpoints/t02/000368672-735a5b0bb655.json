@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def CreateServiceProto(job):\n  \"\"\"Create the Service protobuf.\n\n  Args:\n    job: Launchdjobdict from servicemanagement framework.\n\n  Returns:\n    sysinfo_pb2.OSXServiceInformation proto\n  \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "8361bba746da95737536b5d06d299003618ee5af669c4ebaca32055cccf30d00",
+  "human_valid": true,
+  "line_no": 368672,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "735a5b0bb6550d85658606993ab1a4b6c3486dee32a698b1130f3c2a68532120",
+  "raw_output": "\n ",
+  "sampling_seed": 3075226340,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,33 @@
+{
+  "duplicate_prompt_excluded": 1048,
+  "eligible_type01_110": 13204,
+  "eligible_type02_120": 10782,
+  "eligible_type03_130": 9689,
+  "eligible_type04_140": 8928,
+  "eligible_type05_150": 7908,
+  "eligible_type06_160": 7030,
+  "eligible_type07_170": 6620,
+  "eligible_type08_180": 6163,
+  "eligible_type09_190": 5683,
+  "eligible_type10_200": 4979,
+  "excluded_hwc_hashes": 4495,
+  "excluded_legacy_lines": 4500,
+  "excluded_prompt_hashes": 4472,
+  "historical_excluded": 2146,
+  "selected": 2000,
+  "selected_per_stratum": {
+    "type01_110": 200,
+    "type02_120": 200,
+    "type03_130": 200,
+    "type04_140": 200,
+    "type05_150": 200,
+    "type06_160": 200,
+    "type07_170": 200,
+    "type08_180": 200,
+    "type09_190": 200,
+    "type10_200": 200
+  },
+  "source_filtered_or_outside_100_200": 327998,
+  "source_lines": 412178,
+  "status": "PASS"
+}

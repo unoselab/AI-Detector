@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def GetVmodlType(name):\n   \"\"\" Get type from vmodl name \"\"\"\n   return '[%s]' % name\n",
+  "agc_valid": true,
+  "body_sha256": "75e5ac3222b22ff19f5eee827c1b517b25591940fa78fb93569155415892b7c6",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n   return '[%s]' % name\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "ad903f57a14590c4d6d08ee11bb88f91b30d1413a2378592b65d49621a1f32b9",
+  "human_valid": true,
+  "line_no": 329187,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a37f703144ec968eef4136b5a43a5c0211f49f720f1a34edb7edde80b22618d6",
+  "raw_output": "\n\n   return '[%s]' % name\n\ndef GetVmodlValue(value):\n   \"\"\" Get value from vmodl \"\"\"\n\n   if type(value) is int or type(value) is float:\n      return value\n   elif type(value) is bool:\n      return 'true' if value else 'false'\n   elif type(value) is str:\n      return '\\\"%s\\\"' % value\n   elif type(value) is list:\n      return '[' + ','.join([GetVmodlValue(item) for item in value]) + ']'\n   elif type(value) is dict:\n      return '[' + ','.join(['%s:%s' % (key, GetVmodlValue(value[key])) for key in value]) + ']'\n\n   raise Exception('Unknown type %s' % type(value))\n\ndef GetVmodlTypeAndValue(value):\n   \"\"\" Get type and value from vmodl \"\"\"\n\n   return '%s,%s' % (GetVmodlType(value), GetVmodlValue(value))\n\ndef GetVmodlTypeAndValueFromMethod(method):\n   \"\"\" Get type and value from vmodl method \"\"\"\n\n   return '%s,%s' % (GetVmodlType(method), GetVmodlValue(method))\n\ndef GetVmodlTypeAndValueFromProperty(property):\n   \"\"\" Get type and value from vmodl property \"\"\"\n\n   return '%s,%s' % (GetVmodlType(property), GetVmodlValue(property))\n\ndef GetVmodlTypeAndValueFromMethodResult(methodResult):\n   \"\"\" Get type and value from vmodl method result \"\"\"\n\n   if methodResult is None:\n      return None\n\n   return '%s,%s' % (GetVmodlType(methodResult), GetVmodlValue(methodResult))\n\ndef GetVmodlTypeAndValueFromTask(task):\n   \"\"\" Get type and value from vmodl task \"\"\"\n\n   return '%s,%s' % (GetVmodlType(task), GetVmodlValue(task))\n\ndef GetVmodlTypeAndValueFromTaskResult(taskResult):\n   \"\"\" Get type and",
+  "sampling_seed": 1815034023,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

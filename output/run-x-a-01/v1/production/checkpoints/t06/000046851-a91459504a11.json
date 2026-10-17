@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def clear_published(self):\n        \"\"\"Removes the published status.\n\n        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or\n                ``Metadata.isReadOnly()`` is ``true``\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n            raise errors.Unimplemented()\n\n        published = property(fget=get_published, fset=clear_published)\n\n        @utilities.arguments_not_none\n",
+  "agc_valid": false,
+  "body_sha256": "d0197f40f2e5563e120f8df8c3f8c1351aa39b8425073b67ec8d8cc3e5e84faf",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n            raise errors.Unimplemented()\n\n        published = property(fget=get_published, fset=clear_published)\n\n        @utilities.arguments_not_none\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a2b2260c68b122272d7d5ade6dec403b6b2836942fa1f649d45daf249160dc6e",
+  "human_valid": true,
+  "line_no": 46851,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "a91459504a11dd83aeaa8a3c80e80179052f4ad570b3a0cad7dd16c2b7636e86",
+  "raw_output": "\n        raise errors.Unimplemented()\n\n    published = property(fget=get_published, fset=clear_published)\n\n    @utilities.arguments_not_none\n    def",
+  "sampling_seed": 2825200137,
+  "tag": "t06",
+  "temperature": 0.6
+}

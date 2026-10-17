@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def unhexlify(blob):\n    \"\"\"\n    Takes a hexlified script and turns it back into a string of Python code.\n    \"\"\"\n    return ''.join(chr(int(blob[i:i +\n",
+  "agc_valid": false,
+  "body_sha256": "fd6a5969a2f9f0f82a20e72d315e4ac562070356d35fb816f0ab9f5f452dd365",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return ''.join(chr(int(blob[i:i +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "66a73d4e0418224a27db7eb4ae171a7ddc2a67c855b1193b156856966b64d57b",
+  "human_valid": true,
+  "line_no": 212718,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4b33a03bec9f4c5dfeddb6737e55d66acb4ceb2265d7b1a937e5940b1f7c7b16",
+  "raw_output": "\n    return ''.join(chr(int(blob[i:i + ",
+  "sampling_seed": 338236768,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

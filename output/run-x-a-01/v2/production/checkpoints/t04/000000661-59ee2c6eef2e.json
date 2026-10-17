@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def build_hypergraph_adjacency(cluster_runs):\n    \"\"\"Return the adjacency matrix to a hypergraph, in sparse matrix representation.\n\n    Parameters\n    ----------\n    cluster_runs : array of shape (n_partitions, n_samples)\n\n    Returns\n    -------\n    hypergraph_adjacency : compressed sparse row matrix\n        Represents the hypergraph associated with an ensemble of partitions,\n        each partition corresponding to a row of the array 'cluster_runs'\n        provided at input.\n    \"\"\"\n    \"\"\"\n     n_partitions = cluster_runs.shape[0]\n     n_samples = cluster_runs.shape[1]\n     hypergraph_adjacency = csr_matrix((np.ones(n_partitions * n_samples),\n                                        (np.repeat(np.arange(n_partitions), n_samples),\n                                         np.repeat(cluster_runs.ravel(), n_partitions))))\n     return hypergraph_adjacency\n",
+  "agc_valid": false,
+  "body_sha256": "dfb56ca97c809c9b0f93ba6564404583ac9b7cd2b5fb2ed649fb9e59ecb48f61",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n    \"\"\"\n     n_partitions = cluster_runs.shape[0]\n     n_samples = cluster_runs.shape[1]\n     hypergraph_adjacency = csr_matrix((np.ones(n_partitions * n_samples),\n                                        (np.repeat(np.arange(n_partitions), n_samples),\n                                         np.repeat(cluster_runs.ravel(), n_partitions))))\n     return hypergraph_adjacency\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "548e32fabca2b6b2cb4b653ddeca246aabc0014fc59d1f7ddbeb1d70fd33e4c8",
+  "human_valid": true,
+  "line_no": 661,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "59ee2c6eef2eb75e996df4918d76dfdd418c140ac5d2e7970a13ff8a6936d7eb",
+  "raw_output": "   \"\"\"\n    n_partitions = cluster_runs.shape[0]\n    n_samples = cluster_runs.shape[1]\n    hypergraph_adjacency = csr_matrix((np.ones(n_partitions * n_samples),\n                                       (np.repeat(np.arange(n_partitions), n_samples),\n                                        np.repeat(cluster_runs.ravel(), n_partitions))))\n    return hypergraph_adjacency\n\n\ndef build_hypergraph_adjacency_from_clustering(clustering):\n    \"\"\"Return the adjacency matrix to a hypergraph, in sparse matrix representation.\n    \n    Parameters\n    ----------\n    clustering : array of shape (n_samples,)\n    \n    Returns\n    -------\n    hypergraph_adjacency : compressed sparse row matrix\n        Represents the hypergraph associated with an ensemble of partitions,\n        each partition corresponding to a row of the array 'cluster_runs'\n        provided at input.\n    \"\"\"\n    n_partitions = clustering.max() + ",
+  "sampling_seed": 2150146405,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

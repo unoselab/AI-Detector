@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def match(tgt, opts=None):\n    \"\"\"\n    Matches based on IP address or CIDR notation\n    \"\"\"\n    if opts is None:\n        opts = {}\n\n    # Check if we are matching IPv4 or IPv6\n    if tgt.find(\"/\") >\n",
+  "agc_valid": false,
+  "body_sha256": "51e3a211516e457170cfb9597d4ae8ded8f6f991e71de90b4246dffa477861cd",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if opts is None:\n        opts = {}\n\n    # Check if we are matching IPv4 or IPv6\n    if tgt.find(\"/\") >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "4d47d2d89f497f938e770a1a65b339558be4325af4e16725fec42db114362665",
+  "human_valid": true,
+  "line_no": 113524,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3621c3df6fa5d94624f087bfae4b00cd776e02e3aac3f7141202a469b81c2fa5",
+  "raw_output": "\n    if opts is None:\n        opts = {}\n\n    # Check if we are matching IPv4 or IPv6\n    if tgt.find(\"/\") > ",
+  "sampling_seed": 4178874776,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

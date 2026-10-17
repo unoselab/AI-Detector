@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_libgfortran_dir():\n    \"\"\"\n    Helper function returning the library directory of libgfortran. Useful\n    on OSX where the C compiler oftentimes has no knowledge of the library\n    directories of the Fortran compiler. I don't think it can do any harm on\n    Linux.\n    \"\"\"\n    import os\n    import sys\n\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        libdir = get_config_var('LIBDIR')\n        libgfortran_dir = os.path.join(libdir, 'libgfortran.dylib')\n        if os.path.exists(libgfortran_dir):\n            return os.path.dirname(libgfortran_dir)\n    return None\n",
+  "agc_valid": true,
+  "body_sha256": "d5ae3514bc365b37b94526bf64a7a43bb45b30ca627a8dae8c6b74477a46db2f",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import os\n    import sys\n\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        libdir = get_config_var('LIBDIR')\n        libgfortran_dir = os.path.join(libdir, 'libgfortran.dylib')\n        if os.path.exists(libgfortran_dir):\n            return os.path.dirname(libgfortran_dir)\n    return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "9b7abe317f555f96e420214baead0409ef6b16bfcd920f2d5a17dbc741972d90",
+  "human_valid": true,
+  "line_no": 131386,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e9a31f73dde480cfba6c9f93b27da7ac20fbef2a21eb888023cdd93c034b54a6",
+  "raw_output": "\n    import os\n    import sys\n\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        libdir = get_config_var('LIBDIR')\n        libgfortran_dir = os.path.join(libdir, 'libgfortran.dylib')\n        if os.path.exists(libgfortran_dir):\n            return os.path.dirname(libgfortran_dir)\n    return None\n\n\ndef get_libgfortran_dir():\n    \"\"\"\n    Helper function returning the library directory of libgfortran. Useful\n    on OSX where the C compiler oftentimes has no knowledge of the library\n    directories of the Fortran compiler. I don't think it can do any harm on\n    Linux.\n    \"\"\"\n    import os\n    import sys\n\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        libdir = get_config_var('LIBDIR')\n        libgfortran_dir = os.path.join(libdir, 'libgfortran.dylib')\n        if os.path.exists(libgfortran_dir):\n            return os.path.dirname(libgfortran_dir)\n    return None\n\n\ndef get_libgfortran_libs():\n    \"\"\"\n    Helper function returning the libraries needed to link against libgfortran.\n    Useful on OSX where the C compiler oftentimes has no knowledge of the\n    libraries needed to link against libgfortran. I don't think it can do any\n    harm on Linux.\n    \"\"\"\n    import os\n    import sys\n\n    if sys.platform == 'darwin':\n        from distutils.sysconfig import get_config_var\n        libdir = get_config_var('LIBDIR')\n        libgfortran_dir = os.path.join(libdir, 'libgfortran.dylib')\n        if os.path.exists(libgfortran_dir):\n            return ['-lgfortran']\n    return None\n\n\ndef get_libgfortran_version():\n    \"\"\"\n    Helper function returning the",
+  "sampling_seed": 3250879459,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

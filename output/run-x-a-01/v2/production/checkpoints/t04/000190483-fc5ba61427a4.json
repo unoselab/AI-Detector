@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_script(zap_helper, **options):\n    \"\"\"Load a script from a file.\"\"\"\n    script_file = options.get('script_file')\n    if script_file is None:\n        raise ValueError('No script file provided.')\n    zap_helper.load_script_file(script_file)\n",
+  "agc_valid": true,
+  "body_sha256": "d2d25c3a970a68d96400f2f53f19168def026fc22de60259fc19ff73cc3cc8f6",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    script_file = options.get('script_file')\n    if script_file is None:\n        raise ValueError('No script file provided.')\n    zap_helper.load_script_file(script_file)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "9ae90c83e2c7101b8e580fe8469e35a665f9f64b4ed534fb4dcbca731f1272f4",
+  "human_valid": true,
+  "line_no": 190483,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc5ba61427a4a595bde6c03d8fa4746269f0e9d9b13736d90e2f7db3dc45c9e7",
+  "raw_output": "\n    script_file = options.get('script_file')\n    if script_file is None:\n        raise ValueError('No script file provided.')\n    zap_helper.load_script_file(script_file)\n\n\ndef load_scripts(zap_helper, **options):\n    \"\"\"Load scripts from a directory.\"\"\"\n    script_dir = options.get('script_dir')\n    if script_dir is None:\n        raise ValueError('No script directory provided.')\n    zap_helper.load_scripts_dir(script_dir)\n\n\ndef load_script_from_url(zap_helper, **options):\n    \"\"\"Load a script from a URL.\"\"\"\n    script_url = options.get('script_url')\n    if script_url is None:\n        raise ValueError('No script URL provided.')\n    zap_helper.load_script_url(script_url)\n\n\ndef load_scripts_from_url(zap_helper, **options):\n    \"\"\"Load scripts from a URL.\"\"\"\n    script_url = options.get('script_url')\n    if script_url is None:\n        raise ValueError('No script URL provided.')\n    zap_helper.load_scripts_url(script_url)\n\n\ndef load_script_from_repo(zap_helper, **options):\n    \"\"\"Load a script from a GitHub repository.\"\"\"\n    script_repo = options.get('script_repo')\n    if script_repo is None:\n        raise ValueError('No script repo provided.')\n    zap_helper.load_script_repo(script_repo)\n\n\ndef load_scripts_from_repo(zap_helper, **options):\n    \"\"\"Load scripts from a GitHub repository.\"\"\"\n    script_repo = options.get('script_repo')\n    if script_repo is None:\n        raise ValueError('No script repo provided.')\n    zap_helper.load_scripts_repo(script_repo)\n\n\ndef load_script_from_db(zap_helper, **options):\n    \"\"\"Load a script from the ZAP database.\"\"\"\n    script_name = options.get('script_name')\n    if script_name is None:",
+  "sampling_seed": 756344218,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

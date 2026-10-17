@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_capability_definitions(profile_manager):\n    \"\"\"\n    Returns a list of all capability definitions.\n\n    profile_manager\n        Reference to the profile manager.\n    \"\"\"\n    capability_definitions = []\n    for profile in profile_manager.profiles:\n        for capability_definition in profile.capability_definitions:\n            capability_definitions.append(capability_definition)\n    return capability_definitions\n",
+  "agc_valid": true,
+  "body_sha256": "4d4c3eef8a9083d21f77026e9e3149982cfa6a86cff224d3df0856d81b983a4d",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    capability_definitions = []\n    for profile in profile_manager.profiles:\n        for capability_definition in profile.capability_definitions:\n            capability_definitions.append(capability_definition)\n    return capability_definitions\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "f35e49ef558bc62005f5822ee71ac70796abe81d6cb04f571ced580c987b7217",
+  "human_valid": true,
+  "line_no": 119248,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1c88268c20bf7763cad717b00e07bbcdc0b6ff07be3ddc272e00cbbb267dfa55",
+  "raw_output": "\n    capability_definitions = []\n    for profile in profile_manager.profiles:\n        for capability_definition in profile.capability_definitions:\n            capability_definitions.append(capability_definition)\n    return capability_definitions\n\n\ndef get_capability_definition(profile_manager, capability_definition_name):\n    \"\"\"\n    Returns the capability definition with the given name.\n\n    profile_manager\n        Reference to the profile manager.\n\n    capability_definition_name\n        Name of the capability definition.\n    \"\"\"\n    for profile in profile_manager.profiles:\n        for capability_definition in profile.capability_definitions:\n            if capability_definition.name == capability_definition_name:\n                return capability_definition\n    return None\n\n\ndef get_capability_definition_by_id(profile_manager, capability_definition_id):\n    \"\"\"\n    Returns the capability definition with the given id.\n\n    profile_manager\n        Reference to the profile manager.\n\n    capability_definition_id\n        Id of the capability definition.\n    \"\"\"\n    for profile in profile_manager.profiles:\n        for capability_definition in profile.capability_definitions:\n            if capability_definition.id == capability_definition_id:\n                return capability_definition\n    return None\n\n\ndef get_capability_definition_by_name(profile_manager, capability_definition_name):\n    \"\"\"\n    Returns the capability definition with the given name.\n\n    profile_manager\n        Reference to the profile manager.\n\n    capability_definition_name\n        Name of the capability definition.\n    \"\"\"\n    for profile in profile_manager.profiles:\n        for capability_definition in profile.capability_definitions:\n            if capability_definition.name == capability_definition_name:\n                return capability_definition\n    return None\n\n\ndef get_capability_definition_by_type(profile_manager, capability_definition_type):\n    \"\"\"\n    Returns the capability definition with the given type.\n\n    profile_manager\n        Reference to the profile manager.\n\n    capability",
+  "sampling_seed": 3479579892,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

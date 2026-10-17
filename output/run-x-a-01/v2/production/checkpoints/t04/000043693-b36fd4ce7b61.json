@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def wrap2stub(self, customfunc):\n        \"\"\"\n        Wrapping the inspector as a stub based on the type\n        Args:\n            customfunc: function that replaces the original\n        Returns:\n            function, the spy wrapper around the customfunc\n        \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "db6829f9f71d7e8fa68fcd78d7ff3dfecaa3f75a5483b47b63c5527b96d96578",
+  "human_valid": true,
+  "line_no": 43693,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b36fd4ce7b61c80d51d70e9a289b1981a24c55e6fbb14ff7d536557417d2c851",
+  "raw_output": "\n        def",
+  "sampling_seed": 418470020,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

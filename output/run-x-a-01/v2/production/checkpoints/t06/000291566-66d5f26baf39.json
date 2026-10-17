@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _mktime(time_struct):\n    \"\"\"Custom mktime because Windows can't be arsed to properly do pre-Epoch\n    dates, probably because it's busy counting all its chromosomes.\n    \"\"\"\n    return (\n        (time_struct.tm_year -\n",
+  "agc_valid": false,
+  "body_sha256": "3ff84b0090411e49f43db5d3d6ce9e4ae7b3e8f81b1616e3cbb1431426adb795",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return (\n        (time_struct.tm_year -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 148,
+  "human_sha256": "235af0becea4ddca6169ac9881d7a3c25046573044c383d968410bfbc9b776f3",
+  "human_valid": true,
+  "line_no": 291566,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "66d5f26baf398605ede83a8bd31692b0eb7eca4925cfcd2d0c365b5b16d5e7f3",
+  "raw_output": "\n    return (\n        (time_struct.tm_year - ",
+  "sampling_seed": 3963836167,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

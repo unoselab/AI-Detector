@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def limit(self, key):\n        \"\"\"\n        Function to log an event with the given key. If the ``key`` has not\n        exceeded their alotted events, then the function returns ``False`` to\n        indicate that no limit is being imposed.\n\n        If the ``key`` has exceeded the number of events, then the function\n        returns ``True`` indicating rate-limiting should occur.\n\n        :param str key: A key identifying the source of the event.\n        :returns: Boolean indicating whether the event should be rate-limited\n            or not.\n        \"\"\"\n        .\n                :rtype: bool\n                \"\"\"\n                raise NotImplementedError\n",
+  "agc_valid": false,
+  "body_sha256": "f4fba2217e64357a84725866fe548a842568ad01dced59cbd970b684a630f20b",
+  "body_tokens": 59,
+  "bucket": "out_of_range",
+  "clean_output": "\n        .\n                :rtype: bool\n                \"\"\"\n                raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "87b9afd86e9fbd4218ee5600412b7d7b43cb1ef2f07cf8c02d76c93994773260",
+  "human_valid": true,
+  "line_no": 191617,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ebbb1895c7f3d2d5c159dcfa874a1bb3e4481cd5fa17cd1dcb376cd91492a471",
+  "raw_output": ".\n        :rtype: bool\n        \"\"\"\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 7932050,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

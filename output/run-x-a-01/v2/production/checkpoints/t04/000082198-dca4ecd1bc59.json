@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def dict_diff(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return diff\n",
+  "agc_valid": true,
+  "body_sha256": "d9787fb9ea1df88820251fdc08d949777a48573ae0e7d90ac590109821df7d79",
+  "body_tokens": 53,
+  "bucket": "out_of_range",
+  "clean_output": "\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return diff\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "1ce194473a8c8051560b4b7845cccd28d2bd0f44f6f145662246dc92488eef63",
+  "human_valid": true,
+  "line_no": 82198,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dca4ecd1bc5945426cd056e0419cbc9e96b4dde049c823c0c09af967edcae7f1",
+  "raw_output": "\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return diff\n\n\ndef dict_diff_list(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return [diff]\n\n\ndef dict_diff_list_flat(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return [diff]\n\n\ndef dict_diff_list_flat_flat(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return [diff]\n\n\ndef dict_diff_list_flat_flat_flat(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v in (d.get(key) for d in dicts[1:])):\n            diff[key] = value\n    return [diff]\n\n\ndef dict_diff_list_flat_flat_flat_flat(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, value in dicts[0].items():\n        if all(value == v for v",
+  "sampling_seed": 2136825122,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

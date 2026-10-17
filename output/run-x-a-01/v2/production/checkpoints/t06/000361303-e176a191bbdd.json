@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_registration(self, username, first_name, last_name, email, password=\"\"):\n        \"\"\"\n            Add a registration request for the user.\n\n        :rtype : RegisterUser\n        \"\"\"\n        return self._post(\"addRegistration\", username=username, first_name=first_name, last_name=last_name,\n                          email=email, password=password)\n",
+  "agc_valid": true,
+  "body_sha256": "702b560732954b7471bab87cd5c3d7a982d26665e90cad0aa01e4838df13c9fc",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._post(\"addRegistration\", username=username, first_name=first_name, last_name=last_name,\n                          email=email, password=password)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "6eb899095d3608c1453f15238bc57a53aaa84e4bc75dc2c6262bba8f8e053694",
+  "human_valid": true,
+  "line_no": 361303,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e176a191bbdd109bad1c480bf93bf5cfc27cb6d0013a9d1e8a1ea93a987f90bd",
+  "raw_output": "\n        return self._post(\"addRegistration\", username=username, first_name=first_name, last_name=last_name,\n                          email=email, password=password)\n\n    def",
+  "sampling_seed": 3199186264,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

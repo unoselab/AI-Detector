@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def preview(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    return render_to_response(\n        \"preview.html\",\n        context_instance=RequestContext(request))\n",
+  "agc_valid": true,
+  "body_sha256": "a3eab515a0014f9b3aa45b906e32cda058a63d74b90f8f89856788a3b51aa276",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return render_to_response(\n        \"preview.html\",\n        context_instance=RequestContext(request))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "1e6b8015a40a8e648a6e2236532a5210c246d821211093fde769d5cc3aeb9d3d",
+  "human_valid": true,
+  "line_no": 217397,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3129d83feccb961a03c72ee3df5ade684fe4581ce60f6a1be99f7d5198489821",
+  "raw_output": "\n    return render_to_response(\n        \"preview.html\",\n        context_instance=RequestContext(request))\n\n\ndef preview_post(request):\n    \"\"\" Render preview page.\n\n    :returns: A rendered preview\n\n    \"\"\"\n    form = PreviewForm(request.POST)\n    if form.is_valid():\n        # Get the url\n        url = form.cleaned_data['url']\n\n        # Get the preview\n        preview = None\n        try:\n            preview = get_preview(url)\n        except Exception:\n            preview = None\n\n        # Get the preview\n        if preview:\n            # Get the preview image\n            image = None\n            try:\n                image = get_preview_image(preview)\n            except Exception:\n                image = None\n\n            # Get the preview title\n            title = None\n            try:\n                title = get_preview_title(preview)\n            except Exception:\n                title = None\n\n            # Get the preview description\n            description = None\n            try:\n                description = get_preview_description(preview)\n            except Exception:\n                description = None\n\n            # Get the preview link\n            link = None\n            try:\n                link = get_preview_link(preview)\n            except Exception:\n                link = None\n\n            # Get the preview author\n            author = None\n            try:\n                author = get_preview_author(preview)\n            except Exception:\n                author = None\n\n            # Get the preview publish date\n            publish_date = None\n            try:\n                publish_date = get_preview_publish_date(preview)\n            except Exception:\n                publish_date = None\n\n            # Get the preview tags\n            tags = None\n            try:\n                tags = get_preview_tags(preview)\n            except Exception:\n                tags = None\n\n            # Get the preview category\n            category = None\n            try:\n                category = get_preview_category(preview)\n            except Exception:\n                category = None\n\n            # Get the preview image\n            image_url = None\n            try:\n                image_url = get_preview_image_url(preview)\n            except Exception:\n                image_url = None",
+  "sampling_seed": 3200773671,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

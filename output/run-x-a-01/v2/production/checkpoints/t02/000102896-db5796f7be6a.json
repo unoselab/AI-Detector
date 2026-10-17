@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_pooling_layers(self, start_node_id, end_node_id):\n        \"\"\"Given two node IDs, return all the pooling layers between them.\"\"\"\n        pooling_layers = []\n        for node_id in range(start_node_id, end_node_id):\n            node = self.nodes[node_id]\n            if node.type == \"Pooling\":\n                pooling_layers.append(node)\n        return pooling_layers\n",
+  "agc_valid": true,
+  "body_sha256": "39a129a8e74b2c76a8fef9f793a2e909fd15b5e84fb712fd722e99ad95919658",
+  "body_tokens": 77,
+  "bucket": "out_of_range",
+  "clean_output": "\n        pooling_layers = []\n        for node_id in range(start_node_id, end_node_id):\n            node = self.nodes[node_id]\n            if node.type == \"Pooling\":\n                pooling_layers.append(node)\n        return pooling_layers\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "acb460cdbbc7d6f46e2b0baa452a4e35aa5a90b86045574d8cc494fa8486d684",
+  "human_valid": true,
+  "line_no": 102896,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "db5796f7be6a36b4c8860b4a3c54d40e93d8562f7a6546f1e3cb488c34d134a5",
+  "raw_output": "\n        pooling_layers = []\n        for node_id in range(start_node_id, end_node_id):\n            node = self.nodes[node_id]\n            if node.type == \"Pooling\":\n                pooling_layers.append(node)\n        return pooling_layers\n\n    def",
+  "sampling_seed": 1102292619,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

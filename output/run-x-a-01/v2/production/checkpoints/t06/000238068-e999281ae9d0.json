@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fail_unknown_dialect(compiler: \"SQLCompiler\", task: str) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"SQL compilation of {task} for {compiler.dialect.name!r} is not yet \"\n        f\"supported by the SQLAlchemy-Redshift dialect.\"\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "4d56c78b62297f705f499f1e2b9a3feb914273dcdfa2d096820aea84587eecb6",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n    raise NotImplementedError(\n        f\"SQL compilation of {task} for {compiler.dialect.name!r} is not yet \"\n        f\"supported by the SQLAlchemy-Redshift dialect.\"\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "324b40a7364cfc3b73e5c2d14ff7a8666a4215384c818356dc7aed6c76049ced",
+  "human_valid": true,
+  "line_no": 238068,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e999281ae9d045518cda342ba7ff0fd8d07e05c00ce75aae3ae9d117cf3896e1",
+  "raw_output": "\n    raise NotImplementedError(\n        f\"SQL compilation of {task} for {compiler.dialect.name!r} is not yet \"\n        f\"supported by the SQLAlchemy-Redshift dialect.\"\n    )\n\n\ndef fail_unknown_operation(compiler: \"SQLCompiler\", task: str) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to an SQL operation for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"SQL compilation of {task} for {compiler.dialect.name!r} is not yet \"\n        f\"supported by the SQLAlchemy-Redshift dialect.\"\n    )\n\n\n@compiles(Function, \"redshift\")\ndef visit_function(\n    element: Function, compiler: \"SQLCompiler\", **kw: Any\n) -> str:\n    \"\"\"\n    Compile a :class:`~sqlalchemy.sql.expression.Function` object using the\n    Redshift dialect.\n    \"\"\"\n    if element.name == \"random\":\n        return f\"{element.name}({element.seed})\"\n\n    fail_unknown_operation(compiler, \"function\")\n\n\n@compiles(Over, \"redshift\")\ndef visit_over(element: Over, compiler: \"SQLCompiler\", **kw: Any) -> str:\n    \"\"\"\n    Compile a :class:`~sqlalchemy.sql.expression.Over` object using the\n    Redshift dialect.\n    \"\"\"\n    if element.name == \"row_number\":\n        return f\"row_number() OVER ({element.order_by.clauses})\"\n\n    fail_unknown_operation(compiler, \"window function\")\n\n\n@compiles(Lag, \"redshift\")\ndef visit_lag(element: Lag, compiler: \"SQLCompiler\", **kw: Any) -> str:\n    \"\"\"\n    Compile a :class:`~sqlalchemy.sql.expression.Lag` object using the\n    Redshift dialect.\n    \"\"\"\n    return f\"lag({element.value}, {element.offset}, {element.default})\"\n\n\n@compiles(",
+  "sampling_seed": 1468237809,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

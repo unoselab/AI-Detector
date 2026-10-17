@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def render_error_page(code, exc, mimetype='text/html', traceback=''):\n    \"\"\"\n    Render the error page\n    \"\"\"\n    if code ==\n",
+  "agc_valid": false,
+  "body_sha256": "c12c5ef28664db4a3edd84cb0f5b9416eb6e158f7df0ecf69e7e6c61e97d8f35",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "cbe3a3fd707a9cb83d8ff54a03ea77f7f24e662dc3c90e44679e104ed54c7115",
+  "human_valid": true,
+  "line_no": 260868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5cae8325f9fcc2e83e9938bccd11cbd23cdd659fcef77652280397eed4a896a9",
+  "raw_output": "\n    if code == ",
+  "sampling_seed": 855867368,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

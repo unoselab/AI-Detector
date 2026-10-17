@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _download_biogrid_data(url):\n    \"\"\"Downloads zipped, tab-separated Biogrid data in .tab2 format.\n\n    Parameters:\n    -----------\n    url : str\n        URL of the BioGrid zip file.\n\n    Returns\n    -------\n    csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n    \"\"\"\n    import zipfile\n    from io import StringIO\n\n    # download zipped file\n    with urllib.request.urlopen(url) as zipped_file:\n        zip_data = zipped_file.read()\n\n    # unzip and parse\n    with zipfile.ZipFile(io.BytesIO(zip_data)) as zf:\n        with zf.open(zf.namelist()[0]) as f:\n            tab_data = f.read()\n\n    # convert bytes to string\n    tab_data = tab_data.decode(\"utf-8\")\n\n    # convert to csv.reader\n    tab_data = StringIO(tab_data)\n\n    return csv.reader(tab_data, delimiter=\"\\t\")\n",
+  "agc_valid": true,
+  "body_sha256": "19ca8d61c7272f26561d5b5a850955d269998add2ffd4e53ce78770ce71ee8a6",
+  "body_tokens": 109,
+  "bucket": "type01_110",
+  "clean_output": "\n    import zipfile\n    from io import StringIO\n\n    # download zipped file\n    with urllib.request.urlopen(url) as zipped_file:\n        zip_data = zipped_file.read()\n\n    # unzip and parse\n    with zipfile.ZipFile(io.BytesIO(zip_data)) as zf:\n        with zf.open(zf.namelist()[0]) as f:\n            tab_data = f.read()\n\n    # convert bytes to string\n    tab_data = tab_data.decode(\"utf-8\")\n\n    # convert to csv.reader\n    tab_data = StringIO(tab_data)\n\n    return csv.reader(tab_data, delimiter=\"\\t\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "f53f3f7a66679ae0ce8a48ee1c8db3294ed9b1be65688ef5d88a8ecb4dc54b1f",
+  "human_valid": true,
+  "line_no": 121199,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c6379d315928dac200910acc265f2c01d21a43bd8dd1d04b39d05d97de31c431",
+  "raw_output": "\n    import zipfile\n    from io import StringIO\n\n    # download zipped file\n    with urllib.request.urlopen(url) as zipped_file:\n        zip_data = zipped_file.read()\n\n    # unzip and parse\n    with zipfile.ZipFile(io.BytesIO(zip_data)) as zf:\n        with zf.open(zf.namelist()[0]) as f:\n            tab_data = f.read()\n\n    # convert bytes to string\n    tab_data = tab_data.decode(\"utf-8\")\n\n    # convert to csv.reader\n    tab_data = StringIO(tab_data)\n\n    return csv.reader(tab_data, delimiter=\"\\t\")\n\n\ndef _parse_biogrid_data(reader):\n    \"\"\"Parses the Biogrid data downloaded using _download_biogrid_data().\n\n    Parameters:\n    -----------\n    reader : csv.reader\n        A csv.reader object for iterating over the rows (header has already\n        been skipped).\n\n    Returns\n    -------\n    list\n        A list of dictionaries, where each dictionary contains the data for\n        one row.\n    \"\"\"\n    data = []\n\n    # skip header\n    next(reader, None)\n\n    for row in reader:\n        # get the fields\n        gene_a = row[0]\n        gene_b = row[1]\n        score = row[4]\n        if score == \"\":\n            score = None\n        else:\n            score = float(score)\n        p_value = row[6]\n        if p_value == \"\":\n            p_value = None\n        else:\n            p_value = float(p_value)\n        ppi_id = row[7]\n\n        # add the data to the list\n        data.append({\"gene_a\": gene_a, \"gene_b\": gene_b, \"score\": score,\n                     \"p_value\": p_value, \"ppi_id\": ppi_id})\n\n    return data\n\n\ndef download_biogrid_data(url=BIOGRID",
+  "sampling_seed": 2925618196,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

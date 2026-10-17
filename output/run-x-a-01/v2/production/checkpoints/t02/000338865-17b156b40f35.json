@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def uploadFile(uploadfunc, fileindex, existing, uf, skip_broken=False):\n    \"\"\"Update a file object so that the location is a reference to the toil file\n    store, writing it to the file store if necessary.\n\n    \"\"\"\n    # If the file is already in the file store, we don't need to do anything.\n    if existing:\n        return\n\n    # If the file is not in the file store, we need to upload it.\n    if skip_broken:\n        try:\n            uploadfunc(fileindex)\n        except Exception:\n            logger.warning(\"Skipping broken file %s\", fileindex)\n            return\n    else:\n        uploadfunc(fileindex)\n",
+  "agc_valid": true,
+  "body_sha256": "2cb59d46592da1ab01ec3314ba590986f5f93bd472edac36ad2f79e427f7dff3",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n    # If the file is already in the file store, we don't need to do anything.\n    if existing:\n        return\n\n    # If the file is not in the file store, we need to upload it.\n    if skip_broken:\n        try:\n            uploadfunc(fileindex)\n        except Exception:\n            logger.warning(\"Skipping broken file %s\", fileindex)\n            return\n    else:\n        uploadfunc(fileindex)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "7faf7d6d5876f975619bd1ba70345efbb39b9d489c5f04fb833314753f6ddf97",
+  "human_valid": true,
+  "line_no": 338865,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "17b156b40f35d6980b760a87cf089dfabf9bee0960030bcad402f17a8a71446d",
+  "raw_output": "\n    # If the file is already in the file store, we don't need to do anything.\n    if existing:\n        return\n\n    # If the file is not in the file store, we need to upload it.\n    if skip_broken:\n        try:\n            uploadfunc(fileindex)\n        except Exception:\n            logger.warning(\"Skipping broken file %s\", fileindex)\n            return\n    else:\n        uploadfunc(fileindex)\n\n\ndef uploadFileList(uploadfunc, fileindexes, existing, uf, skip_broken=False):\n    \"\"\"Update a list of file objects so that the location is a reference to the toil file\n    store, writing it to the file store if necessary.\n\n    \"\"\"\n    for fileindex in fileindexes:\n        uploadFile(uploadfunc, fileindex, existing, uf, skip_broken=skip_broken)\n\n\ndef uploadFileLists(uploadfunc, fileindexes, existing, uf, skip_broken=False):\n    \"\"\"Update a list of lists of file objects so that the location is a reference to the toil\n    file store, writing it to the file store if necessary.\n\n    \"\"\"\n    for fileindexes in fileindexes:\n        uploadFileList(uploadfunc, fileindexes, existing, uf, skip_broken=skip_broken)\n\n\ndef uploadFileListsLists(uploadfunc, fileindexes, existing, uf, skip_broken=False):\n    \"\"\"Update a list of lists of lists of file objects so that the location is a reference to\n    the toil file store, writing it to the file store if necessary.\n\n    \"\"\"\n    for fileindexes in fileindexes:\n        uploadFileLists(uploadfunc, fileindexes, existing, uf, skip_broken=skip_broken)\n\n\ndef uploadFileListsListsLists(uploadfunc, fileindexes, existing, uf, skip_broken=False):\n    \"\"\"Update a list of lists of lists of lists of file objects so that the location is a\n    reference to the toil file store, writing it to the file store if necessary.\n\n    \"\"\"\n    for fileindexes in fileindex",
+  "sampling_seed": 4251989734,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

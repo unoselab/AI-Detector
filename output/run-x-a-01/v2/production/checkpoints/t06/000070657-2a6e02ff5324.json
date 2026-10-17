@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_vote_inits(provider: Provider, deck: Deck) -> Iterable[Vote]:\n    \"\"\"find vote_inits on this deck\"\"\"\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote_init__isnull=False,\n        vote_init__is_active=True\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "b2b1aff4a99e9eeb7558b5bdc5b1fdcd567fbd9f33ea1179b06ec118b858067c",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote_init__isnull=False,\n        vote_init__is_active=True\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "b3fca0cdf3b0398fe12c21cd5b48264d448feea6484d467bee6ded14cb228bc6",
+  "human_valid": true,
+  "line_no": 70657,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2a6e02ff5324e8bb7d980b99b7a436c444891cb43e1a004003d4d54cdc51367d",
+  "raw_output": "\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote_init__isnull=False,\n        vote_init__is_active=True\n    )\n\n\ndef find_votes(provider: Provider, deck: Deck) -> Iterable[Vote]:\n    \"\"\"find votes on this deck\"\"\"\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote__isnull=False,\n        vote__is_active=True\n    )\n\n\ndef find_votes_with_inits(provider: Provider, deck: Deck) -> Iterable[Vote]:\n    \"\"\"find votes and their init on this deck\"\"\"\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote__isnull=False,\n        vote_init__isnull=False,\n        vote__is_active=True,\n        vote_init__is_active=True\n    )\n\n\ndef find_votes_with_inits_and_responses(provider: Provider, deck: Deck) -> Iterable[Vote]:\n    \"\"\"find votes, their init and their response on this deck\"\"\"\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote__isnull=False,\n        vote_init__isnull=False,\n        vote_response__isnull=False,\n        vote__is_active=True,\n        vote_init__is_active=True,\n        vote_response__is_active=True\n    )\n\n\ndef find_votes_with_inits_and_responses_and_followups(provider: Provider, deck: Deck) -> Iterable[Vote]:\n    \"\"\"find votes, their init, their response and their followup on this deck\"\"\"\n    return Vote.objects.filter(\n        provider=provider,\n        deck=deck,\n        vote__isnull=False,\n        vote_init__isnull=False,\n        vote_response__isnull=False,\n        vote_followup__isnull=False,\n        vote__is_active=True",
+  "sampling_seed": 507954668,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

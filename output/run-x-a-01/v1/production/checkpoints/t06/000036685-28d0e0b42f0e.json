@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def Queue(self, name, initial=None, maxsize=None):\n        \"\"\"The queue datatype.\n\n        :param name: The name of the queue.\n        :keyword initial: Initial items in the queue.\n\n        See :class:`redish.types.Queue`.\n\n        \"\"\"\n        return self.redis.queue(name, initial=initial, maxsize=maxsize)\n",
+  "agc_valid": true,
+  "body_sha256": "4ff080f3e80d0f10f2d92389ed5c3f00852c249e2fd25adff61b356c77c08eb7",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.redis.queue(name, initial=initial, maxsize=maxsize)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "14cf6e97c261b03d1795935fcbe472d73b4d7f1697fc6136923b2cdc55abe815",
+  "human_valid": true,
+  "line_no": 36685,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "28d0e0b42f0eb558a1113513b206004ba5d39b12ded314dd2475733ae4a47710",
+  "raw_output": "\n        return self.redis.queue(name, initial=initial, maxsize=maxsize)\n\n    def",
+  "sampling_seed": 1381546658,
+  "tag": "t06",
+  "temperature": 0.6
+}

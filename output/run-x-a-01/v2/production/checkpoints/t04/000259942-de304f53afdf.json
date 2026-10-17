@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_children_labels(self, treepos):\n        \"\"\"Given the treeposition of a node, return the labels of its children.\"\"\"\n        return [self.labels[child] for child in treepos]\n",
+  "agc_valid": true,
+  "body_sha256": "867e8cc8a7e6a553323cd76c0acaebc2570b5080ff0908f283f51b3a3e771895",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return [self.labels[child] for child in treepos]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 122,
+  "human_sha256": "3fd861872f15548a093c7a9923b5936d16d1befbad5461abbd105ae4b162c4fc",
+  "human_valid": true,
+  "line_no": 259942,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "de304f53afdf3c0d202d8a627f97809e9f05c66a6c73c38ede68d3a473ec550e",
+  "raw_output": "\n        return [self.labels[child] for child in treepos]\n\n    def",
+  "sampling_seed": 4023672502,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

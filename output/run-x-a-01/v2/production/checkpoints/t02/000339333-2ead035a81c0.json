@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def create(self, ip_access_control_list_sid):\n        \"\"\"\n        Create a new IpAccessControlListMappingInstance\n\n        :param unicode ip_access_control_list_sid: The unique id of the IP access control list to map to the SIP domain\n\n        :returns: Newly created IpAccessControlListMappingInstance\n        :rtype: twilio.rest.api.v2010.account.sip.domain.ip_access_control_list_mapping.IpAccessControlListMappingInstance\n        \"\"\"\n        data = values.of({'IpAccessControlListSid': ip_access_control_list_sid, })\n\n        payload = self._version.create(\n            'POST',\n            self._uri,\n            data=data,\n        )\n\n        return IpAccessControlListMappingInstance(\n            self._version,\n            payload,\n            account_sid=self._solution['account_sid'],\n            domain_sid=self._solution['domain_sid'],\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "2388c58d2a7a6bc5d6f0b91c7be0fd10049a2eaf43af7c9e8f5cbab1bea850bb",
+  "body_tokens": 132,
+  "bucket": "type04_140",
+  "clean_output": "\n        data = values.of({'IpAccessControlListSid': ip_access_control_list_sid, })\n\n        payload = self._version.create(\n            'POST',\n            self._uri,\n            data=data,\n        )\n\n        return IpAccessControlListMappingInstance(\n            self._version,\n            payload,\n            account_sid=self._solution['account_sid'],\n            domain_sid=self._solution['domain_sid'],\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "b115ebe3ba41bea0fb1d1d966f6a6cddc8615be4540241028922e4ab9e1e707c",
+  "human_valid": true,
+  "line_no": 339333,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2ead035a81c0488d7776696b89f0cb499d3aa05e9a98835360b20657e68b74a7",
+  "raw_output": "\n        data = values.of({'IpAccessControlListSid': ip_access_control_list_sid, })\n\n        payload = self._version.create(\n            'POST',\n            self._uri,\n            data=data,\n        )\n\n        return IpAccessControlListMappingInstance(\n            self._version,\n            payload,\n            account_sid=self._solution['account_sid'],\n            domain_sid=self._solution['domain_sid'],\n        )\n\n    def",
+  "sampling_seed": 177214234,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

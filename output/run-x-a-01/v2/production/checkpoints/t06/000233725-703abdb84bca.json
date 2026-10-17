@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def scramble_codelist(self, codelist):\n        \"\"\"Return random element from code list\"\"\"\n        return self.random.choice(codelist)\n",
+  "agc_valid": true,
+  "body_sha256": "bd74411e0ca43aa8ac74ea8d93dfe9be0c776f4b6f961a757aa753c48a1f983d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.random.choice(codelist)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 101,
+  "human_sha256": "eca9de9e287edba2ee300d3702956c93801425ca8081d7f1bbaa82c2a8cd1836",
+  "human_valid": true,
+  "line_no": 233725,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "703abdb84bcaf95d15d095bc93c32357f6ebbbeda2dcaa420aab375b2d51c861",
+  "raw_output": "\n        return self.random.choice(codelist)\n\n    def",
+  "sampling_seed": 3736577822,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

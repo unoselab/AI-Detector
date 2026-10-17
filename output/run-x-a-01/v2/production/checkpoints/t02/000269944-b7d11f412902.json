@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_stp_mst_detail_output_msti_port_link_type(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        # Generate key-value pair\n        key_value_pair = self.module.params\n        # Generate arguments\n        arguments = self.generate_arguments(self.module.params)\n        # Prepare method and url\n        method = 'GET'\n        url = 'https://{hostname}:{port}/api/stp/mst/{mst_id}/detail/msti/{msti_id}/port/{port_id}/link-type'.format(\n            hostname=self.module.params['hostname'],\n            port=self.module.params['port'],\n            mst_id=self.module.params['mst_id'],\n            msti_id=self.module.params['msti_id'],\n            port_id=self.module.params['port_id'],\n        )\n        # Prepare params\n        params = {}\n        # Request\n        r = self.request(method, url, params)\n        # Check for error\n        self.check_for_error(r)\n        # Convert the JSON result into a dictionary format\n        result = r.json()\n        # Return the response\n        return result\n",
+  "agc_valid": true,
+  "body_sha256": "8969aff701fd615ff834775dfe5f894e760d90633470e2d939b0c5695116e727",
+  "body_tokens": 248,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Generate key-value pair\n        key_value_pair = self.module.params\n        # Generate arguments\n        arguments = self.generate_arguments(self.module.params)\n        # Prepare method and url\n        method = 'GET'\n        url = 'https://{hostname}:{port}/api/stp/mst/{mst_id}/detail/msti/{msti_id}/port/{port_id}/link-type'.format(\n            hostname=self.module.params['hostname'],\n            port=self.module.params['port'],\n            mst_id=self.module.params['mst_id'],\n            msti_id=self.module.params['msti_id'],\n            port_id=self.module.params['port_id'],\n        )\n        # Prepare params\n        params = {}\n        # Request\n        r = self.request(method, url, params)\n        # Check for error\n        self.check_for_error(r)\n        # Convert the JSON result into a dictionary format\n        result = r.json()\n        # Return the response\n        return result\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "72871dc05ec4ca90a29e989cd516198ffabfbf9ebfa0fadcb359dbc26a1befe0",
+  "human_valid": true,
+  "line_no": 269944,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7d11f4129026c3ccce6f29666414623b8e0b2f40db5fe728534b6cae137d541",
+  "raw_output": "\n        # Generate key-value pair\n        key_value_pair = self.module.params\n        # Generate arguments\n        arguments = self.generate_arguments(self.module.params)\n        # Prepare method and url\n        method = 'GET'\n        url = 'https://{hostname}:{port}/api/stp/mst/{mst_id}/detail/msti/{msti_id}/port/{port_id}/link-type'.format(\n            hostname=self.module.params['hostname'],\n            port=self.module.params['port'],\n            mst_id=self.module.params['mst_id'],\n            msti_id=self.module.params['msti_id'],\n            port_id=self.module.params['port_id'],\n        )\n        # Prepare params\n        params = {}\n        # Request\n        r = self.request(method, url, params)\n        # Check for error\n        self.check_for_error(r)\n        # Convert the JSON result into a dictionary format\n        result = r.json()\n        # Return the response\n        return result\n\n    def",
+  "sampling_seed": 470705082,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

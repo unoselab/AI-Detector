@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def chain_head(self):\n        \"\"\"\n        Return the head block of the current chain.\n        \"\"\"\n        return self.chain[0]\n",
+  "agc_valid": true,
+  "body_sha256": "2c1164902b63fd580447ba84a612fc471841de740686041ba0f66a25f303863d",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.chain[0]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 158,
+  "human_sha256": "94c15848124c5f35b0c3ca06b00ab5cb42b28f6eb85b17e4621ee37dc0576484",
+  "human_valid": true,
+  "line_no": 380347,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c146c33a6cb8859d9566cafacdd0ced70a9c2b19cd449667acc5965c5bdfe5e0",
+  "raw_output": "\n        return self.chain[0]\n\n    def",
+  "sampling_seed": 2034028518,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

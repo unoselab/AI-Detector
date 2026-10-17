@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_version_list(path=None, module=None):\n    \"\"\"Return the version information as a tuple.\n\n    This uses get_version and breaks the string up. Would make more sense if\n    the version was a tuple throughout katversion.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = __name__\n    version = get_version(path, module)\n    version_list = version.split('.')\n    return tuple(version_list)\n",
+  "agc_valid": true,
+  "body_sha256": "573ff224fb93250625ef4a4f2504ae99acf26501100c56b490d98b7481c015d5",
+  "body_tokens": 53,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = __name__\n    version = get_version(path, module)\n    version_list = version.split('.')\n    return tuple(version_list)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "6e611460d0bbf87f5fe1269ce826410b04219b3bee3720f928d3a596965a43ab",
+  "human_valid": true,
+  "line_no": 234861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7b48a5ad7cb9721459dbb07844a880f89cf36dfe82c3e406abe670d62670f1b2",
+  "raw_output": "\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = __name__\n    version = get_version(path, module)\n    version_list = version.split('.')\n    return tuple(version_list)\n\n\ndef get_version(path=None, module=None):\n    \"\"\"Return the version information as a string.\n\n    This uses the ``__version__`` variable in the module specified by the\n    ``module`` parameter. If this variable is not found, the ``version.txt``\n    file is read and the first line is used.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = __name__\n    try:\n        return getattr(importlib.import_module(module), '__version__')\n    except AttributeError:\n        with open(os.path.join(path, 'version.txt'), 'r') as f:\n            return f.read().splitlines()[0]\n\n\ndef get_git_revision(path=None, module=None):\n    \"\"\"Return the git revision as a string.\n\n    This uses the ``__git_revision__`` variable in the module specified by the\n    ``module`` parameter. If this variable is not found, the ``version.txt``\n    file is read and the second line is used.\n\n    \"\"\"\n    if path is None:\n        path = os.path.dirname(os.path.abspath(__file__))\n    if module is None:\n        module = __name__\n    try:\n        return getattr(importlib.import_module(module), '__git_revision__')\n    except AttributeError:\n        with open(os.path.join(path, 'version.txt'), 'r') as f:\n            return f.read().splitlines()[1]\n\n\ndef get_git_revision_hash(path=None, module=None):\n    \"\"\"Return the git revision hash as a string.\n\n    This uses the ``__git_revision_hash__``",
+  "sampling_seed": 3925332074,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

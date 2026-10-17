@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def _connect(self, hostname, port, reconnect=False, password=None, encoding=pydle.protocol.DEFAULT_ENCODING, channels=[], tls=False, tls_verify=False, source_address=None):\n        \"\"\" Connect to IRC server, optionally over TLS. \"\"\"\n        self._hostname = hostname\n        self._port = port\n        self._password = password\n        self._encoding = encoding\n        self._tls = tls\n        self._tls_verify = tls_verify\n        self._source_address = source_address\n\n        if self._socket is not None:\n            if reconnect:\n                self.disconnect()\n            else:\n                raise RuntimeError(\"Already connected\")\n\n        if self._tls:\n            self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            self._socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY,\n",
+  "agc_valid": false,
+  "body_sha256": "ee2b949255b693fce5d7ef0a44ee8ff86b19ecb506f474be9e8ea4501c1c0248",
+  "body_tokens": 179,
+  "bucket": "type08_180",
+  "clean_output": "\n        self._hostname = hostname\n        self._port = port\n        self._password = password\n        self._encoding = encoding\n        self._tls = tls\n        self._tls_verify = tls_verify\n        self._source_address = source_address\n\n        if self._socket is not None:\n            if reconnect:\n                self.disconnect()\n            else:\n                raise RuntimeError(\"Already connected\")\n\n        if self._tls:\n            self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            self._socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "6b0a7a12ea4af71e27d04613d8ffcc8016b5134161bb3a58cbe1b5bd87b67c80",
+  "human_valid": true,
+  "line_no": 131124,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0053f9256dc101bdde874dcce34e42152f83654e38cd08a4f80fc3d69f6ffca3",
+  "raw_output": "\n        self._hostname = hostname\n        self._port = port\n        self._password = password\n        self._encoding = encoding\n        self._tls = tls\n        self._tls_verify = tls_verify\n        self._source_address = source_address\n\n        if self._socket is not None:\n            if reconnect:\n                self.disconnect()\n            else:\n                raise RuntimeError(\"Already connected\")\n\n        if self._tls:\n            self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            self._socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, ",
+  "sampling_seed": 3576726492,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

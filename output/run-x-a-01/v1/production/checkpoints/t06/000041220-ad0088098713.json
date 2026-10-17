@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def unregister(self, itemtype, item_id):\n        \"\"\"\n        deregister the item in zookeeper /list/\n        itemtype must be a Zooborg constant\n        item_id must be a string\n        \"\"\"\n        if itemtype in (ZOO_ITEM_TYPE_ZOOBORG_USER, ZOO_ITEM_TYPE_ZOOBORG_GROUP):\n            # TODO: remove the item from the group\n            pass\n        else:\n            # TODO: remove the item from the list\n            pass\n",
+  "agc_valid": true,
+  "body_sha256": "600139735fb024e814fb974a34f7af9954d8ecf2df3d7787e562434f250b498d",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if itemtype in (ZOO_ITEM_TYPE_ZOOBORG_USER, ZOO_ITEM_TYPE_ZOOBORG_GROUP):\n            # TODO: remove the item from the group\n            pass\n        else:\n            # TODO: remove the item from the list\n            pass\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "00c7babeced80a22c031c529d78717ff308e7257f868d1e213f5eabd78d1632f",
+  "human_valid": true,
+  "line_no": 41220,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ad0088098713f9dcf04c68fab0c1c392d226a3d6246d80b065c8cd6b7306aaec",
+  "raw_output": "\n        if itemtype in (ZOO_ITEM_TYPE_ZOOBORG_USER, ZOO_ITEM_TYPE_ZOOBORG_GROUP):\n            # TODO: remove the item from the group\n            pass\n        else:\n            # TODO: remove the item from the list\n            pass\n\n    def",
+  "sampling_seed": 1931464749,
+  "tag": "t06",
+  "temperature": 0.6
+}

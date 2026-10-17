@@ -1,0 +1,12 @@
+{
+  "duplicate_prompt_excluded": 7771,
+  "eligible": 337907,
+  "excluded_hwc_hashes": 4495,
+  "excluded_legacy_lines": 4500,
+  "excluded_prompt_hashes": 4472,
+  "historical_excluded": 9122,
+  "selected": 1500,
+  "source_filtered": 57378,
+  "source_lines": 412178,
+  "status": "PASS"
+}

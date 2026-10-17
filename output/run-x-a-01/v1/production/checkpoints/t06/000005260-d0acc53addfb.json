@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def commit_branches(sha1):\n    # type: (str) -> List[str]\n    \"\"\" Get the name of the branches that this commit belongs to. \"\"\"\n    return [branch.name for branch in commit_branches_iter(sha1)]\n",
+  "agc_valid": true,
+  "body_sha256": "5c02fd9122d2c8094892c90bb4115c5ac68bad6aaa3312352bbee99344295d08",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return [branch.name for branch in commit_branches_iter(sha1)]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cb083b556dfcf2cea5b05dfdc5e04ce097ffc8632f9712c97f68cbff81716389",
+  "human_valid": true,
+  "line_no": 5260,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "d0acc53addfb191883581ce8abf30aa3fc5894a96af0a894fe1731101e669917",
+  "raw_output": "\n    return [branch.name for branch in commit_branches_iter(sha1)]\n\n\ndef commit_branches_iter(sha1):\n    # type: (str) -> Iterable[Branch]\n    \"\"\" Get the name of the branches that this commit belongs to. \"\"\"\n    branches = []\n    for branch in get_branches():\n        if branch.contains_commit(sha1):\n            branches.append(branch)\n    return branches\n\n\ndef commit_branch(sha1):\n    # type: (str) -> Optional[Branch]\n    \"\"\" Get the name of the branch that this commit belongs to. \"\"\"\n    branches = commit_branches_iter(sha1)\n    if len(branches) == ",
+  "sampling_seed": 3362555809,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,146 @@
+{
+  "experiment": "run-x-a-01-v2",
+  "model_metadata": [
+    {
+      "cuda_visible_devices": "0",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    },
+    {
+      "cuda_visible_devices": "1",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    },
+    {
+      "cuda_visible_devices": "2",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    }
+  ],
+  "n_required": 1,
+  "output_sha256": {
+    "accepted_pool.csv": "3ac3e0ffe60cbbb9f2c4ef101161910af6f65b71b137a0ef27a111abce789660"
+  },
+  "per_temperature": {
+    "t02": {
+      "acceptance_rate": 0.0,
+      "accepted": 0,
+      "accepted_by_source_stratum": {},
+      "bucket_valid": {
+        "type01_110": 0,
+        "type02_120": 0,
+        "type03_130": 0,
+        "type04_140": 0,
+        "type05_150": 0,
+        "type06_160": 0,
+        "type07_170": 0,
+        "type08_180": 0,
+        "type09_190": 0,
+        "type10_200": 0
+      },
+      "buckets_with_15": 0,
+      "buckets_with_any": 0,
+      "checkpoints": 1,
+      "expected": 1,
+      "output_lengths": {
+        "under_100": 1
+      },
+      "ready_for_15_each": false,
+      "source_total": {
+        "type01_110": 1
+      },
+      "state_counts": {
+        "under_100": 1
+      }
+    },
+    "t04": {
+      "acceptance_rate": 0.0,
+      "accepted": 0,
+      "accepted_by_source_stratum": {},
+      "bucket_valid": {
+        "type01_110": 0,
+        "type02_120": 0,
+        "type03_130": 0,
+        "type04_140": 0,
+        "type05_150": 0,
+        "type06_160": 0,
+        "type07_170": 0,
+        "type08_180": 0,
+        "type09_190": 0,
+        "type10_200": 0
+      },
+      "buckets_with_15": 0,
+      "buckets_with_any": 0,
+      "checkpoints": 1,
+      "expected": 1,
+      "output_lengths": {
+        "under_100": 1
+      },
+      "ready_for_15_each": false,
+      "source_total": {
+        "type01_110": 1
+      },
+      "state_counts": {
+        "under_100": 1
+      }
+    },
+    "t06": {
+      "acceptance_rate": 0.0,
+      "accepted": 0,
+      "accepted_by_source_stratum": {},
+      "bucket_valid": {
+        "type01_110": 0,
+        "type02_120": 0,
+        "type03_130": 0,
+        "type04_140": 0,
+        "type05_150": 0,
+        "type06_160": 0,
+        "type07_170": 0,
+        "type08_180": 0,
+        "type09_190": 0,
+        "type10_200": 0
+      },
+      "buckets_with_15": 0,
+      "buckets_with_any": 0,
+      "checkpoints": 1,
+      "expected": 1,
+      "output_lengths": {
+        "under_100": 1
+      },
+      "ready_for_15_each": false,
+      "source_total": {
+        "type01_110": 1
+      },
+      "state_counts": {
+        "invalid_agc": 1
+      }
+    }
+  },
+  "phase": "full",
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "status": "PASS_GENERATION_VERIFICATION"
+}

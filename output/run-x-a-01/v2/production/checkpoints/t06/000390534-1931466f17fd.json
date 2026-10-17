@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def echo_html_list_str(self, catid, infos):\n        \"\"\"\n        生成 list 后的 HTML 格式的字符串\n        \"\"\"\n        html = '<li><a href=\"%s\">%s</a></li>'\n        result = []\n        for info in infos:\n            result.append(html % (self.echo_html_list_url(catid, info),\n",
+  "agc_valid": false,
+  "body_sha256": "88a712cc9a27172139aeeb0565858cb424b37b699151c2141139c907c672bd9b",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        html = '<li><a href=\"%s\">%s</a></li>'\n        result = []\n        for info in infos:\n            result.append(html % (self.echo_html_list_url(catid, info),\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "c263f71e5398b9b407953cb8743ac6022f00693709dbc6e7f4a9d0de83e53255",
+  "human_valid": true,
+  "line_no": 390534,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1931466f17fd92a47ca54e95ddd02635607ccb27d410f1252108de10735ab3fb",
+  "raw_output": "\n        html = '<li><a href=\"%s\">%s</a></li>'\n        result = []\n        for info in infos:\n            result.append(html % (self.echo_html_list_url(catid, info),\n                                 ",
+  "sampling_seed": 3533694393,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

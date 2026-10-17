@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_raw(path, raw):\n    \"\"\"\n    Set raw data at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.write_raw \"secret/my/secret\" '{\"user\":\"foo\",\"password\": \"bar\"}'\n    \"\"\"\n    client = _get_client(path)\n    return client.write_raw(path, raw)\n",
+  "agc_valid": true,
+  "body_sha256": "cccfe456c13327ef78be09417d8718df452b0584f6804d6b2ab5877bdb3ea562",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n    client = _get_client(path)\n    return client.write_raw(path, raw)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "745febf76211b041da75d51de32335e96ff109eac3b3bb9aea3c3542188fc7b2",
+  "human_valid": true,
+  "line_no": 116127,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "86f24c4e9299cf48802d204e6f0051a6d6cf44eaaa4f4f22485c7e9a42fddf2c",
+  "raw_output": "\n    client = _get_client(path)\n    return client.write_raw(path, raw)\n\n\ndef delete(path):\n    \"\"\"\n    Delete the secret at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.delete \"secret/my/secret\"\n    \"\"\"\n    client = _get_client(path)\n    return client.delete(path)\n\n\ndef delete_raw(path, cas=None):\n    \"\"\"\n    Delete the raw secret at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.delete_raw \"secret/my/secret\"\n    \"\"\"\n    client = _get_client(path)\n    return client.delete_raw(path, cas=cas)\n\n\ndef list_secrets(path):\n    \"\"\"\n    List all the secrets at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.list_secrets \"secret/my/secret\"\n    \"\"\"\n    client = _get_client(path)\n    return client.list_secrets(path)\n\n\ndef read(path, metadata=False):\n    \"\"\"\n    Read the secret at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.read \"secret/my/secret\"\n    \"\"\"\n    client = _get_client(path)\n    return client.read(path, metadata=metadata)\n\n\ndef read_raw(path):\n    \"\"\"\n    Read the raw secret at the path in vault. The vault policy used must allow this.\n\n    CLI Example:\n\n    .. code-block:: bash\n\n            salt '*' vault.read_raw \"secret/my/secret\"\n    \"\"\"\n    client = _get_client(path)\n    return client.read_raw(path)\n\n\ndef",
+  "sampling_seed": 3649898696,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

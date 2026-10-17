@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _find_travis_job(self, build, toxenv):\n        \"\"\"Given a build object, find the acceptance36 job\"\"\"\n        for job in build.jobs:\n            if job.env.get('TOXENV', '') == toxenv:\n                return job\n",
+  "agc_valid": true,
+  "body_sha256": "41f9835e40c5826bb8fa39f8f1d50af6c1e9a6dec62fa51c2391dbfa9d6f9ed1",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for job in build.jobs:\n            if job.env.get('TOXENV', '') == toxenv:\n                return job\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "89fd5bc89853cfdf621397483a483af4b09f3abf6f76354ea92d821a48b14ad9",
+  "human_valid": true,
+  "line_no": 381038,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4dd42c3aed7363360cdf35150aa4a0b815c43430f7217c08b95050b41eaf6ccd",
+  "raw_output": "\n        for job in build.jobs:\n            if job.env.get('TOXENV', '') == toxenv:\n                return job\n\n    def",
+  "sampling_seed": 4273239324,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

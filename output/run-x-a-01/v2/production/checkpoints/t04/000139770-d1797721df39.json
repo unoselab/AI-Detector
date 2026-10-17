@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_docstring(thing):\n    \"\"\"Parse a Python docstring, or the docstring found on `thing`.\n\n    :return: a ``(title, body)`` tuple. As per docstring convention, title is\n        the docstring's first paragraph and body is the rest.\n    \"\"\"\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return None, None\n\n    lines = docstring.splitlines()\n    if not lines:\n        return None, None\n\n    title = lines[0].strip()\n    body = '\\n'.join(lines[1:]).strip()\n    return title, body\n",
+  "agc_valid": true,
+  "body_sha256": "8aa87c74c9fecb366b2e120a9971b54b61d8f02be1028b1725905168086c7060",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return None, None\n\n    lines = docstring.splitlines()\n    if not lines:\n        return None, None\n\n    title = lines[0].strip()\n    body = '\\n'.join(lines[1:]).strip()\n    return title, body\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "259bc136d2d7670013456f643032a01ba78861abab503ca5100a01f120c411b8",
+  "human_valid": true,
+  "line_no": 139770,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d1797721df3977f408fd5703ed2b0d18476c6c72f6a2113a37cfedf938a6183a",
+  "raw_output": "\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return None, None\n\n    lines = docstring.splitlines()\n    if not lines:\n        return None, None\n\n    title = lines[0].strip()\n    body = '\\n'.join(lines[1:]).strip()\n    return title, body\n\n\ndef parse_docstring_title(thing):\n    \"\"\"Parse a Python docstring, or the docstring found on `thing`.\n\n    :return: the first paragraph of the docstring.\n    \"\"\"\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return None\n\n    lines = docstring.splitlines()\n    if not lines:\n        return None\n\n    return lines[0].strip()\n\n\ndef parse_docstring_body(thing):\n    \"\"\"Parse a Python docstring, or the docstring found on `thing`.\n\n    :return: the rest of the docstring.\n    \"\"\"\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return None\n\n    lines = docstring.splitlines()\n    if not lines:\n        return None\n\n    return '\\n'.join(lines[1:]).strip()\n\n\ndef parse_docstring_tags(thing):\n    \"\"\"Parse a Python docstring, or the docstring found on `thing`.\n\n    :return: a list of tags.\n    \"\"\"\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return []\n\n    lines = docstring.splitlines()\n    if not lines:\n        return []\n\n    tags = []\n    for line in lines:\n        if line.startswith('@'):\n            tags.append(line[1:].strip())\n\n    return tags\n\n\ndef parse_docstring_tag(thing, tag):\n    \"\"\"Parse a Python docstring, or the docstring found on `thing`.\n\n    :return: the value of the tag, if any.\n    \"\"\"\n    docstring = thing.__doc__ or ''\n    if not docstring:\n        return None\n\n    lines = docstring.splitlines()\n    if not lines:\n        return None\n\n",
+  "sampling_seed": 591087452,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def thermal_conductivity(self, temperature, volume):\n        \"\"\"\n        Eq(17) in 10.1103/PhysRevB.90.174107\n\n        Args:\n            temperature (float): temperature in K\n            volume (float): in Ang^3\n\n        Returns:\n            float: thermal conductivity in W/K/m\n        \"\"\"\n        return\n",
+  "agc_valid": true,
+  "body_sha256": "075da1329bf98305ddcc57e5c54ff9464a19fba45924fd3dcdaeec84bf84cdea",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "c472a39f01cbcb99a4264e700ae0663488e3c0179cefc6263035608bd1e47a5c",
+  "human_valid": true,
+  "line_no": 372647,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9cc3c1ba7fa63d2dabeb3858a853d74f78008ed14902761d60a83eb4b5ac3534",
+  "raw_output": "\n        return ",
+  "sampling_seed": 4265572364,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_text(self, text):\n        \"\"\"Parse text (string) and return list of parsed sentences (strings).\n\n        Each sentence consists of space separated token elements and the\n        token format returned by the PatternParser is WORD/TAG/PHRASE/ROLE/(LEMMA)\n        (separated by a forward slash '/')\n\n        :param str text: A string.\n\n        \"\"\"\n        text = self._normalize(text)\n        sentences = self._split_sentences(text)\n        parsed_sentences = [self._parse_sentence(sentence) for sentence in sentences]\n        return parsed_sentences\n",
+  "agc_valid": true,
+  "body_sha256": "aebcc0e3571d495de3d084ce1d9ef846b55f2722c59a661ce340bf169f93066d",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n        text = self._normalize(text)\n        sentences = self._split_sentences(text)\n        parsed_sentences = [self._parse_sentence(sentence) for sentence in sentences]\n        return parsed_sentences\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "987b10e55c20a651c1c8ddc5563b9cc51a5d98478b5b8e460df9c046797589b8",
+  "human_valid": true,
+  "line_no": 8585,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c27d5af97df9260b16733e8b39c729810fdafebddecd56e767a97c0e46f7f62d",
+  "raw_output": "\n        text = self._normalize(text)\n        sentences = self._split_sentences(text)\n        parsed_sentences = [self._parse_sentence(sentence) for sentence in sentences]\n        return parsed_sentences\n\n    def",
+  "sampling_seed": 1237656611,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

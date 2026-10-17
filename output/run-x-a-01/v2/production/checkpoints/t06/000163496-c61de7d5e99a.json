@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stock_image(width: Union[int, str] = 1920,\n                    height: Union[int, str] = 1080,\n                    keywords: Optional[List[str]] = None,\n                    writable: bool = False) -> Union[str, bytes]:\n        \"\"\"Generate random stock image (JPEG) hosted on Unsplash.\n\n        .. note:: This method required an active HTTP connection.\n\n        :param width: Width of the image.\n        :param height: Height of the image.\n        :param keywords: List of search keywords.\n        :param writable: Return image as sequence ob bytes.\n        :return: Link to the image.\n        \"\"\"\n        :param keywords: Keywords for filtering the image.\n                :param writable: Whether the image should be writable or not.\n                :return: A random stock image (JPEG).\n                \"\"\"\n                # Get random image from Unsplash.\n                random_image = Image.from_unsplash(width=width, height=height, keywords=keywords)\n\n                # Return the image.\n                if writable:\n                    return random_image.write()\n                return random_image.read()\n\n            @staticmethod\n",
+  "agc_valid": false,
+  "body_sha256": "b687fdb303af399700920e70ef7da6b5061a732b5744ce15ca9726620f59120a",
+  "body_tokens": 204,
+  "bucket": "out_of_range",
+  "clean_output": "\n        :param keywords: Keywords for filtering the image.\n                :param writable: Whether the image should be writable or not.\n                :return: A random stock image (JPEG).\n                \"\"\"\n                # Get random image from Unsplash.\n                random_image = Image.from_unsplash(width=width, height=height, keywords=keywords)\n\n                # Return the image.\n                if writable:\n                    return random_image.write()\n                return random_image.read()\n\n            @staticmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "c7cc6cfdd2c1163f6ad5dda656d1dda1ce1b5a4c6343cc254e94a920aee8a0a4",
+  "human_valid": true,
+  "line_no": 163496,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c61de7d5e99a0eba6900a1b5fcff7cbd62657f7926435f8e3d8d08bc1410e7d3",
+  "raw_output": ":param keywords: Keywords for filtering the image.\n        :param writable: Whether the image should be writable or not.\n        :return: A random stock image (JPEG).\n        \"\"\"\n        # Get random image from Unsplash.\n        random_image = Image.from_unsplash(width=width, height=height, keywords=keywords)\n\n        # Return the image.\n        if writable:\n            return random_image.write()\n        return random_image.read()\n\n    @staticmethod\n    def",
+  "sampling_seed": 3876228237,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

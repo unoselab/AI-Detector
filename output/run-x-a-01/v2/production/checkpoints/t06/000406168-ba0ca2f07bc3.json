@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def image_create(comptparms, clrspc):\n    \"\"\"Creates a new image structure.\n\n    Wraps the openjp2 library function opj_image_create.\n\n    Parameters\n    ----------\n    cmptparms : comptparms_t\n        The component parameters.\n    clrspc : int\n        Specifies the color space.\n\n    Returns\n    -------\n    image : ImageType\n        Reference to ImageType instance.\n    \"\"\"\n    return ImageType(opj_image_create(comptparms, clrspc))\n",
+  "agc_valid": true,
+  "body_sha256": "21355a4881eb439a053beea0a458f202f2907ae1f275649dbeed70a3a48083f4",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return ImageType(opj_image_create(comptparms, clrspc))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "3c3e702a561335814b832c61e2fcc665d3384d9259644cb4e3f2d3c1213e8e99",
+  "human_valid": true,
+  "line_no": 406168,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ba0ca2f07bc36413db503861d1bfff36474adaeaf656cd73477ac21c11701dd9",
+  "raw_output": "\n    return ImageType(opj_image_create(comptparms, clrspc))\n\n\ndef image_destroy(image):\n    \"\"\"Destroys an image structure.\n\n    Wraps the openjp2 library function opj_image_destroy.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    \"\"\"\n    opj_image_destroy(image)\n\n\ndef image_set_color_space(image, clrspc):\n    \"\"\"Sets the color space of an image.\n\n    Wraps the openjp2 library function opj_image_set_color_space.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    clrspc : int\n        The color space.\n    \"\"\"\n    opj_image_set_color_space(image, clrspc)\n\n\ndef image_set_comptparms(image, compno, comptparms):\n    \"\"\"Sets the component parameters of an image.\n\n    Wraps the openjp2 library function opj_image_set_comptparms.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    compno : int\n        The component number.\n    comptparms : comptparms_t\n        The component parameters.\n    \"\"\"\n    opj_image_set_comptparms(image, compno, comptparms)\n\n\ndef image_set_iccprofile_buf(image, data, len):\n    \"\"\"Sets the ICC profile buffer of an image.\n\n    Wraps the openjp2 library function opj_image_set_iccprofile_buf.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    data : ctypes.c_void_p\n        Pointer to ICC profile buffer.\n    len : int\n        The length of the ICC profile buffer.\n    \"\"\"\n    opj_image_set_iccprofile_buf(image, data, len)\n\n\ndef image_set_iccprofile(image, data",
+  "sampling_seed": 4163720029,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

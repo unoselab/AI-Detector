@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def share(self, with_user, roles=None, table=None):\n        \"\"\"\n        Give cube access rights to another user\n\n        Not, this method is NOT supported by SQLite3!\n        \"\"\"\n        raise NotImplementedError(\"share() is not supported for SQLite3!\")\n",
+  "agc_valid": true,
+  "body_sha256": "6a071505c92991123242f4a7cf696bff31b52b15f08489c336cc7fdbc9800cf9",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError(\"share() is not supported for SQLite3!\")\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d94f8ae68a4a01ca869f60e3c78e10fb2534d219a8f2c7539e7c49332acff83a",
+  "human_valid": true,
+  "line_no": 34073,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3862cf441e2cc08621dea95ac0b61b719d9011054a4e43d782604e2e6982004e",
+  "raw_output": "\n        raise NotImplementedError(\"share() is not supported for SQLite3!\")\n\n    def",
+  "sampling_seed": 1182916292,
+  "tag": "t06",
+  "temperature": 0.6
+}

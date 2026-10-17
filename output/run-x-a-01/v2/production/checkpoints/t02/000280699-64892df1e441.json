@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _update_step(self, sequence):\n    \"\"\"Compute the current combined loss and perform a gradient update step.\n\n    The sequences must be a dict containing the keys `length` and `sequence`,\n    where the latter is a tuple containing observations, actions, parameters of\n    the behavioral policy, rewards, and advantages.\n\n    Args:\n      sequence: Sequences of episodes or chunks of episodes.\n\n    Returns:\n      Tuple of value loss, policy loss, and summary tensor.\n    \"\"\"\n    # Compute the loss.\n    loss, summary = self._compute_loss(sequence)\n\n    # Perform a gradient update step.\n    self._optimizer.minimize(loss, self._global_step)\n\n    return loss, summary\n",
+  "agc_valid": true,
+  "body_sha256": "26726b76065b4bb24f5dcb5e66d5840c77cdb56b555d24c542bf815e3509f8f5",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Compute the loss.\n    loss, summary = self._compute_loss(sequence)\n\n    # Perform a gradient update step.\n    self._optimizer.minimize(loss, self._global_step)\n\n    return loss, summary\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "4a78e4043773a233e0484efd9a74d3ff89a37d8f2128d2808681d2bb35cc323d",
+  "human_valid": true,
+  "line_no": 280699,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "64892df1e4412ae9720dc12a50a07db6536958d47552fe71893c2452fad22f8d",
+  "raw_output": "\n    # Compute the loss.\n    loss, summary = self._compute_loss(sequence)\n\n    # Perform a gradient update step.\n    self._optimizer.minimize(loss, self._global_step)\n\n    return loss, summary\n\n ",
+  "sampling_seed": 2316634773,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

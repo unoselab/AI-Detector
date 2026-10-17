@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def authenticate(self):\n        \"\"\"\n        Authenticate using data in `options`\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "e94b4c2a6c3e4b8a4db504e396072da24ff998d4faad9d19caf9ae503e974c4c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "2ef0782d7bb8415905e8b12b9faf950ea8457632c8a9420b9c6fdc50e1a6ffc5",
+  "human_valid": true,
+  "line_no": 172452,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "81ec652291954803799870959ac12998e16c391c0371cc8cb91600e05827d5d5",
+  "raw_output": "\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 3043561449,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

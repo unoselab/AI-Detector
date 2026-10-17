@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def download(self, file_name, save_as=None):\n        \"\"\"Download the specified file from the server.\n\n        Arguments:\n        file_name -- Name of file resource to save.\n        save_as   -- Optional path name to write file to.  If not specified,\n                     then file named by the last part of the resource path is\n                     downloaded to current directory.\n\n        Return: (save_path, bytes)\n        save_path -- Path where downloaded file was saved.\n        bytes     -- Bytes downloaded.\n        \"\"\"\n        if save_as is None:\n            save_as = file_name\n        if not os.path.isabs(save_as):\n            save_as = os.path.join(os.getcwd(), save_as)\n        if os.path.exists(save_as):\n            raise IOError(\"File already exists: %s\" % save_as)\n        file_path = self.resource_path(file_name)\n        try:\n            bytes = self.get_bytes(file_path)\n        except IOError:\n            raise IOError(\"File not found: %s\" % file_path)\n        with open(save_as, 'wb') as f:\n            f.write(bytes)\n        return save_as, bytes\n",
+  "agc_valid": true,
+  "body_sha256": "d8f578ca77fec5ce8475e7b55c5e9c9e262ecf01afe4c3439a4652b37059edf4",
+  "body_tokens": 171,
+  "bucket": "type08_180",
+  "clean_output": "\n        if save_as is None:\n            save_as = file_name\n        if not os.path.isabs(save_as):\n            save_as = os.path.join(os.getcwd(), save_as)\n        if os.path.exists(save_as):\n            raise IOError(\"File already exists: %s\" % save_as)\n        file_path = self.resource_path(file_name)\n        try:\n            bytes = self.get_bytes(file_path)\n        except IOError:\n            raise IOError(\"File not found: %s\" % file_path)\n        with open(save_as, 'wb') as f:\n            f.write(bytes)\n        return save_as, bytes\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0c48af6c1e7e7b9f0e0f6e523697b1a1b01ee51d115da8f9de8491e74a77fa53",
+  "human_valid": true,
+  "line_no": 14835,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "bb211f26c32961ac065713ba59061180501775f0547275bd8833d1c28299628c",
+  "raw_output": "\n        if save_as is None:\n            save_as = file_name\n        if not os.path.isabs(save_as):\n            save_as = os.path.join(os.getcwd(), save_as)\n        if os.path.exists(save_as):\n            raise IOError(\"File already exists: %s\" % save_as)\n        file_path = self.resource_path(file_name)\n        try:\n            bytes = self.get_bytes(file_path)\n        except IOError:\n            raise IOError(\"File not found: %s\" % file_path)\n        with open(save_as, 'wb') as f:\n            f.write(bytes)\n        return save_as, bytes\n\n    def",
+  "sampling_seed": 914259108,
+  "tag": "t04",
+  "temperature": 0.4
+}

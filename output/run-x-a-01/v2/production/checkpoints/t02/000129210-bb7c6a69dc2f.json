@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def execute(self, sensor_graph, scope_stack):\n        \"\"\"Execute this statement on the sensor_graph given the current scope tree.\n\n        This adds a single config variable assignment to the current sensor graph\n\n        Args:\n            sensor_graph (SensorGraph): The sensor graph that we are building or\n                modifying\n            scope_stack (list(Scope)): A stack of nested scopes that may influence\n                how this statement allocates clocks or other stream resources.\n        \"\"\"\n        # Get the current scope\n        scope = scope_stack[-1]\n\n        # Get the config variable\n        config_var = scope.get_config_var(self.name)\n\n        # Get the value\n        value = self.value.execute(sensor_graph, scope_stack)\n\n        # Set the value\n        config_var.set_value(value)\n",
+  "agc_valid": true,
+  "body_sha256": "dcb405d6617bfcf8042520fb8487843eaab4b2b7221a9c40d4bfc80d5c010676",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Get the current scope\n        scope = scope_stack[-1]\n\n        # Get the config variable\n        config_var = scope.get_config_var(self.name)\n\n        # Get the value\n        value = self.value.execute(sensor_graph, scope_stack)\n\n        # Set the value\n        config_var.set_value(value)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "5984f48b10d353c6ec418823ebc9d725afc8c73a23977a61e01d893cb2d21fad",
+  "human_valid": true,
+  "line_no": 129210,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bb7c6a69dc2fc97ef1aab2d1e1591b1a46d3653c6fe15edaf84b17700a6a7724",
+  "raw_output": "\n        # Get the current scope\n        scope = scope_stack[-1]\n\n        # Get the config variable\n        config_var = scope.get_config_var(self.name)\n\n        # Get the value\n        value = self.value.execute(sensor_graph, scope_stack)\n\n        # Set the value\n        config_var.set_value(value)\n\n    def",
+  "sampling_seed": 2065309989,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

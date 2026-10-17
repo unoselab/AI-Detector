@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def validate_config_file(cls, config_filepath):\n        \"\"\" Validates the filepath to the config.  Detects whether it is a true YAML file + existance\n\n        :param config_filepath: str, file path to the config file to query\n        :return: None\n        :raises: IOError\n        \"\"\"\n            if not os.path.isfile(config_filepath):\n                raise IOError(\"Config file does not exist: %s\" % config_filepath)\n\n            try:\n                with open(config_filepath, 'r') as f:\n                    yaml.load(f)\n            except yaml.YAMLError as e:\n                raise IOError(\"Config file is not valid YAML: %s\" % e)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "dc5a6fe8402383a49312740b705162f91f5972c5367a28b592d27eb7cc42b41f",
+  "body_tokens": 139,
+  "bucket": "type04_140",
+  "clean_output": "\n            if not os.path.isfile(config_filepath):\n                raise IOError(\"Config file does not exist: %s\" % config_filepath)\n\n            try:\n                with open(config_filepath, 'r') as f:\n                    yaml.load(f)\n            except yaml.YAMLError as e:\n                raise IOError(\"Config file is not valid YAML: %s\" % e)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "6194c80f6838559e624a748f5d8376a125b8618280ac25fdb1ebb41b992facf9",
+  "human_valid": true,
+  "line_no": 306332,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "543c35f4ac05475f6983709120c8ac028f3e35a7731358cb7535e14f52a0f601",
+  "raw_output": "\n        if not os.path.isfile(config_filepath):\n            raise IOError(\"Config file does not exist: %s\" % config_filepath)\n\n        try:\n            with open(config_filepath, 'r') as f:\n                yaml.load(f)\n        except yaml.YAMLError as e:\n            raise IOError(\"Config file is not valid YAML: %s\" % e)\n\n    @classmethod\n    def",
+  "sampling_seed": 8059364,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

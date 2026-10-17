@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_result(self, client, check):\n        \"\"\"\n        Returns an event for a given client & result name.\n        \"\"\"\n        return client.get_event(\n            check,\n            self.result_name,\n            self.result_value,\n            self.result_type,\n            self.result_time\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "2d4aea87299ff36b92b9ba2740b83f8fc0bdaaa09d7072077cf0c5a37963640f",
+  "body_tokens": 78,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return client.get_event(\n            check,\n            self.result_name,\n            self.result_value,\n            self.result_type,\n            self.result_time\n        )\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "507d5851efd4fbfed5d2d8e9fe8b13789a027b1a92a94743f862700ccc391033",
+  "human_valid": true,
+  "line_no": 32446,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f22ebb8852a3d651dec385574c657bde6a5a0fab420461110a62a3014e7da6a5",
+  "raw_output": "\n        return client.get_event(\n            check,\n            self.result_name,\n            self.result_value,\n            self.result_type,\n            self.result_time\n        )\n\n    def",
+  "sampling_seed": 3667474618,
+  "tag": "t04",
+  "temperature": 0.4
+}

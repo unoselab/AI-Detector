@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def launchctl(sub_cmd, *args, **kwargs):\n    \"\"\"\n    Run a launchctl command and raise an error if it fails\n\n    Args: additional args are passed to launchctl\n        sub_cmd (str): Sub command supplied to launchctl\n\n    Kwargs: passed to ``cmd.run_all``\n        return_stdout (bool): A keyword argument. If true return the stdout of\n            the launchctl command\n\n    Returns:\n        bool: ``True`` if successful\n        str: The stdout of the launchctl command if requested\n\n    Raises:\n        CommandExecutionError: If command fails\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        import salt.utils.mac_service\n        salt.utils.mac_service.launchctl('debug', 'org.cups.cupsd')\n    \"\"\"\n    Raises:\n         CommandExecutionError: If the launchctl command fails\n     \"\"\"\n     cmd = [\"launchctl\", sub_cmd]\n     cmd.extend(args)\n\n     ret = __salt__[\"cmd.run_all\"](cmd, **kwargs)\n     if ret[\"retcode\"] !=\n",
+  "agc_valid": false,
+  "body_sha256": "84ef2b3103599b9734dcc8ca70b62a7319973a22e22920b9352a2381059ec8bc",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n    Raises:\n         CommandExecutionError: If the launchctl command fails\n     \"\"\"\n     cmd = [\"launchctl\", sub_cmd]\n     cmd.extend(args)\n\n     ret = __salt__[\"cmd.run_all\"](cmd, **kwargs)\n     if ret[\"retcode\"] !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "97537c4e09216fba1500fc7d5d528d625b6cfb84539e64f04b1d82b4a0f81a75",
+  "human_valid": true,
+  "line_no": 117329,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a6a573101d7d4053b4225d5e0170505a7abdf6cdf14df3cde6410d528467e395",
+  "raw_output": "   Raises:\n        CommandExecutionError: If the launchctl command fails\n    \"\"\"\n    cmd = [\"launchctl\", sub_cmd]\n    cmd.extend(args)\n\n    ret = __salt__[\"cmd.run_all\"](cmd, **kwargs)\n    if ret[\"retcode\"] != ",
+  "sampling_seed": 735765066,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

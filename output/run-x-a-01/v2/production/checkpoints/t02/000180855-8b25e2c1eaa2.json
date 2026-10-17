@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run_checked (self):\n        \"\"\"Print periodic status messages.\"\"\"\n        while not self.stopped:\n            self.check_status()\n            time.sleep(self.status_interval)\n",
+  "agc_valid": true,
+  "body_sha256": "bfccc229b4d860334b79cacc761c121cdeac1bc371efc7d5f5d6e46603c49f51",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        while not self.stopped:\n            self.check_status()\n            time.sleep(self.status_interval)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "f2d74685fe734bf0de6139b21b4d34c1edd7357fd2f2dcda5a7166f50d48438b",
+  "human_valid": true,
+  "line_no": 180855,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8b25e2c1eaa285342cf635d34c534244d0a7463884340a4c3388a4b94e11a766",
+  "raw_output": "\n        while not self.stopped:\n            self.check_status()\n            time.sleep(self.status_interval)\n\n    def",
+  "sampling_seed": 830197923,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

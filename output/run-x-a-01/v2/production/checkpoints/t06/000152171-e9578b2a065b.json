@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def predict(self, temp_type):\n        \"\"\"\n        Transpile the predict method.\n\n        Parameters\n        ----------\n        :param temp_type: string\n            The kind of export type (embedded, separated, exported).\n\n        Returns\n        -------\n        :return : string\n            The transpiled predict method as string.\n        \"\"\"\n            return self.transpile_predict_method(temp_type)\n\n        @staticmethod\n",
+  "agc_valid": false,
+  "body_sha256": "6bcceda67d8895537743b3099d4cac26339938a6ac635d715a3541eaa81dcf99",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.transpile_predict_method(temp_type)\n\n        @staticmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "5676753c5afdc8a1338b862db52cf0974989c3353433ed87deac85fd8f77157f",
+  "human_valid": true,
+  "line_no": 152171,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e9578b2a065ba7042f072cac4c27db37088b953de4bdf6fefdccf31ca5e4b4bc",
+  "raw_output": "\n        return self.transpile_predict_method(temp_type)\n\n    @staticmethod\n    def",
+  "sampling_seed": 871248949,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

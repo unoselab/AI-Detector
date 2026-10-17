@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _read_at(self, d,\n                 interpolation='linear',\n                 index=False,\n                 return_basis=False):\n        \"\"\"\n        Private function. Implements read_at() for a single depth.\n\n        Args:\n            d (float)\n            interpolation (str)\n            index(bool)\n            return_basis (bool)\n\n        Returns:\n            float\n        \"\"\"\n        if not isinstance(d, float):\n            raise TypeError('Depth must be a float')\n\n        if not isinstance(interpolation, str):\n            raise TypeError('Interpolation must be a string')\n\n        if not isinstance(index, bool):\n            raise TypeError('Index must be a boolean')\n\n        if not isinstance(return_basis, bool):\n            raise TypeError('Return basis must be a boolean')\n\n        if d < self.depths[0] or d > self.depths[-1]:\n            raise ValueError('Depth must be within the range of depths in the data')\n\n        if interpolation not in ['linear', 'nearest']:\n            raise ValueError('Interpolation must be either \"linear\" or \"nearest\"')\n\n        if index:\n            index = np.argmin(np.abs(self.depths - d))\n        else:\n            index = np.argmin(np.abs(self.depths - d))\n\n        if interpolation == 'linear':\n            if index ==\n",
+  "agc_valid": false,
+  "body_sha256": "79295122c6b2a1ece83b1e7efd9f4fc08db1c5fac9dc554ce3e54828a12ac6f1",
+  "body_tokens": 258,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(d, float):\n            raise TypeError('Depth must be a float')\n\n        if not isinstance(interpolation, str):\n            raise TypeError('Interpolation must be a string')\n\n        if not isinstance(index, bool):\n            raise TypeError('Index must be a boolean')\n\n        if not isinstance(return_basis, bool):\n            raise TypeError('Return basis must be a boolean')\n\n        if d < self.depths[0] or d > self.depths[-1]:\n            raise ValueError('Depth must be within the range of depths in the data')\n\n        if interpolation not in ['linear', 'nearest']:\n            raise ValueError('Interpolation must be either \"linear\" or \"nearest\"')\n\n        if index:\n            index = np.argmin(np.abs(self.depths - d))\n        else:\n            index = np.argmin(np.abs(self.depths - d))\n\n        if interpolation == 'linear':\n            if index ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "c300c1b2add4f950378b1cd8c1a735230b632904e814fe60dd4a329d89882550",
+  "human_valid": true,
+  "line_no": 328227,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "051906c913949fe8f60cc8a1a3268e6c0b7ee4b0b6410822e5fda4a45c6589d2",
+  "raw_output": "\n\n        if not isinstance(d, float):\n            raise TypeError('Depth must be a float')\n\n        if not isinstance(interpolation, str):\n            raise TypeError('Interpolation must be a string')\n\n        if not isinstance(index, bool):\n            raise TypeError('Index must be a boolean')\n\n        if not isinstance(return_basis, bool):\n            raise TypeError('Return basis must be a boolean')\n\n        if d < self.depths[0] or d > self.depths[-1]:\n            raise ValueError('Depth must be within the range of depths in the data')\n\n        if interpolation not in ['linear', 'nearest']:\n            raise ValueError('Interpolation must be either \"linear\" or \"nearest\"')\n\n        if index:\n            index = np.argmin(np.abs(self.depths - d))\n        else:\n            index = np.argmin(np.abs(self.depths - d))\n\n        if interpolation == 'linear':\n            if index == ",
+  "sampling_seed": 2309568932,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

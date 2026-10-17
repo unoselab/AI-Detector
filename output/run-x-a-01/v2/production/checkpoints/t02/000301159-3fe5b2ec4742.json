@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def run(itf):\n    \"\"\"\n\tRun preprocess functions\n\t\"\"\"\n    itf.preprocess()\n",
+  "agc_valid": true,
+  "body_sha256": "47e041690ffcac5fb313bfa302a9e7c60e06d75819a6f57fea6593ca0b08cd2a",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    itf.preprocess()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "90af5ee01af3eac0e5d0e9b32438545271cf395676b62d6a0b228313c15b3a3e",
+  "human_valid": true,
+  "line_no": 301159,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3fe5b2ec47427ae720003f126c7b857b02916759547417944c55441af8afefc4",
+  "raw_output": "\n    itf.preprocess()\n\n\ndef run_postprocess(itf):\n    \"\"\"\n\tRun postprocess functions\n\t\"\"\"\n    itf.postprocess()\n\n\ndef run_preprocess_and_postprocess(itf):\n    \"\"\"\n\tRun preprocess and postprocess functions\n\t\"\"\"\n    run(itf)\n    run_postprocess(itf)\n\n\ndef run_preprocess_and_postprocess_with_exception_handling(itf):\n    \"\"\"\n\tRun preprocess and postprocess functions with exception handling\n\t\"\"\"\n    try:\n        run_preprocess_and_postprocess(itf)\n    except Exception as e:\n        itf.log.error(e)\n        itf.log.error(\"Exception occurred while running preprocess and postprocess functions\")\n\n\ndef run_preprocess_and_postprocess_with_exception_handling_and_exit(itf):\n    \"\"\"\n\tRun preprocess and postprocess functions with exception handling and exit\n\t\"\"\"\n    try:\n        run_preprocess_and_postprocess(itf)\n    except Exception as e:\n        itf.log.error(e)\n        itf.log.error(\"Exception occurred while running preprocess and postprocess functions\")\n        itf.log.error(\"Exiting...\")\n        exit(1)\n\n\ndef run_preprocess_and_postprocess_with_exception_handling_and_exit_with_error(itf, error_message):\n    \"\"\"\n\tRun preprocess and postprocess functions with exception handling and exit with error\n\t\"\"\"\n    try:\n        run_preprocess_and_postprocess(itf)\n    except Exception as e:\n        itf.log.error(e)\n        itf.log.error(\"Exception occurred while running preprocess and postprocess functions\")\n        itf.log.error(error_message)\n        itf.log.error(\"Exiting...\")\n        exit(1)\n\n\ndef run_preprocess_and_postprocess_with_exception_handling_and_exit_with_error_and_error_code(itf, error_message, error_code):\n   ",
+  "sampling_seed": 2520447343,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

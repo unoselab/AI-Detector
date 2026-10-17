@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _get_pooling_layers(self, start_node_id, end_node_id):\n        \"\"\"Given two node IDs, return all the pooling layers between them.\"\"\"\n        # TODO(rdb): This is a bit inefficient, but it's only used for\n        # debugging.\n        pooling_layers = []\n        for node in self._graph.nodes:\n            if (node.id < start_node_id or\n                    node.id > end_node_id):\n                continue\n            if node.op == 'Pooling':\n                pooling_layers.append(node)\n        return pooling_layers\n",
+  "agc_valid": true,
+  "body_sha256": "bb255d19aaee194b6eeaf832cccb11a90fac4342371d4d533658f75cecdf1701",
+  "body_tokens": 144,
+  "bucket": "type05_150",
+  "clean_output": "\n        # TODO(rdb): This is a bit inefficient, but it's only used for\n        # debugging.\n        pooling_layers = []\n        for node in self._graph.nodes:\n            if (node.id < start_node_id or\n                    node.id > end_node_id):\n                continue\n            if node.op == 'Pooling':\n                pooling_layers.append(node)\n        return pooling_layers\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "acb460cdbbc7d6f46e2b0baa452a4e35aa5a90b86045574d8cc494fa8486d684",
+  "human_valid": true,
+  "line_no": 102896,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "db5796f7be6a36b4c8860b4a3c54d40e93d8562f7a6546f1e3cb488c34d134a5",
+  "raw_output": "\n        # TODO(rdb): This is a bit inefficient, but it's only used for\n        # debugging.\n        pooling_layers = []\n        for node in self._graph.nodes:\n            if (node.id < start_node_id or\n                    node.id > end_node_id):\n                continue\n            if node.op == 'Pooling':\n                pooling_layers.append(node)\n        return pooling_layers\n\n    def",
+  "sampling_seed": 2270099255,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

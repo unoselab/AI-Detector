@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _add_details(self, info):\n        \"\"\"Override the base behavior to add Nodes, VirtualIPs, etc.\"\"\"\n        super(Node, self)._add_details(info)\n        self.name = info.get('name')\n        self.state = info.get('state')\n        self.public_ips = info.get('public_ips')\n        self.private_ips = info.get('private_ips')\n        self.extra = info\n",
+  "agc_valid": true,
+  "body_sha256": "2c78bf6a7f7de1277e382d2ae53b9f8bf2703665c93c1fc069c56e08fe557828",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n        super(Node, self)._add_details(info)\n        self.name = info.get('name')\n        self.state = info.get('state')\n        self.public_ips = info.get('public_ips')\n        self.private_ips = info.get('private_ips')\n        self.extra = info\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "94a50527efca14862cdd03694ca9565d4664221ed09db8a6e4e61a9c1112d9f7",
+  "human_valid": true,
+  "line_no": 411835,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1a002e159e0fc5ff0453470200df26e2ad4897449dabf60e211ba97ea4ce9a19",
+  "raw_output": "\n        super(Node, self)._add_details(info)\n        self.name = info.get('name')\n        self.state = info.get('state')\n        self.public_ips = info.get('public_ips')\n        self.private_ips = info.get('private_ips')\n        self.extra = info\n\n    def",
+  "sampling_seed": 955374698,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

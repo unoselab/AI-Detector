@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def gtpswd(prompt, confirmPassword):\n    \"\"\"\n    Temporary wrapper for Twisted's getPassword until a version that supports\n    customizing the 'confirm' prompt is released.\n    \"\"\"\n    return getPassword(prompt)\n",
+  "agc_valid": true,
+  "body_sha256": "b9fcd0103c905066143da0e1c5d3998e51d1b7c32f82c690c9bdf2b0ec5621ad",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return getPassword(prompt)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0555a4b52370bf4a7299cfb855f08eb057092bdb31e075eba9d812f330db57c6",
+  "human_valid": true,
+  "line_no": 33336,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "92c42b7a33c676332c029d362746ee518f3b2870264c48728066c6be3bfc05af",
+  "raw_output": "\n    return getPassword(prompt)\n\n\nclass PromptPassword(object):\n    \"\"\"\n    Password prompt, which uses the Twisted credentials API to prompt for a\n    password.\n\n    @ivar prompt: The prompt text.\n    @type prompt: C{str}\n\n    @ivar confirm: The confirm prompt text.\n    @type confirm: C{str}\n    \"\"\"\n\n    def",
+  "sampling_seed": 655616600,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _wait_for(self, callback, timeout=None):\n        \"\"\"\n        Spins until callback() returns truthy.\n        \"\"\"\n        start = time.time()\n        while True:\n            if callback():\n                return\n            if timeout is not None and time.time() - start > timeout:\n                raise TimeoutError\n            time.sleep(0.01)\n",
+  "agc_valid": true,
+  "body_sha256": "013de523e1937be209a9e95f8883fce6458be57852be64b00bed9df14c54cc34",
+  "body_tokens": 100,
+  "bucket": "type01_110",
+  "clean_output": "\n        start = time.time()\n        while True:\n            if callback():\n                return\n            if timeout is not None and time.time() - start > timeout:\n                raise TimeoutError\n            time.sleep(0.01)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "6051b2c97a8946422006bfdee5393f41b85064ed521c92d137e011f5169d82df",
+  "human_valid": true,
+  "line_no": 350248,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "632525cc6408941a947b5fc26a7c85941e9aa19f934f48a8ff945eb9ba5c817c",
+  "raw_output": "\n        start = time.time()\n        while True:\n            if callback():\n                return\n            if timeout is not None and time.time() - start > timeout:\n                raise TimeoutError\n            time.sleep(0.01)\n\n    def",
+  "sampling_seed": 803121728,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

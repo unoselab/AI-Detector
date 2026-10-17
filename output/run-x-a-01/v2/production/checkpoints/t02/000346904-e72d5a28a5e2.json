@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _cast_empty_df_dtypes(schema_fields, df):\n    \"\"\"Cast any columns in an empty dataframe to correct type.\n\n    In an empty dataframe, pandas cannot choose a dtype unless one is\n    explicitly provided. The _bqschema_to_nullsafe_dtypes() function only\n    provides dtypes when the dtype safely handles null values. This means\n    that empty int64 and boolean columns are incorrectly classified as\n    ``object``.\n    \"\"\"\n    for field in schema_fields:\n        if field.name in df.columns:\n            if field.field_type == 'INTEGER':\n                df[field.name] = df[field.name].astype('int64')\n            elif field.field_type == 'BOOLEAN':\n                df[field.name] = df[field.name].astype('bool')\n    return df\n",
+  "agc_valid": true,
+  "body_sha256": "2b776f4b03701d0ad437d6e274086c805644cbbb252b96ca1035cfbce2504160",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n    for field in schema_fields:\n        if field.name in df.columns:\n            if field.field_type == 'INTEGER':\n                df[field.name] = df[field.name].astype('int64')\n            elif field.field_type == 'BOOLEAN':\n                df[field.name] = df[field.name].astype('bool')\n    return df\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "c367497db4de82fa1287d3653643c17fab110bf9149c211dd1cd0ccf9bb8d895",
+  "human_valid": true,
+  "line_no": 346904,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e72d5a28a5e20f4c2b20c317704b2469a3e5bb0bc92cfa05f34793f5c8454059",
+  "raw_output": "\n    for field in schema_fields:\n        if field.name in df.columns:\n            if field.field_type == 'INTEGER':\n                df[field.name] = df[field.name].astype('int64')\n            elif field.field_type == 'BOOLEAN':\n                df[field.name] = df[field.name].astype('bool')\n    return df\n\n\ndef _bqschema_to_nullsafe_dtypes(schema_fields):\n    \"\"\"Convert BigQuery schema to nullsafe dtypes.\n\n    Args:\n        schema_fields (list): List of BigQuery SchemaField objects.\n\n    Returns:\n        dict: Dictionary mapping column names to nullsafe dtypes.\n    \"\"\"\n    nullsafe_dtypes = {}\n    for field in schema_fields:\n        if field.field_type == 'INTEGER':\n            nullsafe_dtypes[field.name] = 'int64'\n        elif field.field_type == 'FLOAT':\n            nullsafe_dtypes[field.name] = 'float64'\n        elif field.field_type == 'BOOLEAN':\n            nullsafe_dtypes[field.name] = 'bool'\n        elif field.field_type == 'STRING':\n            nullsafe_dtypes[field.name] = 'object'\n        elif field.field_type == 'DATETIME':\n            nullsafe_dtypes[field.name] = 'datetime64[ns]'\n        elif field.field_type == 'TIMESTAMP':\n            nullsafe_dtypes[field.name] = 'datetime64[ns]'\n        elif field.field_type == 'DATE':\n            nullsafe_dtypes[field.name] = 'datetime64[ns]'\n        elif field.field_type == 'TIME':\n            nullsafe_dtypes[field.name] = 'object'\n        elif field.field_type == 'BYTES':\n            nullsafe_dtypes[field.name] = 'object'\n        elif field.field_type == 'NUMERIC':\n            nullsafe_dtypes[field.name] = 'float64'\n        elif field",
+  "sampling_seed": 1307468931,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

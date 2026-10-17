@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def WriteClientActionRequests(self, requests, cursor=None):\n    \"\"\"Writes messages that should go to the client to the db.\"\"\"\n    if not requests:\n      return\n\n    if cursor:\n      cursor = cursor.copy()\n    else:\n      cursor = self.db.cursor()\n\n    try:\n      cursor.executemany(\n          'INSERT INTO ClientActionRequests (client_id, request_id, '\n          'request_data, timestamp) VALUES (%s, %s, %s, %s)',\n          [(request.client_id, request.request_id, request.SerializeToString(),\n            request.timestamp) for request in requests])\n      self.db.Commit()\n    except db.Error, e:\n      logging.exception(\"Error writing client action requests to the database.\")\n      self.db.Rollback()\n      raise\n    finally:\n      cursor.close()\n",
+  "agc_valid": false,
+  "body_sha256": "0f722c2ee8f0bf7115ef580fa87a6b6f6436aaada152af0cbe30da1fdaa5b8af",
+  "body_tokens": 154,
+  "bucket": "type06_160",
+  "clean_output": "\n    if not requests:\n      return\n\n    if cursor:\n      cursor = cursor.copy()\n    else:\n      cursor = self.db.cursor()\n\n    try:\n      cursor.executemany(\n          'INSERT INTO ClientActionRequests (client_id, request_id, '\n          'request_data, timestamp) VALUES (%s, %s, %s, %s)',\n          [(request.client_id, request.request_id, request.SerializeToString(),\n            request.timestamp) for request in requests])\n      self.db.Commit()\n    except db.Error, e:\n      logging.exception(\"Error writing client action requests to the database.\")\n      self.db.Rollback()\n      raise\n    finally:\n      cursor.close()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "da73621d303881290ba499050e6cd1bb828071e6567b6a8fb7f487fb73319c8e",
+  "human_valid": true,
+  "line_no": 368705,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b53924a0d4c93681adf4753d30e42d062a5fb490c280fcad8c71ed32ba71f90a",
+  "raw_output": "\n    if not requests:\n      return\n\n    if cursor:\n      cursor = cursor.copy()\n    else:\n      cursor = self.db.cursor()\n\n    try:\n      cursor.executemany(\n          'INSERT INTO ClientActionRequests (client_id, request_id, '\n          'request_data, timestamp) VALUES (%s, %s, %s, %s)',\n          [(request.client_id, request.request_id, request.SerializeToString(),\n            request.timestamp) for request in requests])\n      self.db.Commit()\n    except db.Error, e:\n      logging.exception(\"Error writing client action requests to the database.\")\n      self.db.Rollback()\n      raise\n    finally:\n      cursor.close()\n\n ",
+  "sampling_seed": 1168157913,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

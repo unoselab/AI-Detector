@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def pyquil_protect(func, log_filename=\"pyquil_error.log\"):\n    \"\"\"\n    A decorator that sets up an error context, captures errors, and tears down the context.\n    \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 151,
+  "human_sha256": "411187a4510b672f8184cb7e4ade9ddae9e9740c3d381d9eb9b338e2dd5cc3fa",
+  "human_valid": true,
+  "line_no": 374760,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "78a9dfda236a4661c4222df0bd483a9d411a6b70f4a40f159170e9c8df7c1766",
+  "raw_output": "\n\n    def",
+  "sampling_seed": 3020109156,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def ultimate_power():\n    \"\"\"\n    Data from http://indexed.blogspot.com/2007/08/real-ultimate-power.html\n    \"\"\"\n    return\n",
+  "agc_valid": true,
+  "body_sha256": "68279b1eae0b8e3728ac1d850147a95551b1ae74d88dbd8248d11f141d4b2f12",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cb1ab7057d0d9189344db25aed3c326966bcefbef34a730e616b392e3e040c6c",
+  "human_valid": true,
+  "line_no": 15756,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "43c2b0c7ca8f1a401413dda7f90a5540bb428b8655703b10309449874addaab0",
+  "raw_output": "\n    return ",
+  "sampling_seed": 126797911,
+  "tag": "t02",
+  "temperature": 0.2
+}

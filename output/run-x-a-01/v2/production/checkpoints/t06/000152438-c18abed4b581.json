@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def normalize_chunks(chunks, shape, typesize):\n    \"\"\"Convenience function to normalize the `chunks` argument for an array\n    with the given `shape`.\"\"\"\n    if chunks is None:\n        return None\n    if not isinstance(chunks, (list, tuple)):\n        raise ValueError(\"chunks must be a tuple or list\")\n    if len(chunks) != len(shape):\n        raise ValueError(\"chunks length must match shape\")\n    if any(c <\n",
+  "agc_valid": false,
+  "body_sha256": "a6fa95d81c9fb2657a0af75b27d0e87e06ecdbb50da9ddb069c11bf43076bcac",
+  "body_tokens": 66,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if chunks is None:\n        return None\n    if not isinstance(chunks, (list, tuple)):\n        raise ValueError(\"chunks must be a tuple or list\")\n    if len(chunks) != len(shape):\n        raise ValueError(\"chunks length must match shape\")\n    if any(c <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "7389e14b4927b746a13fc9d437ad8f600fe597b28c73ac947511a61b29a20273",
+  "human_valid": true,
+  "line_no": 152438,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c18abed4b58188732570d5ada8dc658ce71649ca0a89f813a2ef8d967d3f1f8d",
+  "raw_output": "\n    if chunks is None:\n        return None\n    if not isinstance(chunks, (list, tuple)):\n        raise ValueError(\"chunks must be a tuple or list\")\n    if len(chunks) != len(shape):\n        raise ValueError(\"chunks length must match shape\")\n    if any(c < ",
+  "sampling_seed": 1976763817,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

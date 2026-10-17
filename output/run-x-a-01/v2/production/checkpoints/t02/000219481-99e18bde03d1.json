@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_file(self, file_name=None):\n        \"\"\"Saves a DataFrame with all the needed info about the experiment\"\"\"\n        if file_name is None:\n            file_name = self.name\n        self.df.to_csv(file_name, index=False)\n",
+  "agc_valid": true,
+  "body_sha256": "92331f1c8efb4a42db765ec97b47bf4050f5b128e82275cd8219e6dbfb75572d",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if file_name is None:\n            file_name = self.name\n        self.df.to_csv(file_name, index=False)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 190,
+  "human_sha256": "3ff6ade95047d471cda3cd49c8804636b320b0f37c9e66d61219580505e84ee6",
+  "human_valid": true,
+  "line_no": 219481,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "99e18bde03d10f84dc377e9fd3fb17a4d3cc63b1f66fd3cb044ee4063e7ea63b",
+  "raw_output": "\n        if file_name is None:\n            file_name = self.name\n        self.df.to_csv(file_name, index=False)\n\n    def",
+  "sampling_seed": 2559872291,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

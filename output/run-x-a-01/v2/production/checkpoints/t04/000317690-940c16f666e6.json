@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def filter(filter_creator):\n    \"\"\"\n    Creates a decorator that can be used as a filter.\n\n    .. warning::\n        This is currently not compatible with most other decorators, if\n        you are using a decorator that isn't part of `hurler` you should\n        take caution.\n    \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_tokens": 1,
+  "bucket": "out_of_range",
+  "clean_output": "\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "33f23795a59974bbdd4f4a8157acfece773c9287d80068a0c67df0628be055b9",
+  "human_valid": true,
+  "line_no": 317690,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "940c16f666e638bcd8d6bc381ba13e25799fa05f24c57bb18001ee5d14f2bb3e",
+  "raw_output": "\n    def",
+  "sampling_seed": 1780808127,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

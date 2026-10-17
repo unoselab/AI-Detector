@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def rank(self, score):\n        \"\"\"Return the 0-based index (rank) of ``score``. If the score is not\navailable it returns a negative integer which absolute score is the\nleft most closest index with score less than *score*.\"\"\"\n        if score is None:\n            return -1\n        if score < self.min:\n            return -1\n        if score > self.max:\n            return len(self)\n        return bisect.bisect_left(self, score)\n",
+  "agc_valid": true,
+  "body_sha256": "99d8408875ca4c16250f1ada842c7ebd5c41375dc2c88ad7b3326f64b7b88549",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if score is None:\n            return -1\n        if score < self.min:\n            return -1\n        if score > self.max:\n            return len(self)\n        return bisect.bisect_left(self, score)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 136,
+  "human_sha256": "97ae04e1644fb38c67ef903dd25ca91c5a507a4db5a451288a613a821ab15a7d",
+  "human_valid": true,
+  "line_no": 20610,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c8a3c669064e6b4ae7c048f2b8aca814d1c22e7927ae08a023096eb1cbeab30d",
+  "raw_output": "\n        if score is None:\n            return -1\n        if score < self.min:\n            return -1\n        if score > self.max:\n            return len(self)\n        return bisect.bisect_left(self, score)\n\n    def",
+  "sampling_seed": 4219120351,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

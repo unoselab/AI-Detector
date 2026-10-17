@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def shutdown(self, connmark = -1):\n        \"\"\"\n        Can call without delegate\n        \"\"\"\n        if self.delegate:\n            self.delegate.shutdown(self, connmark)\n        else:\n            self.shutdown_no_delegate(connmark)\n",
+  "agc_valid": true,
+  "body_sha256": "f6a2a0902d158b5c65eba44b0b1b6413658e721db0019d5823b885fd467902ee",
+  "body_tokens": 43,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.delegate:\n            self.delegate.shutdown(self, connmark)\n        else:\n            self.shutdown_no_delegate(connmark)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "25597adf2a6c558ca17b86bf1f67ed2c99764a88546abfd550c76fd043d37d44",
+  "human_valid": true,
+  "line_no": 3266,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "70b004aed38f1e1c0939d54d0dd741bd2338f928ae521a73431c3653caf77bd0",
+  "raw_output": "\n        if self.delegate:\n            self.delegate.shutdown(self, connmark)\n        else:\n            self.shutdown_no_delegate(connmark)\n\n    def",
+  "sampling_seed": 1917025451,
+  "tag": "t04",
+  "temperature": 0.4
+}

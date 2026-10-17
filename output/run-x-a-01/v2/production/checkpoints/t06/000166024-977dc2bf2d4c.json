@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def UpsertPermission(self, user_link, permission, options=None):\n        \"\"\"Upserts a permission for a user.\n\n        :param str user_link:\n            The link to the user entity.\n        :param dict permission:\n            The Azure Cosmos user permission to upsert.\n        :param dict options:\n            The request options for the request.\n\n        :return:\n            The upserted permission.\n        :rtype:\n            dict\n\n        \"\"\"\n        permission_link = self._GetLink(user_link, 'permissions', permission)\n        return self._Upsert(permission_link, permission, options)\n",
+  "agc_valid": true,
+  "body_sha256": "03479b11329ff82bc19d01f5957e778d0156c15b53cc77813c19eefc1cd740ce",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        permission_link = self._GetLink(user_link, 'permissions', permission)\n        return self._Upsert(permission_link, permission, options)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "25596fed9b184847b4b5a714c515eb339f2ea6be44a31d38443b15c3a2b944ff",
+  "human_valid": true,
+  "line_no": 166024,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "977dc2bf2d4c6afba91bd0981a97cef577ed34fe355a0dbb39e7f043eebfb835",
+  "raw_output": "\n        permission_link = self._GetLink(user_link, 'permissions', permission)\n        return self._Upsert(permission_link, permission, options)\n\n    def",
+  "sampling_seed": 3308642436,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

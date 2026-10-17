@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def lookup(self, hostname):\n        \"\"\"\n        Find a hostkey entry for a given hostname or IP.  If no entry is found,\n        C{None} is returned.  Otherwise a dictionary of keytype to key is\n        returned.  The keytype will be either C{\"ssh-rsa\"} or C{\"ssh-dss\"}.\n\n        @param hostname: the hostname (or IP) to lookup\n        @type hostname: str\n        @return: keys associated with this host (or C{None})\n        @rtype: dict(str, L{PKey})\n        \"\"\"\n        of str to str\n                \"\"\"\n                if hostname in self._keys:\n                    return self._keys[hostname]\n                else:\n                    return None\n",
+  "agc_valid": false,
+  "body_sha256": "df643b0489f25605502079cb4a5a4f29fbca797576f1f3f4342e568c6d3f75a3",
+  "body_tokens": 105,
+  "bucket": "type01_110",
+  "clean_output": "\n        of str to str\n                \"\"\"\n                if hostname in self._keys:\n                    return self._keys[hostname]\n                else:\n                    return None\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "28d0dc16c060bcab04015fbf9eead98239cbb758d86a423615d6a2961fd0053c",
+  "human_valid": true,
+  "line_no": 14785,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f5765707616bc6b45d995e23a57e1b1daa21939879070ea20bc1cbbb44392e8e",
+  "raw_output": "of str to str\n        \"\"\"\n        if hostname in self._keys:\n            return self._keys[hostname]\n        else:\n            return None\n\n    def",
+  "sampling_seed": 553449802,
+  "tag": "t06",
+  "temperature": 0.6
+}

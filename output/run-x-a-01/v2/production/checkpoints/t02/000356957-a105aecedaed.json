@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self):\n        \"\"\"Get the first public IP address returned by one of the online services.\"\"\"\n        for service in self.services:\n            try:\n                return service.get()\n            except Exception:\n                pass\n        raise Exception(\"No public IP address found\")\n",
+  "agc_valid": true,
+  "body_sha256": "4c7b29a4b6a5d4e3f66c4f26a1b68c3df570504ad7ece6004cf9c1d922fdac45",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for service in self.services:\n            try:\n                return service.get()\n            except Exception:\n                pass\n        raise Exception(\"No public IP address found\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "657bf1ba4bac607f8b93cb138cfb7e599d592178927417ee5cdf8dd4f2f81cf9",
+  "human_valid": true,
+  "line_no": 356957,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a105aecedaed0e9f463dcdc803bd8248255c999ca723d5e772569af2f3e2a27f",
+  "raw_output": "\n        for service in self.services:\n            try:\n                return service.get()\n            except Exception:\n                pass\n        raise Exception(\"No public IP address found\")\n\n\nclass IPService(object):\n    \"\"\"Base class for IP service.\"\"\"\n\n    def",
+  "sampling_seed": 3773610067,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

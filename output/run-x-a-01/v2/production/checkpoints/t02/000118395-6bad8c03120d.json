@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def deleteAllActivationKeys(server):\n    \"\"\"\n    Delete all activation keys from Spacewalk\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt-run spacewalk.deleteAllActivationKeys spacewalk01.domain.com\n    \"\"\"\n    return __utils__[\"spacewalk.deleteAllActivationKeys\"](server)\n",
+  "agc_valid": true,
+  "body_sha256": "de6fe5c1e6850d72f37cec3e1d0421aacc5ff7b137ad74b2ff167b845072c751",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return __utils__[\"spacewalk.deleteAllActivationKeys\"](server)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "985826e1dbe15541d2872780a4474747a4996a22f16b40b77549991510bea77e",
+  "human_valid": true,
+  "line_no": 118395,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6bad8c03120d3aa1c80a13e4a543dad312dae4e911a624bbbf522c9c35208243",
+  "raw_output": "\n    return __utils__[\"spacewalk.deleteAllActivationKeys\"](server)\n\n\ndef deleteActivationKey(server, key):\n    \"\"\"\n    Delete an activation key from Spacewalk\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt-run spacewalk.deleteActivationKey spacewalk01.domain.com ",
+  "sampling_seed": 656423846,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

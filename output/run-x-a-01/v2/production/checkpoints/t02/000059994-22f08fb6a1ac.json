@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_number_of_rows(dbcon, tablename, uuid=None):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    if uuid is None:\n        sql = \"SELECT COUNT(*) FROM %s\" % tablename\n    else:\n        sql = \"SELECT COUNT(*) FROM %s WHERE uuid = '%s'\" % (tablename, uuid)\n    cursor = dbcon.cursor()\n    cursor.execute(sql)\n    result = cursor.fetchone()\n    cursor.close()\n    return result[0]\n",
+  "agc_valid": true,
+  "body_sha256": "01a896ec545de4a0ba9c14c21700e0816370ba52274781cf0c2677d7044ee498",
+  "body_tokens": 72,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if uuid is None:\n        sql = \"SELECT COUNT(*) FROM %s\" % tablename\n    else:\n        sql = \"SELECT COUNT(*) FROM %s WHERE uuid = '%s'\" % (tablename, uuid)\n    cursor = dbcon.cursor()\n    cursor.execute(sql)\n    result = cursor.fetchone()\n    cursor.close()\n    return result[0]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "d0b9521fa3c979d579973caf89c8135fbf9a80341b1b9655cf385f837f8ddc6b",
+  "human_valid": true,
+  "line_no": 59994,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "22f08fb6a1ac3a37227a3f2389e849e89a0ce9fa3a895648129d56b71fb739ed",
+  "raw_output": "\n    if uuid is None:\n        sql = \"SELECT COUNT(*) FROM %s\" % tablename\n    else:\n        sql = \"SELECT COUNT(*) FROM %s WHERE uuid = '%s'\" % (tablename, uuid)\n    cursor = dbcon.cursor()\n    cursor.execute(sql)\n    result = cursor.fetchone()\n    cursor.close()\n    return result[0]\n\n\ndef get_number_of_rows_in_table(dbcon, tablename):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    sql = \"SELECT COUNT(*) FROM %s\" % tablename\n    cursor = dbcon.cursor()\n    cursor.execute(sql)\n    result = cursor.fetchone()\n    cursor.close()\n    return result[0]\n\n\ndef get_number_of_rows_in_table_with_condition(dbcon, tablename, condition):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    sql = \"SELECT COUNT(*) FROM %s WHERE %s\" % (tablename, condition)\n    cursor = dbcon.cursor()\n    cursor.execute(sql)\n    result = cursor.fetchone()\n    cursor.close()\n    return result[0]\n\n\ndef get_number_of_rows_in_table_with_condition_and_uuid(dbcon, tablename, condition, uuid):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    sql = \"SELECT COUNT(*) FROM %s WHERE %s AND uuid = '%s'\" % (tablename, condition, uuid)\n    cursor = dbcon.cursor()\n    cursor.execute(sql)\n    result = cursor.fetchone()\n    cursor.close()\n    return result[0]\n\n\ndef get_number_of_rows_in_table_with_condition",
+  "sampling_seed": 1020105616,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

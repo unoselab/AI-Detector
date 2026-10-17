@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def delete_datastore(self):\n        # type: () -> None\n        \"\"\"Delete a resource from the HDX datastore\n\n        Returns:\n            None\n        \"\"\"\n        self.delete_resource()\n",
+  "agc_valid": true,
+  "body_sha256": "defde5f084b76931accb09d3ab1e8ca9f5f45fd52d12c9453cc4a2e9f2929621",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.delete_resource()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "de69dd53040ab698c3f9d5a0284d06f4397bf7cc7ee26c3fdd1c0fadf531f097",
+  "human_valid": true,
+  "line_no": 28581,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "521892be62260830940d895d5a26d13ee871f81c330e22c1ab5d258b2227940b",
+  "raw_output": "\n        self.delete_resource()\n\n    def",
+  "sampling_seed": 2321868131,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

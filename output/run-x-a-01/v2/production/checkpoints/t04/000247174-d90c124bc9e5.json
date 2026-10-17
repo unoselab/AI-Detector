@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse(raw_email):\n    # type: (six.string_types) -> Tuple[six.string_types, six.string_types]\n    \"\"\"Extract email from a full address. Example:\n      'John Doe <jdoe+github@foo.com>' -> jdoe@foo.com\n\n    >>> parse(\"John Doe <me+github.com@someorg.com\")\n    ('me', 'someorg.com')\n    >>> parse(42)  # doctest: +IGNORE_EXCEPTION_DETAIL\n    Traceback (most recent call last):\n        ...\n    InvalidEmail: 'Invalid email: 42'\n    >>> parse(None)  # doctest: +IGNORE_EXCEPTION_DETAIL\n    Traceback (most recent call last):\n        ...\n    InvalidEmail: 'None or NaN is not a valid email address'\n    \"\"\"\n    ION_DETAIL\n        Traceback (most recent call last):\n        ...\n        TypeError: expected str, got int\n        \"\"\"\n        if not isinstance(raw_email, six.string_types):\n            raise TypeError(\"expected str, got %s\" % type(raw_email))\n        if \"@\" not in raw_email:\n            raise ValueError(\"No '@' in email address: %r\" % raw_email)\n        if \"<\" in raw_email:\n            raw_email = raw_email.split(\"<\",\n",
+  "agc_valid": false,
+  "body_sha256": "9a66a862ba39f4371c71ce96cc9623e62602f3455798c32486e06bb9583592db",
+  "body_tokens": 131,
+  "bucket": "type04_140",
+  "clean_output": "\n    ION_DETAIL\n        Traceback (most recent call last):\n        ...\n        TypeError: expected str, got int\n        \"\"\"\n        if not isinstance(raw_email, six.string_types):\n            raise TypeError(\"expected str, got %s\" % type(raw_email))\n        if \"@\" not in raw_email:\n            raise ValueError(\"No '@' in email address: %r\" % raw_email)\n        if \"<\" in raw_email:\n            raw_email = raw_email.split(\"<\",\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "148a812a731a87d264e1ecd1ed9a11773caa1b10a6b37f8a25b10fc29716b0c2",
+  "human_valid": true,
+  "line_no": 247174,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d90c124bc9e51d725b9e61d1edbc60f1ce7abe3cda9e6b4b4938ccbfb128415b",
+  "raw_output": "ION_DETAIL\n    Traceback (most recent call last):\n    ...\n    TypeError: expected str, got int\n    \"\"\"\n    if not isinstance(raw_email, six.string_types):\n        raise TypeError(\"expected str, got %s\" % type(raw_email))\n    if \"@\" not in raw_email:\n        raise ValueError(\"No '@' in email address: %r\" % raw_email)\n    if \"<\" in raw_email:\n        raw_email = raw_email.split(\"<\", ",
+  "sampling_seed": 1711801292,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def export_saved_model(sess, export_dir, tag_set, signatures):\n  \"\"\"Convenience function to export a saved_model using provided arguments\n\n  The caller specifies the saved_model signatures in a simplified python dictionary form, as follows::\n\n    signatures = {\n      'signature_def_key': {\n        'inputs': { 'input_tensor_alias': input_tensor_name },\n        'outputs': { 'output_tensor_alias': output_tensor_name },\n        'method_name': 'method'\n      }\n    }\n\n  And this function will generate the `signature_def_map` and export the saved_model.\n\n  Args:\n    :sess: a tf.Session instance\n    :export_dir: path to save exported saved_model\n    :tag_set: string tag_set to identify the exported graph\n    :signatures: simplified dictionary representation of a TensorFlow signature_def_map\n\n  Returns:\n    A saved_model exported to disk at ``export_dir``.\n  \"\"\"\n  _name_value'\n        }\n      }\n",
+  "agc_valid": false,
+  "body_sha256": "1b285f06c8e53cb9d651c85d27bf8d66cda918447eb1b794d543bbf1e298c5df",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n  _name_value'\n        }\n      }\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "d6c90783908be598396c59cedf9a81a81ee8e6d72647ae7d1aac8e386a36f96b",
+  "human_valid": true,
+  "line_no": 360112,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "992639217301c6504de9569291c00b99fed3c63670d4ed8c5fedb619a3b00b37",
+  "raw_output": "_name_value'\n      }\n    }\n\n ",
+  "sampling_seed": 536483439,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

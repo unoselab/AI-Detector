@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def applicable_models(self):\n        \"\"\"\n        Returns a list of model classes that subclass Page\n        and include a \"tags\" field.\n\n        :rtype: list.\n        \"\"\"\n        from cms.models import CMSPlugin\n        from tagging.models import TaggedItem\n\n        return [model for model in CMSPlugin._get_all_subclasses() if\n                issubclass(model, TaggedItem)]\n",
+  "agc_valid": true,
+  "body_sha256": "3e93ba4599472dae88771f39ae455fe43c5f73f69608a803da2993459a56edcb",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n        from cms.models import CMSPlugin\n        from tagging.models import TaggedItem\n\n        return [model for model in CMSPlugin._get_all_subclasses() if\n                issubclass(model, TaggedItem)]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "5ca01cce447373004c638da792d0365ffefecf5549b88309967aef91b76321e9",
+  "human_valid": true,
+  "line_no": 16057,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "394d271f54be1c69d9bd05db337c966d424547d9dd477f914470590315ef5a1f",
+  "raw_output": "\r\n        from cms.models import CMSPlugin\r\n        from tagging.models import TaggedItem\r\n\r\n        return [model for model in CMSPlugin._get_all_subclasses() if\r\n                issubclass(model, TaggedItem)]\r\n\r\n    def",
+  "sampling_seed": 3264915025,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

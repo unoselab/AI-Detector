@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def swap_args(self, new_args, new_length=None):\n        \"\"\"\n        This returns the same AST, with the arguments swapped out for new_args.\n        \"\"\"\n        if new_length is None:\n            new_length = len(new_args)\n        if len(new_args) != new_length:\n            raise ValueError(\"new_args must have length %d\" % new_length)\n        return self.copy(args=new_args)\n",
+  "agc_valid": true,
+  "body_sha256": "41b50d748f970161b5b19b8b955bd8dc4e162b854150048e3aa9fd63f8c6060e",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if new_length is None:\n            new_length = len(new_args)\n        if len(new_args) != new_length:\n            raise ValueError(\"new_args must have length %d\" % new_length)\n        return self.copy(args=new_args)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "704d5aaa9e85b3a6cfa45a683f9c151ac29a6df948c2e012d850338df8057208",
+  "human_valid": true,
+  "line_no": 323509,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ed4bd52882adc28c320c39fe8fb756517b3047574c807e222eef33f1b4272a4",
+  "raw_output": "\n        if new_length is None:\n            new_length = len(new_args)\n        if len(new_args) != new_length:\n            raise ValueError(\"new_args must have length %d\" % new_length)\n        return self.copy(args=new_args)\n\n    def",
+  "sampling_seed": 3357853268,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

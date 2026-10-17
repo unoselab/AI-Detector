@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def result(self, timeout=None):\n        \"\"\"Returns the result of the call that the future represents.\n\n        :param timeout: The number of seconds to wait for the result\n            if the future has not been completed. None, the default,\n            sets no limit.\n        :returns: The result of the call that the future represents.\n        :raises: TimeoutError: If the timeout is reached before the\n            future ends execution.\n        :raises: Exception: If the call raises the Exception.\n        \"\"\"\n        return self._get_result(timeout)\n",
+  "agc_valid": true,
+  "body_sha256": "3571d29d1011c39472a7e9da801b481d021d8bf2ad770c4b20ec84d52f14ce3c",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._get_result(timeout)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "f887eeef343096c861a2c5270b99e6b7f3fa6a53fcbc7ed8ea81c51cd7229b15",
+  "human_valid": true,
+  "line_no": 68984,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e909298462ce9d6e7cca4f2b60cfd618b3e880bd4d1aceef84833f428314ea4f",
+  "raw_output": "\n        return self._get_result(timeout)\n\n    def",
+  "sampling_seed": 3147419486,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

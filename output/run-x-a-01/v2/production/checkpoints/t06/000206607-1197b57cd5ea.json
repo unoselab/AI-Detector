@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def command(self, command, value=1, check=True, allowable_errors=None,\n                codec_options=DEFAULT_CODEC_OPTIONS, _deadline=None, **kwargs):\n        \"\"\"command(command, value=1, check=True, allowable_errors=None, codec_options=DEFAULT_CODEC_OPTIONS)\"\"\"\n        if _deadline is not None:\n            warnings.warn(\n                \"The _deadline parameter is deprecated and will be removed in PyMongo\n",
+  "agc_valid": false,
+  "body_sha256": "757ce04064034c23839fe9b96bb85fe94e1974eecc7682ef9721c52fab2baa05",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if _deadline is not None:\n            warnings.warn(\n                \"The _deadline parameter is deprecated and will be removed in PyMongo\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "86f04778c8a1e2288bc73a61831f91420283b62dc59beab596a1e9c556ee37f1",
+  "human_valid": true,
+  "line_no": 206607,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1197b57cd5ea79c4dbe5ccd90314ce6468eb92789e6c98559e7cb5ad920d3ab4",
+  "raw_output": "\n        if _deadline is not None:\n            warnings.warn(\n                \"The _deadline parameter is deprecated and will be removed in PyMongo ",
+  "sampling_seed": 1723861648,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

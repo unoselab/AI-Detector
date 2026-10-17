@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def page_index(self, page_index):\n        \"\"\"\n        Sets the page_index of this V1Page.\n        The page's position in the merchant's list of pages. Always an integer between 0 and 6, inclusive.\n\n        :param page_index: The page_index of this V1Page.\n        :type: int\n        \"\"\"\n            self._page_index = page_index\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "c0a374288abb69fba36619606982e321f4d05de9e0b47d9781ad052894869d80",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n            self._page_index = page_index\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 116,
+  "human_sha256": "0f80395fa1395369904afec9d761627a6e8a39cee76ce549b513b528d884e313",
+  "human_valid": true,
+  "line_no": 323387,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1d1339dd664ba780dfc903c89448f04d7792f466b393f66e1b85114b3fb44326",
+  "raw_output": "\n        self._page_index = page_index\n\n    @property\n    def",
+  "sampling_seed": 1310961789,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

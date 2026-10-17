@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _nary_dict_update(dicts, **kwargs):\n    \"\"\"Implementation of n-argument ``dict.update``,\n    with flags controlling the exact strategy.\n    \"\"\"\n    if len(dicts) ==\n",
+  "agc_valid": false,
+  "body_sha256": "4fdddbee0269105a204415d786542b9c38eaaaabb367b0bc7407e47537a6d65d",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if len(dicts) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "547245d50a4e8d20ed9281912dcc7f0a08dafa917c3a745521d17a7706817395",
+  "human_valid": true,
+  "line_no": 87839,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d69a3bfd3b018d11eec44b5f98f5aa9a1a7a0b62d8b53635d6a59fce1d83562b",
+  "raw_output": "\n    if len(dicts) == ",
+  "sampling_seed": 3016207201,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

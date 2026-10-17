@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def convertLatLngToPixelXY(self, lat, lng, level):\n        \"\"\"\n        returns the x and y values of the pixel corresponding to a latitude\n        and longitude.\n        \"\"\"\n        # https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames\n        x = (int(lng) +\n",
+  "agc_valid": false,
+  "body_sha256": "eb2241b1703e0f85575e79cb4373af0c3d25ee74c27fa754eca5ed9737ec5177",
+  "body_tokens": 21,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames\n        x = (int(lng) +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 131,
+  "human_sha256": "e7b3ed48c57548702d77685562416771db18fc1aa7b6427aa00acdd162a51f9e",
+  "human_valid": true,
+  "line_no": 27128,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f204acc267842298f01e67940e85d350ffd2991f5660f3d46f77935f7d48f616",
+  "raw_output": "\n        # https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames\n        x = (int(lng) + ",
+  "sampling_seed": 3034581196,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

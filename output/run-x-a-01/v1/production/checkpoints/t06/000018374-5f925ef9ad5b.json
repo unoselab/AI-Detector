@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_path(path, overrides=None, **kwargs):\n    \"\"\"\n    Convenience function for loading a YAML configuration from a file.\n\n    Parameters\n    ----------\n    path : str\n        The path to the file to load on disk.\n    overrides : dict, optional\n        A dictionary containing overrides to apply. The location of\n        the override is specified in the key as a dot-delimited path\n        to the desired parameter, e.g. \"model.corruptor.corruption_level\".\n\n    Returns\n    -------\n    graph : dict or object\n        The dictionary or object (if the top-level element specified an\n        Python object to instantiate).\n\n    Notes\n    -----\n    Other keyword arguments are passed on to `yaml.load`.\n    \"\"\"\n    -------\n     dict\n         A dictionary containing the loaded configuration.\n     \"\"\"\n     with open(path, \"r\") as f:\n         cfg = yaml.load(f, Loader=yaml.FullLoader)\n     return load(cfg, overrides=overrides, **kwargs)\n",
+  "agc_valid": false,
+  "body_sha256": "254abec6db776d358282e195daf21ec65698ddd72c0c022f22db4515acd2c330",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n    -------\n     dict\n         A dictionary containing the loaded configuration.\n     \"\"\"\n     with open(path, \"r\") as f:\n         cfg = yaml.load(f, Loader=yaml.FullLoader)\n     return load(cfg, overrides=overrides, **kwargs)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "9e0bef581f979186a14801a4d6d1b11127773cd1554634a5652816bdb8b39aff",
+  "human_valid": true,
+  "line_no": 18374,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "5f925ef9ad5bfad015e5fcdd770aceeaf2905a4c41c7b1e88e46bf21230f8b72",
+  "raw_output": "   -------\n    dict\n        A dictionary containing the loaded configuration.\n    \"\"\"\n    with open(path, \"r\") as f:\n        cfg = yaml.load(f, Loader=yaml.FullLoader)\n    return load(cfg, overrides=overrides, **kwargs)\n\n\ndef load(cfg, overrides=None, **kwargs):\n    \"\"\"\n    Convenience function for loading a YAML configuration.\n\n    Parameters\n    ----------\n    cfg : dict\n        The configuration to load.\n    overrides : dict, optional\n        A dictionary containing overrides to apply. The location of\n        the override is specified in the key as a dot-delimited path\n        to the desired parameter, e.g. \"model.corruptor.corruption_level\".\n\n    Returns\n    -------\n    dict\n        A dictionary containing the loaded configuration.\n    \"\"\"\n    if overrides is not None:\n        cfg = apply_overrides(cfg, overrides)\n    return apply_kwargs(cfg, **kwargs)\n\n\ndef apply_overrides(cfg, overrides):\n    \"\"\"\n    Apply overrides to a configuration.\n\n    Parameters\n    ----------\n    cfg : dict\n        The configuration to load.\n    overrides : dict\n        A dictionary containing overrides to apply. The location of\n        the override is specified in the key as a dot-delimited path\n        to the desired parameter, e.g. \"model.corruptor.corruption_level\".\n\n    Returns\n    -------\n    dict\n        A dictionary containing the loaded configuration.\n    \"\"\"\n    for k, v in overrides.items():\n        if not k.startswith(\"model\"):\n            raise ValueError(f\"Invalid override key {k}\")\n        if not k.endswith(\"corruptor\"):\n            raise ValueError(f\"Invalid override key {k}\")\n        if not isinstance(v, dict):\n            raise ValueError(f\"Invalid override value for key {k}\")\n        if k not in cfg:\n            raise ValueError(f\"Invalid override key {k}\")\n        if \"corruptor\" not in cfg[k]:\n            raise ValueError(f",
+  "sampling_seed": 740063687,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def eta_letters(seconds):\n    \"\"\"Convert seconds remaining into human readable strings.\n\n    From https://github.com/Robpol86/etaprogress/blob/ad934d4/etaprogress/components/eta_conversions.py.\n\n    Positional arguments:\n    seconds -- integer/float indicating seconds remaining.\n    \"\"\"\n    if seconds is None:\n        return \"?\"\n    elif seconds <=\n",
+  "agc_valid": false,
+  "body_sha256": "b57e7bebd58963d53614dcc925200c74a667cb2ed79cdf0425331dc6f230be20",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if seconds is None:\n        return \"?\"\n    elif seconds <=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "fe127a9c1f6d52f4c4ab1cf4b28527883a2d733f87324b57793c7f6a05c45f9e",
+  "human_valid": true,
+  "line_no": 249412,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b8fbcfb657fec72da680b0d7c1a9331fe4c8913b0289306b2d321b6cce10086f",
+  "raw_output": "\n    if seconds is None:\n        return \"?\"\n    elif seconds <= ",
+  "sampling_seed": 4140880801,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

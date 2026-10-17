@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_instance(self, collection, obj_id, **kwargs):\n        \"\"\"Get a record from the database with the id field matching `obj_id`.\n        \"\"\"\n        return self.get_collection(collection).find_one({'_id': obj_id}, **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "e60dc1e039dfe86d1ba7e30529ec4f1fab07a675a5223684d5f6b1355ff9f4f7",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_collection(collection).find_one({'_id': obj_id}, **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 154,
+  "human_sha256": "d0edcd9bc8a104e0ec27173c6071594a7848ed4ebc8c122993bdfeebb9c4e5b2",
+  "human_valid": true,
+  "line_no": 301194,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cec5a50499ed160b5bd6973fd99fd4e31258b88ed482076694f26c1474115232",
+  "raw_output": "\n        return self.get_collection(collection).find_one({'_id': obj_id}, **kwargs)\n\n    def",
+  "sampling_seed": 2279029319,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

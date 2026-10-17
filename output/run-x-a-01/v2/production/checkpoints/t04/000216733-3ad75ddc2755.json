@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def open(self):\n        \"\"\"\n        Open the HID device for reading and writing.\n        \"\"\"\n        self._handle = hid.device()\n        self._handle.open_path(self._path)\n",
+  "agc_valid": true,
+  "body_sha256": "1ef6586b43940c69d92df50aa16b27d51b182d34643ebf2a89f29f6c5a0565a7",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._handle = hid.device()\n        self._handle.open_path(self._path)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 110,
+  "human_sha256": "a8f846b03ce4b43931d0cc4c0e9a08ecdb9ae6273378dd40b77dd877bfda36f7",
+  "human_valid": true,
+  "line_no": 216733,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3ad75ddc27559de011656c04b974e7216fc5575546128905ac07f42d483babd1",
+  "raw_output": "\n        self._handle = hid.device()\n        self._handle.open_path(self._path)\n\n    def",
+  "sampling_seed": 3061798232,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

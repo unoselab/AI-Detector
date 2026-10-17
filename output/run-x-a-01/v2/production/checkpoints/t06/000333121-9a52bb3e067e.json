@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list_tables(self, like=None, database=None):\n        \"\"\"\n        List tables in the current (or indicated) database. Like the SHOW\n        TABLES command in the impala-shell.\n\n        Parameters\n        ----------\n        like : string, default None\n          e.g. 'foo*' to match all tables starting with 'foo'\n        database : string, default None\n          If not passed, uses the current/default database\n\n        Returns\n        -------\n        tables : list of strings\n        \"\"\"\n        if database is None:\n            database = self.current_database\n        return self.execute('SHOW TABLES IN %s' % database, database=database).data\n",
+  "agc_valid": true,
+  "body_sha256": "146680f4b89882ea5a9b2dbf67b09a6ef44a301b64274470452242ced486cb79",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if database is None:\n            database = self.current_database\n        return self.execute('SHOW TABLES IN %s' % database, database=database).data\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "14d1680560972a6b02a4f2f00e0e50b2dfeeecd925185e6a756e559715f775a0",
+  "human_valid": true,
+  "line_no": 333121,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9a52bb3e067e4b50099ca0680e568ec191b91761ccef6e33291abb4494671655",
+  "raw_output": "\n        if database is None:\n            database = self.current_database\n        return self.execute('SHOW TABLES IN %s' % database, database=database).data\n\n    def",
+  "sampling_seed": 380208085,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

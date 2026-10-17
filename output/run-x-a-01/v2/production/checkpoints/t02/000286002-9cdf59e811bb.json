@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def open(self):\n        \"\"\"\n        Fixes RDF validation issues. Zotero incorrectly uses ``rdf:resource`` as\n        a child element for Attribute; ``rdf:resource`` should instead be used\n        as an attribute of ``link:link``.\n        \"\"\"\n        for link in self.xml.findall('.//link:link', self.ns):\n            if link.get('rdf:resource'):\n                link.attrib['rdf:resource'] = link.get('rdf:resource')\n                link.attrib.pop('rdf:resource')\n",
+  "agc_valid": true,
+  "body_sha256": "651345c4c23aa7eb948ec2ceb60910c678b7f95eb6f39281140882c50c080f49",
+  "body_tokens": 60,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for link in self.xml.findall('.//link:link', self.ns):\n            if link.get('rdf:resource'):\n                link.attrib['rdf:resource'] = link.get('rdf:resource')\n                link.attrib.pop('rdf:resource')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "05c0962015290dbeba6969403d3e90401cceaf8cf2f7f2db6ba08b13f882cb68",
+  "human_valid": true,
+  "line_no": 286002,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9cdf59e811bb961ad17c9f0047363d594e3be6d92c18404b4b9e9cf64b52d42e",
+  "raw_output": "\n        for link in self.xml.findall('.//link:link', self.ns):\n            if link.get('rdf:resource'):\n                link.attrib['rdf:resource'] = link.get('rdf:resource')\n                link.attrib.pop('rdf:resource')\n\n    def",
+  "sampling_seed": 2322151894,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def add_registration(self, username, first_name, last_name, email, password=\"\"):\n        \"\"\"\n            Add a registration request for the user.\n\n        :rtype : RegisterUser\n        \"\"\"\n        return self.client.post(\n            \"/api/v1/users/register\",\n            data={\n                \"username\": username,\n                \"first_name\": first_name,\n                \"last_name\": last_name,\n                \"email\": email,\n                \"password\": password,\n            },\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "04a168547ff4b819609ffc3c397041cb27ee5eaa5ce6e6e8af17866cdef07bf0",
+  "body_tokens": 139,
+  "bucket": "type04_140",
+  "clean_output": "\n        return self.client.post(\n            \"/api/v1/users/register\",\n            data={\n                \"username\": username,\n                \"first_name\": first_name,\n                \"last_name\": last_name,\n                \"email\": email,\n                \"password\": password,\n            },\n        )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "6eb899095d3608c1453f15238bc57a53aaa84e4bc75dc2c6262bba8f8e053694",
+  "human_valid": true,
+  "line_no": 361303,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e176a191bbdd109bad1c480bf93bf5cfc27cb6d0013a9d1e8a1ea93a987f90bd",
+  "raw_output": "\n        return self.client.post(\n            \"/api/v1/users/register\",\n            data={\n                \"username\": username,\n                \"first_name\": first_name,\n                \"last_name\": last_name,\n                \"email\": email,\n                \"password\": password,\n            },\n        )\n\n    def",
+  "sampling_seed": 1232376330,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

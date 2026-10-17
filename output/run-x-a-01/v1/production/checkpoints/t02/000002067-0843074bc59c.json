@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_creative_commons(self, slug, jurisdiction=None):\n        \"\"\"Returns the Creative Commons license for the given attributes.\n\n        :param str slug: the type of Creative Commons license. It must start with\n            ``cc-by`` and can optionally contain ``nc`` (non-commercial),\n            ``sa`` (share-alike), ``nd`` (no derivatives) terms, seperated by\n            hyphens. Note that a CC license cannot be both ``sa`` and ``nd``\n        :param str jurisdiction: The jurisdiction for a ported Creative Commons\n            license (eg. ``nz``), or ``None`` for unported/international licenses.\n        :rtype: License\n        \"\"\"\n        the jurisdiction for the license. If not\n                    given, the jurisdiction will be determined from the ``slug``\n                :return: the Creative Commons license\n                :rtype: :class:`~integreat_cms.cms.models.languages.creative_commons.CreativeCommons`\n                \"\"\"\n                # Get the jurisdiction\n                if jurisdiction is None:\n                    jurisdiction = self.get_jurisdiction(slug)\n                # Get the license\n                return self.get_license(slug, jurisdiction)\n",
+  "agc_valid": false,
+  "body_sha256": "8593b2f30ed2d6e58589473f59646ff0627d951b57381d7db5ef657e02e0c79b",
+  "body_tokens": 193,
+  "bucket": "type10_200",
+  "clean_output": "\n        the jurisdiction for the license. If not\n                    given, the jurisdiction will be determined from the ``slug``\n                :return: the Creative Commons license\n                :rtype: :class:`~integreat_cms.cms.models.languages.creative_commons.CreativeCommons`\n                \"\"\"\n                # Get the jurisdiction\n                if jurisdiction is None:\n                    jurisdiction = self.get_jurisdiction(slug)\n                # Get the license\n                return self.get_license(slug, jurisdiction)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c4a75cfe813ba89f3d9e5ad99318230778ef0366f1fc7ab7ca29f4a8307aae6d",
+  "human_valid": true,
+  "line_no": 2067,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0843074bc59c24b6a2bf15d67adda9a5c86ef816dc86eed0c158805d6f24b3f3",
+  "raw_output": "the jurisdiction for the license. If not\n            given, the jurisdiction will be determined from the ``slug``\n        :return: the Creative Commons license\n        :rtype: :class:`~integreat_cms.cms.models.languages.creative_commons.CreativeCommons`\n        \"\"\"\n        # Get the jurisdiction\n        if jurisdiction is None:\n            jurisdiction = self.get_jurisdiction(slug)\n        # Get the license\n        return self.get_license(slug, jurisdiction)\n\n    def",
+  "sampling_seed": 1113622208,
+  "tag": "t02",
+  "temperature": 0.2
+}

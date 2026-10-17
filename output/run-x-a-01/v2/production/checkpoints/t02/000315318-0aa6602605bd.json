@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hlp_source_under(folder):\n    \"\"\"\n    this function finds all the python packages under a folder and\n    write the 'packages' and 'package_dir' entries for a python setup.py\n    script\n    \"\"\"\n        import os\n        import sys\n        from distutils.core import setup\n        from distutils.command.build_py import build_py_2to3 as build_py\n\n        packages = []\n        package_dir = {}\n        for root, dirs, files in os.walk(folder):\n            if '__init__.py' in files:\n                if not root.endswith('/'):\n                    root += '/'\n                packages.append(root[:-1])\n                package_dir[root[:-1]] = root\n\n        setup(\n            name='source_under',\n            version='0.1',\n            description='source_under',\n            author='',\n            author_email='',\n            url='',\n            packages=packages,\n            package_dir=package_dir,\n            cmdclass={'build_py': build_py},\n            zip_safe=False,\n            )\n\n    if __name__ == '__main__':\n        hlp_source_under('../source_under')\n    \\end{code}\n\n    Comment: I'm not sure I understand your question.\n",
+  "agc_valid": false,
+  "body_sha256": "d91f03aecbf2669ca86250c62cfbe08f0dd79370d4010e8234d4859a5746204e",
+  "body_tokens": 336,
+  "bucket": "out_of_range",
+  "clean_output": "\n        import os\n        import sys\n        from distutils.core import setup\n        from distutils.command.build_py import build_py_2to3 as build_py\n\n        packages = []\n        package_dir = {}\n        for root, dirs, files in os.walk(folder):\n            if '__init__.py' in files:\n                if not root.endswith('/'):\n                    root += '/'\n                packages.append(root[:-1])\n                package_dir[root[:-1]] = root\n\n        setup(\n            name='source_under',\n            version='0.1',\n            description='source_under',\n            author='',\n            author_email='',\n            url='',\n            packages=packages,\n            package_dir=package_dir,\n            cmdclass={'build_py': build_py},\n            zip_safe=False,\n            )\n\n    if __name__ == '__main__':\n        hlp_source_under('../source_under')\n    \\end{code}\n\n    Comment: I'm not sure I understand your question.\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "aa2ce2882c8bcf9bb7cbdd529abaa479aff2e80080b7905cf4d0a61da891a9e9",
+  "human_valid": true,
+  "line_no": 315318,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0aa6602605bddca2fdc0f499b0ef4e7c794ced4a62f46a1607284bdfb19cae19",
+  "raw_output": "\n    import os\n    import sys\n    from distutils.core import setup\n    from distutils.command.build_py import build_py_2to3 as build_py\n\n    packages = []\n    package_dir = {}\n    for root, dirs, files in os.walk(folder):\n        if '__init__.py' in files:\n            if not root.endswith('/'):\n                root += '/'\n            packages.append(root[:-1])\n            package_dir[root[:-1]] = root\n\n    setup(\n        name='source_under',\n        version='0.1',\n        description='source_under',\n        author='',\n        author_email='',\n        url='',\n        packages=packages,\n        package_dir=package_dir,\n        cmdclass={'build_py': build_py},\n        zip_safe=False,\n        )\n\nif __name__ == '__main__':\n    hlp_source_under('../source_under')\n\\end{code}\n\nComment: I'm not sure I understand your question. ",
+  "sampling_seed": 3068242917,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

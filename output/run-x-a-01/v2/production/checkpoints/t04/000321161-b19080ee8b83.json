@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_frame(self, data, state):\n        \"\"\"\n        Extract a single frame from the data buffer.  The consumed\n        data should be removed from the buffer.  If no complete frame\n        can be read, must raise a ``NoFrames`` exception.\n\n        :param data: A ``bytearray`` instance containing the data so\n                     far read.\n        :param state: An instance of ``FramerState``.  If the buffer\n                      contains a partial frame, this object can be\n                      used to store state information to allow the\n                      remainder of the frame to be read.\n\n        :returns: A frame.  The frame may be any object.  The stock\n                  framers always return bytes.\n        \"\"\"\n                      next call to ``to_frame()`` to continue where\n                      it left off.\n\n        :returns: A ``bytearray`` instance containing the frame data.\n        \"\"\"\n        raise NotImplementedError\n",
+  "agc_valid": false,
+  "body_sha256": "dd7fba68fe5d662be57a4c6c0380a7e7957594452906a83c7fd87261f9c0c642",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n                      next call to ``to_frame()`` to continue where\n                      it left off.\n\n        :returns: A ``bytearray`` instance containing the frame data.\n        \"\"\"\n        raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "6b0d7b98eb77dee2f9644756eecd33cef75acae3233bce598c4ed74162a835c8",
+  "human_valid": true,
+  "line_no": 321161,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b19080ee8b834ca5685fcad7473bf655a1052b30a2bcaa56c6cbabfe66167dae",
+  "raw_output": "\n                      next call to ``to_frame()`` to continue where\n                      it left off.\n\n        :returns: A ``bytearray`` instance containing the frame data.\n        \"\"\"\n        raise NotImplementedError\n\n    def",
+  "sampling_seed": 2654498440,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def header(self, title, level, key, width=80):\n        \"\"\"Example::\n\n            .. _header_2:\n\n            Header 2\n            -------------------------------------------------------------------\n\n        **中文文档**\n        \"\"\"\n        if self.context.get('header_level') is None:\n            self.context['header_level'] =\n",
+  "agc_valid": false,
+  "body_sha256": "813b54fbfd0106b1896b3f225282c3a9399a4dcc1a6ca05fbec91ffa8bc204c7",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.context.get('header_level') is None:\n            self.context['header_level'] =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "4e12f4a78a791787ecfc6a7562edc99d69111c770632a77d070dfc6bd26edcf0",
+  "human_valid": true,
+  "line_no": 306883,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "038d27819d3a6a17148156e8aa1cd8cbf37de889704cdaf5a83dfbe559c3373a",
+  "raw_output": "\n        if self.context.get('header_level') is None:\n            self.context['header_level'] = ",
+  "sampling_seed": 599940856,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

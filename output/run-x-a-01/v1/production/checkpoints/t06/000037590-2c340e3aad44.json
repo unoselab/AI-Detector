@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load(file,encoding=None):\n    \"\"\"load(file,encoding=None) -> object\n\n    This function reads a tnetstring from a file and parses it into a\n    python object.  The file must support the read() method, and this\n    function promises not to read more data than necessary.\n    \"\"\"\n    if encoding is not None:\n        file = codecs.getreader(encoding)(file)\n    try:\n        return loads(file.read(1000))\n    except:\n        file.close()\n        raise\n",
+  "agc_valid": true,
+  "body_sha256": "318c31a78afbe84ddea29f8270095d9248a745e0034b9dc9c1a97185aafd0d4a",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if encoding is not None:\n        file = codecs.getreader(encoding)(file)\n    try:\n        return loads(file.read(1000))\n    except:\n        file.close()\n        raise\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "577315d3948b55e94b144d9db4174102f21f30245e4eb2cf9c22f98a275c1844",
+  "human_valid": true,
+  "line_no": 37590,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "2c340e3aad446a02e5089c0f780c45ead6296eb84e0b78a0db8ee02c7816b491",
+  "raw_output": "\n    if encoding is not None:\n        file = codecs.getreader(encoding)(file)\n    try:\n        return loads(file.read(1000))\n    except:\n        file.close()\n        raise\n\ndef loads(data):\n    \"\"\"loads(data) -> object\n\n    This function parses a tnetstring from a string and returns the\n    resulting python object.\n    \"\"\"\n    if len(data) == ",
+  "sampling_seed": 956857099,
+  "tag": "t06",
+  "temperature": 0.6
+}

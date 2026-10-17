@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def alreadyHasEntry(oldClassString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    if oldClassString in og:\n        return True\n    else:\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "c81cbd9b3c5ded534c24c4ce3606b666a3bb2de6e5e4c81e282ce51f563e1b5d",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if oldClassString in og:\n        return True\n    else:\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "5ed6c094526a38e1f93f1818d5d9cb324eee5f2fe7b33b84e0d95ab04091eee0",
+  "human_valid": true,
+  "line_no": 216317,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "13a421044bc16612e1598d252429b598db5b99d31b9ec0574c3b9006b9991862",
+  "raw_output": "\n    if oldClassString in og:\n        return True\n    else:\n        return False\n\ndef getClassString(classString, og):\n    \"\"\" Return the string of the class\"\"\"\n    if classString in og:\n        return og[classString]\n    else:\n        return None\n\ndef getClassStringWithoutPrefix(classString, og):\n    \"\"\" Return the string of the class without the prefix\"\"\"\n    if classString in og:\n        return og[classString].split(\":\")[1]\n    else:\n        return None\n\ndef getClassStringWithoutPrefixAndVersion(classString, og):\n    \"\"\" Return the string of the class without the prefix and version\"\"\"\n    if classString in og:\n        return og[classString].split(\":\")[1].split(\"_\")[0]\n    else:\n        return None\n\ndef getClassStringWithoutPrefixAndVersionAndClass(classString, og):\n    \"\"\" Return the string of the class without the prefix and version and class\"\"\"\n    if classString in og:\n        return og[classString].split(\":\")[1].split(\"_\")[1]\n    else:\n        return None\n\ndef getClassStringWithoutPrefixAndVersionAndClassAndType(classString, og):\n    \"\"\" Return the string of the class without the prefix and version and class and type\"\"\"\n    if classString in og:\n        return og[classString].split(\":\")[1].split(\"_\")[2]\n    else:\n        return None\n\ndef getClassStringWithoutPrefixAndVersionAndClassAndTypeAndSubtype(classString, og):\n    \"\"\" Return the string of the class without the prefix and version and class and type and subtype\"\"\"\n    if classString in og:\n        return og[classString].split(\":\")[1].split(\"_\")[3]\n    else:\n        return None\n\ndef getClassStringWithoutPrefixAndVersionAndClassAndTypeAndSubtypeAndInstance(classString, og):\n    \"\"\" Return the string of the class without the prefix and version and class and type and subtype and instance\"\"\"\n    if classString in og:\n        return og[classString].split(\":\")[1].",
+  "sampling_seed": 4128739967,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_folder(name, location='\\\\'):\n    r\"\"\"\n    Create a folder in which to create tasks.\n\n    :param str name: The name of the folder. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the folder. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :return: True if successful, False if unsuccessful\n    :rtype: bool\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt 'minion-id' task.create_folder <folder_name>\n    \"\"\"\n    Usage::\n\n         >>> from winrm_tasks import create_folder\n         >>> create_folder('my folder')\n         True\n\n     \"\"\"\n     try:\n         folder = location + name\n         if not os.path.exists(folder):\n             os.makedirs(folder)\n             return True\n         else:\n             return False\n     except Exception as e:\n         print(e)\n         return False\n",
+  "agc_valid": false,
+  "body_sha256": "626066c874bc4469692cba206927227f880077b9b0483b127cead62f3975ff04",
+  "body_tokens": 149,
+  "bucket": "type05_150",
+  "clean_output": "\n    Usage::\n\n         >>> from winrm_tasks import create_folder\n         >>> create_folder('my folder')\n         True\n\n     \"\"\"\n     try:\n         folder = location + name\n         if not os.path.exists(folder):\n             os.makedirs(folder)\n             return True\n         else:\n             return False\n     except Exception as e:\n         print(e)\n         return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "c521adf46887f665e1bd15df48d8727371cb0a3bfbf63136452e53d92a5a5d2b",
+  "human_valid": true,
+  "line_no": 119116,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6731a6cf750d902c8d94bfdb35ac0a5daa596072dd1c85c21ed28121660454e1",
+  "raw_output": "   Usage::\n\n        >>> from winrm_tasks import create_folder\n        >>> create_folder('my folder')\n        True\n\n    \"\"\"\n    try:\n        folder = location + name\n        if not os.path.exists(folder):\n            os.makedirs(folder)\n            return True\n        else:\n            return False\n    except Exception as e:\n        print(e)\n        return False\n\n\ndef create_task(name, location='\\\\', user='SYSTEM', password='', runas_password=''):\n    r\"\"\"\n    Create a task in a folder.\n\n    :param str name: The name of the task. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the task. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :param str user: The user to run the task as. Default is SYSTEM.\n\n    :param str password: The password for the user to run the task as.\n\n    :param str runas_password: The password for the SYSTEM user.\n\n    :return: True if successful, False if unsuccessful\n    :rtype: bool\n\n    Usage::\n\n        >>> from winrm_tasks import create_task\n        >>> create_task('my task', '\\\\my folder', 'my user', 'my password')\n        True\n\n    \"\"\"\n    try:\n        folder = location + name\n        if not os.path.exists(folder):\n            create_folder(location)\n            if not create_folder(name, location):\n                return False\n        else:\n            return False\n        task = location + name + '\\\\' + name + '.xml'\n        if not os.path.exists(task):\n            with open(task, 'w') as f:\n                f.write('''<?xml version=\"1.0\" encoding=\"UTF-16\"?>\n<Task version=\"1.2\" xmlns=\"http://schemas.microsoft.com/windows/2004/02/mit/task\">\n ",
+  "sampling_seed": 3447072869,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

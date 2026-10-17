@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def index_bundle(self, bundle, force=False):\n        \"\"\"\n        Indexes a bundle/dataset and all of its partitions\n        :param bundle: A bundle or dataset object\n        :param force: If true, index the document even if it already exists\n        :return:\n        \"\"\"\n        if not isinstance(bundle, Bundle):\n            raise ValueError('Expected Bundle object')\n\n        # Index the bundle itself\n        self.index_document(bundle, force=force)\n\n        # Index all of the bundle's partitions\n        for partition in bundle.partitions:\n            self.index_partition(partition, force=force)\n",
+  "agc_valid": true,
+  "body_sha256": "ee37560dc1ce46690cfb217b7d592b6a91d2425567a7d67698919ac1adf61caf",
+  "body_tokens": 86,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(bundle, Bundle):\n            raise ValueError('Expected Bundle object')\n\n        # Index the bundle itself\n        self.index_document(bundle, force=force)\n\n        # Index all of the bundle's partitions\n        for partition in bundle.partitions:\n            self.index_partition(partition, force=force)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b851092de532b6df5b7a7fcdbdab4a7a475de84293ea4d3120df3ee90cdbc582",
+  "human_valid": true,
+  "line_no": 30715,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "26aa414a37657451b84634e5696254e374b283c3681b4b96fc31e243040f3aee",
+  "raw_output": "\n        if not isinstance(bundle, Bundle):\n            raise ValueError('Expected Bundle object')\n\n        # Index the bundle itself\n        self.index_document(bundle, force=force)\n\n        # Index all of the bundle's partitions\n        for partition in bundle.partitions:\n            self.index_partition(partition, force=force)\n\n    def",
+  "sampling_seed": 1165007919,
+  "tag": "t04",
+  "temperature": 0.4
+}

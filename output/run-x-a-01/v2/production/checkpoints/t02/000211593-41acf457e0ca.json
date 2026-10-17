@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bexpcube_sun(self, **kwargs):\n        \"\"\" return the name of a binned exposure cube file\n        \"\"\"\n        return self.bexpcube_name(**kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "acb176e820d3399954ae804f3a12730549922839c2fe62147ff21720ef52bb6b",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.bexpcube_name(**kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "d2b7beb6d0e5f0b0d5e5201acb6e14eb669631a550285d7012f3c9f154aa4e8d",
+  "human_valid": true,
+  "line_no": 211593,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "41acf457e0ca7c014ca5d517e6a581e9f2fed884d8143d4128d8bf79fb725e00",
+  "raw_output": "\n        return self.bexpcube_name(**kwargs)\n\n    def",
+  "sampling_seed": 2327513252,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

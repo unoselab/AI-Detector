@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_dictionary(self):\n        \"\"\"Serialize an object into dictionary form.  Useful if you have to\n        serialize an array of objects into JSON.  Otherwise, if you call the\n        :meth:`to_json` method on each object in the list and then try to\n        dump the array, you end up with an array with one string.\"\"\"\n        return {\n            'id': self.id,\n            'name': self.name,\n            'description': self.description,\n            'type': self.type,\n            'status': self.status,\n            'created_at': self.created_at,\n            'updated_at': self.updated_at,\n            'deleted_at': self.deleted_at,\n            'deleted': self.deleted,\n            'links': {\n                'self': self.get_self_link(),\n                'bookmark': self.get_bookmark_link(),\n                'members': self.get_members_link(),\n                'update': self.get_update_link(),\n                'delete': self.get_delete_link()\n            }\n        }\n",
+  "agc_valid": true,
+  "body_sha256": "cce1754fa2a1c75327a1f0560bd5bae716120a2c421abe8aada889513e505434",
+  "body_tokens": 245,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return {\n            'id': self.id,\n            'name': self.name,\n            'description': self.description,\n            'type': self.type,\n            'status': self.status,\n            'created_at': self.created_at,\n            'updated_at': self.updated_at,\n            'deleted_at': self.deleted_at,\n            'deleted': self.deleted,\n            'links': {\n                'self': self.get_self_link(),\n                'bookmark': self.get_bookmark_link(),\n                'members': self.get_members_link(),\n                'update': self.get_update_link(),\n                'delete': self.get_delete_link()\n            }\n        }\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "59881cc612cab7ac64bd597228a16c5169ed3f470913b4cd7fd9d8b7c9e5c880",
+  "human_valid": true,
+  "line_no": 313986,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5170d08991a52687e28ad45dd6b49958b62eb6c3e86fdfce2046477d9b9eba7e",
+  "raw_output": "\n        return {\n            'id': self.id,\n            'name': self.name,\n            'description': self.description,\n            'type': self.type,\n            'status': self.status,\n            'created_at': self.created_at,\n            'updated_at': self.updated_at,\n            'deleted_at': self.deleted_at,\n            'deleted': self.deleted,\n            'links': {\n                'self': self.get_self_link(),\n                'bookmark': self.get_bookmark_link(),\n                'members': self.get_members_link(),\n                'update': self.get_update_link(),\n                'delete': self.get_delete_link()\n            }\n        }\n\n    def",
+  "sampling_seed": 1323665967,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

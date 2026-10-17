@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sample_forward_transitions(self, batch_size, batch_info, forward_steps: int,\n                                   discount_factor: float) -> Transitions:\n        \"\"\"\n        Sample transitions from replay buffer with _forward steps_.\n        That is, instead of getting a transition s_t -> s_t+1 with reward r,\n        get a transition s_t -> s_t+n with sum of intermediate rewards.\n\n        Used in a variant of Deep Q-Learning\n        \"\"\"\n        batch_size = batch_size or self.batch_size\n        assert batch_size >\n",
+  "agc_valid": false,
+  "body_sha256": "0faff0a13e562d173fba94f6fef72445fcc85e89e10acfdc9e9f44396efa5f9d",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n        batch_size = batch_size or self.batch_size\n        assert batch_size >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "cbaa817cc7dc3e985c3e8ac37b27ee482af84d90a596c10035e30b0a135b3fa6",
+  "human_valid": true,
+  "line_no": 179079,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "68ea1bed62c4214a78d257a420ecae658c40a58fc620102068a99a3c4df48927",
+  "raw_output": "\n        batch_size = batch_size or self.batch_size\n        assert batch_size > ",
+  "sampling_seed": 3127724809,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

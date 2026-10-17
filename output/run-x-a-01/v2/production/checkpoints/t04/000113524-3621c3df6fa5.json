@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def match(tgt, opts=None):\n    \"\"\"\n    Matches based on IP address or CIDR notation\n    \"\"\"\n    if not isinstance(tgt, (list, tuple)):\n        tgt = [tgt]\n\n    if opts is None:\n        opts = {}\n\n    ret = []\n    for tgtitem in tgt:\n        if \"/\" in tgtitem:\n            ip, mask = tgtitem.split(\"/\")\n            ipaddr = ipaddress.ip_address(ip)\n            mask = int(mask)\n            ret.append(ipaddr.network(mask))\n        else:\n            ret.append(ipaddress.ip_address(tgtitem))\n\n    return ret\n",
+  "agc_valid": true,
+  "body_sha256": "3087ccb3b2ff31b7d9549726ae46083a7e57eb25b438efbec129a23acd6a83a9",
+  "body_tokens": 140,
+  "bucket": "type04_140",
+  "clean_output": "\n    if not isinstance(tgt, (list, tuple)):\n        tgt = [tgt]\n\n    if opts is None:\n        opts = {}\n\n    ret = []\n    for tgtitem in tgt:\n        if \"/\" in tgtitem:\n            ip, mask = tgtitem.split(\"/\")\n            ipaddr = ipaddress.ip_address(ip)\n            mask = int(mask)\n            ret.append(ipaddr.network(mask))\n        else:\n            ret.append(ipaddress.ip_address(tgtitem))\n\n    return ret\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "4d47d2d89f497f938e770a1a65b339558be4325af4e16725fec42db114362665",
+  "human_valid": true,
+  "line_no": 113524,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3621c3df6fa5d94624f087bfae4b00cd776e02e3aac3f7141202a469b81c2fa5",
+  "raw_output": "\n    if not isinstance(tgt, (list, tuple)):\n        tgt = [tgt]\n\n    if opts is None:\n        opts = {}\n\n    ret = []\n    for tgtitem in tgt:\n        if \"/\" in tgtitem:\n            ip, mask = tgtitem.split(\"/\")\n            ipaddr = ipaddress.ip_address(ip)\n            mask = int(mask)\n            ret.append(ipaddr.network(mask))\n        else:\n            ret.append(ipaddress.ip_address(tgtitem))\n\n    return ret\n\n\ndef parse_host(host, opts=None):\n    \"\"\"\n    Parse a host and return the ip address and hostname\n    \"\"\"\n    if opts is None:\n        opts = {}\n\n    if \":\" in host:\n        host, port = host.split(\":\")\n        port = int(port)\n    else:\n        port = None\n\n    if \"@\" in host:\n        user, host = host.split(\"@\")\n    else:\n        user = None\n\n    if opts.get(\"use_ipv6\", False):\n        host = host.lower()\n\n    if \".\" in host:\n        hostname = host\n        ipaddr = host\n    else:\n        hostname = None\n        ipaddr = host\n\n    return user, ipaddr, hostname, port\n\n\ndef parse_host_port(host, opts=None):\n    \"\"\"\n    Parse a host and return the ip address and hostname\n    \"\"\"\n    if opts is None:\n        opts = {}\n\n    if \":\" in host:\n        host, port = host.split(\":\")\n        port = int(port)\n    else:\n        port = None\n\n    if \"@\" in host:\n        user, host = host.split(\"@\")\n    else:\n        user = None\n\n    if opts.get(\"use_ipv6\", False):\n        host = host.lower()\n\n    if \".\" in host:\n        hostname = host\n        ipaddr = host\n    else:\n        hostname = None\n        ipaddr = host\n\n    return user, ipaddr, hostname, port\n",
+  "sampling_seed": 3099567281,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_pool_size(usr_config_value, num_tasks):\n    \"\"\" Determine size of thread/process-pool for parallel processing.\n    This examines the cpu_count to decide and return the right pool\n    size to use.  Also take into account the user's wishes via the config\n    object value, if specified.  On top of that, don't allow the pool size\n    returned to be any higher than the number of parallel tasks, if specified.\n    Only use what we need (mp.Pool starts pool_size processes, needed or not).\n    If number of tasks is unknown, call this with \"num_tasks\" set to None.\n    Returns 1 when indicating that parallel processing should not be used.\n    Consolidate all such logic here, not in the caller. \"\"\"\n    ).\n        \"\"\"\n        # Get the number of CPUs on the system\n        cpu_count = multiprocessing.cpu_count()\n\n        # Get the user's desired pool size, if specified\n        if usr_config_value is not None:\n            pool_size = usr_config_value\n        else:\n            pool_size = cpu_count\n\n        # Make sure the user's pool size is not higher than the number of tasks\n        # we have to do.\n        if num_tasks is not None and pool_size > num_tasks:\n            pool_size = num_tasks\n\n        return pool_size\n",
+  "agc_valid": false,
+  "body_sha256": "22531027cfb231014bd5d33c26fc85548fd177e033f086f123943691b4579f65",
+  "body_tokens": 176,
+  "bucket": "type08_180",
+  "clean_output": "\n    ).\n        \"\"\"\n        # Get the number of CPUs on the system\n        cpu_count = multiprocessing.cpu_count()\n\n        # Get the user's desired pool size, if specified\n        if usr_config_value is not None:\n            pool_size = usr_config_value\n        else:\n            pool_size = cpu_count\n\n        # Make sure the user's pool size is not higher than the number of tasks\n        # we have to do.\n        if num_tasks is not None and pool_size > num_tasks:\n            pool_size = num_tasks\n\n        return pool_size\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "e270a00b62da772568b5de3d7e80084debbaaf3794ae970f83da49077fe6267a",
+  "human_valid": true,
+  "line_no": 210433,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b72f91d5ce63033a5302c49547d432fff46e1c6ec93b346f6d959bc2020c08f8",
+  "raw_output": ").\n    \"\"\"\n    # Get the number of CPUs on the system\n    cpu_count = multiprocessing.cpu_count()\n\n    # Get the user's desired pool size, if specified\n    if usr_config_value is not None:\n        pool_size = usr_config_value\n    else:\n        pool_size = cpu_count\n\n    # Make sure the user's pool size is not higher than the number of tasks\n    # we have to do.\n    if num_tasks is not None and pool_size > num_tasks:\n        pool_size = num_tasks\n\n    return pool_size\n\n\ndef get_pool(pool_size, parallel_type):\n    \"\"\" Create a thread or process pool for parallel processing.\n    \"\"\"\n    if parallel_type == \"thread\":\n        pool = multiprocessing.pool.ThreadPool(pool_size)\n    elif parallel_type == \"process\":\n        pool = multiprocessing.pool.ThreadPool(pool_size)\n    elif parallel_type == \"mp_process\":\n        pool = multiprocessing.Pool(pool_size)\n    else:\n        raise Exception(\"Unknown parallel type: \" + parallel_type)\n\n    return pool\n\n\ndef parallel_process(func, args_list, parallel_type, pool_size, num_tasks=None):\n    \"\"\" Run a function in parallel.\n    \"\"\"\n    # Get the pool size\n    pool_size = get_pool_size(pool_size, num_tasks)\n\n    # Create the pool\n    pool = get_pool(pool_size, parallel_type)\n\n    # Create the list of tasks to do\n    tasks = [pool.apply_async(func, args=args) for args in args_list]\n\n    # Wait for the tasks to finish\n    results = [task.get() for task in tasks]\n\n    # Close the pool\n    pool.close()\n    pool.join()\n\n    return results\n\n\ndef parallel_process_with_progress(func, args_list, parallel_type, pool_size,\n                                   num_tasks=None, progress_callback=None,\n                                   progress_interval=1000):\n",
+  "sampling_seed": 1105505440,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

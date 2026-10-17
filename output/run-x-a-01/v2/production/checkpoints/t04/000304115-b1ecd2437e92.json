@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_consumer(user, password, config_file_path, process_message, *args, **kwargs):\n    \"\"\"Create a pulse consumer. Call listen() to start listening.\"\"\"\n    config = pulse_consumer.load_config(config_file_path)\n    config[\"user\"] = user\n    config[\"password\"] = password\n    config[\"process_message\"] = process_message\n    config[\"args\"] = args\n    config[\"kwargs\"] = kwargs\n    consumer = pulse_consumer.PulseConsumer(config)\n    return consumer\n",
+  "agc_valid": true,
+  "body_sha256": "5450cf33ef8c42982eee054d001cd8c0e724cd1e3add486566566cda881c74e8",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n    config = pulse_consumer.load_config(config_file_path)\n    config[\"user\"] = user\n    config[\"password\"] = password\n    config[\"process_message\"] = process_message\n    config[\"args\"] = args\n    config[\"kwargs\"] = kwargs\n    consumer = pulse_consumer.PulseConsumer(config)\n    return consumer\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "1663fdffaa8469a57604d1b5425f1792d7b71f94ceaeece46b745640bd411412",
+  "human_valid": true,
+  "line_no": 304115,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b1ecd2437e926213c51efc119efae0c8f47dee6fd6f4d7c9f57bbdfc150af6fe",
+  "raw_output": "\n    config = pulse_consumer.load_config(config_file_path)\n    config[\"user\"] = user\n    config[\"password\"] = password\n    config[\"process_message\"] = process_message\n    config[\"args\"] = args\n    config[\"kwargs\"] = kwargs\n    consumer = pulse_consumer.PulseConsumer(config)\n    return consumer\n\n\ndef listen(consumer):\n    \"\"\"Start listening to messages.\"\"\"\n    consumer.listen()\n\n\ndef create_producer(config_file_path):\n    \"\"\"Create a pulse producer. Call send() to send messages.\"\"\"\n    config = pulse_producer.load_config(config_file_path)\n    producer = pulse_producer.PulseProducer(config)\n    return producer\n\n\ndef send(producer, message):\n    \"\"\"Send a message.\"\"\"\n    producer.send(message)\n\n\ndef create_consumer_from_config(config_file_path, process_message, *args, **kwargs):\n    \"\"\"Create a pulse consumer. Call listen() to start listening.\"\"\"\n    config = pulse_consumer.load_config(config_file_path)\n    config[\"process_message\"] = process_message\n    config[\"args\"] = args\n    config[\"kwargs\"] = kwargs\n    consumer = pulse_consumer.PulseConsumer(config)\n    return consumer\n\n\ndef create_producer_from_config(config_file_path):\n    \"\"\"Create a pulse producer. Call send() to send messages.\"\"\"\n    config = pulse_producer.load_config(config_file_path)\n    producer = pulse_producer.PulseProducer(config)\n    return producer\n\n\ndef send_from_config(producer, message):\n    \"\"\"Send a message.\"\"\"\n    producer.send(message)\n\n\ndef create_consumer_from_config_file(config_file_path, process_message, *args, **kwargs):\n    \"\"\"Create a pulse consumer. Call listen() to start listening.\"\"\"\n    config = pulse_consumer.load_config(config_file_path)\n    config[\"process_message\"] = process",
+  "sampling_seed": 4216328988,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

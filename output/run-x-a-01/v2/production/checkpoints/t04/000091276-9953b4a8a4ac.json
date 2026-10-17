@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _convert_to_indexer(self, obj, axis=None, is_setter=False):\n        \"\"\" much simpler as we only have to deal with our valid types \"\"\"\n        if isinstance(obj, slice):\n            return slice(obj.start, obj.stop, obj.step)\n        elif isinstance(obj, (np.ndarray, ABCSeries)):\n            return obj\n        elif isinstance(obj, (list, tuple)):\n            return self._convert_listlike(obj, is_setter=is_setter)\n        elif is_setter and isinstance(obj, (int, np.integer)):\n            return slice(obj, obj +\n",
+  "agc_valid": false,
+  "body_sha256": "348d421bbe4643e3fbad874632c23a6a1814adc9e5809f8ee71d0f7912bdab29",
+  "body_tokens": 103,
+  "bucket": "type01_110",
+  "clean_output": "\n        if isinstance(obj, slice):\n            return slice(obj.start, obj.stop, obj.step)\n        elif isinstance(obj, (np.ndarray, ABCSeries)):\n            return obj\n        elif isinstance(obj, (list, tuple)):\n            return self._convert_listlike(obj, is_setter=is_setter)\n        elif is_setter and isinstance(obj, (int, np.integer)):\n            return slice(obj, obj +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "755382e88caf52d2a704bcf9b104e33529ea1661f10fba9cadd0e6d945a9316f",
+  "human_valid": true,
+  "line_no": 91276,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9953b4a8a4ac3a2d9b0d89d883d87c8d0c6e131f9fb9d773955647784f59569e",
+  "raw_output": "\n        if isinstance(obj, slice):\n            return slice(obj.start, obj.stop, obj.step)\n        elif isinstance(obj, (np.ndarray, ABCSeries)):\n            return obj\n        elif isinstance(obj, (list, tuple)):\n            return self._convert_listlike(obj, is_setter=is_setter)\n        elif is_setter and isinstance(obj, (int, np.integer)):\n            return slice(obj, obj + ",
+  "sampling_seed": 3764251495,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

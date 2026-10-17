@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def PCA(x, n=False):\n    \"\"\"\n    Principal component analysis function.\n\n    **Args:**\n\n    * `x` : input matrix (2d array), every row represents new sample\n\n    **Kwargs:**\n\n    * `n` : number of features returned (integer) - how many columns \n      should the output keep\n\n    **Returns:**\n\n    * `new_x` : matrix with reduced size (lower number of columns)\n    \"\"\"\n    # calculate covariance matrix\n    cov = np.cov(x.T)\n    # calculate eigenvalues and eigenvectors\n    eig_vals, eig_vecs = np.linalg.eig(cov)\n    # sort eigenvalues in descending order\n    eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:,i]) for i in range(len(eig_vals))]\n    eig_pairs.sort(key=lambda x: x[0], reverse=True)\n    # select n eigenvectors\n    if n:\n        eig_pairs = eig_pairs[:n]\n    # calculate new matrix\n    new_x = np.dot(x, eig_pairs[0][1].T)\n    return new_x\n",
+  "agc_valid": true,
+  "body_sha256": "78a1f3b2bc9395cd795d405cdd9c14c75fa7379e92698c261c01a5568fbbb12d",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # calculate covariance matrix\n    cov = np.cov(x.T)\n    # calculate eigenvalues and eigenvectors\n    eig_vals, eig_vecs = np.linalg.eig(cov)\n    # sort eigenvalues in descending order\n    eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:,i]) for i in range(len(eig_vals))]\n    eig_pairs.sort(key=lambda x: x[0], reverse=True)\n    # select n eigenvectors\n    if n:\n        eig_pairs = eig_pairs[:n]\n    # calculate new matrix\n    new_x = np.dot(x, eig_pairs[0][1].T)\n    return new_x\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "145c09751d15aab24f9e4d9a1016240532f125fdca3d5c8c8aec83404ea7206f",
+  "human_valid": true,
+  "line_no": 122873,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c397e77f6bfa42c8bece0e787469ce69f19fe80b2945ffdb0b8fdff8fcf75db1",
+  "raw_output": "\n    # calculate covariance matrix\n    cov = np.cov(x.T)\n    # calculate eigenvalues and eigenvectors\n    eig_vals, eig_vecs = np.linalg.eig(cov)\n    # sort eigenvalues in descending order\n    eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:,i]) for i in range(len(eig_vals))]\n    eig_pairs.sort(key=lambda x: x[0], reverse=True)\n    # select n eigenvectors\n    if n:\n        eig_pairs = eig_pairs[:n]\n    # calculate new matrix\n    new_x = np.dot(x, eig_pairs[0][1].T)\n    return new_x\n\ndef PCA_plot(x, n=False):\n    \"\"\"\n    Principal component analysis function.\n\n    **Args:**\n\n    * `x` : input matrix (2d array), every row represents new sample\n\n    **Kwargs:**\n\n    * `n` : number of features returned (integer) - how many columns ",
+  "sampling_seed": 663105177,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

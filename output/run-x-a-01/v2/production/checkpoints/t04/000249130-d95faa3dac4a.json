@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fill(metrics_headers=()):\n    \"\"\"Add the metrics headers known to GAX.\n\n    Return an OrderedDict with all of the metrics headers provided to\n    this function, as well as the metrics known to GAX (such as its own\n    version, the GRPC version, etc.).\n    \"\"\"\n    return OrderedDict(metrics_headers)\n",
+  "agc_valid": true,
+  "body_sha256": "066da3f1e46fa89e99026b465db7ff15880a07659b9ee4e604d501c1ce85ae0b",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return OrderedDict(metrics_headers)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "c5f0504afdc121d16a83348a43bbc1372aed08df79519a74d0a73097bc13c6cc",
+  "human_valid": true,
+  "line_no": 249130,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d95faa3dac4a9b130845abfa1aa2e4733397f973229ad4a08733bd65d89c9d15",
+  "raw_output": "\n    return OrderedDict(metrics_headers)\n\n\ndef add_metrics_headers(client, metrics_headers=()):\n    \"\"\"Add the metrics headers known to GAX.\n\n    Args:\n        client (~.client.Client): The client to add the headers to.\n        metrics_headers (Mapping[str, str]): Additional headers to add to\n            the request.\n    \"\"\"\n    client._connection.API_REQUEST_HEADERS.update(metrics_headers)\n\n\ndef add_client_info(client, client_info=None):\n    \"\"\"Add the client information headers known to GAX.\n\n    Args:\n        client (~.client.Client): The client to add the headers to.\n        client_info (Mapping[str, str]): Additional headers to add to\n            the request.\n    \"\"\"\n    if client_info is None:\n        client_info = {}\n    client_info.update(\n        {\n            'gax_version': _GAX_VERSION,\n            'gapic_version': _GAPIC_VERSION,\n            'python_version': platform.python_version(),\n            'grpc_version': grpc.__version__,\n            'grpc_status_details_version': grpc_status_details.__version__,\n            'libc_version': platform.libc_ver(),\n            'os_type': platform.system(),\n            'os_version': platform.release(),\n            'platform_type': platform.machine(),\n            'cpu_type': platform.processor(),\n            'cpu_count': multiprocessing.cpu_count(),\n        }\n    )\n    client._connection.API_REQUEST_HEADERS.update(client_info)\n\n\ndef add_metadata(client, metadata=None):\n    \"\"\"Add the metadata headers known to GAX.\n\n    Args:\n        client (~.client.Client): The client to add the headers to.\n        metadata (Mapping[str, str]): Additional headers to add to\n            the request.\n    \"\"\"\n    if metadata is None:\n        metadata = {}\n    metadata.update(\n        {\n            'gax_version': _GAX_VERSION,",
+  "sampling_seed": 2267897793,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

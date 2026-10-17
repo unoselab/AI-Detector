@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_elem_index(self, data, starting=True):\n        \"\"\"Get from a docstring the next option.\n        In javadoc style it could be @param, @return, @type,...\n\n        :param data: string to parse\n        :param starting: does the key element must start the line (Default value = True)\n        :type starting: boolean\n        :returns: index of found element else -1\n        :rtype: integer\n\n        \"\"\"\n        if starting:\n            return data.find(self.key_elem)\n        else:\n            return data.find(self.key_elem,\n",
+  "agc_valid": false,
+  "body_sha256": "e1b6c1396ba3350971b7e41917bedc4cb3de88d28697ebee6ae58e0e9c326820",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if starting:\n            return data.find(self.key_elem)\n        else:\n            return data.find(self.key_elem,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "44a3ff26e5f2ffbf3ddb869f6176185732589c0b102e3180e70b9936e272c3c6",
+  "human_valid": true,
+  "line_no": 286542,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b12f5918ce8dea3a5b74bd7ea75e0b3a14da4ff1c2f59fbddc313369fc7b4a43",
+  "raw_output": "\n        if starting:\n            return data.find(self.key_elem)\n        else:\n            return data.find(self.key_elem, ",
+  "sampling_seed": 47449015,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

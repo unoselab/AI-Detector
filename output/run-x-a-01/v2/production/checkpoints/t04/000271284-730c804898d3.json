@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_if_exists(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Return a User with the given username iff the User exists.\"\"\"\n    if user is None:\n        try:\n            user = User.objects.get(username=details['username'])\n        except User.DoesNotExist:\n            pass\n    return user\n",
+  "agc_valid": true,
+  "body_sha256": "b076194e4fb524513a750612977b1475d0a21137e50ab7a3295c530dd586a790",
+  "body_tokens": 56,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if user is None:\n        try:\n            user = User.objects.get(username=details['username'])\n        except User.DoesNotExist:\n            pass\n    return user\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "9fd64f3ea962cdfb6b166cc2759385100c2f3c070a00d5e5dba18de64d4ab5b9",
+  "human_valid": true,
+  "line_no": 271284,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "730c804898d3aa312d4ac19143a8c187c5f54ab1549762324210110dbafa611a",
+  "raw_output": "\n    if user is None:\n        try:\n            user = User.objects.get(username=details['username'])\n        except User.DoesNotExist:\n            pass\n    return user\n\ndef create_user(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Create a User with the given username.\"\"\"\n    if user is None:\n        try:\n            user = User.objects.get(username=details['username'])\n        except User.DoesNotExist:\n            user = User.objects.create_user(\n                username=details['username'],\n                password=strategy.request_data().get('password', '')\n            )\n    return user\n\ndef get_or_create_user(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Return a User with the given username iff the User exists.\"\"\"\n    if user is None:\n        try:\n            user = User.objects.get(username=details['username'])\n        except User.DoesNotExist:\n            user = User.objects.create_user(\n                username=details['username'],\n                password=strategy.request_data().get('password', '')\n            )\n    return user\n\ndef get_or_create_social_user(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Return a User with the given username iff the User exists.\"\"\"\n    if user is None:\n        try:\n            user = User.objects.get(username=details['username'])\n        except User.DoesNotExist:\n            user = User.objects.create_user(\n                username=details['username'],\n                password=strategy.request_data().get('password', '')\n            )\n        user.social_auth.create(\n            provider=strategy.storage.user.get_provider(),\n            uid=strategy.storage.user.get_uid(),\n            extra_data=details\n        )\n    return user\n\ndef create_social_user(strategy, details, user=None, *args, **kwargs):\n    \"\"\"Create a User with the given username.\"\"\"\n    if user is None:\n        try:\n            user = User.objects.",
+  "sampling_seed": 3443531251,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

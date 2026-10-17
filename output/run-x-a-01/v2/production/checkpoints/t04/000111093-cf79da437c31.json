@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_context():\n  \"\"\"Determine the most specific context that we're in.\n\n  Returns:\n    _CONTEXT_COLAB: If in Colab with an IPython notebook context.\n    _CONTEXT_IPYTHON: If not in Colab, but we are in an IPython notebook\n      context (e.g., from running `jupyter notebook` at the command\n      line).\n    _CONTEXT_NONE: Otherwise (e.g., by running a Python script at the\n      command-line or using the `ipython` interactive shell).\n  \"\"\"\n  the IPython REPL).\n",
+  "agc_valid": false,
+  "body_sha256": "3efd286ec26d4106c63557b80418f7bf1e9ba47cb815b59ff92222c144880612",
+  "body_tokens": 5,
+  "bucket": "out_of_range",
+  "clean_output": "\n  the IPython REPL).\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "31cc90df77dabd57d257eb50429bac744aa293c40016a7ca91662af4e4d0e8b2",
+  "human_valid": true,
+  "line_no": 111093,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cf79da437c312009e6cb587fccb2ab8531c88e73523c3672fb96f437ee7d321b",
+  "raw_output": "the IPython REPL).\n ",
+  "sampling_seed": 437129080,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

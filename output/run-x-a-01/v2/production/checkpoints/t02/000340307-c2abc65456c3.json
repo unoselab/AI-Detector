@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _proxy(self):\n        \"\"\"\n        Generate an instance context for the instance, the context is capable of\n        performing various actions.  All instance actions are proxied to the context\n\n        :returns: FieldValueContext for this FieldValueInstance\n        :rtype: twilio.rest.autopilot.v1.assistant.field_type.field_value.FieldValueContext\n        \"\"\"\n            if self._context is None:\n                self._context = FieldValueContext(\n                    self._version,\n                    assistant_sid=self._solution['assistant_sid'],\n                    field_type_sid=self._solution['field_type_sid'],\n                    sid=self._solution['sid'],\n                )\n            return self._context\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "56f3610fb00b59d33819aa000b9424dded8713712377f3b381544f5238bb4654",
+  "body_tokens": 151,
+  "bucket": "type06_160",
+  "clean_output": "\n            if self._context is None:\n                self._context = FieldValueContext(\n                    self._version,\n                    assistant_sid=self._solution['assistant_sid'],\n                    field_type_sid=self._solution['field_type_sid'],\n                    sid=self._solution['sid'],\n                )\n            return self._context\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "4f6505ea1a7da020ba3f255dbee904cd8a493149105667f72a434fdbe62dff22",
+  "human_valid": true,
+  "line_no": 340307,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c2abc65456c3fd897492b62be8ae92ff6b70a2df60532cbc9574d454d380fc90",
+  "raw_output": "\n        if self._context is None:\n            self._context = FieldValueContext(\n                self._version,\n                assistant_sid=self._solution['assistant_sid'],\n                field_type_sid=self._solution['field_type_sid'],\n                sid=self._solution['sid'],\n            )\n        return self._context\n\n    @property\n    def",
+  "sampling_seed": 2083007687,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

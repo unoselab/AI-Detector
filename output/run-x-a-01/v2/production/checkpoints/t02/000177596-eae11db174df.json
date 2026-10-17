@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_selection(self):\n        \"\"\"Returns selected cells in grid as Selection object\"\"\"\n        return Selection(self.grid)\n",
+  "agc_valid": true,
+  "body_sha256": "fb0b1b0f889279005ca963f2d45475ba7133b21168414d93729fbc217bd0a434",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return Selection(self.grid)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "b5d95c7c62d8287dd285817a4273d8b46913baa039d7f2c815ce7b45065779dd",
+  "human_valid": true,
+  "line_no": 177596,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "eae11db174df5acc15cb72de0a1e1969c157465b7bdecad950fe39c3bdea9ed9",
+  "raw_output": "\n        return Selection(self.grid)\n\n    def",
+  "sampling_seed": 376624209,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

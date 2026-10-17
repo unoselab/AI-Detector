@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def has_previous_assessment_section(self, assessment_section_id):\n        \"\"\"Tests if there is a previous assessment section in the assessment following the given assessment section ``Id``.\n\n        arg:    assessment_section_id (osid.id.Id): ``Id`` of the\n                ``AssessmentSection``\n        return: (boolean) - ``true`` if there is a previous assessment\n                section, ``false`` otherwise\n        raise:  IllegalState - ``has_assessment_begun()`` is ``false``\n        raise:  NotFound - ``assessment_section_id`` is not found\n        raise:  NullArgument - ``assessment_section_id`` is ``null``\n        raise:  OperationFailed - unable to complete request\n        raise:  PermissionDenied - authorization failure occurred\n        *compliance: mandatory -- This method must be implemented.*\n\n        \"\"\"\n        false``\n                raise:\n",
+  "agc_valid": false,
+  "body_sha256": "6b56dd46b8f6c4fb3f87b79485518903666687381f6497214270947eb9106607",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n        false``\n                raise:\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1b76c90856f6723af77a2a1079d65d00357258fe2cf641c59c181e314dd02a93",
+  "human_valid": true,
+  "line_no": 48910,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "45af5764b957fbe0499900df06972a3d3c5379174da6ebf3e2c4d0d692f8a756",
+  "raw_output": "false``\n        raise: ",
+  "sampling_seed": 3421032414,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_fields(self):\n        \"\"\"\n        This returns a dictionary containing the top most fields,\n        ``dates``, ``fields`` and ``queries``.\n        \"\"\"\n        if not self.fields:\n            raise Exception(\n                \"Please call the method fields() before calling get_fields().\"\n            )\n        return self.fields\n",
+  "agc_valid": true,
+  "body_sha256": "c91ffdda50dc5a47aa2a3eede3c95d30e37bcb2bf93dc6d17bf6e482743fc2c9",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not self.fields:\n            raise Exception(\n                \"Please call the method fields() before calling get_fields().\"\n            )\n        return self.fields\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "d3ec4c913a18e06150cd711f159432f3ec5da079907961de9fa7f4b5a9aa7c73",
+  "human_valid": true,
+  "line_no": 285827,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "051e71451e31936435313644622708dfc8675c88b7020d8c77700dd1106fd320",
+  "raw_output": "\n        if not self.fields:\n            raise Exception(\n                \"Please call the method fields() before calling get_fields().\"\n            )\n        return self.fields\n\n    def",
+  "sampling_seed": 2539908428,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

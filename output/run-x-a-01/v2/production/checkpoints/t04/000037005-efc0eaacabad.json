@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def generate(cls, size, string, filetype=\"JPEG\"):\n        \"\"\"\n            Generates a squared avatar with random background color.\n            :param size: size of the avatar, in pixels\n            :param string: string to be used to print text and seed the random\n            :param filetype: the file format of the image (i.e. JPEG, PNG)\n        \"\"\"\n        # generate a random color for the background\n        bg_color = (\n            random.randint(0,\n",
+  "agc_valid": false,
+  "body_sha256": "9e93e8730d92fec5cfe4a46ea53df159c0be564690341216bb34b4e98d40d612",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # generate a random color for the background\n        bg_color = (\n            random.randint(0,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "c9a1b26d842f3a97664a0ad39de64cb756224598f1ce7d36f2fb553e2840b532",
+  "human_valid": true,
+  "line_no": 37005,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "efc0eaacabad54e8bc23ca61119c23382dde6b6b5c2825af48cfa5346bd93cdd",
+  "raw_output": "\n        # generate a random color for the background\n        bg_color = (\n            random.randint(0, ",
+  "sampling_seed": 3867475809,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

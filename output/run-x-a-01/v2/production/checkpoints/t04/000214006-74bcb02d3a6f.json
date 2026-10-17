@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _router_added(self, router_id, router):\n        \"\"\"Operations when a router is added.\n\n        Create a new RouterInfo object for this router and add it to the\n        service helpers router_info dictionary.  Then `router_added()` is\n        called on the device driver.\n\n        :param router_id: id of the router\n        :param router: router dict\n        :return: None\n        \"\"\"\n        ri = RouterInfo(self.agent_conf,\n                        router_id,\n                        router,\n                        self.driver,\n                        self.use_ipv6,\n                        self.agent_conf.use_namespaces,\n                        self.agent_conf.router_id)\n        self.router_info[router_id] = ri\n        self.driver.router_added(ri)\n",
+  "agc_valid": true,
+  "body_sha256": "814a434d3ad239f19e91f5095fcac50857002aa6330207338f60c01c630dabc2",
+  "body_tokens": 173,
+  "bucket": "type08_180",
+  "clean_output": "\n        ri = RouterInfo(self.agent_conf,\n                        router_id,\n                        router,\n                        self.driver,\n                        self.use_ipv6,\n                        self.agent_conf.use_namespaces,\n                        self.agent_conf.router_id)\n        self.router_info[router_id] = ri\n        self.driver.router_added(ri)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "593b2a86445ea2af7242f9b065729498e06181d935b2f6a0ebca9506058e7bb0",
+  "human_valid": true,
+  "line_no": 214006,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "74bcb02d3a6f8b4bec9705e79e7483063c3f670fb2d0113c4a031ac6a2cfdaaa",
+  "raw_output": "\n        ri = RouterInfo(self.agent_conf,\n                        router_id,\n                        router,\n                        self.driver,\n                        self.use_ipv6,\n                        self.agent_conf.use_namespaces,\n                        self.agent_conf.router_id)\n        self.router_info[router_id] = ri\n        self.driver.router_added(ri)\n\n    def",
+  "sampling_seed": 2542036049,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

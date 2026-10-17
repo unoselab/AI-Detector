@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _read_csv_with_offset_pandas_on_ray(\n    fname, num_splits, start, end, kwargs, header\n):  # pragma: no cover\n    \"\"\"Use a Ray task to read a chunk of a CSV into a Pandas DataFrame.\n\n    Note: Ray functions are not detected by codecov (thus pragma: no cover)\n\n    Args:\n        fname: The filename of the file to open.\n        num_splits: The number of splits (partitions) to separate the DataFrame into.\n        start: The start byte offset.\n        end: The end byte offset.\n        kwargs: The kwargs for the Pandas `read_csv` function.\n        header: The header of the file.\n\n    Returns:\n         A list containing the split Pandas DataFrames and the Index as the last\n            element. If there is not `index_col` set, then we just return the length.\n            This is used to determine the total length of the DataFrame to build a\n            default Index.\n    \"\"\"\n    .\n            start: The row number to start reading from.\n            end: The row number to stop reading from (exclusive).\n            kwargs: Keyword arguments to pass to pandas.read_csv.\n            header: Whether the CSV file has a header.\n\n        Returns:\n            A Pandas DataFrame.\n        \"\"\"\n        import pandas\n\n        if start ==\n",
+  "agc_valid": false,
+  "body_sha256": "0e7f375a9bedbf833a69fba0a866a28b80045a71def9fdabee7d5fe9f6fac1b7",
+  "body_tokens": 130,
+  "bucket": "type03_130",
+  "clean_output": "\n    .\n            start: The row number to start reading from.\n            end: The row number to stop reading from (exclusive).\n            kwargs: Keyword arguments to pass to pandas.read_csv.\n            header: Whether the CSV file has a header.\n\n        Returns:\n            A Pandas DataFrame.\n        \"\"\"\n        import pandas\n\n        if start ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 142,
+  "human_sha256": "b50f2694dbfd4cd45e050617ad236e1be6b66ee7fdf755c66f5425377a07c946",
+  "human_valid": true,
+  "line_no": 103672,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3bb9fd3da1ddd6eaf949cae0c6f5ba6fba938e4ec393ce6f60936cb3701a3144",
+  "raw_output": ".\n        start: The row number to start reading from.\n        end: The row number to stop reading from (exclusive).\n        kwargs: Keyword arguments to pass to pandas.read_csv.\n        header: Whether the CSV file has a header.\n\n    Returns:\n        A Pandas DataFrame.\n    \"\"\"\n    import pandas\n\n    if start == ",
+  "sampling_seed": 131486409,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

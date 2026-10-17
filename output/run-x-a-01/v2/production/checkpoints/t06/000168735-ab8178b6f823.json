@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_submodule_included(src, tgt):\n    \"\"\"Check that the tgt's submodule is included by src, if they belong\n    to the same module.\"\"\"\n    if not src.module == tgt.module:\n        return False\n    src_path = src.module.path\n    tgt_path = tgt.module.path\n    return any(tgt_path.startswith(p) for p in src_path)\n",
+  "agc_valid": true,
+  "body_sha256": "d1c9bce4f7a216857126fde65c8fd245cf96a800d905f9eff943b73eab1d8e49",
+  "body_tokens": 39,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not src.module == tgt.module:\n        return False\n    src_path = src.module.path\n    tgt_path = tgt.module.path\n    return any(tgt_path.startswith(p) for p in src_path)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "a08661236d0aa409040065d26329c2209b58642a57b9548df93aacd7f084a767",
+  "human_valid": true,
+  "line_no": 168735,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab8178b6f823294e30f684bbe4d2008864259e4a685b4fc5b0fbe324676545fb",
+  "raw_output": "\n    if not src.module == tgt.module:\n        return False\n    src_path = src.module.path\n    tgt_path = tgt.module.path\n    return any(tgt_path.startswith(p) for p in src_path)\n\n\ndef is_submodule_imported(src, tgt):\n    \"\"\"Check that the tgt's submodule is imported by src, if they belong\n    to the same module.\"\"\"\n    if not src.module == tgt.module:\n        return False\n    src_path = src.module.path\n    tgt_path = tgt.module.path\n    return any(tgt_path.startswith(p) for p in src_path)\n\n\ndef get_module_path_from_module(module):\n    \"\"\"Get the path of the given module.\"\"\"\n    if not module:\n        return None\n    return module.path\n\n\ndef get_module_path_from_node(node):\n    \"\"\"Get the path of the module containing the given node.\"\"\"\n    if not node:\n        return None\n    return get_module_path_from_module(node.module)\n\n\ndef get_module_path_from_id(id_):\n    \"\"\"Get the path of the module containing the given id.\"\"\"\n    if not id_:\n        return None\n    node = Node.get_node_from_id(id_)\n    return get_module_path_from_node(node)\n\n\ndef get_module_path_from_name(name):\n    \"\"\"Get the path of the module containing the given name.\"\"\"\n    if not name:\n        return None\n    node = Node.get_node_from_name(name)\n    return get_module_path_from_node(node)\n\n\ndef get_module_path_from_label(label):\n    \"\"\"Get the path of the module containing the given label.\"\"\"\n    if not label:\n        return None\n    node = Node.get_node_from_label(label)\n    return get_module_path_from_node(node)\n\n\ndef get_module_path_from_path(path):\n    \"\"\"Get the",
+  "sampling_seed": 2255942415,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

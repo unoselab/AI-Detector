@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def pop(self, key, default=UNSET):\n        \"\"\"Remove the first key-value pair with key *key*.\n\n        If a pair was removed, return its value. Otherwise if *default* was\n        provided, return *default*. Otherwise a ``KeyError`` is raised.\n        \"\"\"\n        if default is UNSET:\n            default = None\n        try:\n            self.popitem(last=False)\n        except KeyError:\n            if default is not UNSET:\n                return default\n            raise\n        return self[key]\n",
+  "agc_valid": true,
+  "body_sha256": "14e13c9af1ed97739554190c3848bb15d3d93e838773f575c053863f9fa70e09",
+  "body_tokens": 109,
+  "bucket": "type01_110",
+  "clean_output": "\n        if default is UNSET:\n            default = None\n        try:\n            self.popitem(last=False)\n        except KeyError:\n            if default is not UNSET:\n                return default\n            raise\n        return self[key]\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "16ccbd70adf651ee5167ee2febe428faa17e48fe7dc58e6ea40c4244d37c2d30",
+  "human_valid": true,
+  "line_no": 39384,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "17992f2c178f1cb913b6d6c4aed56b9f302fe24e1b2ea7f5e972ac182cb44237",
+  "raw_output": "\n        if default is UNSET:\n            default = None\n        try:\n            self.popitem(last=False)\n        except KeyError:\n            if default is not UNSET:\n                return default\n            raise\n        return self[key]\n\n    def",
+  "sampling_seed": 222339919,
+  "tag": "t06",
+  "temperature": 0.6
+}

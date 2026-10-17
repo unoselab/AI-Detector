@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _build_type(type_, value, property_path=None):\n    \"\"\" Builds the schema definition based on the given type for the given value.\n\n    :param type_: The type of the value\n    :param value: The value to build the schema definition for\n    :param List[str] property_path: The property path of the current type,\n        defaults to None, optional\n    :return: The built schema definition\n    :rtype: Dict[str, Any]\n    \"\"\"\n    if type_ == 'array':\n        return _build_array(value, property_path)\n    elif type_ == 'object':\n        return _build_object(value, property_path)\n    elif type_ == 'string':\n        return _build_string(value, property_path)\n    elif type_ == 'number':\n        return _build_number(value, property_path)\n    elif type_ == 'integer':\n        return _build_integer(value, property_path)\n    elif type_ == 'boolean':\n        return _build_boolean(value, property_path)\n    elif type_ == 'null':\n        return _build_null(value, property_path)\n    else:\n        raise ValueError('Unknown type: {}'.format(type_))\n",
+  "agc_valid": true,
+  "body_sha256": "5f0c248c61f5c8d085f976310b4d7c46be93240ca05f467f341f58ae726b8fd7",
+  "body_tokens": 135,
+  "bucket": "type04_140",
+  "clean_output": "\n    if type_ == 'array':\n        return _build_array(value, property_path)\n    elif type_ == 'object':\n        return _build_object(value, property_path)\n    elif type_ == 'string':\n        return _build_string(value, property_path)\n    elif type_ == 'number':\n        return _build_number(value, property_path)\n    elif type_ == 'integer':\n        return _build_integer(value, property_path)\n    elif type_ == 'boolean':\n        return _build_boolean(value, property_path)\n    elif type_ == 'null':\n        return _build_null(value, property_path)\n    else:\n        raise ValueError('Unknown type: {}'.format(type_))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "ee885dde0d7816a51cb643c11475f23df9ffd6ca938f6746412ed297798336a1",
+  "human_valid": true,
+  "line_no": 147917,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "07be23d800a73f1962f444570a6225ce6a205436b04100bfabb79ef9cc7c37d4",
+  "raw_output": "\n    if type_ == 'array':\n        return _build_array(value, property_path)\n    elif type_ == 'object':\n        return _build_object(value, property_path)\n    elif type_ == 'string':\n        return _build_string(value, property_path)\n    elif type_ == 'number':\n        return _build_number(value, property_path)\n    elif type_ == 'integer':\n        return _build_integer(value, property_path)\n    elif type_ == 'boolean':\n        return _build_boolean(value, property_path)\n    elif type_ == 'null':\n        return _build_null(value, property_path)\n    else:\n        raise ValueError('Unknown type: {}'.format(type_))\n\n\ndef _build_array(value, property_path=None):\n    \"\"\" Builds the schema definition for an array.\n\n    :param List value: The array to build the schema definition for\n    :param List[str] property_path: The property path of the current type,\n        defaults to None, optional\n    :return: The built schema definition\n    :rtype: Dict[str, Any]\n    \"\"\"\n    if not isinstance(value, list):\n        raise ValueError('Expected a list, got {}'.format(type(value)))\n\n    if not value:\n        raise ValueError('Expected a non-empty list')\n\n    if not isinstance(value[0], dict):\n        raise ValueError('Expected a list of dictionaries, got {}'.format(\n            type(value[0])))\n\n    if 'type' not in value[0]:\n        raise ValueError('Expected a list of dictionaries with a type key')\n\n    type_ = value[0]['type']\n    if type_ not in _TYPES:\n        raise ValueError('Unknown type: {}'.format(type_))\n\n    if property_path is None:\n        property_path = []\n\n    return {\n        'type': 'array',\n        'items': _build_type(type_, value[0], property_path + ['items'])\n    }\n\n\ndef _build_object(value, property_",
+  "sampling_seed": 4084653383,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def PCA(x, n=False):\n    \"\"\"\n    Principal component analysis function.\n\n    **Args:**\n\n    * `x` : input matrix (2d array), every row represents new sample\n\n    **Kwargs:**\n\n    * `n` : number of features returned (integer) - how many columns \n      should the output keep\n\n    **Returns:**\n\n    * `new_x` : matrix with reduced size (lower number of columns)\n    \"\"\"\n    if not n:\n        n = x.shape[1]\n    x = x - x.mean(axis=0)\n    u, s, vh = np.linalg.svd(x, full_matrices=False)\n    new_x = np.dot(u[:, :n], np.diag(s[:n]))\n    return new_x\n",
+  "agc_valid": true,
+  "body_sha256": "147227938f745e4815491d8b82e27fcacee59ea7e2e2fabfe2295ea1ff40e554",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not n:\n        n = x.shape[1]\n    x = x - x.mean(axis=0)\n    u, s, vh = np.linalg.svd(x, full_matrices=False)\n    new_x = np.dot(u[:, :n], np.diag(s[:n]))\n    return new_x\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "145c09751d15aab24f9e4d9a1016240532f125fdca3d5c8c8aec83404ea7206f",
+  "human_valid": true,
+  "line_no": 122873,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c397e77f6bfa42c8bece0e787469ce69f19fe80b2945ffdb0b8fdff8fcf75db1",
+  "raw_output": "\n    if not n:\n        n = x.shape[1]\n    x = x - x.mean(axis=0)\n    u, s, vh = np.linalg.svd(x, full_matrices=False)\n    new_x = np.dot(u[:, :n], np.diag(s[:n]))\n    return new_x\n\n\ndef PCA_transform(x, new_x, n=False):\n    \"\"\"\n    Transform x into new space.\n\n    **Args:**\n\n    * `x` : input matrix (2d array), every row represents new sample\n    * `new_x` : matrix with reduced size (lower number of columns)\n\n    **Kwargs:**\n\n    * `n` : number of features returned (integer) - how many columns ",
+  "sampling_seed": 3930443693,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

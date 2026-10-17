@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def opt_pore_diameter(elements, coordinates, bounds=None, com=None, **kwargs):\n    \"\"\"Return optimised pore diameter and it's COM.\"\"\"\n    if bounds is None:\n        bounds = [(0.01,\n",
+  "agc_valid": false,
+  "body_sha256": "8845768cbb5c5cf5fbc0e861fefc9c87744f00ac0844cf2f66e669e0662f3e2f",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if bounds is None:\n        bounds = [(0.01,\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "20b8360ccf6e6771bde28b5b4956b797b29d74d850a5c220d24dabda52c8a0be",
+  "human_valid": true,
+  "line_no": 265813,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2439b904745431a8dc38129588c452e824ca021bc196e514f369305875bc1496",
+  "raw_output": "\n    if bounds is None:\n        bounds = [(0.01, ",
+  "sampling_seed": 2209804802,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

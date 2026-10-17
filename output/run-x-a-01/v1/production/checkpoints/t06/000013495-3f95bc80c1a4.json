@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def getVariants(self, referenceName, startPosition, endPosition,\n                    callSetIds=[]):\n        \"\"\"\n        Returns an iterator over the specified variants. The parameters\n        correspond to the attributes of a GASearchVariantsRequest object.\n        \"\"\"\n        request = self.service.variants().search(\n            body={\n                'callSetIds': callSetIds,\n                'referenceName': referenceName,\n                'start': startPosition,\n                'end': endPosition\n            })\n        return request.execute()\n",
+  "agc_valid": true,
+  "body_sha256": "b1c48c1ec0f0843a02997b58e9ed0f301e454ace9e8181bcf75230f8220c71f8",
+  "body_tokens": 112,
+  "bucket": "type02_120",
+  "clean_output": "\n        request = self.service.variants().search(\n            body={\n                'callSetIds': callSetIds,\n                'referenceName': referenceName,\n                'start': startPosition,\n                'end': endPosition\n            })\n        return request.execute()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "8847601279304ad6088f4bc7246a2c24385002e73c7cb4e018eacd04ac475a75",
+  "human_valid": true,
+  "line_no": 13495,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3f95bc80c1a4ee5f3795e9d514011e46da9cad62495ebad1ca28fc0b00da1ecb",
+  "raw_output": "\n        request = self.service.variants().search(\n            body={\n                'callSetIds': callSetIds,\n                'referenceName': referenceName,\n                'start': startPosition,\n                'end': endPosition\n            })\n        return request.execute()\n\n    def",
+  "sampling_seed": 3221895640,
+  "tag": "t06",
+  "temperature": 0.6
+}

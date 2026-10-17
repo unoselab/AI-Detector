@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_timedelta(value, strict=True):\n    \"\"\"\n    converts duration string to timedelta\n\n    strict=True (by default) raises StrictnessError if either hours,\n    minutes or seconds in duration string exceed allowed values\n    \"\"\"\n    if not isinstance(value, str):\n        raise TypeError(\"duration must be a string\")\n    if not value:\n        raise ValueError(\"duration must not be empty\")\n    if value.startswith(\"-\"):\n        raise ValueError(\"duration must not be negative\")\n    if value.endswith(\"s\"):\n        value = value[:-1]\n    if \".\" in value:\n        value = value.split(\".\")[0]\n    try:\n        value = int(value)\n    except ValueError:\n        raise ValueError(\"duration must be an integer\")\n    if value <\n",
+  "agc_valid": false,
+  "body_sha256": "53b001b9628d17eb6111aae98e13db3440adcf9f59a59f5931c01f7e5fccf76d",
+  "body_tokens": 128,
+  "bucket": "type03_130",
+  "clean_output": "\n    if not isinstance(value, str):\n        raise TypeError(\"duration must be a string\")\n    if not value:\n        raise ValueError(\"duration must not be empty\")\n    if value.startswith(\"-\"):\n        raise ValueError(\"duration must not be negative\")\n    if value.endswith(\"s\"):\n        value = value[:-1]\n    if \".\" in value:\n        value = value.split(\".\")[0]\n    try:\n        value = int(value)\n    except ValueError:\n        raise ValueError(\"duration must be an integer\")\n    if value <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 158,
+  "human_sha256": "9eb56df5e5327d732f104e14980b791cfa10a22061316a0eba13e38c292682c1",
+  "human_valid": true,
+  "line_no": 35511,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "652a8f08e9970bfbcef56207a71d327b1093b895eba55c58c2c0212eb7d7f4bc",
+  "raw_output": "\n    if not isinstance(value, str):\n        raise TypeError(\"duration must be a string\")\n    if not value:\n        raise ValueError(\"duration must not be empty\")\n    if value.startswith(\"-\"):\n        raise ValueError(\"duration must not be negative\")\n    if value.endswith(\"s\"):\n        value = value[:-1]\n    if \".\" in value:\n        value = value.split(\".\")[0]\n    try:\n        value = int(value)\n    except ValueError:\n        raise ValueError(\"duration must be an integer\")\n    if value < ",
+  "sampling_seed": 2402053441,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

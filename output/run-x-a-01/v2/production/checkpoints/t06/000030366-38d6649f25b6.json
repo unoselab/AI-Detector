@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getDepth(pair, connection=None, info=None):\n    \"\"\"Retrieve the depth for the given pair.  Returns a tuple (asks, bids);\n    each of these is a list of (price, volume) tuples.\"\"\"\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'depth' in info:\n        return info['depth']\n    depth = connection.fetch_depth(pair)\n    info['depth'] = depth\n    return depth\n",
+  "agc_valid": true,
+  "body_sha256": "fc05d9b986476a9ba80451e7f43c42cb9ba208d3d7573a615727701b43e7d855",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'depth' in info:\n        return info['depth']\n    depth = connection.fetch_depth(pair)\n    info['depth'] = depth\n    return depth\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "6b4b6d016746edf7f8c932bbe9cb8e894b25f10d14b50471238ac1c1811a16af",
+  "human_valid": true,
+  "line_no": 30366,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "38d6649f25b6574ec7f2e5571c0cf35a030937bb0625ec18845b4d38fbe56f84",
+  "raw_output": "\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'depth' in info:\n        return info['depth']\n    depth = connection.fetch_depth(pair)\n    info['depth'] = depth\n    return depth\n\n\ndef getTicker(pair, connection=None, info=None):\n    \"\"\"Retrieve the ticker for the given pair.\"\"\"\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'ticker' in info:\n        return info['ticker']\n    ticker = connection.fetch_ticker(pair)\n    info['ticker'] = ticker\n    return ticker\n\n\ndef getOHLCV(pair, interval, connection=None, info=None):\n    \"\"\"Retrieve OHLCV data for the given pair.\"\"\"\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'ohlcv' in info:\n        return info['ohlcv']\n    ohlcv = connection.fetch_ohlcv(pair, interval)\n    info['ohlcv'] = ohlcv\n    return ohlcv\n\n\ndef getRecentTrades(pair, connection=None, info=None):\n    \"\"\"Retrieve recent trades for the given pair.\"\"\"\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'trades' in info:\n        return info['trades']\n    trades = connection.fetch_trades(pair)\n    info['trades'] = trades\n    return trades\n\n\ndef getRecentSpread(pair, connection=None, info=None):\n    \"\"\"Retrieve recent spread for the given pair.\"\"\"\n    if connection is None:\n        connection = get_connection()\n    if info is None:\n        info = {}\n    if 'spread' in info:\n        return info['spread']\n    spread = connection.fetch_spread(pair)\n    info['spread'] = spread\n    return spread\n\n\ndef getRecent",
+  "sampling_seed": 2963593331,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

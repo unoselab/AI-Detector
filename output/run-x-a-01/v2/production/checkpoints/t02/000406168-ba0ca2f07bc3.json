@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def image_create(comptparms, clrspc):\n    \"\"\"Creates a new image structure.\n\n    Wraps the openjp2 library function opj_image_create.\n\n    Parameters\n    ----------\n    cmptparms : comptparms_t\n        The component parameters.\n    clrspc : int\n        Specifies the color space.\n\n    Returns\n    -------\n    image : ImageType\n        Reference to ImageType instance.\n    \"\"\"\n    image = ImageType()\n    image.image = _openjp2.opj_image_create(comptparms, clrspc)\n    return image\n",
+  "agc_valid": true,
+  "body_sha256": "4cfeca73ad4fe3a32d9b10635666b930aa5c323e11ea1614fae10dadccdb9585",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n    image = ImageType()\n    image.image = _openjp2.opj_image_create(comptparms, clrspc)\n    return image\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "3c3e702a561335814b832c61e2fcc665d3384d9259644cb4e3f2d3c1213e8e99",
+  "human_valid": true,
+  "line_no": 406168,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ba0ca2f07bc36413db503861d1bfff36474adaeaf656cd73477ac21c11701dd9",
+  "raw_output": "\n    image = ImageType()\n    image.image = _openjp2.opj_image_create(comptparms, clrspc)\n    return image\n\n\ndef image_destroy(image):\n    \"\"\"Destroys an image structure.\n\n    Wraps the openjp2 library function opj_image_destroy.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    \"\"\"\n    _openjp2.opj_image_destroy(image.image)\n\n\ndef image_get_comptparms(image, compno):\n    \"\"\"Returns the component parameters of an image.\n\n    Wraps the openjp2 library function opj_image_get_comptparms.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    compno : int\n        The component number.\n\n    Returns\n    -------\n    comptparms : comptparms_t\n        The component parameters.\n    \"\"\"\n    comptparms = _openjp2.opj_image_get_comptparms(image.image, compno)\n    return comptparms\n\n\ndef image_get_comptparms_by_index(image, index):\n    \"\"\"Returns the component parameters of an image.\n\n    Wraps the openjp2 library function opj_image_get_comptparms_by_index.\n\n    Parameters\n    ----------\n    image : ImageType\n        Reference to ImageType instance.\n    index : int\n        The component number.\n\n    Returns\n    -------\n    comptparms : comptparms_t\n        The component parameters.\n    \"\"\"\n    comptparms = _openjp2.opj_image_get_comptparms_by_index(image.image, index)\n    return comptparms\n\n\ndef image_get_comptparms_by_name(image, name):\n    \"\"\"Returns the component parameters of an image.\n\n    Wraps the openjp2 library function opj_image_get_comptparms_by_name.\n\n    Parameters\n    ----------\n",
+  "sampling_seed": 3008612830,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_user_preferences_from_request(request):\n    \"\"\"Sets user subscription preferences using data from a request.\n\n    Expects data sent by form built with `sitemessage_prefs_table` template tag.\n\n    :param request:\n    :rtype: bool\n    :return: Flag, whether prefs were found in the request.\n    \"\"\"\n    # Try to get prefs from the request.\n    prefs_form = request.POST.get('user_preferences')\n    if not prefs_form:\n        return False\n\n    # Convert string into dict.\n    prefs_dict = json.loads(prefs_form)\n\n    # Set preferences.\n    for key, value in prefs_dict.items():\n        set_user_preference(key, value)\n\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "4ef1bc1f54ff08a72bc2a5e16834b43d98d6fffb3c14234338a902a8925b32ae",
+  "body_tokens": 75,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Try to get prefs from the request.\n    prefs_form = request.POST.get('user_preferences')\n    if not prefs_form:\n        return False\n\n    # Convert string into dict.\n    prefs_dict = json.loads(prefs_form)\n\n    # Set preferences.\n    for key, value in prefs_dict.items():\n        set_user_preference(key, value)\n\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 110,
+  "human_sha256": "1eda564b3bac0989d100f8c3bb4723902081d694e2233575323d02fded9e510a",
+  "human_valid": true,
+  "line_no": 256537,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "48c0c6855844325a5e9188d9bbba9e73a98cb892b3c57cdb6ef3a0cd65d85828",
+  "raw_output": "\n    # Try to get prefs from the request.\n    prefs_form = request.POST.get('user_preferences')\n    if not prefs_form:\n        return False\n\n    # Convert string into dict.\n    prefs_dict = json.loads(prefs_form)\n\n    # Set preferences.\n    for key, value in prefs_dict.items():\n        set_user_preference(key, value)\n\n    return True\n\n\ndef set_user_preference(key, value):\n    \"\"\"Sets user subscription preferences.\n\n    :param key: Preference key.\n    :type key: str\n    :param value: Preference value.\n    :type value: str\n    \"\"\"\n    user_preferences = UserPreferences.objects.get_or_create(user=get_current_user())\n    user_preferences[0].set_preference(key, value)\n\n\ndef get_user_preference(key):\n    \"\"\"Returns user subscription preferences.\n\n    :param key: Preference key.\n    :type key: str\n    :rtype: str\n    :return: Preference value.\n    \"\"\"\n    user_preferences = UserPreferences.objects.get_or_create(user=get_current_user())\n    return user_preferences[0].get_preference(key)\n\n\ndef get_user_preferences():\n    \"\"\"Returns user subscription preferences.\n\n    :rtype: dict\n    :return: Preferences.\n    \"\"\"\n    user_preferences = UserPreferences.objects.get_or_create(user=get_current_user())\n    return user_preferences[0].preferences\n\n\ndef get_user_preference_list(list_name):\n    \"\"\"Returns user subscription preferences.\n\n    :param list_name: List name.\n    :type list_name: str\n    :rtype: list\n    :return: Preferences.\n    \"\"\"\n    user_preferences = UserPreferences.objects.get_or_create(user=get_current_user())\n    return user_preferences[0].get_preference_list(list_name)\n\n\n",
+  "sampling_seed": 964919252,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

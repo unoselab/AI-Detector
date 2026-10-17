@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _rational(self, val):\n        \"\"\"Convert the given value to a rational, if necessary.\"\"\"\n        if isinstance(val, int):\n            return Rational(val)\n        elif isinstance(val, Rational):\n            return val\n        elif isinstance(val, float):\n            return Rational(val)\n        else:\n            raise TypeError(\"Cannot convert %s to a Rational.\" % val)\n",
+  "agc_valid": true,
+  "body_sha256": "632ad990e792440ecdac744de8cc82a72647f947f4b8b107df46bb3bbe16add2",
+  "body_tokens": 98,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(val, int):\n            return Rational(val)\n        elif isinstance(val, Rational):\n            return val\n        elif isinstance(val, float):\n            return Rational(val)\n        else:\n            raise TypeError(\"Cannot convert %s to a Rational.\" % val)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 199,
+  "human_sha256": "8069cd2258f2346037ff42d6edae5eb15d76db852ffed2dc3945e4242203e159",
+  "human_valid": true,
+  "line_no": 288636,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1a1f63072e4ed6df772fbd6957f465c5cc877cde8c9039e49f5b0f84dbedd36f",
+  "raw_output": "\n        if isinstance(val, int):\n            return Rational(val)\n        elif isinstance(val, Rational):\n            return val\n        elif isinstance(val, float):\n            return Rational(val)\n        else:\n            raise TypeError(\"Cannot convert %s to a Rational.\" % val)\n\n    def",
+  "sampling_seed": 2134967720,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

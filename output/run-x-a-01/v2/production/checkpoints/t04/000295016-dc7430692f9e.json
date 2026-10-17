@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def save(self, subject):\n        \"\"\"\n        Saves the subject's state to the subject's ``Session`` only\n        if session storage is enabled for the subject.  If session storage is\n        not enabled for the specific Subject, this method does nothing.\n\n        In either case, the argument Subject is returned directly (a new\n        ``Subject`` instance is not created).\n\n        :param subject: the Subject instance for which its state will be\n                        created or updated\n        :type subject:  subject_abcs.Subject\n\n        :returns: the same Subject passed in (a new Subject instance is\n                  not created).\n        \"\"\"\n        : the subject instance passed in as the argument\n                :rtype: subject_abcs.Subject\n                \"\"\"\n                if self._session_storage_enabled(subject):\n                    self._save_to_session(subject)\n                return subject\n",
+  "agc_valid": false,
+  "body_sha256": "df17e498a765cd07718a3c9a695f8ea801b04b0826cd57f51fe73a249c7b4d7b",
+  "body_tokens": 104,
+  "bucket": "type01_110",
+  "clean_output": "\n        : the subject instance passed in as the argument\n                :rtype: subject_abcs.Subject\n                \"\"\"\n                if self._session_storage_enabled(subject):\n                    self._save_to_session(subject)\n                return subject\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "d4d1f38d04428b96ff8615c51917f1832ef7f148d9fe684642bd88f14b4ede7c",
+  "human_valid": true,
+  "line_no": 295016,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dc7430692f9eebacda26fc849e1c4e50a8dadd8244f05122a55133454882e3b0",
+  "raw_output": ": the subject instance passed in as the argument\n        :rtype: subject_abcs.Subject\n        \"\"\"\n        if self._session_storage_enabled(subject):\n            self._save_to_session(subject)\n        return subject\n\n    def",
+  "sampling_seed": 725929502,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

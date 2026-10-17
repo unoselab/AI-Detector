@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def getExtensionList(self,extensions):\n        \"\"\"\n        This is an internal method that transforms the comma-separated extensions string\n        into a list of extensions, e.g., \"ext1,ext2,ext3\" gets turned into ['.ext1','.ext2','.ext3'].\n        If MapConstants.placeholderNoExtensionFilter is part of the string, the resulting list\n        will also contain '', i.e., files without extensions are permitted.\n        \"\"\"\n        extensionList = []\n        if extensions:\n            extensions = extensions.split(',')\n            for extension in extensions:\n                if extension == MapConstants.placeholderNoExtensionFilter:\n                    extensionList.append('')\n                else:\n                    extensionList.append('.'+extension)\n        return extensionList\n",
+  "agc_valid": true,
+  "body_sha256": "ad01c49ea526acf4ede1a02d8a49b47fd06142e9f2dd83cf95132939d398fe7a",
+  "body_tokens": 133,
+  "bucket": "type04_140",
+  "clean_output": "\n        extensionList = []\n        if extensions:\n            extensions = extensions.split(',')\n            for extension in extensions:\n                if extension == MapConstants.placeholderNoExtensionFilter:\n                    extensionList.append('')\n                else:\n                    extensionList.append('.'+extension)\n        return extensionList\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1a1f5a2db670b5b1a5aca6e387a7bff55eea856ea7a5deae6765211c0304df8f",
+  "human_valid": true,
+  "line_no": 37799,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "65dadadcd280329e0eb95acf7d0f36f2a608752e21163c23aecbac0cc7565c98",
+  "raw_output": "\n        extensionList = []\n        if extensions:\n            extensions = extensions.split(',')\n            for extension in extensions:\n                if extension == MapConstants.placeholderNoExtensionFilter:\n                    extensionList.append('')\n                else:\n                    extensionList.append('.'+extension)\n        return extensionList\n\n    def",
+  "sampling_seed": 330243278,
+  "tag": "t04",
+  "temperature": 0.4
+}

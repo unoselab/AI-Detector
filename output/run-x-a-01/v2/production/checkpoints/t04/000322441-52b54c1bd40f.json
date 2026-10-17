@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def parse_table_definition_file(file):\n    \"\"\"\n    Read an parse the XML of a table-definition file.\n    @return: an ElementTree object for the table definition\n    \"\"\"\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n",
+  "agc_valid": true,
+  "body_sha256": "f138b8fffad07ef267abd3c684d9e7844a7ed009ced69f7b4bd80ccac8d139f5",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 152,
+  "human_sha256": "6906ea0457f9600945b721235018963a893721ae7b279d8f8168082dc9f5bbbb",
+  "human_valid": true,
+  "line_no": 322441,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "52b54c1bd40fa7de71b7aea83ae1a9155f497f008f5b8aa981e9c1b2c5b4e78b",
+  "raw_output": "\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n\ndef parse_table_definition(root):\n    \"\"\"\n    Parse the XML of a table-definition file.\n    @param root: the root of the table definition XML tree\n    @return: a dictionary containing the parsed table definition\n    \"\"\"\n    # Parse the table definition\n    table_definition = {}\n    table_definition['name'] = root.attrib['name']\n    table_definition['description'] = root.attrib['description']\n    table_definition['fields'] = []\n    for field in root.findall('field'):\n        table_definition['fields'].append(field.attrib['name'])\n    return table_definition\n\ndef parse_table_data_file(file):\n    \"\"\"\n    Read an parse the XML of a table-data file.\n    @return: an ElementTree object for the table data\n    \"\"\"\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n\ndef parse_table_data(root):\n    \"\"\"\n    Parse the XML of a table-data file.\n    @param root: the root of the table data XML tree\n    @return: a dictionary containing the parsed table data\n    \"\"\"\n    # Parse the table data\n    table_data = {}\n    table_data['name'] = root.attrib['name']\n    table_data['description'] = root.attrib['description']\n    table_data['data'] = []\n    for row in root.findall('row'):\n        row_data = {}\n        row_data['id'] = row.attrib['id']\n        for field in row.findall('field'):\n            row_data[field.attrib['name']] = field.text\n        table_data['data'].append(row_data)\n    return table_data\n\ndef parse_table_data_file(file):\n    \"\"\"\n    Read an parse the XML of a table-data file.\n    @return: an ElementTree object for the table data\n    \"\"\"\n    tree = ET.parse(file)\n    root = tree.getroot()\n    return root\n\ndef parse_table",
+  "sampling_seed": 1378022333,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

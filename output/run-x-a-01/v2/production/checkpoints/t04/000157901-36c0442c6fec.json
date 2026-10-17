@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def link(self, text, as_html=True) -> str:\n        \"\"\"\n        Generate URL for using in text messages with HTML or MD parse mode\n\n        :param text: link label\n        :param as_html: generate as HTML\n        :return: str\n        \"\"\"\n        return self._generate_link(text, as_html)\n",
+  "agc_valid": true,
+  "body_sha256": "0521d869eac524c7221b5a9dd04cbff3ffe6a5dc88b2011dfdfc84722b6ebf8f",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._generate_link(text, as_html)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 114,
+  "human_sha256": "e412ff63d384b12dc13117c1dc0b43db763fdbc5644e0cf3a21fbeabfd8eb93c",
+  "human_valid": true,
+  "line_no": 157901,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36c0442c6fecac809d7766c8bfe0f86863eb1ab3be3fdc92f9c4dbd1c27581a9",
+  "raw_output": "\n        return self._generate_link(text, as_html)\n\n    def",
+  "sampling_seed": 3974386087,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

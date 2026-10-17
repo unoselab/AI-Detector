@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def predict(self, temp_type):\n        \"\"\"\n        Transpile the predict method.\n\n        Parameters\n        ----------\n        :param temp_type: string\n            The kind of export type (embedded, separated, exported).\n\n        Returns\n        -------\n        :return : string\n            The transpiled predict method as string.\n        \"\"\"\n        return \"\"\"\n",
+  "agc_valid": false,
+  "body_sha256": "357a4693edbbe21bf7024283d9926745f421b52e75170fe895de8741aa9ad836",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return \"\"\"\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "5676753c5afdc8a1338b862db52cf0974989c3353433ed87deac85fd8f77157f",
+  "human_valid": true,
+  "line_no": 152171,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e9578b2a065ba7042f072cac4c27db37088b953de4bdf6fefdccf31ca5e4b4bc",
+  "raw_output": "\n        return \"\"\"\n        def",
+  "sampling_seed": 144118740,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

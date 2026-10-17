@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def compute_qkv(query_antecedent,\n                memory_antecedent,\n                total_key_depth,\n                total_value_depth,\n                q_filter_width=1,\n                kv_filter_width=1,\n                q_padding=\"VALID\",\n                kv_padding=\"VALID\",\n                vars_3d_num_heads=0,\n                layer_collection=None):\n  \"\"\"Computes query, key and value.\n\n  Args:\n    query_antecedent: a Tensor with shape [batch, length_q, channels]\n    memory_antecedent: a Tensor with shape [batch, length_m, channels]\n    total_key_depth: an integer\n    total_value_depth: an integer\n    q_filter_width: An integer specifying how wide you want the query to be.\n    kv_filter_width: An integer specifying how wide you want the keys and values\n    to be.\n    q_padding: One of \"VALID\", \"SAME\" or \"LEFT\". Default is VALID: No padding.\n    kv_padding: One of \"VALID\", \"SAME\" or \"LEFT\". Default is VALID: No padding.\n    vars_3d_num_heads: an optional (if we want to use 3d variables)\n    layer_collection: A tensorflow_kfac.LayerCollection. Only used by the\n      KFAC optimizer. Default is None.\n\n  Returns:\n    q, k, v : [batch, length, depth] tensors\n  \"\"\"\n  length_q, channels]\n      memory_antecedent: a Tensor with shape [batch, length_m, channels]\n      total_key_depth: an integer\n      total_value_depth: an integer\n      q_filter_width: an integer specifying how wide you want the query to be.\n      kv_filter_width: an integer specifying how wide you want the keys and values\n        to be.\n      q_padding: one of \"VALID\" or \"SAME\".\n      kv_padding: one of \"VALID\" or \"SAME\".\n      vars_3d_num_heads: an integer specifying the number of heads if the q, k,\n        v variables are stored as\n",
+  "agc_valid": false,
+  "body_sha256": "d6ed19278de7a7461ad76dbea0e76cced704172daa23c4552cc99bfcd3f52648",
+  "body_tokens": 127,
+  "bucket": "type03_130",
+  "clean_output": "\n  length_q, channels]\n      memory_antecedent: a Tensor with shape [batch, length_m, channels]\n      total_key_depth: an integer\n      total_value_depth: an integer\n      q_filter_width: an integer specifying how wide you want the query to be.\n      kv_filter_width: an integer specifying how wide you want the keys and values\n        to be.\n      q_padding: one of \"VALID\" or \"SAME\".\n      kv_padding: one of \"VALID\" or \"SAME\".\n      vars_3d_num_heads: an integer specifying the number of heads if the q, k,\n        v variables are stored as\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 155,
+  "human_sha256": "b0a1ca0e6e2fa422906ae6d464a3c4700d7842eda122d62b232d6fcfa5b7fca9",
+  "human_valid": true,
+  "line_no": 95295,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cbae210bb5b2bf8521dfa1476afc2368d05453c37211459f99e24508dc5984cc",
+  "raw_output": "length_q, channels]\n    memory_antecedent: a Tensor with shape [batch, length_m, channels]\n    total_key_depth: an integer\n    total_value_depth: an integer\n    q_filter_width: an integer specifying how wide you want the query to be.\n    kv_filter_width: an integer specifying how wide you want the keys and values\n      to be.\n    q_padding: one of \"VALID\" or \"SAME\".\n    kv_padding: one of \"VALID\" or \"SAME\".\n    vars_3d_num_heads: an integer specifying the number of heads if the q, k,\n      v variables are stored as ",
+  "sampling_seed": 1654090498,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

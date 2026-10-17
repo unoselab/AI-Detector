@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _notify_delete(self, index_or_slice):\n        \"\"\"Notify about a deletion at an index_or_slice.\n\n        :return: a function that notifies about an add at the same place.\n        \"\"\"\n        if isinstance(index_or_slice, slice):\n            start, stop, step = index_or_slice.indices(len(self))\n            if step !=\n",
+  "agc_valid": false,
+  "body_sha256": "b912251f7ae401213b802565fe6fd54b22f065a3005de143e81dda268e580f02",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(index_or_slice, slice):\n            start, stop, step = index_or_slice.indices(len(self))\n            if step !=\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "a8475341a634a1b43e5056f23057e9eadeee8fb6b1bc2482ccab7f3df538e0d3",
+  "human_valid": true,
+  "line_no": 54525,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "94f7c2d355aeb3eda50360d55e5780c6ad82ab9894e7c15a35ab57e7ffb0a89f",
+  "raw_output": "\n        if isinstance(index_or_slice, slice):\n            start, stop, step = index_or_slice.indices(len(self))\n            if step != ",
+  "sampling_seed": 2797380588,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

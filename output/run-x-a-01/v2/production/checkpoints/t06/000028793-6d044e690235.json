@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_node(ctx, path):\n    \"\"\"\n    Create node for given relative path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Relative path relative to top directory.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n",
+  "agc_valid": true,
+  "body_sha256": "6022091c21ac13bcc47f27243572d21b8f74eb287ddd79f73d53f5f0e8e5d31e",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return Node(path, ctx.top)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "15c1bd9af3dd2a3cab17eeedc6b6d65a4f83ea20f78c117978e7a91df0e2ce15",
+  "human_valid": true,
+  "line_no": 28793,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6d044e690235d1124275f168eb69f275d920c6778de411b96d121ab90798c015",
+  "raw_output": "\n    return Node(path, ctx.top)\n\n\ndef create_node_from_path(ctx, path):\n    \"\"\"\n    Create node for given absolute path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Absolute path.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n\n\ndef create_node_from_file(ctx, path):\n    \"\"\"\n    Create node for given path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Path to file.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n\n\ndef create_node_from_dir(ctx, path):\n    \"\"\"\n    Create node for given path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Path to directory.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n\n\ndef create_node_from_source_file(ctx, path):\n    \"\"\"\n    Create node for given path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Path to file.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n\n\ndef create_node_from_source_dir(ctx, path):\n    \"\"\"\n    Create node for given path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Path to directory.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n\n\ndef create_node_from_target_file(ctx, path):\n    \"\"\"\n    Create node for given path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Path to file.\n\n    :return: Created Node.\n    \"\"\"\n    return Node(path, ctx.top)\n\n\ndef create_node_from_target_dir(ctx, path):\n    \"\"\"\n    Create node for given path.\n\n    :param ctx: BuildContext object.\n\n    :param path: Path to directory.\n\n    :return",
+  "sampling_seed": 3449441043,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

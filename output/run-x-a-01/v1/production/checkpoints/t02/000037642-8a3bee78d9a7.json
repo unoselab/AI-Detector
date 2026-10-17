@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def timestamp(self, value):\n        \"\"\"\n        The local time when the message was written.\n\n        Must follow the format 'Mmm DD HH:MM:SS'.  If\n        the day of the month is less than 10, then it\n        MUST be represented as a space and then the\n        number.\n\n        \"\"\"\n            self._timestamp = value\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "24aca73311c67c9931023fb8c5e9ccc93ded2e91c624dcd5f19c28a9f84446ea",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n            self._timestamp = value\n\n        @property\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "4ce3de5473fe5df2391e5ec3def564ba712436ff76fba41a4e2b8d69b3a06303",
+  "human_valid": true,
+  "line_no": 37642,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8a3bee78d9a7883e0decb759dcc817659ff810712a1c3fe0b540cf90c0d5dbae",
+  "raw_output": "\n        self._timestamp = value\n\n    @property\n    def",
+  "sampling_seed": 2512788512,
+  "tag": "t02",
+  "temperature": 0.2
+}

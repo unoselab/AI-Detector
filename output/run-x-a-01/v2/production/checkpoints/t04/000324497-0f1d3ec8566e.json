@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def probably_geojson(input):\n    \"\"\"A quick check to see if this input looks like GeoJSON. If not a dict\n    JSON-like object, attempt to parse input as JSON. If the resulting object\n    has a type property that looks like GeoJSON, return that object or None\"\"\"\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input:\n        if input['type'] in ('FeatureCollection', 'Feature', 'GeometryCollection'):\n            return input\n    return None\n",
+  "agc_valid": true,
+  "body_sha256": "0286901815e0f558221941909792b8508337261bf2f951c92077c824bbe36d2e",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input:\n        if input['type'] in ('FeatureCollection', 'Feature', 'GeometryCollection'):\n            return input\n    return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "e34c2029fff376b65f18dbfdd68047265db3651df46c5a6caefcdb099b21903f",
+  "human_valid": true,
+  "line_no": 324497,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0f1d3ec8566e2b0273ca61c3d19486fc756c35856d0600ec1cdc22916d60b467",
+  "raw_output": "\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input:\n        if input['type'] in ('FeatureCollection', 'Feature', 'GeometryCollection'):\n            return input\n    return None\n\n\ndef probably_geojson_feature(input):\n    \"\"\"A quick check to see if this input looks like a GeoJSON Feature. If not a\n    dict JSON-like object, attempt to parse input as JSON. If the resulting\n    object has a type property that looks like GeoJSON Feature, return that\n    object or None\"\"\"\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input:\n        if input['type'] == 'Feature':\n            return input\n    return None\n\n\ndef probably_geojson_feature_collection(input):\n    \"\"\"A quick check to see if this input looks like a GeoJSON Feature\n    Collection. If not a dict JSON-like object, attempt to parse input as JSON.\n    If the resulting object has a type property that looks like GeoJSON\n    Feature Collection, return that object or None\"\"\"\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input:\n        if input['type'] == 'FeatureCollection':\n            return input\n    return None\n\n\ndef probably_geojson_geometry(input):\n    \"\"\"A quick check to see if this input looks like a GeoJSON Geometry. If not a\n    dict JSON-like object, attempt to parse input as JSON. If the resulting\n    object has a type property that looks like GeoJSON Geometry, return that\n    object or None\"\"\"\n    if not isinstance(input, dict):\n        try:\n            input = json.loads(input)\n        except ValueError:\n            return None\n    if 'type' in input:\n        if input['type'] in ('Point', 'LineString', 'Polygon', 'MultiPoint',\n                             'Multi",
+  "sampling_seed": 2127513240,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

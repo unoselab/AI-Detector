@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_online_version ():\n    \"\"\"Download update info and parse it.\"\"\"\n    try:\n        import urllib.request as urllib\n    except ImportError:\n        import urllib2 as urllib\n\n    try:\n        url = 'https://raw.githubusercontent.com/pypa/pip/master/src/pip/_vendor/requests/__init__.py'\n        req = urllib.urlopen(url)\n        return req.read()\n    except urllib.HTTPError as e:\n        if e.code ==\n",
+  "agc_valid": false,
+  "body_sha256": "5c08c7b73d106a4ff698d75e605e64eac3160b179d63b68a5d7429ac2185cdf9",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        import urllib.request as urllib\n    except ImportError:\n        import urllib2 as urllib\n\n    try:\n        url = 'https://raw.githubusercontent.com/pypa/pip/master/src/pip/_vendor/requests/__init__.py'\n        req = urllib.urlopen(url)\n        return req.read()\n    except urllib.HTTPError as e:\n        if e.code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "a3c0d9ca0a6cff548c01d2c37dd8d54e5c4cb7d24c7ae1ef6841e7a769ed1054",
+  "human_valid": true,
+  "line_no": 180612,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e25de4c21adf5eab2b7db58759f24203b3700841b8619db42582a6a27284b18f",
+  "raw_output": "\n    try:\n        import urllib.request as urllib\n    except ImportError:\n        import urllib2 as urllib\n\n    try:\n        url = 'https://raw.githubusercontent.com/pypa/pip/master/src/pip/_vendor/requests/__init__.py'\n        req = urllib.urlopen(url)\n        return req.read()\n    except urllib.HTTPError as e:\n        if e.code == ",
+  "sampling_seed": 1462510010,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

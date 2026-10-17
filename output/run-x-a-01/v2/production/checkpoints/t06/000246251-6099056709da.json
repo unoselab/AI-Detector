@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _check_configs(self):\n        \"\"\"\n        Reloads the configuration files.\n        \"\"\"\n        self._configs = {}\n        for config in self._config_files:\n            self._configs[config] = self._load_config(config)\n",
+  "agc_valid": true,
+  "body_sha256": "a6ee492eccc839a59c5c71c5ae250d5f506e57889279bfac1641645cba98eaa6",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self._configs = {}\n        for config in self._config_files:\n            self._configs[config] = self._load_config(config)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "3e3ace89b8afa84bad605e7a1e8004675357837842866b44ebac50fedc546eb8",
+  "human_valid": true,
+  "line_no": 246251,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6099056709dae6e9143db8e63b52b6a2f857f8f1cebe635d3b79ce8994242dbe",
+  "raw_output": "\n        self._configs = {}\n        for config in self._config_files:\n            self._configs[config] = self._load_config(config)\n\n    def",
+  "sampling_seed": 766772709,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

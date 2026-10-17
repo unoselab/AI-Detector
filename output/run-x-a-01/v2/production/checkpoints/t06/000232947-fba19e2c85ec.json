@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def save(self, mode=0o600):\n        \"\"\"\n        Serialize the config data to the user home directory.\n\n        :param mode: The octal Unix mode (permissions) for the config file.\n        \"\"\"\n        # Check if the user home directory exists.\n        if not os.path.exists(os.path.expanduser('~')):\n            raise RuntimeError(\n                'The user home directory does not exist. Please set the '\n                'HOME environment variable to the correct value before '\n                'using this program.'\n            )\n\n        # If the configuration file already exists, delete it.\n        if os.path.exists(self.filename):\n            os.remove(self.filename)\n\n        # Create the directory if it doesn't exist.\n        dirname = os.path.dirname(self.filename)\n        if not os.path.exists(dirname):\n            os.makedirs(dirname)\n\n        # Save the configuration file.\n        with open(self.filename, 'w') as f:\n            self.write(f)\n        os.chmod(self.filename, mode)\n",
+  "agc_valid": true,
+  "body_sha256": "5f8f084f8534a2af967ebf79ee2f489bbeca7fd7514b9a58e95c72c9430055f6",
+  "body_tokens": 248,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Check if the user home directory exists.\n        if not os.path.exists(os.path.expanduser('~')):\n            raise RuntimeError(\n                'The user home directory does not exist. Please set the '\n                'HOME environment variable to the correct value before '\n                'using this program.'\n            )\n\n        # If the configuration file already exists, delete it.\n        if os.path.exists(self.filename):\n            os.remove(self.filename)\n\n        # Create the directory if it doesn't exist.\n        dirname = os.path.dirname(self.filename)\n        if not os.path.exists(dirname):\n            os.makedirs(dirname)\n\n        # Save the configuration file.\n        with open(self.filename, 'w') as f:\n            self.write(f)\n        os.chmod(self.filename, mode)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "fe125f2535cf8614d17449e6686952c2539cb1bfb3f34fdd8b4cfafa16e14f1a",
+  "human_valid": true,
+  "line_no": 232947,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fba19e2c85ec197e50535d15cdadc22a35ac4764b241b6b860cd5fb29435224d",
+  "raw_output": "\n        # Check if the user home directory exists.\n        if not os.path.exists(os.path.expanduser('~')):\n            raise RuntimeError(\n                'The user home directory does not exist. Please set the '\n                'HOME environment variable to the correct value before '\n                'using this program.'\n            )\n\n        # If the configuration file already exists, delete it.\n        if os.path.exists(self.filename):\n            os.remove(self.filename)\n\n        # Create the directory if it doesn't exist.\n        dirname = os.path.dirname(self.filename)\n        if not os.path.exists(dirname):\n            os.makedirs(dirname)\n\n        # Save the configuration file.\n        with open(self.filename, 'w') as f:\n            self.write(f)\n        os.chmod(self.filename, mode)\n\n    def",
+  "sampling_seed": 2796135078,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

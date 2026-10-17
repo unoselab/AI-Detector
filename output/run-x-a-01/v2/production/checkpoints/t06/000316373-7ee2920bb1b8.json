@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fullqualname_py3(obj):\n    \"\"\"Fully qualified name for objects in Python 3.\"\"\"\n    return obj.__module__ + '.' + obj.__qualname__\n",
+  "agc_valid": true,
+  "body_sha256": "fa038275db1970ce3a4ef32cb5205cdbe7b8e0453159b4d20c8b17a61ac3d273",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return obj.__module__ + '.' + obj.__qualname__\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "68aabcbd56098fb927b0add1cdcd13c66de44f2e023cdf341a47e959ebfb9b75",
+  "human_valid": true,
+  "line_no": 316373,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7ee2920bb1b8a903a0e4f42566a48f9287b1d0ac26ffa12790a9f126e23cfa14",
+  "raw_output": "\n    return obj.__module__ + '.' + obj.__qualname__\n\n\ndef fullqualname_py2(obj):\n    \"\"\"Fully qualified name for objects in Python ",
+  "sampling_seed": 2265929510,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

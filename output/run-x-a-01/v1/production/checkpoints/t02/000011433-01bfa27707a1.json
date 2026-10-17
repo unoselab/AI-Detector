@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def feed(self, aBuf, aCharLen):\n        \"\"\"feed a character with known length\"\"\"\n        if self.state == STATE_START:\n            if aBuf[0] ==\n",
+  "agc_valid": false,
+  "body_sha256": "78997094ec7dbef92bc6928aef15af886cf12893a3e90fb32e1e8822e7cad387",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.state == STATE_START:\n            if aBuf[0] ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "dfd1fb333bec91f7e888237389f2356197e584e53627391cc764ce7bd904ccd6",
+  "human_valid": true,
+  "line_no": 11433,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "01bfa27707a18ba746be9551b3de14edb13cc0775ed005f71d69add419397a0a",
+  "raw_output": "\n        if self.state == STATE_START:\n            if aBuf[0] == ",
+  "sampling_seed": 3039008756,
+  "tag": "t02",
+  "temperature": 0.2
+}

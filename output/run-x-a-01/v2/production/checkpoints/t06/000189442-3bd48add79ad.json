@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getShocks(self):\n        \"\"\"\n        Gets permanent and transitory income shocks for this period as well as preference shocks.\n\n        Parameters\n        ----------\n        None\n\n        Returns\n        -------\n        None\n        \"\"\"\n        ConsIndShockSetup.getShocks(self)\n\n        # Permanent income shock\n        if self.PermShkStd[0] ==\n",
+  "agc_valid": false,
+  "body_sha256": "27f1d81e937e3699d3cbf21c4895c481b5b1c1fe2a8fd7fd26af7196364a7ead",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n        ConsIndShockSetup.getShocks(self)\n\n        # Permanent income shock\n        if self.PermShkStd[0] ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 114,
+  "human_sha256": "2783d5abf4b3159dc534003bab9f6fcbb7b9fff6d0799a33780e4dda51e0c539",
+  "human_valid": true,
+  "line_no": 189442,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3bd48add79ada09644f690c8c7382cb96ef02854c34a7819a8092b3a59fd4b52",
+  "raw_output": "\n        ConsIndShockSetup.getShocks(self)\n\n        # Permanent income shock\n        if self.PermShkStd[0] == ",
+  "sampling_seed": 2501814336,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

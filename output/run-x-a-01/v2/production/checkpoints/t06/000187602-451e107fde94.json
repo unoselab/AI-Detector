@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def calculate_densities(self):\n        \"\"\"\n        Calculate the density of inter-contig links per base. Strong contigs\n        considered to have high level of inter-contig links in the current\n        partition.\n        \"\"\"\n        for contig_id in self.contigs:\n            contig = self.contigs[contig_id]\n            if contig.is_strong_contig:\n                self.strong_contig_densities[contig_id] =\n",
+  "agc_valid": false,
+  "body_sha256": "5ec1020f7c3a88e5d4bfbbb764eb30efe0e8308922f53d2f0edbaa533c20e8d3",
+  "body_tokens": 56,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for contig_id in self.contigs:\n            contig = self.contigs[contig_id]\n            if contig.is_strong_contig:\n                self.strong_contig_densities[contig_id] =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 176,
+  "human_sha256": "de6e318ddb4190b254d8b67ab2155d0e5e2649028a0887be7029002b632501f7",
+  "human_valid": true,
+  "line_no": 187602,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "451e107fde9469725510884e24a6c836f5ec29df330c398f4f24bf0a4e480b65",
+  "raw_output": "\n        for contig_id in self.contigs:\n            contig = self.contigs[contig_id]\n            if contig.is_strong_contig:\n                self.strong_contig_densities[contig_id] = ",
+  "sampling_seed": 1582556828,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def usergroup_list(**kwargs):\n    \"\"\"\n    Retrieve all enabled user groups.\n\n    .. versionadded:: 2016.3.0\n\n    :param _connection_user: Optional - zabbix user (can also be set in opts or pillar, see module's docstring)\n    :param _connection_password: Optional - zabbix password (can also be set in opts or pillar, see module's docstring)\n    :param _connection_url: Optional - url of zabbix frontend (can also be set in opts, pillar, see module's docstring)\n\n    :return: Array with enabled user groups details, False on failure.\n\n    CLI Example:\n    .. code-block:: bash\n\n        salt '*' zabbix.usergroup_list\n    \"\"\"\n    set in opts, pillar, see module's docstring)\n\n        :return: A dictionary of user group information\n        :rtype: dict\n        \"\"\"\n\n        usergroup_list = {}\n        ret = __salt__['zabbix.usergroup_list'](**kwargs)\n\n        for usergroup in ret:\n            if usergroup['status'] == '0':\n                continue\n            usergroup_list[usergroup['name']] = usergroup['usrgrpid']\n\n        return usergroup_list\n",
+  "agc_valid": false,
+  "body_sha256": "f56736d212ba12eedf73b68f4d1149df78c0e61e3550559a759a916b5725cf8c",
+  "body_tokens": 127,
+  "bucket": "type03_130",
+  "clean_output": "\n    set in opts, pillar, see module's docstring)\n\n        :return: A dictionary of user group information\n        :rtype: dict\n        \"\"\"\n\n        usergroup_list = {}\n        ret = __salt__['zabbix.usergroup_list'](**kwargs)\n\n        for usergroup in ret:\n            if usergroup['status'] == '0':\n                continue\n            usergroup_list[usergroup['name']] = usergroup['usrgrpid']\n\n        return usergroup_list\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "e1a1bc5f268307851e037ce4d4fdb970e48eb0adbceb0946fa7e1daa31f17a34",
+  "human_valid": true,
+  "line_no": 114910,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cce520583dca2c76741b7eed1864db5b6ebd30863b0f124f2cc65f54f9770a9a",
+  "raw_output": "set in opts, pillar, see module's docstring)\n\n    :return: A dictionary of user group information\n    :rtype: dict\n    \"\"\"\n\n    usergroup_list = {}\n    ret = __salt__['zabbix.usergroup_list'](**kwargs)\n\n    for usergroup in ret:\n        if usergroup['status'] == '0':\n            continue\n        usergroup_list[usergroup['name']] = usergroup['usrgrpid']\n\n    return usergroup_list\n\n\ndef usergroup_get(name, **kwargs):\n    \"\"\"\n    Retrieve information about user group.\n\n    .. versionadded:: ",
+  "sampling_seed": 87117835,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

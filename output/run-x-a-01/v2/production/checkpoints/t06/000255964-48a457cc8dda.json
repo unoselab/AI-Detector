@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_valid_consensus_hashes( self, block_id ):\n        \"\"\"\n        Get the list of valid consensus hashes for a given block.\n        \"\"\"\n        hashes = self.get_consensus_hashes( block_id )\n        valid_hashes = []\n        for hash in hashes:\n            valid = self.consensus_hash_is_valid( block_id, hash )\n            if valid:\n                valid_hashes.append( hash )\n        return valid_hashes\n",
+  "agc_valid": true,
+  "body_sha256": "371a3e4a928152e4cf3348050a4870a5a61c7b7123cf9faefad48ea6fab15fd9",
+  "body_tokens": 91,
+  "bucket": "out_of_range",
+  "clean_output": "\n        hashes = self.get_consensus_hashes( block_id )\n        valid_hashes = []\n        for hash in hashes:\n            valid = self.consensus_hash_is_valid( block_id, hash )\n            if valid:\n                valid_hashes.append( hash )\n        return valid_hashes\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "2eaef5838eeff319e8ea81837577be70e63d97bce8e2c72ce05c5db85ceb840b",
+  "human_valid": true,
+  "line_no": 255964,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "48a457cc8dda81768919e50ad8fb3999e754628b831da1a4544b7e4afcfea2f1",
+  "raw_output": "\n        hashes = self.get_consensus_hashes( block_id )\n        valid_hashes = []\n        for hash in hashes:\n            valid = self.consensus_hash_is_valid( block_id, hash )\n            if valid:\n                valid_hashes.append( hash )\n        return valid_hashes\n\n    def",
+  "sampling_seed": 3544768071,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update_subtask_positions_obj(self, positions_obj_id, revision, values):\n        \"\"\"\n        Updates the ordering of subtasks in the positions object with the given ID to the ordering in the given values.\n\n        See https://developer.wunderlist.com/documentation/endpoints/positions for more info\n\n        Return:\n        The updated SubtaskPositionsObj-mapped object defining the order of list layout\n        \"\"\"\n        return self._update_positions_obj(positions_obj_id, revision, values, 'subtasks')\n",
+  "agc_valid": true,
+  "body_sha256": "63ed6c83b010ac0ca50cfefed4c1fc0de14fad1aad37d32f277edfd3044f9752",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._update_positions_obj(positions_obj_id, revision, values, 'subtasks')\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a724c0041a249495f0449f957f3aa70dd788b1962cf11193944f958a6735beef",
+  "human_valid": true,
+  "line_no": 11824,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "897ca390d990b391c7d9b8f67e18e2a15e4725b4845ac1a2aba6946d4a1f8794",
+  "raw_output": "\n        return self._update_positions_obj(positions_obj_id, revision, values, 'subtasks')\n\n    def",
+  "sampling_seed": 54491593,
+  "tag": "t02",
+  "temperature": 0.2
+}

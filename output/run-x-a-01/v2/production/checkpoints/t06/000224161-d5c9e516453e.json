@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def delete_selected_tree(self, modeladmin, request, queryset):\n        \"\"\"\n        Deletes multiple instances and makes sure the MPTT fields get recalculated properly.\n        (Because merely doing a bulk delete doesn't trigger the post_delete hooks.)\n        \"\"\"\n                queryset.delete()\n                modeladmin.message_user(request, _('Selected trees have been deleted.'))\n\n            delete_selected_tree.short_description = _('Delete selected trees')\n\n\n        @admin.register(Comment)\n        class CommentAdmin(admin.ModelAdmin):\n            list_display = ('author', 'created', 'content_type', 'object_pk', 'content_object', 'parent')\n            list_filter = ('content_type', 'created')\n            search_fields = ('author__username', 'author__first_name', 'author__last_name', 'author__email', 'content_type', 'object_pk')\n            raw_id_fields = ('parent',)\n",
+  "agc_valid": false,
+  "body_sha256": "ee7e41dd652295dde415976d58c243e7e6a7cfdfc48e538ab5da5afceb20ceea",
+  "body_tokens": 138,
+  "bucket": "type04_140",
+  "clean_output": "\n                queryset.delete()\n                modeladmin.message_user(request, _('Selected trees have been deleted.'))\n\n            delete_selected_tree.short_description = _('Delete selected trees')\n\n\n        @admin.register(Comment)\n        class CommentAdmin(admin.ModelAdmin):\n            list_display = ('author', 'created', 'content_type', 'object_pk', 'content_object', 'parent')\n            list_filter = ('content_type', 'created')\n            search_fields = ('author__username', 'author__first_name', 'author__last_name', 'author__email', 'content_type', 'object_pk')\n            raw_id_fields = ('parent',)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 137,
+  "human_sha256": "69fcf5cd292c8e2a49cc06c379a2fef90db7b7e952d2fb6a21f696a84b021280",
+  "human_valid": true,
+  "line_no": 224161,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d5c9e516453e801762734701c75e7efd32c8679bb43c897285d1ba24bb18cfb8",
+  "raw_output": "\n        queryset.delete()\n        modeladmin.message_user(request, _('Selected trees have been deleted.'))\n\n    delete_selected_tree.short_description = _('Delete selected trees')\n\n\n@admin.register(Comment)\nclass CommentAdmin(admin.ModelAdmin):\n    list_display = ('author', 'created', 'content_type', 'object_pk', 'content_object', 'parent')\n    list_filter = ('content_type', 'created')\n    search_fields = ('author__username', 'author__first_name', 'author__last_name', 'author__email', 'content_type', 'object_pk')\n    raw_id_fields = ('parent',)\n\n    def",
+  "sampling_seed": 1660187947,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

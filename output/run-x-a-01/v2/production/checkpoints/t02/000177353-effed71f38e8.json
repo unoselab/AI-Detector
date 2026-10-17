@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def collides_axisaligned_rect(self, other):\n        \"\"\"Returns collision with axis aligned other rect\"\"\"\n        if self.x < other.x + other.width and self.x + self.width > other.x:\n            if self.y < other.y + other.height and self.y + self.height > other.y:\n                return True\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "c7a344234bf0e5d33f6533b9ac996c5964e36b5a2818f4a61a07018b70d34fce",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.x < other.x + other.width and self.x + self.width > other.x:\n            if self.y < other.y + other.height and self.y + self.height > other.y:\n                return True\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "8066c7412ecd998f756437faa0e8c9d667d390f4427bd7224ff5c1784ae0e976",
+  "human_valid": true,
+  "line_no": 177353,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "effed71f38e8fb35169348eefbe2d6e8083d6dfa1d95ddd2816f030a5cc8b14b",
+  "raw_output": "\n        if self.x < other.x + other.width and self.x + self.width > other.x:\n            if self.y < other.y + other.height and self.y + self.height > other.y:\n                return True\n        return False\n\n    def",
+  "sampling_seed": 2398872142,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

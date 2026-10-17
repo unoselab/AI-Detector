@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bar(\n    it,\n    label=\"\",\n    width=32,\n    hide=None,\n    empty_char=BAR_EMPTY_CHAR,\n    filled_char=BAR_FILLED_CHAR,\n    expected_size=None,\n    every=1,\n):\n    \"\"\"Progress iterator. Wrap your iterables with it.\"\"\"\n    if hide:\n        hide()\n    if expected_size is None:\n        expected_size = len(it)\n    if expected_size ==\n",
+  "agc_valid": false,
+  "body_sha256": "fc5b177a6851ef61f9552602dbdae6f01564f1362c86bac21ece36342d6f284f",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if hide:\n        hide()\n    if expected_size is None:\n        expected_size = len(it)\n    if expected_size ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "9bc66cc579ed6736c714567a19ddf780268694a9af3860ceebdb4d7dabee6f7d",
+  "human_valid": true,
+  "line_no": 99290,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "15f6a52261f13b56a71c75fc0b3049786209c27ddd7e4fa20cc0e0d6982cea70",
+  "raw_output": "\n    if hide:\n        hide()\n    if expected_size is None:\n        expected_size = len(it)\n    if expected_size == ",
+  "sampling_seed": 1235107537,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

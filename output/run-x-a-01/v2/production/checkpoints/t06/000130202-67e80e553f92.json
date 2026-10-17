@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def bandicoot_code_signature():\n    \"\"\"\n    Returns a unique hash of the Python source code in the current bandicoot\n    module, using the cryptographic hash function SHA-1.\n    \"\"\"\n    try:\n        import hashlib\n        import os\n        import sys\n\n        module_name = sys.modules[__name__].__name__\n        module_path = sys.modules[__name__].__file__\n        with open(module_path, 'r') as f:\n            code = f.read()\n        hash_object = hashlib.sha1(code.encode('utf-8'))\n        return hash_object.hexdigest()\n    except Exception:\n        return 'error'\n",
+  "agc_valid": true,
+  "body_sha256": "28c61193eb123c6dd1aa919d98650d51aa7842ba33a7636bea716c797d309afc",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n    try:\n        import hashlib\n        import os\n        import sys\n\n        module_name = sys.modules[__name__].__name__\n        module_path = sys.modules[__name__].__file__\n        with open(module_path, 'r') as f:\n            code = f.read()\n        hash_object = hashlib.sha1(code.encode('utf-8'))\n        return hash_object.hexdigest()\n    except Exception:\n        return 'error'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "6ca056eeb47dbf4332b0bc6cc2e0cae8764d7893424bd52b2495a5f0a390d3e3",
+  "human_valid": true,
+  "line_no": 130202,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "67e80e553f928c7a145e011fc2e782de2ea1b1e76d3b6d37ec36800984d781f3",
+  "raw_output": "\n    try:\n        import hashlib\n        import os\n        import sys\n\n        module_name = sys.modules[__name__].__name__\n        module_path = sys.modules[__name__].__file__\n        with open(module_path, 'r') as f:\n            code = f.read()\n        hash_object = hashlib.sha1(code.encode('utf-8'))\n        return hash_object.hexdigest()\n    except Exception:\n        return 'error'\n\n\ndef bandicoot_code_signature_in_database(conn):\n    \"\"\"\n    Returns the hash of the Python source code in the current bandicoot module\n    from the database.\n    \"\"\"\n    try:\n        cur = conn.cursor()\n        cur.execute('select bandicoot_code_signature from bandicoot_config')\n        row = cur.fetchone()\n        return row[0]\n    except Exception:\n        return 'error'\n\n\ndef bandicoot_code_signature_is_in_database(conn):\n    \"\"\"\n    Returns whether the hash of the Python source code in the current bandicoot\n    module is in the database.\n    \"\"\"\n    try:\n        cur = conn.cursor()\n        cur.execute('select bandicoot_code_signature from bandicoot_config')\n        row = cur.fetchone()\n        return row is not None\n    except Exception:\n        return False\n\n\ndef bandicoot_code_signature_is_in_module(conn):\n    \"\"\"\n    Returns whether the hash of the Python source code in the current bandicoot\n    module matches the value in the module.\n    \"\"\"\n    try:\n        module_signature = bandicoot_code_signature()\n        database_signature = bandicoot_code_signature_in_database(conn)\n        return module_signature == database_signature\n    except Exception:\n        return False\n\n\ndef bandicoot_code_signature_is_in_module_and_database(conn):\n    \"\"\"\n    Returns whether the hash of the Python source code in the current bandicoot\n    module matches the value in the database and in the module",
+  "sampling_seed": 1702762779,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

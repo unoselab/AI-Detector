@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_antithetic_variates(samples, axes=()):\n    \"\"\"\n    Generate antithetic variables.\n\n    Args:\n        samples (numpy.ndarray):\n            The samples, assumed to be on the [0, 1]^D hyper-cube, to be\n            reflected.\n        axes (tuple):\n            Boolean array of which axes to reflect. If This to limit the number\n            of points created in higher dimensions by reflecting all axes at\n            once.\n\n    Returns (numpy.ndarray):\n        Same as ``samples``, but with samples internally reflected. roughly\n        equivalent to ``numpy.vstack([samples, 1-samples])`` in one dimensions.\n    \"\"\"\n    samples``, but with antithetic variables.\n        \"\"\"\n        if len(samples.shape) ==\n",
+  "agc_valid": false,
+  "body_sha256": "d8d44c4a661fba4ff174f42c8093aaaf88637361eb25b7a2de72dddac2761ae2",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n    samples``, but with antithetic variables.\n        \"\"\"\n        if len(samples.shape) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 136,
+  "human_sha256": "7102a9945d44d5e829a0649ae49ca2e096ece91e41ac0fd526327b160f7ecd4a",
+  "human_valid": true,
+  "line_no": 197617,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ba45a78681a3eab148f13e7b2049b9a84a21ed0790d9e9559b3e52dcd51d7b1b",
+  "raw_output": "samples``, but with antithetic variables.\n    \"\"\"\n    if len(samples.shape) == ",
+  "sampling_seed": 2199824294,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

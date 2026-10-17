@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _spawn(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the (started)\n    Thread object.\n    \"\"\"\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    return thread\n",
+  "agc_valid": true,
+  "body_sha256": "c4aea183090d98014cd2dd929b224790bbf353f2f16ba9dde960fb10f16f1abe",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    return thread\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "0ba5eb7e0fbd1d6f3dde98c89a7d48d2a15cdb9b674fdc6eb599735e6d404f23",
+  "human_valid": true,
+  "line_no": 34272,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "90f701fb83ef3574e4ac421e0c02d0d19a8a03935431877d4a1914dab369d619",
+  "raw_output": "\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    return thread\n\n\ndef _spawn_and_join(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and returns the return\n    value of the thread.\n    \"\"\"\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    thread.join()\n    return thread.result\n\n\ndef _spawn_and_wait(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    finish.\n    \"\"\"\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    thread.join()\n\n\ndef _spawn_and_catch(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    finish.\n\n    If the thread throws an exception, this function will catch it and return\n    it.\n    \"\"\"\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    thread.join()\n\n    if thread.exception:\n        raise thread.exception\n\n\ndef _spawn_and_catch_error(func, *args, **kwargs):\n    \"\"\"\n    Calls `func(*args, **kwargs)` in a daemon thread, and waits for it to\n    finish.\n\n    If the thread throws an exception, this function will catch it and return\n    it.\n    \"\"\"\n    thread = threading.Thread(target=func, args=args, kwargs=kwargs)\n    thread.daemon = True\n    thread.start()\n    thread.join()\n\n    if thread.exception:\n        return thread.exception\n\n\ndef _spawn_and",
+  "sampling_seed": 1449501873,
+  "tag": "t06",
+  "temperature": 0.6
+}

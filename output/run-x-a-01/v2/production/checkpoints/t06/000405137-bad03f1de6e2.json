@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _noise(seq, c, size=33, total=1000):\n    \"\"\"Create mature sequences around start/end\"\"\"\n    noise = random.sample(seq, size)\n    noise.sort()\n    noise_start = noise[:len(seq)//2]\n    noise_end = noise[len(seq)//2:]\n    noise_start = ''.join(noise_start)\n    noise_end = ''.join(noise_end)\n    return c + noise_start + seq + noise_end\n",
+  "agc_valid": true,
+  "body_sha256": "6e9ec07e1d414f243aef35ba90fd181d17e04b014296ed9a368eec85b531e853",
+  "body_tokens": 47,
+  "bucket": "out_of_range",
+  "clean_output": "\n    noise = random.sample(seq, size)\n    noise.sort()\n    noise_start = noise[:len(seq)//2]\n    noise_end = noise[len(seq)//2:]\n    noise_start = ''.join(noise_start)\n    noise_end = ''.join(noise_end)\n    return c + noise_start + seq + noise_end\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "dec8e27569231af4170c4dc3b35bc12f9ba97efad415a175a36aaad4d28231c6",
+  "human_valid": true,
+  "line_no": 405137,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bad03f1de6e2b851818f4f968f5543d4870b6ff41d8a3f47604b4d0cdedf1b6b",
+  "raw_output": "\n    noise = random.sample(seq, size)\n    noise.sort()\n    noise_start = noise[:len(seq)//2]\n    noise_end = noise[len(seq)//2:]\n    noise_start = ''.join(noise_start)\n    noise_end = ''.join(noise_end)\n    return c + noise_start + seq + noise_end\n\n\ndef _mutate(seq, c, mutation_rate=0.001):\n    \"\"\"Mutate sequence\"\"\"\n    mutation_count = int(mutation_rate*len(seq))\n    for _ in range(mutation_count):\n        i = random.randint(0, len(seq)-1)\n        seq = seq[:i] + random.choice(list('ACGT')) + seq[i+1:]\n    return c + seq\n\n\ndef _insertion(seq, c, insert_rate=0.001, total=1000):\n    \"\"\"Insertion in sequence\"\"\"\n    insertion_count = int(insert_rate*len(seq))\n    for _ in range(insertion_count):\n        i = random.randint(0, len(seq))\n        seq = seq[:i] + random.choice(list('ACGT')) + seq[i:]\n    return c + seq\n\n\ndef _deletion(seq, c, deletion_rate=0.001, total=1000):\n    \"\"\"Deletion in sequence\"\"\"\n    deletion_count = int(deletion_rate*len(seq))\n    for _ in range(deletion_count):\n        i = random.randint(0, len(seq)-1)\n        seq = seq[:i] + seq[i+1:]\n    return c + seq\n\n\ndef _random_chromosome(chromosome_length, c, total=1000):\n    \"\"\"Random chromosome\"\"\"\n    chromosome = ''.join([random.choice(list('ACGT')) for _ in range(chromosome_length)])\n    return c + chromosome\n\n\ndef _random_genome(genome_length",
+  "sampling_seed": 669364920,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

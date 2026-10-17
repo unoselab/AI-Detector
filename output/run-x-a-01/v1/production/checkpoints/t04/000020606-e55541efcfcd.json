@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stats(self, start, end, fields=None):\n        \"\"\"Perform a multivariate statistic calculation of this\n:class:`ColumnTS` from a *start*  date/datetime to an\n*end* date/datetime.\n\n:param start: Start date for analysis.\n:param end: End date for analysis.\n:param fields: Optional subset of :meth:`fields` to perform analysis on.\n    If not provided all fields are included in the analysis.\n\"\"\"\n        if fields is None:\n            fields = self.fields\n\n        return self.ts.stats(start, end, fields)\n",
+  "agc_valid": true,
+  "body_sha256": "890293022b9a20cfe73a61c58dab432b805d4a4294e80d7c0a780ea69207a077",
+  "body_tokens": 45,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if fields is None:\n            fields = self.fields\n        \n        return self.ts.stats(start, end, fields)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "34eb4637b18f7a673ca6081997fa4705e4e47e218c01e73af9453887d5b64255",
+  "human_valid": true,
+  "line_no": 20606,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e55541efcfcde60bf2fd716f14cdb977b37153f5253579fbdfc49be88115f181",
+  "raw_output": "   \r\n        if fields is None:\r\n            fields = self.fields\r\n        \r\n        return self.ts.stats(start, end, fields)\r\n\r\n    def",
+  "sampling_seed": 1102583974,
+  "tag": "t04",
+  "temperature": 0.4
+}

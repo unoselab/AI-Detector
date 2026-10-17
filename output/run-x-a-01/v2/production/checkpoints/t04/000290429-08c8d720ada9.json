@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def itemComment(self, commentId):\n        \"\"\" returns details of a single comment \"\"\"\n        url = self.url + 'item/' + str(self.itemId) + '/comment/' + str(commentId)\n        return self.get(url)\n",
+  "agc_valid": true,
+  "body_sha256": "070bf211fb7444b5e5afb5a1d3597a2f9617178e11e910961711955d5aaeefcb",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n        url = self.url + 'item/' + str(self.itemId) + '/comment/' + str(commentId)\n        return self.get(url)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "d5811884d5aed268db51b8a3052f65c29088d885f74bde94a4f908cb3532ed08",
+  "human_valid": true,
+  "line_no": 290429,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "08c8d720ada9f503e6c45bd1e9f3c04f285122da5a8a5f1f3ef7860e39fa4936",
+  "raw_output": "\n        url = self.url + 'item/' + str(self.itemId) + '/comment/' + str(commentId)\n        return self.get(url)\n\n    def",
+  "sampling_seed": 2567818303,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

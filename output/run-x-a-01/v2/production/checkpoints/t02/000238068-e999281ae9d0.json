@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fail_unknown_dialect(compiler: \"SQLCompiler\", task: str) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"The {task} function is not implemented for the {compiler.dialect.name} dialect.\"\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "6264c96a2368e39cea2935dcfc7f5d28a6c47881e070592e4bf4ad4d83e4c0df",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n    raise NotImplementedError(\n        f\"The {task} function is not implemented for the {compiler.dialect.name} dialect.\"\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "324b40a7364cfc3b73e5c2d14ff7a8666a4215384c818356dc7aed6c76049ced",
+  "human_valid": true,
+  "line_no": 238068,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e999281ae9d045518cda342ba7ff0fd8d07e05c00ce75aae3ae9d117cf3896e1",
+  "raw_output": "\n    raise NotImplementedError(\n        f\"The {task} function is not implemented for the {compiler.dialect.name} dialect.\"\n    )\n\n\ndef fail_unknown_dialect_compiler(\n    compiler: \"SQLCompiler\", task: str, compiler_name: str\n) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"The {task} function is not implemented for the {compiler.dialect.name} dialect \"\n        f\"in the {compiler_name} compiler.\"\n    )\n\n\ndef fail_unknown_dialect_compiler_expr(\n    compiler: \"SQLCompiler\", task: str, compiler_name: str, expr: str\n) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"The {task} function is not implemented for the {compiler.dialect.name} dialect \"\n        f\"in the {compiler_name} compiler for the {expr} expression.\"\n    )\n\n\ndef fail_unknown_dialect_expr(\n    compiler: \"SQLCompiler\", task: str, expr: str\n) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise NotImplementedError(\n        f\"The {task} function is not implemented for the {compiler.dialect.name} dialect \"\n        f\"for the {expr} expression.\"\n    )\n\n\ndef fail_unknown_dialect_expr_compiler(\n    compiler: \"SQLCompiler\", task: str, expr: str, compiler_name: str\n) -> None:\n    \"\"\"\n    Raise :exc:`NotImplementedError` in relation to a dialect for which a\n    function hasn't been implemented (with a helpful error message).\n    \"\"\"\n    raise",
+  "sampling_seed": 287362172,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

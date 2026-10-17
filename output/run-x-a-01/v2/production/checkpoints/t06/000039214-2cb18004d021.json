@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_api_url(self):\n        \"\"\"gets a canonical path to the api detail url of the video on the hub\n\n        :return: the path to the api detail of the video\n        :rtype: str\n        \"\"\"\n        return f'{self.hub.api_url}/videos/{self.id}'\n",
+  "agc_valid": true,
+  "body_sha256": "df9a5fbdfd118f3c781e6bf5a2e6f50f50eb0bd527b2735f23c008879332e54b",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return f'{self.hub.api_url}/videos/{self.id}'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "44ef951da43e00dd48d790d356272e73985ffa2b95fbccc35909e0e98eafcf09",
+  "human_valid": true,
+  "line_no": 39214,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2cb18004d021e9378d51c5504837a0033dcc7e4eb847486694efae668b3e4f7f",
+  "raw_output": "\n        return f'{self.hub.api_url}/videos/{self.id}'\n\n    def",
+  "sampling_seed": 829312083,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

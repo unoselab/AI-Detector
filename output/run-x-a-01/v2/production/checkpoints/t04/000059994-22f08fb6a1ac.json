@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def get_number_of_rows(dbcon, tablename, uuid=None):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    try:\n        if uuid is None:\n            sql = \"SELECT COUNT(*) FROM {}\".format(tablename)\n        else:\n            sql = \"SELECT COUNT(*) FROM {} WHERE uuid='{}'\".format(tablename, uuid)\n        cur = dbcon.cursor()\n        cur.execute(sql)\n        rowcount = cur.fetchone()[0]\n        cur.close()\n        return rowcount\n    except Exception as e:\n        print(\"Error in get_number_of_rows: {}\".format(e))\n",
+  "agc_valid": true,
+  "body_sha256": "7c198a2c30156c3d8ca411f002168317b49af2f3251463dc78c5c0434c9b54d2",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n    try:\n        if uuid is None:\n            sql = \"SELECT COUNT(*) FROM {}\".format(tablename)\n        else:\n            sql = \"SELECT COUNT(*) FROM {} WHERE uuid='{}'\".format(tablename, uuid)\n        cur = dbcon.cursor()\n        cur.execute(sql)\n        rowcount = cur.fetchone()[0]\n        cur.close()\n        return rowcount\n    except Exception as e:\n        print(\"Error in get_number_of_rows: {}\".format(e))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 160,
+  "human_sha256": "d0b9521fa3c979d579973caf89c8135fbf9a80341b1b9655cf385f837f8ddc6b",
+  "human_valid": true,
+  "line_no": 59994,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "22f08fb6a1ac3a37227a3f2389e849e89a0ce9fa3a895648129d56b71fb739ed",
+  "raw_output": "\n    try:\n        if uuid is None:\n            sql = \"SELECT COUNT(*) FROM {}\".format(tablename)\n        else:\n            sql = \"SELECT COUNT(*) FROM {} WHERE uuid='{}'\".format(tablename, uuid)\n        cur = dbcon.cursor()\n        cur.execute(sql)\n        rowcount = cur.fetchone()[0]\n        cur.close()\n        return rowcount\n    except Exception as e:\n        print(\"Error in get_number_of_rows: {}\".format(e))\n\n\ndef get_number_of_rows_from_table(dbcon, tablename, where_clause):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    try:\n        sql = \"SELECT COUNT(*) FROM {} WHERE {}\".format(tablename, where_clause)\n        cur = dbcon.cursor()\n        cur.execute(sql)\n        rowcount = cur.fetchone()[0]\n        cur.close()\n        return rowcount\n    except Exception as e:\n        print(\"Error in get_number_of_rows: {}\".format(e))\n\n\ndef get_number_of_rows_from_table_with_uuid(dbcon, tablename, uuid):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tablename: table name\n    :return: Boolean\n    \"\"\"\n    try:\n        sql = \"SELECT COUNT(*) FROM {} WHERE uuid='{}'\".format(tablename, uuid)\n        cur = dbcon.cursor()\n        cur.execute(sql)\n        rowcount = cur.fetchone()[0]\n        cur.close()\n        return rowcount\n    except Exception as e:\n        print(\"Error in get_number_of_rows: {}\".format(e))\n\n\ndef get_uuid_from_table(dbcon, tablename, where_clause):\n    \"\"\"\n    Return the number of rows in a table\n    :param dbcon: database connection\n    :param tab",
+  "sampling_seed": 3397626062,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

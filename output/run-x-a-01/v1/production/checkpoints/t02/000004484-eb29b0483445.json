@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def inserir(self, nome):\n        \"\"\"Insere um novo grupo de equipamento e retorna o seu identificador.\n\n        :param nome: Nome do grupo de equipamento.\n\n        :return: Dicionário com a seguinte estrutura: {'grupo': {'id': < id >}}\n\n        :raise InvalidParameterError: Nome do grupo é nulo ou vazio.\n        :raise NomeGrupoEquipamentoDuplicadoError: Nome do grupo de equipmaneto duplicado.\n        :raise DataBaseError: Falha na networkapi ao acessar o banco de dados.\n        :raise XMLError: Falha na networkapi ao ler o XML de requisição ou gerar o XML de resposta.\n        \"\"\"\n        raise GrupoEquipamentoError: Falha ao pesquisar grupo de equipamento.\n                :raise GrupoEquipamentoError: Falha ao inserir grupo de equipamento.\n                \"\"\"\n                if not nome:\n                    raise InvalidParameterError(\n                        u'O nome do grupo de equipamento não pode ser nulo ou vazio.')\n\n                try:\n                    grupo = GrupoEquipamento(nome)\n                    grupo.save()\n                except Exception, e:\n                    raise GrupoEquipamentoError(\n                        u'Falha ao inserir grupo de equipamento.')\n\n                return {'grupo': {'id': grupo.id}}\n",
+  "agc_valid": false,
+  "body_sha256": "78ece1affb992f72b648463e2dcc884b128ee24cac98765fb784756473204c73",
+  "body_tokens": 274,
+  "bucket": "out_of_range",
+  "clean_output": "\n        raise GrupoEquipamentoError: Falha ao pesquisar grupo de equipamento.\n                :raise GrupoEquipamentoError: Falha ao inserir grupo de equipamento.\n                \"\"\"\n                if not nome:\n                    raise InvalidParameterError(\n                        u'O nome do grupo de equipamento não pode ser nulo ou vazio.')\n\n                try:\n                    grupo = GrupoEquipamento(nome)\n                    grupo.save()\n                except Exception, e:\n                    raise GrupoEquipamentoError(\n                        u'Falha ao inserir grupo de equipamento.')\n\n                return {'grupo': {'id': grupo.id}}\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "344471cc4d61c88d4c48add00c92d4c6b689ef9fd9ade60191841fae56da68c0",
+  "human_valid": true,
+  "line_no": 4484,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "eb29b0483445c3dc19715003e6382e65fd54dc61a6bc4c2b46cdd864fb794c3f",
+  "raw_output": "raise GrupoEquipamentoError: Falha ao pesquisar grupo de equipamento.\n        :raise GrupoEquipamentoError: Falha ao inserir grupo de equipamento.\n        \"\"\"\n        if not nome:\n            raise InvalidParameterError(\n                u'O nome do grupo de equipamento não pode ser nulo ou vazio.')\n\n        try:\n            grupo = GrupoEquipamento(nome)\n            grupo.save()\n        except Exception, e:\n            raise GrupoEquipamentoError(\n                u'Falha ao inserir grupo de equipamento.')\n\n        return {'grupo': {'id': grupo.id}}\n\n    def",
+  "sampling_seed": 2346134917,
+  "tag": "t02",
+  "temperature": 0.2
+}

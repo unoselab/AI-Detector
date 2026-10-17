@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def seriesshape(self):\n        \"\"\"Shape of the whole time series (time being the first dimension).\"\"\"\n            return self.shape[1:]\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "add48bb14bd7315304cdf5a083b047d24bed90818a8411d9e5e42ee94d783c6c",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self.shape[1:]\n\n        @property\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f7e05d84846f9ecf560053e21ce47a8b6bd61919a7e846b79db9adc9cee44607",
+  "human_valid": true,
+  "line_no": 19615,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0d1aa740dd1296be39badd66d98a5062e08aeafb7f7397cf547918c298fa43c4",
+  "raw_output": "\n        return self.shape[1:]\n\n    @property\n    def",
+  "sampling_seed": 1877248359,
+  "tag": "t02",
+  "temperature": 0.2
+}

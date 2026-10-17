@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def qteSetAppletSignature(self, appletSignatures: (str, tuple, list)):\n        \"\"\"\n        Specify the applet signatures with which this macro is compatible.\n\n        Qtmacs uses this information at run time to determine if this\n        macro is compatible with a particular applet, as specified by\n        the applet's signature. Note that this function overwrites\n        all previously set values.\n\n        |Args|\n\n        * ``*appletSignatures`` (**str, tuple, list**): applet signatures\n          as a string, or tuple/list of strings.\n\n        |Returns|\n\n        * **None**\n\n        |Raises|\n\n        * **QtmacsArgumentError** if at least one argument has an invalid type.\n        \"\"\"\n        strings or tuples of strings.\n\n                |Returns|\n\n                ``None``\n\n                |Raises|\n\n                ``None``\n\n                |Examples|\n\n                >>> from qtmacros import QtMacro\n                >>> class MyMacro(QtMacro):\n                ...     def\n",
+  "agc_valid": false,
+  "body_sha256": "7b3a9cd53c92dd04c0ab8c4e7da1ecfa779ff23220919f71bfed80928caccc9d",
+  "body_tokens": 152,
+  "bucket": "type06_160",
+  "clean_output": "\n        strings or tuples of strings.\n\n                |Returns|\n\n                ``None``\n\n                |Raises|\n\n                ``None``\n\n                |Examples|\n\n                >>> from qtmacros import QtMacro\n                >>> class MyMacro(QtMacro):\n                ...     def\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 167,
+  "human_sha256": "eae18e5a9b77db1b8f6ee455d0abeccf93c6f485080c76b98abbf91a18189594",
+  "human_valid": true,
+  "line_no": 73651,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "416491035a6ff0f5a73b9de870460b518777201e6fd998af9478d1e4002c8e86",
+  "raw_output": "strings or tuples of strings.\n\n        |Returns|\n\n        ``None``\n\n        |Raises|\n\n        ``None``\n\n        |Examples|\n\n        >>> from qtmacros import QtMacro\n        >>> class MyMacro(QtMacro):\n        ...     def",
+  "sampling_seed": 2404649809,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

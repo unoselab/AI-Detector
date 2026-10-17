@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_dn(self,dn):\n    \"\"\"\n    Use the domain column in the process table to store the DN\n\n    dn = dn to be added\n    \"\"\"\n    self.dn = dn\n",
+  "agc_valid": true,
+  "body_sha256": "d34a94323d642ff35f6fcb6096afec294bf72d023f94bf7ca2628552339f3d92",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    self.dn = dn\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f520910ec7de3e2deb9de88a01d54e1b76dff3197f24aee8ca8059c60573fab3",
+  "human_valid": true,
+  "line_no": 34554,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0194f769a457fbbaa13b92e58b95780733a1d3009033d8b177eb509b9854b31c",
+  "raw_output": "\n    self.dn = dn\n\n\ndef set_domain(self,domain):\n    \"\"\"\n    Use the domain column in the process table to store the domain\n\n    domain = domain to be added\n    \"\"\"\n    self.domain = domain\n\n\ndef set_name(self,name):\n    \"\"\"\n    Use the name column in the process table to store the name\n\n    name = name to be added\n    \"\"\"\n    self.name = name\n\n\ndef set_pid(self,pid):\n    \"\"\"\n    Use the pid column in the process table to store the pid\n\n    pid = pid to be added\n    \"\"\"\n    self.pid = pid\n\n\ndef set_ppid(self,ppid):\n    \"\"\"\n    Use the ppid column in the process table to store the ppid\n\n    ppid = ppid to be added\n    \"\"\"\n    self.ppid = ppid\n\n\ndef set_session_id(self,session_id):\n    \"\"\"\n    Use the session_id column in the process table to store the session_id\n\n    session_id = session_id to be added\n    \"\"\"\n    self.session_id = session_id\n\n\ndef set_start_time(self,start_time):\n    \"\"\"\n    Use the start_time column in the process table to store the start_time\n\n    start_time = start_time to be added\n    \"\"\"\n    self.start_time = start_time\n\n\ndef set_user(self,user):\n    \"\"\"\n    Use the user column in the process table to store the user\n\n    user = user to be added\n    \"\"\"\n    self.user = user\n\n\ndef set_username(self,username):\n    \"\"\"\n    Use the username column in the process table to store the username\n\n    username = username to be added\n    \"\"\"\n    self.username = username\n\n\ndef set_uuid(self,uuid):\n    \"\"\"\n    Use the uuid column in the process table to store the uuid\n\n    uuid = uuid to be added\n    \"\"\"\n    self.uuid = uuid\n\n\ndef set_x(self,x):\n    \"\"\"\n    Use the x column in the process table to store",
+  "sampling_seed": 1839987437,
+  "tag": "t04",
+  "temperature": 0.4
+}

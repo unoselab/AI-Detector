@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def articles(self):\n        \"\"\"\n        articles getter\n        \"\"\"\n            return self._articles\n\n        @articles.setter\n",
+  "agc_valid": false,
+  "body_sha256": "c539a3c4837a3aa37cc6395a5b66049ebfb67537cca5c5374aecf86b23c4ff62",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._articles\n\n        @articles.setter\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 153,
+  "human_sha256": "c2ebd6633a95b2304cc69d115571f484ce53f908ba2d0a0a6be7f8ba874c34a7",
+  "human_valid": true,
+  "line_no": 277398,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e70a2419da7fe0f1f85c99cd0484d9e199d755873dc2fde5c828b1013f5e9f98",
+  "raw_output": "\n        return self._articles\n\n    @articles.setter\n    def",
+  "sampling_seed": 626414046,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

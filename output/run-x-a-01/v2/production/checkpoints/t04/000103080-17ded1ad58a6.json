@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def selection_r(acquisition_function,\n                samples_y_aggregation,\n                x_bounds,\n                x_types,\n                regressor_gp,\n                num_starting_points=100,\n                minimize_constraints_fun=None):\n    \"\"\"\n    Selecte R value\n    \"\"\"\n    from scipy.stats import spearmanr\n\n    # Get the number of starting points\n    num_starting_points = min(num_starting_points, samples_y_aggregation.shape[0])\n\n    # Get the number of samples\n    num_samples = samples_y_aggregation.shape[0]\n\n    # Get the number of features\n    num_features = samples_y_aggregation.shape[1]\n\n    # Get the number of constraints\n    num_constraints =\n",
+  "agc_valid": false,
+  "body_sha256": "1f1778379b3dedee127b5d76136a2fbba300d8ef0e06add9239ec370b64c0fb0",
+  "body_tokens": 69,
+  "bucket": "out_of_range",
+  "clean_output": "\n    from scipy.stats import spearmanr\n\n    # Get the number of starting points\n    num_starting_points = min(num_starting_points, samples_y_aggregation.shape[0])\n\n    # Get the number of samples\n    num_samples = samples_y_aggregation.shape[0]\n\n    # Get the number of features\n    num_features = samples_y_aggregation.shape[1]\n\n    # Get the number of constraints\n    num_constraints =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 135,
+  "human_sha256": "b17ec95aa600974da44034f69c95c3ec934320168019654c06775a2516a5c0e1",
+  "human_valid": true,
+  "line_no": 103080,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "17ded1ad58a60487dec2d7e89b2a024361a10f5f7451f533429ecc1ed85b8ee4",
+  "raw_output": "\n    from scipy.stats import spearmanr\n\n    # Get the number of starting points\n    num_starting_points = min(num_starting_points, samples_y_aggregation.shape[0])\n\n    # Get the number of samples\n    num_samples = samples_y_aggregation.shape[0]\n\n    # Get the number of features\n    num_features = samples_y_aggregation.shape[1]\n\n    # Get the number of constraints\n    num_constraints = ",
+  "sampling_seed": 4195899800,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

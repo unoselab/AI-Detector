@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_files_from_dir(path, recursive=True, depth=0, file_ext='.py'):\n    \"\"\"Retrieve the list of files from a folder.\n\n    @param path: file or directory where to search files\n    @param recursive: if True will search also sub-directories\n    @param depth: if explore recursively, the depth of sub directories to follow\n    @param file_ext: the files extension to get. Default is '.py'\n    @return: the file list retrieved. if the input is a file then a one element list.\n\n    \"\"\"\n    is returned\n        \"\"\"\n        files = []\n        if os.path.isfile(path):\n            if path.endswith(file_ext):\n                files.append(path)\n        elif os.path.isdir(path):\n            for root, dirs, files_ in os.walk(path):\n                if not recursive and depth >\n",
+  "agc_valid": false,
+  "body_sha256": "27ccfda7782c9b6afe25557ac8cc337685c1d1d5e128825d22898c0ccfc135ef",
+  "body_tokens": 109,
+  "bucket": "type01_110",
+  "clean_output": "\n    is returned\n        \"\"\"\n        files = []\n        if os.path.isfile(path):\n            if path.endswith(file_ext):\n                files.append(path)\n        elif os.path.isdir(path):\n            for root, dirs, files_ in os.walk(path):\n                if not recursive and depth >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "c41a96215219522fd5b961de26e34efaef40e012ce9249da2f46394107dd9b20",
+  "human_valid": true,
+  "line_no": 286567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4e9f65c38c3ee9b1a21564444ebf396bbfd6b7d89af9a3508a94acef53019748",
+  "raw_output": "is returned\n    \"\"\"\n    files = []\n    if os.path.isfile(path):\n        if path.endswith(file_ext):\n            files.append(path)\n    elif os.path.isdir(path):\n        for root, dirs, files_ in os.walk(path):\n            if not recursive and depth > ",
+  "sampling_seed": 1055241913,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

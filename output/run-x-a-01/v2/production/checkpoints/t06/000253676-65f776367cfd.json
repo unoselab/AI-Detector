@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bp_to_aap (bp):\n    \"\"\"Converts a basepol into a tuple of (ant1, ant2, pol).\"\"\"\n    ant1 = int(bp[0:3])\n    ant2 = int(bp[3:6])\n    pol = bp[6:]\n    return (ant1, ant2, pol)\n",
+  "agc_valid": true,
+  "body_sha256": "3b75bce44529235be5ecab5c4b665cf0a2dae23d00ec361cc26b1131abfe67d9",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n    ant1 = int(bp[0:3])\n    ant2 = int(bp[3:6])\n    pol = bp[6:]\n    return (ant1, ant2, pol)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "752eca49c40480a7aab97bb3c5c5567d1b517cf09b376909f29166bab911981a",
+  "human_valid": true,
+  "line_no": 253676,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "65f776367cfd18fb37d56a682ad9019242df04f56a4753e055002f8c851de3eb",
+  "raw_output": "\n    ant1 = int(bp[0:3])\n    ant2 = int(bp[3:6])\n    pol = bp[6:]\n    return (ant1, ant2, pol)\n\ndef aap_to_bp (aap):\n    \"\"\"Converts a tuple of (ant1, ant2, pol) into a basepol.\"\"\"\n    ant1 = str(aap[0]).zfill(3)\n    ant2 = str(aap[1]).zfill(3)\n    pol = aap[2]\n    return ant1 + ant2 + pol\n\ndef get_pol_index (pol):\n    \"\"\"Returns the index of the polarization in the polarization array.\"\"\"\n    if pol == 'XX':\n        return ",
+  "sampling_seed": 1134139902,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

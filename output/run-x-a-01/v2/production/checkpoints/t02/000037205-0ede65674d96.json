@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def command(state, args):\n    \"\"\"Add an anime from an AniDB search.\"\"\"\n    if not args:\n        return \"Usage: !anime <search>\"\n\n    search = args.strip()\n    if not search:\n        return \"Usage: !anime <search>\"\n\n    anime = state.anidb.search(search)\n    if not anime:\n        return \"No anime found.\"\n\n    if len(anime) >\n",
+  "agc_valid": false,
+  "body_sha256": "9a44a284f81d79aa71a6c69d419bc8d6c10a2a52ab955a433b12dfbc60dd827c",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not args:\n        return \"Usage: !anime <search>\"\n\n    search = args.strip()\n    if not search:\n        return \"Usage: !anime <search>\"\n\n    anime = state.anidb.search(search)\n    if not anime:\n        return \"No anime found.\"\n\n    if len(anime) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "16bb63668a6c341c063352dcbe69f5f9588b087fcffaa1dcda8c9380cb7ae3c5",
+  "human_valid": true,
+  "line_no": 37205,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0ede65674d96cf38f9b40fb6afcd8f76052ce05039fe3b3827d75984b70b39f7",
+  "raw_output": "\n    if not args:\n        return \"Usage: !anime <search>\"\n\n    search = args.strip()\n    if not search:\n        return \"Usage: !anime <search>\"\n\n    anime = state.anidb.search(search)\n    if not anime:\n        return \"No anime found.\"\n\n    if len(anime) > ",
+  "sampling_seed": 4139490578,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def use_unsequestered_assessment_part_view(self):\n        \"\"\"Pass through to provider AssessmentPartLookupSession.use_unsequestered_assessment_part_view\"\"\"\n        # Implemented from kitosid template for -\n        # osid.resource.ResourceLookupSession.use_federated_bank_view_template\n        self._use_catalog_view()\n        self._provider_session.use_unsequestered_assessment_part_view()\n        self._catalog_view = True\n        for child_session in self._child_sessions.values():\n            child_session.use_unsequestered_assessment_part_view()\n",
+  "agc_valid": true,
+  "body_sha256": "97bbc03de5776b6fc3f0af893bcef5ce28560b0730f9ef52f3499cf462fa2b51",
+  "body_tokens": 73,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Implemented from kitosid template for -\n        # osid.resource.ResourceLookupSession.use_federated_bank_view_template\n        self._use_catalog_view()\n        self._provider_session.use_unsequestered_assessment_part_view()\n        self._catalog_view = True\n        for child_session in self._child_sessions.values():\n            child_session.use_unsequestered_assessment_part_view()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "f0163d0979b12a15a74a9e8d53aa95f3480383d8de3f7e36d2af88e84bed91d0",
+  "human_valid": true,
+  "line_no": 48311,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "47c829bfe0585a22443dd7a751719b62d1f670784b669b8117342598d3f35b16",
+  "raw_output": "\n        # Implemented from kitosid template for -\n        # osid.resource.ResourceLookupSession.use_federated_bank_view_template\n        self._use_catalog_view()\n        self._provider_session.use_unsequestered_assessment_part_view()\n        self._catalog_view = True\n        for child_session in self._child_sessions.values():\n            child_session.use_unsequestered_assessment_part_view()\n\n    def",
+  "sampling_seed": 2690452237,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

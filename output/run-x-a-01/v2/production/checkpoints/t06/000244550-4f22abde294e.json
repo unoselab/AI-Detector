@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def sentiment(\n    text       = None,\n    confidence = False\n    ):\n    \"\"\"\n    This function accepts a string text input. It calculates the sentiment of\n    the text, \"pos\" or \"neg\". By default, it returns this calculated sentiment.\n    If selected, it returns a tuple of the calculated sentiment and the\n    classificaton confidence.\n    \"\"\"\n    # Check to see if input text is a string, if not raise an error\n    if isinstance(text, str) == False:\n        raise TypeError('Text input must be a string.')\n\n    # Check to see if input text is empty, if so raise an error\n    if text == '':\n        raise ValueError('Text input must not be empty.')\n\n    # Create a list of words that will be used to calculate the sentiment\n    # of the input text\n    words = text.split()\n\n    # Create a dictionary of words and their values\n    word_values = {\n        'pos':\n",
+  "agc_valid": false,
+  "body_sha256": "b618e70f1a38bf3b20d9358be23bc37d83230282c3d0de81e9cb67b76baf91c7",
+  "body_tokens": 136,
+  "bucket": "type04_140",
+  "clean_output": "\n    # Check to see if input text is a string, if not raise an error\n    if isinstance(text, str) == False:\n        raise TypeError('Text input must be a string.')\n\n    # Check to see if input text is empty, if so raise an error\n    if text == '':\n        raise ValueError('Text input must not be empty.')\n\n    # Create a list of words that will be used to calculate the sentiment\n    # of the input text\n    words = text.split()\n\n    # Create a dictionary of words and their values\n    word_values = {\n        'pos':\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "3b34565bdacba9f7e264b4a1e9545cd648fe280f2fafc300ee90d4937be292af",
+  "human_valid": true,
+  "line_no": 244550,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4f22abde294effa797c04e6b0766098fbbd397e1636fec8d6a2167ce2401df8d",
+  "raw_output": "\n    # Check to see if input text is a string, if not raise an error\n    if isinstance(text, str) == False:\n        raise TypeError('Text input must be a string.')\n\n    # Check to see if input text is empty, if so raise an error\n    if text == '':\n        raise ValueError('Text input must not be empty.')\n\n    # Create a list of words that will be used to calculate the sentiment\n    # of the input text\n    words = text.split()\n\n    # Create a dictionary of words and their values\n    word_values = {\n        'pos': ",
+  "sampling_seed": 551384178,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

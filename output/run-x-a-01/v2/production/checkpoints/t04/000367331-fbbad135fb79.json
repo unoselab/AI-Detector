@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _set_parent(self, parent=None):\n        \"\"\"\n        Set parent.\n\n        :param parent: Parentable object.\n        :raises ValueError: Self-reference object passed.\n        :raises ValueError: Non-Parentable object passed.\n        \"\"\"\n        if parent is self:\n            raise ValueError(\"Can't set self as parent.\")\n        if not isinstance(parent, Parentable):\n            raise ValueError(\"Non-Parentable object passed.\")\n        self._parent = parent\n",
+  "agc_valid": true,
+  "body_sha256": "f5f0d28813acad1b878816ce97d2772dbb66626ec99639ed8248302d5dd1e783",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if parent is self:\n            raise ValueError(\"Can't set self as parent.\")\n        if not isinstance(parent, Parentable):\n            raise ValueError(\"Non-Parentable object passed.\")\n        self._parent = parent\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "04915af16910351f9ea0ffa9595c9f10415d67b7d9229fe8043481617849d1cc",
+  "human_valid": true,
+  "line_no": 367331,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fbbad135fb791c847a6907189aed90f3e20241b926149e61eeafc6ca108c47e9",
+  "raw_output": "\n        if parent is self:\n            raise ValueError(\"Can't set self as parent.\")\n        if not isinstance(parent, Parentable):\n            raise ValueError(\"Non-Parentable object passed.\")\n        self._parent = parent\n\n    def",
+  "sampling_seed": 769088351,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

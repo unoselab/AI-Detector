@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def getExtensionList(self,extensions):\n        \"\"\"\n        This is an internal method that transforms the comma-separated extensions string\n        into a list of extensions, e.g., \"ext1,ext2,ext3\" gets turned into ['.ext1','.ext2','.ext3'].\n        If MapConstants.placeholderNoExtensionFilter is part of the string, the resulting list\n        will also contain '', i.e., files without extensions are permitted.\n        \"\"\"\n        # remove any spaces\n        extensions = extensions.replace(' ','')\n        # create a list of extensions\n        extensionList = []\n        # if the string contains MapConstants.placeholderNoExtensionFilter, add an empty string\n        # to the list\n        if MapConstants.placeholderNoExtensionFilter in extensions:\n            extensionList.append('')\n        # otherwise, split the string by commas and add each part to the list\n        else:\n            extensionList += extensions.split(',')\n        # make sure each entry ends with a dot\n        for index in range(len(extensionList)):\n            if not extensionList[index].startswith('.'):\n                extensionList[index] = '.' + extensionList[index]\n        # return the list\n        return extensionList\n",
+  "agc_valid": true,
+  "body_sha256": "a25a98134bb883961d9d8b8ca9550be84ed047203a73fea585c1d025ddbf9b22",
+  "body_tokens": 221,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # remove any spaces\n        extensions = extensions.replace(' ','')\n        # create a list of extensions\n        extensionList = []\n        # if the string contains MapConstants.placeholderNoExtensionFilter, add an empty string\n        # to the list\n        if MapConstants.placeholderNoExtensionFilter in extensions:\n            extensionList.append('')\n        # otherwise, split the string by commas and add each part to the list\n        else:\n            extensionList += extensions.split(',')\n        # make sure each entry ends with a dot\n        for index in range(len(extensionList)):\n            if not extensionList[index].startswith('.'):\n                extensionList[index] = '.' + extensionList[index]\n        # return the list\n        return extensionList\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1a1f5a2db670b5b1a5aca6e387a7bff55eea856ea7a5deae6765211c0304df8f",
+  "human_valid": true,
+  "line_no": 37799,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "65dadadcd280329e0eb95acf7d0f36f2a608752e21163c23aecbac0cc7565c98",
+  "raw_output": "\n        # remove any spaces\n        extensions = extensions.replace(' ','')\n        # create a list of extensions\n        extensionList = []\n        # if the string contains MapConstants.placeholderNoExtensionFilter, add an empty string\n        # to the list\n        if MapConstants.placeholderNoExtensionFilter in extensions:\n            extensionList.append('')\n        # otherwise, split the string by commas and add each part to the list\n        else:\n            extensionList += extensions.split(',')\n        # make sure each entry ends with a dot\n        for index in range(len(extensionList)):\n            if not extensionList[index].startswith('.'):\n                extensionList[index] = '.' + extensionList[index]\n        # return the list\n        return extensionList\n\n    def",
+  "sampling_seed": 2939136341,
+  "tag": "t06",
+  "temperature": 0.6
+}

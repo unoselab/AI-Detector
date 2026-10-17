@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_params(path, *args, **dicts):\n    \"\"\"Write parameters to file, so that it's readable by read_params.\n\n    Uses INI file format.\n    \"\"\"\n    import configparser\n    params = configparser.ConfigParser()\n    for d in dicts:\n        params[d] = dicts[d]\n    for arg in args:\n        params['args'][arg] = True\n    with open(path, 'w') as f:\n        params.write(f)\n",
+  "agc_valid": true,
+  "body_sha256": "35b15c291b513361d9608e0b5cc24066fc2a8b5e3e4ed4b82bf81852fbc8dd77",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import configparser\n    params = configparser.ConfigParser()\n    for d in dicts:\n        params[d] = dicts[d]\n    for arg in args:\n        params['args'][arg] = True\n    with open(path, 'w') as f:\n        params.write(f)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "8d27e0382a901eafad135c0fb578097e6f82662b93e9c4ad25f2a2d90f7e0dec",
+  "human_valid": true,
+  "line_no": 328969,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1a18d1829cbaf57cdcd89da34548e547dff1436ebd8135fe8820a24a6fc28de1",
+  "raw_output": "\n    import configparser\n    params = configparser.ConfigParser()\n    for d in dicts:\n        params[d] = dicts[d]\n    for arg in args:\n        params['args'][arg] = True\n    with open(path, 'w') as f:\n        params.write(f)\n\n\ndef read_params(path):\n    \"\"\"Read parameters from file, written by write_params.\n\n    Uses INI file format.\n    \"\"\"\n    import configparser\n    params = configparser.ConfigParser()\n    params.read(path)\n    return params\n\n\ndef read_params_from_args(args):\n    \"\"\"Read parameters from command line arguments.\n\n    Uses INI file format.\n    \"\"\"\n    import configparser\n    params = configparser.ConfigParser()\n    params['args'] = dict(args)\n    return params\n\n\ndef write_params_to_args(params):\n    \"\"\"Write parameters to command line arguments.\n\n    Uses INI file format.\n    \"\"\"\n    args = {}\n    for section in params.sections():\n        if section == 'args':\n            continue\n        for key in params[section]:\n            args[key] = params[section][key]\n    return args\n\n\ndef read_params_from_env(prefix=''):\n    \"\"\"Read parameters from environment variables.\n\n    Uses INI file format.\n    \"\"\"\n    import configparser\n    params = configparser.ConfigParser()\n    for key in os.environ:\n        if key.startswith(prefix):\n            section = key[len(prefix):].lower().replace('_', '.')\n            if not section:\n                section = 'args'\n            if section not in params:\n                params[section] = {}\n            params[section][key[len(prefix):].lower().replace('_', '.')] = os.environ[key]\n    return params\n\n\ndef write_params_to_env(params, prefix=''):\n    \"\"\"Write parameters to environment variables.\n\n    Uses INI file format.\n    \"\"\"\n    for section in params.sections():\n        if section == 'args':\n            continue\n        for key in params[section",
+  "sampling_seed": 1931268380,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

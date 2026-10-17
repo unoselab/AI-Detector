@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def dict_diff(dicts):\n    \"\"\"\n    Subset dictionaries to keys which map to multiple values\n    \"\"\"\n    diff = {}\n    for key, values in dicts.items():\n        if len(values) >\n",
+  "agc_valid": false,
+  "body_sha256": "66d709fc868ea2d6bcc02f2e95ee6485ca5c6443426ec7537643528bc9889f1f",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n    diff = {}\n    for key, values in dicts.items():\n        if len(values) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 184,
+  "human_sha256": "1ce194473a8c8051560b4b7845cccd28d2bd0f44f6f145662246dc92488eef63",
+  "human_valid": true,
+  "line_no": 82198,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dca4ecd1bc5945426cd056e0419cbc9e96b4dde049c823c0c09af967edcae7f1",
+  "raw_output": "\n    diff = {}\n    for key, values in dicts.items():\n        if len(values) > ",
+  "sampling_seed": 3459058793,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

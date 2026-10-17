@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update(self, forecasts, observations):\n        \"\"\"\n        Update the statistics with forecasts and observations.\n\n        Args:\n            forecasts: The discrete Cumulative Distribution Functions of\n            observations:\n        \"\"\"\n        self.forecasts = forecasts\n        self.observations = observations\n        self.forecast_counts = np.bincount(forecasts, minlength=self.num_bins)\n        self.observation_counts = np.bincount(observations, minlength=self.num_bins)\n        self.forecast_probabilities = self.forecast_counts / np.sum(self.forecast_counts)\n        self.observation_probabilities = self.observation_counts / np.sum(self.observation_counts)\n        self.forecast_cumulative_probabilities = np.cumsum(self.forecast_probabilities)\n        self.observation_cumulative_probabilities = np.cumsum(self.observation_probabilities)\n",
+  "agc_valid": true,
+  "body_sha256": "5ad9d425235d6becd8588ec9d958abadc86e3452f8b6d771dce83797176e00c0",
+  "body_tokens": 87,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.forecasts = forecasts\n        self.observations = observations\n        self.forecast_counts = np.bincount(forecasts, minlength=self.num_bins)\n        self.observation_counts = np.bincount(observations, minlength=self.num_bins)\n        self.forecast_probabilities = self.forecast_counts / np.sum(self.forecast_counts)\n        self.observation_probabilities = self.observation_counts / np.sum(self.observation_counts)\n        self.forecast_cumulative_probabilities = np.cumsum(self.forecast_probabilities)\n        self.observation_cumulative_probabilities = np.cumsum(self.observation_probabilities)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "ec9153451d6d9d4ea92834ad7f36040809bd4a557d4363670ad990050428a30d",
+  "human_valid": true,
+  "line_no": 25873,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "447c358cfeb60670145f6f8b1f3e89c7038164834efa6cca22906b2fbdf657e6",
+  "raw_output": "\n        self.forecasts = forecasts\n        self.observations = observations\n        self.forecast_counts = np.bincount(forecasts, minlength=self.num_bins)\n        self.observation_counts = np.bincount(observations, minlength=self.num_bins)\n        self.forecast_probabilities = self.forecast_counts / np.sum(self.forecast_counts)\n        self.observation_probabilities = self.observation_counts / np.sum(self.observation_counts)\n        self.forecast_cumulative_probabilities = np.cumsum(self.forecast_probabilities)\n        self.observation_cumulative_probabilities = np.cumsum(self.observation_probabilities)\n\n    def",
+  "sampling_seed": 2455104959,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

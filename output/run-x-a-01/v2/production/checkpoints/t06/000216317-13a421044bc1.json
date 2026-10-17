@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def alreadyHasEntry(oldClassString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newClassString = og.getNewClassString(oldClassString)\n    return newClassString in og.newClasses\n",
+  "agc_valid": true,
+  "body_sha256": "fbf774e86d8745b594ad8ee30c00305c7460b5f58d3464694fd6ee07f4f23b5f",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n    newClassString = og.getNewClassString(oldClassString)\n    return newClassString in og.newClasses\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "5ed6c094526a38e1f93f1818d5d9cb324eee5f2fe7b33b84e0d95ab04091eee0",
+  "human_valid": true,
+  "line_no": 216317,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "13a421044bc16612e1598d252429b598db5b99d31b9ec0574c3b9006b9991862",
+  "raw_output": "\n    newClassString = og.getNewClassString(oldClassString)\n    return newClassString in og.newClasses\n\ndef alreadyHasSubClass(oldClassString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newClassString = og.getNewClassString(oldClassString)\n    return newClassString in og.newClasses\n\ndef alreadyHasEquivalentClass(oldClassString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newClassString = og.getNewClassString(oldClassString)\n    return newClassString in og.newClasses\n\ndef alreadyHasClass(oldClassString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newClassString = og.getNewClassString(oldClassString)\n    return newClassString in og.newClasses\n\ndef alreadyHasObjectProperty(oldPropertyString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newPropertyString = og.getNewPropertyString(oldPropertyString)\n    return newPropertyString in og.newProperties\n\ndef alreadyHasDataProperty(oldPropertyString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newPropertyString = og.getNewPropertyString(oldPropertyString)\n    return newPropertyString in og.newProperties\n\ndef alreadyHasAnnotationProperty(oldPropertyString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newPropertyString = og.getNewPropertyString(oldPropertyString)\n    return newPropertyString in og.newProperties\n\ndef alreadyHasDatatypeProperty(oldPropertyString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newPropertyString = og.getNewPropertyString(oldPropertyString)\n    return newPropertyString in og.newProperties\n\ndef alreadyHasIndividual(oldIndividualString, og):\n    \"\"\" Return true if there is already an owl:Class with the old id\"\"\"\n    newIndividualString = og.getNewIndividualString",
+  "sampling_seed": 3957569149,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

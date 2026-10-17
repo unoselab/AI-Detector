@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def list(self, label=None, per_page=20, page=1):\n        \"\"\" Get a list of identities that have been created\n\n            :param per_page: The number of results per page returned\n            :type per_page: int\n            :param page: The page number of the results\n            :type page: int\n            :return: dict of REST API output with headers attached\n            :rtype: :class:`~datasift.request.DictResponse`\n            :raises: :class:`~datasift.exceptions.DataSiftApiException`,\n                :class:`requests.exceptions.HTTPError`\n        \"\"\"\n        ApiException`,\n                        :class:`~datasift.exceptions.DataSiftApiError`\n                \"\"\"\n                params = {}\n                if label is not None:\n                    params['label'] = label\n                return self.get('/identities', params=params, per_page=per_page, page=page)\n",
+  "agc_valid": false,
+  "body_sha256": "9e0aea43c62267c451c67cf0dd7f6444e006117b499a316cc3f4983132367b13",
+  "body_tokens": 129,
+  "bucket": "type03_130",
+  "clean_output": "\n        ApiException`,\n                        :class:`~datasift.exceptions.DataSiftApiError`\n                \"\"\"\n                params = {}\n                if label is not None:\n                    params['label'] = label\n                return self.get('/identities', params=params, per_page=per_page, page=page)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "cb3b8354a1d3587c242d330ca0370e149bcfde3f24b9bca1a9eed2c439406fba",
+  "human_valid": true,
+  "line_no": 38141,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "48c455f15e09f9a7f7b4ef3bcf2ad6a751b16d9a239a1fe5d8addf2b8f97d815",
+  "raw_output": "ApiException`,\n                :class:`~datasift.exceptions.DataSiftApiError`\n        \"\"\"\n        params = {}\n        if label is not None:\n            params['label'] = label\n        return self.get('/identities', params=params, per_page=per_page, page=page)\n\n    def",
+  "sampling_seed": 35171936,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _format_lat(self, lat):\n        \"\"\" Format latitude to fit the image name \"\"\"\n        return lat.replace(\" \", \"_\")\n",
+  "agc_valid": true,
+  "body_sha256": "b4c4258c2b0544d1b738f8bcf0735c48683fb7924ecdb61b294e9b90715eacb5",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return lat.replace(\" \", \"_\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "abf9b86dab94437fbb7c7b7b8c0064dbdee00c95e36d9ad515b97fb0b4c4a7bf",
+  "human_valid": true,
+  "line_no": 53978,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0923e551419cee94e5ad3e63607ba6ae7c3b59a0393987ab76e5af2c24d4b70c",
+  "raw_output": "\n        return lat.replace(\" \", \"_\")\n\n    def",
+  "sampling_seed": 3490875305,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

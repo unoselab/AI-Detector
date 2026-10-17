@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_base_and_derived(based, derived):\n    \"\"\"returns True, if there is \"base and derived\" relationship between\n    classes, False otherwise\"\"\"\n    return issubclass(derived, based) and based != derived\n",
+  "agc_valid": true,
+  "body_sha256": "3c8f228e719ebbf9c4c57270dd3f576304b1d3852f294809daad0fdb204af77f",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return issubclass(derived, based) and based != derived\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "33446d59f6e2d0b019ec0a48caada57bed47b78b85f03ff704489577de55698a",
+  "human_valid": true,
+  "line_no": 274998,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6b1371d4d25cc41a7d02cbb66d6a90c3d42dd5bbbd4b0f21afee791b15103b4c",
+  "raw_output": "\n    return issubclass(derived, based) and based != derived\n\n\ndef is_derived(based, derived):\n    \"\"\"returns True, if there is \"derived\" relationship between\n    classes, False otherwise\"\"\"\n    return issubclass(derived, based) and based != derived\n\n\ndef is_base(based, derived):\n    \"\"\"returns True, if there is \"base\" relationship between\n    classes, False otherwise\"\"\"\n    return issubclass(derived, based) and based == derived\n\n\ndef is_base_and_derived_or_derived(based, derived):\n    \"\"\"returns True, if there is \"base and derived\" or \"derived\" relationship\n    between classes, False otherwise\"\"\"\n    return is_base_and_derived(based, derived) or is_derived(based, derived)\n\n\ndef is_base_or_derived(based, derived):\n    \"\"\"returns True, if there is \"base\" or \"derived\" relationship between\n    classes, False otherwise\"\"\"\n    return is_base(based, derived) or is_derived(based, derived)\n\n\ndef is_base_and_derived_or_base(based, derived):\n    \"\"\"returns True, if there is \"base and derived\" or \"base\" relationship\n    between classes, False otherwise\"\"\"\n    return is_base_and_derived(based, derived) or is_base(based, derived)\n\n\ndef is_derived_or_base(based, derived):\n    \"\"\"returns True, if there is \"derived\" or \"base\" relationship between\n    classes, False otherwise\"\"\"\n    return is_derived(based, derived) or is_base(based, derived)\n\n\ndef is_derived_or_base_or_base_and_derived(based, derived):\n    \"\"\"returns True, if there is \"derived\" or \"base\" or \"base and derived\"\n    relationship between classes, False otherwise\"\"\"\n    return is_derived(based, derived) or is_base(based, derived) or is_base_and_derived(based, derived)\n\n\ndef is_base_and_derived_or_derived_or",
+  "sampling_seed": 946338125,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

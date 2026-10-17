@@ -1,0 +1,243 @@
+{
+  "experiment": "run-x-a-01-v2",
+  "model_metadata": [
+    {
+      "cuda_visible_devices": "0",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    },
+    {
+      "cuda_visible_devices": "1",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    },
+    {
+      "cuda_visible_devices": "2",
+      "device": "NVIDIA RTX A6000",
+      "dtype": "torch.float16",
+      "eos_token_ids": [
+        2,
+        822,
+        29871
+      ],
+      "model": "codellama/CodeLlama-7b-hf",
+      "model_commit": "6c284d1468fe6c413cf56183e69b194dcfa27fe6",
+      "torch": "2.1.2"
+    }
+  ],
+  "n_required": 200,
+  "per_temperature": {
+    "t02": {
+      "acceptance_rate": 0.09,
+      "accepted": 18,
+      "accepted_by_source_stratum": {
+        "type01_110": 1,
+        "type02_120": 2,
+        "type03_130": 1,
+        "type04_140": 2,
+        "type06_160": 1,
+        "type07_170": 4,
+        "type08_180": 3,
+        "type09_190": 2,
+        "type10_200": 2
+      },
+      "bucket_valid": {
+        "type01_110": 4,
+        "type02_120": 3,
+        "type03_130": 0,
+        "type04_140": 3,
+        "type05_150": 1,
+        "type06_160": 3,
+        "type07_170": 2,
+        "type08_180": 0,
+        "type09_190": 2,
+        "type10_200": 0
+      },
+      "buckets_with_15": 0,
+      "buckets_with_any": 7,
+      "checkpoints": 200,
+      "expected": 200,
+      "output_lengths": {
+        "over_200": 31,
+        "type01_110": 7,
+        "type02_120": 4,
+        "type03_130": 3,
+        "type04_140": 5,
+        "type05_150": 2,
+        "type06_160": 3,
+        "type07_170": 5,
+        "type08_180": 2,
+        "type09_190": 2,
+        "type10_200": 1,
+        "under_100": 135
+      },
+      "ready_for_15_each": false,
+      "source_total": {
+        "type01_110": 20,
+        "type02_120": 20,
+        "type03_130": 20,
+        "type04_140": 20,
+        "type05_150": 20,
+        "type06_160": 20,
+        "type07_170": 20,
+        "type08_180": 20,
+        "type09_190": 20,
+        "type10_200": 20
+      },
+      "state_counts": {
+        "accepted": 18,
+        "invalid_agc": 77,
+        "over_200": 8,
+        "under_100": 97
+      }
+    },
+    "t04": {
+      "acceptance_rate": 0.08,
+      "accepted": 16,
+      "accepted_by_source_stratum": {
+        "type03_130": 2,
+        "type04_140": 2,
+        "type05_150": 1,
+        "type06_160": 1,
+        "type07_170": 3,
+        "type08_180": 3,
+        "type09_190": 2,
+        "type10_200": 2
+      },
+      "bucket_valid": {
+        "type01_110": 3,
+        "type02_120": 2,
+        "type03_130": 2,
+        "type04_140": 5,
+        "type05_150": 2,
+        "type06_160": 1,
+        "type07_170": 0,
+        "type08_180": 1,
+        "type09_190": 0,
+        "type10_200": 0
+      },
+      "buckets_with_15": 0,
+      "buckets_with_any": 7,
+      "checkpoints": 200,
+      "expected": 200,
+      "output_lengths": {
+        "over_200": 30,
+        "type01_110": 5,
+        "type02_120": 3,
+        "type03_130": 2,
+        "type04_140": 6,
+        "type05_150": 3,
+        "type06_160": 5,
+        "type07_170": 4,
+        "type08_180": 1,
+        "type09_190": 1,
+        "type10_200": 2,
+        "under_100": 138
+      },
+      "ready_for_15_each": false,
+      "source_total": {
+        "type01_110": 20,
+        "type02_120": 20,
+        "type03_130": 20,
+        "type04_140": 20,
+        "type05_150": 20,
+        "type06_160": 20,
+        "type07_170": 20,
+        "type08_180": 20,
+        "type09_190": 20,
+        "type10_200": 20
+      },
+      "state_counts": {
+        "accepted": 16,
+        "invalid_agc": 81,
+        "over_200": 8,
+        "under_100": 95
+      }
+    },
+    "t06": {
+      "acceptance_rate": 0.13,
+      "accepted": 26,
+      "accepted_by_source_stratum": {
+        "type01_110": 3,
+        "type02_120": 3,
+        "type03_130": 3,
+        "type04_140": 1,
+        "type05_150": 3,
+        "type06_160": 1,
+        "type07_170": 4,
+        "type08_180": 3,
+        "type09_190": 2,
+        "type10_200": 3
+      },
+      "bucket_valid": {
+        "type01_110": 7,
+        "type02_120": 5,
+        "type03_130": 2,
+        "type04_140": 0,
+        "type05_150": 2,
+        "type06_160": 3,
+        "type07_170": 2,
+        "type08_180": 2,
+        "type09_190": 0,
+        "type10_200": 3
+      },
+      "buckets_with_15": 0,
+      "buckets_with_any": 8,
+      "checkpoints": 200,
+      "expected": 200,
+      "output_lengths": {
+        "over_200": 31,
+        "type01_110": 10,
+        "type02_120": 6,
+        "type03_130": 2,
+        "type04_140": 2,
+        "type05_150": 3,
+        "type06_160": 4,
+        "type07_170": 5,
+        "type08_180": 3,
+        "type09_190": 1,
+        "type10_200": 3,
+        "under_100": 130
+      },
+      "ready_for_15_each": false,
+      "source_total": {
+        "type01_110": 20,
+        "type02_120": 20,
+        "type03_130": 20,
+        "type04_140": 20,
+        "type05_150": 20,
+        "type06_160": 20,
+        "type07_170": 20,
+        "type08_180": 20,
+        "type09_190": 20,
+        "type10_200": 20
+      },
+      "state_counts": {
+        "accepted": 26,
+        "invalid_agc": 83,
+        "over_200": 10,
+        "under_100": 81
+      }
+    }
+  },
+  "phase": "pilot",
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "recommend_full": true,
+  "status": "PASS_GENERATION_VERIFICATION"
+}

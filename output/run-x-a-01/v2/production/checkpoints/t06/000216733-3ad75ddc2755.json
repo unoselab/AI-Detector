@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def open(self):\n        \"\"\"\n        Open the HID device for reading and writing.\n        \"\"\"\n        if self._opened:\n            return\n        self._opened = True\n        if self._in_pipe is None:\n            self._in_pipe = usb.util.find_descriptor(\n                self._dev,\n                custom_match=lambda e: isinstance(e, usb.core.USBEndpoint)\n                and e.bEndpointAddress == self._endpoint_in\n                and e.bmAttributes ==\n",
+  "agc_valid": false,
+  "body_sha256": "53388065b49c38533b27e5898eb4e09902ab161ad8b8162fb7b2d8cc53b5f151",
+  "body_tokens": 129,
+  "bucket": "type03_130",
+  "clean_output": "\n        if self._opened:\n            return\n        self._opened = True\n        if self._in_pipe is None:\n            self._in_pipe = usb.util.find_descriptor(\n                self._dev,\n                custom_match=lambda e: isinstance(e, usb.core.USBEndpoint)\n                and e.bEndpointAddress == self._endpoint_in\n                and e.bmAttributes ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 110,
+  "human_sha256": "a8f846b03ce4b43931d0cc4c0e9a08ecdb9ae6273378dd40b77dd877bfda36f7",
+  "human_valid": true,
+  "line_no": 216733,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3ad75ddc27559de011656c04b974e7216fc5575546128905ac07f42d483babd1",
+  "raw_output": "\n        if self._opened:\n            return\n        self._opened = True\n        if self._in_pipe is None:\n            self._in_pipe = usb.util.find_descriptor(\n                self._dev,\n                custom_match=lambda e: isinstance(e, usb.core.USBEndpoint)\n                and e.bEndpointAddress == self._endpoint_in\n                and e.bmAttributes == ",
+  "sampling_seed": 3054062830,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

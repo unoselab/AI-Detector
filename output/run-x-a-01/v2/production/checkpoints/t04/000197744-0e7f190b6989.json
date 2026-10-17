@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _golbub_welsch(orders, coeff1, coeff2):\n    \"\"\"Recurrence coefficients to abscisas and weights.\"\"\"\n    # Golub-Welsch algorithm\n    # http://en.wikipedia.org/wiki/Golub%E2%80%93Welsch_algorithm\n    #\n    # Note that the Golub-Welsch algorithm is not stable for large orders\n    # (see http://www.netlib.org/cephes/qng.c).\n    #\n    # The algorithm is implemented in the QNG function of the Cephes library\n    # (http://www.netlib.org/cephes/)\n    #\n    # The implementation of the QNG function of the Cephes library is based on\n    # the following reference:\n    #\n    # [1] A. A. Dubrulle, \"Adaptive quadrature formulae\",\n    #     Computing, vol.\n",
+  "agc_valid": false,
+  "body_sha256": "b9da582750a098e676acb1e90c7edc02552cfae1c35b819b11b8d9d0c8b039da",
+  "body_tokens": 115,
+  "bucket": "type02_120",
+  "clean_output": "\n    # Golub-Welsch algorithm\n    # http://en.wikipedia.org/wiki/Golub%E2%80%93Welsch_algorithm\n    #\n    # Note that the Golub-Welsch algorithm is not stable for large orders\n    # (see http://www.netlib.org/cephes/qng.c).\n    #\n    # The algorithm is implemented in the QNG function of the Cephes library\n    # (http://www.netlib.org/cephes/)\n    #\n    # The implementation of the QNG function of the Cephes library is based on\n    # the following reference:\n    #\n    # [1] A. A. Dubrulle, \"Adaptive quadrature formulae\",\n    #     Computing, vol.\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "5f311afedfa619a9ba07a418e290a050ce0a3c9237d79a68c5e55d2ffc60001f",
+  "human_valid": true,
+  "line_no": 197744,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0e7f190b6989fc2d61b6273b574f1f60789081e2c7a0cf6bae0173ae958c98e3",
+  "raw_output": "\n    # Golub-Welsch algorithm\n    # http://en.wikipedia.org/wiki/Golub%E2%80%93Welsch_algorithm\n    #\n    # Note that the Golub-Welsch algorithm is not stable for large orders\n    # (see http://www.netlib.org/cephes/qng.c).\n    #\n    # The algorithm is implemented in the QNG function of the Cephes library\n    # (http://www.netlib.org/cephes/)\n    #\n    # The implementation of the QNG function of the Cephes library is based on\n    # the following reference:\n    #\n    # [1] A. A. Dubrulle, \"Adaptive quadrature formulae\",\n    #     Computing, vol. ",
+  "sampling_seed": 2263946139,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

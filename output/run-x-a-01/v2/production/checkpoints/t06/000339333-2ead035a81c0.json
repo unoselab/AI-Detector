@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create(self, ip_access_control_list_sid):\n        \"\"\"\n        Create a new IpAccessControlListMappingInstance\n\n        :param unicode ip_access_control_list_sid: The unique id of the IP access control list to map to the SIP domain\n\n        :returns: Newly created IpAccessControlListMappingInstance\n        :rtype: twilio.rest.api.v2010.account.sip.domain.ip_access_control_list_mapping.IpAccessControlListMappingInstance\n        \"\"\"\n        data = values.of({'IpAccessControlListSid': ip_access_control_list_sid, })\n\n        payload = self._version.create(method='POST', uri=self._uri, data=data, )\n\n        return IpAccessControlListMappingInstance(\n            self._version, payload, domain_sid=self._solution['domain_sid'], )\n",
+  "agc_valid": true,
+  "body_sha256": "b404d4ee9bdeb39ab2c861b9fd8a7fa0fbb43927dbb23c1f64ef3d4a6e5aef6e",
+  "body_tokens": 50,
+  "bucket": "out_of_range",
+  "clean_output": "\n        data = values.of({'IpAccessControlListSid': ip_access_control_list_sid, })\n\n        payload = self._version.create(method='POST', uri=self._uri, data=data, )\n\n        return IpAccessControlListMappingInstance(\n            self._version, payload, domain_sid=self._solution['domain_sid'], )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "b115ebe3ba41bea0fb1d1d966f6a6cddc8615be4540241028922e4ab9e1e707c",
+  "human_valid": true,
+  "line_no": 339333,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2ead035a81c0488d7776696b89f0cb499d3aa05e9a98835360b20657e68b74a7",
+  "raw_output": "\n        data = values.of({'IpAccessControlListSid': ip_access_control_list_sid, })\n\n        payload = self._version.create(method='POST', uri=self._uri, data=data, )\n\n        return IpAccessControlListMappingInstance(\n            self._version, payload, domain_sid=self._solution['domain_sid'], )\n\n    def",
+  "sampling_seed": 1233804590,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

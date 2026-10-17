@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def disconnect(self, abandon_session=False):\n        \"\"\" Disconnects from the Responsys soap service\n\n        Calls the service logout method and destroys the client's session information. Returns\n        True on success, False otherwise.\n        \"\"\"\n        if self.session_id:\n            try:\n                self.client.service.logout(self.session_id)\n                self.session_id = None\n                return True\n            except Exception as e:\n                self.log.error(e)\n                return False\n        else:\n            return False\n",
+  "agc_valid": true,
+  "body_sha256": "663bac8a61fc6757110380776e57f0fef2df1408e8f2a5e88bcc07436750bc1b",
+  "body_tokens": 142,
+  "bucket": "type05_150",
+  "clean_output": "\n        if self.session_id:\n            try:\n                self.client.service.logout(self.session_id)\n                self.session_id = None\n                return True\n            except Exception as e:\n                self.log.error(e)\n                return False\n        else:\n            return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "7cbdf41509e54bcf5dd0662a7c8c0aa502cd91d4df3289063502826174fec4e3",
+  "human_valid": true,
+  "line_no": 81567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "1bf4304170b4d810fc551409378c552ec9c7e7cbf0f9c23a04b8bd963ce2c34f",
+  "raw_output": "\n        if self.session_id:\n            try:\n                self.client.service.logout(self.session_id)\n                self.session_id = None\n                return True\n            except Exception as e:\n                self.log.error(e)\n                return False\n        else:\n            return False\n\n    def",
+  "sampling_seed": 531008694,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def output_tray_status(self) -> Dict[int, Dict[str, str]]:\n        \"\"\"Return the state of all output trays.\"\"\"\n        return self.get_tray_status(self.output_trays)\n",
+  "agc_valid": true,
+  "body_sha256": "63850c9c94aeca03c9b67b732fb0d4fe1e84a660a6f557180fedc60374b43f62",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_tray_status(self.output_trays)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "db43b938fa19d24024db49eba5849ee99e4f9108eae553c4ac673d208ef128d4",
+  "human_valid": true,
+  "line_no": 237418,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8e6f7478a462fa35d196039f57f5010d75480e72af3c4acb509d685217afd932",
+  "raw_output": "\r\n        return self.get_tray_status(self.output_trays)\r\n\r\n    def",
+  "sampling_seed": 2972913786,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

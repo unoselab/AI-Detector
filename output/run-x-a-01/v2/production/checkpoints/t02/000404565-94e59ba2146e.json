@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def eval_mus_dir(\n    dataset,\n    estimates_dir,\n    output_dir=None,\n    *args, **kwargs\n):\n    \"\"\"Run musdb.run for the purpose of evaluation of musdb estimate dir\n\n    Parameters\n    ----------\n    dataset : DB(object)\n        Musdb Database object.\n    estimates_dir : str\n        Path to estimates folder.\n    output_dir : str\n        Output folder where evaluation json files are stored.\n    *args\n        Variable length argument list for `musdb.run()`.\n    **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n    \"\"\"\n    **kwargs\n         Arbitrary keyword arguments for `musdb.run()`.\n\n     Returns\n     -------\n     musdb.Evaluation\n         Evaluation object.\n     \"\"\"\n     if output_dir is None:\n         output_dir = estimates_dir\n     return dataset.run(\n         estimates_dir=estimates_dir,\n         output_dir=output_dir,\n         *args, **kwargs\n     )\n",
+  "agc_valid": false,
+  "body_sha256": "258b24512f7aeef2c2ceb77e8e73a4ab197011e7d4c9d54841b776764cd0813d",
+  "body_tokens": 106,
+  "bucket": "type01_110",
+  "clean_output": "\n    **kwargs\n         Arbitrary keyword arguments for `musdb.run()`.\n\n     Returns\n     -------\n     musdb.Evaluation\n         Evaluation object.\n     \"\"\"\n     if output_dir is None:\n         output_dir = estimates_dir\n     return dataset.run(\n         estimates_dir=estimates_dir,\n         output_dir=output_dir,\n         *args, **kwargs\n     )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "adc7263de024a9d76c06c3780e139c5d036111ce365322c38104c9e9f54b1f5c",
+  "human_valid": true,
+  "line_no": 404565,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "94e59ba2146e90da526eae369ecf6a471335658db1951fd7418aadd371b9772b",
+  "raw_output": "   **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n\n    Returns\n    -------\n    musdb.Evaluation\n        Evaluation object.\n    \"\"\"\n    if output_dir is None:\n        output_dir = estimates_dir\n    return dataset.run(\n        estimates_dir=estimates_dir,\n        output_dir=output_dir,\n        *args, **kwargs\n    )\n\n\ndef eval_mus_est(\n    dataset,\n    estimates,\n    output_dir=None,\n    *args, **kwargs\n):\n    \"\"\"Run musdb.run for the purpose of evaluation of musdb estimate\n\n    Parameters\n    ----------\n    dataset : DB(object)\n        Musdb Database object.\n    estimates : list\n        List of estimates.\n    output_dir : str\n        Output folder where evaluation json files are stored.\n    *args\n        Variable length argument list for `musdb.run()`.\n    **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n\n    Returns\n    -------\n    musdb.Evaluation\n        Evaluation object.\n    \"\"\"\n    if output_dir is None:\n        output_dir = estimates[0].name\n    return dataset.run(\n        estimates=estimates,\n        output_dir=output_dir,\n        *args, **kwargs\n    )\n\n\ndef eval_mus_est_dir(\n    dataset,\n    estimates_dir,\n    output_dir=None,\n    *args, **kwargs\n):\n    \"\"\"Run musdb.run for the purpose of evaluation of musdb estimate dir\n\n    Parameters\n    ----------\n    dataset : DB(object)\n        Musdb Database object.\n    estimates_dir : str\n        Path to estimates folder.\n    output_dir : str\n        Output folder where evaluation json files are stored.\n    *args\n        Variable length argument list for `musdb.run()`.\n    **kwargs\n        Arbitrary keyword arguments for `musdb.run()`.\n\n    Returns\n    -------\n    musdb.Evaluation\n        Evaluation object.\n    \"\"\"\n    if output_dir is None:\n        output_dir =",
+  "sampling_seed": 725895973,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_farthest(point, hull):\n    \"\"\"Find the vertex in hull farthest away from a point\"\"\"\n    max_dist =\n",
+  "agc_valid": false,
+  "body_sha256": "c8bebb95b97ef254c7db82941fb1425166e44b091f7246557cc3f7c1772d2a06",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    max_dist =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "eba63ea94faf929f77f48bc1af86477d69b732e9f4cf2a88dfde4695edec7776",
+  "human_valid": true,
+  "line_no": 411338,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e97907615323f638dd9d22da87950ec007557e485b22bd0a47e02999221edc69",
+  "raw_output": "\n    max_dist = ",
+  "sampling_seed": 3613483493,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

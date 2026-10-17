@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def add_ssh_key(self, name, ssh_pub_key):\n        \"\"\"\n        This method allows you to add a new public SSH key to your account.\n\n        Required parameters\n\n            name:\n                String, the name you want to give this SSH key.\n\n            ssh_pub_key:\n                String, the actual public SSH key.\n        \"\"\"\n        if not isinstance(ssh_pub_key, str):\n            raise ValueError('ssh_pub_key must be a string')\n\n        if not isinstance(name, str):\n            raise ValueError('name must be a string')\n\n        data = {\n            'name': name,\n            'ssh_pub_key': ssh_pub_key\n        }\n\n        return self._post('/api/2.0/sshkeys/', data)\n",
+  "agc_valid": true,
+  "body_sha256": "1e483ed83e52abd9ec886545babed1e729f70f929f857a4c7dce9982f3985cca",
+  "body_tokens": 111,
+  "bucket": "type02_120",
+  "clean_output": "\n        if not isinstance(ssh_pub_key, str):\n            raise ValueError('ssh_pub_key must be a string')\n\n        if not isinstance(name, str):\n            raise ValueError('name must be a string')\n\n        data = {\n            'name': name,\n            'ssh_pub_key': ssh_pub_key\n        }\n\n        return self._post('/api/2.0/sshkeys/', data)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "e5134e789764ee75c8c0929bbbc654ccb38ace499f78307c9151b8129ad824d2",
+  "human_valid": true,
+  "line_no": 34586,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8a1e3797651eca7b1222b0ef6e9e059832f09eca56557dcd564a8f8aac54a5fc",
+  "raw_output": "\n\n        if not isinstance(ssh_pub_key, str):\n            raise ValueError('ssh_pub_key must be a string')\n\n        if not isinstance(name, str):\n            raise ValueError('name must be a string')\n\n        data = {\n            'name': name,\n            'ssh_pub_key': ssh_pub_key\n        }\n\n        return self._post('/api/2.0/sshkeys/', data)\n\n    def",
+  "sampling_seed": 1490700948,
+  "tag": "t06",
+  "temperature": 0.6
+}

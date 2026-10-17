@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def interfaces(self):\n        \"\"\"Get the wifi interface lists.\"\"\"\n            return self._interfaces\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "b18afa9452dd7ab72389005afba5b55b857b747eba24149c94fa8adfef92e846",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._interfaces\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "1033b00606d7bc5ab4cb0510ef33acaf994bfd37264ae3271905a911c910bbd5",
+  "human_valid": true,
+  "line_no": 351967,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e10c1ff281105d2bc5a9c530af47da8c5c2cae26630c7f177ad88d08f6ec3a7c",
+  "raw_output": "\n        return self._interfaces\n\n    @property\n    def",
+  "sampling_seed": 4244131819,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

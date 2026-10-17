@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def inject_basic_program(self, ascii_listing):\n        \"\"\"\n        save the given ASCII BASIC program listing into the emulator RAM.\n        \"\"\"\n        # make sure the emulator is reset\n        self.reset_emulator()\n\n        # write the BASIC program to the emulator RAM\n        self.emulator_ram.write_ascii_listing(ascii_listing)\n\n        # return the emulator state\n        return self.emulator_ram.get_emulator_state()\n",
+  "agc_valid": true,
+  "body_sha256": "a108c63bb6bc8a46c134be73d5190b4a6067b1b8a8252b10b86af32a808380f6",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # make sure the emulator is reset\n        self.reset_emulator()\n\n        # write the BASIC program to the emulator RAM\n        self.emulator_ram.write_ascii_listing(ascii_listing)\n\n        # return the emulator state\n        return self.emulator_ram.get_emulator_state()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 123,
+  "human_sha256": "b8dbb2d547d76efa589a210c45825ce4ec3620dad13e53bdb8d4f70148bb9619",
+  "human_valid": true,
+  "line_no": 392326,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "deca041ffc18bf185b9f76ad0f2b902d62b92164548266c7c90392936f62d001",
+  "raw_output": "\n\n        # make sure the emulator is reset\n        self.reset_emulator()\n\n        # write the BASIC program to the emulator RAM\n        self.emulator_ram.write_ascii_listing(ascii_listing)\n\n        # return the emulator state\n        return self.emulator_ram.get_emulator_state()\n\n    def",
+  "sampling_seed": 2422513579,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

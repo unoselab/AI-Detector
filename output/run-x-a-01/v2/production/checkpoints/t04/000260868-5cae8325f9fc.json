@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def render_error_page(code, exc, mimetype='text/html', traceback=''):\n    \"\"\"\n    Render the error page\n    \"\"\"\n    return render_template('error.html', code=code, exc=exc, traceback=traceback), code\n",
+  "agc_valid": true,
+  "body_sha256": "74b47e93485510d2b2796f90c5c1c7a87202574096177300fcf7bcd375e86a15",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return render_template('error.html', code=code, exc=exc, traceback=traceback), code\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 144,
+  "human_sha256": "cbe3a3fd707a9cb83d8ff54a03ea77f7f24e662dc3c90e44679e104ed54c7115",
+  "human_valid": true,
+  "line_no": 260868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5cae8325f9fcc2e83e9938bccd11cbd23cdd659fcef77652280397eed4a896a9",
+  "raw_output": "\n    return render_template('error.html', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_json(code, exc, mimetype='application/json', traceback=''):\n    \"\"\"\n    Render the error page as JSON\n    \"\"\"\n    return render_template('error.json', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_xml(code, exc, mimetype='application/xml', traceback=''):\n    \"\"\"\n    Render the error page as XML\n    \"\"\"\n    return render_template('error.xml', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_text(code, exc, mimetype='text/plain', traceback=''):\n    \"\"\"\n    Render the error page as text\n    \"\"\"\n    return render_template('error.txt', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_default(code, exc, mimetype='text/html', traceback=''):\n    \"\"\"\n    Render the error page as HTML\n    \"\"\"\n    return render_template('error.html', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_custom(code, exc, mimetype, traceback=''):\n    \"\"\"\n    Render the error page as HTML\n    \"\"\"\n    return render_template('error.html', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_custom_json(code, exc, mimetype, traceback=''):\n    \"\"\"\n    Render the error page as JSON\n    \"\"\"\n    return render_template('error.json', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_custom_xml(code, exc, mimetype, traceback=''):\n    \"\"\"\n    Render the error page as XML\n    \"\"\"\n    return render_template('error.xml', code=code, exc=exc, traceback=traceback), code\n\n\ndef render_error_page_",
+  "sampling_seed": 4056967138,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

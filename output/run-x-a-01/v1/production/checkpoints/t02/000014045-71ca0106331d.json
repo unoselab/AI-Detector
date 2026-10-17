@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_cache(new_path=None):\n    \"\"\"Simple function to change the cache location.\n\n    `new_path` can be an absolute or relative path. If the directory does not\n    exist yet, this function will create it. If None it will set the cache to\n    the default cache directory.\n\n    If you are going to change the cache directory, this function should be\n    called at the top of your script, before you make any calls to the API.\n    This is to avoid duplicate files and excess API calls.\n\n    :param new_path: relative or absolute path to the desired new cache\n    directory\n    :return: str, str\n    \"\"\"\n    The new path to the cache directory.\n        :type new_path: str\n        \"\"\"\n        if new_path is None:\n            new_path = get_default_cache_dir()\n        else:\n            new_path = os.path.abspath(new_path)\n\n        if not os.path.exists(new_path):\n            os.makedirs(new_path)\n\n        global cache_dir\n        cache_dir = new_path\n",
+  "agc_valid": false,
+  "body_sha256": "98f283006fdbf03bf55e99124ad8dad8465b2abb905bd6191359ed6f66b6776d",
+  "body_tokens": 117,
+  "bucket": "type02_120",
+  "clean_output": "\n    The new path to the cache directory.\n        :type new_path: str\n        \"\"\"\n        if new_path is None:\n            new_path = get_default_cache_dir()\n        else:\n            new_path = os.path.abspath(new_path)\n\n        if not os.path.exists(new_path):\n            os.makedirs(new_path)\n\n        global cache_dir\n        cache_dir = new_path\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "919923b9cff09edbb715859a76ac9e36333ce74fe2dafc378fb9d5161908151e",
+  "human_valid": true,
+  "line_no": 14045,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "71ca0106331df00320e015710d4f0d4c136a2bff7610720964a862c470b697d3",
+  "raw_output": "The new path to the cache directory.\n    :type new_path: str\n    \"\"\"\n    if new_path is None:\n        new_path = get_default_cache_dir()\n    else:\n        new_path = os.path.abspath(new_path)\n\n    if not os.path.exists(new_path):\n        os.makedirs(new_path)\n\n    global cache_dir\n    cache_dir = new_path\n\n\ndef get_cache_dir():\n    \"\"\"Returns the current cache directory.\n\n    :returns: The current cache directory.\n    :rtype: str\n    \"\"\"\n    return cache_dir\n\n\ndef get_default_cache_dir():\n    \"\"\"Returns the default cache directory.\n\n    :returns: The default cache directory.\n    :rtype: str\n    \"\"\"\n    return os.path.join(os.path.expanduser('~'), '.cache', 'pyblish')\n\n\ndef get_cache_file(key):\n    \"\"\"Returns the path to the cache file for a given key.\n\n    :param key: The key to use for the cache file.\n    :type key: str\n    :returns: The path to the cache file.\n    :rtype: str\n    \"\"\"\n    return os.path.join(cache_dir, key)\n\n\ndef get_cache(key):\n    \"\"\"Returns the contents of the cache file for a given key.\n\n    :param key: The key to use for the cache file.\n    :type key: str\n    :returns: The contents of the cache file.\n    :rtype: str\n    \"\"\"\n    cache_file = get_cache_file(key)\n    if os.path.exists(cache_file):\n        with open(cache_file, 'r') as f:\n            return f.read()\n    return None\n\n\ndef set_cache_file(key, value):\n    \"\"\"Sets the contents of the cache file for a given key.\n\n    :param key: The key to use for the cache file.\n    :type key: str\n    :param value: The contents to set for the cache file.\n    :type value: str\n",
+  "sampling_seed": 1491225969,
+  "tag": "t02",
+  "temperature": 0.2
+}

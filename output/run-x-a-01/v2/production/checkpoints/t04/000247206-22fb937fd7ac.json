@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def album(self):\n        \"\"\"\n        album as :class:`Album` object\n        \"\"\"\n            return Album(self.album_id, self.album_name)\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "ffee6157e1aaaade6c8a5a7e0f467376cd3cc8a30a8aebd17160fa6eed4a7f18",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return Album(self.album_id, self.album_name)\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 101,
+  "human_sha256": "3cbda407f2f8ab1729c60030b7c3064bcf894e47fcc83451e02560e026649bea",
+  "human_valid": true,
+  "line_no": 247206,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "22fb937fd7ac197184a9a278d8033e0c096e77a5d9239813623c3812874de729",
+  "raw_output": "\n        return Album(self.album_id, self.album_name)\n\n    @property\n    def",
+  "sampling_seed": 1274210065,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

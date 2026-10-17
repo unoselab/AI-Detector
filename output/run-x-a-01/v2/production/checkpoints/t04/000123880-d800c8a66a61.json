@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_class_qualname(cls):\n    \"\"\"Determines the fully qualified name of a class.\n    Yields a result similar to what __qualname__ contains, but also works on\n    Python 2.7.\n    \"\"\"\n    if hasattr(cls, '__qualname__'):\n        return cls.__qualname__\n    else:\n        return cls.__name__\n",
+  "agc_valid": true,
+  "body_sha256": "5f61098b2353568ffdcdf82cda823dd9e653c2b6a7fe67cd2a67361a622e55f2",
+  "body_tokens": 29,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if hasattr(cls, '__qualname__'):\n        return cls.__qualname__\n    else:\n        return cls.__name__\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 123,
+  "human_sha256": "708236e9eab12d6c43de4138a1011d6e9aa4cf2906c135d31ad6ea17a329707a",
+  "human_valid": true,
+  "line_no": 123880,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d800c8a66a61e0dd29aea68cdc93744f228cb3dcca973f7954d990065837f010",
+  "raw_output": "\n    if hasattr(cls, '__qualname__'):\n        return cls.__qualname__\n    else:\n        return cls.__name__\n\n\ndef get_class_qualname_from_instance(obj):\n    \"\"\"Determines the fully qualified name of a class from an instance.\n    Yields a result similar to what __qualname__ contains, but also works on\n    Python ",
+  "sampling_seed": 3271862289,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

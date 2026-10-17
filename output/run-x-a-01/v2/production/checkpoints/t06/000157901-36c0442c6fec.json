@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def link(self, text, as_html=True) -> str:\n        \"\"\"\n        Generate URL for using in text messages with HTML or MD parse mode\n\n        :param text: link label\n        :param as_html: generate as HTML\n        :return: str\n        \"\"\"\n        if not self.url:\n            raise ValueError(\"Link URL is not set\")\n        if not text:\n            raise ValueError(\"Link text is not set\")\n\n        if as_html:\n            return f'<a href=\"{self.url}\">{text}</a>'\n        else:\n            return f'[{text}]({self.url})'\n",
+  "agc_valid": true,
+  "body_sha256": "c5677602ff9c0617ddeeea23dd66005bfccf3a0bcadbdaed96c69cfe50f9c212",
+  "body_tokens": 99,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not self.url:\n            raise ValueError(\"Link URL is not set\")\n        if not text:\n            raise ValueError(\"Link text is not set\")\n\n        if as_html:\n            return f'<a href=\"{self.url}\">{text}</a>'\n        else:\n            return f'[{text}]({self.url})'\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 114,
+  "human_sha256": "e412ff63d384b12dc13117c1dc0b43db763fdbc5644e0cf3a21fbeabfd8eb93c",
+  "human_valid": true,
+  "line_no": 157901,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "36c0442c6fecac809d7766c8bfe0f86863eb1ab3be3fdc92f9c4dbd1c27581a9",
+  "raw_output": "\n        if not self.url:\n            raise ValueError(\"Link URL is not set\")\n        if not text:\n            raise ValueError(\"Link text is not set\")\n\n        if as_html:\n            return f'<a href=\"{self.url}\">{text}</a>'\n        else:\n            return f'[{text}]({self.url})'\n\n    def",
+  "sampling_seed": 2454797010,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

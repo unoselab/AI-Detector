@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update(self,identity,params=None, headers=None):\n        \"\"\"Update a payment.\n\n        Updates a payment object. This accepts only the metadata parameter.\n\n        Args:\n              identity (string): Unique identifier, beginning with \"PM\".\n              params (dict, optional): Request body.\n\n        Returns:\n              ListResponse of Payment instances\n        \"\"\"\n        path = self._sub_url_params('/payments/:identity', {\n            'identity': identity,\n        })\n\n        return self._perform_update(path, params, Payment, headers,\n                                    for_user=self._for_user)\n",
+  "agc_valid": true,
+  "body_sha256": "84d6c3c2780c8002fe6a8b73768a3e601822815bc54781c43a5dd147ab8cabeb",
+  "body_tokens": 81,
+  "bucket": "out_of_range",
+  "clean_output": "\n        path = self._sub_url_params('/payments/:identity', {\n            'identity': identity,\n        })\n\n        return self._perform_update(path, params, Payment, headers,\n                                    for_user=self._for_user)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "0fd6258aa25a5308b0dbf163be355392eedaf90242bc94b7cd111dab5451a693",
+  "human_valid": true,
+  "line_no": 296979,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e25315a970a752238576f787e2cc6d1c0c106e3bf344f8301984ec3afa234be6",
+  "raw_output": "\n        path = self._sub_url_params('/payments/:identity', {\n            'identity': identity,\n        })\n\n        return self._perform_update(path, params, Payment, headers,\n                                    for_user=self._for_user)\n\n    def",
+  "sampling_seed": 1882274775,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

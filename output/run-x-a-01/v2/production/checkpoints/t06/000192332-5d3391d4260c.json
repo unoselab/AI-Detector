@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_case_template(self, name):\n\n        \"\"\"\n        :param name: Case template name\n        :return: TheHive case template\n        :rtype: json\n\n        \"\"\"\n        if not name:\n            raise ValueError('Name of the case template is required')\n\n        url = '{0}/api/caseTemplate/{1}'.format(self.url, name)\n\n        r = requests.get(url, headers=self.headers, verify=self.ssl_verify)\n\n        if r.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "24aab9cb1cb0dfcd8be1848472f7b9cf7738d207a84b0456b8bf2f2fefc992ed",
+  "body_tokens": 63,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not name:\n            raise ValueError('Name of the case template is required')\n\n        url = '{0}/api/caseTemplate/{1}'.format(self.url, name)\n\n        r = requests.get(url, headers=self.headers, verify=self.ssl_verify)\n\n        if r.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "7552fe3158d41d5a9302d753316fca765ff7676f84618c98cb8cef74ea06cc80",
+  "human_valid": true,
+  "line_no": 192332,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5d3391d4260c034d71e156b504b82c2959ef606165cc8dbc3b7dd862c1ef2c82",
+  "raw_output": "\n\n        if not name:\n            raise ValueError('Name of the case template is required')\n\n        url = '{0}/api/caseTemplate/{1}'.format(self.url, name)\n\n        r = requests.get(url, headers=self.headers, verify=self.ssl_verify)\n\n        if r.status_code == ",
+  "sampling_seed": 2894356594,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_singles(self, results):\n        \"\"\"Add singles to the bacckground estimate and find candidates\n\n        Parameters\n        ----------\n        results: dict of arrays\n            Dictionary of dictionaries indexed by ifo and keys such as 'snr',\n            'chisq', etc. The specific format it determined by the\n            LiveBatchMatchedFilter class.\n\n        Returns\n        -------\n        coinc_results: dict of arrays\n            A dictionary of arrays containing the coincident results.\n        \"\"\"\n        # Add singles to the background estimate\n        self._add_singles(results)\n\n        # Find candidates\n        coinc_results = self._find_candidates(results)\n\n        return coinc_results\n",
+  "agc_valid": true,
+  "body_sha256": "9b5f34a82432aba40e4e4d6de31e839eb0c57bb2a38a102b1beabb7e8a53011d",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # Add singles to the background estimate\n        self._add_singles(results)\n\n        # Find candidates\n        coinc_results = self._find_candidates(results)\n\n        return coinc_results\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 198,
+  "human_sha256": "aa9e91c2e950c52f69951d9483a7893ef2b2880512409329840006267f0b49ed",
+  "human_valid": true,
+  "line_no": 343889,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4d429c14a1f9498658741e1190bfb7eaf167450d00945b0ce6450e36d83999b5",
+  "raw_output": "\n        # Add singles to the background estimate\n        self._add_singles(results)\n\n        # Find candidates\n        coinc_results = self._find_candidates(results)\n\n        return coinc_results\n\n    def",
+  "sampling_seed": 3153725844,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

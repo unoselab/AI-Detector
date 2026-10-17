@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def purge_old_files(date_time, directory_path, custom_prefix=\"backup\"):\n    \"\"\" Takes a datetime object and a directory path, runs through files in the\n        directory and deletes those tagged with a date from before the provided\n        datetime.\n        If your backups have a custom_prefix that is not the default (\"backup\"),\n        provide it with the \"custom_prefix\" kwarg. \"\"\"\n        files = os.listdir(directory_path)\n        for file in files:\n            if file.startswith(custom_prefix):\n                file_date = file.replace(custom_prefix, \"\")\n                if datetime.strptime(file_date, \"%Y-%m-%d_%H-%M-%S\") < date_time:\n                    os.remove(os.path.join(directory_path, file))\n",
+  "agc_valid": false,
+  "body_sha256": "a87ff218e1995690a7e47bc93eec9c9e551c74569f567779c9da0b69e8798ce6",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n        files = os.listdir(directory_path)\n        for file in files:\n            if file.startswith(custom_prefix):\n                file_date = file.replace(custom_prefix, \"\")\n                if datetime.strptime(file_date, \"%Y-%m-%d_%H-%M-%S\") < date_time:\n                    os.remove(os.path.join(directory_path, file))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "91d8af7d0206367b3c24be31e3ad5e721c30b3f7caf5d9f991a840727e4d26dd",
+  "human_valid": true,
+  "line_no": 22216,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e808a70da761aa550235410008c62bbf3e14bec68a424ec1ab45de146ad38b04",
+  "raw_output": "\r\n\r\n    files = os.listdir(directory_path)\r\n    for file in files:\r\n        if file.startswith(custom_prefix):\r\n            file_date = file.replace(custom_prefix, \"\")\r\n            if datetime.strptime(file_date, \"%Y-%m-%d_%H-%M-%S\") < date_time:\r\n                os.remove(os.path.join(directory_path, file))\r\n\r\n\r\ndef backup_db(db_path, directory_path, custom_prefix=\"backup\"):\r\n    \"\"\" Backs up a database to a directory. \"\"\"\r\n\r\n    # Get the current time\r\n    now = datetime.now()\r\n\r\n    # Get the current date and time\r\n    current_date_time = now.strftime(\"%Y-%m-%d_%H-%M-%S\")\r\n\r\n    # Get the filename to use\r\n    filename = f\"{custom_prefix}{current_date_time}.db\"\r\n\r\n    # Copy the database to the destination\r\n    shutil.copyfile(db_path, os.path.join(directory_path, filename))\r\n\r\n\r\ndef main():\r\n    # Get the database path\r\n    db_path = input(\"What is the path to the database? (e.g. /home/user/Documents/database.db) \")\r\n\r\n    # Get the directory path\r\n    directory_path = input(\"What is the path to the directory to back up to? (e.g. /home/user/Documents/backups) \")\r\n\r\n    # Get the number of days to keep\r\n    days_to_keep = int(input(\"How many days of backups would you like to keep? \"))\r\n\r\n    # Get the current date\r\n    current_date = datetime.now().strftime(\"%Y-%m-%d\")\r\n\r\n    # Get the date of the last backup\r\n    last_backup = purge_old_files(current_date, directory_path)\r\n\r\n    # Backup the database\r\n    backup_db(db_path, directory_path)\r\n\r\n    # Get the date of the last backup\r",
+  "sampling_seed": 2589141016,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

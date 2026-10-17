@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_pool_size(usr_config_value, num_tasks):\n    \"\"\" Determine size of thread/process-pool for parallel processing.\n    This examines the cpu_count to decide and return the right pool\n    size to use.  Also take into account the user's wishes via the config\n    object value, if specified.  On top of that, don't allow the pool size\n    returned to be any higher than the number of parallel tasks, if specified.\n    Only use what we need (mp.Pool starts pool_size processes, needed or not).\n    If number of tasks is unknown, call this with \"num_tasks\" set to None.\n    Returns 1 when indicating that parallel processing should not be used.\n    Consolidate all such logic here, not in the caller. \"\"\"\n    ).\n        \"\"\"\n        if usr_config_value is not None:\n            pool_size = usr_config_value\n        else:\n            pool_size = min(cpu_count(), num_tasks)\n        pool_size = min(pool_size, num_tasks)\n        return pool_size\n",
+  "agc_valid": false,
+  "body_sha256": "b179f4d01ecda45227535ba3bdd7c44749a0be2d9a4a90862625a0a2880b9c0f",
+  "body_tokens": 82,
+  "bucket": "out_of_range",
+  "clean_output": "\n    ).\n        \"\"\"\n        if usr_config_value is not None:\n            pool_size = usr_config_value\n        else:\n            pool_size = min(cpu_count(), num_tasks)\n        pool_size = min(pool_size, num_tasks)\n        return pool_size\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "e270a00b62da772568b5de3d7e80084debbaaf3794ae970f83da49077fe6267a",
+  "human_valid": true,
+  "line_no": 210433,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b72f91d5ce63033a5302c49547d432fff46e1c6ec93b346f6d959bc2020c08f8",
+  "raw_output": ").\n    \"\"\"\n    if usr_config_value is not None:\n        pool_size = usr_config_value\n    else:\n        pool_size = min(cpu_count(), num_tasks)\n    pool_size = min(pool_size, num_tasks)\n    return pool_size\n\n\ndef get_pool_type(usr_config_value):\n    \"\"\" Determine type of thread/process-pool for parallel processing.\n    This examines the cpu_count to decide and return the right pool\n    type to use. ",
+  "sampling_seed": 2936286089,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

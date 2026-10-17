@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def file_create(filename, settings):\n        \"\"\"\n        Creates a file.\n\n        Args:\n            filename (str): Filename.\n            settings (dict): Must be {\"content\": actual_content}\n        \"\"\"\n            with open(filename, \"w\") as f:\n                f.write(settings[\"content\"])\n\n        @staticmethod\n",
+  "agc_valid": false,
+  "body_sha256": "dfbac914d2e0e3ed3e00a26aecc30ce9c8d9c3c13c546dc35692ac971f8c3b92",
+  "body_tokens": 41,
+  "bucket": "out_of_range",
+  "clean_output": "\n            with open(filename, \"w\") as f:\n                f.write(settings[\"content\"])\n\n        @staticmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "a3f5e129807052192d4b8b45d265baf6410c60dd08a1371280b9dcd2d44fea6d",
+  "human_valid": true,
+  "line_no": 402549,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fd53a10df05ef1b20979ccebf0f576424c2f0c0adfc617dc211811d4131b39ed",
+  "raw_output": "\n        with open(filename, \"w\") as f:\n            f.write(settings[\"content\"])\n\n    @staticmethod\n    def",
+  "sampling_seed": 1466877051,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

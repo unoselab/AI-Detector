@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self, server):\n        \"\"\"\n        Returns ServerConfig instance with configuration given server.\n\n        :raises ServerConfigConflictError:\n            if configuration directory contains configuration for same server\n            multiple times\n\n        :raises ServerConfigMissingUrlError: if URL is not specified in the configuration\n\n        :raises ServerConfigNotFoundError: if configuration for given server is not found\n        \"\"\"\n        if server not in self.configs:\n            raise ServerConfigNotFoundError(server)\n        return self.configs[server]\n",
+  "agc_valid": true,
+  "body_sha256": "de45641ef13840b09fe0baa0ab458b95c117732c88f81d962c78db3a2c23fd91",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if server not in self.configs:\n            raise ServerConfigNotFoundError(server)\n        return self.configs[server]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 200,
+  "human_sha256": "dc9ff74a161c3cc8280df59d136467761369c6258e8799e2fc69a7d0146e822d",
+  "human_valid": true,
+  "line_no": 77029,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c2c203aa8237ac222f98866ed4408c772671ff4de67940a5f8bb185951008045",
+  "raw_output": "\n        if server not in self.configs:\n            raise ServerConfigNotFoundError(server)\n        return self.configs[server]\n\n    def",
+  "sampling_seed": 2845961972,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def make_article_info(self):\n        \"\"\"\n        The Article Info contains the (self) Citation, Editors, Dates,\n        Copyright, Funding Statement, Competing Interests Statement,\n        Correspondence, and Footnotes. Maybe more...\n\n        This content follows the Heading and precedes the Main segment in the\n        output.\n\n        This function accepts the receiving_node argument, which will receive\n        all generated output as new childNodes.\n        \"\"\"\n        # Create a new Div element\n        article_info = self.xml_create_element('div')\n        article_info.set('class', 'article-info')\n        self.receiving_node.appendChild(article_info)\n\n        self.receiving_node = article_info\n\n        self.make_citation()\n        self.make_editors()\n        self.make_dates()\n        self.make_copyright()\n        self.make_funding_statement()\n        self.make_competing_interests()\n        self.make_correspondence()\n        self.make_footnotes()\n\n        self.receiving_node = self.receiving_node.parentNode\n",
+  "agc_valid": true,
+  "body_sha256": "f2e729c2c8e7e74704331592129725ea7bcd829448a43076f411050688b30684",
+  "body_tokens": 125,
+  "bucket": "type03_130",
+  "clean_output": "\n        # Create a new Div element\n        article_info = self.xml_create_element('div')\n        article_info.set('class', 'article-info')\n        self.receiving_node.appendChild(article_info)\n\n        self.receiving_node = article_info\n\n        self.make_citation()\n        self.make_editors()\n        self.make_dates()\n        self.make_copyright()\n        self.make_funding_statement()\n        self.make_competing_interests()\n        self.make_correspondence()\n        self.make_footnotes()\n\n        self.receiving_node = self.receiving_node.parentNode\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d1cadc45898b3ff8d583391b4ea337b9065b6653a1aa35056b32eab7d00aba3b",
+  "human_valid": true,
+  "line_no": 2977,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "ba7b45c12f4273b4d5592032a8e85a8b9ae3af7dad68558ac22d3f69d1ee0163",
+  "raw_output": "\n        # Create a new Div element\n        article_info = self.xml_create_element('div')\n        article_info.set('class', 'article-info')\n        self.receiving_node.appendChild(article_info)\n\n        self.receiving_node = article_info\n\n        self.make_citation()\n        self.make_editors()\n        self.make_dates()\n        self.make_copyright()\n        self.make_funding_statement()\n        self.make_competing_interests()\n        self.make_correspondence()\n        self.make_footnotes()\n\n        self.receiving_node = self.receiving_node.parentNode\n\n    def",
+  "sampling_seed": 3083496819,
+  "tag": "t06",
+  "temperature": 0.6
+}

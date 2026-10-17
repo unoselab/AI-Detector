@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def latex_visit_inheritance_diagram(\n    self: NodeVisitor, node: inheritance_diagram\n) -> None:\n    \"\"\"\n    Builds LaTeX output from an :py:class:`~uqbar.sphinx.inheritance.inheritance_diagram` node.\n    \"\"\"\n    self.body.append(\n        r\"\\begin{inheritance}{%s}{%s}\"\n        % (\n            node[\"classes\"],\n            node[\"members\"],\n        )\n    )\n    self.body.append(r\"\\end{inheritance}\")\n",
+  "agc_valid": true,
+  "body_sha256": "5da9c1f4462eb4027a2a1139d12662374bcbe91a7e97101b9fceed51ed6d2c12",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    self.body.append(\n        r\"\\begin{inheritance}{%s}{%s}\"\n        % (\n            node[\"classes\"],\n            node[\"members\"],\n        )\n    )\n    self.body.append(r\"\\end{inheritance}\")\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "be1f96642435db0727cbfc029d7bc3c504c3cfb99318bd9d338faeb8d7843a40",
+  "human_valid": true,
+  "line_no": 449,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "abf61006bbbc840b120e3ff3625a0778ad83a79ea1e8c317b7256e9ab54a70dc",
+  "raw_output": "\n    self.body.append(\n        r\"\\begin{inheritance}{%s}{%s}\"\n        % (\n            node[\"classes\"],\n            node[\"members\"],\n        )\n    )\n    self.body.append(r\"\\end{inheritance}\")\n\n\ndef latex_visit_inheritance_diagram_node(\n    self: NodeVisitor, node: inheritance_diagram_node\n) -> None:\n    \"\"\"\n    Builds LaTeX output from an :py:class:`~uqbar.sphinx.inheritance.inheritance_diagram_node` node.\n    \"\"\"\n    self.body.append(r\"\\inheritanceNode{%s}\" % node[\"name\"])\n\n\ndef latex_visit_inheritance_diagram_edge(\n    self: NodeVisitor, node: inheritance_diagram_edge\n) -> None:\n    \"\"\"\n    Builds LaTeX output from an :py:class:`~uqbar.sphinx.inheritance.inheritance_diagram_edge` node.\n    \"\"\"\n    self.body.append(r\"\\inheritanceEdge{%s}\" % node[\"name\"])\n\n\ndef latex_visit_inheritance_diagram_class(\n    self: NodeVisitor, node: inheritance_diagram_class\n) -> None:\n    \"\"\"\n    Builds LaTeX output from an :py:class:`~uqbar.sphinx.inheritance.inheritance_diagram_class` node.\n    \"\"\"\n    self.body.append(r\"\\inheritanceClass{%s}\" % node[\"name\"])\n\n\ndef latex_visit_inheritance_diagram_member(\n    self: NodeVisitor, node: inheritance_diagram_member\n) -> None:\n    \"\"\"\n    Builds LaTeX output from an :py:class:`~uqbar.sphinx.inheritance.inheritance_diagram_member` node.\n    \"\"\"\n    self.body.append(r\"\\inheritanceMember{%s}\" % node[\"name\"])\n\n\ndef latex_visit_inheritance_diagram_method(\n    self: NodeVisitor, node: inheritance",
+  "sampling_seed": 2967017261,
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def match_handle(loc, tokens):\n    \"\"\"Process match blocks.\"\"\"\n    if tokens[0] == 'match':\n        return match_block(loc, tokens)\n    elif tokens[0] == 'case':\n        return case_block(loc, tokens)\n    elif tokens[0] == 'default':\n        return default_block(loc, tokens)\n    else:\n        raise SyntaxError(\"Unexpected token: {}\".format(tokens[0]))\n",
+  "agc_valid": true,
+  "body_sha256": "3ee64c1b9780bda5e4165103dc38f35f0ece40c70477b6db31f9f7f2fcab82d5",
+  "body_tokens": 67,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if tokens[0] == 'match':\n        return match_block(loc, tokens)\n    elif tokens[0] == 'case':\n        return case_block(loc, tokens)\n    elif tokens[0] == 'default':\n        return default_block(loc, tokens)\n    else:\n        raise SyntaxError(\"Unexpected token: {}\".format(tokens[0]))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "d491685b08033d4c17e4e4b101e4d77c71116811923b6c9a0cc6b16674083164",
+  "human_valid": true,
+  "line_no": 181407,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "74281cd43be5d9d426d908d8fce7810fe80a14114c87b7728c90cf0b14f9a749",
+  "raw_output": "\n    if tokens[0] == 'match':\n        return match_block(loc, tokens)\n    elif tokens[0] == 'case':\n        return case_block(loc, tokens)\n    elif tokens[0] == 'default':\n        return default_block(loc, tokens)\n    else:\n        raise SyntaxError(\"Unexpected token: {}\".format(tokens[0]))\n\n\ndef match_block(loc, tokens):\n    \"\"\"Process match blocks.\"\"\"\n    match_token = tokens[1]\n    if match_token != '(':\n        raise SyntaxError(\"Unexpected token: {}\".format(match_token))\n    match_expr = tokens[2]\n    if match_expr != '=>':\n        raise SyntaxError(\"Unexpected token: {}\".format(match_expr))\n    match_block = tokens[3]\n    if match_block != '{':\n        raise SyntaxError(\"Unexpected token: {}\".format(match_block))\n    match_block = tokens[4:]\n    if match_block[-1] != '}':\n        raise SyntaxError(\"Unexpected token: {}\".format(match_block[-1]))\n    match_block = match_block[:-1]\n    return match_block\n\n\ndef case_block(loc, tokens):\n    \"\"\"Process case blocks.\"\"\"\n    case_token = tokens[1]\n    if case_token != '(':\n        raise SyntaxError(\"Unexpected token: {}\".format(case_token))\n    case_expr = tokens[2]\n    if case_expr != '=>':\n        raise SyntaxError(\"Unexpected token: {}\".format(case_expr))\n    case_block = tokens[3]\n    if case_block != '{':\n        raise SyntaxError(\"Unexpected token: {}\".format(case_block))\n    case_block = tokens[4:]\n    if case_block[-1] != '}':\n        raise SyntaxError(\"Unexpected token: {}\".format(case_block[-1]))\n    case_block = case_block[:-1]\n    return case_block\n\n\ndef default_block(loc, tokens):\n    \"\"\"Process default blocks.\"\"\"\n    default_",
+  "sampling_seed": 1680565116,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

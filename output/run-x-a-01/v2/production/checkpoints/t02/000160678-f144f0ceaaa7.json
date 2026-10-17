@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_config(self):\n        \"\"\"\n        Gets the contents of the config files\n        startup-config and private-config from NVRAM.\n\n        :returns: tuple (startup-config, private-config) base64 encoded\n        \"\"\"\n        startup_config = self.get_config(self.STARTUP_CONFIG_NAME)\n        private_config = self.get_config(self.PRIVATE_CONFIG_NAME)\n        return startup_config, private_config\n",
+  "agc_valid": true,
+  "body_sha256": "9f9de923495757f00cd4bd5a4dc1561f868c95470c1300dc61f279b5d63f5c58",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n        startup_config = self.get_config(self.STARTUP_CONFIG_NAME)\n        private_config = self.get_config(self.PRIVATE_CONFIG_NAME)\n        return startup_config, private_config\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "129199e449702032234dcc4904e866b78e3f29f98f51c0ccb65de2efcc0adade",
+  "human_valid": true,
+  "line_no": 160678,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f144f0ceaaa727baeaa6fe17e1a3de354ced2d3d2de7f23e8b8bae50ef8629b3",
+  "raw_output": "\n        startup_config = self.get_config(self.STARTUP_CONFIG_NAME)\n        private_config = self.get_config(self.PRIVATE_CONFIG_NAME)\n        return startup_config, private_config\n\n    def",
+  "sampling_seed": 3743796517,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

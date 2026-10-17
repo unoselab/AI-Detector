@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add_to_ptr_size(self, ptr_size):\n        # type: (int) -> bool\n        \"\"\"\n        Add the space for a path table record to the volume descriptor.\n\n        Parameters:\n         ptr_size - The length of the Path Table Record being added to this Volume Descriptor.\n        Returns:\n         True if extents need to be added to the Volume Descriptor, False otherwise.\n        \"\"\"\n        if ptr_size > self.ptr_size:\n            self.ptr_size = ptr_size\n            return True\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "74d4fbb25686bae0c30b236cc96879a96f874e53971d4cf060958df881d2274e",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if ptr_size > self.ptr_size:\n            self.ptr_size = ptr_size\n            return True\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "dba3835df43917bc21d1de684d38922b4aaa9a95ced953179ff0e88f50b442e2",
+  "human_valid": true,
+  "line_no": 125853,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d10127228b48c3acb7c2b6e3e60513b8cc70ff488c1ffc2482913ce8a1911507",
+  "raw_output": "\n        if ptr_size > self.ptr_size:\n            self.ptr_size = ptr_size\n            return True\n        return False\n\n    def",
+  "sampling_seed": 209772795,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

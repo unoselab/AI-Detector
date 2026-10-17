@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_dictionary(self):\n        \"\"\"Serialize an object into dictionary form.  Useful if you have to\n        serialize an array of objects into JSON.  Otherwise, if you call the\n        :meth:`to_json` method on each object in the list and then try to\n        dump the array, you end up with an array with one string.\"\"\"\n        d = {}\n        for attr in self.__dict__:\n            if not attr.startswith('_'):\n                d[attr] = self.__dict__[attr]\n        return d\n",
+  "agc_valid": true,
+  "body_sha256": "c3ac305f3dadebbbeacdbd4fa500c594638277a46681918739c2f70c64548e7a",
+  "body_tokens": 63,
+  "bucket": "out_of_range",
+  "clean_output": "\n        d = {}\n        for attr in self.__dict__:\n            if not attr.startswith('_'):\n                d[attr] = self.__dict__[attr]\n        return d\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 188,
+  "human_sha256": "59881cc612cab7ac64bd597228a16c5169ed3f470913b4cd7fd9d8b7c9e5c880",
+  "human_valid": true,
+  "line_no": 313986,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5170d08991a52687e28ad45dd6b49958b62eb6c3e86fdfce2046477d9b9eba7e",
+  "raw_output": "\n        d = {}\n        for attr in self.__dict__:\n            if not attr.startswith('_'):\n                d[attr] = self.__dict__[attr]\n        return d\n\n    def",
+  "sampling_seed": 1600265854,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

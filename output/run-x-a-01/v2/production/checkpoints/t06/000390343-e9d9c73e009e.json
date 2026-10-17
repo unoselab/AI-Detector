@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _Conductivity(rho, T):\n    \"\"\"Equation for the electrolytic conductivity of liquid and dense\n    supercrítical water\n\n    Parameters\n    ----------\n    rho : float\n        Density, [kg/m³]\n    T : float\n        Temperature, [K]\n\n    Returns\n    -------\n    K : float\n        Electrolytic conductivity, [S/m]\n\n    Notes\n    ------\n    Raise :class:`NotImplementedError` if input isn't in limit:\n\n        * 600 ≤ ρ ≤ 1200\n        * 273.15 ≤ T ≤ 1073.15\n\n    Examples\n    --------\n    >>> _Conductivity(1000, 373.15)\n    1.13\n\n    References\n    ----------\n    IAPWS, Electrolytic Conductivity (Specific Conductance) of Liquid and Dense\n    Supercritical Water from 0°C to 800°C and Pressures up to 1000 MPa,\n    http://www.iapws.org/relguide/conduct.pdf\n    \"\"\"\n    temperature is not valid.\n\n        \"\"\"\n        K =\n",
+  "agc_valid": false,
+  "body_sha256": "cd85cc73224d8868575f2dcbacc058909b562e6a86f1a2c3dede7da5882b6833",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n    temperature is not valid.\n\n        \"\"\"\n        K =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "0da3ae01e3cd75a43c7a47f025fd156cb6c30a2301f4471ea3d72c7e5c731296",
+  "human_valid": true,
+  "line_no": 390343,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e9d9c73e009e13abf6aa5c0f9b5966a2c53a64e56eb332aac9e1ae05433815c1",
+  "raw_output": "temperature is not valid.\n\n    \"\"\"\n    K = ",
+  "sampling_seed": 3230302763,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

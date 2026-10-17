@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def assign_norrec_diffs(df, diff_list):\n    \"\"\"Compute and write the difference between normal and reciprocal values\n    for all columns specified in the diff_list parameter.\n\n    Note that the DataFrame is directly written to. That is, it is changed\n    during the call of this function. No need to use the returned object.\n\n    Parameters\n    ----------\n    df: pandas.DataFrame\n        Dataframe containing the data\n    diff_list: list\n        list of columns to compute differences for.\n\n    Returns\n    -------\n    df_new: pandas.DataFrame\n        The data with added columns\n    \"\"\"\n    -------\n        None\n        \"\"\"\n        for col in diff_list:\n            df[f\"{col}_diff\"] = df[col] - df[f\"{col}_rec\"]\n",
+  "agc_valid": false,
+  "body_sha256": "c9cba118a4ce4165f5ef6c0f3ce8dffc8a1079a3965da60341b23c8420a0f8b5",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n    -------\n        None\n        \"\"\"\n        for col in diff_list:\n            df[f\"{col}_diff\"] = df[col] - df[f\"{col}_rec\"]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "8967bf70997f942cfcc1a3739fda3e036d09179ba10841640231fca807219aa3",
+  "human_valid": true,
+  "line_no": 75282,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "62016d778f79d3af25d09c11e8e008875c755db2a63980f6a6db153bf97db989",
+  "raw_output": "-------\n    None\n    \"\"\"\n    for col in diff_list:\n        df[f\"{col}_diff\"] = df[col] - df[f\"{col}_rec\"]\n\n\ndef assign_norrec_diffs_from_list(df, diff_list):\n    \"\"\"Compute and write the difference between normal and reciprocal values\n    for all columns specified in the diff_list parameter.\n\n    Note that the DataFrame is directly written to. That is, it is changed\n    during the call of this function. No need to use the returned object.\n\n    Parameters\n    ----------\n    df: pandas.DataFrame\n        Dataframe containing the data\n    diff_list: list\n        list of columns to compute differences for.\n\n    Returns\n    -------\n    None\n    \"\"\"\n    for col in diff_list:\n        df[f\"{col}_diff\"] = df[col] - df[f\"{col}_rec\"]\n\n\ndef assign_norrec_diffs_from_dict(df, diff_dict):\n    \"\"\"Compute and write the difference between normal and reciprocal values\n    for all columns specified in the diff_dict parameter.\n\n    Note that the DataFrame is directly written to. That is, it is changed\n    during the call of this function. No need to use the returned object.\n\n    Parameters\n    ----------\n    df: pandas.DataFrame\n        Dataframe containing the data\n    diff_dict: dict\n        dictionary of columns to compute differences for.\n\n    Returns\n    -------\n    None\n    \"\"\"\n    for col, rec_col in diff_dict.items():\n        df[f\"{col}_diff\"] = df[col] - df[f\"{rec_col}_rec\"]\n\n\ndef assign_norrec_diffs_from_dict_with_suffix(df, diff_dict, suffix):\n    \"\"\"Compute and write the difference between normal and reciprocal values\n    for all columns specified in the diff_dict parameter.\n\n    Note that the DataFrame is directly written to. That is, it is changed\n    during the call of this function. No need to use the returned object.\n\n    Parameters\n    ----------\n   ",
+  "sampling_seed": 3755174002,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

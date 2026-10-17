@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def with_updated_configuration(self, options=None,\n                                   attribute_options=None):\n        \"\"\"\n        Returns a context in which this mapping is updated with the given\n        options and attribute options.\n        \"\"\"\n        return self.with_configuration(\n            self.configuration.with_options(options),\n            attribute_options=attribute_options)\n",
+  "agc_valid": true,
+  "body_sha256": "c812c449d099d59dd7a163b2c4912aa5b877e32bf9b1700c56c6b32f9d47983a",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.with_configuration(\n            self.configuration.with_options(options),\n            attribute_options=attribute_options)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "08ffa56540e9512c9076956679e7dd20df177e0bed7f0b0d8c7e18fac844ded1",
+  "human_valid": true,
+  "line_no": 247480,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b77703f53adcf0ad7046b22fb506f452feafa76537d3f694deefc6317a049722",
+  "raw_output": "\n        return self.with_configuration(\n            self.configuration.with_options(options),\n            attribute_options=attribute_options)\n\n    def",
+  "sampling_seed": 1204841756,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

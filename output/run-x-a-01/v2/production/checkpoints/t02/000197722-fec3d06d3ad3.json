@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _ppf(self, uloc, left, right, cache):\n        \"\"\"\n        Point percentile function.\n\n        Example:\n            >>> print(chaospy.Uniform().inv([0.1, 0.2, 0.9]))\n            [0.1 0.2 0.9]\n            >>> print(chaospy.Add(chaospy.Uniform(), 2).inv([0.1, 0.2, 0.9]))\n            [2.1 2.2 2.9]\n            >>> print(chaospy.Add(2, chaospy.Uniform()).inv([0.1, 0.2, 0.9]))\n            [2.1 2.2 2.9]\n            >>> print(chaospy.Add(1, 1).inv([0.1, 0.2, 0.9]))\n            [2. 2. 2.]\n        \"\"\"\n        \"\"\"\n        if uloc.size ==\n",
+  "agc_valid": false,
+  "body_sha256": "e6476d71cd364243c187a515b4f2ab30b83a08f27bdddc68584beb97e95b7027",
+  "body_tokens": 19,
+  "bucket": "out_of_range",
+  "clean_output": "\n        \"\"\"\n        if uloc.size ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "d62102792e9c35e3faaabc984deb6b5a14a58f7df18ba7cf9d1010d4310a0ba4",
+  "human_valid": true,
+  "line_no": 197722,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fec3d06d3ad318b09b0370e30139589b6db3f73f8484eda03a93a76888658504",
+  "raw_output": "\n        \"\"\"\n        if uloc.size == ",
+  "sampling_seed": 1856882773,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

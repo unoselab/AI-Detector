@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def populate_headers(headers):\n    \"\"\"\n    Concatenate headers with subheaders\n    \"\"\"\n    headers_dict = {}\n    for header in headers:\n        headers_dict[header] = {}\n        for subheader in header.subheaders:\n            headers_dict[header][subheader] = []\n\n    return headers_dict\n",
+  "agc_valid": true,
+  "body_sha256": "6f9124b65ff0fc42acb411aff8d732821fa9350a24639ad3b195b1b7370682e0",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n    headers_dict = {}\n    for header in headers:\n        headers_dict[header] = {}\n        for subheader in header.subheaders:\n            headers_dict[header][subheader] = []\n\n    return headers_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "6830412ca39ffdebf8c0ee319bd210c89aa63295bb4a2b73ce4b1dfddf0027ca",
+  "human_valid": true,
+  "line_no": 41752,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "98a0543f957b6452275d0f9d37370b02cdb02005666b7ab23f52098df7e2ea5f",
+  "raw_output": "\n    headers_dict = {}\n    for header in headers:\n        headers_dict[header] = {}\n        for subheader in header.subheaders:\n            headers_dict[header][subheader] = []\n\n    return headers_dict\n\n\ndef get_header_values(headers_dict, header, subheader):\n    \"\"\"\n    Get the values for a header and subheader\n    \"\"\"\n    values = []\n    for header_obj in headers_dict[header]:\n        if header_obj == subheader:\n            values.append(header_obj.value)\n\n    return values\n\n\ndef get_header_values_dict(headers_dict, header):\n    \"\"\"\n    Get the values for a header and subheader\n    \"\"\"\n    values = {}\n    for subheader in headers_dict[header]:\n        values[subheader] = []\n        for header_obj in headers_dict[header]:\n            if header_obj == subheader:\n                values[subheader].append(header_obj.value)\n\n    return values\n\n\ndef get_header_values_list(headers_dict, header):\n    \"\"\"\n    Get the values for a header and subheader\n    \"\"\"\n    values = []\n    for header_obj in headers_dict[header]:\n        values.append(header_obj.value)\n\n    return values\n\n\ndef get_header_values_list_dict(headers_dict, header):\n    \"\"\"\n    Get the values for a header and subheader\n    \"\"\"\n    values = {}\n    for subheader in headers_dict[header]:\n        values[subheader] = []\n        for header_obj in headers_dict[header]:\n            if header_obj == subheader:\n                values[subheader].append(header_obj.value)\n\n    return values\n\n\ndef get_header_values_dict_dict(headers_dict, header):\n    \"\"\"\n    Get the values for a header and subheader\n    \"\"\"\n    values = {}\n    for subheader in headers_dict[header]:\n        values[subheader] = {}\n        for subsubheader in headers_dict[header][subheader]:\n            values[subheader][subsubheader] = []\n        for header",
+  "sampling_seed": 1066779569,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

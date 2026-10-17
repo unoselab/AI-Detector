@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def reserve(self, max=None, timeout=None, wait=None, delete=None):\n        \"\"\"Retrieves Messages from the queue and reserves it.\n\n        Arguments:\n        max -- The maximum number of messages to reserve. Defaults to 1.\n        timeout -- Timeout in seconds.\n        wait -- Time to long poll for messages, in seconds. Max is 30 seconds. Default 0.\n        delete -- If true, do not put each message back on to the queue after reserving. Default false.\n        \"\"\"\n        if max is None:\n            max =\n",
+  "agc_valid": false,
+  "body_sha256": "f0e7e33626ff94c24fc0e4e05b6e2f7f7572c832dd5d55de131eb66d14c89c26",
+  "body_tokens": 25,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if max is None:\n            max =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 194,
+  "human_sha256": "e8551ef9e3a1016cd14537a532bba1aabaa489a975efc7c68d0b1cec57b5b7e4",
+  "human_valid": true,
+  "line_no": 72528,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2dcd24f493486f90d1dba6e143d50d40f93a9153150ec725e8e1e8b574720251",
+  "raw_output": "\n        if max is None:\n            max = ",
+  "sampling_seed": 691887854,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _indices(self):\n        \"\"\"Find the path_index and node_index that identify the given node.\"\"\"\n        path_index =\n",
+  "agc_valid": false,
+  "body_sha256": "743e53d33c0bdf845437f8c01b241a1db58c96d9369053a145ab92cb63bb1595",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        path_index =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 124,
+  "human_sha256": "683c357ede727cc3acc897428c7639459e1d50a25060058b0fe05727380b6f73",
+  "human_valid": true,
+  "line_no": 404814,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "08d6150838c04872e46e862c65e51f958c6b85b061e30c428110edff64d980fd",
+  "raw_output": "\n        path_index = ",
+  "sampling_seed": 2464907352,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

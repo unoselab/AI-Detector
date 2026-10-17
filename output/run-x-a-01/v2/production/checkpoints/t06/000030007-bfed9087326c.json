@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_system_uptime_output_show_system_uptime_seconds(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        super().__init__(**kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "077526ed25e6f03dbdbadbbe07bd49909bcbcad52a5b7b12780d592b1bf3687a",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        super().__init__(**kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "b1c557fb1d8c26963fd11f9daa0c2a16c9bad6e329a88fe20341e776b530c85a",
+  "human_valid": true,
+  "line_no": 30007,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "bfed9087326c39be73e64a94f0dab7942ff80b208ca53d31ce5f58f39b9285fc",
+  "raw_output": "\n        super().__init__(**kwargs)\n\n\nclass ShowSystemUptimeSeconds(ShowSystemUptimeSecondsSchema):\n    \"\"\" Parser for:\n        * 'show system uptime seconds'\n    \"\"\"\n\n    cli_command = 'show system uptime seconds'\n\n    def",
+  "sampling_seed": 2650419064,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

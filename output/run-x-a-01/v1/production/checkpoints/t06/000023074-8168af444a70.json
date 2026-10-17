@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def value_eq(self, other):\n        \"\"\"Sorted comparison of values.\"\"\"\n        if not isinstance(other, self.__class__):\n            return NotImplemented\n        return self._cmp(other)\n",
+  "agc_valid": true,
+  "body_sha256": "8e375c7bd63bb8f8726c95b62fdf329c859e1b1ae42ce754d17748fad1c49964",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not isinstance(other, self.__class__):\n            return NotImplemented\n        return self._cmp(other)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f2439323cd614636bf00a5f9c1d13a44162dfcded50649124b0b458fa1beff64",
+  "human_valid": true,
+  "line_no": 23074,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8168af444a70bae8e87ccd0c68901478b31e9411501839db74087950b0300e17",
+  "raw_output": "\n        if not isinstance(other, self.__class__):\n            return NotImplemented\n        return self._cmp(other)\n\n    def",
+  "sampling_seed": 2320219220,
+  "tag": "t06",
+  "temperature": 0.6
+}

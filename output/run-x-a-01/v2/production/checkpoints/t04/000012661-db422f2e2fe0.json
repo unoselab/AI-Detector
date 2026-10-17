@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def per_system_data(self):\n        \"\"\"\n        Return download data by system.\n\n        :return: dict of cache data; keys are datetime objects, values are\n          dict of system (str) to count (int)\n        :rtype: dict\n        \"\"\"\n            return self._per_system_data\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "a901f2a0e238d0090f47dc3ab4e0fd0e682b2bdea51fa04f09b1700b1958a017",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._per_system_data\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "5c760d88405618896f3edfbbf77571d216cb9a6bb02be4eedb1248e308a1ee12",
+  "human_valid": true,
+  "line_no": 12661,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "db422f2e2fe00d50909e472eb62f4afcfd45be5ef600f67293496dd94407ff18",
+  "raw_output": "\n        return self._per_system_data\n\n    @property\n    def",
+  "sampling_seed": 1669695428,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

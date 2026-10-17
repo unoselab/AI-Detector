@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_result(self, client, check):\n        \"\"\"\n        Returns an event for a given client & result name.\n        \"\"\"\n        return self.get(\n            client=client,\n            check=check\n        )\n",
+  "agc_valid": true,
+  "body_sha256": "561a6f2f5b385e7647a89ebe75106186b60559dc1d54afa990df56aaa6a12134",
+  "body_tokens": 42,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get(\n            client=client,\n            check=check\n        )\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "507d5851efd4fbfed5d2d8e9fe8b13789a027b1a92a94743f862700ccc391033",
+  "human_valid": true,
+  "line_no": 32446,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "f22ebb8852a3d651dec385574c657bde6a5a0fab420461110a62a3014e7da6a5",
+  "raw_output": "\n        return self.get(\n            client=client,\n            check=check\n        )\n\n\nclass EventResultManager(models.Manager):\n    def",
+  "sampling_seed": 1595931407,
+  "tag": "t06",
+  "temperature": 0.6
+}

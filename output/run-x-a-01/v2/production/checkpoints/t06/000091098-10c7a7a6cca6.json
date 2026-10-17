@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def iget(self, i, fastpath=True):\n        \"\"\"\n        Return the data as a SingleBlockManager if fastpath=True and possible\n\n        Otherwise return as a ndarray\n        \"\"\"\n        if fastpath and self._can_use_i8_index:\n            return self.iget_block(i)\n        else:\n            return self.get_value(i)\n",
+  "agc_valid": true,
+  "body_sha256": "f3306b340745d36bc7bdd0f7069b350ddadf03f4c8855d16ae86f2fb9c4b70a7",
+  "body_tokens": 46,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if fastpath and self._can_use_i8_index:\n            return self.iget_block(i)\n        else:\n            return self.get_value(i)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 185,
+  "human_sha256": "24905705139d61eb652faca1f5d914fc32b9586aa513808b60a014b718eb534e",
+  "human_valid": true,
+  "line_no": 91098,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "10c7a7a6cca627ce4fdfbfd12be161ce151ea354f472e86aea274242551ae70c",
+  "raw_output": "\n        if fastpath and self._can_use_i8_index:\n            return self.iget_block(i)\n        else:\n            return self.get_value(i)\n\n    def",
+  "sampling_seed": 3954240453,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

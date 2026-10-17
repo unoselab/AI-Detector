@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def plot_segmentlistdict(self, segmentlistdict, y=None, dy=1, **kwargs):\n        \"\"\"Plot a `~gwpy.segments.SegmentListDict` onto\n        these axes\n\n        Parameters\n        ----------\n        segmentlistdict : `~gwpy.segments.SegmentListDict`\n            (name, `~gwpy.segments.SegmentList`) dict\n\n        y : `float`, optional\n            starting y-axis value for new segmentlists\n\n        **kwargs\n            any other keyword arguments acceptable for\n            `~matplotlib.patches.Rectangle`\n\n        Returns\n        -------\n        collections : `list`\n            list of `~matplotlib.patches.PatchCollection` sets for\n            each segmentlist\n        \"\"\"\n        arguments to pass to\n                    `~gwpy.segments.SegmentList.plot`\n\n                \"\"\"\n                if y is None:\n                    y = self.y\n                for name, segmentlist in segmentlistdict.items():\n                    self.plot_segmentlist(segmentlist, y=y, dy=dy, **kwargs)\n                    y += dy\n",
+  "agc_valid": false,
+  "body_sha256": "1fc1913ad467c4b0d18ff9c09adf8928d2647c2fdb5401d9a6818cdab0c3e623",
+  "body_tokens": 154,
+  "bucket": "type06_160",
+  "clean_output": "\n        arguments to pass to\n                    `~gwpy.segments.SegmentList.plot`\n\n                \"\"\"\n                if y is None:\n                    y = self.y\n                for name, segmentlist in segmentlistdict.items():\n                    self.plot_segmentlist(segmentlist, y=y, dy=dy, **kwargs)\n                    y += dy\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "4fb52a2a9e62e5537e83b43062ad03132b36a04062795b1f97311905d69901fd",
+  "human_valid": true,
+  "line_no": 205368,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "012fce2cc16bceb0d6aab5495cf3b642ff40db0e508ca64f6a2c9b09a0839467",
+  "raw_output": "arguments to pass to\n            `~gwpy.segments.SegmentList.plot`\n\n        \"\"\"\n        if y is None:\n            y = self.y\n        for name, segmentlist in segmentlistdict.items():\n            self.plot_segmentlist(segmentlist, y=y, dy=dy, **kwargs)\n            y += dy\n\n    def",
+  "sampling_seed": 3590427528,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

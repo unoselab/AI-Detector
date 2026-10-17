@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def lru_append(kc, lru, kckey, maxsize):\n    \"\"\"Delete old data from ``kc``, then add the new ``kckey``.\n\n    :param kc: a three-layer keycache\n    :param lru: an :class:`OrderedDict` with a key for each triple that should fill out ``kc``'s three layers\n    :param kckey: a triple that indexes into ``kc``, which will be added to ``lru`` if needed\n    :param maxsize: maximum number of entries in ``lru`` and, therefore, ``kc``\n\n    \"\"\"\n    ru``\n\n        \"\"\"\n        if len(lru) == maxsize:\n            lru.popitem(last=False)\n        lru[kckey] = kc[kckey]\n        return lru\n",
+  "agc_valid": false,
+  "body_sha256": "df2085448615dbf596a3c82e2359e4922e083544ba8423b12dab21ee417da516",
+  "body_tokens": 55,
+  "bucket": "out_of_range",
+  "clean_output": "\n    ru``\n\n        \"\"\"\n        if len(lru) == maxsize:\n            lru.popitem(last=False)\n        lru[kckey] = kc[kckey]\n        return lru\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 189,
+  "human_sha256": "c0f64bf6ebe884915e4c6313e697f601b80750a9a7ba61f90462f1d3832a8ac3",
+  "human_valid": true,
+  "line_no": 146042,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "39c89a5fb2ee880deb9f1966f37ecf86c3a67a2ba2b33102dd632cc73131f04e",
+  "raw_output": "ru``\n\n    \"\"\"\n    if len(lru) == maxsize:\n        lru.popitem(last=False)\n    lru[kckey] = kc[kckey]\n    return lru\n\n\ndef lru_get(kc, lru, kckey):\n    \"\"\"Get the value for ``kckey`` from ``kc``, then update ``lru`` with the new value.\n\n    :param kc: a three-layer keycache\n    :param lru: an :class:`OrderedDict` with a key for each triple that should fill out ``kc``'s three layers\n    :param kckey: a triple that indexes into ``kc``\n\n    \"\"\"\n    value = kc[kckey]\n    lru[kckey] = value\n    return value\n\n\ndef lru_set(kc, lru, kckey, value):\n    \"\"\"Set the value for ``kckey`` in ``kc``, then update ``lru`` with the new value.\n\n    :param kc: a three-layer keycache\n    :param lru: an :class:`OrderedDict` with a key for each triple that should fill out ``kc``'s three layers\n    :param kckey: a triple that indexes into ``kc``\n    :param value: the value to set\n\n    \"\"\"\n    kc[kckey] = value\n    lru[kckey] = value\n    return value\n\n\ndef lru_delete(kc, lru, kckey):\n    \"\"\"Delete the value for ``kckey`` from ``kc``, then remove it from ``lru``.\n\n    :param kc: a three-layer keycache\n    :param lru: an :class:`OrderedDict` with a key for each triple that should fill out ``kc``'s three layers\n    :param kckey: a triple that indexes into ``kc``\n\n    \"\"\"\n    del kc[kckey]\n    del lru[kckey]\n\n\ndef lru_clear(kc, lru):\n    \"\"\"Delete all data from ``kc``, then clear ``lru``.\n\n    :param kc: a three",
+  "sampling_seed": 629559460,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

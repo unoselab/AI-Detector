@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def call_from_executor(self, callback, _max_postpone_until=None):\n        \"\"\"\n        Call this function in the main event loop.\n        Similar to Twisted's ``callFromThread``.\n\n        :param _max_postpone_until: `None` or `time.time` value. For interal\n            use. If the eventloop is saturated, consider this task to be low\n            priority and postpone maximum until this timestamp. (For instance,\n            repaint is done using low priority.)\n        \"\"\"\n        if _max_postpone_until is not None:\n            self._max_postpone_until = _max_postpone_until\n        self._callback = callback\n        self._postpone_until = None\n        self._postpone_until_lock = threading.Lock()\n        self._postpone_until_cond = threading.Condition()\n        self._postpone_until_cond.acquire()\n        self._postpone_until_cond.notify()\n        self._postpone_until_cond.release()\n",
+  "agc_valid": true,
+  "body_sha256": "a2d0e730666cac9bc90529f6f0568f387a53407372528dc5157d81f968915e0f",
+  "body_tokens": 91,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if _max_postpone_until is not None:\n            self._max_postpone_until = _max_postpone_until\n        self._callback = callback\n        self._postpone_until = None\n        self._postpone_until_lock = threading.Lock()\n        self._postpone_until_cond = threading.Condition()\n        self._postpone_until_cond.acquire()\n        self._postpone_until_cond.notify()\n        self._postpone_until_cond.release()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "ca795f95d7ce391457a231df4f5ece7168ab96e01946dfd3583ddfafd67a5438",
+  "human_valid": true,
+  "line_no": 198326,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c0aac71ec11393bbd33d0ad3379820e1978caf9fa999bcbbadcd32092309ae39",
+  "raw_output": "\n        if _max_postpone_until is not None:\n            self._max_postpone_until = _max_postpone_until\n        self._callback = callback\n        self._postpone_until = None\n        self._postpone_until_lock = threading.Lock()\n        self._postpone_until_cond = threading.Condition()\n        self._postpone_until_cond.acquire()\n        self._postpone_until_cond.notify()\n        self._postpone_until_cond.release()\n\n    def",
+  "sampling_seed": 3178173564,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

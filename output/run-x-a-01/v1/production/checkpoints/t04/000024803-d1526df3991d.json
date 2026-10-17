@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get(self, attr, default=None):\n        \"\"\"Get an attribute defined by this session\"\"\"\n        return self.attributes.get(attr, default)\n",
+  "agc_valid": true,
+  "body_sha256": "e88c715abb75d5eaafef4d0717a8812fc4d05705551174e19a9d88e61fe682ad",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.attributes.get(attr, default)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "d9bd4184ee4c461cbe2b4699e2aefff443e8219444fc60c0d7970e4f1a586241",
+  "human_valid": true,
+  "line_no": 24803,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "d1526df3991df2d350a7804e43f4af1a83655b1f4cc252db5680618b2e9d4309",
+  "raw_output": "\n        return self.attributes.get(attr, default)\n\n    def",
+  "sampling_seed": 1580458398,
+  "tag": "t04",
+  "temperature": 0.4
+}

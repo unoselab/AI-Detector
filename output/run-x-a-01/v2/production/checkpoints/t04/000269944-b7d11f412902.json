@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_stp_mst_detail_output_msti_port_link_type(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        # Generate a String to append to the GET Request\n        string_to_append = ''\n        # Check if parameters exist\n        if 'msti_port_link_type' in kwargs:\n            # Convert argument to desired type\n            msti_port_link_type = str(kwargs['msti_port_link_type'])\n            # Check if argument has been provided\n            if msti_port_link_type != '':\n                # Check if string length is valid\n                if len(msti_port_link_type) >\n",
+  "agc_valid": false,
+  "body_sha256": "024788857ea5ab1c50bfde700a7d6506e6f0412a8706ecef6d8a37729107d4ba",
+  "body_tokens": 155,
+  "bucket": "type06_160",
+  "clean_output": "\n        # Generate a String to append to the GET Request\n        string_to_append = ''\n        # Check if parameters exist\n        if 'msti_port_link_type' in kwargs:\n            # Convert argument to desired type\n            msti_port_link_type = str(kwargs['msti_port_link_type'])\n            # Check if argument has been provided\n            if msti_port_link_type != '':\n                # Check if string length is valid\n                if len(msti_port_link_type) >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 126,
+  "human_sha256": "72871dc05ec4ca90a29e989cd516198ffabfbf9ebfa0fadcb359dbc26a1befe0",
+  "human_valid": true,
+  "line_no": 269944,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7d11f4129026c3ccce6f29666414623b8e0b2f40db5fe728534b6cae137d541",
+  "raw_output": "\n        # Generate a String to append to the GET Request\n        string_to_append = ''\n        # Check if parameters exist\n        if 'msti_port_link_type' in kwargs:\n            # Convert argument to desired type\n            msti_port_link_type = str(kwargs['msti_port_link_type'])\n            # Check if argument has been provided\n            if msti_port_link_type != '':\n                # Check if string length is valid\n                if len(msti_port_link_type) > ",
+  "sampling_seed": 257105003,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

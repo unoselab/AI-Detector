@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update_mutation_inputs(service):\n    \"\"\"\n        Args:\n            service : The service being updated by the mutation\n        Returns:\n            (list) : a list of all of the fields availible for the service. Pk\n                is a required field in order to filter the results\n    \"\"\"\n    input_fields = service.fields.all()\n    input_fields.append(service.service_type.pk)\n    input_fields.append(service.service_provider.pk)\n    input_fields.append(service.service_status.pk)\n    input_fields.append(service.service_category.pk)\n    return input_fields\n",
+  "agc_valid": true,
+  "body_sha256": "bd4a38643ab869d2d71092013b514cd82c8b2b0d7813e5da5ea88bb4dd9c5f30",
+  "body_tokens": 28,
+  "bucket": "out_of_range",
+  "clean_output": "\n    input_fields = service.fields.all()\n    input_fields.append(service.service_type.pk)\n    input_fields.append(service.service_provider.pk)\n    input_fields.append(service.service_status.pk)\n    input_fields.append(service.service_category.pk)\n    return input_fields\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "b831127f68e62b428bca8cb194218bf91ff0492ad81c28f6227134d4696c9f3e",
+  "human_valid": true,
+  "line_no": 12488,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "63790e629752b4443ea104ebe046db6b05ae1f86f825c08f9fc29fbe2bc5def5",
+  "raw_output": "\n    input_fields = service.fields.all()\n    input_fields.append(service.service_type.pk)\n    input_fields.append(service.service_provider.pk)\n    input_fields.append(service.service_status.pk)\n    input_fields.append(service.service_category.pk)\n    return input_fields\n\n\ndef update_mutation_outputs(service):\n    \"\"\"\n        Args:\n            service : The service being updated by the mutation\n        Returns:\n            (list) : a list of all of the fields availible for the service. Pk\n                is a required field in order to filter the results\n    \"\"\"\n    output_fields = service.fields.all()\n    output_fields.append(service.service_type.pk)\n    output_fields.append(service.service_provider.pk)\n    output_fields.append(service.service_status.pk)\n    output_fields.append(service.service_category.pk)\n    return output_fields\n\n\ndef update_mutation_outputs_create(service):\n    \"\"\"\n        Args:\n            service : The service being created by the mutation\n        Returns:\n            (list) : a list of all of the fields availible for the service. Pk\n                is a required field in order to filter the results\n    \"\"\"\n    output_fields = service.fields.all()\n    output_fields.append(service.service_type.pk)\n    output_fields.append(service.service_provider.pk)\n    output_fields.append(service.service_status.pk)\n    output_fields.append(service.service_category.pk)\n    return output_fields\n\n\ndef update_mutation_outputs_delete(service):\n    \"\"\"\n        Args:\n            service : The service being created by the mutation\n        Returns:\n            (list) : a list of all of the fields availible for the service. Pk\n                is a required field in order to filter the results\n    \"\"\"\n    output_fields = service.fields.all()\n    output_fields.append(service.service_type.pk)\n    output_fields.append(service.service_",
+  "sampling_seed": 2422241690,
+  "tag": "t06",
+  "temperature": 0.6
+}

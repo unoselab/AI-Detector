@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def getExtensionList(self,extensions):\n        \"\"\"\n        This is an internal method that transforms the comma-separated extensions string\n        into a list of extensions, e.g., \"ext1,ext2,ext3\" gets turned into ['.ext1','.ext2','.ext3'].\n        If MapConstants.placeholderNoExtensionFilter is part of the string, the resulting list\n        will also contain '', i.e., files without extensions are permitted.\n        \"\"\"\n        if extensions is None:\n            return []\n        else:\n            extensions = extensions.split(',')\n            if MapConstants.placeholderNoExtensionFilter in extensions:\n                extensions.remove(MapConstants.placeholderNoExtensionFilter)\n                extensions.append('')\n            return extensions\n",
+  "agc_valid": true,
+  "body_sha256": "19307376918c73baff5431968397a3d4d5305ff414a3cbe1ee406cc54d4947a1",
+  "body_tokens": 107,
+  "bucket": "type01_110",
+  "clean_output": "\n        if extensions is None:\n            return []\n        else:\n            extensions = extensions.split(',')\n            if MapConstants.placeholderNoExtensionFilter in extensions:\n                extensions.remove(MapConstants.placeholderNoExtensionFilter)\n                extensions.append('')\n            return extensions\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "1a1f5a2db670b5b1a5aca6e387a7bff55eea856ea7a5deae6765211c0304df8f",
+  "human_valid": true,
+  "line_no": 37799,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "65dadadcd280329e0eb95acf7d0f36f2a608752e21163c23aecbac0cc7565c98",
+  "raw_output": "\n        if extensions is None:\n            return []\n        else:\n            extensions = extensions.split(',')\n            if MapConstants.placeholderNoExtensionFilter in extensions:\n                extensions.remove(MapConstants.placeholderNoExtensionFilter)\n                extensions.append('')\n            return extensions\n\n    def",
+  "sampling_seed": 2459966080,
+  "tag": "t02",
+  "temperature": 0.2
+}

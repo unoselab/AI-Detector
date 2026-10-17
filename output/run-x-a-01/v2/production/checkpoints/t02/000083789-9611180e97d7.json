@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update_info(self, _action=None, **kwargs):\n        \"\"\"\n        UPdate info\n        :param user:\n        :param email:\n        :return:\n        \"\"\"\n        self.user = kwargs.get('user')\n        self.email = kwargs.get('email')\n        self.save()\n        return True\n",
+  "agc_valid": true,
+  "body_sha256": "2e47313dea8769e716b408034f90e42e7212e28a38c5f03a3674bfd7d7726b21",
+  "body_tokens": 38,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.user = kwargs.get('user')\n        self.email = kwargs.get('email')\n        self.save()\n        return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 115,
+  "human_sha256": "35753aebf76fa71df6200309e0e25515c55a2797999ec2049dd9f2a41e11af51",
+  "human_valid": true,
+  "line_no": 83789,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9611180e97d7ec48fc8794a3fbbb389d64cd922b11b5ed5f648160e29d53e3ad",
+  "raw_output": "\n        self.user = kwargs.get('user')\n        self.email = kwargs.get('email')\n        self.save()\n        return True\n\n    def",
+  "sampling_seed": 1387412396,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

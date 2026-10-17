@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def update_index_for_direction(self, index_direction, index):\n        \"\"\"\n        :type index_direction: SliceDirection\n        :type index: int\n        \"\"\"\n        if index_direction == SliceDirection.FORWARD:\n            self.index_forward = index\n        elif index_direction == SliceDirection.BACKWARD:\n            self.index_backward = index\n        else:\n            raise ValueError(\"Unknown index direction: {}\".format(index_direction))\n",
+  "agc_valid": true,
+  "body_sha256": "e61701f96f2d327f332261e6b786aa1f5fbd6dc4c29b36bd4a68757d2e8bebee",
+  "body_tokens": 75,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if index_direction == SliceDirection.FORWARD:\n            self.index_forward = index\n        elif index_direction == SliceDirection.BACKWARD:\n            self.index_backward = index\n        else:\n            raise ValueError(\"Unknown index direction: {}\".format(index_direction))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 181,
+  "human_sha256": "27a3607f402cdf84c1109b799a0785afee626a895df5da43af2af8046c210c9c",
+  "human_valid": true,
+  "line_no": 173776,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b5bfae08027594d07f1d63e9facf304fb4395050d6a5426b5350aaa0cb66e323",
+  "raw_output": "\n        if index_direction == SliceDirection.FORWARD:\n            self.index_forward = index\n        elif index_direction == SliceDirection.BACKWARD:\n            self.index_backward = index\n        else:\n            raise ValueError(\"Unknown index direction: {}\".format(index_direction))\n\n    def",
+  "sampling_seed": 4153835548,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

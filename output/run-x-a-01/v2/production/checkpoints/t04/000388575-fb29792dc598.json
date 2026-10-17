@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def makedirs_perm(path, perm=None):\n    \"\"\"\n    Recursively creates directory up to *path*. If *perm* is set, the permissions of all newly\n    created directories are set to its value.\n    \"\"\"\n    if not os.path.exists(path):\n        os.makedirs(path)\n        if perm is not None:\n            os.chmod(path, perm)\n",
+  "agc_valid": true,
+  "body_sha256": "a372bd765ac2e9e74c1946b8aa3cde5cac82a6803ae543b2ab1cceace8c82991",
+  "body_tokens": 40,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not os.path.exists(path):\n        os.makedirs(path)\n        if perm is not None:\n            os.chmod(path, perm)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 109,
+  "human_sha256": "93c8c30b191bc130f9bc0db72067ed4352f429cfaca92baf0266ec28c08f412d",
+  "human_valid": true,
+  "line_no": 388575,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fb29792dc598da57f76b1f3e43cfa2237ccb1614cbd465a848b34f9e96eaa6d3",
+  "raw_output": "\n    if not os.path.exists(path):\n        os.makedirs(path)\n        if perm is not None:\n            os.chmod(path, perm)\n\n\ndef mkdirs_perm(path, perm=None):\n    \"\"\"\n    Recursively creates directory up to *path*. If *perm* is set, the permissions of all newly\n    created directories are set to its value.\n    \"\"\"\n    if not os.path.exists(path):\n        os.mkdir(path)\n        if perm is not None:\n            os.chmod(path, perm)\n\n\ndef get_files_in_dir(path, pattern=None):\n    \"\"\"\n    Returns a list of all files in the directory *path*.\n    \"\"\"\n    files = []\n    for root, dirs, files in os.walk(path):\n        for file in files:\n            if pattern is None or fnmatch.fnmatch(file, pattern):\n                files.append(os.path.join(root, file))\n    return files\n\n\ndef get_files_in_dir_by_ext(path, ext):\n    \"\"\"\n    Returns a list of all files in the directory *path* with the extension *ext*.\n    \"\"\"\n    return get_files_in_dir(path, pattern='*.' + ext)\n\n\ndef get_files_in_dir_by_exts(path, exts):\n    \"\"\"\n    Returns a list of all files in the directory *path* with the extensions *exts*.\n    \"\"\"\n    return get_files_in_dir(path, pattern='*.' + '*'.join(exts))\n\n\ndef get_files_in_dir_by_exts_recursive(path, exts):\n    \"\"\"\n    Returns a list of all files in the directory *path* and its subdirectories with the\n    extensions *exts*.\n    \"\"\"\n    return get_files_in_dir(path, pattern='*.' + '*'.join(exts))\n\n\ndef get_files_in_dir_by_ext_recursive(path, ext):\n    \"\"\"\n    Returns a list of all files in the directory *path* and its subdirectories with the",
+  "sampling_seed": 1816165327,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

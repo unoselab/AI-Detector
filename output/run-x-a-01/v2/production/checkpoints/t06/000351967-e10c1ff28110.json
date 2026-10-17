@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def interfaces(self):\n        \"\"\"Get the wifi interface lists.\"\"\"\n            if self._interfaces is None:\n                self._interfaces = []\n                try:\n                    interfaces = netifaces.interfaces()\n                    for interface in interfaces:\n                        self._interfaces.append(Interface(interface))\n                except IOError:\n                    pass\n            return self._interfaces\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "1816ff960281ae017837a1c7ed57d4ff6bbcaed861c9fbb200bb73195b7a5126",
+  "body_tokens": 177,
+  "bucket": "type08_180",
+  "clean_output": "\n            if self._interfaces is None:\n                self._interfaces = []\n                try:\n                    interfaces = netifaces.interfaces()\n                    for interface in interfaces:\n                        self._interfaces.append(Interface(interface))\n                except IOError:\n                    pass\n            return self._interfaces\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "1033b00606d7bc5ab4cb0510ef33acaf994bfd37264ae3271905a911c910bbd5",
+  "human_valid": true,
+  "line_no": 351967,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e10c1ff281105d2bc5a9c530af47da8c5c2cae26630c7f177ad88d08f6ec3a7c",
+  "raw_output": "\n        if self._interfaces is None:\n            self._interfaces = []\n            try:\n                interfaces = netifaces.interfaces()\n                for interface in interfaces:\n                    self._interfaces.append(Interface(interface))\n            except IOError:\n                pass\n        return self._interfaces\n\n    @property\n    def",
+  "sampling_seed": 254366174,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

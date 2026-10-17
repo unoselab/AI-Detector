@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def do_cloud_query(cls, cql, *pvalues):\n        \"\"\"\n        使用 CQL 来构造查询。CQL 语法参考 `这里 <https://cn.avoscloud.com/docs/cql_guide.html>`_。\n\n        :param cql: CQL 语句\n        :param pvalues: 查询参数\n        :rtype: CQLResult\n        \"\"\"\n            return CQLQuery(cql, pvalues)\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "73ee6f994d71f86d2f92f6df2eca4ed209af7c4f47912f9140bf03b7d01607e6",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return CQLQuery(cql, pvalues)\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "e9611c5c024e13cefcb6606abf42235a4313dae3f9d0f421358629f4e4ad1c1d",
+  "human_valid": true,
+  "line_no": 135022,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2a717ec26a9929ac04262e82f713f7ac87a98873c798a4516ebbf92e85052407",
+  "raw_output": "\n        return CQLQuery(cql, pvalues)\n\n    @classmethod\n    def",
+  "sampling_seed": 519517062,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def prep_search_string(cls, search_string, match_substrings):\n        \"\"\"Prepares search string as a proper whoosh search string.\n\n        :param search_string: The search string which should be prepared.\n        :param match_substrings: ``True`` if you want to match substrings,\n                                 ``False`` otherwise.\n        \"\"\"\n            if match_substrings:\n                return u'*%s*' % search_string\n            else:\n                return search_string\n\n        @classmethod\n",
+  "agc_valid": false,
+  "body_sha256": "168c4e02289e68071a063fbda4f816c10316cc2ef22385c77045fdddbbaada21",
+  "body_tokens": 70,
+  "bucket": "out_of_range",
+  "clean_output": "\n            if match_substrings:\n                return u'*%s*' % search_string\n            else:\n                return search_string\n\n        @classmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 156,
+  "human_sha256": "2aa203ade93da6f0fbe7492bc11e764af43f2e14931ebfeb6fe9921a7c60ef13",
+  "human_valid": true,
+  "line_no": 275686,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "525706a07de30615db2a48125b6795b5a348799f545400be1a5f53be81a38256",
+  "raw_output": "\n        if match_substrings:\n            return u'*%s*' % search_string\n        else:\n            return search_string\n\n    @classmethod\n    def",
+  "sampling_seed": 2804664815,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_env_list(obj, env):\n    \"\"\"Creates the list of environments to read\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a list of working environments\n    \"\"\"\n    if isinstance(env, str):\n        return [env]\n    if isinstance(env, list):\n        return env\n    if isinstance(env, dict):\n        return list(env.keys())\n    return [\"DYNACONF\"]\n",
+  "agc_valid": true,
+  "body_sha256": "2000fa3ba42b3daaf627d8829a3ee9a52965ba90d4cb46bd568ef35988bf6b06",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if isinstance(env, str):\n        return [env]\n    if isinstance(env, list):\n        return env\n    if isinstance(env, dict):\n        return list(env.keys())\n    return [\"DYNACONF\"]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "3ced4858980d192057e7fdfe18177356993b16926fb557606a518f64d06e364e",
+  "human_valid": true,
+  "line_no": 166264,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0183289bbd729887c0f0e269528432abc97d839014430b4cdb6f0516bf5a16ab",
+  "raw_output": "\n    if isinstance(env, str):\n        return [env]\n    if isinstance(env, list):\n        return env\n    if isinstance(env, dict):\n        return list(env.keys())\n    return [\"DYNACONF\"]\n\n\ndef _get_env_value(obj, env):\n    \"\"\"Gets the value of the environment\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: the value of the environment\n    \"\"\"\n    if isinstance(env, dict):\n        return env.get(obj.ENV_FOR_DYNACONF)\n    return env\n\n\ndef _get_env_files(obj, env):\n    \"\"\"Gets the files of the environment\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a list of files\n    \"\"\"\n    if isinstance(env, dict):\n        return env.get(obj.FILES_FOR_DYNACONF)\n    return obj.FILES_FOR_DYNACONF\n\n\ndef _get_env_silent(obj, env):\n    \"\"\"Gets the silent flag of the environment\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a boolean value\n    \"\"\"\n    if isinstance(env, dict):\n        return env.get(obj.SILENT_FOR_DYNACONF)\n    return obj.SILENT_FOR_DYNACONF\n\n\ndef _get_env_load_dotenv(obj, env):\n    \"\"\"Gets the silent flag of the environment\n\n    :param obj: the settings instance\n    :param env: settings env default='DYNACONF'\n    :return: a boolean value\n    \"\"\"\n    if isinstance(env, dict):\n        return env.get(obj.LOAD_DOTENV_FOR_DYNACONF)\n    return obj.LOAD_DOTENV_FOR_DYNACONF\n\n\ndef _get_env_enc",
+  "sampling_seed": 1383561637,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

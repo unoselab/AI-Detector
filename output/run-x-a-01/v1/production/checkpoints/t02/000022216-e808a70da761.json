@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def purge_old_files(date_time, directory_path, custom_prefix=\"backup\"):\n    \"\"\" Takes a datetime object and a directory path, runs through files in the\n        directory and deletes those tagged with a date from before the provided\n        datetime.\n        If your backups have a custom_prefix that is not the default (\"backup\"),\n        provide it with the \"custom_prefix\" kwarg. \"\"\"\n        for file in os.listdir(directory_path):\n            if file.startswith(custom_prefix):\n                if file.endswith(\".tar.gz\"):\n                    file_date = file.split(\"_\")[1]\n                    file_date = file_date.split(\".tar.gz\")[0]\n                    file_date = datetime.datetime.strptime(file_date, \"%Y-%m-%d-%H-%M-%S\")\n                    if file_date < date_time:\n                        os.remove(os.path.join(directory_path, file))\n",
+  "agc_valid": false,
+  "body_sha256": "153b34bb4c19dcf658de2fd929ac205304141bdb6224d8fc3c6ed47019120b4d",
+  "body_tokens": 157,
+  "bucket": "type06_160",
+  "clean_output": "\n        for file in os.listdir(directory_path):\n            if file.startswith(custom_prefix):\n                if file.endswith(\".tar.gz\"):\n                    file_date = file.split(\"_\")[1]\n                    file_date = file_date.split(\".tar.gz\")[0]\n                    file_date = datetime.datetime.strptime(file_date, \"%Y-%m-%d-%H-%M-%S\")\n                    if file_date < date_time:\n                        os.remove(os.path.join(directory_path, file))\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "91d8af7d0206367b3c24be31e3ad5e721c30b3f7caf5d9f991a840727e4d26dd",
+  "human_valid": true,
+  "line_no": 22216,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "e808a70da761aa550235410008c62bbf3e14bec68a424ec1ab45de146ad38b04",
+  "raw_output": "\r\n    for file in os.listdir(directory_path):\r\n        if file.startswith(custom_prefix):\r\n            if file.endswith(\".tar.gz\"):\r\n                file_date = file.split(\"_\")[1]\r\n                file_date = file_date.split(\".tar.gz\")[0]\r\n                file_date = datetime.datetime.strptime(file_date, \"%Y-%m-%d-%H-%M-%S\")\r\n                if file_date < date_time:\r\n                    os.remove(os.path.join(directory_path, file))\r\n\r\n\r\ndef main():\r\n    \"\"\" Main function \"\"\"\r\n    # Get the current date and time\r\n    current_date_time = datetime.datetime.now()\r\n    # Get the directory path\r\n    directory_path = os.path.dirname(os.path.realpath(__file__))\r\n    # Purge old files\r\n    purge_old_files(current_date_time, directory_path)\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    main()\r\n</s>",
+  "sampling_seed": 2464944140,
+  "tag": "t02",
+  "temperature": 0.2
+}

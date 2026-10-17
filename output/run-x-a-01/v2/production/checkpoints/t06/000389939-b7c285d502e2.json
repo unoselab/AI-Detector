@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def check_update(dev: Device, internet: bool, update: bool):\n    \"\"\"Print out update information.\"\"\"\n    if dev.is_update_available() and update:\n        print(f\"Update available: {dev.update_info.version}\")\n        if internet:\n            dev.update()\n            print(\"Update successful\")\n        else:\n            print(\"No internet connection, update failed\")\n",
+  "agc_valid": true,
+  "body_sha256": "d3912722af34e599a3f1af62365f71cefb33690f0bb6ff07890d80c02b442260",
+  "body_tokens": 76,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if dev.is_update_available() and update:\n        print(f\"Update available: {dev.update_info.version}\")\n        if internet:\n            dev.update()\n            print(\"Update successful\")\n        else:\n            print(\"No internet connection, update failed\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "9ea5907780b8c6fff52ca3ad00cba667c843128219f39e032b23b969478a9726",
+  "human_valid": true,
+  "line_no": 389939,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7c285d502e2ca1c307db1a79f3b140eaf31ac3533853d37e3db2214666da650",
+  "raw_output": "\n    if dev.is_update_available() and update:\n        print(f\"Update available: {dev.update_info.version}\")\n        if internet:\n            dev.update()\n            print(\"Update successful\")\n        else:\n            print(\"No internet connection, update failed\")\n\n\ndef main(dev: Device, update: bool):\n    \"\"\"Update device if update is available.\"\"\"\n    print(\"Checking update...\")\n    check_update(dev, True, update)\n\n\nif __name__ == \"__main__\":\n    dev = Device()\n    parser = argparse.ArgumentParser(description=\"Update device.\")\n    parser.add_argument(\n        \"--no-internet\",\n        dest=\"internet\",\n        action=\"store_false\",\n        help=\"Do not check for internet connection.\",\n    )\n    parser.add_argument(\n        \"--no-update\",\n        dest=\"update\",\n        action=\"store_false\",\n        help=\"Do not update device if update is available.\",\n    )\n    parser.set_defaults(internet=True, update=True)\n    args = parser.parse_args()\n    main(dev, args.update)\n    print(\"Done\")\n</s>",
+  "sampling_seed": 438644557,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

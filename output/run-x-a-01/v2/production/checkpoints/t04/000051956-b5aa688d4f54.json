@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def version(self, path, postmap=None, **params):\n        \"\"\"\n        Return the taskforce version.\n\n        Supports standard options.\n    \"\"\"\n        return self._get(path, postmap=postmap, **params)\n",
+  "agc_valid": true,
+  "body_sha256": "2c212bcefdf0fbe36a54ec96fa6cab594fe6b2edd4f20634be036dd067d29902",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._get(path, postmap=postmap, **params)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 195,
+  "human_sha256": "6b6d8c8b7312f3f506344c2235640731031e393cbab021490c2f7773bac465c4",
+  "human_valid": true,
+  "line_no": 51956,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b5aa688d4f54be2d1f53aed03e7e6d08ed621ef27f88c59b3dfb798235188122",
+  "raw_output": "\n        return self._get(path, postmap=postmap, **params)\n\n    def",
+  "sampling_seed": 2827067405,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

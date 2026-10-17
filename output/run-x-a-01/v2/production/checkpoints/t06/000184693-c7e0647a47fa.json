@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def averageSequenceAccuracy(self, minOverlap, maxOverlap):\n    \"\"\"\n    For each object, decide whether the TM uniquely classified it by checking\n    that the number of predictedActive cells are in an acceptable range.\n    \"\"\"\n    # Find the number of active cells for each object\n    # and the total number of active cells\n    objectActiveCellCounts = []\n    totalActiveCellCount =\n",
+  "agc_valid": false,
+  "body_sha256": "208ef0bed7ac77630f8ec0f96a6329ebcb18c0da92aaf278475936678c33ab4d",
+  "body_tokens": 36,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # Find the number of active cells for each object\n    # and the total number of active cells\n    objectActiveCellCounts = []\n    totalActiveCellCount =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "3857146d2ec623275148904a1368e0fd3f64572562cbca9256e9e39b1a433688",
+  "human_valid": true,
+  "line_no": 184693,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "c7e0647a47faaed14bd8d49260d222b13da49335ce81c8bd0540c0c05fadcb9c",
+  "raw_output": "\n    # Find the number of active cells for each object\n    # and the total number of active cells\n    objectActiveCellCounts = []\n    totalActiveCellCount = ",
+  "sampling_seed": 2474677296,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def translate(cores, files, args):\n    \"\"\"\n    translate is used for Processing per core translation. cores[i] will translate files[i]\n\n    :param cores: the number of cores used for translation, each core will launch a thread to translate\n    :param files: file list to be translated\n    :param args: input parameters\n    :return: list of translated file\n    \"\"\"\n    # TODO: add translation function\n    pass\n",
+  "agc_valid": false,
+  "body_sha256": "233b71c9bf3a406c68e044ddbb4330b39343bb3771cf0056110ec75fa15947e8",
+  "body_tokens": 13,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: add translation function\n    pass\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "cce39487fcda473fdddbd1f54f61eb428805769de2d80c25cc62c4cc1cad7f08",
+  "human_valid": true,
+  "line_no": 335244,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d5bbab92d7060630f62831fcf5a6751a63aa4c0e406a406551fa55cd07c3c87a",
+  "raw_output": "\n    # TODO: add translation function\n    pass\n\n\ndef translate_single(file, args):\n    \"\"\"\n    translate_single is used for single core translation.\n\n    :param file: file to be translated\n    :param args: input parameters\n    :return: translated file\n    \"\"\"\n    # TODO: add translation function\n    pass\n\n\ndef translate_single_with_output(file, args):\n    \"\"\"\n    translate_single_with_output is used for single core translation with output.\n\n    :param file: file to be translated\n    :param args: input parameters\n    :return: translated file\n    \"\"\"\n    # TODO: add translation function\n    pass\n\n\ndef translate_single_with_output_and_input(file, args):\n    \"\"\"\n    translate_single_with_output_and_input is used for single core translation with output and input.\n\n    :param file: file to be translated\n    :param args: input parameters\n    :return: translated file\n    \"\"\"\n    # TODO: add translation function\n    pass\n\n\ndef translate_single_with_output_and_input_and_output(file, args):\n    \"\"\"\n    translate_single_with_output_and_input_and_output is used for single core translation with output and input and output.\n\n    :param file: file to be translated\n    :param args: input parameters\n    :return: translated file\n    \"\"\"\n    # TODO: add translation function\n    pass\n\n\ndef translate_single_with_output_and_input_and_output_and_input(file, args):\n    \"\"\"\n    translate_single_with_output_and_input_and_output_and_input is used for single core translation with output and input and output and input.\n\n    :param file: file to be translated\n    :param args: input parameters\n    :return: translated file\n    \"\"\"\n    # TODO: add translation function\n    pass\n\n\ndef translate_single_with_output_and_input_and_output_and_input_and_output(file, args):\n    \"\"\"\n    translate_single_with_output_and_input_and_output_and_input_and_output is used for single core translation",
+  "sampling_seed": 705230149,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

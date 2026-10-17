@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def samefile(path1, path2):\n    \"\"\"\n    Return True if both pathname arguments refer to the same file or directory.\n\n    Equivalent to \"os.path.samefile\".\n\n    Args:\n        path1 (path-like object): Path or URL.\n        path2 (path-like object): Path or URL.\n\n    Returns:\n        bool: True if same file or directory.\n    \"\"\"\n    return os.path.samefile(path1, path2)\n",
+  "agc_valid": true,
+  "body_sha256": "ab00c377770b6dbe48349b3f230f2e055e57185e1fd7071a8ef29e407d42f4e5",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return os.path.samefile(path1, path2)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "8ef19bf0536a873f38e52522fad537c9404bea104b2c940b4fd837fd191e23e6",
+  "human_valid": true,
+  "line_no": 230401,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "591295a1445a855fb2e2c73cf6765a678da5940b3d8e819438948182b4804431",
+  "raw_output": "\n    return os.path.samefile(path1, path2)\n\n\ndef sameopenfile(file1, file2):\n    \"\"\"\n    Return True if both file-like objects refer to the same file or directory.\n\n    Args:\n        file1 (file-like object): File-like object.\n        file2 (file-like object): File-like object.\n\n    Returns:\n        bool: True if same file or directory.\n    \"\"\"\n    return os.path.sameopenfile(file1, file2)\n\n\ndef samepath(path1, path2):\n    \"\"\"\n    Return True if both pathname arguments refer to the same path.\n\n    Equivalent to \"os.path.samepath\".\n\n    Args:\n        path1 (path-like object): Path or URL.\n        path2 (path-like object): Path or URL.\n\n    Returns:\n        bool: True if same path.\n    \"\"\"\n    return os.path.samepath(path1, path2)\n\n\ndef sameopenfile(file1, file2):\n    \"\"\"\n    Return True if both file-like objects refer to the same file or directory.\n\n    Args:\n        file1 (file-like object): File-like object.\n        file2 (file-like object): File-like object.\n\n    Returns:\n        bool: True if same file or directory.\n    \"\"\"\n    return os.path.sameopenfile(file1, file2)\n\n\ndef samestat(stat1, stat2):\n    \"\"\"\n    Return True if both stat-like objects refer to the same file or directory.\n\n    Args:\n        stat1 (stat-like object): Stat-like object.\n        stat2 (stat-like object): Stat-like object.\n\n    Returns:\n        bool: True if same file or directory.\n    \"\"\"\n    return os.path.samestat(stat1, stat2)\n\n\ndef sameuser(stat1, stat2):\n    \"\"\"\n    Return True if both stat-like objects refer to the same user.\n\n    Args:\n        stat1 (stat-like object): Stat-like object.\n        stat2 (stat-like object):",
+  "sampling_seed": 2838485418,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

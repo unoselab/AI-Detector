@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def stats(self, key=None):\n        \"\"\"\n        Return server stats.\n\n        :param key: Optional if you want status from a key.\n        :type key: six.string_types\n        :return: A dict with server stats\n        :rtype: dict\n        \"\"\"\n        if key:\n            return self.connection.get(key)\n        return self.connection.info()\n",
+  "agc_valid": true,
+  "body_sha256": "12f0919e78d86c0127da24e6021432b7d73714e7cf7c8820c3d6c46e000f8d67",
+  "body_tokens": 32,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if key:\n            return self.connection.get(key)\n        return self.connection.info()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "a79c125f7ba7d856689e96832553a22a2b9d560aa2a4f00f71aac8cdcfd430bf",
+  "human_valid": true,
+  "line_no": 15663,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "512c07a1a20d0b5617a0d228fc72b65f9d5e8230e5aa76c8612e35b3869bc055",
+  "raw_output": "\n        if key:\n            return self.connection.get(key)\n        return self.connection.info()\n\n    def",
+  "sampling_seed": 944228392,
+  "tag": "t02",
+  "temperature": 0.2
+}

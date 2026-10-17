@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def open(self):\n        \"\"\"\n        Fixes RDF validation issues. Zotero incorrectly uses ``rdf:resource`` as\n        a child element for Attribute; ``rdf:resource`` should instead be used\n        as an attribute of ``link:link``.\n        \"\"\"\n        for item in self.items:\n            for link in item.links:\n                if 'rdf:resource' in link:\n                    link['rdf:resource'] = link.pop('rdf:resource')\n\n        for item in self.items:\n            for link in item.links:\n                if 'link:link' in link:\n                    if 'rdf:resource' in link['link:link']:\n                        link['link:link']['rdf:resource'] = link['link:link'].pop('rdf:resource')\n",
+  "agc_valid": true,
+  "body_sha256": "71574ceab0aa2a7c5d79e4e5220d04edbbfef5eb7a4f1167735bca94154443dc",
+  "body_tokens": 162,
+  "bucket": "type07_170",
+  "clean_output": "\n        for item in self.items:\n            for link in item.links:\n                if 'rdf:resource' in link:\n                    link['rdf:resource'] = link.pop('rdf:resource')\n\n        for item in self.items:\n            for link in item.links:\n                if 'link:link' in link:\n                    if 'rdf:resource' in link['link:link']:\n                        link['link:link']['rdf:resource'] = link['link:link'].pop('rdf:resource')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "05c0962015290dbeba6969403d3e90401cceaf8cf2f7f2db6ba08b13f882cb68",
+  "human_valid": true,
+  "line_no": 286002,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9cdf59e811bb961ad17c9f0047363d594e3be6d92c18404b4b9e9cf64b52d42e",
+  "raw_output": "\n        for item in self.items:\n            for link in item.links:\n                if 'rdf:resource' in link:\n                    link['rdf:resource'] = link.pop('rdf:resource')\n\n        for item in self.items:\n            for link in item.links:\n                if 'link:link' in link:\n                    if 'rdf:resource' in link['link:link']:\n                        link['link:link']['rdf:resource'] = link['link:link'].pop('rdf:resource')\n\n    def",
+  "sampling_seed": 1002465298,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_baseline_string_from_file(filename):  # pragma: no cover\n    \"\"\"Breaking this function up for mockability.\"\"\"\n    with open(filename, 'r') as file_:\n        return file_.read()\n",
+  "agc_valid": true,
+  "body_sha256": "107dd1ead72ba74708ddb17330c1c0d48b391a965e979594f6ed26f151745396",
+  "body_tokens": 18,
+  "bucket": "out_of_range",
+  "clean_output": "\n    with open(filename, 'r') as file_:\n        return file_.read()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "00c4e408f2d76571f0d88241cf880a672b8cfb0734e44bad45cb579523215664",
+  "human_valid": true,
+  "line_no": 332650,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5b9848fe1e849a4cb57d6e9c9cea277de04623b7b3d5e20a2ed18991016a605c",
+  "raw_output": "\n    with open(filename, 'r') as file_:\n        return file_.read()\n\n\ndef _get_baseline_string_from_file(filename):\n    \"\"\"Return the contents of the file as a string.\"\"\"\n    return _get_baseline_string_from_file(filename)\n\n\ndef _get_baseline_string_from_file_or_module(filename):\n    \"\"\"Return the contents of the file as a string.\"\"\"\n    if filename.endswith('.py'):\n        module_name = os.path.basename(filename)[:-3]\n        return _get_baseline_string_from_module(module_name)\n    else:\n        return _get_baseline_string_from_file(filename)\n\n\ndef _get_baseline_string_from_module(module_name):\n    \"\"\"Return the contents of the file as a string.\"\"\"\n    try:\n        module = __import__(module_name, globals(), locals(), [], ",
+  "sampling_seed": 1428149058,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

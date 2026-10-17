@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_primitive_name(schema):\n    \"\"\" Get a human-friendly name for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    return schema.get('name', schema.get('id'))\n",
+  "agc_valid": true,
+  "body_sha256": "b3ae97b2405a8d979f99c915b008cd6235939d74799faa42383fb48ab6d881a5",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return schema.get('name', schema.get('id'))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 129,
+  "human_sha256": "c9219620135caf13686b253b31426ce48b010574cbc73ff405514c91a2b07d31",
+  "human_valid": true,
+  "line_no": 256919,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9c72fdf4fe0a7123d7c31402cf816bbac39116b13eb73838c194ec510f827528",
+  "raw_output": "\n    return schema.get('name', schema.get('id'))\n\n\ndef get_primitive_title(schema):\n    \"\"\" Get a human-friendly title for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    return schema.get('title', schema.get('name', schema.get('id')))\n\n\ndef get_primitive_description(schema):\n    \"\"\" Get a human-friendly description for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    return schema.get('description', '')\n\n\ndef get_primitive_category(schema):\n    \"\"\" Get a human-friendly category for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    return schema.get('category')\n\n\ndef get_primitive_tags(schema):\n    \"\"\" Get a human-friendly tags for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: list\n    \"\"\"\n    return schema.get('tags', [])\n\n\ndef get_primitive_metadata(schema):\n    \"\"\" Get a human-friendly metadata for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: dict\n    \"\"\"\n    return schema.get('metadata')\n\n\ndef get_primitive_version(schema):\n    \"\"\" Get a human-friendly version for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    return schema.get('version')\n\n\ndef get_primitive_author(schema):\n    \"\"\" Get a human-friendly author for the given primitive.\n\n    :param schema: Schema\n    :type schema: *\n    :rtype: unicode\n    \"\"\"\n    return schema.get('author')\n\n\ndef get_primitive_contributor(schema):\n    \"\"\" Get a human-friendly contributor for the given primitive.\n\n    :param schema: Schema\n",
+  "sampling_seed": 2413386747,
+  "source_stratum": "type03_130",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def allpossibilities(self):\n        \"\"\"Returns all possible outputtemplates that may occur (recusrively applied)\"\"\"\n        output = []\n        for t in self.templates:\n            if not isinstance(t, Template):\n                output.append(t)\n            else:\n                output.extend(t.allpossibilities())\n        return output\n",
+  "agc_valid": true,
+  "body_sha256": "bb76f1fea83031a3fdd35ba72a6780c50a64e49285742ae6605d3d056a06f6c8",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n        output = []\n        for t in self.templates:\n            if not isinstance(t, Template):\n                output.append(t)\n            else:\n                output.extend(t.allpossibilities())\n        return output\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "135cbd5d038b0fe72e1102975f00525b5b043c88343e9117679fb769091a8955",
+  "human_valid": true,
+  "line_no": 236293,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aa605169d9a14e8936783971f69f196ffc3cc292fa43c70ecade477b40b6408f",
+  "raw_output": "\n        output = []\n        for t in self.templates:\n            if not isinstance(t, Template):\n                output.append(t)\n            else:\n                output.extend(t.allpossibilities())\n        return output\n\n    def",
+  "sampling_seed": 2157945621,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

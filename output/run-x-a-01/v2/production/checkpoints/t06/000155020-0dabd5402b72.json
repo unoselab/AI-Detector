@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def estimator_cov(self,method):\n        \"\"\" Creates covariance matrix for the estimators\n\n        Parameters\n        ----------\n        method : str\n            Estimation method\n\n        Returns\n        ----------\n        A Covariance Matrix\n        \"\"\"\n        if method=='ml':\n            return self.cov_ml\n        elif method=='em':\n            return self.cov_em\n        elif method=='pem':\n            return self.cov_pem\n        elif method=='mle':\n            return self.cov_mle\n        elif method=='mle_e':\n            return self.cov_mle_e\n        elif method=='em_e':\n            return self.cov_em_e\n        elif method=='pem_e':\n            return self.cov_pem_e\n        elif method=='mle_c':\n            return self.cov_mle_c\n        elif method=='em_c':\n            return self.cov_em_c\n        elif method=='pem_c':\n            return self.cov_pem_c\n",
+  "agc_valid": true,
+  "body_sha256": "6fec3c6e59e052811b297115b0a9b5138bb59625dc4d144fccc0f081983b12d4",
+  "body_tokens": 221,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if method=='ml':\n            return self.cov_ml\n        elif method=='em':\n            return self.cov_em\n        elif method=='pem':\n            return self.cov_pem\n        elif method=='mle':\n            return self.cov_mle\n        elif method=='mle_e':\n            return self.cov_mle_e\n        elif method=='em_e':\n            return self.cov_em_e\n        elif method=='pem_e':\n            return self.cov_pem_e\n        elif method=='mle_c':\n            return self.cov_mle_c\n        elif method=='em_c':\n            return self.cov_em_c\n        elif method=='pem_c':\n            return self.cov_pem_c\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 114,
+  "human_sha256": "013d39f0865305e120c7ef58793fdf721aaac8142a87190f8b51f6120acfd93b",
+  "human_valid": true,
+  "line_no": 155020,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0dabd5402b72b234aae7d2270bef3c6ab7b734661180e8b8d11cc5c29553aa42",
+  "raw_output": "\n        if method=='ml':\n            return self.cov_ml\n        elif method=='em':\n            return self.cov_em\n        elif method=='pem':\n            return self.cov_pem\n        elif method=='mle':\n            return self.cov_mle\n        elif method=='mle_e':\n            return self.cov_mle_e\n        elif method=='em_e':\n            return self.cov_em_e\n        elif method=='pem_e':\n            return self.cov_pem_e\n        elif method=='mle_c':\n            return self.cov_mle_c\n        elif method=='em_c':\n            return self.cov_em_c\n        elif method=='pem_c':\n            return self.cov_pem_c\n\n    def",
+  "sampling_seed": 2630424985,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def DeserializeExclusiveData(self, reader):\n        \"\"\"\n        Deserialize full object.\n\n        Args:\n            reader (neo.IO.BinaryReader):\n        \"\"\"\n        self.ExclusiveData = reader.ReadVarBytes()\n",
+  "agc_valid": true,
+  "body_sha256": "f61aaa49c546de297e8b0655bc5ba69af3d2c0900fdf9977133c2cc8f1da39dd",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.ExclusiveData = reader.ReadVarBytes()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "e13184c109466ca4d45a335ee1bd667f6931013c8e856e88fddc6c0581c3e760",
+  "human_valid": true,
+  "line_no": 345475,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6e1f70af465a7abe2c23287a84c30db28b711b58ff275ed0f0ee28484eabd057",
+  "raw_output": "\n        self.ExclusiveData = reader.ReadVarBytes()\n\n    def",
+  "sampling_seed": 2486618395,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

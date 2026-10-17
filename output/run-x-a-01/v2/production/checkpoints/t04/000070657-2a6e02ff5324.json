@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_vote_inits(provider: Provider, deck: Deck) -> Iterable[Vote]:\n    \"\"\"find vote_inits on this deck\"\"\"\n    return Vote.query.filter_by(deck=deck, provider=provider).all()\n",
+  "agc_valid": true,
+  "body_sha256": "077882937c7cba8e603a40ff15d052d0113f3492f955927b05cdf7cb7c6852fe",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return Vote.query.filter_by(deck=deck, provider=provider).all()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 127,
+  "human_sha256": "b3fca0cdf3b0398fe12c21cd5b48264d448feea6484d467bee6ded14cb228bc6",
+  "human_valid": true,
+  "line_no": 70657,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2a6e02ff5324e8bb7d980b99b7a436c444891cb43e1a004003d4d54cdc51367d",
+  "raw_output": "\n    return Vote.query.filter_by(deck=deck, provider=provider).all()\n\n\ndef find_vote_init(provider: Provider, deck: Deck, user: User) -> Optional[Vote]:\n    \"\"\"find vote_init on this deck for this user\"\"\"\n    return Vote.query.filter_by(deck=deck, provider=provider, user=user).first()\n\n\ndef find_vote_init_by_id(vote_init_id: int) -> Optional[Vote]:\n    \"\"\"find vote_init by id\"\"\"\n    return Vote.query.get(vote_init_id)\n\n\ndef find_vote_init_by_deck_and_user(deck: Deck, user: User) -> Optional[Vote]:\n    \"\"\"find vote_init by deck and user\"\"\"\n    return Vote.query.filter_by(deck=deck, user=user).first()\n\n\ndef find_vote_inits_by_deck(deck: Deck) -> Iterable[Vote]:\n    \"\"\"find vote_inits by deck\"\"\"\n    return Vote.query.filter_by(deck=deck).all()\n\n\ndef find_vote_inits_by_provider(provider: Provider) -> Iterable[Vote]:\n    \"\"\"find vote_inits by provider\"\"\"\n    return Vote.query.filter_by(provider=provider).all()\n\n\ndef find_vote_inits_by_user(user: User) -> Iterable[Vote]:\n    \"\"\"find vote_inits by user\"\"\"\n    return Vote.query.filter_by(user=user).all()\n\n\ndef find_vote_inits_by_deck_and_provider(deck: Deck, provider: Provider) -> Iterable[Vote]:\n    \"\"\"find vote_inits by deck and provider\"\"\"\n    return Vote.query.filter_by(deck=deck, provider=provider).all()\n\n\ndef find_vote_inits_by_deck_and_user(deck: Deck, user: User) -> Iterable[Vote]:\n    \"\"\"find vote_inits by deck and user\"\"\"\n    return Vote",
+  "sampling_seed": 474398402,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

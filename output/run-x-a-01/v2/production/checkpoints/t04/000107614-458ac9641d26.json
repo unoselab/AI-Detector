@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _extract_functions(resources):\n        \"\"\"\n        Extracts and returns function information from the given dictionary of SAM/CloudFormation resources. This\n        method supports functions defined with AWS::Serverless::Function and AWS::Lambda::Function\n\n        :param dict resources: Dictionary of SAM/CloudFormation resources\n        :return dict(string : samcli.commands.local.lib.provider.Function): Dictionary of function LogicalId to the\n            Function configuration object\n        \"\"\"\n            functions = {}\n            for resource_id, resource_properties in resources.items():\n                if resource_properties.get(\"Type\") == \"AWS::Serverless::Function\" or \\\n                        resource_properties.get(\"Type\") == \"AWS::Lambda::Function\":\n                    functions[resource_id] = Function(resource_id, resource_properties)\n            return functions\n\n        @staticmethod\n",
+  "agc_valid": false,
+  "body_sha256": "6d50d36e0c27f41b2902aba19afafa4395f3d127b22aff3d63b0aac89db63130",
+  "body_tokens": 122,
+  "bucket": "type03_130",
+  "clean_output": "\n            functions = {}\n            for resource_id, resource_properties in resources.items():\n                if resource_properties.get(\"Type\") == \"AWS::Serverless::Function\" or \\\n                        resource_properties.get(\"Type\") == \"AWS::Lambda::Function\":\n                    functions[resource_id] = Function(resource_id, resource_properties)\n            return functions\n\n        @staticmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "aa7f18991dcc97ac0bf5b4f524425199826d74a49a18f802744d0f458898d25a",
+  "human_valid": true,
+  "line_no": 107614,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "458ac9641d26c33ff8d3479991cc717a7c2cfd84edc2ba10a844bba94bec8993",
+  "raw_output": "\n\n        functions = {}\n        for resource_id, resource_properties in resources.items():\n            if resource_properties.get(\"Type\") == \"AWS::Serverless::Function\" or \\\n                    resource_properties.get(\"Type\") == \"AWS::Lambda::Function\":\n                functions[resource_id] = Function(resource_id, resource_properties)\n        return functions\n\n    @staticmethod\n    def",
+  "sampling_seed": 2449210480,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

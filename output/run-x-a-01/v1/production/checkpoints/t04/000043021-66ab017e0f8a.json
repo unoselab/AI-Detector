@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def build_graph(layout_str, slanted):\n    \"\"\"\n    builds an adjacency graph as a dictionary: {character: [adjacent_characters]}.\n    adjacent characters occur in a clockwise order.\n    for example:\n    * on qwerty layout, 'g' maps to ['fF', 'tT', 'yY', 'hH', 'bB', 'vV']\n    * on keypad layout, '7' maps to [None, None, None, '=', '8', '5', '4', None]\n    \"\"\"\n    \"\"\"\n     graph = {}\n     for char in layout_str:\n         graph[char] = []\n\n     for i in range(len(layout_str)):\n         for j in range(len(layout_str)):\n             if layout_str[i] == layout_str[j]:\n                 continue\n             if (i + j) %\n",
+  "agc_valid": false,
+  "body_sha256": "51bbc0fb86a30adbc1ea99f4f9cbc7b8d772737e2fdb268452a698297914c3c1",
+  "body_tokens": 101,
+  "bucket": "type01_110",
+  "clean_output": "\n    \"\"\"\n     graph = {}\n     for char in layout_str:\n         graph[char] = []\n\n     for i in range(len(layout_str)):\n         for j in range(len(layout_str)):\n             if layout_str[i] == layout_str[j]:\n                 continue\n             if (i + j) %\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "2a368ece751b66fd373c6715e54eba37809fa23fccd6f0e788e18337df91f1b3",
+  "human_valid": true,
+  "line_no": 43021,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "66ab017e0f8aa038883e47685253e885ce5822f5e73a87fad8b0c37b36a99faa",
+  "raw_output": "   \"\"\"\n    graph = {}\n    for char in layout_str:\n        graph[char] = []\n\n    for i in range(len(layout_str)):\n        for j in range(len(layout_str)):\n            if layout_str[i] == layout_str[j]:\n                continue\n            if (i + j) % ",
+  "sampling_seed": 3519730873,
+  "tag": "t04",
+  "temperature": 0.4
+}

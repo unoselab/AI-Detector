@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def is_base_and_derived(based, derived):\n    \"\"\"returns True, if there is \"base and derived\" relationship between\n    classes, False otherwise\"\"\"\n    if not isinstance(based, str):\n        raise TypeError(\"based must be a string\")\n    if not isinstance(derived, str):\n        raise TypeError(\"derived must be a string\")\n    if based == derived:\n        return False\n    if based not in based_types:\n        raise ValueError(\"based must be a name of a base type\")\n    if derived not in derived_types:\n        raise ValueError(\"derived must be a name of a derived type\")\n    if based not in base_types:\n        raise ValueError(\"based must be a name of a base type\")\n    if derived not in base_types:\n        raise ValueError(\"derived must be a name of a derived type\")\n    if based not in derived_types[derived]:\n        return False\n    return True\n",
+  "agc_valid": true,
+  "body_sha256": "1822d5d816f1d8948ac4cc8e5223d3e9c334e1228b93d51463651251670083c3",
+  "body_tokens": 179,
+  "bucket": "type08_180",
+  "clean_output": "\n    if not isinstance(based, str):\n        raise TypeError(\"based must be a string\")\n    if not isinstance(derived, str):\n        raise TypeError(\"derived must be a string\")\n    if based == derived:\n        return False\n    if based not in based_types:\n        raise ValueError(\"based must be a name of a base type\")\n    if derived not in derived_types:\n        raise ValueError(\"derived must be a name of a derived type\")\n    if based not in base_types:\n        raise ValueError(\"based must be a name of a base type\")\n    if derived not in base_types:\n        raise ValueError(\"derived must be a name of a derived type\")\n    if based not in derived_types[derived]:\n        return False\n    return True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "33446d59f6e2d0b019ec0a48caada57bed47b78b85f03ff704489577de55698a",
+  "human_valid": true,
+  "line_no": 274998,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6b1371d4d25cc41a7d02cbb66d6a90c3d42dd5bbbd4b0f21afee791b15103b4c",
+  "raw_output": "\n    if not isinstance(based, str):\n        raise TypeError(\"based must be a string\")\n    if not isinstance(derived, str):\n        raise TypeError(\"derived must be a string\")\n    if based == derived:\n        return False\n    if based not in based_types:\n        raise ValueError(\"based must be a name of a base type\")\n    if derived not in derived_types:\n        raise ValueError(\"derived must be a name of a derived type\")\n    if based not in base_types:\n        raise ValueError(\"based must be a name of a base type\")\n    if derived not in base_types:\n        raise ValueError(\"derived must be a name of a derived type\")\n    if based not in derived_types[derived]:\n        return False\n    return True\n\ndef is_derived_from(derived, based):\n    \"\"\"returns True, if derived is derived from based, False otherwise\"\"\"\n    return is_base_and_derived(based, derived)\n\ndef is_derived_from_any(derived, based_list):\n    \"\"\"returns True, if any of the bases in the based_list is a base of\n    the derived, False otherwise\"\"\"\n    for based in based_list:\n        if is_derived_from(derived, based):\n            return True\n    return False\n\ndef is_derived_from_all(derived, based_list):\n    \"\"\"returns True, if all of the bases in the based_list is a base of\n    the derived, False otherwise\"\"\"\n    for based in based_list:\n        if not is_derived_from(derived, based):\n            return False\n    return True\n\ndef is_derived_from_none(derived, based_list):\n    \"\"\"returns True, if none of the bases in the based_list is a base of\n    the derived, False otherwise\"\"\"\n    for based in based_list:\n        if is_derived_from(derived, based):\n            return False\n    return True\n\ndef is_derived_from_exactly_one(derived, based_list):\n    \"\"\"returns True, if exactly one of the bases in the based_list",
+  "sampling_seed": 3849150004,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_allowed_view(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n",
+  "agc_valid": true,
+  "body_sha256": "1c06686cca958250481c13ea38f24e2fbf6702ec6d8696f9a4572296406cfdd5",
+  "body_tokens": 8,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return perm in current_user.acl\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "33c5724546a2228d9df24404488c034f978bb1ece82b3b87e935dcae5185f77a",
+  "human_valid": true,
+  "line_no": 303249,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "44e7ff24d9ee3c378bb7953394eacdcff1b4c301613c6c42639cf0d9cbb1b061",
+  "raw_output": "\n    return perm in current_user.acl\n\n\ndef is_allowed_edit(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_create(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_delete(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_list(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_read(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_update(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_export(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_import(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_view_all(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_edit_all(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_create_all(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_delete_all(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_list_all(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    return perm in current_user.acl\n\n\ndef is_allowed_read_all(perm):\n    \"\"\"Check if permission is in a",
+  "sampling_seed": 2802303342,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_files_from_dir(path, recursive=True, depth=0, file_ext='.py'):\n    \"\"\"Retrieve the list of files from a folder.\n\n    @param path: file or directory where to search files\n    @param recursive: if True will search also sub-directories\n    @param depth: if explore recursively, the depth of sub directories to follow\n    @param file_ext: the files extension to get. Default is '.py'\n    @return: the file list retrieved. if the input is a file then a one element list.\n\n    \"\"\"\n    is returned\n        \"\"\"\n        if os.path.isfile(path):\n            return [path]\n        else:\n            files = []\n            for root, dirs, files_ in os.walk(path):\n                if depth ==\n",
+  "agc_valid": false,
+  "body_sha256": "94e31d360d15fdf0b2806d720706dac8831893496f79e6e75a922b692560ea7d",
+  "body_tokens": 93,
+  "bucket": "out_of_range",
+  "clean_output": "\n    is returned\n        \"\"\"\n        if os.path.isfile(path):\n            return [path]\n        else:\n            files = []\n            for root, dirs, files_ in os.walk(path):\n                if depth ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 157,
+  "human_sha256": "c41a96215219522fd5b961de26e34efaef40e012ce9249da2f46394107dd9b20",
+  "human_valid": true,
+  "line_no": 286567,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4e9f65c38c3ee9b1a21564444ebf396bbfd6b7d89af9a3508a94acef53019748",
+  "raw_output": "is returned\n    \"\"\"\n    if os.path.isfile(path):\n        return [path]\n    else:\n        files = []\n        for root, dirs, files_ in os.walk(path):\n            if depth == ",
+  "sampling_seed": 996392112,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

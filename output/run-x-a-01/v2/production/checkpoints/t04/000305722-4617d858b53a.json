@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_config_tree(config, modules, prefix=''):\n    \"\"\"Cause every possible configuration sub-dictionary to exist.\n\n    This is intended to be called very early in the configuration\n    sequence.  For each module, it checks that the corresponding\n    configuration item exists in `config` and creates it as an empty\n    dictionary if required, and then recurses into child\n    configs/modules.\n\n    :param dict config: configuration to populate\n    :param modules: modules or Configurable instances to use\n    :type modules: iterable of :class:`~yakonfig.configurable.Configurable`\n    :param str prefix: prefix name of the config\n    :return: `config`\n    :raises yakonfig.ConfigurationError: if an expected name is present\n      in the provided config, but that name is not a dictionary\n\n    \"\"\"\n    .Configurable` instances or\n                       module names\n        :param prefix: prefix to apply to all module names\n        \"\"\"\n        for m in modules:\n            if isinstance(m, Configurable):\n                m = m.__name__\n            m = prefix + m\n            if m not in config:\n                config[m] = {}\n            if isinstance(m, Configurable):\n                create_config_tree(config[m], m.config_items, prefix=m + '.')\n            elif isinstance(m, str):\n                create_config_tree(config[m], m.split('.')[1:], prefix=m + '.')\n",
+  "agc_valid": false,
+  "body_sha256": "c93281195a1d2f43322c12a5bb2382603f86f7bd57843226429d542fb4702758",
+  "body_tokens": 216,
+  "bucket": "out_of_range",
+  "clean_output": "\n    .Configurable` instances or\n                       module names\n        :param prefix: prefix to apply to all module names\n        \"\"\"\n        for m in modules:\n            if isinstance(m, Configurable):\n                m = m.__name__\n            m = prefix + m\n            if m not in config:\n                config[m] = {}\n            if isinstance(m, Configurable):\n                create_config_tree(config[m], m.config_items, prefix=m + '.')\n            elif isinstance(m, str):\n                create_config_tree(config[m], m.split('.')[1:], prefix=m + '.')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 143,
+  "human_sha256": "53cb2d590b6abe62eea4ac5b0916c687e9e93bb40509398e9598db9318727a03",
+  "human_valid": true,
+  "line_no": 305722,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4617d858b53ac5ba68ccaf27da246e1b024a01e53171c60faf078e4e4533c00e",
+  "raw_output": ".Configurable` instances or\n                   module names\n    :param prefix: prefix to apply to all module names\n    \"\"\"\n    for m in modules:\n        if isinstance(m, Configurable):\n            m = m.__name__\n        m = prefix + m\n        if m not in config:\n            config[m] = {}\n        if isinstance(m, Configurable):\n            create_config_tree(config[m], m.config_items, prefix=m + '.')\n        elif isinstance(m, str):\n            create_config_tree(config[m], m.split('.')[1:], prefix=m + '.')\n\n\ndef merge_config_trees(config, modules, prefix=''):\n    \"\"\"Merge the configuration of modules into the given config.\n\n    This is intended to be called very late in the configuration\n    sequence. ",
+  "sampling_seed": 1438200454,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

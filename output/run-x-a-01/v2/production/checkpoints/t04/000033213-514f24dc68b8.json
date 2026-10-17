@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def labelAxes(self, numLines=(5,5)):\n        \"\"\"Put labels on axes\n\n        Note: I should do better than this by picking round numbers\n        as the places to put the labels.\n\n        Note: If I ever do rotated projections, this simple approach\n        will fail.\n        \"\"\"\n        for axis in range(3):\n            for i in range(numLines[axis]):\n                label = str(self.axes[axis].min + i*self.axes[axis].step)\n                self.axes[axis].text(i*self.axes[axis].step,\n                                     self.axes[axis].min,\n                                     label,\n                                     rotation=90,\n                                     size='small',\n                                     color='blue')\n",
+  "agc_valid": true,
+  "body_sha256": "20b345d5d248249a37c5e940e8a7e47f70ff4e6d62e8bbd87deb6160554fd71e",
+  "body_tokens": 248,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for axis in range(3):\n            for i in range(numLines[axis]):\n                label = str(self.axes[axis].min + i*self.axes[axis].step)\n                self.axes[axis].text(i*self.axes[axis].step,\n                                     self.axes[axis].min,\n                                     label,\n                                     rotation=90,\n                                     size='small',\n                                     color='blue')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "2e1f18c671e1dd3869452fe170c3b32f73e33b4b396a9418f286155815e3460c",
+  "human_valid": true,
+  "line_no": 33213,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "514f24dc68b849cef8c2ccc193c602d0310028b7ed6cf72bcd529992bef95c87",
+  "raw_output": "\n        for axis in range(3):\n            for i in range(numLines[axis]):\n                label = str(self.axes[axis].min + i*self.axes[axis].step)\n                self.axes[axis].text(i*self.axes[axis].step,\n                                     self.axes[axis].min,\n                                     label,\n                                     rotation=90,\n                                     size='small',\n                                     color='blue')\n\n    def",
+  "sampling_seed": 4147042518,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

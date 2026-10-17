@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def make_primitive_smoothed(cas_coords, smoothing_level=2):\n    \"\"\" Generates smoothed primitive from a list of coordinates.\n\n    Parameters\n    ----------\n    cas_coords : list(numpy.array or float or tuple)\n        Each element of the list must have length 3.\n    smoothing_level : int, optional\n        Number of times to run the averaging.\n\n    Returns\n    -------\n    s_primitive : list(numpy.array)\n        Each array has length 3.\n\n    Raises\n    ------\n    ValueError\n        If the smoothing level is too great compared to the length\n        of cas_coords.\n    \"\"\"\n    3.\n\n        \"\"\"\n        if smoothing_level <\n",
+  "agc_valid": false,
+  "body_sha256": "fec74dd13dcd8035c6d567f15fa99cd94c5fe896176a6d07d1928b6c208fd33e",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n    3.\n\n        \"\"\"\n        if smoothing_level <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 119,
+  "human_sha256": "ebdd3bee7527f0e65ca153dd438c2d921167f666724e74a680b9c8411d4c386d",
+  "human_valid": true,
+  "line_no": 249743,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "33bf7c479cac9d7318501d108bf5d064800b04f9b5a9a03c43404a3c636dba0b",
+  "raw_output": "3.\n\n    \"\"\"\n    if smoothing_level < ",
+  "sampling_seed": 1458654713,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_user_permissions_on_view(view_name):\n        \"\"\"\n            Returns all current user permissions\n             on a certain view/resource\n        :param view_name: The name of the view/resource/menu\n        :return: (list) with permissions\n        \"\"\"\n            return [perm.codename for perm in Permission.objects.filter(content_type__app_label=view_name.split('.')[0],\n                                                                       content_type__model=view_name.split('.')[1])]\n\n        @staticmethod\n",
+  "agc_valid": false,
+  "body_sha256": "2032a1454cdcc440550b19e3b0632918982f5c45547d983ae9f3120e51a7c758",
+  "body_tokens": 97,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return [perm.codename for perm in Permission.objects.filter(content_type__app_label=view_name.split('.')[0],\n                                                                       content_type__model=view_name.split('.')[1])]\n\n        @staticmethod\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "6999000b29f622b0fb73c6ce78e96051e908af55db390b22f9568abb75cc38dc",
+  "human_valid": true,
+  "line_no": 361339,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e51637670d67b0829f76eeaf7789ba1c64f1938dbbdac2dbeeaa1d9ff59e5143",
+  "raw_output": "\n        return [perm.codename for perm in Permission.objects.filter(content_type__app_label=view_name.split('.')[0],\n                                                                   content_type__model=view_name.split('.')[1])]\n\n    @staticmethod\n    def",
+  "sampling_seed": 4135541526,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _fetch(self, uri, sub_domain=False):\n        \"\"\"\n        Send a HEAD request to URL and print response code if it's not in ignored_error_codes\n        :param uri: URI to fuzz\n        :param sub_domain: If True, build destination URL with {URL}.{HOST} else {HOST}/{URL}\n        \"\"\"\n        if not uri:\n            return\n\n        if sub_domain:\n            destination = '{0}.{1}'.format(uri, self.target_host)\n        else:\n            destination = '{0}/{1}'.format(self.target_host, uri)\n\n        try:\n            response = requests.head(\n                url=destination,\n                timeout=self.timeout,\n                headers=self.headers,\n                verify=self.verify,\n                proxies=self.proxies,\n                cookies=self.cookies,\n                allow_redirects=False\n            )\n        except requests.exceptions.RequestException as e:\n            if self.verbose:\n                print('{0} ({1})'.format(e, destination))\n            return\n\n        if response.status_code in self.ignored_error_codes:\n            if self.verbose:\n                print('{0} ({1})'.format(response.status_code, destination))\n            return\n\n        if self.verbose:\n            print('{0} ({1})'.format(response.status_code, destination))\n\n        if response.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "e795ec689d96f631de1030c1a10ccf9028072cde3f868cddfdab80b4c5693bdd",
+  "body_tokens": 357,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not uri:\n            return\n\n        if sub_domain:\n            destination = '{0}.{1}'.format(uri, self.target_host)\n        else:\n            destination = '{0}/{1}'.format(self.target_host, uri)\n\n        try:\n            response = requests.head(\n                url=destination,\n                timeout=self.timeout,\n                headers=self.headers,\n                verify=self.verify,\n                proxies=self.proxies,\n                cookies=self.cookies,\n                allow_redirects=False\n            )\n        except requests.exceptions.RequestException as e:\n            if self.verbose:\n                print('{0} ({1})'.format(e, destination))\n            return\n\n        if response.status_code in self.ignored_error_codes:\n            if self.verbose:\n                print('{0} ({1})'.format(response.status_code, destination))\n            return\n\n        if self.verbose:\n            print('{0} ({1})'.format(response.status_code, destination))\n\n        if response.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 111,
+  "human_sha256": "34bdc95d6c9524da3d6afa1f2e80acdaadee8027e7dd43efe3f80ea686704148",
+  "human_valid": true,
+  "line_no": 331485,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "24f3376f1249f646d966b6b82ce94db9b25eb0bcc85ddbcede807013022e6830",
+  "raw_output": "\n        if not uri:\n            return\n\n        if sub_domain:\n            destination = '{0}.{1}'.format(uri, self.target_host)\n        else:\n            destination = '{0}/{1}'.format(self.target_host, uri)\n\n        try:\n            response = requests.head(\n                url=destination,\n                timeout=self.timeout,\n                headers=self.headers,\n                verify=self.verify,\n                proxies=self.proxies,\n                cookies=self.cookies,\n                allow_redirects=False\n            )\n        except requests.exceptions.RequestException as e:\n            if self.verbose:\n                print('{0} ({1})'.format(e, destination))\n            return\n\n        if response.status_code in self.ignored_error_codes:\n            if self.verbose:\n                print('{0} ({1})'.format(response.status_code, destination))\n            return\n\n        if self.verbose:\n            print('{0} ({1})'.format(response.status_code, destination))\n\n        if response.status_code == ",
+  "sampling_seed": 3461538411,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

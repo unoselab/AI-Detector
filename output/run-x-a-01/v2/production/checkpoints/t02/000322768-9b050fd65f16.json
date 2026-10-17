@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def add(self):\n        \"\"\" Add a new VRF.\n        \"\"\"\n        self.add_vrf()\n",
+  "agc_valid": true,
+  "body_sha256": "0812ef376344685a634cabbbad667cde4779613f4ee70d7959530b2ecc990229",
+  "body_tokens": 9,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.add_vrf()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "77cfac042964027747778a8560188b4fad65675382827e9ffbc1048f949deb5a",
+  "human_valid": true,
+  "line_no": 322768,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9b050fd65f168ad747a622607e2a8de3a81617b57ab580fd558e3209787b5668",
+  "raw_output": "\n        self.add_vrf()\n\n    def",
+  "sampling_seed": 3706225585,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

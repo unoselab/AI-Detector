@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_epoch(t_str):\n    \"\"\"\n    Covert a timestamp string to an epoch number.\n    :param str t_str: a timestamp string.\n    :return int: epoch number of the timestamp.\n    \"\"\"\n    return int(time.mktime(time.strptime(t_str, '%Y-%m-%d %H:%M:%S')))\n",
+  "agc_valid": true,
+  "body_sha256": "117e9b8d7f382c3bf9c23229b31a8afc1249a240e190d630799d8b89afcd57a2",
+  "body_tokens": 8,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return int(time.mktime(time.strptime(t_str, '%Y-%m-%d %H:%M:%S')))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "55212f0b2a34a778d60e44ff6fdeb8bc32986b8a0dc376fa176ecce857766565",
+  "human_valid": true,
+  "line_no": 274768,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "73c3ff24a8288f9beb008636470ed7535f1603f83fef2f33375f8162f8696233",
+  "raw_output": "\n    return int(time.mktime(time.strptime(t_str, '%Y-%m-%d %H:%M:%S')))\n\n\ndef to_timestamp(epoch):\n    \"\"\"\n    Covert an epoch number to a timestamp string.\n    :param int epoch: an epoch number.\n    :return str: a timestamp string.\n    \"\"\"\n    return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch))\n\n\ndef to_datetime(epoch):\n    \"\"\"\n    Covert an epoch number to a datetime object.\n    :param int epoch: an epoch number.\n    :return datetime: a datetime object.\n    \"\"\"\n    return datetime.datetime.fromtimestamp(epoch)\n\n\ndef to_epoch_from_datetime(dt):\n    \"\"\"\n    Covert a datetime object to an epoch number.\n    :param datetime dt: a datetime object.\n    :return int: epoch number of the datetime object.\n    \"\"\"\n    return int(time.mktime(dt.timetuple()))\n\n\ndef to_datetime_from_epoch(epoch):\n    \"\"\"\n    Covert an epoch number to a datetime object.\n    :param int epoch: an epoch number.\n    :return datetime: a datetime object.\n    \"\"\"\n    return datetime.datetime.fromtimestamp(epoch)\n\n\ndef to_timestamp_from_epoch(epoch):\n    \"\"\"\n    Covert an epoch number to a timestamp string.\n    :param int epoch: an epoch number.\n    :return str: a timestamp string.\n    \"\"\"\n    return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch))\n\n\ndef to_epoch_from_timestamp(t_str):\n    \"\"\"\n    Covert a timestamp string to an epoch number.\n    :param str t_str: a timestamp string.\n    :return int: epoch number of the timestamp.\n    \"\"\"\n    return int(time.mktime(time.strptime(t_str, '%Y-%m-%d %H:%M",
+  "sampling_seed": 3979189295,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

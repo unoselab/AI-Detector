@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def coarse_grain(coarse_grain):\n    \"\"\"Validate a macro coarse-graining.\"\"\"\n    if coarse_grain not in ['none', 'atom', 'residue', 'chain', 'molecule']:\n        raise ValueError(\"Invalid coarse-graining: {}\".format(coarse_grain))\n",
+  "agc_valid": true,
+  "body_sha256": "5d9538d7e836a601a0ee041c6e499cbf4f449ab172f1271364070d198938c752",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if coarse_grain not in ['none', 'atom', 'residue', 'chain', 'molecule']:\n        raise ValueError(\"Invalid coarse-graining: {}\".format(coarse_grain))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "51f247cfa91eab83d2fd4a6d8ceb664bb19e60b7d9db2f425bb0a284b79233ae",
+  "human_valid": true,
+  "line_no": 294614,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6973299e1d2e4049823ef7279f231eb928638f7ca3feb95ec5314c04ee6c4170",
+  "raw_output": "\n    if coarse_grain not in ['none', 'atom', 'residue', 'chain', 'molecule']:\n        raise ValueError(\"Invalid coarse-graining: {}\".format(coarse_grain))\n\n\ndef validate_coarse_grain(coarse_grain):\n    \"\"\"Validate a coarse-graining.\"\"\"\n    if coarse_grain not in ['none', 'atom', 'residue', 'chain', 'molecule',\n                            'residue_or_atom', 'residue_or_atom_or_chain',\n                            'residue_or_atom_or_chain_or_molecule']:\n        raise ValueError(\"Invalid coarse-graining: {}\".format(coarse_grain))\n\n\ndef validate_coarse_grain_atom_types(coarse_grain_atom_types):\n    \"\"\"Validate a coarse-graining atom types.\"\"\"\n    if coarse_grain_atom_types not in ['all', 'backbone', 'sidechain']:\n        raise ValueError(\"Invalid coarse-graining atom types: {}\".format(\n            coarse_grain_atom_types))\n\n\ndef validate_coarse_grain_atom_types_residue(coarse_grain_atom_types):\n    \"\"\"Validate a coarse-graining atom types for residue.\"\"\"\n    if coarse_grain_atom_types not in ['all', 'backbone', 'sidechain', 'ca']:\n        raise ValueError(\"Invalid coarse-graining atom types for residue: {}\".format(\n            coarse_grain_atom_types))\n\n\ndef validate_coarse_grain_atom_types_chain(coarse_grain_atom_types):\n    \"\"\"Validate a coarse-graining atom types for chain.\"\"\"\n    if coarse_grain_atom_types not in ['all', 'backbone', 'sidechain', 'ca', 'n']:\n        raise ValueError(\"Invalid coarse-graining atom types for chain: {}\".format(\n            coarse_grain_atom_types))\n\n\ndef validate_",
+  "sampling_seed": 1086679798,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

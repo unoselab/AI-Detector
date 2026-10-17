@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def observable_copy(value, name, instance):\n    \"\"\"Return an observable container for HasProperties notifications\n\n    This method creates a new container class to allow HasProperties\n    instances to :code:`observe_mutations`. It returns a copy of the\n    input value as this new class.\n\n    The output class behaves identically to the input value's original\n    class, except when it is used as a property on a HasProperties\n    instance. In that case, it notifies the HasProperties instance of\n    any mutations or operations.\n    \"\"\"\n    # If the value is already an observable, return it\n    if isinstance(value, Observable):\n        return value\n\n    # If the value is a HasProperties instance, return it\n    if isinstance(value, HasProperties):\n        return value\n\n    # Otherwise, create a new class that inherits from the input value's\n    # class, and return a new instance of that class\n    class ObservableCopy(value.__class__):\n",
+  "agc_valid": false,
+  "body_sha256": "e40f5df5c4bc540ccca77d1d8014c24022b1d24da200e2c278f685351b534053",
+  "body_tokens": 90,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # If the value is already an observable, return it\n    if isinstance(value, Observable):\n        return value\n\n    # If the value is a HasProperties instance, return it\n    if isinstance(value, HasProperties):\n        return value\n\n    # Otherwise, create a new class that inherits from the input value's\n    # class, and return a new instance of that class\n    class ObservableCopy(value.__class__):\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "427f429417a6dacc3b2b95de9d5959bb02504f7e09a495be9dfe7ed677002154",
+  "human_valid": true,
+  "line_no": 408570,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7d165aa71026dec832d5e9ff0bce6f46658e3732d97e48d4028b5621993a27f7",
+  "raw_output": "\n    # If the value is already an observable, return it\n    if isinstance(value, Observable):\n        return value\n\n    # If the value is a HasProperties instance, return it\n    if isinstance(value, HasProperties):\n        return value\n\n    # Otherwise, create a new class that inherits from the input value's\n    # class, and return a new instance of that class\n    class ObservableCopy(value.__class__):\n        def",
+  "sampling_seed": 201173222,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

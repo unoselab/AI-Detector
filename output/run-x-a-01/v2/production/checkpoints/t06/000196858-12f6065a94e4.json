@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def process_pem_cert(self, data, name, idx):\n        \"\"\"\n        Processes PEM encoded certificate\n        :param data:\n        :param name:\n        :param idx:\n        :return:\n        \"\"\"\n        cert = x509.load_pem_x509_certificate(data, default_backend())\n        self.add_certificate(cert, name, idx)\n",
+  "agc_valid": true,
+  "body_sha256": "5a0dcc18ca9762f388045e45fa0b25153fe7963f99e7e8afdbef087139e36bef",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n        cert = x509.load_pem_x509_certificate(data, default_backend())\n        self.add_certificate(cert, name, idx)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 107,
+  "human_sha256": "9784579aa4de7a5ffa6f1f32d9f0c9e36da3e5230c0095c595341def6c147e42",
+  "human_valid": true,
+  "line_no": 196858,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "12f6065a94e4a03de91c597783048f6bec46affb89e5d6e915865fa9e678a1b3",
+  "raw_output": "\n        cert = x509.load_pem_x509_certificate(data, default_backend())\n        self.add_certificate(cert, name, idx)\n\n    def",
+  "sampling_seed": 2566551601,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

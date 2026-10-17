@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def GetText(text='', entry_text='', password=False, **kwargs):\n    \"\"\"Get some text from the user.\n\n    This will raise a Zenity Text Entry Dialog.  It returns the text the user \n    entered or None if the user hit cancel.\n\n    text - A description of the text to enter.\n    entry_text - The initial value of the text entry box.\n    password - True if text entered should be hidden by stars.\n    kwargs - Optional command line parameters for Zenity such as height,\n             width, etc.\"\"\"\n             \"\"\n\n                 if password:\n                     entry_text = '*' * len(entry_text)\n\n                 cmd = ['zenity', '--entry', '--text', text, '--entry-text', entry_text]\n\n                 for k, v in kwargs.items():\n                     cmd.append('--%s' % k)\n                     cmd.append(str(v))\n\n                 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n                 out, err = p.communicate()\n\n                 if p.returncode !=\n",
+  "agc_valid": false,
+  "body_sha256": "cf869301dabfed488cc16cc08454039d2d47d41090ae725a6dff4be77cf4ea7c",
+  "body_tokens": 206,
+  "bucket": "out_of_range",
+  "clean_output": "\n             \"\"\n\n                 if password:\n                     entry_text = '*' * len(entry_text)\n\n                 cmd = ['zenity', '--entry', '--text', text, '--entry-text', entry_text]\n\n                 for k, v in kwargs.items():\n                     cmd.append('--%s' % k)\n                     cmd.append(str(v))\n\n                 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n                 out, err = p.communicate()\n\n                 if p.returncode !=\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "72d408f697fe3ad8c4cde73e16ed2ef3c67256833ee4ce5cdf622e325958a4a0",
+  "human_valid": true,
+  "line_no": 41609,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "fddcbb728cbb6f0a1aaa2e021e73a9be19e56f1348a7df3922cdf1c8697fba28",
+  "raw_output": "\"\"\n\n    if password:\n        entry_text = '*' * len(entry_text)\n\n    cmd = ['zenity', '--entry', '--text', text, '--entry-text', entry_text]\n\n    for k, v in kwargs.items():\n        cmd.append('--%s' % k)\n        cmd.append(str(v))\n\n    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n    out, err = p.communicate()\n\n    if p.returncode != ",
+  "sampling_seed": 4225543195,
+  "tag": "t06",
+  "temperature": 0.6
+}

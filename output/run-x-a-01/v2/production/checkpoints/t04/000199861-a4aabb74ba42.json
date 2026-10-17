@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _GetAPFSVolumeIdentifiers(self, scan_node):\n    \"\"\"Determines the APFS volume identifiers.\n\n    Args:\n      scan_node (SourceScanNode): scan node.\n\n    Returns:\n      list[str]: APFS volume identifiers.\n\n    Raises:\n      ScannerError: if the format of or within the source is not supported\n          or the the scan node is invalid.\n      UserAbort: if the user requested to abort.\n    \"\"\"\n    # TODO: Implement this function.\n    raise NotImplementedError\n",
+  "agc_valid": true,
+  "body_sha256": "6484176988aa70909d05f7d864a3f142a56a05d10bdd2cac99c557c885736742",
+  "body_tokens": 14,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: Implement this function.\n    raise NotImplementedError\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "a79828563baae0bbe32231842e05ffe369d25372907fd7c37d0d4f0577275eb0",
+  "human_valid": true,
+  "line_no": 199861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a4aabb74ba429f877eb6d1707fe3c677633a90d1e309d8f5faac4051a94a0e50",
+  "raw_output": "\n    # TODO: Implement this function.\n    raise NotImplementedError\n\n ",
+  "sampling_seed": 1398113886,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

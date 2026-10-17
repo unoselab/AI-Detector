@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def translate(cores, files, args):\n    \"\"\"\n    translate is used for Processing per core translation. cores[i] will translate files[i]\n\n    :param cores: the number of cores used for translation, each core will launch a thread to translate\n    :param files: file list to be translated\n    :param args: input parameters\n    :return: list of translated file\n    \"\"\"\n    # translate files\n    translated_files = []\n    # create a pool of threads, and pass them to them work\n    pool = ThreadPool(processes=cores)\n    # for each core, create a thread to translate files\n    for i in range(cores):\n        translated_files.append(pool.apply_async(translate_file, args=(files[i], args)))\n    # wait until all threads are finished\n    pool.close()\n    pool.join()\n    # return the translated files\n    return [t.get() for t in translated_files]\n",
+  "agc_valid": true,
+  "body_sha256": "4becd7c2e7ddf651b22f5bc16207aec7d416ce41367771e7513601d9b19653bb",
+  "body_tokens": 99,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # translate files\n    translated_files = []\n    # create a pool of threads, and pass them to them work\n    pool = ThreadPool(processes=cores)\n    # for each core, create a thread to translate files\n    for i in range(cores):\n        translated_files.append(pool.apply_async(translate_file, args=(files[i], args)))\n    # wait until all threads are finished\n    pool.close()\n    pool.join()\n    # return the translated files\n    return [t.get() for t in translated_files]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "cce39487fcda473fdddbd1f54f61eb428805769de2d80c25cc62c4cc1cad7f08",
+  "human_valid": true,
+  "line_no": 335244,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d5bbab92d7060630f62831fcf5a6751a63aa4c0e406a406551fa55cd07c3c87a",
+  "raw_output": "\n    # translate files\n    translated_files = []\n    # create a pool of threads, and pass them to them work\n    pool = ThreadPool(processes=cores)\n    # for each core, create a thread to translate files\n    for i in range(cores):\n        translated_files.append(pool.apply_async(translate_file, args=(files[i], args)))\n    # wait until all threads are finished\n    pool.close()\n    pool.join()\n    # return the translated files\n    return [t.get() for t in translated_files]\n\n\ndef translate_file(file_name, args):\n    \"\"\"\n    translate_file is used to translate a single file\n\n    :param file_name: file to be translated\n    :param args: input parameters\n    :return: translated file\n    \"\"\"\n    # get the file name without extension\n    file_name_no_ext = os.path.splitext(file_name)[0]\n    # get the file extension\n    file_ext = os.path.splitext(file_name)[1]\n    # get the translated file name\n    translated_file_name = file_name_no_ext + '.translated' + file_ext\n    # get the translated file\n    translated_file = open(translated_file_name, 'w')\n    # get the source file\n    source_file = open(file_name, 'r')\n    # translate the file\n    for line in source_file:\n        translated_file.write(translate_line(line, args))\n    # close the source file\n    source_file.close()\n    # close the translated file\n    translated_file.close()\n    # return the translated file\n    return translated_file_name\n\n\ndef translate_line(line, args):\n    \"\"\"\n    translate_line is used to translate a single line\n\n    :param line: line to be translated\n    :param args: input parameters\n    :return: translated line\n    \"\"\"\n    # get the line without trailing whitespace\n    line = line.rstrip()\n    # get the line without leading whitespace\n    line = line.lstrip()\n    # get the line without leading and trailing whitespace",
+  "sampling_seed": 685898931,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

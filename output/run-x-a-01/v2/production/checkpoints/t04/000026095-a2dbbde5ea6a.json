@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_msp_crunch(self):\n        \"\"\"Returns the alignment as a line in MSPcrunch format. The columns are space-separated and are:\n           1. score\n           2. percent identity\n           3. match start in the query sequence\n           4. match end in the query sequence\n           5. query sequence name\n           6. subject sequence start\n           7. subject sequence end\n           8. subject sequence name\"\"\"\n           return \"{:.2f} {:.2f} {:d} {:d} {:s} {:d} {:d} {:s}\".format(self.score, self.percent_identity, self.match_start, self.match_end, self.query_name, self.subject_start, self.subject_end, self.subject_name)\n",
+  "agc_valid": false,
+  "body_sha256": "fe402d3ee3c1f7ed74f3d137c0f95c850de25dbd06e01b209f212b563d47e0cc",
+  "body_tokens": 27,
+  "bucket": "out_of_range",
+  "clean_output": "\n           return \"{:.2f} {:.2f} {:d} {:d} {:s} {:d} {:d} {:s}\".format(self.score, self.percent_identity, self.match_start, self.match_end, self.query_name, self.subject_start, self.subject_end, self.subject_name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "e74718597293ff82cbd3a9ca7090aee7699832f0ab255366707c59f1a471afd6",
+  "human_valid": true,
+  "line_no": 26095,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a2dbbde5ea6a1ce6a45d05d081ea8013b75a3162d8609b09466a82972742b276",
+  "raw_output": "\n        return \"{:.2f} {:.2f} {:d} {:d} {:s} {:d} {:d} {:s}\".format(self.score, self.percent_identity, self.match_start, self.match_end, self.query_name, self.subject_start, self.subject_end, self.subject_name)\n\n    def",
+  "sampling_seed": 311090236,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

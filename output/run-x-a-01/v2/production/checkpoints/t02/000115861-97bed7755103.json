@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_str_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list of strings\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list\".format(arg))\n    for item in arg:\n        if not isinstance(item, str):\n            raise TypeError(\"{} must be a list of strings\".format(arg))\n    return arg\n",
+  "agc_valid": true,
+  "body_sha256": "8c5c0c2c23591a829303a66216b4ecc2c18fdd5cc5a5208d9b189158aadbc082",
+  "body_tokens": 63,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list\".format(arg))\n    for item in arg:\n        if not isinstance(item, str):\n            raise TypeError(\"{} must be a list of strings\".format(arg))\n    return arg\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "bf3de59e4b1cf3d8476b2bf4d2ebd7cdc153082325cfdbbaa00cc54f07f2ef47",
+  "human_valid": true,
+  "line_no": 115861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "97bed77551039b98c99a7f1e8a14810afff64ae738beafb2657f9ce27ffd8c3a",
+  "raw_output": "\n    if not isinstance(arg, list):\n        raise TypeError(\"{} must be a list\".format(arg))\n    for item in arg:\n        if not isinstance(item, str):\n            raise TypeError(\"{} must be a list of strings\".format(arg))\n    return arg\n\n\ndef _validate_str_or_list(arg):\n    \"\"\"\n    ensure ``arg`` is a string or a list of strings\n    \"\"\"\n    if isinstance(arg, str):\n        return [arg]\n    return _validate_str_list(arg)\n\n\ndef _validate_str_or_list_or_none(arg):\n    \"\"\"\n    ensure ``arg`` is a string, a list of strings, or None\n    \"\"\"\n    if arg is None:\n        return None\n    return _validate_str_or_list(arg)\n\n\ndef _validate_str_or_list_or_none_or_dict(arg):\n    \"\"\"\n    ensure ``arg`` is a string, a list of strings, None, or a dict\n    \"\"\"\n    if arg is None:\n        return None\n    if isinstance(arg, dict):\n        return arg\n    return _validate_str_or_list(arg)\n\n\ndef _validate_str_or_list_or_none_or_dict_or_list(arg):\n    \"\"\"\n    ensure ``arg`` is a string, a list of strings, None, a dict, or a list\n    \"\"\"\n    if arg is None:\n        return None\n    if isinstance(arg, list):\n        return arg\n    return _validate_str_or_list(arg)\n\n\ndef _validate_str_or_list_or_none_or_dict_or_list_or_bool(arg):\n    \"\"\"\n    ensure ``arg`` is a string, a list of strings, None, a dict, a list, or a bool\n    \"\"\"\n    if arg is None:\n        return None\n    if isinstance(arg, bool):\n        return arg\n    if isinstance(arg, list):\n        return arg\n    return _validate_str_or_list(arg)\n\n\ndef _validate_str_or_list_or_none_or",
+  "sampling_seed": 3055896021,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

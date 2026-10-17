@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def cee_map_priority_group_table_pfc(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        self.name = 'CeeMapPriorityGroupTablePfc'\n        self.interface = 'CeeMapPriorityGroupTablePfc'\n        self.number_of_entries =\n",
+  "agc_valid": false,
+  "body_sha256": "cff32826dc61425a67c929d5cdca5ef72b91bdb3c63a60680d4420d96e40a0db",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.name = 'CeeMapPriorityGroupTablePfc'\n        self.interface = 'CeeMapPriorityGroupTablePfc'\n        self.number_of_entries =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 117,
+  "human_sha256": "605e853890e53a200fdf13a6e39dfbd25042f43b3ee4ebc327588ff60303c869",
+  "human_valid": true,
+  "line_no": 268835,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab1f83f72a3a71f01218cf380fac1a240fa15b713a992cf663e942e8234cdd80",
+  "raw_output": "\n        self.name = 'CeeMapPriorityGroupTablePfc'\n        self.interface = 'CeeMapPriorityGroupTablePfc'\n        self.number_of_entries = ",
+  "sampling_seed": 1120864097,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def collides_axisaligned_rect(self, other):\n        \"\"\"Returns collision with axis aligned other rect\"\"\"\n        # Check for collision in the X direction\n        if self.x < other.x + other.w and \\\n           self.x + self.w > other.x:\n            if self.y < other.y + other.h and \\\n               self.y + self.h > other.y:\n                return True\n        return False\n",
+  "agc_valid": true,
+  "body_sha256": "4456d5d4bf65319e93a57df19062b499cfbe5f2f8d5238ed005d534d6122379c",
+  "body_tokens": 110,
+  "bucket": "type01_110",
+  "clean_output": "\n        # Check for collision in the X direction\n        if self.x < other.x + other.w and \\\n           self.x + self.w > other.x:\n            if self.y < other.y + other.h and \\\n               self.y + self.h > other.y:\n                return True\n        return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "8066c7412ecd998f756437faa0e8c9d667d390f4427bd7224ff5c1784ae0e976",
+  "human_valid": true,
+  "line_no": 177353,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "effed71f38e8fb35169348eefbe2d6e8083d6dfa1d95ddd2816f030a5cc8b14b",
+  "raw_output": "\n        # Check for collision in the X direction\n        if self.x < other.x + other.w and \\\n           self.x + self.w > other.x:\n            if self.y < other.y + other.h and \\\n               self.y + self.h > other.y:\n                return True\n        return False\n\n    def",
+  "sampling_seed": 1355207173,
+  "source_stratum": "type06_160",
+  "tag": "t06",
+  "temperature": 0.6
+}

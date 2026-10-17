@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def upload_collection_configs(self, collection, fs_path):\n        \"\"\"\n        Uploads collection configurations from a specified directory to zookeeper. \n\n        \"\"\"\n        if not os.path.exists(fs_path):\n            raise Exception(\"Configurations directory %s does not exist\" % fs_path)\n        if not os.path.isdir(fs_path):\n            raise Exception(\"Configurations directory %s is not a directory\" % fs_path)\n\n        # get the collection configs\n        collection_configs = self.get_collection_configs(collection)\n\n        # get the collection configs from the specified directory\n        collection_configs_from_dir = self.get_collection_configs_from_dir(fs_path)\n\n        # merge the collection configs from the specified directory with the existing collection configs\n        collection_configs = self.merge_collection_configs(collection_configs, collection_configs_from_dir)\n\n        # upload the merged collection configs to zookeeper\n        self.upload_collection_configs(collection, collection_configs)\n",
+  "agc_valid": true,
+  "body_sha256": "01f71df9178676da43a48d127d1ad07620d708140660266a2c43faa436338fab",
+  "body_tokens": 166,
+  "bucket": "type07_170",
+  "clean_output": "\n        if not os.path.exists(fs_path):\n            raise Exception(\"Configurations directory %s does not exist\" % fs_path)\n        if not os.path.isdir(fs_path):\n            raise Exception(\"Configurations directory %s is not a directory\" % fs_path)\n\n        # get the collection configs\n        collection_configs = self.get_collection_configs(collection)\n\n        # get the collection configs from the specified directory\n        collection_configs_from_dir = self.get_collection_configs_from_dir(fs_path)\n\n        # merge the collection configs from the specified directory with the existing collection configs\n        collection_configs = self.merge_collection_configs(collection_configs, collection_configs_from_dir)\n\n        # upload the merged collection configs to zookeeper\n        self.upload_collection_configs(collection, collection_configs)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6719479f4df3017eb84992e9b344bcbc1c2352a520f872e7e1b78f8537621c5e",
+  "human_valid": true,
+  "line_no": 14666,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "36017673c0b96944886618276b008e06dc41980e81a5a619610fec12a710090b",
+  "raw_output": "\n        if not os.path.exists(fs_path):\n            raise Exception(\"Configurations directory %s does not exist\" % fs_path)\n        if not os.path.isdir(fs_path):\n            raise Exception(\"Configurations directory %s is not a directory\" % fs_path)\n\n        # get the collection configs\n        collection_configs = self.get_collection_configs(collection)\n\n        # get the collection configs from the specified directory\n        collection_configs_from_dir = self.get_collection_configs_from_dir(fs_path)\n\n        # merge the collection configs from the specified directory with the existing collection configs\n        collection_configs = self.merge_collection_configs(collection_configs, collection_configs_from_dir)\n\n        # upload the merged collection configs to zookeeper\n        self.upload_collection_configs(collection, collection_configs)\n\n    def",
+  "sampling_seed": 4053368136,
+  "tag": "t04",
+  "temperature": 0.4
+}

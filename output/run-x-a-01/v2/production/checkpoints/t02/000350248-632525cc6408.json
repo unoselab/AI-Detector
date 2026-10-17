@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _wait_for(self, callback, timeout=None):\n        \"\"\"\n        Spins until callback() returns truthy.\n        \"\"\"\n        start = time.time()\n        while not callback():\n            if timeout is not None and time.time() - start > timeout:\n                raise TimeoutError(\"Timed out waiting for {}\".format(callback))\n            time.sleep(0.01)\n",
+  "agc_valid": true,
+  "body_sha256": "c675ebad624fc8c16eb744eb8c6d7747315fe5bb7d9898b9354db40e66d7f100",
+  "body_tokens": 76,
+  "bucket": "out_of_range",
+  "clean_output": "\n        start = time.time()\n        while not callback():\n            if timeout is not None and time.time() - start > timeout:\n                raise TimeoutError(\"Timed out waiting for {}\".format(callback))\n            time.sleep(0.01)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "6051b2c97a8946422006bfdee5393f41b85064ed521c92d137e011f5169d82df",
+  "human_valid": true,
+  "line_no": 350248,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "632525cc6408941a947b5fc26a7c85941e9aa19f934f48a8ff945eb9ba5c817c",
+  "raw_output": "\n        start = time.time()\n        while not callback():\n            if timeout is not None and time.time() - start > timeout:\n                raise TimeoutError(\"Timed out waiting for {}\".format(callback))\n            time.sleep(0.01)\n\n    def",
+  "sampling_seed": 2786677484,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

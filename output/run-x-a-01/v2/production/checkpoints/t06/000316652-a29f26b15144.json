@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_day():\n    \"\"\"Function for retrieving the wanted day\"\"\"\n    while True:\n        day = int(input(\"Enter a day (1-7): \"))\n        if day >\n",
+  "agc_valid": false,
+  "body_sha256": "33759164839887ed2efcd5e7a7245ddc8e40c9d097cc797514eafec6297ed98a",
+  "body_tokens": 30,
+  "bucket": "out_of_range",
+  "clean_output": "\n    while True:\n        day = int(input(\"Enter a day (1-7): \"))\n        if day >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 196,
+  "human_sha256": "9bbba84ec3ae0027e5bdc3d36c761112eead9bcf881c0f03ea9a740fe1297003",
+  "human_valid": true,
+  "line_no": 316652,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a29f26b1514479f93e363689005d327a4e1887bf1be0d4702386016c67503d15",
+  "raw_output": "\n    while True:\n        day = int(input(\"Enter a day (1-7): \"))\n        if day > ",
+  "sampling_seed": 2143619464,
+  "source_stratum": "type10_200",
+  "tag": "t06",
+  "temperature": 0.6
+}

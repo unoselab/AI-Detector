@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _nucmer_hits_to_percent_identity(nucmer_hits):\n        \"\"\"Input is hits made by self._parse_nucmer_coords_file.\n           Returns dictionary. key = contig name. Value = percent identity of hits to that contig\"\"\"\n           percent_identity_dict = {}\n           for hit in nucmer_hits:\n               contig_name = hit[0]\n               if contig_name not in percent_identity_dict:\n                   percent_identity_dict[contig_name] = []\n               percent_identity_dict[contig_name].append(hit[1])\n           for contig_name in percent_identity_dict:\n               percent_identity_dict[contig_name] = sum(percent_identity_dict[contig_name])/len(percent_identity_dict[contig_name])\n           return percent_identity_dict\n",
+  "agc_valid": false,
+  "body_sha256": "f7c4a2883dcff59ab2d59f42636ee83b49c4b4d8e789478f8dfc61aa8169e425",
+  "body_tokens": 143,
+  "bucket": "type05_150",
+  "clean_output": "\n           percent_identity_dict = {}\n           for hit in nucmer_hits:\n               contig_name = hit[0]\n               if contig_name not in percent_identity_dict:\n                   percent_identity_dict[contig_name] = []\n               percent_identity_dict[contig_name].append(hit[1])\n           for contig_name in percent_identity_dict:\n               percent_identity_dict[contig_name] = sum(percent_identity_dict[contig_name])/len(percent_identity_dict[contig_name])\n           return percent_identity_dict\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 161,
+  "human_sha256": "99eba0f6be25f1738f069508cd4eb3e51e0a47788edee81384a0cc2d56cd7130",
+  "human_valid": true,
+  "line_no": 273623,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ef2c53f57073259987728a7a10b7aef37d70dcac2d95c5bd74e560c30ba57d2f",
+  "raw_output": "\n        percent_identity_dict = {}\n        for hit in nucmer_hits:\n            contig_name = hit[0]\n            if contig_name not in percent_identity_dict:\n                percent_identity_dict[contig_name] = []\n            percent_identity_dict[contig_name].append(hit[1])\n        for contig_name in percent_identity_dict:\n            percent_identity_dict[contig_name] = sum(percent_identity_dict[contig_name])/len(percent_identity_dict[contig_name])\n        return percent_identity_dict\n\n    def",
+  "sampling_seed": 3464228622,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

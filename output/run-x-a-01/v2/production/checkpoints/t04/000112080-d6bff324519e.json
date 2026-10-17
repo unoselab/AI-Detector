@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hybrid_forward(self, F, *states): # pylint: disable=arguments-differ\n        \"\"\"\n        Parameters\n        ----------\n        states : list\n            the stack outputs from RNN, which consists of output from each time step (TNC).\n\n        Returns\n        --------\n        loss : NDArray\n            loss tensor with shape (batch_size,). Dimensions other than batch_axis are averaged out.\n        \"\"\"\n        # pylint: disable=unused-argument\n        if self._output_length is not None:\n            states = [F.slice_axis(s, axis=0, begin=0, end=self._output_length) for s in states]\n        if self._use_sequence_length:\n            return self._hybrid_forward_with_sequence_length(F, *states)\n        else:\n            return self._hybrid_forward_without_sequence_length(F, *states)\n",
+  "agc_valid": true,
+  "body_sha256": "808dcce1ff9763a6493a931ea0585ff55077e8c29c855d4cc49a660e24c39a7a",
+  "body_tokens": 89,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # pylint: disable=unused-argument\n        if self._output_length is not None:\n            states = [F.slice_axis(s, axis=0, begin=0, end=self._output_length) for s in states]\n        if self._use_sequence_length:\n            return self._hybrid_forward_with_sequence_length(F, *states)\n        else:\n            return self._hybrid_forward_without_sequence_length(F, *states)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "6a087d82a37aaa5bdf5ac86b14facaf2c8e0331fe39ddc601ac4b7ec65338b06",
+  "human_valid": true,
+  "line_no": 112080,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d6bff324519ea9dfcf94a5e21f94ebdd83ee5a0526f8b64abe4fe29ba16f957e",
+  "raw_output": "\n        # pylint: disable=unused-argument\n        if self._output_length is not None:\n            states = [F.slice_axis(s, axis=0, begin=0, end=self._output_length) for s in states]\n        if self._use_sequence_length:\n            return self._hybrid_forward_with_sequence_length(F, *states)\n        else:\n            return self._hybrid_forward_without_sequence_length(F, *states)\n\n    def",
+  "sampling_seed": 731538251,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

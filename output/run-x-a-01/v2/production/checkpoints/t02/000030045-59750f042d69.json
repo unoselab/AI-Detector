@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def netconf_state_schemas_schema_version(self, **kwargs):\n        \"\"\"Auto Generated Code\n        \"\"\"\n        return self.get_data(\n            'netconf_state_schemas_schema_version',\n            **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "1657ea0aec243737ade00eb71f2e91d5e93949d1e3c5875cb78c2c8c168d91c2",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.get_data(\n            'netconf_state_schemas_schema_version',\n            **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 128,
+  "human_sha256": "195246c0c13281df11df8c65745db1be52989860fb56e7795e720f7b1eae4882",
+  "human_valid": true,
+  "line_no": 30045,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "59750f042d69b2299afac78701a9cec71ced6ffd53cc08f313c17391a7059b5d",
+  "raw_output": "\n        return self.get_data(\n            'netconf_state_schemas_schema_version',\n            **kwargs)\n\n    def",
+  "sampling_seed": 3895762106,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

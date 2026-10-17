@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def initial_bill_date(self):\n        \"\"\"\n        An estimated initial bill date for an account created today,\n        based on available plan info.\n        \"\"\"\n            return self._initial_bill_date\n\n        @initial_bill_date.setter\n",
+  "agc_valid": false,
+  "body_sha256": "9d09073d3259869a790ef9a4b3ffa98aae88655c756345b7714e8c700d17db1a",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n            return self._initial_bill_date\n\n        @initial_bill_date.setter\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "c48fec508d14d0667a7b114560dbb5031d93b34f2b49b195b9d8dbe180abe998",
+  "human_valid": true,
+  "line_no": 16679,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "3c2d284649704c3471c763df2041fea3f3401fc8de3f28391361b422ff249279",
+  "raw_output": "\n        return self._initial_bill_date\n\n    @initial_bill_date.setter\n    def",
+  "sampling_seed": 332189014,
+  "tag": "t06",
+  "temperature": 0.6
+}

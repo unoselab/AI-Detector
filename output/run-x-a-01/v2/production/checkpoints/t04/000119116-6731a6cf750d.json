@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def create_folder(name, location='\\\\'):\n    r\"\"\"\n    Create a folder in which to create tasks.\n\n    :param str name: The name of the folder. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the folder. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :return: True if successful, False if unsuccessful\n    :rtype: bool\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt 'minion-id' task.create_folder <folder_name>\n    \"\"\"\n    :Example:\n\n     >>> from taskscheduler import create_folder\n     >>> create_folder('My Folder')\n     True\n\n     \"\"\"\n     try:\n         folder = location + name\n         task_service = _get_task_service()\n         task_folder = task_service.get_folder(folder)\n         if task_folder:\n             return False\n         task_service.add_folder(folder)\n         return True\n     except Exception as e:\n         print(e)\n         return False\n",
+  "agc_valid": false,
+  "body_sha256": "f2b7aac939bab123eb614e9f303cd78b8eb6bc6a565e374224fa849e7d94d4ee",
+  "body_tokens": 141,
+  "bucket": "type05_150",
+  "clean_output": "\n    :Example:\n\n     >>> from taskscheduler import create_folder\n     >>> create_folder('My Folder')\n     True\n\n     \"\"\"\n     try:\n         folder = location + name\n         task_service = _get_task_service()\n         task_folder = task_service.get_folder(folder)\n         if task_folder:\n             return False\n         task_service.add_folder(folder)\n         return True\n     except Exception as e:\n         print(e)\n         return False\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 125,
+  "human_sha256": "c521adf46887f665e1bd15df48d8727371cb0a3bfbf63136452e53d92a5a5d2b",
+  "human_valid": true,
+  "line_no": 119116,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6731a6cf750d902c8d94bfdb35ac0a5daa596072dd1c85c21ed28121660454e1",
+  "raw_output": "   :Example:\n\n    >>> from taskscheduler import create_folder\n    >>> create_folder('My Folder')\n    True\n\n    \"\"\"\n    try:\n        folder = location + name\n        task_service = _get_task_service()\n        task_folder = task_service.get_folder(folder)\n        if task_folder:\n            return False\n        task_service.add_folder(folder)\n        return True\n    except Exception as e:\n        print(e)\n        return False\n\n\ndef delete_folder(name, location='\\\\'):\n    r\"\"\"\n    Delete a folder in which to create tasks.\n\n    :param str name: The name of the folder. This will be displayed in the task\n        scheduler.\n\n    :param str location: A string value representing the location in which to\n        create the folder. Default is '\\\\' which is the root for the task\n        scheduler (C:\\Windows\\System32\\tasks).\n\n    :return: True if successful, False if unsuccessful\n    :rtype: bool\n\n    :Example:\n\n    >>> from taskscheduler import delete_folder\n    >>> delete_folder('My Folder')\n    True\n\n    \"\"\"\n    try:\n        folder = location + name\n        task_service = _get_task_service()\n        task_folder = task_service.get_folder(folder)\n        if not task_folder:\n            return False\n        task_service.delete_folder(folder)\n        return True\n    except Exception as e:\n        print(e)\n        return False\n\n\ndef create_task(name, command, location='\\\\', description='',\n                user_name='', password='', run_level='',\n                start_date='', start_time='', end_date='',\n                end_time='', frequency='', interval='',\n                duration='', random_delay='', repetition='',\n                id='', force=False):\n    r\"\"\"\n    Create a task in which to create tasks.\n\n    :param str name: The name of the task. This will be displayed in the task\n        scheduler.\n\n    :param str command: The command to run.\n\n   ",
+  "sampling_seed": 1307240403,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

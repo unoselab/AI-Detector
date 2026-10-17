@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _parse_directory(self):\n        \"\"\"\n        Parse the storage directory in the config.\n\n        Returns:\n            str\n        \"\"\"\n        directory = self.config['directory']\n        if directory.startswith('.'):\n            directory = os.path.join(os.path.dirname(self.config_file), directory)\n        return os.path.abspath(directory)\n",
+  "agc_valid": true,
+  "body_sha256": "815238bc1f8318cd385f52b3a0a66228548ed5e25dc70cac31e4f5d7117c8196",
+  "body_tokens": 44,
+  "bucket": "out_of_range",
+  "clean_output": "\n        directory = self.config['directory']\n        if directory.startswith('.'):\n            directory = os.path.join(os.path.dirname(self.config_file), directory)\n        return os.path.abspath(directory)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 149,
+  "human_sha256": "c1b826d0b3a880fb2b7471c253a41d7332fdf7c75f4176cfe589e47ab16db2fa",
+  "human_valid": true,
+  "line_no": 379366,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f715696ee2a02d360f06271bae0a06cdb005a85c74a7df0cb64b01e445a9e2db",
+  "raw_output": "\n        directory = self.config['directory']\n        if directory.startswith('.'):\n            directory = os.path.join(os.path.dirname(self.config_file), directory)\n        return os.path.abspath(directory)\n\n    def",
+  "sampling_seed": 2829434037,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

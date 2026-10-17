@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read_dirs(path, folder):\n    \"\"\"\n    Fetches name of all files in path in long form, and labels associated by extrapolation of directory names. \n    \"\"\"\n    files = os.listdir(path)\n    dirs = []\n    for file in files:\n        if os.path.isdir(os.path.join(path, file)):\n            dirs.append(file)\n    for dir in dirs:\n        dir_path = os.path.join(path, dir)\n        files = os.listdir(dir_path)\n        for file in files:\n            if os.path.isfile(os.path.join(dir_path, file)):\n                file_name = os.path.splitext(file)[0]\n                file_ext = os.path.splitext(file)[1]\n                file_path = os.path.join(dir_path, file)\n                if file_ext == '.jpg':\n                    img = Image.open(file_path)\n                    width, height = img.size\n                    if width == height:\n                        print('Adding ' + file_name + ' to ' + folder + '...')\n                        shutil.copy(file_path, folder)\n                    else:\n                        print('Skipping ' + file_name + '...')\n",
+  "agc_valid": true,
+  "body_sha256": "babaf978379fe6aceac5619642a346d0eca3f910137d76e99b2b85dfd1b75ece",
+  "body_tokens": 346,
+  "bucket": "out_of_range",
+  "clean_output": "\n    files = os.listdir(path)\n    dirs = []\n    for file in files:\n        if os.path.isdir(os.path.join(path, file)):\n            dirs.append(file)\n    for dir in dirs:\n        dir_path = os.path.join(path, dir)\n        files = os.listdir(dir_path)\n        for file in files:\n            if os.path.isfile(os.path.join(dir_path, file)):\n                file_name = os.path.splitext(file)[0]\n                file_ext = os.path.splitext(file)[1]\n                file_path = os.path.join(dir_path, file)\n                if file_ext == '.jpg':\n                    img = Image.open(file_path)\n                    width, height = img.size\n                    if width == height:\n                        print('Adding ' + file_name + ' to ' + folder + '...')\n                        shutil.copy(file_path, folder)\n                    else:\n                        print('Skipping ' + file_name + '...')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 134,
+  "human_sha256": "fbde56125df14ff787e5dc31364f62e414981528949b4b6aee0aa5130a81f2f9",
+  "human_valid": true,
+  "line_no": 92926,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0033c1bb84723c006d23ff8bacfec699dc740bd30abe15f4d61e3a9c5cc7c6dd",
+  "raw_output": "\n    files = os.listdir(path)\n    dirs = []\n    for file in files:\n        if os.path.isdir(os.path.join(path, file)):\n            dirs.append(file)\n    for dir in dirs:\n        dir_path = os.path.join(path, dir)\n        files = os.listdir(dir_path)\n        for file in files:\n            if os.path.isfile(os.path.join(dir_path, file)):\n                file_name = os.path.splitext(file)[0]\n                file_ext = os.path.splitext(file)[1]\n                file_path = os.path.join(dir_path, file)\n                if file_ext == '.jpg':\n                    img = Image.open(file_path)\n                    width, height = img.size\n                    if width == height:\n                        print('Adding ' + file_name + ' to ' + folder + '...')\n                        shutil.copy(file_path, folder)\n                    else:\n                        print('Skipping ' + file_name + '...')\n\n\ndef read_dir(path):\n    \"\"\"\n    Fetches name of all files in path in long form, and labels associated by extrapolation of directory names. ",
+  "sampling_seed": 3372334326,
+  "source_stratum": "type04_140",
+  "tag": "t04",
+  "temperature": 0.4
+}

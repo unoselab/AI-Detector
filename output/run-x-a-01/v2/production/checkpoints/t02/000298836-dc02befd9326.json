@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_remote_content_len(self, remote, headers=None):\n        \"\"\"\n        :param remote:\n        :return: size of remote file\n        \"\"\"\n        if headers is None:\n            headers = {}\n        headers['Range'] = 'bytes=0-0'\n        try:\n            r = self.get(remote, headers=headers)\n            if r.status_code ==\n",
+  "agc_valid": false,
+  "body_sha256": "6e71f32846a2d2b8454e089db6930220da5b5f385f27a41a82c59ed3bb9388ad",
+  "body_tokens": 73,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if headers is None:\n            headers = {}\n        headers['Range'] = 'bytes=0-0'\n        try:\n            r = self.get(remote, headers=headers)\n            if r.status_code ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "4322c838f936cfe4660abac66a4a9e5d69bca56a9142ecc3eb7267bd1605c45f",
+  "human_valid": true,
+  "line_no": 298836,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "dc02befd9326fbc9a03c0beefe9e4b7155fc0ab024174f0eb1a9111acc0e3286",
+  "raw_output": "\n        if headers is None:\n            headers = {}\n        headers['Range'] = 'bytes=0-0'\n        try:\n            r = self.get(remote, headers=headers)\n            if r.status_code == ",
+  "sampling_seed": 809399363,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

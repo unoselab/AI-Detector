@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def async_lru(size=100):\n    \"\"\" An LRU cache for asyncio coroutines in Python 3.5\n        ..\n            @async_lru(1024)\n            async def slow_coroutine(*args, **kwargs):\n                return await some_other_slow_coroutine()\n        ..\n    \"\"\"\n    import asyncio\n    import functools\n",
+  "agc_valid": true,
+  "body_sha256": "7acc3e109a545f57781298166cb4bb5083023dd134c45cbb5fb2156da164870a",
+  "body_tokens": 11,
+  "bucket": "out_of_range",
+  "clean_output": "\n    import asyncio\n    import functools\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "61ad6dd516d34535e1cc52f3fcf5495207704c792b18ccbda93d0d52b265f359",
+  "human_valid": true,
+  "line_no": 5250,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "bce9a1480115424eadee679b9f5ae9d447bbecf38df190cc5f34f4545ebdfc76",
+  "raw_output": "\n    import asyncio\n    import functools\n\n    def",
+  "sampling_seed": 834242155,
+  "tag": "t04",
+  "temperature": 0.4
+}

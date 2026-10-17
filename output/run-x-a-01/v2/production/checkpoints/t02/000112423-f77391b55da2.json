@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def contains_regex(path, regex, lchar=''):\n    \"\"\"\n    .. deprecated:: 0.17.0\n       Use :func:`search` instead.\n\n    Return True if the given regular expression matches on any line in the text\n    of a given file.\n\n    If the lchar argument (leading char) is specified, it\n    will strip `lchar` from the left side of each line before trying to match\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' file.contains_regex /etc/crontab\n    \"\"\"\n    passwd /etc/passwd\n        \"\"\"\n        salt.utils.warn_until(\n            'Oxygen',\n            'Please remove \\'file.contains_regex\\' from your state files and '\n            'replace it with \\'file.search\\' instead.'\n        )\n        return search(path, regex, lchar)\n",
+  "agc_valid": false,
+  "body_sha256": "d8a7c2646d5061f121593f3fb82f763c7127d6aa4a57e8eaf584ffa9a8e5181f",
+  "body_tokens": 89,
+  "bucket": "out_of_range",
+  "clean_output": "\n    passwd /etc/passwd\n        \"\"\"\n        salt.utils.warn_until(\n            'Oxygen',\n            'Please remove \\'file.contains_regex\\' from your state files and '\n            'replace it with \\'file.search\\' instead.'\n        )\n        return search(path, regex, lchar)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "fd7eb9296adfa484f9f6cd0b6395887a4da30e8bc62d120aaebed8f8449a838e",
+  "human_valid": true,
+  "line_no": 112423,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f77391b55da2410c5be502a50213f79ddaf652a0f6dee6cf68d4fc467da740d3",
+  "raw_output": "passwd /etc/passwd\n    \"\"\"\n    salt.utils.warn_until(\n        'Oxygen',\n        'Please remove \\'file.contains_regex\\' from your state files and '\n        'replace it with \\'file.search\\' instead.'\n    )\n    return search(path, regex, lchar)\n\n\ndef contains(path, text, ignore_if_missing=False):\n    \"\"\"\n    Return True if the given text is found in the file, otherwise return False\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' file.contains /etc/motd root\n    \"\"\"\n    if not os.path.isfile(path):\n        if ignore_if_missing:\n            return False\n        else:\n            raise SaltInvocationError(\n                'File not found: {0}'.format(path)\n            )\n\n    with salt.utils.fopen(path, 'rb') as fp_:\n        if salt.utils.istextfile(fp_):\n            try:\n                data = salt.utils.stringutils.to_unicode(fp_.read())\n            except UnicodeDecodeError:\n                log.error(\n                    'Failed to read file {0} as unicode'.format(path)\n                )\n                return False\n        else:\n            data = fp_.read()\n\n    if text in data:\n        return True\n    return False\n\n\ndef contains_glob(path, glob_pattern, ignore_if_missing=False):\n    \"\"\"\n    Return True if the given glob pattern is found in the file, otherwise\n    return False\n\n    CLI Example:\n\n    .. code-block:: bash\n\n        salt '*' file.contains_glob /etc/motd 'ba[rs]e'\n    \"\"\"\n    if not os.path.isfile(path):\n        if ignore_if_missing:\n            return False\n        else:\n            raise SaltInvocationError(\n                'File not found: {0}'.format(path)\n            )\n\n    with salt.utils.fopen(path, 'rb') as fp_:\n        if salt.utils.istextfile(fp_):\n            try:\n                data",
+  "sampling_seed": 1361617143,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

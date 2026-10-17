@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_pos_hint_y(poshints, sizehinty):\n    \"\"\"Return ``poshints['y']`` if available, or its computed equivalent\n    otherwise.\n\n    \"\"\"\n    if poshints is None:\n        return None\n    if 'y' in poshints:\n        return poshints['y']\n    if 'y' in sizehinty:\n        return sizehinty['y']\n    return None\n",
+  "agc_valid": true,
+  "body_sha256": "df4b39a514d4a017e97ad22fa726e7c244417ee0b99ef0687b81a093ec3adda8",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if poshints is None:\n        return None\n    if 'y' in poshints:\n        return poshints['y']\n    if 'y' in sizehinty:\n        return sizehinty['y']\n    return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "dac0d46405806e82803bfc84eba56599178d37f9c6232bd7a533f9bc621eb2dc",
+  "human_valid": true,
+  "line_no": 146212,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5e2d63f187a349efad433d1bc7f8d912ed0f891fa7b48405d1802c544b3682fd",
+  "raw_output": "\n    if poshints is None:\n        return None\n    if 'y' in poshints:\n        return poshints['y']\n    if 'y' in sizehinty:\n        return sizehinty['y']\n    return None\n\n\ndef get_pos_hint_x(poshints, sizehintx):\n    \"\"\"Return ``poshints['x']`` if available, or its computed equivalent\n    otherwise.\n\n    \"\"\"\n    if poshints is None:\n        return None\n    if 'x' in poshints:\n        return poshints['x']\n    if 'x' in sizehintx:\n        return sizehintx['x']\n    return None\n\n\ndef get_pos_hint_y_from_size_hint_y(sizehinty):\n    \"\"\"Return ``sizehinty['y']`` if available, or its computed equivalent\n    otherwise.\n\n    \"\"\"\n    if sizehinty is None:\n        return None\n    if 'y' in sizehinty:\n        return sizehinty['y']\n    return None\n\n\ndef get_pos_hint_x_from_size_hint_x(sizehintx):\n    \"\"\"Return ``sizehintx['x']`` if available, or its computed equivalent\n    otherwise.\n\n    \"\"\"\n    if sizehintx is None:\n        return None\n    if 'x' in sizehintx:\n        return sizehintx['x']\n    return None\n\n\ndef get_size_hint_y(sizehinty):\n    \"\"\"Return ``sizehinty['y']`` if available, or its computed equivalent\n    otherwise.\n\n    \"\"\"\n    if sizehinty is None:\n        return None\n    if 'y' in sizehinty:\n        return sizehinty['y']\n    return None\n\n\ndef get_size_hint_x(sizehintx):\n    \"\"\"Return ``sizehintx['x']`` if available, or its computed equivalent\n    otherwise.\n\n    \"\"\"\n    if sizehintx is None:\n        return None\n    if 'x' in sizeh",
+  "sampling_seed": 117182537,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

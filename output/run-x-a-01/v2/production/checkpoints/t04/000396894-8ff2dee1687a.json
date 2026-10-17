@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _serialize_lnk(lnk):\n    \"\"\"Serialize a predication lnk to surface form into the SimpleMRS\n       encoding.\"\"\"\n       if isinstance(lnk, str):\n           return lnk\n       if isinstance(lnk, tuple):\n           return '(' + lnk[0] + ',' + _serialize_lnk(lnk[1]) + ')'\n       if isinstance(lnk, list):\n           return '[' + ','.join([_serialize_lnk(x) for x in lnk]) + ']'\n       if isinstance(lnk, dict):\n           return '{' + ','.join([_serialize_lnk(k) + ':' + _serialize_lnk(v) for k, v in lnk.items()]) + '}'\n       if isinstance(lnk, int):\n           return str(lnk)\n       if isinstance(lnk, float):\n           return str(lnk)\n       if isinstance(lnk, bool):\n           return str(lnk).lower()\n       if isinstance(lnk, complex):\n           return str(lnk)\n       raise ValueError('Unsupported lnk type: {}'.format(type(lnk)))\n",
+  "agc_valid": false,
+  "body_sha256": "884006d571d7d58142d707f1e6a1cf064d72ba8b0ccf8952699edb75ec9ef4a6",
+  "body_tokens": 209,
+  "bucket": "out_of_range",
+  "clean_output": "\n       if isinstance(lnk, str):\n           return lnk\n       if isinstance(lnk, tuple):\n           return '(' + lnk[0] + ',' + _serialize_lnk(lnk[1]) + ')'\n       if isinstance(lnk, list):\n           return '[' + ','.join([_serialize_lnk(x) for x in lnk]) + ']'\n       if isinstance(lnk, dict):\n           return '{' + ','.join([_serialize_lnk(k) + ':' + _serialize_lnk(v) for k, v in lnk.items()]) + '}'\n       if isinstance(lnk, int):\n           return str(lnk)\n       if isinstance(lnk, float):\n           return str(lnk)\n       if isinstance(lnk, bool):\n           return str(lnk).lower()\n       if isinstance(lnk, complex):\n           return str(lnk)\n       raise ValueError('Unsupported lnk type: {}'.format(type(lnk)))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 180,
+  "human_sha256": "23265499229307e2449d0d71be938448a623c8074b11684a16900e6bd231d07a",
+  "human_valid": true,
+  "line_no": 396894,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8ff2dee1687ab3623487114e0d60ba1a51f6c799910024adfae4681bb948df81",
+  "raw_output": "\n    if isinstance(lnk, str):\n        return lnk\n    if isinstance(lnk, tuple):\n        return '(' + lnk[0] + ',' + _serialize_lnk(lnk[1]) + ')'\n    if isinstance(lnk, list):\n        return '[' + ','.join([_serialize_lnk(x) for x in lnk]) + ']'\n    if isinstance(lnk, dict):\n        return '{' + ','.join([_serialize_lnk(k) + ':' + _serialize_lnk(v) for k, v in lnk.items()]) + '}'\n    if isinstance(lnk, int):\n        return str(lnk)\n    if isinstance(lnk, float):\n        return str(lnk)\n    if isinstance(lnk, bool):\n        return str(lnk).lower()\n    if isinstance(lnk, complex):\n        return str(lnk)\n    raise ValueError('Unsupported lnk type: {}'.format(type(lnk)))\n\n\ndef _deserialize_lnk(lnk):\n    \"\"\"Deserialize a SimpleMRS surface form into a predication lnk.\"\"\"\n    if isinstance(lnk, str):\n        return lnk\n    if isinstance(lnk, list):\n        return [_deserialize_lnk(x) for x in lnk]\n    if isinstance(lnk, dict):\n        return {_deserialize_lnk(k): _deserialize_lnk(v) for k, v in lnk.items()}\n    if isinstance(lnk, tuple):\n        return (_deserialize_lnk(lnk[0]), _deserialize_lnk(lnk[1]))\n    if isinstance(lnk, int):\n        return lnk\n    if isinstance(lnk, float):\n        return lnk\n    if isinstance(lnk, bool):\n        return lnk\n    if isinstance(lnk, complex):\n        return lnk\n    raise ValueError('Unsupported lnk",
+  "sampling_seed": 575689971,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def tokenized(self, delimiter=' ', overlap_threshold=0.1):\n        \"\"\"\n        Return a ordered list of tokens based on all labels.\n        Joins all token from all labels (``label.tokenized()```).\n        If the overlapping between two labels is greater than ``overlap_threshold``,\n        an Exception is thrown.\n\n        Args:\n            delimiter (str): The delimiter used to split labels into tokens. (default: space)\n            overlap_threshold (float): Maximum overlap between two consecutive labels.\n\n        Returns:\n            str: A list containing tokens of all labels ordered according to the label order.\n\n        Example:\n            >>> ll = LabelList(idx='some', labels=[\n            >>>     Label('a d q', start=0, end=4),\n            >>>     Label('b', start=3.95, end=6.0),\n            >>>     Label('c a', start=7.0, end=10.2),\n            >>>     Label('f g', start=10.3, end=14.0)\n            >>> ])\n            >>> ll.tokenized(delimiter=' ', overlap_threshold=0.1)\n            ['a', 'd', 'q', 'b', 'c', 'a', 'f', 'g']\n        \"\"\"\n        :\n                    list: list of tokenized labels.\n\n                Raises:\n                    Exception: If the overlapping between two labels is greater than ``overlap_threshold``.\n                \"\"\"\n                tokens = []\n                for label in self:\n                    tokens += label.tokenized(delimiter=delimiter)\n\n                # Check overlap between two consecutive tokens.\n                for i in range(len(tokens) -\n",
+  "agc_valid": false,
+  "body_sha256": "ef5d7a4e4e2c5425923083c2be8e82b83be16c351175e3aa1aef72cf969b9b3d",
+  "body_tokens": 196,
+  "bucket": "type10_200",
+  "clean_output": "\n        :\n                    list: list of tokenized labels.\n\n                Raises:\n                    Exception: If the overlapping between two labels is greater than ``overlap_threshold``.\n                \"\"\"\n                tokens = []\n                for label in self:\n                    tokens += label.tokenized(delimiter=delimiter)\n\n                # Check overlap between two consecutive tokens.\n                for i in range(len(tokens) -\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "51ba3b66ce207a203896723b550612f98362f73e3016cde3717757e6e51fa4be",
+  "human_valid": true,
+  "line_no": 145752,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4a6927dbe6e9e28851427670d26937b552ab3d34bf5a75c241a19722c1bd015d",
+  "raw_output": ":\n            list: list of tokenized labels.\n\n        Raises:\n            Exception: If the overlapping between two labels is greater than ``overlap_threshold``.\n        \"\"\"\n        tokens = []\n        for label in self:\n            tokens += label.tokenized(delimiter=delimiter)\n\n        # Check overlap between two consecutive tokens.\n        for i in range(len(tokens) - ",
+  "sampling_seed": 2358732684,
+  "source_stratum": "type05_150",
+  "tag": "t04",
+  "temperature": 0.4
+}

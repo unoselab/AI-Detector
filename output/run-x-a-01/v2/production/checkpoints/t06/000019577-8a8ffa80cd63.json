@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _guessunit(self):\n        \"\"\"Guess the unit of the period as the largest one, which results in\n        an integer duration.\n        \"\"\"\n        units = (self.years, self.months, self.days, self.hours,\n                 self.minutes, self.seconds, self.milliseconds,\n                 self.microseconds)\n        if self.nanoseconds:\n            units = units + (self.nanoseconds, )\n        unit =\n",
+  "agc_valid": false,
+  "body_sha256": "4688a49a6490b16765128947fdd0d7db09eb7e0a306f4cfbf6975dab475ce254",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n        units = (self.years, self.months, self.days, self.hours,\n                 self.minutes, self.seconds, self.milliseconds,\n                 self.microseconds)\n        if self.nanoseconds:\n            units = units + (self.nanoseconds, )\n        unit =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 166,
+  "human_sha256": "41fb25fad71ceea9b245e54b642e7695746a847a30e238ce13920e870543da7b",
+  "human_valid": true,
+  "line_no": 19577,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8a8ffa80cd638469b159f62118a6ec57cf20ced9cb386641699a0788172543ed",
+  "raw_output": "\n        units = (self.years, self.months, self.days, self.hours,\n                 self.minutes, self.seconds, self.milliseconds,\n                 self.microseconds)\n        if self.nanoseconds:\n            units = units + (self.nanoseconds, )\n        unit = ",
+  "sampling_seed": 3946589105,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

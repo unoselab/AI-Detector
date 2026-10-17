@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def dump_tree(self, statement=None, indent_level=0):\n        \"\"\"Dump the AST for this parsed file.\n\n        Args:\n            statement (SensorGraphStatement): the statement to print\n                if this function is called recursively.\n            indent_level (int): The number of spaces to indent this\n                statement.  Used for recursively printing blocks of\n                statements.\n        Returns:\n            str: The AST for this parsed sg file as a nested\n                tree with one node per line and blocks indented.\n        \"\"\"\n        if statement is None:\n            statement = self\n        indent = ' ' * indent_level\n        if isinstance(statement, SensorGraphStatement):\n            if statement.is_block:\n                print(f'{indent}{statement.type} {statement.name}')\n                for child in statement.children:\n                    self.dump_tree(child, indent_level +\n",
+  "agc_valid": false,
+  "body_sha256": "dc0390a772c0a8fbf2778253fbfa6caee65472973a81cfb82408510882b039d0",
+  "body_tokens": 120,
+  "bucket": "type02_120",
+  "clean_output": "\n        if statement is None:\n            statement = self\n        indent = ' ' * indent_level\n        if isinstance(statement, SensorGraphStatement):\n            if statement.is_block:\n                print(f'{indent}{statement.type} {statement.name}')\n                for child in statement.children:\n                    self.dump_tree(child, indent_level +\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 159,
+  "human_sha256": "fce3bfd5bf74461fcbab4126bd06a00ddca9059576fb0fb72daf3ab5a562cc51",
+  "human_valid": true,
+  "line_no": 127822,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "64f82b9bca3d624a2c21297eb13f4525b9e6429995d54bbd6badc23ebf69c5b8",
+  "raw_output": "\n        if statement is None:\n            statement = self\n        indent = ' ' * indent_level\n        if isinstance(statement, SensorGraphStatement):\n            if statement.is_block:\n                print(f'{indent}{statement.type} {statement.name}')\n                for child in statement.children:\n                    self.dump_tree(child, indent_level + ",
+  "sampling_seed": 2041321050,
+  "source_stratum": "type06_160",
+  "tag": "t04",
+  "temperature": 0.4
+}

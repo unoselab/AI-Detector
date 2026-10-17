@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_smt_userid():\n    \"\"\"Get the userid of smt server\"\"\"\n    return os.environ.get('SMT_USERID')\n",
+  "agc_valid": true,
+  "body_sha256": "dc096f0ca43436e830b1397a5b7e2eda4eaca8c2a37cdb1e25a456aa9ca868ff",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return os.environ.get('SMT_USERID')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "90f9beff140ea36ea50acdff31e0a3640bf1841af381abc088cd568f29ba6999",
+  "human_valid": true,
+  "line_no": 223113,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e1917e0120bded292146c08c278d77213401885cf1e0198258cc3574ddacaf40",
+  "raw_output": "\n    return os.environ.get('SMT_USERID')\n\n\ndef get_smt_password():\n    \"\"\"Get the password of smt server\"\"\"\n    return os.environ.get('SMT_PASSWORD')\n\n\ndef get_smt_host():\n    \"\"\"Get the host of smt server\"\"\"\n    return os.environ.get('SMT_HOST')\n\n\ndef get_smt_port():\n    \"\"\"Get the port of smt server\"\"\"\n    return os.environ.get('SMT_PORT')\n\n\ndef get_smt_ssl():\n    \"\"\"Get the ssl of smt server\"\"\"\n    return os.environ.get('SMT_SSL')\n\n\ndef get_smt_verify_ssl():\n    \"\"\"Get the verify_ssl of smt server\"\"\"\n    return os.environ.get('SMT_VERIFY_SSL')\n\n\ndef get_smt_timeout():\n    \"\"\"Get the timeout of smt server\"\"\"\n    return os.environ.get('SMT_TIMEOUT')\n\n\ndef get_smt_from():\n    \"\"\"Get the from of smt server\"\"\"\n    return os.environ.get('SMT_FROM')\n\n\ndef get_smt_to():\n    \"\"\"Get the to of smt server\"\"\"\n    return os.environ.get('SMT_TO')\n\n\ndef get_smt_cc():\n    \"\"\"Get the cc of smt server\"\"\"\n    return os.environ.get('SMT_CC')\n\n\ndef get_smt_bcc():\n    \"\"\"Get the bcc of smt server\"\"\"\n    return os.environ.get('SMT_BCC')\n\n\ndef get_smt_subject():\n    \"\"\"Get the subject of smt server\"\"\"\n    return os.environ.get('SMT_SUBJECT')\n\n\ndef get_smt_body():\n    \"\"\"Get the body of smt server\"\"\"\n    return os.environ.get('SMT_BODY')\n\n\ndef get_smt_attachment():\n    \"\"\"Get the attachment of smt server\"\"\"\n    return os.environ.get('SMT_AT",
+  "sampling_seed": 2539173701,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

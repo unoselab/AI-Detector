@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def request(self, url, method, body=None, headers=None, **kwargs):\n        \"\"\"Request without authentication.\"\"\"\n        return super(BaseAPI, self).request(url, method, body, headers, **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "4099d4c6b872f10137f0303537f05838e98cf434ecbe3686e8fcb0440d296de0",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return super(BaseAPI, self).request(url, method, body, headers, **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 171,
+  "human_sha256": "867aed683d95f3ed167812c6a73871ea15d0773e0eef37d6de50b05cf4897682",
+  "human_valid": true,
+  "line_no": 313627,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d05f6585a0d056724be11d177fb8ea0f31f8ee852b461191c6c368174a0dd628",
+  "raw_output": "\n        return super(BaseAPI, self).request(url, method, body, headers, **kwargs)\n\n    def",
+  "sampling_seed": 3378286554,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

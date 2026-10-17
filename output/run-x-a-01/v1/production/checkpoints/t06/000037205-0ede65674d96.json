@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def command(state, args):\n    \"\"\"Add an anime from an AniDB search.\"\"\"\n    if args.length ==\n",
+  "agc_valid": false,
+  "body_sha256": "a757785f1a0557e4f290447a74f7bff0b8251813156b638781bd29b11685c87b",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if args.length ==\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "16bb63668a6c341c063352dcbe69f5f9588b087fcffaa1dcda8c9380cb7ae3c5",
+  "human_valid": true,
+  "line_no": 37205,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "0ede65674d96cf38f9b40fb6afcd8f76052ce05039fe3b3827d75984b70b39f7",
+  "raw_output": "\n    if args.length == ",
+  "sampling_seed": 3200377196,
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def execute_dry_run(self, dialect=None, billing_tier=None):\n    \"\"\"Dry run a query, to check the validity of the query and return some useful statistics.\n\n    Args:\n      dialect : {'legacy', 'standard'}, default 'legacy'\n          'legacy' : Use BigQuery's legacy SQL dialect.\n          'standard' : Use BigQuery's standard SQL (beta), which is\n          compliant with the SQL 2011 standard.\n      billing_tier: Limits the billing tier for this job. Queries that have resource\n          usage beyond this tier will fail (without incurring a charge). If unspecified, this\n          will be set to your project default. This can also be used to override your\n          project-wide default billing tier on a per-query basis.\n    Returns:\n      A dict with 'cacheHit' and 'totalBytesProcessed' fields.\n    Raises:\n      An exception if the query was malformed.\n    \"\"\"\n    billing tier for this query.\n\n        Returns:\n          A :class:`~google.cloud.bigquery.job.QueryJob` containing the results.\n        \"\"\"\n        if dialect not in (None, 'legacy', 'standard'):\n            raise ValueError(_INVALID_DIALECT_MSG)\n        if billing_tier is not None:\n            if not isinstance(billing_tier, six.integer_types):\n                raise ValueError(_INVALID_BILLING_TIER_MSG)\n            if billing_tier <\n",
+  "agc_valid": false,
+  "body_sha256": "747aa75925d8d1847ef59225cec58788016a70e1b240428e56e175621168fde0",
+  "body_tokens": 124,
+  "bucket": "type03_130",
+  "clean_output": "\n    billing tier for this query.\n\n        Returns:\n          A :class:`~google.cloud.bigquery.job.QueryJob` containing the results.\n        \"\"\"\n        if dialect not in (None, 'legacy', 'standard'):\n            raise ValueError(_INVALID_DIALECT_MSG)\n        if billing_tier is not None:\n            if not isinstance(billing_tier, six.integer_types):\n                raise ValueError(_INVALID_BILLING_TIER_MSG)\n            if billing_tier <\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "973123c77d86a676eda8981ade7b732fa41a349299fb8d2711a490be8ba30f7e",
+  "human_valid": true,
+  "line_no": 277874,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b9f522cb4af38ec2018c3d94316baa3479e61b7bb7fc6136561f33bb45b96972",
+  "raw_output": "billing tier for this query.\n\n    Returns:\n      A :class:`~google.cloud.bigquery.job.QueryJob` containing the results.\n    \"\"\"\n    if dialect not in (None, 'legacy', 'standard'):\n        raise ValueError(_INVALID_DIALECT_MSG)\n    if billing_tier is not None:\n        if not isinstance(billing_tier, six.integer_types):\n            raise ValueError(_INVALID_BILLING_TIER_MSG)\n        if billing_tier < ",
+  "sampling_seed": 176997578,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

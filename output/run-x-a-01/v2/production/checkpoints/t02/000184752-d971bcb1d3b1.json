@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def write_config_file(self, params, path):\n        \"\"\" write a config file for this single exp in the folder path.\n        \"\"\"\n        config_file = os.path.join(path, 'config.yaml')\n        with open(config_file, 'w') as f:\n            yaml.dump(params, f)\n",
+  "agc_valid": true,
+  "body_sha256": "6365b0bc720ae8aa494fec016264928531aabaabfabd0db35abe717fc29668a0",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n        config_file = os.path.join(path, 'config.yaml')\n        with open(config_file, 'w') as f:\n            yaml.dump(params, f)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 103,
+  "human_sha256": "97d1a90002c811300e0326ab3b619d8f1fbd7d59636265a81ad01678d5ab2cb3",
+  "human_valid": true,
+  "line_no": 184752,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "d971bcb1d3b14bd4ff953c3f0c24c5dce649934a6d6b6678041c988929161c90",
+  "raw_output": "\n        config_file = os.path.join(path, 'config.yaml')\n        with open(config_file, 'w') as f:\n            yaml.dump(params, f)\n\n    def",
+  "sampling_seed": 2636160852,
+  "source_stratum": "type01_110",
+  "tag": "t02",
+  "temperature": 0.2
+}

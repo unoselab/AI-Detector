@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def createSummary(self, log):\n        \"\"\"\n        Match log lines against warningPattern.\n\n        Warnings are collected into another log for this step, and the\n        build-wide 'warnings-count' is updated.\"\"\"\n        log.info('Creating summary...')\n        self.summary = self.build.createTextLog(self.name)\n        self.summary.write(self.warningPattern.pattern() + '\\n')\n        self.summary.write('----------------------------------------\\n')\n        self.summary.write('%d warnings found\\n' % self.warningCount)\n        self.summary.write('----------------------------------------\\n')\n        self.summary.write(self.warningPattern.pattern() + '\\n')\n        self.summary.write('----------------------------------------\\n')\n        self.build.setProperty('warnings-count', str(self.warningCount))\n",
+  "agc_valid": true,
+  "body_sha256": "4ddc7ecd1ee24137309d4ca0107910e63c4599e56d1eafdf1551db3e017264cc",
+  "body_tokens": 85,
+  "bucket": "out_of_range",
+  "clean_output": "\n        log.info('Creating summary...')\n        self.summary = self.build.createTextLog(self.name)\n        self.summary.write(self.warningPattern.pattern() + '\\n')\n        self.summary.write('----------------------------------------\\n')\n        self.summary.write('%d warnings found\\n' % self.warningCount)\n        self.summary.write('----------------------------------------\\n')\n        self.summary.write(self.warningPattern.pattern() + '\\n')\n        self.summary.write('----------------------------------------\\n')\n        self.build.setProperty('warnings-count', str(self.warningCount))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 145,
+  "human_sha256": "58b7ef480363adb9109cbff1bd54a08727de01eed62aaf187ac093ff04d2423b",
+  "human_valid": true,
+  "line_no": 357274,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc8f29ac78f31b0e56d6fcfa3fd184fb234693deb0938f0185bf99a580a570d0",
+  "raw_output": "\n        log.info('Creating summary...')\n        self.summary = self.build.createTextLog(self.name)\n        self.summary.write(self.warningPattern.pattern() + '\\n')\n        self.summary.write('----------------------------------------\\n')\n        self.summary.write('%d warnings found\\n' % self.warningCount)\n        self.summary.write('----------------------------------------\\n')\n        self.summary.write(self.warningPattern.pattern() + '\\n')\n        self.summary.write('----------------------------------------\\n')\n        self.build.setProperty('warnings-count', str(self.warningCount))\n\n\nclass BuildFailure(Exception):\n    \"\"\"\n    Exception raised when a build is to be failed.\n    \"\"\"\n\n    def",
+  "sampling_seed": 264086055,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

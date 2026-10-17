@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def key(self, identifier=None, security_level=None):\n        \"\"\"\n        Tries to find an encryption key, first using the ``identifier`` and\n        if that fails or isn't provided using the ``security_level``.\n        Returns ``None`` if nothing matches.\n        \"\"\"\n        if identifier is not None:\n            try:\n                return self.encryption_keys[identifier]\n            except KeyError:\n                pass\n        if security_level is not None:\n            try:\n                return self.encryption_keys[security_level]\n            except KeyError:\n                pass\n\n        return None\n",
+  "agc_valid": true,
+  "body_sha256": "2b6ed85428a25bb5ff31197444c65bb8808f5d8c3d6d82e2e88942a2dcd90213",
+  "body_tokens": 150,
+  "bucket": "type05_150",
+  "clean_output": "\n        if identifier is not None:\n            try:\n                return self.encryption_keys[identifier]\n            except KeyError:\n                pass\n        if security_level is not None:\n            try:\n                return self.encryption_keys[security_level]\n            except KeyError:\n                pass\n\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "e80a7c1c80d1277e2d3a80fcac968e554ea1a66ad0ee4406bf7db55be0febbea",
+  "human_valid": true,
+  "line_no": 141750,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b8a53896cd78bdc8fdceb632fc71fef13b48508750065980c3329cb639bf78a1",
+  "raw_output": "\n        if identifier is not None:\n            try:\n                return self.encryption_keys[identifier]\n            except KeyError:\n                pass\n        if security_level is not None:\n            try:\n                return self.encryption_keys[security_level]\n            except KeyError:\n                pass\n\n        return None\n\n    def",
+  "sampling_seed": 1633706256,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _extractAssociationsDetails(self, associations):\n        \"\"\"\n        Given a set of results from our search query, return the\n        `details` (feature,environment,phenotype)\n        \"\"\"\n        details = []\n        for association in associations:\n            if association['feature'] is None:\n                continue\n            details.append(association['feature']['details'])\n        return details\n",
+  "agc_valid": true,
+  "body_sha256": "bc689d79a80973ff5e88d2a23cb39b35689d208ae408020532fddd9e2d2c125f",
+  "body_tokens": 74,
+  "bucket": "out_of_range",
+  "clean_output": "\n        details = []\n        for association in associations:\n            if association['feature'] is None:\n                continue\n            details.append(association['feature']['details'])\n        return details\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "5c6685574a58fd1d2af23f15aefa03acbc286c2162be30f75cdd3f0e7402cf89",
+  "human_valid": true,
+  "line_no": 13811,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "c67e6b999ae5e081b37eb1d7abccee23f2f2a90021b9ba018cc51ca1f10ae2cd",
+  "raw_output": "\n        details = []\n        for association in associations:\n            if association['feature'] is None:\n                continue\n            details.append(association['feature']['details'])\n        return details\n\n    def",
+  "sampling_seed": 2282918496,
+  "tag": "t04",
+  "temperature": 0.4
+}

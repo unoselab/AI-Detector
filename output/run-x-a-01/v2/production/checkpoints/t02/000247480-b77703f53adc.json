@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def with_updated_configuration(self, options=None,\n                                   attribute_options=None):\n        \"\"\"\n        Returns a context in which this mapping is updated with the given\n        options and attribute options.\n        \"\"\"\n        if options is None:\n            options = {}\n        if attribute_options is None:\n            attribute_options = {}\n        return self.with_configuration(\n            self.options.copy().update(options),\n            self.attribute_options.copy().update(attribute_options))\n",
+  "agc_valid": true,
+  "body_sha256": "f6c4a35c183b2e878914ba59671f2e3ad538a2f41e82e92bb4daeb66689c6a99",
+  "body_tokens": 84,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if options is None:\n            options = {}\n        if attribute_options is None:\n            attribute_options = {}\n        return self.with_configuration(\n            self.options.copy().update(options),\n            self.attribute_options.copy().update(attribute_options))\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 186,
+  "human_sha256": "08ffa56540e9512c9076956679e7dd20df177e0bed7f0b0d8c7e18fac844ded1",
+  "human_valid": true,
+  "line_no": 247480,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b77703f53adcf0ad7046b22fb506f452feafa76537d3f694deefc6317a049722",
+  "raw_output": "\n        if options is None:\n            options = {}\n        if attribute_options is None:\n            attribute_options = {}\n        return self.with_configuration(\n            self.options.copy().update(options),\n            self.attribute_options.copy().update(attribute_options))\n\n    def",
+  "sampling_seed": 2835480376,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

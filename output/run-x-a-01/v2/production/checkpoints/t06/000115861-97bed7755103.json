@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_str_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list of strings\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"argument must be a list\")\n    if not all(isinstance(s, str) for s in arg):\n        raise TypeError(\"argument must be a list of strings\")\n    return arg\n",
+  "agc_valid": true,
+  "body_sha256": "7f56c215eddf6f080f318a06b3118815dd664045356783c9ce93724499363f6f",
+  "body_tokens": 52,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not isinstance(arg, list):\n        raise TypeError(\"argument must be a list\")\n    if not all(isinstance(s, str) for s in arg):\n        raise TypeError(\"argument must be a list of strings\")\n    return arg\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 141,
+  "human_sha256": "bf3de59e4b1cf3d8476b2bf4d2ebd7cdc153082325cfdbbaa00cc54f07f2ef47",
+  "human_valid": true,
+  "line_no": 115861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "97bed77551039b98c99a7f1e8a14810afff64ae738beafb2657f9ce27ffd8c3a",
+  "raw_output": "\n    if not isinstance(arg, list):\n        raise TypeError(\"argument must be a list\")\n    if not all(isinstance(s, str) for s in arg):\n        raise TypeError(\"argument must be a list of strings\")\n    return arg\n\n\ndef _validate_int_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list of integers\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"argument must be a list\")\n    if not all(isinstance(i, int) for i in arg):\n        raise TypeError(\"argument must be a list of integers\")\n    return arg\n\n\ndef _validate_int_list_or_str(arg):\n    \"\"\"\n    ensure ``arg`` is a list of integers or a string\n    \"\"\"\n    if isinstance(arg, str):\n        return _validate_str_list(arg)\n    return _validate_int_list(arg)\n\n\ndef _validate_float(arg):\n    \"\"\"\n    ensure ``arg`` is a float\n    \"\"\"\n    if not isinstance(arg, float):\n        raise TypeError(\"argument must be a float\")\n    return arg\n\n\ndef _validate_float_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list of floats\n    \"\"\"\n    if not isinstance(arg, list):\n        raise TypeError(\"argument must be a list\")\n    if not all(isinstance(f, float) for f in arg):\n        raise TypeError(\"argument must be a list of floats\")\n    return arg\n\n\ndef _validate_float_list_or_str(arg):\n    \"\"\"\n    ensure ``arg`` is a list of floats or a string\n    \"\"\"\n    if isinstance(arg, str):\n        return _validate_str_list(arg)\n    return _validate_float_list(arg)\n\n\ndef _validate_bool(arg):\n    \"\"\"\n    ensure ``arg`` is a bool\n    \"\"\"\n    if not isinstance(arg, bool):\n        raise TypeError(\"argument must be a bool\")\n    return arg\n\n\ndef _validate_bool_list(arg):\n    \"\"\"\n    ensure ``arg`` is a list of bools\n    \"\"\"\n",
+  "sampling_seed": 3007402598,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

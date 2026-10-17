@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_json_online(self, url):\n        \"\"\"\n        Use requests module to json from Earthref.\n        If this fails or times out, return false.\n\n        Returns\n        ---------\n        result : requests.models.Response, or [] if unsuccessful\n        \"\"\"\n        try:\n            r = requests.get(url)\n            r.raise_for_status()\n            result = r.json()\n            return result\n        except:\n            return []\n",
+  "agc_valid": true,
+  "body_sha256": "4ecb3d734fde26064d96ec238e7b339416369d42b10d54d760358c3e9a18b932",
+  "body_tokens": 83,
+  "bucket": "out_of_range",
+  "clean_output": "\n        try:\n            r = requests.get(url)\n            r.raise_for_status()\n            result = r.json()\n            return result\n        except:\n            return []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 130,
+  "human_sha256": "e391063b7fa21ac9eae71b790f48736a44a39e035aa652cf410a0f0cbf45f68b",
+  "human_valid": true,
+  "line_no": 401286,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "049271350f8561c84e8608c8398d197ae974d85f2ab4bdd84f98303447a69382",
+  "raw_output": "\n        try:\n            r = requests.get(url)\n            r.raise_for_status()\n            result = r.json()\n            return result\n        except:\n            return []\n\n    def",
+  "sampling_seed": 2880680315,
+  "source_stratum": "type03_130",
+  "tag": "t02",
+  "temperature": 0.2
+}

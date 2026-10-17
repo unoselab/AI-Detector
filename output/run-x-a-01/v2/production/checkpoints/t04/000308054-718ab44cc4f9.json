@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def make_symbols(symbols, *args):\n    \"\"\"Return a list of uppercase strings like \"GOOG\", \"$SPX, \"XOM\"...\n\n    Arguments:\n      symbols (str or list of str): list of market ticker symbols to normalize\n        If `symbols` is a str a get_symbols_from_list() call is used to retrieve the list of symbols\n\n    Returns:\n      list of str: list of cananical ticker symbol strings (typically after .upper().strip())\n\n    See Also:\n      pug.dj.db.normalize_names\n\n    Examples:\n      >>> make_symbols(\"Goog\")\n      ['GOOG']\n      >>> make_symbols(\"  $SPX   \", \" aaPL \")\n      ['$SPX', 'AAPL']\n      >>> make_symbols([\"$SPX\", [\"GOOG\", \"AAPL\"]])\n      ['GOOG', 'AAPL', '$SPX']\n      >>> make_symbols(\" $Spy, Goog, aAPL \")\n      ['$SPY', 'GOOG', 'AAPL']\n    \"\"\"\n     :func:`get_symbols_from_list`\n    \"\"\"\n    if isinstance(symbols, str):\n        symbols = get_symbols_from_list(symbols)\n    return [symbol.upper().strip() for symbol in symbols]\n",
+  "agc_valid": false,
+  "body_sha256": "d5b7884a8fec60ac6127720846756185eed1e822d8e6213b76401c00d9f2eb2b",
+  "body_tokens": 35,
+  "bucket": "out_of_range",
+  "clean_output": "\n     :func:`get_symbols_from_list`\n    \"\"\"\n    if isinstance(symbols, str):\n        symbols = get_symbols_from_list(symbols)\n    return [symbol.upper().strip() for symbol in symbols]\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 181,
+  "human_sha256": "0e96f9f97132c89e11b55ba60dc83a8a551af3198fb60fcf9740ec50cb960640",
+  "human_valid": true,
+  "line_no": 308054,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "718ab44cc4f91ca99c9c05088fee05ed8860b14cf0803f835990749cd22d6fbe",
+  "raw_output": "     :func:`get_symbols_from_list`\n    \"\"\"\n    if isinstance(symbols, str):\n        symbols = get_symbols_from_list(symbols)\n    return [symbol.upper().strip() for symbol in symbols]\n\n\ndef get_symbols_from_list(symbols_list_file, *args):\n    \"\"\"Return a list of uppercase strings like \"GOOG\", \"$SPX, \"XOM\"...\n\n    Arguments:\n      symbols_list_file (str): path to a text file containing a list of market ticker symbols\n\n    Returns:\n      list of str: list of cananical ticker symbol strings (typically after .upper().strip())\n\n    See Also:\n      :func:`make_symbols`\n    \"\"\"\n    with open(symbols_list_file, \"r\") as f:\n        symbols = f.readlines()\n    return [symbol.strip() for symbol in symbols]\n\n\ndef get_symbols_from_file(symbols_file, *args):\n    \"\"\"Return a list of uppercase strings like \"GOOG\", \"$SPX, \"XOM\"...\n\n    Arguments:\n      symbols_file (str): path to a text file containing a list of market ticker symbols\n\n    Returns:\n      list of str: list of cananical ticker symbol strings (typically after .upper().strip())\n\n    See Also:\n      :func:`make_symbols`\n    \"\"\"\n    return get_symbols_from_list(symbols_file)\n\n\ndef get_symbols_from_env(symbols_env_var, *args):\n    \"\"\"Return a list of uppercase strings like \"GOOG\", \"$SPX, \"XOM\"...\n\n    Arguments:\n      symbols_env_var (str): name of the environment variable containing a list of market ticker symbols\n\n    Returns:\n      list of str: list of cananical ticker symbol strings (typically after .upper().strip())\n\n    See Also:\n      :func:`make_symbols`\n    \"\"\"\n    return get_symbols_from_list(os.environ[symbols_env_var])\n\n\n",
+  "sampling_seed": 2740859720,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

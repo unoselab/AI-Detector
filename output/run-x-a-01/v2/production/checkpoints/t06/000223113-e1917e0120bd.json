@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_smt_userid():\n    \"\"\"Get the userid of smt server\"\"\"\n    return os.environ['SMTP_USER']\n",
+  "agc_valid": true,
+  "body_sha256": "383f1427e9115c6d9eb7d66d41355367b914ae0f4154b276a41bb5a1a8618b9d",
+  "body_tokens": 6,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return os.environ['SMTP_USER']\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "90f9beff140ea36ea50acdff31e0a3640bf1841af381abc088cd568f29ba6999",
+  "human_valid": true,
+  "line_no": 223113,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "e1917e0120bded292146c08c278d77213401885cf1e0198258cc3574ddacaf40",
+  "raw_output": "\n    return os.environ['SMTP_USER']\n\ndef get_smt_password():\n    \"\"\"Get the password of smt server\"\"\"\n    return os.environ['SMTP_PASSWORD']\n\ndef get_smt_server():\n    \"\"\"Get the server of smt server\"\"\"\n    return os.environ['SMTP_SERVER']\n\ndef get_smt_port():\n    \"\"\"Get the port of smt server\"\"\"\n    return os.environ['SMTP_PORT']\n\ndef get_smt_from():\n    \"\"\"Get the from email of smt server\"\"\"\n    return os.environ['SMTP_FROM']\n\ndef get_smt_to():\n    \"\"\"Get the to email of smt server\"\"\"\n    return os.environ['SMTP_TO']\n\ndef get_smt_subject():\n    \"\"\"Get the subject of smt server\"\"\"\n    return os.environ['SMTP_SUBJECT']\n\ndef get_smt_text():\n    \"\"\"Get the text of smt server\"\"\"\n    return os.environ['SMTP_TEXT']\n\ndef get_smt_html():\n    \"\"\"Get the html of smt server\"\"\"\n    return os.environ['SMTP_HTML']\n\ndef get_smt_debug():\n    \"\"\"Get the debug of smt server\"\"\"\n    return os.environ['SMTP_DEBUG']\n\ndef get_smt_server_ssl():\n    \"\"\"Get the ssl of smt server\"\"\"\n    return os.environ['SMTP_SSL']\n\ndef get_smt_server_tls():\n    \"\"\"Get the tls of smt server\"\"\"\n    return os.environ['SMTP_TLS']\n\ndef get_smt_server_timeout():\n    \"\"\"Get the timeout of smt server\"\"\"\n    return os.environ['SMTP_TIMEOUT']\n\ndef get_smt_server_retries():\n    \"\"\"Get the retries of smt server\"\"\"\n    return os.environ['SMTP_RETRIES']\n\ndef get_smt_server_encoding():\n    \"\"\"Get the encoding of smt server\"\"\"\n    return os.environ['SMTP_ENCOD",
+  "sampling_seed": 610554331,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def from_cwl(cls, data, __reference__=None):\n        \"\"\"Return an instance from CWL data.\"\"\"\n        data = data.get(\"CWL\")\n        if not isinstance(data, dict):\n            raise ValidationException(\"CWL must be a dict\")\n        return cls(**data)\n",
+  "agc_valid": true,
+  "body_sha256": "922509b2dd7071171ee10610e5e8e2b50e21449b26b8daf5cc1aed9f976ea267",
+  "body_tokens": 48,
+  "bucket": "out_of_range",
+  "clean_output": "\n        data = data.get(\"CWL\")\n        if not isinstance(data, dict):\n            raise ValidationException(\"CWL must be a dict\")\n        return cls(**data)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "446deb3294f345fabe8be005686684635e7343422c647d00a6348019a6eb2f05",
+  "human_valid": true,
+  "line_no": 407600,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "4a5f82e8f427c99acb10f7ee7c952b7fc2141217564ead19f518d65cd6626e97",
+  "raw_output": "\n        data = data.get(\"CWL\")\n        if not isinstance(data, dict):\n            raise ValidationException(\"CWL must be a dict\")\n        return cls(**data)\n\n    def",
+  "sampling_seed": 1562168987,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

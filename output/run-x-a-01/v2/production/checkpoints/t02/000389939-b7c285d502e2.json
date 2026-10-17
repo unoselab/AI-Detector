@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def check_update(dev: Device, internet: bool, update: bool):\n    \"\"\"Print out update information.\"\"\"\n    if not internet:\n        _LOGGER.warning(\n            \"Unable to check for updates. No internet connection available.\"\n        )\n        return\n\n    if not update:\n        _LOGGER.info(\"Skipping update check.\")\n        return\n\n    try:\n        latest_version = await dev.async_get_latest_version()\n    except DeviceException as err:\n        _LOGGER.warning(\"Unable to check for updates: %s\", err)\n        return\n\n    if latest_version is None:\n        _LOGGER.warning(\"Unable to check for updates.\")\n        return\n\n    if latest_version == dev.version:\n        _LOGGER.info(\"You are running the latest version of %s\", dev.name)\n        return\n\n    _LOGGER.info(\n        \"There is a new version of %s available. Your version is %s, the latest version is %s\",\n        dev.name,\n        dev.version,\n        latest_version,\n    )\n",
+  "agc_valid": true,
+  "body_sha256": "e040d5b5862ba47aae6cc5baa51a47b500a7684014ca4d0eedda17c0abe90ba3",
+  "body_tokens": 233,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not internet:\n        _LOGGER.warning(\n            \"Unable to check for updates. No internet connection available.\"\n        )\n        return\n\n    if not update:\n        _LOGGER.info(\"Skipping update check.\")\n        return\n\n    try:\n        latest_version = await dev.async_get_latest_version()\n    except DeviceException as err:\n        _LOGGER.warning(\"Unable to check for updates: %s\", err)\n        return\n\n    if latest_version is None:\n        _LOGGER.warning(\"Unable to check for updates.\")\n        return\n\n    if latest_version == dev.version:\n        _LOGGER.info(\"You are running the latest version of %s\", dev.name)\n        return\n\n    _LOGGER.info(\n        \"There is a new version of %s available. Your version is %s, the latest version is %s\",\n        dev.name,\n        dev.version,\n        latest_version,\n    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 133,
+  "human_sha256": "9ea5907780b8c6fff52ca3ad00cba667c843128219f39e032b23b969478a9726",
+  "human_valid": true,
+  "line_no": 389939,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7c285d502e2ca1c307db1a79f3b140eaf31ac3533853d37e3db2214666da650",
+  "raw_output": "\n    if not internet:\n        _LOGGER.warning(\n            \"Unable to check for updates. No internet connection available.\"\n        )\n        return\n\n    if not update:\n        _LOGGER.info(\"Skipping update check.\")\n        return\n\n    try:\n        latest_version = await dev.async_get_latest_version()\n    except DeviceException as err:\n        _LOGGER.warning(\"Unable to check for updates: %s\", err)\n        return\n\n    if latest_version is None:\n        _LOGGER.warning(\"Unable to check for updates.\")\n        return\n\n    if latest_version == dev.version:\n        _LOGGER.info(\"You are running the latest version of %s\", dev.name)\n        return\n\n    _LOGGER.info(\n        \"There is a new version of %s available. Your version is %s, the latest version is %s\",\n        dev.name,\n        dev.version,\n        latest_version,\n    )\n\n\nasync def",
+  "sampling_seed": 4159683092,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _call(self, method, *args, **kwargs):\n        \"\"\"Call the remote service and return the response data.\"\"\"\n        return self.client.call(method, *args, **kwargs)\n",
+  "agc_valid": true,
+  "body_sha256": "394a50aae8656f2ce2e50f09d674ed8038cb7a1710fa0bffa38bcc114d8d9046",
+  "body_tokens": 12,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self.client.call(method, *args, **kwargs)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "450f19d412f4b019b83d80622c270f2be968bf2a0e6cf89513f0ab1d9e821052",
+  "human_valid": true,
+  "line_no": 36562,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "7831e67524dd972b3fbd718f570a2334651c4a14a05d620d8ec7ee308b1317a2",
+  "raw_output": "\n        return self.client.call(method, *args, **kwargs)\n\n    def",
+  "sampling_seed": 1372791686,
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def hwvtep_add_ve_interface(self, **kwargs):\n        \"\"\"\n               Add virtual ethernet (ve) interface to the overlay-gateway\n\n               Args:\n                   name  (str): gateway-name\n                   int_id (int): ve id\n                   vrrp_id (int): VRPP-E group ID\n                   callback (function): A function executed upon completion of the\n                        method.\n\n               Returns:\n                  Return value of `callback`.\n\n               Raises:\n                   None\n               \"\"\"\n               \"\"\"\n               return self._post(\"/hwvtep/add_ve_interface\", **kwargs)\n",
+  "agc_valid": false,
+  "body_sha256": "514cf5aa9a60f5844ed7e4ed0cea9bbb7bd8d5f4cc7f10e34348efcb10d1903d",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n               \"\"\"\n               return self._post(\"/hwvtep/add_ve_interface\", **kwargs)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 154,
+  "human_sha256": "916c062492fe716c3f2568779f84f61bcfb0c94a3879eb8ed66d8701ba902949",
+  "human_valid": true,
+  "line_no": 268943,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "10290f9e936765561ae2f8df9d1692e3374c135eada38f426687c237f0d8decd",
+  "raw_output": "\n\n        \"\"\"\n        return self._post(\"/hwvtep/add_ve_interface\", **kwargs)\n\n    def",
+  "sampling_seed": 3750960917,
+  "source_stratum": "type06_160",
+  "tag": "t02",
+  "temperature": 0.2
+}

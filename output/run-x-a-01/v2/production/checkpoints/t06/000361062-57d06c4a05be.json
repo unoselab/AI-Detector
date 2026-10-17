@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def tau_rand_int(state):\n    \"\"\"A fast (pseudo)-random number generator.\n\n    Parameters\n    ----------\n    state: array of int64, shape (3,)\n        The internal state of the rng\n\n    Returns\n    -------\n    A (pseudo)-random int32 value\n    \"\"\"\n    # https://prng.di.unimi.it/\n    x = state[0]\n    y = state[1]\n    z = state[2]\n    t = x ^ (x <<\n",
+  "agc_valid": false,
+  "body_sha256": "427d6cc48e2614906560d2030992154007e688bec01bbfee49e55641f640c210",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # https://prng.di.unimi.it/\n    x = state[0]\n    y = state[1]\n    z = state[2]\n    t = x ^ (x <<\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 112,
+  "human_sha256": "833e14e6c4ff72a9bc8f049179cc8f0f9ff0c26f840aca4f73808819f5dc6870",
+  "human_valid": true,
+  "line_no": 361062,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "57d06c4a05be92d02851d1548d3c54a5cad1e65c7b5d2e9918c5aaeaeeacedca",
+  "raw_output": "\n    # https://prng.di.unimi.it/\n    x = state[0]\n    y = state[1]\n    z = state[2]\n    t = x ^ (x << ",
+  "sampling_seed": 271394360,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

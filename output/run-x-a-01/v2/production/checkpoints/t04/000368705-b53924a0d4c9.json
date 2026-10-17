@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def WriteClientActionRequests(self, requests, cursor=None):\n    \"\"\"Writes messages that should go to the client to the db.\"\"\"\n    for request in requests:\n      self._WriteClientActionRequest(request, cursor=cursor)\n",
+  "agc_valid": true,
+  "body_sha256": "05cf5ca073fe8f51f9c5da23dfc83a334b9049de172894cc9e95189b778ac4ac",
+  "body_tokens": 15,
+  "bucket": "out_of_range",
+  "clean_output": "\n    for request in requests:\n      self._WriteClientActionRequest(request, cursor=cursor)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 187,
+  "human_sha256": "da73621d303881290ba499050e6cd1bb828071e6567b6a8fb7f487fb73319c8e",
+  "human_valid": true,
+  "line_no": 368705,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b53924a0d4c93681adf4753d30e42d062a5fb490c280fcad8c71ed32ba71f90a",
+  "raw_output": "\n    for request in requests:\n      self._WriteClientActionRequest(request, cursor=cursor)\n\n ",
+  "sampling_seed": 1124873049,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

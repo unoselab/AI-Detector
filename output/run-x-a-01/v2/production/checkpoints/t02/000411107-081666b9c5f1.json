@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_var(self, query, formatted=False):\n        \"\"\"\n        Return variable names and indices matching ``query``\n        \"\"\"\n        if formatted:\n            query = self.format_query(query)\n        return self.var_names.search(query)\n",
+  "agc_valid": true,
+  "body_sha256": "978ddeb9930b1e0143f02396fdcd48b1ddf4d9c48de9892c30eb0d6f81b0dbcc",
+  "body_tokens": 33,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if formatted:\n            query = self.format_query(query)\n        return self.var_names.search(query)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "40e79852acb250ca654d03380e659ceef3f46e7e929a40844a6903aa238150f6",
+  "human_valid": true,
+  "line_no": 411107,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "081666b9c5f17c96846eb23723ed3a3ba2a147e6bb4e43231bd9b8ebdfbac435",
+  "raw_output": "\n        if formatted:\n            query = self.format_query(query)\n        return self.var_names.search(query)\n\n    def",
+  "sampling_seed": 2990181564,
+  "source_stratum": "type02_120",
+  "tag": "t02",
+  "temperature": 0.2
+}

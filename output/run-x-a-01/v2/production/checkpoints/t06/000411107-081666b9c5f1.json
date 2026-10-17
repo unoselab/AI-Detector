@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_var(self, query, formatted=False):\n        \"\"\"\n        Return variable names and indices matching ``query``\n        \"\"\"\n        # If the query is a string, try to parse it\n        if isinstance(query, str):\n            query = self.parse_query(query)\n        # If the query is a list of strings, try to parse each\n        elif isinstance(query, list):\n            query = [self.parse_query(q) for q in query]\n\n        # Handle a single variable query\n        if isinstance(query, dict):\n            query = [query]\n\n        # Find the variables that match each query\n        results = []\n        for q in query:\n            # Make sure that we have an index\n            if 'index' not in q:\n                q['index'] = self._default_index\n            # Find the matching variables\n            result = self.find_variable(q)\n            # If no matching variables were found, return an empty list\n            if len(result) ==\n",
+  "agc_valid": false,
+  "body_sha256": "f89800f15178c260dcf5a7c45002b8cf8bcee1d1605016e2cf94bf3f37dc0040",
+  "body_tokens": 283,
+  "bucket": "out_of_range",
+  "clean_output": "\n        # If the query is a string, try to parse it\n        if isinstance(query, str):\n            query = self.parse_query(query)\n        # If the query is a list of strings, try to parse each\n        elif isinstance(query, list):\n            query = [self.parse_query(q) for q in query]\n\n        # Handle a single variable query\n        if isinstance(query, dict):\n            query = [query]\n\n        # Find the variables that match each query\n        results = []\n        for q in query:\n            # Make sure that we have an index\n            if 'index' not in q:\n                q['index'] = self._default_index\n            # Find the matching variables\n            result = self.find_variable(q)\n            # If no matching variables were found, return an empty list\n            if len(result) ==\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "40e79852acb250ca654d03380e659ceef3f46e7e929a40844a6903aa238150f6",
+  "human_valid": true,
+  "line_no": 411107,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "081666b9c5f17c96846eb23723ed3a3ba2a147e6bb4e43231bd9b8ebdfbac435",
+  "raw_output": "\n        # If the query is a string, try to parse it\n        if isinstance(query, str):\n            query = self.parse_query(query)\n        # If the query is a list of strings, try to parse each\n        elif isinstance(query, list):\n            query = [self.parse_query(q) for q in query]\n\n        # Handle a single variable query\n        if isinstance(query, dict):\n            query = [query]\n\n        # Find the variables that match each query\n        results = []\n        for q in query:\n            # Make sure that we have an index\n            if 'index' not in q:\n                q['index'] = self._default_index\n            # Find the matching variables\n            result = self.find_variable(q)\n            # If no matching variables were found, return an empty list\n            if len(result) == ",
+  "sampling_seed": 181510476,
+  "source_stratum": "type02_120",
+  "tag": "t06",
+  "temperature": 0.6
+}

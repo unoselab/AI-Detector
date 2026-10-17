@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def rename_sectors(self, sectors):\n        \"\"\" Sets new names for the sectors\n\n        Parameters\n        ----------\n        sectors : list or dict\n            In case of dict: {'old_name' :  'new_name'} with an\n                entry for each old_name which should be renamed\n            In case of list: List of new names in order and\n                complete without repetition\n\n        \"\"\"\n        if isinstance(sectors, dict):\n            for old_name, new_name in sectors.items():\n                self.sectors[old_name] = new_name\n        elif isinstance(sectors, list):\n            self.sectors = dict(zip(self.sectors.keys(), sectors))\n        else:\n            raise ValueError('sectors must be list or dict')\n",
+  "agc_valid": true,
+  "body_sha256": "4aca943e2e2e8b69c11b52372dc60436be2a803adbe2eda26887e28b5ddc8efa",
+  "body_tokens": 96,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if isinstance(sectors, dict):\n            for old_name, new_name in sectors.items():\n                self.sectors[old_name] = new_name\n        elif isinstance(sectors, list):\n            self.sectors = dict(zip(self.sectors.keys(), sectors))\n        else:\n            raise ValueError('sectors must be list or dict')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 183,
+  "human_sha256": "96cec5a6e701651b3ac1fe8ffae0bb28299d126318481b4df32775ebe9109834",
+  "human_valid": true,
+  "line_no": 396107,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7dcedb602fb526afc712b516d5426340f3bcf969f5702156e541ce08f6b966ce",
+  "raw_output": "\n        if isinstance(sectors, dict):\n            for old_name, new_name in sectors.items():\n                self.sectors[old_name] = new_name\n        elif isinstance(sectors, list):\n            self.sectors = dict(zip(self.sectors.keys(), sectors))\n        else:\n            raise ValueError('sectors must be list or dict')\n\n    def",
+  "sampling_seed": 1095378365,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

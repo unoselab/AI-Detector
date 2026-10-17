@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def tag_secondary_structure(self, force=False):\n        \"\"\"Tags each `Residue` of the `Polypeptide` with secondary structure.\n\n        Notes\n        -----\n        DSSP must be available to call. Check by running\n        `isambard.external_programs.dssp.test_dssp`. If DSSP is not\n        available, please follow instruction here to add it:\n        https://github.com/woolfson-group/isambard#external-programs\n\n        For more information on DSSP see [1].\n\n        References\n        ----------\n        .. [1] Kabsch W, Sander C (1983) \"Dictionary of protein\n           secondary structure: pattern recognition of hydrogen-bonded\n           and geometrical features\", Biopolymers, 22, 2577-637.\n\n        Parameters\n        ----------\n        force : bool, optional\n            If `True` the tag will be run even if `Residues` are\n            already tagged.\n        \"\"\"\n        DSSP, see:\n                http://swift.cmbi.ru.nl/gv/dssp/\n\n                Parameters\n                ----------\n                force : bool\n                    If `True`, the secondary structure will be recalculated even if it\n                    has already been calculated.\n\n                Returns\n                -------\n                None\n\n                \"\"\"\n                if not self.secondary_structure_calculated or force:\n                    self.secondary_structure = self._calculate_secondary_structure()\n                    self.secondary_structure_calculated = True\n",
+  "agc_valid": false,
+  "body_sha256": "3d6b34ec4844fb7610918b7b560b817b3608ae0efb146b662df454093eab9163",
+  "body_tokens": 257,
+  "bucket": "out_of_range",
+  "clean_output": "\n        DSSP, see:\n                http://swift.cmbi.ru.nl/gv/dssp/\n\n                Parameters\n                ----------\n                force : bool\n                    If `True`, the secondary structure will be recalculated even if it\n                    has already been calculated.\n\n                Returns\n                -------\n                None\n\n                \"\"\"\n                if not self.secondary_structure_calculated or force:\n                    self.secondary_structure = self._calculate_secondary_structure()\n                    self.secondary_structure_calculated = True\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 150,
+  "human_sha256": "cbae8f8049bb8757431def5877a550f6517cc0460928a9992b4ccd13de74e148",
+  "human_valid": true,
+  "line_no": 249785,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fe67c4a0d5cf529a89d5765ebcd970a2971358ea21668d3b9a06cbc0fb86ba7c",
+  "raw_output": "DSSP, see:\n        http://swift.cmbi.ru.nl/gv/dssp/\n\n        Parameters\n        ----------\n        force : bool\n            If `True`, the secondary structure will be recalculated even if it\n            has already been calculated.\n\n        Returns\n        -------\n        None\n\n        \"\"\"\n        if not self.secondary_structure_calculated or force:\n            self.secondary_structure = self._calculate_secondary_structure()\n            self.secondary_structure_calculated = True\n\n    def",
+  "sampling_seed": 2678333973,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

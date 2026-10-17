@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def upstream(self, table, chrom_or_feat, start=None, end=None, k=1):\n        \"\"\"\n        Return k-nearest upstream features\n\n        Parameters\n        ----------\n\n        table : str or table\n            table against which to query\n\n        chrom_or_feat : str or feat\n            either a chromosome, e.g. 'chr3' or a feature with .chrom, .start,\n            .end attributes\n\n        start : int\n            if `chrom_or_feat` is a chrom, then this must be the integer start\n\n        end : int\n            if `chrom_or_feat` is a chrom, then this must be the integer end\n\n        k : int\n            number of upstream neighbors to return\n        \"\"\"\n        is a feature, start of the feature\n\n                end : int\n                    if `chrom_or_feat` is a feature, end of the feature\n\n                k : int\n                    number of nearest neighbors to return\n\n                Returns\n                -------\n\n                list of features\n                \"\"\"\n                if isinstance(chrom_or_feat, Feature):\n                    if start is None:\n                        start = chrom_or_feat.start\n                    if end is None:\n                        end = chrom_or_feat.end\n                    chrom = chrom_or_feat.chrom\n                else:\n                    chrom = chrom_or_feat\n\n                if isinstance(table, str):\n                    table = self.tables[table]\n\n                return table.upstream(chrom, start, end, k)\n",
+  "agc_valid": false,
+  "body_sha256": "6c7bf02c5f584902149cd79c91c230f6fa8503c3f6fdbaf925c101016b189d06",
+  "body_tokens": 406,
+  "bucket": "out_of_range",
+  "clean_output": "\n        is a feature, start of the feature\n\n                end : int\n                    if `chrom_or_feat` is a feature, end of the feature\n\n                k : int\n                    number of nearest neighbors to return\n\n                Returns\n                -------\n\n                list of features\n                \"\"\"\n                if isinstance(chrom_or_feat, Feature):\n                    if start is None:\n                        start = chrom_or_feat.start\n                    if end is None:\n                        end = chrom_or_feat.end\n                    chrom = chrom_or_feat.chrom\n                else:\n                    chrom = chrom_or_feat\n\n                if isinstance(table, str):\n                    table = self.tables[table]\n\n                return table.upstream(chrom, start, end, k)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 113,
+  "human_sha256": "7d23b24aadb27d43866a7b201b8f4d6f86d44f069c236766c623f7940c2767e8",
+  "human_valid": true,
+  "line_no": 18791,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fc0c739fad5806906f272b190fb237342db78647c633b7d2aba90f700082efcc",
+  "raw_output": "is a feature, start of the feature\n\n        end : int\n            if `chrom_or_feat` is a feature, end of the feature\n\n        k : int\n            number of nearest neighbors to return\n\n        Returns\n        -------\n\n        list of features\n        \"\"\"\n        if isinstance(chrom_or_feat, Feature):\n            if start is None:\n                start = chrom_or_feat.start\n            if end is None:\n                end = chrom_or_feat.end\n            chrom = chrom_or_feat.chrom\n        else:\n            chrom = chrom_or_feat\n\n        if isinstance(table, str):\n            table = self.tables[table]\n\n        return table.upstream(chrom, start, end, k)\n\n    def",
+  "sampling_seed": 3398920447,
+  "source_stratum": "type02_120",
+  "tag": "t04",
+  "temperature": 0.4
+}

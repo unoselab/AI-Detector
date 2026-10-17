@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def code(self, code):\n        \"\"\"\n        Sets the code of this ErrorResponse.\n        Response code.\n\n        :param code: The code of this ErrorResponse.\n        :type: int\n        \"\"\"\n            self._code = code\n\n        @property\n",
+  "agc_valid": false,
+  "body_sha256": "683766ab1f060569d338bc1f1dfbc23150415a26fadc7abd2f987bad64db6af8",
+  "body_tokens": 23,
+  "bucket": "out_of_range",
+  "clean_output": "\n            self._code = code\n\n        @property\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 102,
+  "human_sha256": "25447a0974a9fc7e3e48a622d40c3b43c99a90aa1f382f5354ab0dc9f94a00d1",
+  "human_valid": true,
+  "line_no": 403682,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0028d064e2fc88c327a9aff82a4a2c0774ffeb3d09196a2c22220a0d4d4ab1e8",
+  "raw_output": "\n        self._code = code\n\n    @property\n    def",
+  "sampling_seed": 3944039733,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

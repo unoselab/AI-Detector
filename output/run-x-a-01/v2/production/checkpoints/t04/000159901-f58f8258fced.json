@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _cleanup_container(self, cinfo):\n        \"\"\"\n        Remove a container and clean up its image if necessary.\n        \"\"\"\n        if not cinfo:\n            return\n\n        if cinfo.get('container'):\n            self.docker_client.remove_container(cinfo['container'])\n        if cinfo.get('image'):\n            self.docker_client.remove_image(cinfo['image'])\n",
+  "agc_valid": true,
+  "body_sha256": "fe75014ae56016fa88033cd647e25c2e1d3f9d318be75c693dadeebfcc337895",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if not cinfo:\n            return\n\n        if cinfo.get('container'):\n            self.docker_client.remove_container(cinfo['container'])\n        if cinfo.get('image'):\n            self.docker_client.remove_image(cinfo['image'])\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 164,
+  "human_sha256": "c1e3512f79b36dd8402276a1e4abd29f6e20ad9b15316205d3de2d351fecdc4a",
+  "human_valid": true,
+  "line_no": 159901,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f58f8258fced4f87da76f57ddf35f203b65b82566eee5df04c82153f69e13c30",
+  "raw_output": "\n        if not cinfo:\n            return\n\n        if cinfo.get('container'):\n            self.docker_client.remove_container(cinfo['container'])\n        if cinfo.get('image'):\n            self.docker_client.remove_image(cinfo['image'])\n\n    def",
+  "sampling_seed": 2629185730,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

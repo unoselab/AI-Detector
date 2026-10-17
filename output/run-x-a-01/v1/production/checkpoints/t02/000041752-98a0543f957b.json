@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def populate_headers(headers):\n    \"\"\"\n    Concatenate headers with subheaders\n    \"\"\"\n    for header in headers:\n        if header['subheaders']:\n            populate_headers(header['subheaders'])\n        else:\n            header['subheaders'] = []\n",
+  "agc_valid": true,
+  "body_sha256": "a341f71ac2bdb1153742374d92f961b7dad1d7907231dd31f9485209c9902884",
+  "body_tokens": 51,
+  "bucket": "out_of_range",
+  "clean_output": "\n    for header in headers:\n        if header['subheaders']:\n            populate_headers(header['subheaders'])\n        else:\n            header['subheaders'] = []\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "6830412ca39ffdebf8c0ee319bd210c89aa63295bb4a2b73ce4b1dfddf0027ca",
+  "human_valid": true,
+  "line_no": 41752,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "98a0543f957b6452275d0f9d37370b02cdb02005666b7ab23f52098df7e2ea5f",
+  "raw_output": "\n    for header in headers:\n        if header['subheaders']:\n            populate_headers(header['subheaders'])\n        else:\n            header['subheaders'] = []\n\n\ndef get_headers(headers):\n    \"\"\"\n    Get headers from the list of headers\n    \"\"\"\n    for header in headers:\n        if header['subheaders']:\n            get_headers(header['subheaders'])\n        else:\n            yield header\n\n\ndef get_header_by_id(headers, header_id):\n    \"\"\"\n    Get header by id\n    \"\"\"\n    for header in headers:\n        if header['id'] == header_id:\n            return header\n        if header['subheaders']:\n            header = get_header_by_id(header['subheaders'], header_id)\n            if header:\n                return header\n\n\ndef get_header_by_name(headers, header_name):\n    \"\"\"\n    Get header by name\n    \"\"\"\n    for header in headers:\n        if header['name'] == header_name:\n            return header\n        if header['subheaders']:\n            header = get_header_by_name(header['subheaders'], header_name)\n            if header:\n                return header\n\n\ndef get_header_by_path(headers, header_path):\n    \"\"\"\n    Get header by path\n    \"\"\"\n    for header in headers:\n        if header['path'] == header_path:\n            return header\n        if header['subheaders']:\n            header = get_header_by_path(header['subheaders'], header_path)\n            if header:\n                return header\n\n\ndef get_header_by_path_and_name(headers, header_path, header_name):\n    \"\"\"\n    Get header by path and name\n    \"\"\"\n    for header in headers:\n        if header['path'] == header_path and header['name'] == header_name:\n            return header\n        if header['subheaders']:\n            header = get_header_by_path_and_name(header['subheaders'], header_path, header_name)\n            if header:\n                return header\n\n\ndef get_header_by_path_and_id(headers",
+  "sampling_seed": 1722850927,
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_path(share_name=None, directory_name=None, file_name=None):\n    \"\"\"\n    Creates the path to access a file resource.\n\n    share_name:\n        Name of share.\n    directory_name:\n        The path to the directory.\n    file_name:\n        Name of file.\n    \"\"\"\n    if share_name is None:\n        raise ValueError(\"Share name must be specified.\")\n    if directory_name is None:\n        raise ValueError(\"Directory name must be specified.\")\n    if file_name is None:\n        raise ValueError(\"File name must be specified.\")\n    return \"/{0}/{1}/{2}\".format(share_name, directory_name, file_name)\n",
+  "agc_valid": true,
+  "body_sha256": "6b5af4253dc4ec4add1d63bd5f7c29e5816e1e3d5c538b24cc4a9c4dab7ba621",
+  "body_tokens": 68,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if share_name is None:\n        raise ValueError(\"Share name must be specified.\")\n    if directory_name is None:\n        raise ValueError(\"Directory name must be specified.\")\n    if file_name is None:\n        raise ValueError(\"File name must be specified.\")\n    return \"/{0}/{1}/{2}\".format(share_name, directory_name, file_name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 162,
+  "human_sha256": "ecd8d96039b9d4413e98b255961036561087e028e7389f7c5744ad6d343dbd61",
+  "human_valid": true,
+  "line_no": 341281,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "aed7a87ed47ff5ce47004fe44bfdf9887e9d823fcfa6b6dc8b9625cc7c3c3bae",
+  "raw_output": "\n    if share_name is None:\n        raise ValueError(\"Share name must be specified.\")\n    if directory_name is None:\n        raise ValueError(\"Directory name must be specified.\")\n    if file_name is None:\n        raise ValueError(\"File name must be specified.\")\n    return \"/{0}/{1}/{2}\".format(share_name, directory_name, file_name)\n\n\ndef _get_share_name_from_share(cmd, share):\n    return parse_resource_id(share.id)[\"resource_name\"]\n\n\ndef _get_directory_name_from_directory(cmd, directory):\n    return parse_resource_id(directory.id)[\"resource_name\"]\n\n\ndef _get_file_name_from_file(cmd, file):\n    return parse_resource_id(file.id)[\"resource_name\"]\n\n\ndef _get_share_name_and_group_from_share(cmd, share):\n    return parse_resource_id(share.id)[\"resource_name\"], parse_resource_id(share.id)[\"resource_group\"]\n\n\ndef _get_directory_name_and_group_from_directory(cmd, directory):\n    return parse_resource_id(directory.id)[\"resource_name\"], parse_resource_id(directory.id)[\"resource_group\"]\n\n\ndef _get_file_name_and_group_from_file(cmd, file):\n    return parse_resource_id(file.id)[\"resource_name\"], parse_resource_id(file.id)[\"resource_group\"]\n\n\ndef _get_share_name_and_group_from_share_name(cmd, share_name):\n    return share_name, parse_resource_id(cmd.cli_ctx.cloud.suffixes.storage_endpoint)[\"resource_group\"]\n\n\ndef _get_directory_name_and_group_from_directory_name(cmd, directory_name):\n    return directory_name, parse_resource_id(cmd.cli_ctx.cloud.suffixes.storage_endpoint)[\"resource_group\"]\n\n\ndef _get_file_name_and_group_from_",
+  "sampling_seed": 2400175987,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def observable_copy(value, name, instance):\n    \"\"\"Return an observable container for HasProperties notifications\n\n    This method creates a new container class to allow HasProperties\n    instances to :code:`observe_mutations`. It returns a copy of the\n    input value as this new class.\n\n    The output class behaves identically to the input value's original\n    class, except when it is used as a property on a HasProperties\n    instance. In that case, it notifies the HasProperties instance of\n    any mutations or operations.\n    \"\"\"\n    # Create a new class that behaves identically to the input value's\n    # original class.\n    new_cls = type(value.__class__.__name__,\n                   (value.__class__,),\n                   dict(value.__dict__))\n\n    # Add an observer method to the new class.\n    new_cls.observe = lambda self, callback, event_type: value.observe(callback, event_type)\n\n    # Add a __setattr__ method that calls the original class's\n    # __setattr__ method, and then notifies the HasProperties instance\n    # of the mutation.\n",
+  "agc_valid": true,
+  "body_sha256": "4ade6b59efcafa7a6e158d017df067de251a20f0e12d56e2ee2b51ed2149bd4b",
+  "body_tokens": 121,
+  "bucket": "type03_130",
+  "clean_output": "\n    # Create a new class that behaves identically to the input value's\n    # original class.\n    new_cls = type(value.__class__.__name__,\n                   (value.__class__,),\n                   dict(value.__dict__))\n\n    # Add an observer method to the new class.\n    new_cls.observe = lambda self, callback, event_type: value.observe(callback, event_type)\n\n    # Add a __setattr__ method that calls the original class's\n    # __setattr__ method, and then notifies the HasProperties instance\n    # of the mutation.\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 168,
+  "human_sha256": "427f429417a6dacc3b2b95de9d5959bb02504f7e09a495be9dfe7ed677002154",
+  "human_valid": true,
+  "line_no": 408570,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "7d165aa71026dec832d5e9ff0bce6f46658e3732d97e48d4028b5621993a27f7",
+  "raw_output": "\n\n    # Create a new class that behaves identically to the input value's\n    # original class.\n    new_cls = type(value.__class__.__name__,\n                   (value.__class__,),\n                   dict(value.__dict__))\n\n    # Add an observer method to the new class.\n    new_cls.observe = lambda self, callback, event_type: value.observe(callback, event_type)\n\n    # Add a __setattr__ method that calls the original class's\n    # __setattr__ method, and then notifies the HasProperties instance\n    # of the mutation.\n    def",
+  "sampling_seed": 2651283753,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

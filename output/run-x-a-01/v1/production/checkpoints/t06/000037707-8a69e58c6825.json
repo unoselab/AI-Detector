@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def copy(self):\n        \"\"\"Make a deep copy of this object.\n\n        Example::\n\n            >>> c2 = c.copy()\n\n        \"\"\"\n        return copy.deepcopy(self)\n",
+  "agc_valid": true,
+  "body_sha256": "d96b97abdeb8797e96c21d395a693328c9ee5e83a94661212843cd3d38e06cfd",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return copy.deepcopy(self)\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "963a6c41d7b12d6ba37a0ea95cabd2f50522226d6136f0d2bd6f1e31188f404c",
+  "human_valid": true,
+  "line_no": 37707,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "8a69e58c6825f80949f4740858ce2f83a2df217328995baabe83435af70b9f4e",
+  "raw_output": "\r\n        return copy.deepcopy(self)\r\n\r\n    def",
+  "sampling_seed": 733889190,
+  "tag": "t06",
+  "temperature": 0.6
+}

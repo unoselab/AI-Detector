@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def redo(self):\n        \"\"\" Redo the last undone action.\n\n        This is only possible if no other actions have occurred since the\n        last undo call.\n        \"\"\"\n        if self._redo_buffer:\n            # Redo the last action.\n            action = self._redo_buffer.pop()\n            self._undo_buffer.append(action)\n            action.redo()\n            self._redo_buffer.append(action)\n            self._modified = True\n            self.redo_event()\n        else:\n            raise RuntimeError(\"There is no action to redo.\")\n",
+  "agc_valid": true,
+  "body_sha256": "5daf1b6f38cbe22648e96dafc7b5a46b2a10c1e4e9b9b1e7f61a7de5d73398e6",
+  "body_tokens": 128,
+  "bucket": "type03_130",
+  "clean_output": "\n        if self._redo_buffer:\n            # Redo the last action.\n            action = self._redo_buffer.pop()\n            self._undo_buffer.append(action)\n            action.redo()\n            self._redo_buffer.append(action)\n            self._modified = True\n            self.redo_event()\n        else:\n            raise RuntimeError(\"There is no action to redo.\")\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 177,
+  "human_sha256": "6b11db2a24de7f6e1f2e3540a1c5f4aea4fe23913a9ecbf177a3512673388cc2",
+  "human_valid": true,
+  "line_no": 177339,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5f7b17594d0c9de1f37a75503a81559bf536b359830d7d8c53a99d6dd3d8db5a",
+  "raw_output": "\r\n        if self._redo_buffer:\r\n            # Redo the last action.\r\n            action = self._redo_buffer.pop()\r\n            self._undo_buffer.append(action)\r\n            action.redo()\r\n            self._redo_buffer.append(action)\r\n            self._modified = True\r\n            self.redo_event()\r\n        else:\r\n            raise RuntimeError(\"There is no action to redo.\")\r\n\r\n    def",
+  "sampling_seed": 2318414750,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

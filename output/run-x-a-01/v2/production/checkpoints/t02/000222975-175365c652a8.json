@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def extract_fcp_data(raw_data, status):\n    \"\"\"\n    extract data from smcli System_WWPN_Query output.\n    Input:\n        raw data returned from smcli\n    Output:\n        data extracted would be like:\n    'status:Free \\n\n     fcp_dev_no:1D2F\\n\n     physical_wwpn:C05076E9928051D1\\n\n     channel_path_id:8B\\n\n     npiv_wwpn': 'NONE'\\n\n\n     status:Free\\n\n     fcp_dev_no:1D29\\n\n     physical_wwpn:C05076E9928051D1\\n\n     channel_path_id:8B\\n\n     npiv_wwpn:NONE\n    \"\"\"\n    ONE'\n        \"\"\"\n        data = {}\n        if status == 'Free':\n            data['status'] = status\n            data['fcp_dev_no'] = raw_data[0].split(':')[1].strip()\n            data['physical_wwpn'] = raw_data[1].split(':')[1].strip()\n            data['channel_path_id'] = raw_data[2].split(':')[1].strip()\n            data['npiv_wwpn'] = raw_data[3].split(':')[1].strip()\n        return data\n",
+  "agc_valid": false,
+  "body_sha256": "06de3c3b87dd86c54a5d8079d91c06b1da55821994992294253e28bc0f727fa0",
+  "body_tokens": 113,
+  "bucket": "type02_120",
+  "clean_output": "\n    ONE'\n        \"\"\"\n        data = {}\n        if status == 'Free':\n            data['status'] = status\n            data['fcp_dev_no'] = raw_data[0].split(':')[1].strip()\n            data['physical_wwpn'] = raw_data[1].split(':')[1].strip()\n            data['channel_path_id'] = raw_data[2].split(':')[1].strip()\n            data['npiv_wwpn'] = raw_data[3].split(':')[1].strip()\n        return data\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 163,
+  "human_sha256": "6208323302a427bcf7103b61e5066a433d9b703c6960db35b6c7a3ab6cec4d3c",
+  "human_valid": true,
+  "line_no": 222975,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "175365c652a8fa5b68eca72a8ec5d4634e726c8b5a05cf9410f25d5b605074c9",
+  "raw_output": "ONE'\n    \"\"\"\n    data = {}\n    if status == 'Free':\n        data['status'] = status\n        data['fcp_dev_no'] = raw_data[0].split(':')[1].strip()\n        data['physical_wwpn'] = raw_data[1].split(':')[1].strip()\n        data['channel_path_id'] = raw_data[2].split(':')[1].strip()\n        data['npiv_wwpn'] = raw_data[3].split(':')[1].strip()\n    return data\n\n\ndef extract_fc_data(raw_data, status):\n    \"\"\"\n    extract data from smcli System_WWPN_Query output.\n    Input:\n        raw data returned from smcli\n    Output:\n        data extracted would be like:\n    'status:Free \\n\n     fc_dev_no:1D2F\\n\n     physical_wwpn:C05076E9928051D1\\n\n     channel_path_id:8B\\n\n     npiv_wwpn': 'NONE'\n    \"\"\"\n    data = {}\n    if status == 'Free':\n        data['status'] = status\n        data['fc_dev_no'] = raw_data[0].split(':')[1].strip()\n        data['physical_wwpn'] = raw_data[1].split(':')[1].strip()\n        data['channel_path_id'] = raw_data[2].split(':')[1].strip()\n        data['npiv_wwpn'] = raw_data[3].split(':')[1].strip()\n    return data\n\n\ndef extract_fc_wwpn_data(raw_data, status):\n    \"\"\"\n    extract data from smcli System_WWPN_Query output.\n    Input:\n        raw data returned from smcli\n    Output:\n        data extracted would be like:\n    'status:Free \\n\n     fc_dev_no:1D2F\\n\n     physical_wwpn:C05076E9928051D1\\n\n     channel_path_id:8B\\n",
+  "sampling_seed": 3583935799,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

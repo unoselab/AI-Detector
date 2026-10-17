@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _validate_time_range(trange, status, msg):\n    \"\"\"\n    Check time range\n    \"\"\"\n    if trange is None:\n        status.add_error(msg)\n    elif not isinstance(trange, TimeRange):\n        status.add_error(msg)\n    else:\n        if trange.start is None or trange.stop is None:\n            status.add_error(msg)\n",
+  "agc_valid": true,
+  "body_sha256": "1e622c4e892f1a8e600f9e5dea0504607cb0b2603f19e53271645e82bcec44a2",
+  "body_tokens": 62,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if trange is None:\n        status.add_error(msg)\n    elif not isinstance(trange, TimeRange):\n        status.add_error(msg)\n    else:\n        if trange.start is None or trange.stop is None:\n            status.add_error(msg)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "b09f9fad623751b459338a15c8a3229696dd7480e7fc165f2a805b523eeb756e",
+  "human_valid": true,
+  "line_no": 119354,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "46f3c2cc80987f5b93165b54187818c8ff8ebf8d1d87aebd317a35dfbdc6be66",
+  "raw_output": "\n    if trange is None:\n        status.add_error(msg)\n    elif not isinstance(trange, TimeRange):\n        status.add_error(msg)\n    else:\n        if trange.start is None or trange.stop is None:\n            status.add_error(msg)\n\n\ndef _validate_time_range_list(trange_list, status, msg):\n    \"\"\"\n    Check time range list\n    \"\"\"\n    if trange_list is None:\n        status.add_error(msg)\n    elif not isinstance(trange_list, list):\n        status.add_error(msg)\n    else:\n        for trange in trange_list:\n            _validate_time_range(trange, status, msg)\n\n\ndef _validate_time_range_dict(trange_dict, status, msg):\n    \"\"\"\n    Check time range dict\n    \"\"\"\n    if trange_dict is None:\n        status.add_error(msg)\n    elif not isinstance(trange_dict, dict):\n        status.add_error(msg)\n    else:\n        for key, trange in trange_dict.items():\n            _validate_time_range(trange, status, msg)\n\n\ndef _validate_time_range_dict_list(trange_dict_list, status, msg):\n    \"\"\"\n    Check time range dict list\n    \"\"\"\n    if trange_dict_list is None:\n        status.add_error(msg)\n    elif not isinstance(trange_dict_list, list):\n        status.add_error(msg)\n    else:\n        for trange_dict in trange_dict_list:\n            _validate_time_range_dict(trange_dict, status, msg)\n\n\ndef _validate_time_range_dict_dict(trange_dict_dict, status, msg):\n    \"\"\"\n    Check time range dict dict\n    \"\"\"\n    if trange_dict_dict is None:\n        status.add_error(msg)\n    elif not isinstance(trange_dict_dict, dict):\n        status.add_error(msg)\n    else:\n",
+  "sampling_seed": 2329860817,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

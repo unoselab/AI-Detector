@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _build_type(type_, value, property_path=None):\n    \"\"\" Builds the schema definition based on the given type for the given value.\n\n    :param type_: The type of the value\n    :param value: The value to build the schema definition for\n    :param List[str] property_path: The property path of the current type,\n        defaults to None, optional\n    :return: The built schema definition\n    :rtype: Dict[str, Any]\n    \"\"\"\n    if type_ == 'array':\n        return _build_type('object', value[0], property_path)\n    elif type_ == 'object':\n        return _build_object(value, property_path)\n    elif type_ == 'string':\n        return _build_string(value, property_path)\n    elif type_ == 'number':\n        return _build_number(value, property_path)\n    elif type_ == 'integer':\n        return _build_integer(value, property_path)\n    elif type_ == 'boolean':\n        return _build_boolean(value, property_path)\n    elif type_ == 'null':\n        return _build_null(value, property_path)\n    else:\n        raise ValueError(f'Invalid type: {type_}')\n",
+  "agc_valid": true,
+  "body_sha256": "8b5bf46b2aab4a000f6f02f8dfc1d15ca69670b0debc13c21eb6af51a38899e0",
+  "body_tokens": 136,
+  "bucket": "type04_140",
+  "clean_output": "\n    if type_ == 'array':\n        return _build_type('object', value[0], property_path)\n    elif type_ == 'object':\n        return _build_object(value, property_path)\n    elif type_ == 'string':\n        return _build_string(value, property_path)\n    elif type_ == 'number':\n        return _build_number(value, property_path)\n    elif type_ == 'integer':\n        return _build_integer(value, property_path)\n    elif type_ == 'boolean':\n        return _build_boolean(value, property_path)\n    elif type_ == 'null':\n        return _build_null(value, property_path)\n    else:\n        raise ValueError(f'Invalid type: {type_}')\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "ee885dde0d7816a51cb643c11475f23df9ffd6ca938f6746412ed297798336a1",
+  "human_valid": true,
+  "line_no": 147917,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "07be23d800a73f1962f444570a6225ce6a205436b04100bfabb79ef9cc7c37d4",
+  "raw_output": "\n    if type_ == 'array':\n        return _build_type('object', value[0], property_path)\n    elif type_ == 'object':\n        return _build_object(value, property_path)\n    elif type_ == 'string':\n        return _build_string(value, property_path)\n    elif type_ == 'number':\n        return _build_number(value, property_path)\n    elif type_ == 'integer':\n        return _build_integer(value, property_path)\n    elif type_ == 'boolean':\n        return _build_boolean(value, property_path)\n    elif type_ == 'null':\n        return _build_null(value, property_path)\n    else:\n        raise ValueError(f'Invalid type: {type_}')\n\n\ndef _build_object(value, property_path=None):\n    \"\"\" Builds the schema definition for an object.\n\n    :param value: The object to build the schema definition for\n    :param List[str] property_path: The property path of the current type,\n        defaults to None, optional\n    :return: The built schema definition\n    :rtype: Dict[str, Any]\n    \"\"\"\n    properties = {}\n    for key, val in value.items():\n        properties[key] = _build_type(type(val), val,\n                                      property_path=property_path + [key])\n    return {'type': 'object', 'properties': properties}\n\n\ndef _build_string(value, property_path=None):\n    \"\"\" Builds the schema definition for a string.\n\n    :param value: The string to build the schema definition for\n    :param List[str] property_path: The property path of the current type,\n        defaults to None, optional\n    :return: The built schema definition\n    :rtype: Dict[str, Any]\n    \"\"\"\n    return {'type': 'string'}\n\n\ndef _build_number(value, property_path=None):\n    \"\"\" Builds the schema definition for a number.\n\n    :param value: The number to build the schema definition for\n    :param List[str] property_path: The property path of the current type",
+  "sampling_seed": 3089918455,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

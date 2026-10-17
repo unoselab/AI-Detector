@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def read(self):\n        \"\"\"Reads data from the CSV file.\"\"\"\n        self.file_handler.seek(0)\n        self.data = [\n            row for row in csv.reader(self.file_handler, delimiter=self.delimiter)\n        ]\n        return self\n",
+  "agc_valid": true,
+  "body_sha256": "8741d3c99ed8ad964c1ae877a7cb30729531c334f601adbfa8b51b89fbd247e3",
+  "body_tokens": 53,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.file_handler.seek(0)\n        self.data = [\n            row for row in csv.reader(self.file_handler, delimiter=self.delimiter)\n        ]\n        return self\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 146,
+  "human_sha256": "cee7497c381ea1c557389753c35397758fd2dbab35bcb54e9c866e89d9233b15",
+  "human_valid": true,
+  "line_no": 60627,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f8dff52fbeb4d2aabf7f059ed90ad0e3dc80d7acc9e57f517f95ca22944c174e",
+  "raw_output": "\n        self.file_handler.seek(0)\n        self.data = [\n            row for row in csv.reader(self.file_handler, delimiter=self.delimiter)\n        ]\n        return self\n\n    def",
+  "sampling_seed": 2914142152,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

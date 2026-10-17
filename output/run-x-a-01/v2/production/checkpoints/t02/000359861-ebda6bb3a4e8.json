@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def make_rfft_factors(axes, resshape, facshape, normshape, norm):\n    \"\"\" make the compression factors and compute the normalization\n        for irfft and rfft.\n    \"\"\"\n    if norm is None:\n        norm =\n",
+  "agc_valid": false,
+  "body_sha256": "1ca5881f6eeb6004c06902e8b4402bc8aed98df4e285c3a0cae02faf9ebd3ebc",
+  "body_tokens": 17,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if norm is None:\n        norm =\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 150,
+  "human_sha256": "4c9d4d9a0d0f0c9cd4b20b8797973a95e25e2bd5071cab859b064bdd8dd67a62",
+  "human_valid": true,
+  "line_no": 359861,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ebda6bb3a4e8e1f7e9886ffe0e89c86180b6f43863cd4e1b1a6d49191a5f47c3",
+  "raw_output": "\n    if norm is None:\n        norm = ",
+  "sampling_seed": 2969673056,
+  "source_stratum": "type05_150",
+  "tag": "t02",
+  "temperature": 0.2
+}

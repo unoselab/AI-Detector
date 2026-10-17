@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def uuid1mc_from_datetime(dt):\n    \"\"\"\n    Return a UUID1 with a random multicast MAC id and with a timestamp\n    matching the given datetime object or timestamp value.\n\n    .. warning::\n        This function does not consider the timezone, and is not guaranteed to\n        return a unique UUID. Use under controlled conditions only.\n\n    >>> dt = datetime.now()\n    >>> u1 = uuid1mc()\n    >>> u2 = uuid1mc_from_datetime(dt)\n    >>> # Both timestamps should be very close to each other but not an exact match\n    >>> u1.time > u2.time\n    True\n    >>> u1.time - u2.time < 5000\n    True\n    >>> d2 = datetime.fromtimestamp((u2.time - 0x01b21dd213814000) * 100 / 1e9)\n    >>> d2 == dt\n    True\n    \"\"\"\n    be the same\n        >>> u1.time == u2.time\n        True\n        >>> # Both MACs should be the same\n        >>> u1.fields[1] == u2.fields[1]\n        True\n        \"\"\"\n        # Convert the datetime to a timestamp\n        if isinstance(dt, datetime):\n            ts = calendar.timegm(dt.timetuple())\n        else:\n            ts = dt\n        # Get the current MAC address\n        mac = uuid.getnode()\n        # Return a UUID1 with the given timestamp and MAC address\n        return uuid.uuid1(0x1000, int(ts *\n",
+  "agc_valid": false,
+  "body_sha256": "5877234feb46e752f488b4dd465b7a88f495e84f3f5cdc59d2fdb3d4203e5a51",
+  "body_tokens": 180,
+  "bucket": "type08_180",
+  "clean_output": "\n    be the same\n        >>> u1.time == u2.time\n        True\n        >>> # Both MACs should be the same\n        >>> u1.fields[1] == u2.fields[1]\n        True\n        \"\"\"\n        # Convert the datetime to a timestamp\n        if isinstance(dt, datetime):\n            ts = calendar.timegm(dt.timetuple())\n        else:\n            ts = dt\n        # Get the current MAC address\n        mac = uuid.getnode()\n        # Return a UUID1 with the given timestamp and MAC address\n        return uuid.uuid1(0x1000, int(ts *\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "c677ada98813b0e55709c689fe99f1d42fa5a34b10580817770c3952385309ed",
+  "human_valid": true,
+  "line_no": 398116,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9539f518f5e9f28caefbdef8f9944798eec557e2d167e9832f04dea430b8ecad",
+  "raw_output": "be the same\n    >>> u1.time == u2.time\n    True\n    >>> # Both MACs should be the same\n    >>> u1.fields[1] == u2.fields[1]\n    True\n    \"\"\"\n    # Convert the datetime to a timestamp\n    if isinstance(dt, datetime):\n        ts = calendar.timegm(dt.timetuple())\n    else:\n        ts = dt\n    # Get the current MAC address\n    mac = uuid.getnode()\n    # Return a UUID1 with the given timestamp and MAC address\n    return uuid.uuid1(0x1000, int(ts * ",
+  "sampling_seed": 1787216867,
+  "source_stratum": "type07_170",
+  "tag": "t04",
+  "temperature": 0.4
+}

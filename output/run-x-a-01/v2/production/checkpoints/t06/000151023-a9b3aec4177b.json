@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_nd4j_dtype(np_dtype):\n    \"\"\"\n    Gets the equivalent nd4j data type\n    for a given numpy data type.\n    # Arguments\n        np_dtype: Numpy data type. One of\n            ['float64', 'float32', 'float16']\n    \"\"\"\n    if np_dtype == np.float64:\n        return dtypes.float64\n    elif np_dtype == np.float32:\n        return dtypes.float32\n    elif np_dtype == np.float16:\n        return dtypes.float16\n    elif np_dtype == np.int64:\n        return dtypes.int64\n    elif np_dtype == np.int32:\n        return dtypes.int32\n    elif np_dtype == np.int16:\n        return dtypes.int16\n    elif np_dtype == np.int8:\n        return dtypes.int8\n    elif np_dtype == np.uint8:\n        return dtypes.uint8\n    elif np_dtype == np.bool:\n        return dtypes.boolean\n    else:\n        raise ValueError('No equivalent\n",
+  "agc_valid": false,
+  "body_sha256": "b1bad1ad27b272e01c3d173f2335304688f211f5ce1a2f149d1cd8dfb47c4d20",
+  "body_tokens": 159,
+  "bucket": "type06_160",
+  "clean_output": "\n    if np_dtype == np.float64:\n        return dtypes.float64\n    elif np_dtype == np.float32:\n        return dtypes.float32\n    elif np_dtype == np.float16:\n        return dtypes.float16\n    elif np_dtype == np.int64:\n        return dtypes.int64\n    elif np_dtype == np.int32:\n        return dtypes.int32\n    elif np_dtype == np.int16:\n        return dtypes.int16\n    elif np_dtype == np.int8:\n        return dtypes.int8\n    elif np_dtype == np.uint8:\n        return dtypes.uint8\n    elif np_dtype == np.bool:\n        return dtypes.boolean\n    else:\n        raise ValueError('No equivalent\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 105,
+  "human_sha256": "8e3dcd83cd2a2cc6cf7ce297d3ea4d2e9727ad2f51d8aa529b7d055e5fab7218",
+  "human_valid": true,
+  "line_no": 151023,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a9b3aec4177b593e2341a2a600a13f20050d4a80b7c0bd4a35543082aa03058b",
+  "raw_output": "\n    if np_dtype == np.float64:\n        return dtypes.float64\n    elif np_dtype == np.float32:\n        return dtypes.float32\n    elif np_dtype == np.float16:\n        return dtypes.float16\n    elif np_dtype == np.int64:\n        return dtypes.int64\n    elif np_dtype == np.int32:\n        return dtypes.int32\n    elif np_dtype == np.int16:\n        return dtypes.int16\n    elif np_dtype == np.int8:\n        return dtypes.int8\n    elif np_dtype == np.uint8:\n        return dtypes.uint8\n    elif np_dtype == np.bool:\n        return dtypes.boolean\n    else:\n        raise ValueError('No equivalent ",
+  "sampling_seed": 3907497604,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

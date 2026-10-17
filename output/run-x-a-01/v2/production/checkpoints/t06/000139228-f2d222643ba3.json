@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def set_detail_level(self, detail_levels):\n        \"\"\"\n        Sets the detail levels from the input dictionary in detail_levels.\n        \"\"\"\n        if detail_levels is None:\n            self.detail_levels = None\n            return\n\n        detail_levels = set(detail_levels)\n        self.detail_levels = detail_levels\n",
+  "agc_valid": true,
+  "body_sha256": "b4aed5b9101e2c6e0b183b9101e9a2969a75278bf93e69eb3f4d260a7c2503e0",
+  "body_tokens": 58,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if detail_levels is None:\n            self.detail_levels = None\n            return\n\n        detail_levels = set(detail_levels)\n        self.detail_levels = detail_levels\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "3e55bafb6d295bd0dc607764e2091176b220b3f895fc58481f0d1e916864129c",
+  "human_valid": true,
+  "line_no": 139228,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "f2d222643ba3436cff03e752df02061fe45b0d3bbc791021ea683a378348086c",
+  "raw_output": "\n        if detail_levels is None:\n            self.detail_levels = None\n            return\n\n        detail_levels = set(detail_levels)\n        self.detail_levels = detail_levels\n\n    def",
+  "sampling_seed": 791337534,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

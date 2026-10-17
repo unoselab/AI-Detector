@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def to_polygon(self, radius):\n        \"\"\"\n        Create a circular polygon with specified radius centered in the point.\n\n        :param radius:\n            Required radius of a new polygon, in km.\n        :returns:\n            Instance of :class:`~openquake.hazardlib.geo.polygon.Polygon` that\n            approximates a circle around the point with specified radius.\n        \"\"\"\n        center = self.to_point()\n        circle = PointSet.from_circle(center, radius)\n        return Polygon.from_vertices(circle.vertices)\n",
+  "agc_valid": true,
+  "body_sha256": "698b823af609fc0e0588a119b2aa0661273e1c92c532cae41fcd29e25079543d",
+  "body_tokens": 31,
+  "bucket": "out_of_range",
+  "clean_output": "\n        center = self.to_point()\n        circle = PointSet.from_circle(center, radius)\n        return Polygon.from_vertices(circle.vertices)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 170,
+  "human_sha256": "3f7b5a5dd060bab676fb0fe1e3fa4b08fd2025db05e8450ecc8f5cadf5c2e12c",
+  "human_valid": true,
+  "line_no": 270295,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "cd78e6660399f141dc496042b1a30d1578072737fb91029660a5018c51480453",
+  "raw_output": "\n        center = self.to_point()\n        circle = PointSet.from_circle(center, radius)\n        return Polygon.from_vertices(circle.vertices)\n\n    def",
+  "sampling_seed": 2502604662,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _convert_to_indexer(self, obj, axis=None, is_setter=False):\n        \"\"\" much simpler as we only have to deal with our valid types \"\"\"\n        if axis is None:\n            axis = self.axis\n\n        if not isinstance(obj, (Series, ABCIndex, np.ndarray, IndexOpsMixin)):\n            if is_setter:\n                raise ValueError(\n                    \"Cannot index with multidimensional key in \"\n                    f\"future version of pandas; {type(obj)}\"\n                )\n            else:\n                raise ValueError(\n                    f\"Cannot index with multidimensional key in \"\n                    f\"future version of pandas; {type(obj)}\"\n                )\n\n        if isinstance(obj, ABCIndex):\n            obj = obj.values\n        if not isinstance(obj, (np.ndarray, IndexOpsMixin)):\n            obj = np.asarray(obj)\n\n        if isinstance(obj, IndexOpsMixin):\n            if obj.ndim >\n",
+  "agc_valid": false,
+  "body_sha256": "19b79cf5fca27709260738cae43174970295673c888a2306afa201fbba95c737",
+  "body_tokens": 305,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if axis is None:\n            axis = self.axis\n\n        if not isinstance(obj, (Series, ABCIndex, np.ndarray, IndexOpsMixin)):\n            if is_setter:\n                raise ValueError(\n                    \"Cannot index with multidimensional key in \"\n                    f\"future version of pandas; {type(obj)}\"\n                )\n            else:\n                raise ValueError(\n                    f\"Cannot index with multidimensional key in \"\n                    f\"future version of pandas; {type(obj)}\"\n                )\n\n        if isinstance(obj, ABCIndex):\n            obj = obj.values\n        if not isinstance(obj, (np.ndarray, IndexOpsMixin)):\n            obj = np.asarray(obj)\n\n        if isinstance(obj, IndexOpsMixin):\n            if obj.ndim >\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "755382e88caf52d2a704bcf9b104e33529ea1661f10fba9cadd0e6d945a9316f",
+  "human_valid": true,
+  "line_no": 91276,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9953b4a8a4ac3a2d9b0d89d883d87c8d0c6e131f9fb9d773955647784f59569e",
+  "raw_output": "\n        if axis is None:\n            axis = self.axis\n\n        if not isinstance(obj, (Series, ABCIndex, np.ndarray, IndexOpsMixin)):\n            if is_setter:\n                raise ValueError(\n                    \"Cannot index with multidimensional key in \"\n                    f\"future version of pandas; {type(obj)}\"\n                )\n            else:\n                raise ValueError(\n                    f\"Cannot index with multidimensional key in \"\n                    f\"future version of pandas; {type(obj)}\"\n                )\n\n        if isinstance(obj, ABCIndex):\n            obj = obj.values\n        if not isinstance(obj, (np.ndarray, IndexOpsMixin)):\n            obj = np.asarray(obj)\n\n        if isinstance(obj, IndexOpsMixin):\n            if obj.ndim > ",
+  "sampling_seed": 1866640303,
+  "source_stratum": "type09_190",
+  "tag": "t06",
+  "temperature": 0.6
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def load_modules_from_path(path):\n    \"\"\"\n    Import all modules from the given directory\n    \"\"\"\n    modules = []\n    for module_name in os.listdir(path):\n        if module_name.endswith('.py'):\n            module_name = module_name[:-3]\n            module = importlib.import_module('.' + module_name, package=__name__)\n            modules.append(module)\n    return modules\n",
+  "agc_valid": true,
+  "body_sha256": "5dd3ab437c432ccd01156ede8f54a83725c611728ddfdfcfcfea843b171a0f34",
+  "body_tokens": 71,
+  "bucket": "out_of_range",
+  "clean_output": "\n    modules = []\n    for module_name in os.listdir(path):\n        if module_name.endswith('.py'):\n            module_name = module_name[:-3]\n            module = importlib.import_module('.' + module_name, package=__name__)\n            modules.append(module)\n    return modules\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 169,
+  "human_sha256": "0bc1b428de19bd271f5d91b524f391cefd99c8311868efed3fcd61c07a5c0e83",
+  "human_valid": true,
+  "line_no": 154704,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "a3747aab7c5570b06b125d7fb0b278ac43c4da95f34530f0eead3b7c40ba4f28",
+  "raw_output": "\n    modules = []\n    for module_name in os.listdir(path):\n        if module_name.endswith('.py'):\n            module_name = module_name[:-3]\n            module = importlib.import_module('.' + module_name, package=__name__)\n            modules.append(module)\n    return modules\n\n\ndef load_modules_from_package(package):\n    \"\"\"\n    Import all modules from the given package\n    \"\"\"\n    modules = []\n    for module_name in package.__all__:\n        module = importlib.import_module('.' + module_name, package=package.__name__)\n        modules.append(module)\n    return modules\n\n\ndef load_modules_from_package_path(package_path):\n    \"\"\"\n    Import all modules from the given package path\n    \"\"\"\n    package_name = package_path.split('/')[-1]\n    package = importlib.import_module(package_name)\n    return load_modules_from_package(package)\n\n\ndef load_modules_from_path_list(path_list):\n    \"\"\"\n    Import all modules from the given path list\n    \"\"\"\n    modules = []\n    for path in path_list:\n        modules.extend(load_modules_from_path(path))\n    return modules\n\n\ndef load_modules_from_package_list(package_list):\n    \"\"\"\n    Import all modules from the given package list\n    \"\"\"\n    modules = []\n    for package in package_list:\n        modules.extend(load_modules_from_package(package))\n    return modules\n\n\ndef load_modules_from_path_list_list(path_list_list):\n    \"\"\"\n    Import all modules from the given path list list\n    \"\"\"\n    modules = []\n    for path_list in path_list_list:\n        modules.extend(load_modules_from_path_list(path_list))\n    return modules\n\n\ndef load_modules_from_package_list_list(package_list_list):\n    \"\"\"\n    Import all modules from the given package list list\n    \"\"\"\n    modules = []\n    for package_list in package_list_list",
+  "sampling_seed": 2767447597,
+  "source_stratum": "type07_170",
+  "tag": "t02",
+  "temperature": 0.2
+}

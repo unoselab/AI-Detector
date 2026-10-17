@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def bounding_box(dset):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``dset``\"\"\"\n    return (dset.min(), dset.max())\n",
+  "agc_valid": true,
+  "body_sha256": "e7c7ee3f1729c4133c45622f7b4b8463065ea414945c1974ef4e32be0051f218",
+  "body_tokens": 7,
+  "bucket": "out_of_range",
+  "clean_output": "\n    return (dset.min(), dset.max())\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "179cee18908a9368f52a88d4eb4a45f8141f98eae6605d1517e66ceca897e7e9",
+  "human_valid": true,
+  "line_no": 41709,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "74672950cd352c1b2ab5f332d977514bd209be495e556ac2b2a29e9a67e051c9",
+  "raw_output": "\n    return (dset.min(), dset.max())\n\n\ndef bounding_box_from_data(data):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``data``\"\"\"\n    return (data.min(), data.max())\n\n\ndef bounding_box_from_grid(grid):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``grid``\"\"\"\n    return (grid.min(), grid.max())\n\n\ndef bounding_box_from_grid_and_data(grid, data):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``grid`` and ``data``\"\"\"\n    return (grid.min(), grid.max(), data.min(), data.max())\n\n\ndef bounding_box_from_grid_and_data_and_mask(grid, data, mask):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``grid``, ``data`` and ``mask``\"\"\"\n    return (grid.min(), grid.max(), data.min(), data.max(), mask.min(), mask.max())\n\n\ndef bounding_box_from_grid_and_data_and_mask_and_masked_data(grid, data, mask, masked_data):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``grid``, ``data``, ``mask`` and ``masked_data``\"\"\"\n    return (grid.min(), grid.max(), data.min(), data.max(), mask.min(), mask.max(), masked_data.min(), masked_data.max())\n\n\ndef bounding_box_from_grid_and_data_and_mask_and_masked_data_and_masked_mask(grid, data, mask, masked_data, masked_mask):\n    \"\"\"return the coordinates (in RAI) of the corners of a box enclosing the data in ``grid``, ``data``, ``mask``, ``masked_data`` and ``masked_mask``\"\"",
+  "sampling_seed": 359858721,
+  "tag": "t04",
+  "temperature": 0.4
+}

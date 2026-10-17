@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def iexpand(string, keep_escapes=False):\n    \"\"\"Expand braces and return an iterator.\"\"\"\n    if not string:\n        return\n\n    # check for braces\n    if string[0] != '{' or string[-1] != '}':\n        yield string\n        return\n\n    # check for nested braces\n    if '{' in string or '}' in string:\n        yield string\n        return\n\n    # split string on commas\n    strings = string[1:-1].split(',')\n\n    # expand strings\n    for string in strings:\n        if keep_escapes:\n            yield string.replace('\\\\,', ',')\n        else:\n            yield string.replace(',', '')\n",
+  "agc_valid": true,
+  "body_sha256": "b7709d6d24bbd5a116ae9ede0a760bfec19b46efd5136ef78e11e693b76f00b4",
+  "body_tokens": 158,
+  "bucket": "type06_160",
+  "clean_output": "\n    if not string:\n        return\n\n    # check for braces\n    if string[0] != '{' or string[-1] != '}':\n        yield string\n        return\n\n    # check for nested braces\n    if '{' in string or '}' in string:\n        yield string\n        return\n\n    # split string on commas\n    strings = string[1:-1].split(',')\n\n    # expand strings\n    for string in strings:\n        if keep_escapes:\n            yield string.replace('\\\\,', ',')\n        else:\n            yield string.replace(',', '')\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "71da67acbc341de5c2d4371b9ecc4208d0da78fdc146f942bbf0f8a312d17c97",
+  "human_valid": true,
+  "line_no": 1838,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "11c1b43cec46ac05f1f6cab5e4f3ca7264b11e4f409f63b9def7154eef3d9508",
+  "raw_output": "\n    if not string:\n        return\n\n    # check for braces\n    if string[0] != '{' or string[-1] != '}':\n        yield string\n        return\n\n    # check for nested braces\n    if '{' in string or '}' in string:\n        yield string\n        return\n\n    # split string on commas\n    strings = string[1:-1].split(',')\n\n    # expand strings\n    for string in strings:\n        if keep_escapes:\n            yield string.replace('\\\\,', ',')\n        else:\n            yield string.replace(',', '')\n\n\ndef expand(string, keep_escapes=False):\n    \"\"\"Expand braces and return a list.\"\"\"\n    return list(iexpand(string, keep_escapes))\n\n\ndef iexpand(string, keep_escapes=False):\n    \"\"\"Expand braces and return an iterator.\"\"\"\n    if not string:\n        return\n\n    # check for braces\n    if string[0] != '{' or string[-1] != '}':\n        yield string\n        return\n\n    # check for nested braces\n    if '{' in string or '}' in string:\n        yield string\n        return\n\n    # split string on commas\n    strings = string[1:-1].split(',')\n\n    # expand strings\n    for string in strings:\n        if keep_escapes:\n            yield string.replace('\\\\,', ',')\n        else:\n            yield string.replace(',', '')\n\n\ndef expand(string, keep_escapes=False):\n    \"\"\"Expand braces and return a list.\"\"\"\n    return list(iexpand(string, keep_escapes))\n\n\ndef iexpand(string, keep_escapes=False):\n    \"\"\"Expand braces and return an iterator.\"\"\"\n    if not string:\n        return\n\n    # check for braces\n    if string[0] != '{' or string[-1] != '}':\n        yield string\n        return\n\n    # check for nested braces\n    if '{' in string or '}' in string:\n        yield string\n        return\n\n    # split string on commas\n",
+  "sampling_seed": 2759201937,
+  "tag": "t04",
+  "temperature": 0.4
+}

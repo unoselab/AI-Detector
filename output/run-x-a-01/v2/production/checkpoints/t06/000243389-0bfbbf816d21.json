@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def yeardec2datetime(atime: float) -> datetime.datetime:\n    \"\"\"\n    Convert atime (a float) to DT.datetime\n    This is the inverse of datetime2yeardec.\n    assert dt2t(t2dt(atime)) == atime\n\n    http://stackoverflow.com/questions/19305991/convert-fractional-years-to-a-real-date-in-python\n    Authored by \"unutbu\" http://stackoverflow.com/users/190597/unutbu\n\n    In Python, go from decimal year (YYYY.YYY) to datetime,\n    and from datetime to decimal year.\n    \"\"\"\n    unutbu\n        \"\"\"\n        # from http://stackoverflow.com/a/19306119/3284713\n        epoch = datetime.datetime.utcfromtimestamp(0)\n        delta = datetime.timedelta(seconds=atime)\n        return epoch + delta\n",
+  "agc_valid": false,
+  "body_sha256": "1424789ce2a9cda83089a74f454d3be2ff39c6bbc24d136d48738d6e3c063c11",
+  "body_tokens": 54,
+  "bucket": "out_of_range",
+  "clean_output": "\n    unutbu\n        \"\"\"\n        # from http://stackoverflow.com/a/19306119/3284713\n        epoch = datetime.datetime.utcfromtimestamp(0)\n        delta = datetime.timedelta(seconds=atime)\n        return epoch + delta\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 138,
+  "human_sha256": "a6184bfd3ca659915eef5dfd516d7378b93cfc14421cbc95776948b8bc764741",
+  "human_valid": true,
+  "line_no": 243389,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0bfbbf816d21d5a7723a53ef2e5f0eef5d6759088913dd36e5646c9ee0a1efa9",
+  "raw_output": "unutbu\n    \"\"\"\n    # from http://stackoverflow.com/a/19306119/3284713\n    epoch = datetime.datetime.utcfromtimestamp(0)\n    delta = datetime.timedelta(seconds=atime)\n    return epoch + delta\n\n\ndef yeardec2str(atime: float) -> str:\n    \"\"\"\n    Convert atime (a float) to a string\n    This is the inverse of str2yeardec.\n    assert dt2t(t2dt(str2dt(str2dt(atime)))) == atime\n\n    http://stackoverflow.com/questions/19305991/convert-fractional-years-to-a-real-date-in-python\n    Authored by \"unutbu\" http://stackoverflow.com/users/190597/unutbu\n    \"\"\"\n    return str(yeardec2datetime(atime))\n\n\ndef str2yeardec(s: str) -> float:\n    \"\"\"\n    Convert a string to a float.\n    This is the inverse of yeardec2str.\n    assert str2dt(dt2t(str2dt(s))) == s\n\n    http://stackoverflow.com/questions/19305991/convert-fractional-years-to-a-real-date-in-python\n    Authored by \"unutbu\" http://stackoverflow.com/users/190597/unutbu\n    \"\"\"\n    return datetime2yeardec(str2datetime(s))\n\n\ndef str2datetime(s: str) -> datetime.datetime:\n    \"\"\"\n    Convert a string to a datetime.datetime.\n    This is the inverse of datetime2str.\n    assert str2dt(dt2t(str2dt(s))) == s\n\n    http://stackoverflow.com/questions/19305991/convert-fractional-years-to-a-real-date-in-python\n    Authored by \"unutbu\" http://stackoverflow.com/users/190597/unutbu\n    \"\"\"\n    return datetime.datetime.strptime(",
+  "sampling_seed": 1031688658,
+  "source_stratum": "type04_140",
+  "tag": "t06",
+  "temperature": 0.6
+}

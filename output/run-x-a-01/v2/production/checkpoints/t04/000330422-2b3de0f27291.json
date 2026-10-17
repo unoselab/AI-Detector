@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def transform_around(matrix, point):\n    \"\"\"\n    Given a transformation matrix, apply its rotation\n    around a point in space.\n\n    Parameters\n    ----------\n    matrix: (4,4) or (3, 3) float, transformation matrix\n    point:  (3,) or (2,)  float, point in space\n\n    Returns\n    ---------\n    result: (4,4) transformation matrix\n    \"\"\"\n    # TODO: Implement this function\n    # Hint: You may find it useful to use the transform_around_point function\n    # from the transforms3d package\n    return matrix\n",
+  "agc_valid": true,
+  "body_sha256": "ba0a7799d0a2c8adef9076e5868c747c625a4f38b316e64de31e8fbfcd54bc03",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n    # TODO: Implement this function\n    # Hint: You may find it useful to use the transform_around_point function\n    # from the transforms3d package\n    return matrix\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 108,
+  "human_sha256": "70a20575855b9551683df869a56d113519c38a8feea5d43eccd4d0acbb11829f",
+  "human_valid": true,
+  "line_no": 330422,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2b3de0f27291b9f76ac78d6160480010fc5f198cdac355d6749a4312e3e71da7",
+  "raw_output": "\n    # TODO: Implement this function\n    # Hint: You may find it useful to use the transform_around_point function\n    # from the transforms3d package\n    return matrix\n\n\ndef transform_around_point(matrix, point):\n    \"\"\"\n    Given a transformation matrix, apply its rotation\n    around a point in space.\n\n    Parameters\n    ----------\n    matrix: (4,4) or (3, ",
+  "sampling_seed": 1978037174,
+  "source_stratum": "type01_110",
+  "tag": "t04",
+  "temperature": 0.4
+}

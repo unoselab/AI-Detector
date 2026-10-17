@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_class_members(self, cls_name, cls):\n    \"\"\"Returns the list of class members to document in `cls`.\n\n    This function filters the class member to ONLY return those\n    defined by the class.  It drops the inherited ones.\n\n    Args:\n      cls_name: Qualified name of `cls`.\n      cls: An inspect object of type 'class'.\n\n    Yields:\n      name, member tuples.\n    \"\"\"\n    if not cls.bases:\n      return\n\n    base_cls = cls.bases[0]\n    base_cls_name = base_cls.__name__\n    base_cls_members = self.get_class_members(base_cls_name, base_cls)\n    for name, member in base_cls_members:\n      if name not in cls.__dict__:\n        yield name, member\n\n    for name, member in cls.__dict__.items():\n      if not isinstance(member, property):\n        yield name, member\n",
+  "agc_valid": true,
+  "body_sha256": "09d6cd61a437eda70357eaf02c53744b4864ef437756bc9fa917e47a059e097c",
+  "body_tokens": 87,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not cls.bases:\n      return\n\n    base_cls = cls.bases[0]\n    base_cls_name = base_cls.__name__\n    base_cls_members = self.get_class_members(base_cls_name, base_cls)\n    for name, member in base_cls_members:\n      if name not in cls.__dict__:\n        yield name, member\n\n    for name, member in cls.__dict__.items():\n      if not isinstance(member, property):\n        yield name, member\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 101,
+  "human_sha256": "772e17f07cbe7a1e69ff6cf0119d5f3e99ddb4b3a6a0a4dade8ab05131ec3b1a",
+  "human_valid": true,
+  "line_no": 285024,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fee248333998b454d3d34bac9f24b44e90bcc6db8df51270f82a2a13b2a0296e",
+  "raw_output": "\n    if not cls.bases:\n      return\n\n    base_cls = cls.bases[0]\n    base_cls_name = base_cls.__name__\n    base_cls_members = self.get_class_members(base_cls_name, base_cls)\n    for name, member in base_cls_members:\n      if name not in cls.__dict__:\n        yield name, member\n\n    for name, member in cls.__dict__.items():\n      if not isinstance(member, property):\n        yield name, member\n\n ",
+  "sampling_seed": 1178785045,
+  "source_stratum": "type01_110",
+  "tag": "t06",
+  "temperature": 0.6
+}

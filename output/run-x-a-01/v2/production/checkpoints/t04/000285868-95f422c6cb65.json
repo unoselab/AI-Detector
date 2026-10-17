@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def move(name, entry_name, config=None):\n    \"\"\"\n    Move an entry to the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    if not config.has_section(entry_name):\n        raise Exception(\"Entry not found.\")\n\n    if not config.has_section(name):\n        config.add_section(name)\n\n    config.set(name, entry_name, config.get(entry_name, entry_name))\n    config.remove_option(entry_name, entry_name)\n\n    config.save()\n",
+  "agc_valid": true,
+  "body_sha256": "ffd806287e599decc7201d7eb4ea14dfd11b4f3adae9fba8da1894efb0855d83",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if config is None:\n        config = Config()\n\n    if not config.has_section(entry_name):\n        raise Exception(\"Entry not found.\")\n\n    if not config.has_section(name):\n        config.add_section(name)\n\n    config.set(name, entry_name, config.get(entry_name, entry_name))\n    config.remove_option(entry_name, entry_name)\n\n    config.save()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "65f87d7199b1648b419383bfb179d19066d20b93611efa9db825dffa28f974b6",
+  "human_valid": true,
+  "line_no": 285868,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "95f422c6cb659a8b0a49c7a9f52451b23e633f43bd3d1a21bd0055152637014a",
+  "raw_output": "\n    if config is None:\n        config = Config()\n\n    if not config.has_section(entry_name):\n        raise Exception(\"Entry not found.\")\n\n    if not config.has_section(name):\n        config.add_section(name)\n\n    config.set(name, entry_name, config.get(entry_name, entry_name))\n    config.remove_option(entry_name, entry_name)\n\n    config.save()\n\n\ndef remove(name, entry_name, config=None):\n    \"\"\"\n    Remove an entry from the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    if not config.has_section(entry_name):\n        raise Exception(\"Entry not found.\")\n\n    config.remove_option(name, entry_name)\n\n    config.save()\n\n\ndef list_entries(config=None):\n    \"\"\"\n    List all entries in the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    for name in config.sections():\n        print(name)\n\n\ndef add(name, entry_name, config=None):\n    \"\"\"\n    Add an entry to the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    if config.has_section(name):\n        raise Exception(\"Entry already exists.\")\n\n    config.add_section(name)\n    config.set(name, entry_name, config.get(entry_name, entry_name))\n\n    config.save()\n\n\ndef edit(name, entry_name, config=None):\n    \"\"\"\n    Edit an entry in the sshconfig.\n    \"\"\"\n    if config is None:\n        config = Config()\n\n    if not config.has_section(entry_name):\n        raise Exception(\"Entry not found.\")\n\n    config.set(name, entry_name, config.get(entry_name, entry_name))\n\n    config.save()\n\n\ndef main():\n    \"\"\"\n    Main function.\n    \"\"\"\n    parser = argparse.ArgumentParser(description='Manage sshconfig entries.')\n    parser.add_argument('-c',",
+  "sampling_seed": 1899431422,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

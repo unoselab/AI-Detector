@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def render(self, parts=None):\n        \"\"\"\n        Returns a two-element tuple with the ``struct`` format and values.\n\n        Iterates over the applicable sub-parts and calls `render()` on them,\n        accumulating the format string and values.\n\n        Optionally takes a subset of parts to render, default behavior is to\n        render all sub-parts belonging to the class.\n        \"\"\"\n        if parts is None:\n            parts = self.parts\n        format_str = ''\n        values = []\n        for part in parts:\n            format_str += part.render()[0]\n            values += part.render()[1]\n        return format_str, values\n",
+  "agc_valid": true,
+  "body_sha256": "a1a9c18a1e0bddaf9e9e386a4ded139bee37f4b7cdd797307bbccb98268c2d6d",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if parts is None:\n            parts = self.parts\n        format_str = ''\n        values = []\n        for part in parts:\n            format_str += part.render()[0]\n            values += part.render()[1]\n        return format_str, values\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 172,
+  "human_sha256": "98af1da960b0bb089a0c291b668f9b436c9541b02b624a6ee158ec355dedc8fd",
+  "human_valid": true,
+  "line_no": 208923,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "2bba51563734fcfbf5bf418abfe9a341fa34f2883efde4dbe44e9b4a39c8d7e1",
+  "raw_output": "\n        if parts is None:\n            parts = self.parts\n        format_str = ''\n        values = []\n        for part in parts:\n            format_str += part.render()[0]\n            values += part.render()[1]\n        return format_str, values\n\n    def",
+  "sampling_seed": 1757983146,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

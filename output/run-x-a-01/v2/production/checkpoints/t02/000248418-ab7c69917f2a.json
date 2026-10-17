@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def send_durable_message(self, queue_name, body):\n        \"\"\"\n        Connect to queue_name, post a durable message with body, disconnect from queue_name.\n        :param queue_name: str: name of the queue we want to put a message on\n        :param body: content of the message we want to send\n        \"\"\"\n        self.connect_to_queue(queue_name)\n        self.channel.queue_declare(queue=queue_name, durable=True)\n        self.channel.basic_publish(exchange='', routing_key=queue_name, body=body, properties=pika.BasicProperties(delivery_mode=2))\n        self.disconnect_from_queue(queue_name)\n",
+  "agc_valid": true,
+  "body_sha256": "3795d81d83beda219cf40c4ccdb3d61e48788af4932cf0f4a0a7014156e99850",
+  "body_tokens": 37,
+  "bucket": "out_of_range",
+  "clean_output": "\n        self.connect_to_queue(queue_name)\n        self.channel.queue_declare(queue=queue_name, durable=True)\n        self.channel.basic_publish(exchange='', routing_key=queue_name, body=body, properties=pika.BasicProperties(delivery_mode=2))\n        self.disconnect_from_queue(queue_name)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "7029771a6d4cca8cc9ff99bbd07b162973c954cbbc8ec98cee2efb61f99ec3b1",
+  "human_valid": true,
+  "line_no": 248418,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "ab7c69917f2aa79bd1520146db77e5a5fc2f02b400fc4242fef3a87276f38fff",
+  "raw_output": "\n        self.connect_to_queue(queue_name)\n        self.channel.queue_declare(queue=queue_name, durable=True)\n        self.channel.basic_publish(exchange='', routing_key=queue_name, body=body, properties=pika.BasicProperties(delivery_mode=2))\n        self.disconnect_from_queue(queue_name)\n\n    def",
+  "sampling_seed": 940638236,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

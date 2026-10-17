@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "async def recv_multipart(self):\n        \"\"\"\n        Read from all the associated sockets.\n\n        :returns: A list of tuples (socket, frames) for each socket that\n            returned a result.\n        \"\"\"\n        return self._recv_multipart()\n",
+  "agc_valid": true,
+  "body_sha256": "06eb81764235115b3e5df2d5e31862e8ee12441e46df1f64be974918e55d6462",
+  "body_tokens": 10,
+  "bucket": "out_of_range",
+  "clean_output": "\n        return self._recv_multipart()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "55a2830aaafdde1aa0eb42b431103b4420983406dc252019764f2b3f6c31cf99",
+  "human_valid": true,
+  "line_no": 44450,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "1a87c88ef99425150cd98df5468d286410b7bf9a938384275d6d31f0f38b2214",
+  "raw_output": "\n        return self._recv_multipart()\n\n    def",
+  "sampling_seed": 2805679611,
+  "tag": "t02",
+  "temperature": 0.2
+}

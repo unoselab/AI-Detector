@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def _extract_functions(resources):\n        \"\"\"\n        Extracts and returns function information from the given dictionary of SAM/CloudFormation resources. This\n        method supports functions defined with AWS::Serverless::Function and AWS::Lambda::Function\n\n        :param dict resources: Dictionary of SAM/CloudFormation resources\n        :return dict(string : samcli.commands.local.lib.provider.Function): Dictionary of function LogicalId to the\n            Function configuration object\n        \"\"\"\n        functions = {}\n        for logical_id, resource in resources.items():\n            if resource.get(\"Type\") == \"AWS::Serverless::Function\":\n                functions[logical_id] = Function(logical_id, resource)\n            elif resource.get(\"Type\") == \"AWS::Lambda::Function\":\n                functions[logical_id] = Function(logical_id, resource)\n\n        return functions\n",
+  "agc_valid": true,
+  "body_sha256": "0865b1afdfe61f11ef7ff0dc86ed6bbe23a8d42802f4c401e165a342bb425158",
+  "body_tokens": 100,
+  "bucket": "type01_110",
+  "clean_output": "\n        functions = {}\n        for logical_id, resource in resources.items():\n            if resource.get(\"Type\") == \"AWS::Serverless::Function\":\n                functions[logical_id] = Function(logical_id, resource)\n            elif resource.get(\"Type\") == \"AWS::Lambda::Function\":\n                functions[logical_id] = Function(logical_id, resource)\n\n        return functions\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 193,
+  "human_sha256": "aa7f18991dcc97ac0bf5b4f524425199826d74a49a18f802744d0f458898d25a",
+  "human_valid": true,
+  "line_no": 107614,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "458ac9641d26c33ff8d3479991cc717a7c2cfd84edc2ba10a844bba94bec8993",
+  "raw_output": "\n        functions = {}\n        for logical_id, resource in resources.items():\n            if resource.get(\"Type\") == \"AWS::Serverless::Function\":\n                functions[logical_id] = Function(logical_id, resource)\n            elif resource.get(\"Type\") == \"AWS::Lambda::Function\":\n                functions[logical_id] = Function(logical_id, resource)\n\n        return functions\n\n    def",
+  "sampling_seed": 998856861,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

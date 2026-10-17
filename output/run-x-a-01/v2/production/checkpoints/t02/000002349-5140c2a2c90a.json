@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def get_allowed_plugins(self, placeholder_slot):\n        \"\"\"\n        Return the plugins which are supported in the given placeholder name.\n        \"\"\"\n        if placeholder_slot in self.slot_plugins:\n            return self.slot_plugins[placeholder_slot]\n        return []\n",
+  "agc_valid": true,
+  "body_sha256": "d53ced741ea5c2b99508451db3ff8e0944bd949803bc11b61ae0657f0dc57a0e",
+  "body_tokens": 34,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if placeholder_slot in self.slot_plugins:\n            return self.slot_plugins[placeholder_slot]\n        return []\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 140,
+  "human_sha256": "8f7ae1607d95339a1856f966f89c71047cc3dc6c65dd7431c9593b308d743361",
+  "human_valid": true,
+  "line_no": 2349,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "5140c2a2c90a7d5a92002dbe5b9db9fb5cf4e72865d8331405412387ea67c5e3",
+  "raw_output": "\n        if placeholder_slot in self.slot_plugins:\n            return self.slot_plugins[placeholder_slot]\n        return []\n\n    def",
+  "sampling_seed": 1670654474,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

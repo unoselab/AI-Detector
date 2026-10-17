@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def gen_random_key(size=32):\n    \"\"\"\n    Generate a cryptographically-secure random key. This is done by using\n    Python 2.4's os.urandom, or PyCrypto.\n    \"\"\"\n    try:\n        # Use the faster os.urandom() function if available.\n        return os.urandom(size)\n    except:\n        # Fallback to PyCrypto if not available.\n        import Crypto\n        return Crypto.Random.new().read(size)\n",
+  "agc_valid": true,
+  "body_sha256": "40da216089f73f79d22b04fe377a5474471367806156082ccbd812044129aa8f",
+  "body_tokens": 65,
+  "bucket": "out_of_range",
+  "clean_output": "\n    try:\n        # Use the faster os.urandom() function if available.\n        return os.urandom(size)\n    except:\n        # Fallback to PyCrypto if not available.\n        import Crypto\n        return Crypto.Random.new().read(size)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 165,
+  "human_sha256": "4da48e0940b2fbc3883a0173378f77635db70ef394fa69a6bde7fa6dcf12f311",
+  "human_valid": true,
+  "line_no": 144848,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "3a2249a5c00979674793c2329eafda7e19894b62a186ed93d9526ba8b27b34b8",
+  "raw_output": "\n    try:\n        # Use the faster os.urandom() function if available.\n        return os.urandom(size)\n    except:\n        # Fallback to PyCrypto if not available.\n        import Crypto\n        return Crypto.Random.new().read(size)\n\ndef gen_key(key=None, size=32):\n    \"\"\"\n    Generate a key. This function tries to use the key passed in, and if that\n    fails, it will generate a new key.\n    \"\"\"\n    if key is None:\n        key = gen_random_key(size)\n    elif isinstance(key, str):\n        key = key.decode('hex')\n    elif not isinstance(key, basestring):\n        raise TypeError('Key must be a string or buffer.')\n    elif len(key) < size:\n        raise ValueError('Key must be at least %d bytes long.' % size)\n    return key[:size]\n\ndef gen_iv(iv=None, size=16):\n    \"\"\"\n    Generate an IV. This function tries to use the IV passed in, and if that\n    fails, it will generate a new IV.\n    \"\"\"\n    if iv is None:\n        iv = gen_random_key(size)\n    elif isinstance(iv, str):\n        iv = iv.decode('hex')\n    elif not isinstance(iv, basestring):\n        raise TypeError('IV must be a string or buffer.')\n    elif len(iv) < size:\n        raise ValueError('IV must be at least %d bytes long.' % size)\n    return iv[:size]\n\ndef gen_salt(salt=None, size=8):\n    \"\"\"\n    Generate a salt. This function tries to use the salt passed in, and if that\n    fails, it will generate a new salt.\n    \"\"\"\n    if salt is None:\n        salt = gen_random_key(size)\n    elif isinstance(salt, str):\n        salt = salt.decode('hex')\n    elif not isinstance(salt, basestring):\n        raise TypeError('Salt must be a string or buffer.')\n    elif len(salt) < size:\n        raise",
+  "sampling_seed": 554674823,
+  "source_stratum": "type07_170",
+  "tag": "t06",
+  "temperature": 0.6
+}

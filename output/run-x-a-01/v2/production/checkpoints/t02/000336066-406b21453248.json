@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _apply_cached_indexes(self, cached_indexes, persist=False):\n        \"\"\"Reassign various resampler index attributes.\"\"\"\n        for attr, index in cached_indexes.items():\n            if attr in self._indexes:\n                self._indexes[attr] = index\n            else:\n                self._indexes[attr] = index\n                self._indexes[attr].persist = persist\n",
+  "agc_valid": true,
+  "body_sha256": "f2c68f7b1800bef2abe29a854ec247c604952153abc146078546f74b030f6256",
+  "body_tokens": 94,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for attr, index in cached_indexes.items():\n            if attr in self._indexes:\n                self._indexes[attr] = index\n            else:\n                self._indexes[attr] = index\n                self._indexes[attr].persist = persist\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 174,
+  "human_sha256": "0bb19d3b449c84985033aa284afbe31fd37d51a55034218a18c77d3d84dbcca6",
+  "human_valid": true,
+  "line_no": 336066,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "406b214532482ce2af244c3958d0b59d4503be119c630a504a90710708610479",
+  "raw_output": "\n        for attr, index in cached_indexes.items():\n            if attr in self._indexes:\n                self._indexes[attr] = index\n            else:\n                self._indexes[attr] = index\n                self._indexes[attr].persist = persist\n\n    def",
+  "sampling_seed": 2098814652,
+  "source_stratum": "type08_180",
+  "tag": "t02",
+  "temperature": 0.2
+}

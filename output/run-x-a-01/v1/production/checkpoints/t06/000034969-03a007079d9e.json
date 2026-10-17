@@ -1,0 +1,19 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def to_file(self, filename=None, write_style=True):\n        \"\"\"\n        >>> p = Preso()\n        >>> z = p.to_file('/tmp/foo.odp')\n        >>> sorted(z.ls('/'))\n        ['META-INF/manifest.xml', 'content.xml', 'meta.xml', 'mimetype', 'settings.xml', 'styles.xml']\n        \"\"\"\n        if filename is None:\n            filename = self.filename\n        if not filename.endswith('.odp'):\n            filename += '.odp'\n        self.filename = filename\n        self.write_style = write_style\n        try:\n            self.zip.close()\n        except:\n            pass\n        self.zip = ZipFile(filename, 'w', compression=ZIP_DEFLATED)\n        self.zip.writestr('mimetype', 'application/vnd.oasis.opendocument.presentation')\n        self.zip.writestr('meta.xml', self.meta.to_xml())\n        self.zip.writestr('settings.xml', self.settings.to_xml())\n        self.zip.writestr('styles.xml', self.styles.to_xml())\n        self.zip.writestr('content.xml', self.content.to_xml())\n        if write_style:\n            self.zip.writestr('styles.xml', self.styles.to_xml())\n        self.zip.close()\n",
+  "agc_valid": true,
+  "body_sha256": "00aa557b2cedb16179d7ba9edfccca3a018d62e522bd8c9ad86343058bb3b070",
+  "body_tokens": 197,
+  "bucket": "type10_200",
+  "clean_output": "\n        if filename is None:\n            filename = self.filename\n        if not filename.endswith('.odp'):\n            filename += '.odp'\n        self.filename = filename\n        self.write_style = write_style\n        try:\n            self.zip.close()\n        except:\n            pass\n        self.zip = ZipFile(filename, 'w', compression=ZIP_DEFLATED)\n        self.zip.writestr('mimetype', 'application/vnd.oasis.opendocument.presentation')\n        self.zip.writestr('meta.xml', self.meta.to_xml())\n        self.zip.writestr('settings.xml', self.settings.to_xml())\n        self.zip.writestr('styles.xml', self.styles.to_xml())\n        self.zip.writestr('content.xml', self.content.to_xml())\n        if write_style:\n            self.zip.writestr('styles.xml', self.styles.to_xml())\n        self.zip.close()\n",
+  "experiment": "run-x-a-01-v1",
+  "human_sha256": "f0dd25c2b897008713c2add139f4129f0ecdebf5d6daebc9b261d9653289e13e",
+  "human_valid": true,
+  "line_no": 34969,
+  "plan_sha256": "26173faa4d226e50475335b48e96720ed6a300e9133d6995db34aced67e6768a",
+  "prompt_sha256": "03a007079d9ee48a1ee5436a5c4026ea3997cd05dd0b6475b4bf38a63af2a05f",
+  "raw_output": "\n        if filename is None:\n            filename = self.filename\n        if not filename.endswith('.odp'):\n            filename += '.odp'\n        self.filename = filename\n        self.write_style = write_style\n        try:\n            self.zip.close()\n        except:\n            pass\n        self.zip = ZipFile(filename, 'w', compression=ZIP_DEFLATED)\n        self.zip.writestr('mimetype', 'application/vnd.oasis.opendocument.presentation')\n        self.zip.writestr('meta.xml', self.meta.to_xml())\n        self.zip.writestr('settings.xml', self.settings.to_xml())\n        self.zip.writestr('styles.xml', self.styles.to_xml())\n        self.zip.writestr('content.xml', self.content.to_xml())\n        if write_style:\n            self.zip.writestr('styles.xml', self.styles.to_xml())\n        self.zip.close()\n\n    def",
+  "sampling_seed": 2455377359,
+  "tag": "t06",
+  "temperature": 0.6
+}

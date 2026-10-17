@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def find_spec(self, fullname, path, target=None):\n        \"\"\"\n        Claims modules that are under ipynb.fs\n        \"\"\"\n        if fullname.startswith('ipynb.fs'):\n            return self.find_module(fullname, path)\n",
+  "agc_valid": true,
+  "body_sha256": "7f06a9267131e1e39dabda95629def9d6c040622e00065c5af34cfc14d42891e",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if fullname.startswith('ipynb.fs'):\n            return self.find_module(fullname, path)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 182,
+  "human_sha256": "872593dc005f9fe06e3e173b13097249cbebe51edd93def588db73bae1a77e44",
+  "human_valid": true,
+  "line_no": 238475,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "8f0c2900609a141ad2a083fedcb5442ac02d4679f5da7132aeddc01f93899f06",
+  "raw_output": "\n        if fullname.startswith('ipynb.fs'):\n            return self.find_module(fullname, path)\n\n    def",
+  "sampling_seed": 3900901354,
+  "source_stratum": "type09_190",
+  "tag": "t04",
+  "temperature": 0.4
+}

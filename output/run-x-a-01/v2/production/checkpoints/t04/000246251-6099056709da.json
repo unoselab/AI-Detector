@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _check_configs(self):\n        \"\"\"\n        Reloads the configuration files.\n        \"\"\"\n        if self.configs:\n            for config in self.configs:\n                if config.config_type == \"file\":\n                    self.configs.remove(config)\n                    self.configs.append(\n                        ConfigFile(config.config_file_path, config.config_file_name)\n                    )\n                elif config.config_type == \"db\":\n                    self.configs.remove(config)\n                    self.configs.append(\n                        ConfigDB(config.config_file_path, config.config_file_name)\n                    )\n",
+  "agc_valid": true,
+  "body_sha256": "93292c3048eb86ae474070122fb390f56c25e322035b68e69f3dfd8e5077fa04",
+  "body_tokens": 233,
+  "bucket": "out_of_range",
+  "clean_output": "\n        if self.configs:\n            for config in self.configs:\n                if config.config_type == \"file\":\n                    self.configs.remove(config)\n                    self.configs.append(\n                        ConfigFile(config.config_file_path, config.config_file_name)\n                    )\n                elif config.config_type == \"db\":\n                    self.configs.remove(config)\n                    self.configs.append(\n                        ConfigDB(config.config_file_path, config.config_file_name)\n                    )\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 121,
+  "human_sha256": "3e3ace89b8afa84bad605e7a1e8004675357837842866b44ebac50fedc546eb8",
+  "human_valid": true,
+  "line_no": 246251,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "6099056709dae6e9143db8e63b52b6a2f857f8f1cebe635d3b79ce8994242dbe",
+  "raw_output": "\n        if self.configs:\n            for config in self.configs:\n                if config.config_type == \"file\":\n                    self.configs.remove(config)\n                    self.configs.append(\n                        ConfigFile(config.config_file_path, config.config_file_name)\n                    )\n                elif config.config_type == \"db\":\n                    self.configs.remove(config)\n                    self.configs.append(\n                        ConfigDB(config.config_file_path, config.config_file_name)\n                    )\n\n    def",
+  "sampling_seed": 2256422346,
+  "source_stratum": "type03_130",
+  "tag": "t04",
+  "temperature": 0.4
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def delete_deployment_group(self, project, deployment_group_id):\n        \"\"\"DeleteDeploymentGroup.\n        [Preview API] Delete a deployment group.\n        :param str project: Project ID or project name\n        :param int deployment_group_id: ID of the deployment group to be deleted.\n        \"\"\"\n        route_values = {}\n        if project is not None:\n            route_values['project'] = self._serialize.url('project', project, 'str')\n        if deployment_group_id is not None:\n            route_values['deploymentGroupId'] = self._serialize.url('deployment_group_id', deployment_group_id, 'int')\n        self._send(http_method='DELETE',\n                   location_id='d8f96f24-8ea7-4cb6-baab-2df8fc51a702',\n                   version='5.1-preview.1',\n                   route_values=route_values)\n",
+  "agc_valid": true,
+  "body_sha256": "66ba2a1a8ee5c03d6e533ad227695c7df885208bca09e91287b19cf308931cce",
+  "body_tokens": 132,
+  "bucket": "type04_140",
+  "clean_output": "\n        route_values = {}\n        if project is not None:\n            route_values['project'] = self._serialize.url('project', project, 'str')\n        if deployment_group_id is not None:\n            route_values['deploymentGroupId'] = self._serialize.url('deployment_group_id', deployment_group_id, 'int')\n        self._send(http_method='DELETE',\n                   location_id='d8f96f24-8ea7-4cb6-baab-2df8fc51a702',\n                   version='5.1-preview.1',\n                   route_values=route_values)\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 132,
+  "human_sha256": "e97ef4c70d04638c2ff5f5b9bb5f21ad6b882f03671ec6edcb69ed14f165ca46",
+  "human_valid": true,
+  "line_no": 162531,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "31752081445b5eaa10c3e112f1ed50a3a6688af3e18c92843d8d67749cd80181",
+  "raw_output": "\n        route_values = {}\n        if project is not None:\n            route_values['project'] = self._serialize.url('project', project, 'str')\n        if deployment_group_id is not None:\n            route_values['deploymentGroupId'] = self._serialize.url('deployment_group_id', deployment_group_id, 'int')\n        self._send(http_method='DELETE',\n                   location_id='d8f96f24-8ea7-4cb6-baab-2df8fc51a702',\n                   version='5.1-preview.1',\n                   route_values=route_values)\n\n    def",
+  "sampling_seed": 839046561,
+  "source_stratum": "type04_140",
+  "tag": "t02",
+  "temperature": 0.2
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def evaluate_regressor(model, data, target=\"target\", verbose=False):\n    \"\"\"\n    Evaluate a CoreML regression model and compare against predictions\n    from the original framework (for testing correctness of conversion)\n\n    Parameters\n    ----------\n    filename: [str | MLModel]\n        File path from which to load the MLModel from (OR) a loaded version of\n        MLModel.\n\n    data: [str | Dataframe]\n        Test data on which to evaluate the models (dataframe,\n        or path to a .csv file).\n\n    target: str\n       Name of the column in the dataframe that must be interpreted\n       as the target column.\n\n    verbose: bool\n       Set to true for a more verbose output.\n\n    See Also\n    --------\n    evaluate_classifier\n\n    Examples\n    --------\n    .. sourcecode:: python\n\n        >>> metrics = coremltools.utils.evaluate_regressor(spec, 'data_and_predictions.csv', 'target')\n        >>> print(metrics)\n        {\"samples\": 10, \"rmse\": 0.0, max_error: 0.0}\n    \"\"\"\n    file)\n\n        target: [str]\n            Name of the column in the dataframe that contains the target variable\n\n        verbose: [bool]\n            Whether to print out additional information\n\n        Returns\n        -------\n        None\n        \"\"\"\n        if isinstance(data, str):\n            data = pd.read_csv(data)\n\n        if target not in data.columns:\n            raise ValueError(\"Target column not found in dataframe\")\n\n        if verbose:\n            print(\"Evaluating model...\")\n\n        # Get predictions from CoreML model\n        predictions = model.predict(data)\n\n        # Get predictions from original framework\n        original_predictions = data[target].values\n\n        # Calculate RMSE\n        rmse = np.sqrt(np.mean((original_predictions - predictions) **\n",
+  "agc_valid": false,
+  "body_sha256": "d6c28dc6809586d30920e6ad41c3b072ac770565db5483bcc64fe94099636115",
+  "body_tokens": 240,
+  "bucket": "out_of_range",
+  "clean_output": "\n    file)\n\n        target: [str]\n            Name of the column in the dataframe that contains the target variable\n\n        verbose: [bool]\n            Whether to print out additional information\n\n        Returns\n        -------\n        None\n        \"\"\"\n        if isinstance(data, str):\n            data = pd.read_csv(data)\n\n        if target not in data.columns:\n            raise ValueError(\"Target column not found in dataframe\")\n\n        if verbose:\n            print(\"Evaluating model...\")\n\n        # Get predictions from CoreML model\n        predictions = model.predict(data)\n\n        # Get predictions from original framework\n        original_predictions = data[target].values\n\n        # Calculate RMSE\n        rmse = np.sqrt(np.mean((original_predictions - predictions) **\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 190,
+  "human_sha256": "f7b2185137f0c082132f3cead2ccc87e968d1c3d7d9d15493a927400dd0b204a",
+  "human_valid": true,
+  "line_no": 105897,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "75e98b49342d9b564cc8415f6d9a6673f1828c859a3ed8cd13e7faa1d1cb0aac",
+  "raw_output": "file)\n\n    target: [str]\n        Name of the column in the dataframe that contains the target variable\n\n    verbose: [bool]\n        Whether to print out additional information\n\n    Returns\n    -------\n    None\n    \"\"\"\n    if isinstance(data, str):\n        data = pd.read_csv(data)\n\n    if target not in data.columns:\n        raise ValueError(\"Target column not found in dataframe\")\n\n    if verbose:\n        print(\"Evaluating model...\")\n\n    # Get predictions from CoreML model\n    predictions = model.predict(data)\n\n    # Get predictions from original framework\n    original_predictions = data[target].values\n\n    # Calculate RMSE\n    rmse = np.sqrt(np.mean((original_predictions - predictions) ** ",
+  "sampling_seed": 4173274854,
+  "source_stratum": "type09_190",
+  "tag": "t02",
+  "temperature": 0.2
+}

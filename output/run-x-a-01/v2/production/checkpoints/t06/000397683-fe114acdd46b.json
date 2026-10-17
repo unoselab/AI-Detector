@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def fire_framework_stopping(self):\n        \"\"\"\n        Calls all framework listeners, telling them that the framework is\n        stopping\n        \"\"\"\n        for listener in self.listeners:\n            listener.framework_stopping()\n",
+  "agc_valid": true,
+  "body_sha256": "8a2d2107cf8ac3bdb4625749a784c603e6bb824f6f10aeb502f40ac57ab90f9e",
+  "body_tokens": 24,
+  "bucket": "out_of_range",
+  "clean_output": "\n        for listener in self.listeners:\n            listener.framework_stopping()\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 173,
+  "human_sha256": "66693b6df9923f9d960538924c1ba4258775cd77f28c8d5310a3565b08d16ae2",
+  "human_valid": true,
+  "line_no": 397683,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "fe114acdd46b237aeb69952ad7c251004e1cd7f903a211b0628fbca60b35e257",
+  "raw_output": "\n        for listener in self.listeners:\n            listener.framework_stopping()\n\n    def",
+  "sampling_seed": 1698903015,
+  "source_stratum": "type08_180",
+  "tag": "t06",
+  "temperature": 0.6
+}

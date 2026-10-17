@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": true,
+  "agc_code": "def pop(self, key: str, default: Any = DEFAULT) -> Any:\n        \"\"\"\n        Performs the functionality associated with dict.pop(key), along with checking for\n        returned dictionaries, replacing them with Param objects with an updated history.\n\n        If ``key`` is not present in the dictionary, and no default was specified, we raise a\n        ``ConfigurationError``, instead of the typical ``KeyError``.\n        \"\"\"\n        if key not in self:\n            if default is DEFAULT:\n                raise ConfigurationError(f'Key not found: {key}')\n            else:\n                return default\n        val = self[key]\n        self.history.append(\n            (key, val, self._get_type(key), self.get_value(key), self.get_raw_value(key))\n        )\n        del self[key]\n        return val\n",
+  "agc_valid": true,
+  "body_sha256": "a00083cc23b0c8bd7542cba5a918131e3d515f484e15b8a298e78eacd0fba0fc",
+  "body_tokens": 137,
+  "bucket": "type04_140",
+  "clean_output": "\n        if key not in self:\n            if default is DEFAULT:\n                raise ConfigurationError(f'Key not found: {key}')\n            else:\n                return default\n        val = self[key]\n        self.history.append(\n            (key, val, self._get_type(key), self.get_value(key), self.get_raw_value(key))\n        )\n        del self[key]\n        return val\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 147,
+  "human_sha256": "37502c9f5ef91d860dcf2938d30679aedcc5ffe6f05a97e14432567062a23d1d",
+  "human_valid": true,
+  "line_no": 96137,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "9e5e9b6e2e0ef0580b26d93ad1000b7ca9a17b1493d812697c2e154599d2967f",
+  "raw_output": "\n        if key not in self:\n            if default is DEFAULT:\n                raise ConfigurationError(f'Key not found: {key}')\n            else:\n                return default\n        val = self[key]\n        self.history.append(\n            (key, val, self._get_type(key), self.get_value(key), self.get_raw_value(key))\n        )\n        del self[key]\n        return val\n\n    def",
+  "sampling_seed": 3469566373,
+  "source_stratum": "type05_150",
+  "tag": "t06",
+  "temperature": 0.6
+}

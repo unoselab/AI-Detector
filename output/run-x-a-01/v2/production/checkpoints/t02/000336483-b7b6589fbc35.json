@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_update_artifact_cache_work(self, vts_artifactfiles_pairs):\n    \"\"\"Create a Work instance to update an artifact cache, if we're configured to.\n\n    vts_artifactfiles_pairs - a list of pairs (vts, artifactfiles) where\n      - vts is single VersionedTargetSet.\n      - artifactfiles is a list of paths to artifacts for the VersionedTargetSet.\n    \"\"\"\n    if not self._update_artifact_cache:\n      return None\n\n    # TODO(wickman) This is a bit of a hack.\n",
+  "agc_valid": true,
+  "body_sha256": "67c0a7bc70e8a9e85553f54bd6932e70794b42c41812d21b026669ee86f46b5c",
+  "body_tokens": 26,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not self._update_artifact_cache:\n      return None\n\n    # TODO(wickman) This is a bit of a hack.\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "915686d243b45f00ccd197de86ce9dbd33f8f09109afbc3b84582f2d9e64d074",
+  "human_valid": true,
+  "line_no": 336483,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "b7b6589fbc35cc045b1399f0f3aa4bbdc8cf1dd89f1db5cb6d21b1f29b9206e4",
+  "raw_output": "\n    if not self._update_artifact_cache:\n      return None\n\n    # TODO(wickman) This is a bit of a hack. ",
+  "sampling_seed": 866760783,
+  "source_stratum": "type10_200",
+  "tag": "t02",
+  "temperature": 0.2
+}

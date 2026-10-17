@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def is_allowed_view(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n",
+  "agc_valid": true,
+  "body_sha256": "3d8e65cc1bf22918a8b4d73ed93bbfbe9f555a13f5c23d7039c1592a822164e0",
+  "body_tokens": 22,
+  "bucket": "out_of_range",
+  "clean_output": "\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 197,
+  "human_sha256": "33c5724546a2228d9df24404488c034f978bb1ece82b3b87e935dcae5185f77a",
+  "human_valid": true,
+  "line_no": 303249,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "44e7ff24d9ee3c378bb7953394eacdcff1b4c301613c6c42639cf0d9cbb1b061",
+  "raw_output": "\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_edit(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_create(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_delete(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_list(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_export(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_import(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[perm]) in current_app.acl\n\n\ndef is_allowed_view_all(perm):\n    \"\"\"Check if permission is in acl list.\"\"\"\n    from flask import current_app\n    from flask_principal import Permission\n    return Permission(current_app.acl_permissions[",
+  "sampling_seed": 2897751284,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

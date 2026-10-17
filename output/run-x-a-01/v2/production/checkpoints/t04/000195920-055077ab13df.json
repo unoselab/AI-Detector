@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def _get_last_child_with_lineno(node):\n    \"\"\"\n    Return the last direct child of `node` that has a lineno attribute,\n    or None if `node` has no such children.\n\n    Almost all node._field lists are sorted by the order in which they\n    appear in source code. For some nodes however, we have to skip some\n    fields that either don't have line numbers (e.g., \"ctx\" and \"names\")\n    or that are in the wrong position (e.g., \"decorator_list\" and\n    \"returns\"). Then we choose the first field (i.e., the field with the\n    highest line number) that actually contains a node. If it contains a\n    list of nodes, we return the last one.\n\n    \"\"\"\n    and \"args\").\n        \"\"\"\n        for child in reversed(node._fields):\n            if child in (\"decorator_list\", \"args\"):\n                continue\n            if hasattr(node, child):\n                child_node = getattr(node, child)\n                if hasattr(child_node, \"lineno\"):\n                    return child_node\n        return None\n",
+  "agc_valid": false,
+  "body_sha256": "590d8e041919674d627b7f5550946222537ef7dbbea1e33928bb94f104ba677e",
+  "body_tokens": 138,
+  "bucket": "type04_140",
+  "clean_output": "\n    and \"args\").\n        \"\"\"\n        for child in reversed(node._fields):\n            if child in (\"decorator_list\", \"args\"):\n                continue\n            if hasattr(node, child):\n                child_node = getattr(node, child)\n                if hasattr(child_node, \"lineno\"):\n                    return child_node\n        return None\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 192,
+  "human_sha256": "f1e499c1b1aaf334d41cb71eef5ff22d354bc414d9e808b8e6a17456f8d573e7",
+  "human_valid": true,
+  "line_no": 195920,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "055077ab13df07f3868670024704b9ef4c38ab4b4366546259c7a66d35fb56a7",
+  "raw_output": "and \"args\").\n    \"\"\"\n    for child in reversed(node._fields):\n        if child in (\"decorator_list\", \"args\"):\n            continue\n        if hasattr(node, child):\n            child_node = getattr(node, child)\n            if hasattr(child_node, \"lineno\"):\n                return child_node\n    return None\n\n\ndef _get_last_child_with_lineno_recursive(node):\n    \"\"\"\n    Return the last direct child of `node` that has a lineno attribute,\n    or None if `node` has no such children.\n\n    This function is similar to _get_last_child_with_lineno, but it\n    recursively searches for a child with a lineno attribute.\n    \"\"\"\n    last_child = _get_last_child_with_lineno(node)\n    if last_child:\n        return last_child\n    for child in reversed(node._fields):\n        if hasattr(node, child):\n            child_node = getattr(node, child)\n            if isinstance(child_node, list):\n                for child_node_item in child_node:\n                    last_child = _get_last_child_with_lineno_recursive(child_node_item)\n                    if last_child:\n                        return last_child\n    return None\n\n\ndef _get_last_child_with_lineno_recursive_and_filter(node, filter_func):\n    \"\"\"\n    Return the last direct child of `node` that has a lineno attribute,\n    or None if `node` has no such children.\n\n    This function is similar to _get_last_child_with_lineno_recursive, but\n    it filters the child nodes by calling filter_func(child_node) before\n    recursively searching for a child with a lineno attribute.\n    \"\"\"\n    last_child = _get_last_child_with_lineno(node)\n    if last_child:\n        if filter_func(last_child):\n            return last_child\n    for child in reversed(node._fields):\n        if hasattr(node, child):\n            child_node",
+  "sampling_seed": 357062947,
+  "source_stratum": "type10_200",
+  "tag": "t04",
+  "temperature": 0.4
+}

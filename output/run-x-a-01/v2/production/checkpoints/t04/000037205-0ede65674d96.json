@@ -1,0 +1,21 @@
+{
+  "accepted_for_pool": false,
+  "agc_code": "def command(state, args):\n    \"\"\"Add an anime from an AniDB search.\"\"\"\n    if not args.query:\n        return \"No query provided.\"\n\n    anime = state.anidb.search(args.query, limit=1)\n    if not anime:\n        return \"No results found.\"\n\n    anime = anime[0]\n\n    if not anime.episodes:\n        return \"Anime has no episodes.\"\n\n    if not anime.episodes[0].title:\n        return \"Anime episode has no title.\"\n\n    state.add_anime(anime)\n\n    return f\"Added {anime.title}.\"\n",
+  "agc_valid": true,
+  "body_sha256": "aedf7af891279c0dffcfa949ec3d4de6a29c754cac19c8664718c8f66be45828",
+  "body_tokens": 95,
+  "bucket": "out_of_range",
+  "clean_output": "\n    if not args.query:\n        return \"No query provided.\"\n\n    anime = state.anidb.search(args.query, limit=1)\n    if not anime:\n        return \"No results found.\"\n\n    anime = anime[0]\n\n    if not anime.episodes:\n        return \"Anime has no episodes.\"\n\n    if not anime.episodes[0].title:\n        return \"Anime episode has no title.\"\n\n    state.add_anime(anime)\n\n    return f\"Added {anime.title}.\"\n",
+  "experiment": "run-x-a-01-v2",
+  "human_body_tokens": 178,
+  "human_sha256": "16bb63668a6c341c063352dcbe69f5f9588b087fcffaa1dcda8c9380cb7ae3c5",
+  "human_valid": true,
+  "line_no": 37205,
+  "plan_sha256": "8032857ecf08a1fe169b196571d1a2ff22c14d0c482c41197bd983b514c2b4f5",
+  "prompt_sha256": "0ede65674d96cf38f9b40fb6afcd8f76052ce05039fe3b3827d75984b70b39f7",
+  "raw_output": "\n    if not args.query:\n        return \"No query provided.\"\n\n    anime = state.anidb.search(args.query, limit=1)\n    if not anime:\n        return \"No results found.\"\n\n    anime = anime[0]\n\n    if not anime.episodes:\n        return \"Anime has no episodes.\"\n\n    if not anime.episodes[0].title:\n        return \"Anime episode has no title.\"\n\n    state.add_anime(anime)\n\n    return f\"Added {anime.title}.\"\n\n\ndef help(state, args):\n    \"\"\"Show help for a command.\"\"\"\n    if args.command:\n        if args.command in state.commands:\n            return state.commands[args.command].__doc__\n        else:\n            return \"Command not found.\"\n    else:\n        return \"No command provided.\"\n\n\ndef list(state, args):\n    \"\"\"List animes.\"\"\"\n    if args.anime:\n        if args.anime in state.animes:\n            anime = state.animes[args.anime]\n            episodes = anime.episodes\n            if not episodes:\n                return \"Anime has no episodes.\"\n            if not episodes[0].title:\n                return \"Anime episode has no title.\"\n            return \"\\n\".join(\n                f\"{episode.number}. {episode.title}\" for episode in episodes\n            )\n        else:\n            return \"Anime not found.\"\n    else:\n        return \"\\n\".join(\n            f\"{anime.title} ({len(anime.episodes)})\" for anime in state.animes\n        )\n\n\ndef remove(state, args):\n    \"\"\"Remove an anime.\"\"\"\n    if args.anime:\n        if args.anime in state.animes:\n            state.remove_anime(args.anime)\n            return f\"Removed {args.anime}.\"\n        else:\n            return \"Anime not found.\"\n    else:\n        return \"No anime provided.\"\n\n\ndef set(state, args):",
+  "sampling_seed": 2433158770,
+  "source_stratum": "type08_180",
+  "tag": "t04",
+  "temperature": 0.4
+}
