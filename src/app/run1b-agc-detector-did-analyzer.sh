@@ -9,7 +9,7 @@ set -euo pipefail
 # The output root is intentionally separate from the earlier two-commit pilot
 # so that prior checkpoints and cache files do not bias the runtime estimate.
 #
-# Usage for Full Run
+# Usage for Full Run (treatment)
 # MAX_COMMITS=0 OUTPUT_ROOT=../ai_code_complexity_study_python/python_snapshots_detect/codellama-7b_4500_complexity_stratified_maxlen2048_svm_ast/strict bash src/app/run1b-agc-detector-did-analyzer.sh
 # 
 # Usage:
@@ -20,6 +20,11 @@ set -euo pipefail
 #   DEVICE=cuda:0 bash src/app/run1b-agc-detector-did-analyzer.sh
 #   OUTPUT_ROOT=/path/to/output bash src/app/run1b-agc-detector-did-analyzer.sh
 # 
+# Usage for 50 commits (control)
+#   DATASET_SOURCE=control MAX_COMMITS=50 OUTPUT_ROOT=../ai_code_complexity_study_python/python_snapshots_detect/codellama-7b_4500_complexity_stratified_maxlen2048_svm_ast/strict/pilot-control-50commits bash src/app/run1b-agc-detector-did-analyzer.sh
+# 
+# Usage for Full Run (control)
+# DATASET_SOURCE=control MAX_COMMITS=0 OUTPUT_ROOT=../ai_code_complexity_study_python/python_snapshots_detect/codellama-7b_4500_complexity_stratified_maxlen2048_svm_ast/strict bash src/app/run1b-agc-detector-did-analyzer.sh
 # =============================================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
